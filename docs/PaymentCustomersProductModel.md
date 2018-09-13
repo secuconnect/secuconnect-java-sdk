@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**object** | **String** | Object of payment customer |  [optional]
-**id** | **String** | Id of payment customer |  [optional]
-**contract** | [**ProductInstanceUID**](ProductInstanceUID.md) | Payment contract |  [optional]
-**contact** | [**PaymentCustomersDTOContact**](PaymentCustomersDTOContact.md) | Customer contact info |  [optional]
-**created** | [**DateTime**](DateTime.md) | Created at date |  [optional]
-**updated** | [**DateTime**](DateTime.md) | Updated at date |  [optional]
+**object** | **String** | Object of payment customer | 
+**id** | **String** | Id of payment customer | 
+**contract** | [**ProductInstanceUID**](ProductInstanceUID.md) | Payment contract | 
+**contact** | [**Contact**](Contact.md) | Customer contact info | 
+**created** | [**DateTime**](DateTime.md) | Created at date | 
+**updated** | [**DateTime**](DateTime.md) | Updated at date | 
 
 
 

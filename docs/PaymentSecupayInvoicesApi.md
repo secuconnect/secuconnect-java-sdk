@@ -1,19 +1,79 @@
 # PaymentSecupayInvoicesApi
 
-All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2/*
+All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentSecupayInvoicesCancelById**](PaymentSecupayInvoicesApi.md#paymentSecupayInvoicesCancelById) | **POST** Payment/Secupayinvoices/{hash}/cancel | POST Payment/Secupayinvoices/{id}/cancel
-[**paymentSecupayInvoicesGetById**](PaymentSecupayInvoicesApi.md#paymentSecupayInvoicesGetById) | **GET** Payment/Secupayinvoices/{hash} | GET Payment/Secupayinvoices/{id}
-[**paymentSecupayinvoicesPost**](PaymentSecupayInvoicesApi.md#paymentSecupayinvoicesPost) | **POST** Payment/Secupayinvoices | POST Payment/Secupayinvoices
+[**assignExternalInvoicePdf**](PaymentSecupayInvoicesApi.md#assignExternalInvoicePdf) | **POST** /Payment/{paymentMethod}/{paymentId}/assignExternalInvoicePdf/{documentId} | POST Payment/{paymentMethod}/{paymentId}/assignExternalInvoicePdf/{documentId}
+[**paymentSecupayInvoicesCancelById**](PaymentSecupayInvoicesApi.md#paymentSecupayInvoicesCancelById) | **POST** /Payment/Secupayinvoices/{paymentInvoiceId}/cancel | POST Payment/Secupayinvoices/{paymentInvoiceId}/cancel
+[**paymentSecupayInvoicesGetById**](PaymentSecupayInvoicesApi.md#paymentSecupayInvoicesGetById) | **GET** /Payment/Secupayinvoices/{paymentInvoiceId} | GET Payment/Secupayinvoices/{paymentInvoiceId}
+[**paymentSecupayinvoicesPost**](PaymentSecupayInvoicesApi.md#paymentSecupayinvoicesPost) | **POST** /Payment/Secupayinvoices | POST Payment/Secupayinvoices
 
+
+<a name="assignExternalInvoicePdf"></a>
+# **assignExternalInvoicePdf**
+> SecupayTransactionExternalInvoicePdf assignExternalInvoicePdf(paymentMethod, paymentId, documentId, body)
+
+POST Payment/{paymentMethod}/{paymentId}/assignExternalInvoicePdf/{documentId}
+
+Assign external invoice pdf
+
+### Example
+```java
+// Import classes:
+//import io.secuconnect.client.ApiClient;
+//import io.secuconnect.client.ApiException;
+//import io.secuconnect.client.Configuration;
+//import io.secuconnect.client.auth.*;
+//import io.secuconnect.client.api.PaymentSecupayInvoicesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth_token
+OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
+oauth_token.setAccessToken("YOUR ACCESS TOKEN");
+
+PaymentSecupayInvoicesApi apiInstance = new PaymentSecupayInvoicesApi();
+String paymentMethod = "paymentMethod_example"; // String | Payment method (debit, prepay, ...)
+String paymentId = "paymentId_example"; // String | Payment id
+String documentId = "documentId_example"; // String | Document id
+SecupayTransactionDTOExternalInvoicePdf body = new SecupayTransactionDTOExternalInvoicePdf(); // SecupayTransactionDTOExternalInvoicePdf | Request body for assigning external invoice pdf
+try {
+    SecupayTransactionExternalInvoicePdf result = apiInstance.assignExternalInvoicePdf(paymentMethod, paymentId, documentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PaymentSecupayInvoicesApi#assignExternalInvoicePdf");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **paymentMethod** | **String**| Payment method (debit, prepay, ...) | [required]
+ **paymentId** | **String**| Payment id | [required]
+ **documentId** | **String**| Document id | [required]
+ **body** | [**SecupayTransactionDTOExternalInvoicePdf**](SecupayTransactionDTOExternalInvoicePdf.md)| Request body for assigning external invoice pdf | [required]
+
+### Return type
+
+[**SecupayTransactionExternalInvoicePdf**](SecupayTransactionExternalInvoicePdf.md)
+
+### Authorization
+
+[oauth_token](../README.md#oauth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="paymentSecupayInvoicesCancelById"></a>
 # **paymentSecupayInvoicesCancelById**
-> Object paymentSecupayInvoicesCancelById(hash)
+> Object paymentSecupayInvoicesCancelById(paymentInvoiceId)
 
-POST Payment/Secupayinvoices/{id}/cancel
+POST Payment/Secupayinvoices/{paymentInvoiceId}/cancel
 
 Function to cancel the transaction
 
@@ -33,9 +93,9 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentSecupayInvoicesApi apiInstance = new PaymentSecupayInvoicesApi();
-String hash = "hash_example"; // String | Transaction hash
+String paymentInvoiceId = "paymentInvoiceId_example"; // String | Payment invoice id
 try {
-    Object result = apiInstance.paymentSecupayInvoicesCancelById(hash);
+    Object result = apiInstance.paymentSecupayInvoicesCancelById(paymentInvoiceId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentSecupayInvoicesApi#paymentSecupayInvoicesCancelById");
@@ -47,7 +107,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **hash** | **String**| Transaction hash |
+ **paymentInvoiceId** | **String**| Payment invoice id | [required]
 
 ### Return type
 
@@ -64,9 +124,9 @@ Name | Type | Description  | Notes
 
 <a name="paymentSecupayInvoicesGetById"></a>
 # **paymentSecupayInvoicesGetById**
-> SecupayTransactionProductModel paymentSecupayInvoicesGetById(hash)
+> SecupayTransactionProductModel paymentSecupayInvoicesGetById(paymentInvoiceId)
 
-GET Payment/Secupayinvoices/{id}
+GET Payment/Secupayinvoices/{paymentInvoiceId}
 
 Get the details of a payment transaction
 
@@ -86,9 +146,9 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentSecupayInvoicesApi apiInstance = new PaymentSecupayInvoicesApi();
-String hash = "hash_example"; // String | Payment transaction ID
+String paymentInvoiceId = "paymentInvoiceId_example"; // String | Payment transaction ID
 try {
-    SecupayTransactionProductModel result = apiInstance.paymentSecupayInvoicesGetById(hash);
+    SecupayTransactionProductModel result = apiInstance.paymentSecupayInvoicesGetById(paymentInvoiceId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentSecupayInvoicesApi#paymentSecupayInvoicesGetById");
@@ -100,7 +160,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **hash** | **String**| Payment transaction ID |
+ **paymentInvoiceId** | **String**| Payment transaction ID | [required]
 
 ### Return type
 
@@ -153,7 +213,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SecupayTransactionProductDTO**](SecupayTransactionProductDTO.md)| Invoice payment transaction input properties | [optional]
+ **body** | [**SecupayTransactionProductDTO**](SecupayTransactionProductDTO.md)| Invoice payment transaction input properties |
 
 ### Return type
 

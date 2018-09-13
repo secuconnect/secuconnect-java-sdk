@@ -1,16 +1,16 @@
 # PaymentContainersApi
 
-All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2/*
+All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentContainersGet**](PaymentContainersApi.md#paymentContainersGet) | **GET** Payment/Containers | GET Payment/Containers
-[**paymentContainersGetById**](PaymentContainersApi.md#paymentContainersGetById) | **GET** Payment/Containers/{id} | GET Payment/Containers/{id}
-[**paymentContainersIdAssignSecondaryIdDelete**](PaymentContainersApi.md#paymentContainersIdAssignSecondaryIdDelete) | **DELETE** Payment/Containers/{id}/assign/{secondary-id} | DELETE Payment/Containers/{id}/assign/{secondary-id}
-[**paymentContainersIdAssignSecondaryIdPost**](PaymentContainersApi.md#paymentContainersIdAssignSecondaryIdPost) | **POST** Payment/Containers/{id}/assign/{secondary-id} | POST Payment/Containers/{id}/assign/{secondary-id}
-[**paymentContainersIdDelete**](PaymentContainersApi.md#paymentContainersIdDelete) | **DELETE** Payment/Containers/{id} | DELETE Payment/Containers/{id}
-[**paymentContainersIdPut**](PaymentContainersApi.md#paymentContainersIdPut) | **PUT** Payment/Containers/{id} | PUT Payment/Containers/{id}
-[**paymentContainersPost**](PaymentContainersApi.md#paymentContainersPost) | **POST** Payment/Containers | POST Payment/Containers
+[**paymentContainersGet**](PaymentContainersApi.md#paymentContainersGet) | **GET** /Payment/Containers | GET Payment/Containers
+[**paymentContainersGetById**](PaymentContainersApi.md#paymentContainersGetById) | **GET** /Payment/Containers/{paymentContainerId} | GET Payment/Containers/{paymentContainerId}
+[**paymentContainersIdAssignSecondaryIdDelete**](PaymentContainersApi.md#paymentContainersIdAssignSecondaryIdDelete) | **DELETE** /Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId} | DELETE Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId}
+[**paymentContainersIdAssignSecondaryIdPost**](PaymentContainersApi.md#paymentContainersIdAssignSecondaryIdPost) | **POST** /Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId} | POST Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId}
+[**paymentContainersIdDelete**](PaymentContainersApi.md#paymentContainersIdDelete) | **DELETE** /Payment/Containers/{paymentContainerId} | DELETE Payment/Containers/{paymentContainerId}
+[**paymentContainersIdPut**](PaymentContainersApi.md#paymentContainersIdPut) | **PUT** /Payment/Containers/{paymentContainerId} | PUT Payment/Containers/{paymentContainerId}
+[**paymentContainersPost**](PaymentContainersApi.md#paymentContainersPost) | **POST** /Payment/Containers | POST Payment/Containers
 
 
 <a name="paymentContainersGet"></a>
@@ -40,7 +40,7 @@ PaymentContainersApi apiInstance = new PaymentContainersApi();
 Integer count = 56; // Integer | The number of items to return.
 Integer offset = 56; // Integer | The position within the whole result set to start returning items (First element is at 0).
 String fields = "fields_example"; // String | List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-String q = "q_example"; // String | A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \"*\" for any number of characters  *                      - wildcard \"?\" for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by 'AND', 'OR', 'NOT' operators and parenthesis '(', ')' for grouping.  *                  Property names can be nested like \"prop1.prop2\".  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *
+String q = "q_example"; // String | A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \"*\" for any number of characters  *                      - wildcard \"?\" for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by 'AND', 'OR', 'NOT' operators and parenthesis '(', ')' for grouping.  *                  Property names can be nested like \"prop1.prop2\".  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
 String sort = "sort_example"; // String | String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending 'asc', or descending 'dsc' order.
 try {
     PaymentContainersList result = apiInstance.paymentContainersGet(count, offset, fields, q, sort);
@@ -55,11 +55,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **count** | **Integer**| The number of items to return. | [optional]
- **offset** | **Integer**| The position within the whole result set to start returning items (First element is at 0). | [optional]
- **fields** | **String**| List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 | [optional]
- **q** | **String**| A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   | [optional]
- **sort** | **String**| String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order. | [optional]
+ **count** | **Integer**| The number of items to return. |
+ **offset** | **Integer**| The position within the whole result set to start returning items (First element is at 0). |
+ **fields** | **String**| List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 |
+ **q** | **String**| A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   |
+ **sort** | **String**| String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order. |
 
 ### Return type
 
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 
 <a name="paymentContainersGetById"></a>
 # **paymentContainersGetById**
-> PaymentContainersProductModel paymentContainersGetById(id)
+> PaymentContainersProductModel paymentContainersGetById(paymentContainerId)
 
-GET Payment/Containers/{id}
+GET Payment/Containers/{paymentContainerId}
 
 Get all payment containers
 
@@ -98,9 +98,9 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentContainersApi apiInstance = new PaymentContainersApi();
-String id = "id_example"; // String | Search one by provided id
+String paymentContainerId = "paymentContainerId_example"; // String | Search one by provided id
 try {
-    PaymentContainersProductModel result = apiInstance.paymentContainersGetById(id);
+    PaymentContainersProductModel result = apiInstance.paymentContainersGetById(paymentContainerId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentContainersApi#paymentContainersGetById");
@@ -112,7 +112,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Search one by provided id |
+ **paymentContainerId** | **String**| Search one by provided id | [required]
 
 ### Return type
 
@@ -129,9 +129,9 @@ Name | Type | Description  | Notes
 
 <a name="paymentContainersIdAssignSecondaryIdDelete"></a>
 # **paymentContainersIdAssignSecondaryIdDelete**
-> List&lt;PaymentContainersProductModel&gt; paymentContainersIdAssignSecondaryIdDelete(id, secondaryId)
+> List&lt;PaymentContainersProductModel&gt; paymentContainersIdAssignSecondaryIdDelete(paymentContainerId, secondaryPaymentContainerId)
 
-DELETE Payment/Containers/{id}/assign/{secondary-id}
+DELETE Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId}
 
 Removes an existing payment container assignment
 
@@ -151,10 +151,10 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentContainersApi apiInstance = new PaymentContainersApi();
-String id = "id_example"; // String | Payment container id
-String secondaryId = "secondaryId_example"; // String | Id for which container is currently assigned to
+String paymentContainerId = "paymentContainerId_example"; // String | Payment container id
+String secondaryPaymentContainerId = "secondaryPaymentContainerId_example"; // String | Id for which container is currently assigned to
 try {
-    List<PaymentContainersProductModel> result = apiInstance.paymentContainersIdAssignSecondaryIdDelete(id, secondaryId);
+    List<PaymentContainersProductModel> result = apiInstance.paymentContainersIdAssignSecondaryIdDelete(paymentContainerId, secondaryPaymentContainerId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentContainersApi#paymentContainersIdAssignSecondaryIdDelete");
@@ -166,8 +166,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Payment container id |
- **secondaryId** | **String**| Id for which container is currently assigned to |
+ **paymentContainerId** | **String**| Payment container id | [required]
+ **secondaryPaymentContainerId** | **String**| Id for which container is currently assigned to | [required]
 
 ### Return type
 
@@ -184,9 +184,9 @@ Name | Type | Description  | Notes
 
 <a name="paymentContainersIdAssignSecondaryIdPost"></a>
 # **paymentContainersIdAssignSecondaryIdPost**
-> PaymentContainersProductModel paymentContainersIdAssignSecondaryIdPost(id, secondaryId)
+> PaymentContainersProductModel paymentContainersIdAssignSecondaryIdPost(paymentContainerId, secondaryPaymentContainerId)
 
-POST Payment/Containers/{id}/assign/{secondary-id}
+POST Payment/Containers/{paymentContainerId}/assign/{secondaryPaymentContainerId}
 
 Assign an existing payment container to ...
 
@@ -206,10 +206,10 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentContainersApi apiInstance = new PaymentContainersApi();
-String id = "id_example"; // String | Payment container id
-String secondaryId = "secondaryId_example"; // String | Id to which container will be assigned
+String paymentContainerId = "paymentContainerId_example"; // String | Payment container id
+String secondaryPaymentContainerId = "secondaryPaymentContainerId_example"; // String | Id to which container will be assigned
 try {
-    PaymentContainersProductModel result = apiInstance.paymentContainersIdAssignSecondaryIdPost(id, secondaryId);
+    PaymentContainersProductModel result = apiInstance.paymentContainersIdAssignSecondaryIdPost(paymentContainerId, secondaryPaymentContainerId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentContainersApi#paymentContainersIdAssignSecondaryIdPost");
@@ -221,8 +221,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Payment container id |
- **secondaryId** | **String**| Id to which container will be assigned |
+ **paymentContainerId** | **String**| Payment container id | [required]
+ **secondaryPaymentContainerId** | **String**| Id to which container will be assigned | [required]
 
 ### Return type
 
@@ -239,9 +239,9 @@ Name | Type | Description  | Notes
 
 <a name="paymentContainersIdDelete"></a>
 # **paymentContainersIdDelete**
-> List&lt;PaymentContainersProductModel&gt; paymentContainersIdDelete(id)
+> List&lt;PaymentContainersProductModel&gt; paymentContainersIdDelete(paymentContainerId)
 
-DELETE Payment/Containers/{id}
+DELETE Payment/Containers/{paymentContainerId}
 
 Delete payment container
 
@@ -261,9 +261,9 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentContainersApi apiInstance = new PaymentContainersApi();
-String id = "id_example"; // String | Payment container id
+String paymentContainerId = "paymentContainerId_example"; // String | Payment container id
 try {
-    List<PaymentContainersProductModel> result = apiInstance.paymentContainersIdDelete(id);
+    List<PaymentContainersProductModel> result = apiInstance.paymentContainersIdDelete(paymentContainerId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentContainersApi#paymentContainersIdDelete");
@@ -275,7 +275,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Payment container id |
+ **paymentContainerId** | **String**| Payment container id | [required]
 
 ### Return type
 
@@ -292,9 +292,9 @@ Name | Type | Description  | Notes
 
 <a name="paymentContainersIdPut"></a>
 # **paymentContainersIdPut**
-> PaymentContainersProductModel paymentContainersIdPut(id, body)
+> PaymentContainersProductModel paymentContainersIdPut(paymentContainerId, body)
 
-PUT Payment/Containers/{id}
+PUT Payment/Containers/{paymentContainerId}
 
 Update payment container
 
@@ -314,10 +314,10 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentContainersApi apiInstance = new PaymentContainersApi();
-String id = "id_example"; // String | Payment container id
+String paymentContainerId = "paymentContainerId_example"; // String | Payment container id
 PaymentContainersDTO body = new PaymentContainersDTO(); // PaymentContainersDTO | Payment container properties
 try {
-    PaymentContainersProductModel result = apiInstance.paymentContainersIdPut(id, body);
+    PaymentContainersProductModel result = apiInstance.paymentContainersIdPut(paymentContainerId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentContainersApi#paymentContainersIdPut");
@@ -329,8 +329,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Payment container id |
- **body** | [**PaymentContainersDTO**](PaymentContainersDTO.md)| Payment container properties |
+ **paymentContainerId** | **String**| Payment container id | [required]
+ **body** | [**PaymentContainersDTO**](PaymentContainersDTO.md)| Payment container properties | [required]
 
 ### Return type
 
@@ -383,7 +383,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PaymentContainersDTO**](PaymentContainersDTO.md)| Payment container properties |
+ **body** | [**PaymentContainersDTO**](PaymentContainersDTO.md)| Payment container properties | [required]
 
 ### Return type
 

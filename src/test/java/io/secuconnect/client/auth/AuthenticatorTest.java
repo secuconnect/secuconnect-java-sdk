@@ -3,7 +3,7 @@ package io.secuconnect.client.auth;
 import io.secuconnect.client.ApiException;
 import io.secuconnect.client.auth.tokens.OAuthApplicationUserToken;
 import io.secuconnect.client.auth.tokens.OAuthClientToken;
-import io.secuconnect.client.auth.tokens.OAuthDeviceToken;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static io.secuconnect.client.Globals.O_AUTH_APPLICATION_USER_CREDENTIALS;
@@ -12,6 +12,7 @@ import static io.secuconnect.client.Globals.O_AUTH_DEVICE_CREDENTIALS;
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 
 public class AuthenticatorTest {
@@ -40,17 +41,13 @@ public class AuthenticatorTest {
         assertNotNull(accessToken.getCreatedAt());
     }
 
+    @Ignore
     @Test
-    public void oAuthDeviceCredentialsTest() throws ApiException {
+    public void oAuthDeviceCredentialsTest() {
         Authenticator authenticator = new Authenticator(O_AUTH_DEVICE_CREDENTIALS);
-        OAuthDeviceToken accessToken = (OAuthDeviceToken) authenticator.getToken();
+        String accessToken = authenticator.getDeviceAccessToken(O_AUTH_DEVICE_CREDENTIALS.getClientId(), O_AUTH_DEVICE_CREDENTIALS.getClientSecret(), O_AUTH_DEVICE_CREDENTIALS.getUuid());
 
-        assertNotNull(accessToken.getDeviceCode());
-        assertNotNull(accessToken.getUserCode());
-        assertNotNull(accessToken.getVerificationUrl());
-        assertTrue(accessToken.getExpiresIn()  > 0);
-        assertNotNull(accessToken.getInterval());
-        assertTrue(accessToken.getInterval()  > 0);
-        assertNotNull(accessToken.getCreatedAt());
+        assertNotNull(accessToken);
+        assertFalse(accessToken.isEmpty());
     }
 }

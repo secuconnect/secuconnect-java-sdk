@@ -2,7 +2,7 @@ package io.secuconnect.client;
 
 import io.secuconnect.client.auth.credentials.OAuthApplicationUserCredentials;
 import io.secuconnect.client.auth.credentials.OAuthClientCredentials;
-import io.secuconnect.client.auth.credentials.OAuthDeviceCredentials;
+import io.secuconnect.client.auth.credentials.OAuthDeviceCodeCredentials;
 
 public class Globals {
     public static final OAuthClientCredentials O_AUTH_CLIENT_CREDENTIALS = new OAuthClientCredentials(
@@ -18,10 +18,10 @@ public class Globals {
             "XYZ",
             "value"
     );
-    public static final OAuthDeviceCredentials O_AUTH_DEVICE_CREDENTIALS;
+    public static final OAuthDeviceCodeCredentials O_AUTH_DEVICE_CREDENTIALS;
 
     static {
-        O_AUTH_DEVICE_CREDENTIALS = new OAuthDeviceCredentials(
+        O_AUTH_DEVICE_CREDENTIALS = new OAuthDeviceCodeCredentials(
                 "",
                 "",
                 ""

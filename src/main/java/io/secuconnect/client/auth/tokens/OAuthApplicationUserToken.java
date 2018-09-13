@@ -3,32 +3,32 @@ package io.secuconnect.client.auth.tokens;
 import com.google.gson.annotations.SerializedName;
 
 public class OAuthApplicationUserToken extends AccessToken {
-    @SerializedName("access_token")
-    private String accessToken;
 
-    @SerializedName("token_type")
-    private String tokenType;
+  @SerializedName("refresh_token")
+  protected String refreshToken;
 
-    @SerializedName("scope")
-    private String scope;
+  @SerializedName("access_token")
+  private String accessToken;
 
-    @SerializedName("refresh_token")
-    protected String refreshToken;
+  @SerializedName("token_type")
+  private String tokenType;
 
+  @SerializedName("scope")
+  private String scope;
 
-    public String getAccessToken() {
-        return accessToken;
-    }
+  public String getAccessToken() {
+    return accessToken;
+  }
 
-    public String getTokenType() {
-        return tokenType;
-    }
+  public String getTokenType() {
+    return tokenType;
+  }
 
-    public String getScope() {
-        return scope;
-    }
+  public String getScope() {
+    return scope;
+  }
 
-    public String getRefreshToken() {
-        return refreshToken;
-    }
+  public String getRefreshToken() {
+    return refreshToken;
+  }
 }

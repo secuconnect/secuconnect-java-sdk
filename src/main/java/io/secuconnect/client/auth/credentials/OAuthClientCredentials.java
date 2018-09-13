@@ -1,17 +1,18 @@
 package io.secuconnect.client.auth.credentials;
 
 public class OAuthClientCredentials extends AuthenticationCredentials {
-    public OAuthClientCredentials(String clientId, String clientSecret) {
-        super(clientId, clientSecret);
 
-        this.grantType = "client_credentials";
-    }
+  public OAuthClientCredentials(String clientId, String clientSecret) {
+    super(clientId, clientSecret);
 
-    @Override
-    public String getUniqueKey() {
-        String textualKey = grantType + clientId;
-        String textualKeyHash = getTextualKeyHash(textualKey);
+    this.grantType = "client_credentials";
+  }
 
-        return textualKeyHash;
-    }
+  @Override
+  public String getUniqueKey() {
+    String textualKey = grantType + clientId;
+    String textualKeyHash = getTextualKeyHash(textualKey);
+
+    return textualKeyHash;
+  }
 }

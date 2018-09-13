@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CommonObjectsProvider {
     public static PaymentCustomersDTO prepareCustomer() {
-        PaymentCustomersDTOContact contact = new PaymentCustomersDTOContact();
+        Contact contact = new Contact();
         contact.setForename("John");
         contact.setSurname("Doe");
         contact.setCompanyname("Example Inc.");

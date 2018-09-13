@@ -5,41 +5,35 @@
   <artifactId>secuconnect-java-sdk</artifactId>
   <packaging>jar</packaging>
   <name>secuconnect-java-sdk</name>
-  <version>1.0.0</version>
-  <url>https://github.com/swagger-api/swagger-codegen</url>
+  <version>1.1.0</version>
+  <url>https://github.com/secuconnect/secuconnect-java-sdk</url>
   <description>Secuconnect Java</description>
   <scm>
-    <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
-    <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
-    <url>https://github.com/swagger-api/swagger-codegen</url>
+    <connection>scm:git:git@github.com:secuconnect/secuconnect-java-sdk.git</connection>
+    <developerConnection>scm:git:git@github.com:secuconnect/secuconnect-java-sdk.git</developerConnection>
+    <url>https://github.com/secuconnect/secuconnect-java-sdk</url>
   </scm>
-  <prerequisites>
-    <maven>2.2.0</maven>
-  </prerequisites>
-
   <licenses>
     <license>
-      <name>Unlicense</name>
-      <url>http://unlicense.org</url>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
-
   <developers>
     <developer>
-      <name>Swagger</name>
-      <email>apiteam@swagger.io</email>
-      <organization>Swagger</organization>
-      <organizationUrl>http://swagger.io</organizationUrl>
+      <name>secuconnect</name>
+      <email>info@secuconnect.com</email>
+      <organization>secuconnect KG</organization>
+      <organizationUrl>http://secuconnect.com</organizationUrl>
     </developer>
   </developers>
-
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.12</version>
+        <version>2.22.0</version>
         <configuration>
           <systemProperties>
             <property>
@@ -53,7 +47,9 @@
         </configuration>
       </plugin>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.1.1</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -66,28 +62,23 @@
           </execution>
         </executions>
       </plugin>
-
       <!-- attach test jar -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.2</version>
+        <version>3.1.0</version>
         <executions>
           <execution>
             <goals>
-              <goal>jar</goal>
               <goal>test-jar</goal>
             </goals>
           </execution>
         </executions>
-        <configuration>
-        </configuration>
       </plugin>
-
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.10</version>
+        <version>3.0.0</version>
         <executions>
           <execution>
             <id>add_sources</id>
@@ -118,7 +109,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.4</version>
+        <version>3.0.1</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -127,11 +118,14 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <additionalOptions>-html5</additionalOptions>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-        <version>2.2.1</version>
+        <version>3.0.1</version>
         <executions>
           <execution>
             <id>attach-sources</id>
@@ -143,22 +137,28 @@
       </plugin>
     </plugins>
   </build>
-
   <profiles>
     <profile>
-      <id>sign-artifacts</id>
+      <id>onejar</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.5</version>
+            <groupId>com.jolira</groupId>
+            <artifactId>onejar-maven-plugin</artifactId>
+            <version>1.4.4</version>
             <executions>
               <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
+                <phase>package</phase>
+                <configuration>
+                  <mainClass>io.secuconnect.client.ApiClient</mainClass>
+                  <attachToBuild>true</attachToBuild>
+                  <filename>${project.build.finalName}-onejar.${project.packaging}</filename>
+                </configuration>
                 <goals>
-                  <goal>sign</goal>
+                  <goal>one-jar</goal>
                 </goals>
               </execution>
             </executions>
@@ -166,8 +166,75 @@
         </plugins>
       </build>
     </profile>
+    <profile>
+      <id>shade</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.1.1</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>shade</goal>
+                </goals>
+                <configuration>
+                  <shadedArtifactAttached>true</shadedArtifactAttached>
+                  <transformers>
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                      <mainClass>io.secuconnect.client.ApiClient</mainClass>
+                    </transformer>
+                  </transformers>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>checksums</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>net.nicoulaj.maven.plugins</groupId>
+            <artifactId>checksum-maven-plugin</artifactId>
+            <version>1.7</version>
+            <executions>
+              <execution>
+                <id>checksum-maven-plugin-files</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>files</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <fileSets>
+                <fileSet>
+                  <directory>${project.build.directory}</directory>
+                  <includes>
+                    <include>*.jar</include>
+                  </includes>
+                </fileSet>
+              </fileSets>
+              <algorithms>
+                <algorithm>SHA-1</algorithm>
+                <algorithm>MD5</algorithm>
+              </algorithms>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
-
   <dependencies>
     <dependency>
       <groupId>io.swagger</groupId>
@@ -197,19 +264,28 @@
     <dependency>
       <groupId>javax.cache</groupId>
       <artifactId>cache-api</artifactId>
-      <version>	1.1.0</version>
+      <version>${cache-api-version}</version>
     </dependency>
     <dependency>
       <groupId>com.hazelcast</groupId>
       <artifactId>hazelcast</artifactId>
-      <version>	3.9.3</version>
+      <version>${hazelcast-version}</version>
     </dependency>
     <dependency>
       <groupId>javax.xml.bind</groupId>
       <artifactId>jaxb-api</artifactId>
-      <version>2.3.0</version>
+      <version>${jaxb-api-version}</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-stomp</artifactId>
+      <version>${activemq-stomp-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>${javax.annotation-api-version}</version>
+    </dependency>
     <!-- test dependencies -->
     <dependency>
       <groupId>junit</groupId>
@@ -222,11 +298,15 @@
     <java.version>1.7</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <swagger-core-version>1.5.15</swagger-core-version>
+    <swagger-core-version>1.5.21</swagger-core-version>
     <okhttp-version>2.7.5</okhttp-version>
-    <gson-version>2.8.1</gson-version>
+    <gson-version>2.8.5</gson-version>
     <jodatime-version>2.9.9</jodatime-version>
-    <maven-plugin-version>1.0.0</maven-plugin-version>
+    <cache-api-version>1.1.0</cache-api-version>
+    <hazelcast-version>3.10.4</hazelcast-version>
+    <jaxb-api-version>2.3.0</jaxb-api-version>
+    <javax.annotation-api-version>1.3.1</javax.annotation-api-version>
+    <activemq-stomp-version>5.15.4</activemq-stomp-version>
     <junit-version>4.12</junit-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>

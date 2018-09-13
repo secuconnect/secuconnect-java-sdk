@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sepaMandateId** | **String** | Sepa mandate id |  [optional]
-**iban** | **String** | IBAN |  [optional]
-**bic** | **String** | BIC |  [optional]
-**type** | **String** | Type |  [optional]
-**status** | **String** | Status |  [optional]
-**identification** | **String** | Identification |  [optional]
+**sepaMandateId** | **String** | Sepa mandate id | 
+**iban** | **String** | IBAN | 
+**bic** | **String** | BIC | 
+**type** | **String** | Type | 
+**status** | **String** | Status | 
+**identification** | **String** | Identification | 
 
 
 

@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**iban** | **String** | IBAN |  [optional]
-**bic** | **String** | BIC |  [optional]
-**accountnumber** | **String** | Bank account number |  [optional]
-**bankcode** | **String** | The name of the bank institute |  [optional]
-**accountOwner** | **String** | The owner of bank account |  [optional]
+**iban** | **String** | IBAN | 
+**bic** | **String** | BIC | 
+**accountnumber** | **String** | Bank account number | 
+**bankcode** | **String** | The name of the bank institute | 
+**accountOwner** | **String** | The owner of bank account | 
 
 
 

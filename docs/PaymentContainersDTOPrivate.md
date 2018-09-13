@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**owner** | **String** | PaymentContainersDTO |  [optional]
-**iban** | **String** | PaymentContainersDTO |  [optional]
-**bic** | **String** | PaymentContainersDTO |  [optional]
+**owner** | **String** | PaymentContainersDTO | 
+**iban** | **String** | PaymentContainersDTO | 
+**bic** | **String** | PaymentContainersDTO | 
 
 
 

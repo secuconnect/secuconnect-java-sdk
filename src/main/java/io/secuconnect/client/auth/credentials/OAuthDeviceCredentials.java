@@ -2,31 +2,22 @@ package io.secuconnect.client.auth.credentials;
 
 import com.google.gson.annotations.SerializedName;
 
-public class OAuthDeviceCredentials extends AuthenticationCredentials {
-    @SerializedName("uuid")
-    private String uuid;
+public class OAuthDeviceCredentials extends OAuthDeviceBasicCredentials {
 
-    public OAuthDeviceCredentials(String clientId, String clientSecret, String uuid) {
-        super(clientId, clientSecret);
+  @SerializedName("code")
+  private final String code;
 
-        this.grantType = "device";
-        this.uuid = uuid;
-    }
+  public OAuthDeviceCredentials(String clientId, String clientSecret, String code) {
+    super(clientId, clientSecret);
 
-    @Override
-    public String getUniqueKey() {
-        String textualKey = grantType + clientId + uuid;
-        String textualKeyHash = getTextualKeyHash(textualKey);
+    this.code = code;
+  }
 
-        return textualKeyHash;
-    }
+  @Override
+  public String getUniqueKey() {
+    String textualKey = grantType + clientId;
+    String textualKeyHash = getTextualKeyHash(textualKey);
 
-    public String getUuid() {
-        return uuid;
-    }
-
-    private OAuthDeviceCredentials setUuid(String uuid) {
-        this.uuid = uuid;
-        return this;
-    }
+    return textualKeyHash;
+  }
 }

@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accountowner** | **String** | The bank account owner |  [optional]
-**iban** | **String** | IBAN |  [optional]
-**bic** | **String** | BIC |  [optional]
+**accountowner** | **String** | The bank account owner | 
+**iban** | **String** | IBAN | 
+**bic** | **String** | BIC | 
 
 
 

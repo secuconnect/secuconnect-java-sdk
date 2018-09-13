@@ -4,14 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Integer** | Total amount of payment in cents (or the smallest cash unit of the relevant currency) |  [optional]
-**cleared** | **String** | Clearing status |  [optional]
-**status** | **Integer** | Transaction status ID |  [optional]
-**statusText** | **String** | Transaction status description |  [optional]
-**statusSimple** | **Integer** | Transaction simple-status ID |  [optional]
-**statusTextSimple** | **String** | Transaction simple-status description |  [optional]
-**description** | **String** | Transaction description |  [optional]
-**descriptionRaw** | **String** | Transaction description (plain text) |  [optional]
+**amount** | **Integer** | Total amount of payment in cents (or the smallest cash unit of the relevant currency) | 
+**cleared** | **String** | Clearing status | 
+**status** | **Integer** | Transaction status ID | 
+**statusText** | **String** | Transaction status description | 
+**statusSimple** | **Integer** | Transaction simple-status ID | 
+**statusTextSimple** | **String** | Transaction simple-status description | 
+**description** | **String** | Transaction description | 
+**descriptionRaw** | **String** | Transaction description (plain text) | 
 
 
 

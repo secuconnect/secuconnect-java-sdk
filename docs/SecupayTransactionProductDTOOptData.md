@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hasAcceptedDisclaimer** | **String** | Customer accepted disclaimer |  [optional]
-**language** | **String** | Client language |  [optional]
+**hasAcceptedDisclaimer** | **String** | Customer accepted disclaimer | 
+**language** | **String** | Client language | 
 
 
 

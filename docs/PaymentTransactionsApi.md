@@ -1,13 +1,13 @@
 # PaymentTransactionsApi
 
-All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2/*
+All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentTransactionsGet**](PaymentTransactionsApi.md#paymentTransactionsGet) | **GET** Payment/Transactions | GET Payment/Transactions
-[**paymentTransactionsGetById**](PaymentTransactionsApi.md#paymentTransactionsGetById) | **GET** Payment/Transactions/{id} | GET Payment/Transactions/{id}
-[**paymentTransactionsIdCancelPost**](PaymentTransactionsApi.md#paymentTransactionsIdCancelPost) | **POST** Payment/Transactions/{id}/cancel | POST Payment/Transactions/{id}/cancel
-[**paymentTransactionsIdShippingUrlGet**](PaymentTransactionsApi.md#paymentTransactionsIdShippingUrlGet) | **GET** Payment/Transactions/{id}/ShippingUrl | GET Payment/Transactions/{id}/ShippingUrl
+[**paymentTransactionsGet**](PaymentTransactionsApi.md#paymentTransactionsGet) | **GET** /Payment/Transactions | GET Payment/Transactions
+[**paymentTransactionsGetById**](PaymentTransactionsApi.md#paymentTransactionsGetById) | **GET** /Payment/Transactions/{paymentTransactionId} | GET Payment/Transactions/{paymentTransactionId}
+[**paymentTransactionsIdCancelPost**](PaymentTransactionsApi.md#paymentTransactionsIdCancelPost) | **POST** /Payment/Transactions/{paymentTransactionId}/cancel | POST Payment/Transactions/{paymentTransactionId}/cancel
+[**paymentTransactionsIdShippingUrlGet**](PaymentTransactionsApi.md#paymentTransactionsIdShippingUrlGet) | **GET** /Payment/Transactions/{paymentTransactionId}/ShippingUrl | GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
 
 
 <a name="paymentTransactionsGet"></a>
@@ -37,7 +37,7 @@ PaymentTransactionsApi apiInstance = new PaymentTransactionsApi();
 Integer count = 56; // Integer | The number of items to return.
 Integer offset = 56; // Integer | The position within the whole result set to start returning items (First element is at 0).
 String fields = "fields_example"; // String | List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-String q = "q_example"; // String | A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \"*\" for any number of characters  *                      - wildcard \"?\" for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by 'AND', 'OR', 'NOT' operators and parenthesis '(', ')' for grouping.  *                  Property names can be nested like \"prop1.prop2\".  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *
+String q = "q_example"; // String | A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \"*\" for any number of characters  *                      - wildcard \"?\" for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by 'AND', 'OR', 'NOT' operators and parenthesis '(', ')' for grouping.  *                  Property names can be nested like \"prop1.prop2\".  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
 String sort = "sort_example"; // String | String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending 'asc', or descending 'dsc' order.
 try {
     PaymentTransactionsList result = apiInstance.paymentTransactionsGet(count, offset, fields, q, sort);
@@ -52,11 +52,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **count** | **Integer**| The number of items to return. | [optional]
- **offset** | **Integer**| The position within the whole result set to start returning items (First element is at 0). | [optional]
- **fields** | **String**| List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 | [optional]
- **q** | **String**| A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   | [optional]
- **sort** | **String**| String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order. | [optional]
+ **count** | **Integer**| The number of items to return. |
+ **offset** | **Integer**| The position within the whole result set to start returning items (First element is at 0). |
+ **fields** | **String**| List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 |
+ **q** | **String**| A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   |
+ **sort** | **String**| String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order. |
 
 ### Return type
 
@@ -73,9 +73,9 @@ Name | Type | Description  | Notes
 
 <a name="paymentTransactionsGetById"></a>
 # **paymentTransactionsGetById**
-> PaymentTransactionsProductModel paymentTransactionsGetById(id)
+> PaymentTransactionsProductModel paymentTransactionsGetById(paymentTransactionId)
 
-GET Payment/Transactions/{id}
+GET Payment/Transactions/{paymentTransactionId}
 
 Get all payment transactions
 
@@ -95,9 +95,9 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentTransactionsApi apiInstance = new PaymentTransactionsApi();
-String id = "id_example"; // String | Search one by provided id
+String paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 try {
-    PaymentTransactionsProductModel result = apiInstance.paymentTransactionsGetById(id);
+    PaymentTransactionsProductModel result = apiInstance.paymentTransactionsGetById(paymentTransactionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentTransactionsApi#paymentTransactionsGetById");
@@ -109,7 +109,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Search one by provided id |
+ **paymentTransactionId** | **String**| Payment transaction id | [required]
 
 ### Return type
 
@@ -126,9 +126,9 @@ Name | Type | Description  | Notes
 
 <a name="paymentTransactionsIdCancelPost"></a>
 # **paymentTransactionsIdCancelPost**
-> List&lt;PaymentTransactionsCancelList&gt; paymentTransactionsIdCancelPost(id)
+> List&lt;PaymentTransactionsCancelList&gt; paymentTransactionsIdCancelPost(paymentTransactionId)
 
-POST Payment/Transactions/{id}/cancel
+POST Payment/Transactions/{paymentTransactionId}/cancel
 
 Cancel a payment transaction
 
@@ -148,9 +148,9 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentTransactionsApi apiInstance = new PaymentTransactionsApi();
-String id = "id_example"; // String | Transaction identifier
+String paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 try {
-    List<PaymentTransactionsCancelList> result = apiInstance.paymentTransactionsIdCancelPost(id);
+    List<PaymentTransactionsCancelList> result = apiInstance.paymentTransactionsIdCancelPost(paymentTransactionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentTransactionsApi#paymentTransactionsIdCancelPost");
@@ -162,7 +162,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Transaction identifier |
+ **paymentTransactionId** | **String**| Payment transaction id | [required]
 
 ### Return type
 
@@ -179,9 +179,9 @@ Name | Type | Description  | Notes
 
 <a name="paymentTransactionsIdShippingUrlGet"></a>
 # **paymentTransactionsIdShippingUrlGet**
-> PaymentTransactionsShippingUrl paymentTransactionsIdShippingUrlGet(id)
+> PaymentTransactionsShippingUrl paymentTransactionsIdShippingUrlGet(paymentTransactionId)
 
-GET Payment/Transactions/{id}/ShippingUrl
+GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
 
 Get the url where you can fill the shipping information
 
@@ -201,9 +201,9 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentTransactionsApi apiInstance = new PaymentTransactionsApi();
-String id = "id_example"; // String | Transaction identifier
+String paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 try {
-    PaymentTransactionsShippingUrl result = apiInstance.paymentTransactionsIdShippingUrlGet(id);
+    PaymentTransactionsShippingUrl result = apiInstance.paymentTransactionsIdShippingUrlGet(paymentTransactionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentTransactionsApi#paymentTransactionsIdShippingUrlGet");
@@ -215,7 +215,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| Transaction identifier |
+ **paymentTransactionId** | **String**| Payment transaction id | [required]
 
 ### Return type
 

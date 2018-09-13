@@ -1,0 +1,167 @@
+package io.secuconnect.client.model;
+
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.util.Objects;
+
+/**
+ * LoyaltyMerchantcardsDTO
+ */
+public class LoyaltyMerchantcardsDTO {
+  @SerializedName("merchant")
+  private String merchant = null;
+
+  @SerializedName("card")
+  private String card = null;
+
+  @SerializedName("payment_container")
+  private String paymentContainer = null;
+
+  @SerializedName("created_by_merchant")
+  private Boolean createdByMerchant = null;
+
+  @SerializedName("used_by_merchant")
+  private Boolean usedByMerchant = null;
+
+  public LoyaltyMerchantcardsDTO merchant(String merchant) {
+    this.merchant = merchant;
+    return this;
+  }
+
+   /**
+   * General merchant id
+   * @return merchant
+  **/
+  @ApiModelProperty(value = "General merchant id")
+  public String getMerchant() {
+    return merchant;
+  }
+
+  public void setMerchant(String merchant) {
+    this.merchant = merchant;
+  }
+
+  public LoyaltyMerchantcardsDTO card(String card) {
+    this.card = card;
+    return this;
+  }
+
+   /**
+   * Loyalty card id
+   * @return card
+  **/
+  @ApiModelProperty(value = "Loyalty card id")
+  public String getCard() {
+    return card;
+  }
+
+  public void setCard(String card) {
+    this.card = card;
+  }
+
+  public LoyaltyMerchantcardsDTO paymentContainer(String paymentContainer) {
+    this.paymentContainer = paymentContainer;
+    return this;
+  }
+
+   /**
+   * Loyalty payment container id
+   * @return paymentContainer
+  **/
+  @ApiModelProperty(value = "Loyalty payment container id")
+  public String getPaymentContainer() {
+    return paymentContainer;
+  }
+
+  public void setPaymentContainer(String paymentContainer) {
+    this.paymentContainer = paymentContainer;
+  }
+
+  public LoyaltyMerchantcardsDTO createdByMerchant(Boolean createdByMerchant) {
+    this.createdByMerchant = createdByMerchant;
+    return this;
+  }
+
+   /**
+   * Created by general merchant or not
+   * @return createdByMerchant
+  **/
+  @ApiModelProperty(value = "Created by general merchant or not")
+  public Boolean getCreatedByMerchant() {
+    return createdByMerchant;
+  }
+
+  public void setCreatedByMerchant(Boolean createdByMerchant) {
+    this.createdByMerchant = createdByMerchant;
+  }
+
+  public LoyaltyMerchantcardsDTO usedByMerchant(Boolean usedByMerchant) {
+    this.usedByMerchant = usedByMerchant;
+    return this;
+  }
+
+   /**
+   * Used by general merchant or not
+   * @return usedByMerchant
+  **/
+  @ApiModelProperty(value = "Used by general merchant or not")
+  public Boolean getUsedByMerchant() {
+    return usedByMerchant;
+  }
+
+  public void setUsedByMerchant(Boolean usedByMerchant) {
+    this.usedByMerchant = usedByMerchant;
+  }
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    LoyaltyMerchantcardsDTO loyaltyMerchantcardsDTO = (LoyaltyMerchantcardsDTO) o;
+    return Objects.equals(this.merchant, loyaltyMerchantcardsDTO.merchant) &&
+        Objects.equals(this.card, loyaltyMerchantcardsDTO.card) &&
+        Objects.equals(this.paymentContainer, loyaltyMerchantcardsDTO.paymentContainer) &&
+        Objects.equals(this.createdByMerchant, loyaltyMerchantcardsDTO.createdByMerchant) &&
+        Objects.equals(this.usedByMerchant, loyaltyMerchantcardsDTO.usedByMerchant);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(merchant, card, paymentContainer, createdByMerchant, usedByMerchant);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class LoyaltyMerchantcardsDTO {\n");
+    
+    sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
+    sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    paymentContainer: ").append(toIndentedString(paymentContainer)).append("\n");
+    sb.append("    createdByMerchant: ").append(toIndentedString(createdByMerchant)).append("\n");
+    sb.append("    usedByMerchant: ").append(toIndentedString(usedByMerchant)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+
