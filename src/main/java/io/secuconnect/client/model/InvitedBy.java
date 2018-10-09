@@ -32,7 +32,6 @@ public class InvitedBy {
    * Object of invited by
    * @return object
   **/
-  @ApiModelProperty(value = "Object of invited by")
   public String getObject() {
     return object;
   }
@@ -50,7 +49,6 @@ public class InvitedBy {
    * Id of invited by
    * @return id
   **/
-  @ApiModelProperty(value = "Id of invited by")
   public String getId() {
     return id;
   }
@@ -68,7 +66,6 @@ public class InvitedBy {
    * Invited
    * @return invited
   **/
-  @ApiModelProperty(value = "Invited")
   public String getInvited() {
     return invited;
   }

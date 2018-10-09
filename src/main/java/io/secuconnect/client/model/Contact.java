@@ -9,7 +9,6 @@ import io.secuconnect.client.model.Address;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.joda.time.DateTime;
 import java.util.Objects;
 
 /**
@@ -47,7 +46,7 @@ public class Contact {
   private String fax = null;
 
   @SerializedName("dob")
-  private DateTime dob = null;
+  private String dob = null;
 
   @SerializedName("picture")
   private String picture = null;
@@ -73,7 +72,6 @@ public class Contact {
    * Forename
    * @return forename
   **/
-  @ApiModelProperty(value = "Forename")
   public String getForename() {
     return forename;
   }
@@ -91,7 +89,6 @@ public class Contact {
    * Surname
    * @return surname
   **/
-  @ApiModelProperty(value = "Surname")
   public String getSurname() {
     return surname;
   }
@@ -109,7 +106,6 @@ public class Contact {
    * Company name
    * @return companyname
   **/
-  @ApiModelProperty(value = "Company name")
   public String getCompanyname() {
     return companyname;
   }
@@ -127,7 +123,6 @@ public class Contact {
    * Salutation
    * @return salutation
   **/
-  @ApiModelProperty(value = "Salutation")
   public String getSalutation() {
     return salutation;
   }
@@ -145,7 +140,6 @@ public class Contact {
    * Gender
    * @return gender
   **/
-  @ApiModelProperty(value = "Gender")
   public String getGender() {
     return gender;
   }
@@ -163,7 +157,6 @@ public class Contact {
    * Title
    * @return title
   **/
-  @ApiModelProperty(value = "Title")
   public String getTitle() {
     return title;
   }
@@ -181,7 +174,6 @@ public class Contact {
    * Email
    * @return email
   **/
-  @ApiModelProperty(value = "Email")
   public String getEmail() {
     return email;
   }
@@ -199,7 +191,6 @@ public class Contact {
    * Phone
    * @return phone
   **/
-  @ApiModelProperty(value = "Phone")
   public String getPhone() {
     return phone;
   }
@@ -217,7 +208,6 @@ public class Contact {
    * Mobile
    * @return mobile
   **/
-  @ApiModelProperty(value = "Mobile")
   public String getMobile() {
     return mobile;
   }
@@ -235,7 +225,6 @@ public class Contact {
    * Fax
    * @return fax
   **/
-  @ApiModelProperty(value = "Fax")
   public String getFax() {
     return fax;
   }
@@ -244,7 +233,7 @@ public class Contact {
     this.fax = fax;
   }
 
-  public Contact dob(DateTime dob) {
+  public Contact dob(String dob) {
     this.dob = dob;
     return this;
   }
@@ -253,12 +242,11 @@ public class Contact {
    * Date of birth
    * @return dob
   **/
-  @ApiModelProperty(value = "Date of birth")
-  public DateTime getDob() {
+  public String getDob() {
     return dob;
   }
 
-  public void setDob(DateTime dob) {
+  public void setDob(String dob) {
     this.dob = dob;
   }
 
@@ -271,7 +259,6 @@ public class Contact {
    * The document id of an user picture (To upload the picture use our document service.)
    * @return picture
   **/
-  @ApiModelProperty(value = "The document id of an user picture (To upload the picture use our document service.)")
   public String getPicture() {
     return picture;
   }
@@ -289,7 +276,6 @@ public class Contact {
    * URL to website
    * @return urlWebsite
   **/
-  @ApiModelProperty(value = "URL to website")
   public String getUrlWebsite() {
     return urlWebsite;
   }
@@ -307,7 +293,6 @@ public class Contact {
    * Birthplace
    * @return birthplace
   **/
-  @ApiModelProperty(value = "Birthplace")
   public String getBirthplace() {
     return birthplace;
   }
@@ -325,7 +310,6 @@ public class Contact {
    * Nationality
    * @return nationality
   **/
-  @ApiModelProperty(value = "Nationality")
   public String getNationality() {
     return nationality;
   }
@@ -343,7 +327,6 @@ public class Contact {
    * Address
    * @return address
   **/
-  @ApiModelProperty(value = "Address")
   public Address getAddress() {
     return address;
   }

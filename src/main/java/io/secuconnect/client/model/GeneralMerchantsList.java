@@ -32,7 +32,6 @@ public class GeneralMerchantsList {
    * Number of existing general merchants
    * @return count
   **/
-  @ApiModelProperty(value = "Number of existing general merchants")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class GeneralMerchantsList {
    * GET General/Merchants
    * @return data
   **/
-  @ApiModelProperty(value = "GET General/Merchants")
   public List<GeneralMerchantsProductModel> getData() {
     return data;
   }

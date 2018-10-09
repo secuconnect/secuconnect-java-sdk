@@ -38,7 +38,6 @@ public class ItemGroup {
    * Object of item group
    * @return object
   **/
-  @ApiModelProperty(value = "Object of item group")
   public String getObject() {
     return object;
   }
@@ -56,7 +55,6 @@ public class ItemGroup {
    * Id of item group
    * @return id
   **/
-  @ApiModelProperty(value = "Id of item group")
   public String getId() {
     return id;
   }
@@ -74,7 +72,6 @@ public class ItemGroup {
    * Description
    * @return description
   **/
-  @ApiModelProperty(value = "Description")
   public String getDescription() {
     return description;
   }
@@ -92,7 +89,6 @@ public class ItemGroup {
    * Logo
    * @return logo
   **/
-  @ApiModelProperty(value = "Logo")
   public String getLogo() {
     return logo;
   }
@@ -110,7 +106,6 @@ public class ItemGroup {
    * Enabled
    * @return enabled
   **/
-  @ApiModelProperty(value = "Enabled")
   public Boolean getEnabled() {
     return enabled;
   }

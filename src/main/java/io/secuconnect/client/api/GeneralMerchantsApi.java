@@ -303,19 +303,19 @@ public class GeneralMerchantsApi {
     }
     /**
      * Build call for updateMerchant
-     * @param id General merchant id (required)
+     * @param generalMerchantId General merchant id (required)
      * @param body General merchant properties (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateMerchantCall(String id, GeneralMerchantsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateMerchantCall(String generalMerchantId, GeneralMerchantsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
-        String localVarPath = "/General/Merchants/{id}"
-            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+        String localVarPath = "/General/Merchants/{generalMerchantId}"
+            .replaceAll("\\{" + "generalMerchantId" + "\\}", apiClient.escapeString(generalMerchantId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -352,11 +352,11 @@ public class GeneralMerchantsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateMerchantValidateBeforeCall(String id, GeneralMerchantsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateMerchantValidateBeforeCall(String generalMerchantId, GeneralMerchantsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling updateMerchant(Async)");
+        // verify the required parameter 'generalMerchantId' is set
+        if (generalMerchantId == null) {
+            throw new ApiException("Missing the required parameter 'generalMerchantId' when calling updateMerchant(Async)");
         }
         
         // verify the required parameter 'body' is set
@@ -365,47 +365,47 @@ public class GeneralMerchantsApi {
         }
         
         
-        com.squareup.okhttp.Call call = updateMerchantCall(id, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateMerchantCall(generalMerchantId, body, progressListener, progressRequestListener);
         return call;
     }
 
     /**
-     * PUT General/Merchants/{id}
+     * PUT General/Merchants/{generalMerchantId}
      * Update general merchant
-     * @param id General merchant id (required)
+     * @param generalMerchantId General merchant id (required)
      * @param body General merchant properties (required)
      * @return GeneralMerchantsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GeneralMerchantsProductModel updateMerchant(String id, GeneralMerchantsDTO body) throws ApiException {
-        ApiResponse<GeneralMerchantsProductModel> resp = updateMerchantWithHttpInfo(id, body);
+    public GeneralMerchantsProductModel updateMerchant(String generalMerchantId, GeneralMerchantsDTO body) throws ApiException {
+        ApiResponse<GeneralMerchantsProductModel> resp = updateMerchantWithHttpInfo(generalMerchantId, body);
         return resp.getData();
     }
 
     /**
-     * PUT General/Merchants/{id}
+     * PUT General/Merchants/{generalMerchantId}
      * Update general merchant
-     * @param id General merchant id (required)
+     * @param generalMerchantId General merchant id (required)
      * @param body General merchant properties (required)
      * @return ApiResponse&lt;GeneralMerchantsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GeneralMerchantsProductModel> updateMerchantWithHttpInfo(String id, GeneralMerchantsDTO body) throws ApiException {
-        com.squareup.okhttp.Call call = updateMerchantValidateBeforeCall(id, body, null, null);
+    public ApiResponse<GeneralMerchantsProductModel> updateMerchantWithHttpInfo(String generalMerchantId, GeneralMerchantsDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = updateMerchantValidateBeforeCall(generalMerchantId, body, null, null);
         Type localVarReturnType = new TypeToken<GeneralMerchantsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * PUT General/Merchants/{id} (asynchronously)
+     * PUT General/Merchants/{generalMerchantId} (asynchronously)
      * Update general merchant
-     * @param id General merchant id (required)
+     * @param generalMerchantId General merchant id (required)
      * @param body General merchant properties (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateMerchantAsync(String id, GeneralMerchantsDTO body, final ApiCallback<GeneralMerchantsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateMerchantAsync(String generalMerchantId, GeneralMerchantsDTO body, final ApiCallback<GeneralMerchantsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -426,7 +426,7 @@ public class GeneralMerchantsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateMerchantValidateBeforeCall(id, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateMerchantValidateBeforeCall(generalMerchantId, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GeneralMerchantsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

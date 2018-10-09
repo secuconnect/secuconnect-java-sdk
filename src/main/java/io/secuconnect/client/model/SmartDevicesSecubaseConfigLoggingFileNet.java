@@ -39,7 +39,6 @@ public class SmartDevicesSecubaseConfigLoggingFileNet {
    * File
    * @return file
   **/
-  @ApiModelProperty(value = "File")
   public List<String> getFile() {
     return file;
   }
@@ -65,7 +64,6 @@ public class SmartDevicesSecubaseConfigLoggingFileNet {
    * Net
    * @return net
   **/
-  @ApiModelProperty(value = "Net")
   public List<String> getNet() {
     return net;
   }

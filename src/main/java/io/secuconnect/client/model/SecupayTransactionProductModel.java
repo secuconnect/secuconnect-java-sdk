@@ -88,7 +88,6 @@ public class SecupayTransactionProductModel {
    * Product name
    * @return object
   **/
-  @ApiModelProperty(value = "Product name")
   public String getObject() {
     return object;
   }
@@ -106,7 +105,6 @@ public class SecupayTransactionProductModel {
    * ID of instance
    * @return id
   **/
-  @ApiModelProperty(value = "ID of instance")
   public String getId() {
     return id;
   }
@@ -124,7 +122,6 @@ public class SecupayTransactionProductModel {
    * Transaction identifier
    * @return transId
   **/
-  @ApiModelProperty(value = "Transaction identifier")
   public Integer getTransId() {
     return transId;
   }
@@ -142,7 +139,6 @@ public class SecupayTransactionProductModel {
    * Transaction status
    * @return status
   **/
-  @ApiModelProperty(value = "Transaction status")
   public String getStatus() {
     return status;
   }
@@ -160,7 +156,6 @@ public class SecupayTransactionProductModel {
    * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
    * @return amount
   **/
-  @ApiModelProperty(value = "Total amount of payment in cents (or the smallest cash unit of the relevant currency)")
   public Integer getAmount() {
     return amount;
   }
@@ -178,7 +173,6 @@ public class SecupayTransactionProductModel {
    * ISO 4217 code of currency, eg EUR for Euro.
    * @return currency
   **/
-  @ApiModelProperty(value = "ISO 4217 code of currency, eg EUR for Euro.")
   public String getCurrency() {
     return currency;
   }
@@ -196,7 +190,6 @@ public class SecupayTransactionProductModel {
    * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
    * @return purpose
   **/
-  @ApiModelProperty(value = "The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.")
   public String getPurpose() {
     return purpose;
   }
@@ -214,7 +207,6 @@ public class SecupayTransactionProductModel {
    * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
    * @return orderId
   **/
-  @ApiModelProperty(value = "Specifying an order number. Depending on the contract setting, this must be unique for each payment.")
   public String getOrderId() {
     return orderId;
   }
@@ -240,7 +232,6 @@ public class SecupayTransactionProductModel {
    * A list of items that are being purchased.
    * @return basket
   **/
-  @ApiModelProperty(value = "A list of items that are being purchased.")
   public List<SecupayBasketItem> getBasket() {
     return basket;
   }
@@ -258,7 +249,6 @@ public class SecupayTransactionProductModel {
    * Transaction status (number)
    * @return transactionStatus
   **/
-  @ApiModelProperty(value = "Transaction status (number)")
   public String getTransactionStatus() {
     return transactionStatus;
   }
@@ -276,7 +266,6 @@ public class SecupayTransactionProductModel {
    * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
    * @return accrual
   **/
-  @ApiModelProperty(value = "Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.")
   public Boolean getAccrual() {
     return accrual;
   }
@@ -294,7 +283,6 @@ public class SecupayTransactionProductModel {
    * Specifies whether a pre-authorization (\&quot;authorization\&quot;) or instant payment ( \&quot;sale\&quot;) is to be performed. Standard value here is \&quot;sale\&quot;. The collection of the pre-authorized payment is made with the \&quot;capture\&quot; command.
    * @return paymentAction
   **/
-  @ApiModelProperty(value = "Specifies whether a pre-authorization (\"authorization\") or instant payment ( \"sale\") is to be performed. Standard value here is \"sale\". The collection of the pre-authorized payment is made with the \"capture\" command.")
   public String getPaymentAction() {
     return paymentAction;
   }
@@ -312,7 +300,6 @@ public class SecupayTransactionProductModel {
    * The purpose the payer needs to use for his transfer
    * @return transferPurpose
   **/
-  @ApiModelProperty(value = "The purpose the payer needs to use for his transfer")
   public String getTransferPurpose() {
     return transferPurpose;
   }
@@ -330,7 +317,6 @@ public class SecupayTransactionProductModel {
    * Get transferAccount
    * @return transferAccount
   **/
-  @ApiModelProperty(value = "")
   public SecupayTransactionProductModelTransferAccount getTransferAccount() {
     return transferAccount;
   }
@@ -348,7 +334,6 @@ public class SecupayTransactionProductModel {
    * The customer object
    * @return customer
   **/
-  @ApiModelProperty(value = "The customer object")
   public PaymentCustomersProductModel getCustomer() {
     return customer;
   }
@@ -366,7 +351,6 @@ public class SecupayTransactionProductModel {
    * Get usedPaymentInstrument
    * @return usedPaymentInstrument
   **/
-  @ApiModelProperty(value = "")
   public SecupayTransactionProductModelUsedPaymentInstrument getUsedPaymentInstrument() {
     return usedPaymentInstrument;
   }
@@ -384,7 +368,6 @@ public class SecupayTransactionProductModel {
    * Get redirectUrl
    * @return redirectUrl
   **/
-  @ApiModelProperty(value = "")
   public SecupayTransactionProductModelRedirectUrl getRedirectUrl() {
     return redirectUrl;
   }
@@ -402,7 +385,6 @@ public class SecupayTransactionProductModel {
    * The url of the payment checkout iframe
    * @return iframeUrl
   **/
-  @ApiModelProperty(value = "The url of the payment checkout iframe")
   public String getIframeUrl() {
     return iframeUrl;
   }
@@ -420,7 +402,6 @@ public class SecupayTransactionProductModel {
    * The container object
    * @return container
   **/
-  @ApiModelProperty(value = "The container object")
   public PaymentContainersProductModel getContainer() {
     return container;
   }

@@ -65,7 +65,6 @@ public class PaymentContractsDTO {
    * Contracts Merchant
    * @return merchant
   **/
-  @ApiModelProperty(value = "Contracts Merchant")
   public String getMerchant() {
     return merchant;
   }
@@ -83,7 +82,6 @@ public class PaymentContractsDTO {
    * The internal user id
    * @return internalReference
   **/
-  @ApiModelProperty(value = "The internal user id")
   public String getInternalReference() {
     return internalReference;
   }
@@ -101,7 +99,6 @@ public class PaymentContractsDTO {
    * Contracts id
    * @return contractId
   **/
-  @ApiModelProperty(value = "Contracts id")
   public String getContractId() {
     return contractId;
   }
@@ -119,7 +116,6 @@ public class PaymentContractsDTO {
    * Is this a demo contract
    * @return demo
   **/
-  @ApiModelProperty(value = "Is this a demo contract")
   public String getDemo() {
     return demo;
   }
@@ -137,7 +133,6 @@ public class PaymentContractsDTO {
    * Contract debit product id
    * @return debitProductId
   **/
-  @ApiModelProperty(value = "Contract debit product id")
   public String getDebitProductId() {
     return debitProductId;
   }
@@ -155,7 +150,6 @@ public class PaymentContractsDTO {
    * Contracts prepay product id
    * @return prepayProductId
   **/
-  @ApiModelProperty(value = "Contracts prepay product id")
   public String getPrepayProductId() {
     return prepayProductId;
   }
@@ -173,7 +167,6 @@ public class PaymentContractsDTO {
    * Contracts invoice product id
    * @return invoiceProductId
   **/
-  @ApiModelProperty(value = "Contracts invoice product id")
   public String getInvoiceProductId() {
     return invoiceProductId;
   }
@@ -191,7 +184,6 @@ public class PaymentContractsDTO {
    * Contracts credit card product id
    * @return creditcardProductId
   **/
-  @ApiModelProperty(value = "Contracts credit card product id")
   public String getCreditcardProductId() {
     return creditcardProductId;
   }
@@ -209,7 +201,6 @@ public class PaymentContractsDTO {
    * An URL where your service listen for push notifications of the secuconnect service
    * @return urlPush
   **/
-  @ApiModelProperty(value = "An URL where your service listen for push notifications of the secuconnect service")
   public String getUrlPush() {
     return urlPush;
   }
@@ -227,7 +218,6 @@ public class PaymentContractsDTO {
    * Should allow transactions?
    * @return allowTransactions
   **/
-  @ApiModelProperty(value = "Should allow transactions?")
   public Boolean getAllowTransactions() {
     return allowTransactions;
   }
@@ -245,7 +235,6 @@ public class PaymentContractsDTO {
    * Should allow cloning?
    * @return allowCloning
   **/
-  @ApiModelProperty(value = "Should allow cloning?")
   public Boolean getAllowCloning() {
     return allowCloning;
   }
@@ -263,7 +252,6 @@ public class PaymentContractsDTO {
    * Bool, default FALSE. If TRUE, an error message will be thrown if you try to create a new payment transaction with the same order_id of an previous transaction.
    * @return uniqueOrderId
   **/
-  @ApiModelProperty(value = "Bool, default FALSE. If TRUE, an error message will be thrown if you try to create a new payment transaction with the same order_id of an previous transaction.")
   public Boolean getUniqueOrderId() {
     return uniqueOrderId;
   }
@@ -281,7 +269,6 @@ public class PaymentContractsDTO {
    * Bool, default TRUE. If FALSE, the customer scoring is disabled for your payment contract
    * @return scoring
   **/
-  @ApiModelProperty(value = "Bool, default TRUE. If FALSE, the customer scoring is disabled for your payment contract")
   public Boolean getScoring() {
     return scoring;
   }
@@ -299,7 +286,6 @@ public class PaymentContractsDTO {
    * Enum [on_transaction, on_container, never], default “never” Option to send automatically an information to the customer when a new SEPA-mandate was created.
    * @return sepaMandateInform
   **/
-  @ApiModelProperty(value = "Enum [on_transaction, on_container, never], default “never” Option to send automatically an information to the customer when a new SEPA-mandate was created.")
   public String getSepaMandateInform() {
     return sepaMandateInform;
   }

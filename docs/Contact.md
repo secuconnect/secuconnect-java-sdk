@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **phone** | **String** | Phone | 
 **mobile** | **String** | Mobile | 
 **fax** | **String** | Fax | 
-**dob** | [**DateTime**](DateTime.md) | Date of birth | 
+**dob** | **String** | Date of birth | 
 **picture** | **String** | The document id of an user picture (To upload the picture use our document service.) | 
 **urlWebsite** | **String** | URL to website | 
 **birthplace** | **String** | Birthplace | 

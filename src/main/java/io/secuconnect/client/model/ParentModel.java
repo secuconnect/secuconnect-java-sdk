@@ -32,7 +32,6 @@ public class ParentModel {
    * Object of parent
    * @return object
   **/
-  @ApiModelProperty(value = "Object of parent")
   public String getObject() {
     return object;
   }
@@ -50,7 +49,6 @@ public class ParentModel {
    * Id of parent
    * @return id
   **/
-  @ApiModelProperty(value = "Id of parent")
   public String getId() {
     return id;
   }
@@ -68,7 +66,6 @@ public class ParentModel {
    * Type of parent
    * @return type
   **/
-  @ApiModelProperty(value = "Type of parent")
   public String getType() {
     return type;
   }

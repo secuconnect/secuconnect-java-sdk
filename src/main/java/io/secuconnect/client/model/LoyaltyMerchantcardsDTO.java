@@ -38,7 +38,6 @@ public class LoyaltyMerchantcardsDTO {
    * General merchant id
    * @return merchant
   **/
-  @ApiModelProperty(value = "General merchant id")
   public String getMerchant() {
     return merchant;
   }
@@ -56,7 +55,6 @@ public class LoyaltyMerchantcardsDTO {
    * Loyalty card id
    * @return card
   **/
-  @ApiModelProperty(value = "Loyalty card id")
   public String getCard() {
     return card;
   }
@@ -74,7 +72,6 @@ public class LoyaltyMerchantcardsDTO {
    * Loyalty payment container id
    * @return paymentContainer
   **/
-  @ApiModelProperty(value = "Loyalty payment container id")
   public String getPaymentContainer() {
     return paymentContainer;
   }
@@ -92,7 +89,6 @@ public class LoyaltyMerchantcardsDTO {
    * Created by general merchant or not
    * @return createdByMerchant
   **/
-  @ApiModelProperty(value = "Created by general merchant or not")
   public Boolean getCreatedByMerchant() {
     return createdByMerchant;
   }
@@ -110,7 +106,6 @@ public class LoyaltyMerchantcardsDTO {
    * Used by general merchant or not
    * @return usedByMerchant
   **/
-  @ApiModelProperty(value = "Used by general merchant or not")
   public Boolean getUsedByMerchant() {
     return usedByMerchant;
   }

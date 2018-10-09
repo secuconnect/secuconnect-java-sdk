@@ -32,7 +32,6 @@ public class PaymentContractsList {
    * Number of existing payment contracts
    * @return count
   **/
-  @ApiModelProperty(value = "Number of existing payment contracts")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class PaymentContractsList {
    * GET Payment/Contracts
    * @return data
   **/
-  @ApiModelProperty(value = "GET Payment/Contracts")
   public List<PaymentContractsProductModel> getData() {
     return data;
   }

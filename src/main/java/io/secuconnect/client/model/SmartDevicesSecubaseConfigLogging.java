@@ -30,7 +30,6 @@ public class SmartDevicesSecubaseConfigLogging {
    * Secubase
    * @return secubase
   **/
-  @ApiModelProperty(value = "Secubase")
   public SmartDevicesSecubaseConfigLoggingFileNet getSecubase() {
     return secubase;
   }
@@ -48,7 +47,6 @@ public class SmartDevicesSecubaseConfigLogging {
    * App
    * @return app
   **/
-  @ApiModelProperty(value = "App")
   public SmartDevicesSecubaseConfigLoggingFileNet getApp() {
     return app;
   }

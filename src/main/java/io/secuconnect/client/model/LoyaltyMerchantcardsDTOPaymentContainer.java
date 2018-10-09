@@ -36,7 +36,6 @@ public class LoyaltyMerchantcardsDTOPaymentContainer {
    * Object of payment container
    * @return object
   **/
-  @ApiModelProperty(value = "Object of payment container")
   public String getObject() {
     return object;
   }
@@ -54,7 +53,6 @@ public class LoyaltyMerchantcardsDTOPaymentContainer {
    * Id of payment container
    * @return id
   **/
-  @ApiModelProperty(value = "Id of payment container")
   public String getId() {
     return id;
   }
@@ -72,7 +70,6 @@ public class LoyaltyMerchantcardsDTOPaymentContainer {
    * Type of payment container
    * @return type
   **/
-  @ApiModelProperty(value = "Type of payment container")
   public String getType() {
     return type;
   }
@@ -90,7 +87,6 @@ public class LoyaltyMerchantcardsDTOPaymentContainer {
    * Payment information
    * @return paymentInformation
   **/
-  @ApiModelProperty(value = "Payment information")
   public PaymentInformation getPaymentInformation() {
     return paymentInformation;
   }

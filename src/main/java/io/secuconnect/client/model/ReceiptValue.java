@@ -40,7 +40,6 @@ public class ReceiptValue {
    * Caption
    * @return caption
   **/
-  @ApiModelProperty(value = "Caption")
   public String getCaption() {
     return caption;
   }
@@ -58,7 +57,6 @@ public class ReceiptValue {
    * Name
    * @return name
   **/
-  @ApiModelProperty(value = "Name")
   public String getName() {
     return name;
   }
@@ -76,7 +74,6 @@ public class ReceiptValue {
    * Value
    * @return value
   **/
-  @ApiModelProperty(value = "Value")
   public String getValue() {
     return value;
   }
@@ -94,7 +91,6 @@ public class ReceiptValue {
    * Text
    * @return text
   **/
-  @ApiModelProperty(value = "Text")
   public String getText() {
     return text;
   }
@@ -120,7 +116,6 @@ public class ReceiptValue {
    * Decoration
    * @return decoration
   **/
-  @ApiModelProperty(value = "Decoration")
   public List<String> getDecoration() {
     return decoration;
   }

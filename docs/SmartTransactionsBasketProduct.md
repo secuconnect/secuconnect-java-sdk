@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **quantity** | **Integer** | Quantity | 
 **priceOne** | **Integer** | Price one | 
 **tax** | **Integer** | Tax | 
-**group** | [**SmartTransactionsBasketProductGroup**](SmartTransactionsBasketProductGroup.md) | Group | 
+**group** | [**List&lt;SmartTransactionsBasketProductGroup&gt;**](SmartTransactionsBasketProductGroup.md) | Group | 
 
 
 

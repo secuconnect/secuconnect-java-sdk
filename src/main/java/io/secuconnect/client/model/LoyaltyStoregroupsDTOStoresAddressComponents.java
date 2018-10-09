@@ -32,7 +32,6 @@ public class LoyaltyStoregroupsDTOStoresAddressComponents {
    * Long name
    * @return longName
   **/
-  @ApiModelProperty(value = "Long name")
   public String getLongName() {
     return longName;
   }
@@ -50,7 +49,6 @@ public class LoyaltyStoregroupsDTOStoresAddressComponents {
    * Short name
    * @return shortName
   **/
-  @ApiModelProperty(value = "Short name")
   public String getShortName() {
     return shortName;
   }
@@ -68,7 +66,6 @@ public class LoyaltyStoregroupsDTOStoresAddressComponents {
    * Types
    * @return types
   **/
-  @ApiModelProperty(value = "Types")
   public String getTypes() {
     return types;
   }

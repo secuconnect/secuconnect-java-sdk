@@ -76,7 +76,6 @@ public class SecupayTransactionProductDTO {
    * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
    * @return amount
   **/
-  @ApiModelProperty(value = "Total amount of payment in cents (or the smallest cash unit of the relevant currency)")
   public Integer getAmount() {
     return amount;
   }
@@ -94,7 +93,6 @@ public class SecupayTransactionProductDTO {
    * ISO 4217 code of currency, eg EUR for Euro.
    * @return currency
   **/
-  @ApiModelProperty(value = "ISO 4217 code of currency, eg EUR for Euro.")
   public String getCurrency() {
     return currency;
   }
@@ -112,7 +110,6 @@ public class SecupayTransactionProductDTO {
    * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
    * @return purpose
   **/
-  @ApiModelProperty(value = "The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.")
   public String getPurpose() {
     return purpose;
   }
@@ -130,7 +127,6 @@ public class SecupayTransactionProductDTO {
    * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
    * @return orderId
   **/
-  @ApiModelProperty(value = "Specifying an order number. Depending on the contract setting, this must be unique for each payment.")
   public String getOrderId() {
     return orderId;
   }
@@ -156,7 +152,6 @@ public class SecupayTransactionProductDTO {
    * A list of items that are being purchased.
    * @return basket
   **/
-  @ApiModelProperty(value = "A list of items that are being purchased.")
   public List<SecupayBasketItem> getBasket() {
     return basket;
   }
@@ -174,7 +169,6 @@ public class SecupayTransactionProductDTO {
    * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
    * @return accrual
   **/
-  @ApiModelProperty(value = "Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.")
   public Boolean getAccrual() {
     return accrual;
   }
@@ -192,7 +186,6 @@ public class SecupayTransactionProductDTO {
    * Specifies whether a pre-authorization (\&quot;authorization\&quot;) or instant payment (\&quot;sale\&quot;) is to be performed. Standard value here is \&quot;sale\&quot;. The collection of the pre-authorized payment is made with the \&quot;capture\&quot; command.
    * @return paymentAction
   **/
-  @ApiModelProperty(value = "Specifies whether a pre-authorization (\"authorization\") or instant payment (\"sale\") is to be performed. Standard value here is \"sale\". The collection of the pre-authorized payment is made with the \"capture\" command.")
   public String getPaymentAction() {
     return paymentAction;
   }
@@ -210,7 +203,6 @@ public class SecupayTransactionProductDTO {
    * The customer object
    * @return customer
   **/
-  @ApiModelProperty(value = "The customer object")
   public PaymentCustomersProductModel getCustomer() {
     return customer;
   }
@@ -228,7 +220,6 @@ public class SecupayTransactionProductDTO {
    * Get redirectUrl
    * @return redirectUrl
   **/
-  @ApiModelProperty(value = "")
   public SecupayTransactionProductDTORedirectUrl getRedirectUrl() {
     return redirectUrl;
   }
@@ -246,7 +237,6 @@ public class SecupayTransactionProductDTO {
    * Contract id
    * @return contract
   **/
-  @ApiModelProperty(value = "Contract id")
   public String getContract() {
     return contract;
   }
@@ -264,7 +254,6 @@ public class SecupayTransactionProductDTO {
    * Container id
    * @return container
   **/
-  @ApiModelProperty(value = "Container id")
   public String getContainer() {
     return container;
   }
@@ -282,7 +271,6 @@ public class SecupayTransactionProductDTO {
    * Get optData
    * @return optData
   **/
-  @ApiModelProperty(value = "")
   public SecupayTransactionProductDTOOptData getOptData() {
     return optData;
   }
@@ -300,7 +288,6 @@ public class SecupayTransactionProductDTO {
    * Get subscription
    * @return subscription
   **/
-  @ApiModelProperty(value = "")
   public SecupayTransactionProductDTOSubscription getSubscription() {
     return subscription;
   }
@@ -318,7 +305,6 @@ public class SecupayTransactionProductDTO {
    * Demo
    * @return demo
   **/
-  @ApiModelProperty(value = "Demo")
   public Boolean getDemo() {
     return demo;
   }
@@ -336,7 +322,6 @@ public class SecupayTransactionProductDTO {
    * Get experience
    * @return experience
   **/
-  @ApiModelProperty(value = "")
   public SecupayTransactionProductDTOExperience getExperience() {
     return experience;
   }

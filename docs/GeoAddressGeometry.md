@@ -1,10 +1,11 @@
 
-# LoyaltyCustomersDeleted
+# GeoAddressGeometry
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deleted** | **Boolean** | Result is true or false | 
+**lat** | **String** | latitude | 
+**lon** | **String** | longitude | 
 
 
 

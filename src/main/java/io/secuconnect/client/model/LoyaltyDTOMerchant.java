@@ -29,7 +29,6 @@ public class LoyaltyDTOMerchant {
    * LoyaltyDTOMerchant
    * @return object
   **/
-  @ApiModelProperty(value = "LoyaltyDTOMerchant")
   public String getObject() {
     return object;
   }
@@ -47,7 +46,6 @@ public class LoyaltyDTOMerchant {
    * LoyaltyDTOMerchant
    * @return id
   **/
-  @ApiModelProperty(value = "LoyaltyDTOMerchant")
   public String getId() {
     return id;
   }

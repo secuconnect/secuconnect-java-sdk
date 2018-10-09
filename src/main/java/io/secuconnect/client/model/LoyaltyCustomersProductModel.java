@@ -65,7 +65,6 @@ public class LoyaltyCustomersProductModel {
    * Object of loyalty customer
    * @return object
   **/
-  @ApiModelProperty(value = "Object of loyalty customer")
   public String getObject() {
     return object;
   }
@@ -83,7 +82,6 @@ public class LoyaltyCustomersProductModel {
    * Id of loyalty customer
    * @return id
   **/
-  @ApiModelProperty(value = "Id of loyalty customer")
   public String getId() {
     return id;
   }
@@ -101,7 +99,6 @@ public class LoyaltyCustomersProductModel {
    * merchant
    * @return merchant
   **/
-  @ApiModelProperty(value = "merchant")
   public ProductInstanceUID getMerchant() {
     return merchant;
   }
@@ -119,7 +116,6 @@ public class LoyaltyCustomersProductModel {
    * Contact
    * @return contact
   **/
-  @ApiModelProperty(value = "Contact")
   public Contact getContact() {
     return contact;
   }
@@ -137,7 +133,6 @@ public class LoyaltyCustomersProductModel {
    * merchant contact
    * @return merchantContact
   **/
-  @ApiModelProperty(value = "merchant contact")
   public Contact getMerchantContact() {
     return merchantContact;
   }
@@ -155,7 +150,6 @@ public class LoyaltyCustomersProductModel {
    * merchant contact
    * @return accountContact
   **/
-  @ApiModelProperty(value = "merchant contact")
   public Contact getAccountContact() {
     return accountContact;
   }
@@ -181,7 +175,6 @@ public class LoyaltyCustomersProductModel {
    * payment container
    * @return paymentContainer
   **/
-  @ApiModelProperty(value = "payment container")
   public List<LoyaltyCustomersPaymentContainerModel> getPaymentContainer() {
     return paymentContainer;
   }
@@ -199,7 +192,6 @@ public class LoyaltyCustomersProductModel {
    * Age
    * @return age
   **/
-  @ApiModelProperty(value = "Age")
   public Integer getAge() {
     return age;
   }
@@ -217,7 +209,6 @@ public class LoyaltyCustomersProductModel {
    * Number of days until birthday
    * @return daysUntilBirthday
   **/
-  @ApiModelProperty(value = "Number of days until birthday")
   public Integer getDaysUntilBirthday() {
     return daysUntilBirthday;
   }
@@ -235,7 +226,6 @@ public class LoyaltyCustomersProductModel {
    * Customer number
    * @return customernumber
   **/
-  @ApiModelProperty(value = "Customer number")
   public String getCustomernumber() {
     return customernumber;
   }
@@ -253,7 +243,6 @@ public class LoyaltyCustomersProductModel {
    * Customer number
    * @return note
   **/
-  @ApiModelProperty(value = "Customer number")
   public String getNote() {
     return note;
   }
@@ -271,7 +260,6 @@ public class LoyaltyCustomersProductModel {
    * Creation date
    * @return created
   **/
-  @ApiModelProperty(value = "Creation date")
   public DateTime getCreated() {
     return created;
   }

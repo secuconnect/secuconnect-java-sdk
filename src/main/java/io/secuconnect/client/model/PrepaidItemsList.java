@@ -32,7 +32,6 @@ public class PrepaidItemsList {
    * Number of existing prepaid items
    * @return count
   **/
-  @ApiModelProperty(value = "Number of existing prepaid items")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class PrepaidItemsList {
    * GET Prepaid/Items
    * @return data
   **/
-  @ApiModelProperty(value = "GET Prepaid/Items")
   public List<PrepaidItemsProductModel> getData() {
     return data;
   }

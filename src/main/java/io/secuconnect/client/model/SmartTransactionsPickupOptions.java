@@ -34,7 +34,6 @@ public class SmartTransactionsPickupOptions {
    * Code
    * @return code
   **/
-  @ApiModelProperty(value = "Code")
   public String getCode() {
     return code;
   }
@@ -52,7 +51,6 @@ public class SmartTransactionsPickupOptions {
    * Date
    * @return date
   **/
-  @ApiModelProperty(value = "Date")
   public DateTime getDate() {
     return date;
   }
@@ -70,7 +68,6 @@ public class SmartTransactionsPickupOptions {
    * Store
    * @return store
   **/
-  @ApiModelProperty(value = "Store")
   public ProductInstanceUID getStore() {
     return store;
   }

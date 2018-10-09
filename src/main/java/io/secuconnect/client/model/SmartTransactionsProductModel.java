@@ -11,7 +11,9 @@ import io.secuconnect.client.model.SmartTransactionsBasket;
 import io.secuconnect.client.model.SmartTransactionsBasketInfo;
 import io.secuconnect.client.model.SmartTransactionsCheckin;
 import io.secuconnect.client.model.SmartTransactionsIdent;
+import io.secuconnect.client.model.SmartTransactionsMerchant;
 import io.secuconnect.client.model.SmartTransactionsPickupOptions;
+import io.secuconnect.client.model.SmartTransactionsReceipt;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -34,7 +36,7 @@ public class SmartTransactionsProductModel {
   private String status = null;
 
   @SerializedName("merchant")
-  private ProductInstanceUID merchant = null;
+  private SmartTransactionsMerchant merchant = null;
 
   @SerializedName("contract")
   private ProductInstanceUID contract = null;
@@ -73,7 +75,7 @@ public class SmartTransactionsProductModel {
   private Integer receiptNumber = null;
 
   @SerializedName("receipt")
-  private String receipt = null;
+  private List<SmartTransactionsReceipt> receipt = null;
 
   @SerializedName("receipt_merchant")
   private String receiptMerchant = null;
@@ -132,7 +134,6 @@ public class SmartTransactionsProductModel {
    * Object of smart transaction
    * @return object
   **/
-  @ApiModelProperty(value = "Object of smart transaction")
   public String getObject() {
     return object;
   }
@@ -150,7 +151,6 @@ public class SmartTransactionsProductModel {
    * Id of smart transaction
    * @return id
   **/
-  @ApiModelProperty(value = "Id of smart transaction")
   public String getId() {
     return id;
   }
@@ -168,7 +168,6 @@ public class SmartTransactionsProductModel {
    * Status of smart transaction
    * @return status
   **/
-  @ApiModelProperty(value = "Status of smart transaction")
   public String getStatus() {
     return status;
   }
@@ -177,7 +176,7 @@ public class SmartTransactionsProductModel {
     this.status = status;
   }
 
-  public SmartTransactionsProductModel merchant(ProductInstanceUID merchant) {
+  public SmartTransactionsProductModel merchant(SmartTransactionsMerchant merchant) {
     this.merchant = merchant;
     return this;
   }
@@ -186,12 +185,11 @@ public class SmartTransactionsProductModel {
    * Merchant
    * @return merchant
   **/
-  @ApiModelProperty(value = "Merchant")
-  public ProductInstanceUID getMerchant() {
+  public SmartTransactionsMerchant getMerchant() {
     return merchant;
   }
 
-  public void setMerchant(ProductInstanceUID merchant) {
+  public void setMerchant(SmartTransactionsMerchant merchant) {
     this.merchant = merchant;
   }
 
@@ -204,7 +202,6 @@ public class SmartTransactionsProductModel {
    * Contract
    * @return contract
   **/
-  @ApiModelProperty(value = "Contract")
   public ProductInstanceUID getContract() {
     return contract;
   }
@@ -222,7 +219,6 @@ public class SmartTransactionsProductModel {
    * Marketplace contract
    * @return marketplaceContract
   **/
-  @ApiModelProperty(value = "Marketplace contract")
   public ProductInstanceUID getMarketplaceContract() {
     return marketplaceContract;
   }
@@ -240,7 +236,6 @@ public class SmartTransactionsProductModel {
    * Customer
    * @return customer
   **/
-  @ApiModelProperty(value = "Customer")
   public LoyaltyCustomersProductModel getCustomer() {
     return customer;
   }
@@ -258,7 +253,6 @@ public class SmartTransactionsProductModel {
    * Check in
    * @return checkin
   **/
-  @ApiModelProperty(value = "Check in")
   public SmartTransactionsCheckin getCheckin() {
     return checkin;
   }
@@ -276,7 +270,6 @@ public class SmartTransactionsProductModel {
    * Merchant ref
    * @return merchantRef
   **/
-  @ApiModelProperty(value = "Merchant ref")
   public String getMerchantRef() {
     return merchantRef;
   }
@@ -294,7 +287,6 @@ public class SmartTransactionsProductModel {
    * Transaction ref
    * @return transactionRef
   **/
-  @ApiModelProperty(value = "Transaction ref")
   public String getTransactionRef() {
     return transactionRef;
   }
@@ -312,7 +304,6 @@ public class SmartTransactionsProductModel {
    * Store
    * @return store
   **/
-  @ApiModelProperty(value = "Store")
   public ProductInstanceUID getStore() {
     return store;
   }
@@ -330,7 +321,6 @@ public class SmartTransactionsProductModel {
    * Device source
    * @return deviceSource
   **/
-  @ApiModelProperty(value = "Device source")
   public ProductInstanceUID getDeviceSource() {
     return deviceSource;
   }
@@ -348,7 +338,6 @@ public class SmartTransactionsProductModel {
    * Device destination
    * @return deviceDestination
   **/
-  @ApiModelProperty(value = "Device destination")
   public ProductInstanceUID getDeviceDestination() {
     return deviceDestination;
   }
@@ -366,7 +355,6 @@ public class SmartTransactionsProductModel {
    * Created at date
    * @return created
   **/
-  @ApiModelProperty(value = "Created at date")
   public DateTime getCreated() {
     return created;
   }
@@ -384,7 +372,6 @@ public class SmartTransactionsProductModel {
    * Updated at date
    * @return updated
   **/
-  @ApiModelProperty(value = "Updated at date")
   public DateTime getUpdated() {
     return updated;
   }
@@ -402,7 +389,6 @@ public class SmartTransactionsProductModel {
    * Receipt number
    * @return receiptNumber
   **/
-  @ApiModelProperty(value = "Receipt number")
   public Integer getReceiptNumber() {
     return receiptNumber;
   }
@@ -411,8 +397,16 @@ public class SmartTransactionsProductModel {
     this.receiptNumber = receiptNumber;
   }
 
-  public SmartTransactionsProductModel receipt(String receipt) {
+  public SmartTransactionsProductModel receipt(List<SmartTransactionsReceipt> receipt) {
     this.receipt = receipt;
+    return this;
+  }
+
+  public SmartTransactionsProductModel addReceiptItem(SmartTransactionsReceipt receiptItem) {
+    if (this.receipt == null) {
+      this.receipt = new ArrayList<SmartTransactionsReceipt>();
+    }
+    this.receipt.add(receiptItem);
     return this;
   }
 
@@ -420,12 +414,11 @@ public class SmartTransactionsProductModel {
    * Receipt
    * @return receipt
   **/
-  @ApiModelProperty(value = "Receipt")
-  public String getReceipt() {
+  public List<SmartTransactionsReceipt> getReceipt() {
     return receipt;
   }
 
-  public void setReceipt(String receipt) {
+  public void setReceipt(List<SmartTransactionsReceipt> receipt) {
     this.receipt = receipt;
   }
 
@@ -438,7 +431,6 @@ public class SmartTransactionsProductModel {
    * Receipt merchant
    * @return receiptMerchant
   **/
-  @ApiModelProperty(value = "Receipt merchant")
   public String getReceiptMerchant() {
     return receiptMerchant;
   }
@@ -456,7 +448,6 @@ public class SmartTransactionsProductModel {
    * Receipt merchant print
    * @return receiptMerchantPrint
   **/
-  @ApiModelProperty(value = "Receipt merchant print")
   public Boolean getReceiptMerchantPrint() {
     return receiptMerchantPrint;
   }
@@ -474,7 +465,6 @@ public class SmartTransactionsProductModel {
    * Basket info
    * @return basketInfo
   **/
-  @ApiModelProperty(value = "Basket info")
   public SmartTransactionsBasketInfo getBasketInfo() {
     return basketInfo;
   }
@@ -492,7 +482,6 @@ public class SmartTransactionsProductModel {
    * Basket
    * @return basket
   **/
-  @ApiModelProperty(value = "Basket")
   public SmartTransactionsBasket getBasket() {
     return basket;
   }
@@ -518,7 +507,6 @@ public class SmartTransactionsProductModel {
    * Idents
    * @return idents
   **/
-  @ApiModelProperty(value = "Idents")
   public List<SmartTransactionsIdent> getIdents() {
     return idents;
   }
@@ -536,7 +524,6 @@ public class SmartTransactionsProductModel {
    * Tax rate
    * @return taxRate
   **/
-  @ApiModelProperty(value = "Tax rate")
   public Integer getTaxRate() {
     return taxRate;
   }
@@ -554,7 +541,6 @@ public class SmartTransactionsProductModel {
    * Tax amount
    * @return taxAmount
   **/
-  @ApiModelProperty(value = "Tax amount")
   public Integer getTaxAmount() {
     return taxAmount;
   }
@@ -572,7 +558,6 @@ public class SmartTransactionsProductModel {
    * Cashier
    * @return cashier
   **/
-  @ApiModelProperty(value = "Cashier")
   public String getCashier() {
     return cashier;
   }
@@ -590,7 +575,6 @@ public class SmartTransactionsProductModel {
    * Market
    * @return market
   **/
-  @ApiModelProperty(value = "Market")
   public String getMarket() {
     return market;
   }
@@ -608,7 +592,6 @@ public class SmartTransactionsProductModel {
    * Order option
    * @return orderOption
   **/
-  @ApiModelProperty(value = "Order option")
   public String getOrderOption() {
     return orderOption;
   }
@@ -626,7 +609,6 @@ public class SmartTransactionsProductModel {
    * Pickup options
    * @return pickupOptions
   **/
-  @ApiModelProperty(value = "Pickup options")
   public SmartTransactionsPickupOptions getPickupOptions() {
     return pickupOptions;
   }
@@ -644,7 +626,6 @@ public class SmartTransactionsProductModel {
    * Product
    * @return product
   **/
-  @ApiModelProperty(value = "Product")
   public String getProduct() {
     return product;
   }
@@ -662,7 +643,6 @@ public class SmartTransactionsProductModel {
    * Transaction id
    * @return transId
   **/
-  @ApiModelProperty(value = "Transaction id")
   public Integer getTransId() {
     return transId;
   }
@@ -680,7 +660,6 @@ public class SmartTransactionsProductModel {
    * Payment method
    * @return paymentMethod
   **/
-  @ApiModelProperty(value = "Payment method")
   public String getPaymentMethod() {
     return paymentMethod;
   }
@@ -698,7 +677,6 @@ public class SmartTransactionsProductModel {
    * Transactions
    * @return transactions
   **/
-  @ApiModelProperty(value = "Transactions")
   public ProductInstanceUID getTransactions() {
     return transactions;
   }
@@ -716,7 +694,6 @@ public class SmartTransactionsProductModel {
    * Last visited page
    * @return lastVisitedPage
   **/
-  @ApiModelProperty(value = "Last visited page")
   public String getLastVisitedPage() {
     return lastVisitedPage;
   }

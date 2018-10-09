@@ -39,7 +39,6 @@ public class LoyaltyCustomersContactDTO {
    * Forename
    * @return forename
   **/
-  @ApiModelProperty(value = "Forename")
   public String getForename() {
     return forename;
   }
@@ -57,7 +56,6 @@ public class LoyaltyCustomersContactDTO {
    * Surname
    * @return surname
   **/
-  @ApiModelProperty(value = "Surname")
   public String getSurname() {
     return surname;
   }
@@ -75,7 +73,6 @@ public class LoyaltyCustomersContactDTO {
    * Name
    * @return name
   **/
-  @ApiModelProperty(value = "Name")
   public String getName() {
     return name;
   }
@@ -93,7 +90,6 @@ public class LoyaltyCustomersContactDTO {
    * Phone
    * @return phone
   **/
-  @ApiModelProperty(value = "Phone")
   public String getPhone() {
     return phone;
   }
@@ -111,7 +107,6 @@ public class LoyaltyCustomersContactDTO {
    * Address
    * @return address
   **/
-  @ApiModelProperty(value = "Address")
   public Address getAddress() {
     return address;
   }

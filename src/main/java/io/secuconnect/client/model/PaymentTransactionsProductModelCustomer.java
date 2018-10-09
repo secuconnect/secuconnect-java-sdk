@@ -45,7 +45,6 @@ public class PaymentTransactionsProductModelCustomer {
    * Customer type name
    * @return object
   **/
-  @ApiModelProperty(value = "Customer type name")
   public String getObject() {
     return object;
   }
@@ -63,7 +62,6 @@ public class PaymentTransactionsProductModelCustomer {
    * Id of customer
    * @return id
   **/
-  @ApiModelProperty(value = "Id of customer")
   public String getId() {
     return id;
   }
@@ -81,7 +79,6 @@ public class PaymentTransactionsProductModelCustomer {
    * Customer company name
    * @return companyname
   **/
-  @ApiModelProperty(value = "Customer company name")
   public String getCompanyname() {
     return companyname;
   }
@@ -99,7 +96,6 @@ public class PaymentTransactionsProductModelCustomer {
    * Customer salutation
    * @return salutation
   **/
-  @ApiModelProperty(value = "Customer salutation")
   public String getSalutation() {
     return salutation;
   }
@@ -117,7 +113,6 @@ public class PaymentTransactionsProductModelCustomer {
    * Customer title
    * @return title
   **/
-  @ApiModelProperty(value = "Customer title")
   public String getTitle() {
     return title;
   }
@@ -135,7 +130,6 @@ public class PaymentTransactionsProductModelCustomer {
    * Customer forename
    * @return forename
   **/
-  @ApiModelProperty(value = "Customer forename")
   public String getForename() {
     return forename;
   }
@@ -153,7 +147,6 @@ public class PaymentTransactionsProductModelCustomer {
    * Customer surname
    * @return surname
   **/
-  @ApiModelProperty(value = "Customer surname")
   public String getSurname() {
     return surname;
   }

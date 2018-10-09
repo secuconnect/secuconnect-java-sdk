@@ -32,7 +32,6 @@ public class SmartTransactionsList {
    * Number of existing smart transactions
    * @return count
   **/
-  @ApiModelProperty(value = "Number of existing smart transactions")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class SmartTransactionsList {
    * GET Smart/Transactions
    * @return data
   **/
-  @ApiModelProperty(value = "GET Smart/Transactions")
   public List<SmartTransactionsProductModel> getData() {
     return data;
   }

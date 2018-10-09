@@ -32,7 +32,6 @@ public class PaymentCustomersList {
    * Number of existing payment customers
    * @return count
   **/
-  @ApiModelProperty(value = "Number of existing payment customers")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class PaymentCustomersList {
    * GET Payment/Customers
    * @return data
   **/
-  @ApiModelProperty(value = "GET Payment/Customers")
   public List<PaymentCustomersProductModel> getData() {
     return data;
   }

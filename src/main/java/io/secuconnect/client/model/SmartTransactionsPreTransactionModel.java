@@ -32,7 +32,6 @@ public class SmartTransactionsPreTransactionModel {
    * missing sum
    * @return missingSum
   **/
-  @ApiModelProperty(value = "missing sum")
   public Integer getMissingSum() {
     return missingSum;
   }
@@ -58,7 +57,6 @@ public class SmartTransactionsPreTransactionModel {
    * SmartTransactionsPreTransactionModel
    * @return bonusProducts
   **/
-  @ApiModelProperty(value = "SmartTransactionsPreTransactionModel")
   public List<SmartTransactionsBonusProducts> getBonusProducts() {
     return bonusProducts;
   }

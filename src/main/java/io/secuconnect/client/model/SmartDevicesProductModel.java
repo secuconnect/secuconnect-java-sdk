@@ -82,7 +82,6 @@ public class SmartDevicesProductModel {
    * Object of smart device
    * @return object
   **/
-  @ApiModelProperty(value = "Object of smart device")
   public String getObject() {
     return object;
   }
@@ -100,7 +99,6 @@ public class SmartDevicesProductModel {
    * Id of smart device
    * @return id
   **/
-  @ApiModelProperty(value = "Id of smart device")
   public String getId() {
     return id;
   }
@@ -118,7 +116,6 @@ public class SmartDevicesProductModel {
    * Merchant
    * @return merchant
   **/
-  @ApiModelProperty(value = "Merchant")
   public ProductInstanceUID getMerchant() {
     return merchant;
   }
@@ -136,7 +133,6 @@ public class SmartDevicesProductModel {
    * Store
    * @return store
   **/
-  @ApiModelProperty(value = "Store")
   public Store getStore() {
     return store;
   }
@@ -154,7 +150,6 @@ public class SmartDevicesProductModel {
    * Vendor
    * @return vendor
   **/
-  @ApiModelProperty(value = "Vendor")
   public String getVendor() {
     return vendor;
   }
@@ -172,7 +167,6 @@ public class SmartDevicesProductModel {
    * Vendor uid
    * @return vendorUid
   **/
-  @ApiModelProperty(value = "Vendor uid")
   public String getVendorUid() {
     return vendorUid;
   }
@@ -190,7 +184,6 @@ public class SmartDevicesProductModel {
    * Type
    * @return type
   **/
-  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }
@@ -208,7 +201,6 @@ public class SmartDevicesProductModel {
    * Device
    * @return device
   **/
-  @ApiModelProperty(value = "Device")
   public SmartDevicesDevice getDevice() {
     return device;
   }
@@ -226,7 +218,6 @@ public class SmartDevicesProductModel {
    * Routing
    * @return routing
   **/
-  @ApiModelProperty(value = "Routing")
   public ProductInstanceUID getRouting() {
     return routing;
   }
@@ -244,7 +235,6 @@ public class SmartDevicesProductModel {
    * User pin
    * @return userPin
   **/
-  @ApiModelProperty(value = "User pin")
   public String getUserPin() {
     return userPin;
   }
@@ -262,7 +252,6 @@ public class SmartDevicesProductModel {
    * Products
    * @return products
   **/
-  @ApiModelProperty(value = "Products")
   public SmartDevicesProducts getProducts() {
     return products;
   }
@@ -280,7 +269,6 @@ public class SmartDevicesProductModel {
    * Description
    * @return description
   **/
-  @ApiModelProperty(value = "Description")
   public String getDescription() {
     return description;
   }
@@ -298,7 +286,6 @@ public class SmartDevicesProductModel {
    * Idle screen register
    * @return idleScreenRegister
   **/
-  @ApiModelProperty(value = "Idle screen register")
   public String getIdleScreenRegister() {
     return idleScreenRegister;
   }
@@ -316,7 +303,6 @@ public class SmartDevicesProductModel {
    * Idle screen terminal
    * @return idleScreenTerminal
   **/
-  @ApiModelProperty(value = "Idle screen terminal")
   public String getIdleScreenTerminal() {
     return idleScreenTerminal;
   }
@@ -334,7 +320,6 @@ public class SmartDevicesProductModel {
    * Created at date
    * @return created
   **/
-  @ApiModelProperty(value = "Created at date")
   public DateTime getCreated() {
     return created;
   }
@@ -352,7 +337,6 @@ public class SmartDevicesProductModel {
    * Online
    * @return online
   **/
-  @ApiModelProperty(value = "Online")
   public Boolean getOnline() {
     return online;
   }
@@ -370,7 +354,6 @@ public class SmartDevicesProductModel {
    * Terminal type
    * @return terminalType
   **/
-  @ApiModelProperty(value = "Terminal type")
   public String getTerminalType() {
     return terminalType;
   }
@@ -388,7 +371,6 @@ public class SmartDevicesProductModel {
    * Base version
    * @return baseVersion
   **/
-  @ApiModelProperty(value = "Base version")
   public String getBaseVersion() {
     return baseVersion;
   }

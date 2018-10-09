@@ -34,7 +34,6 @@ public class PaymentContainersDTO {
    * Get customer
    * @return customer
   **/
-  @ApiModelProperty(value = "")
   public PaymentContainersDTOCustomer getCustomer() {
     return customer;
   }
@@ -52,7 +51,6 @@ public class PaymentContainersDTO {
    * Type of Payment Containers
    * @return type
   **/
-  @ApiModelProperty(value = "Type of Payment Containers")
   public String getType() {
     return type;
   }
@@ -70,7 +68,6 @@ public class PaymentContainersDTO {
    * Get _private
    * @return _private
   **/
-  @ApiModelProperty(value = "")
   public PaymentContainersDTOPrivate getPrivate() {
     return _private;
   }

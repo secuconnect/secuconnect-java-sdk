@@ -45,7 +45,6 @@ public class LoyaltyCardgroupsProductModel {
    * Object of loyalty card group
    * @return object
   **/
-  @ApiModelProperty(value = "Object of loyalty card group")
   public String getObject() {
     return object;
   }
@@ -63,7 +62,6 @@ public class LoyaltyCardgroupsProductModel {
    * Id of loyalty card group
    * @return id
   **/
-  @ApiModelProperty(value = "Id of loyalty card group")
   public String getId() {
     return id;
   }
@@ -81,7 +79,6 @@ public class LoyaltyCardgroupsProductModel {
    * Loyalty card group merchant
    * @return merchant
   **/
-  @ApiModelProperty(value = "Loyalty card group merchant")
   public LoyaltyCardgroupsDTOMerchant getMerchant() {
     return merchant;
   }
@@ -99,7 +96,6 @@ public class LoyaltyCardgroupsProductModel {
    * Loyalty card group display name
    * @return displayName
   **/
-  @ApiModelProperty(value = "Loyalty card group display name")
   public String getDisplayName() {
     return displayName;
   }
@@ -117,7 +113,6 @@ public class LoyaltyCardgroupsProductModel {
    * Loyalty card group display name raw
    * @return displayNameRaw
   **/
-  @ApiModelProperty(value = "Loyalty card group display name raw")
   public String getDisplayNameRaw() {
     return displayNameRaw;
   }
@@ -135,7 +130,6 @@ public class LoyaltyCardgroupsProductModel {
    * Loyalty card group stock warn limit
    * @return stockWarnLimit
   **/
-  @ApiModelProperty(value = "Loyalty card group stock warn limit")
   public String getStockWarnLimit() {
     return stockWarnLimit;
   }
@@ -153,7 +147,6 @@ public class LoyaltyCardgroupsProductModel {
    * Loyalty card group picture
    * @return picture
   **/
-  @ApiModelProperty(value = "Loyalty card group picture")
   public String getPicture() {
     return picture;
   }

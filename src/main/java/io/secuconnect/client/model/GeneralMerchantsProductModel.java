@@ -65,7 +65,6 @@ public class GeneralMerchantsProductModel {
    * Object of general merchant
    * @return object
   **/
-  @ApiModelProperty(value = "Object of general merchant")
   public String getObject() {
     return object;
   }
@@ -83,7 +82,6 @@ public class GeneralMerchantsProductModel {
    * Id of general merchant
    * @return id
   **/
-  @ApiModelProperty(value = "Id of general merchant")
   public String getId() {
     return id;
   }
@@ -101,7 +99,6 @@ public class GeneralMerchantsProductModel {
    * Old id of general merchant
    * @return idOld
   **/
-  @ApiModelProperty(value = "Old id of general merchant")
   public String getIdOld() {
     return idOld;
   }
@@ -119,7 +116,6 @@ public class GeneralMerchantsProductModel {
    * Type of general merchant
    * @return type
   **/
-  @ApiModelProperty(value = "Type of general merchant")
   public String getType() {
     return type;
   }
@@ -137,7 +133,6 @@ public class GeneralMerchantsProductModel {
    * General merchant user
    * @return user
   **/
-  @ApiModelProperty(value = "General merchant user")
   public GeneralMerchantsUser getUser() {
     return user;
   }
@@ -155,7 +150,6 @@ public class GeneralMerchantsProductModel {
    * Parent of general merchant user
    * @return parent
   **/
-  @ApiModelProperty(value = "Parent of general merchant user")
   public ParentModel getParent() {
     return parent;
   }
@@ -181,7 +175,6 @@ public class GeneralMerchantsProductModel {
    * Assigned by
    * @return assignedBy
   **/
-  @ApiModelProperty(value = "Assigned by")
   public List<AssignedBy> getAssignedBy() {
     return assignedBy;
   }
@@ -207,7 +200,6 @@ public class GeneralMerchantsProductModel {
    * Invited by
    * @return invitedBy
   **/
-  @ApiModelProperty(value = "Invited by")
   public List<InvitedBy> getInvitedBy() {
     return invitedBy;
   }
@@ -225,7 +217,6 @@ public class GeneralMerchantsProductModel {
    * Legal details
    * @return legalDetails
   **/
-  @ApiModelProperty(value = "Legal details")
   public GeneralMerchantsLegalDetails getLegalDetails() {
     return legalDetails;
   }
@@ -243,7 +234,6 @@ public class GeneralMerchantsProductModel {
    * Checkout options
    * @return checkoutOptions
   **/
-  @ApiModelProperty(value = "Checkout options")
   public GeneralMerchantsCheckoutOptions getCheckoutOptions() {
     return checkoutOptions;
   }
@@ -261,7 +251,6 @@ public class GeneralMerchantsProductModel {
    * Urls
    * @return urls
   **/
-  @ApiModelProperty(value = "Urls")
   public GeneralMerchantsUrls getUrls() {
     return urls;
   }

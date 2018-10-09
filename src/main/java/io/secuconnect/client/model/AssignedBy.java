@@ -32,7 +32,6 @@ public class AssignedBy {
    * Object of assigned by
    * @return object
   **/
-  @ApiModelProperty(value = "Object of assigned by")
   public String getObject() {
     return object;
   }
@@ -50,7 +49,6 @@ public class AssignedBy {
    * Id of assigned by
    * @return id
   **/
-  @ApiModelProperty(value = "Id of assigned by")
   public String getId() {
     return id;
   }
@@ -68,7 +66,6 @@ public class AssignedBy {
    * Owner
    * @return owner
   **/
-  @ApiModelProperty(value = "Owner")
   public Boolean getOwner() {
     return owner;
   }

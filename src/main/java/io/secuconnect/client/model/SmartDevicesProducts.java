@@ -46,7 +46,6 @@ public class SmartDevicesProducts {
    * Loyalty
    * @return loyalty
   **/
-  @ApiModelProperty(value = "Loyalty")
   public SmartDeviceProductsEnabled getLoyalty() {
     return loyalty;
   }
@@ -64,7 +63,6 @@ public class SmartDevicesProducts {
    * Smart
    * @return smart
   **/
-  @ApiModelProperty(value = "Smart")
   public SmartDeviceProductsEnabled getSmart() {
     return smart;
   }
@@ -82,7 +80,6 @@ public class SmartDevicesProducts {
    * Cashreg
    * @return cashreg
   **/
-  @ApiModelProperty(value = "Cashreg")
   public SmartDeviceProductsEnabled getCashreg() {
     return cashreg;
   }
@@ -100,7 +97,6 @@ public class SmartDevicesProducts {
    * Collect
    * @return collect
   **/
-  @ApiModelProperty(value = "Collect")
   public SmartDeviceProductsEnabled getCollect() {
     return collect;
   }
@@ -118,7 +114,6 @@ public class SmartDevicesProducts {
    * Showcase
    * @return showcase
   **/
-  @ApiModelProperty(value = "Showcase")
   public SmartDeviceProductsEnabled getShowcase() {
     return showcase;
   }
@@ -136,7 +131,6 @@ public class SmartDevicesProducts {
    * Vtm
    * @return vtm
   **/
-  @ApiModelProperty(value = "Vtm")
   public SmartDeviceProductsEnabled getVtm() {
     return vtm;
   }
@@ -154,7 +148,6 @@ public class SmartDevicesProducts {
    * Prepaid
    * @return prepaid
   **/
-  @ApiModelProperty(value = "Prepaid")
   public SmartDeviceProductsPrepaid getPrepaid() {
     return prepaid;
   }

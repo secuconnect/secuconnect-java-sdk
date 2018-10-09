@@ -27,7 +27,6 @@ public class PaymentCustomersDTO {
    * PaymentCustomersDTO
    * @return contact
   **/
-  @ApiModelProperty(value = "PaymentCustomersDTO")
   public Contact getContact() {
     return contact;
   }

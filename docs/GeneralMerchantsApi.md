@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getAll**](GeneralMerchantsApi.md#getAll) | **GET** /General/Merchants | GET General/Merchants
 [**getOne**](GeneralMerchantsApi.md#getOne) | **GET** /General/Merchants/{generalMerchantId} | GET General/Merchants/{generalMerchantId}
-[**updateMerchant**](GeneralMerchantsApi.md#updateMerchant) | **PUT** /General/Merchants/{id} | PUT General/Merchants/{id}
+[**updateMerchant**](GeneralMerchantsApi.md#updateMerchant) | **PUT** /General/Merchants/{generalMerchantId} | PUT General/Merchants/{generalMerchantId}
 
 
 <a name="getAll"></a>
@@ -125,9 +125,9 @@ Name | Type | Description  | Notes
 
 <a name="updateMerchant"></a>
 # **updateMerchant**
-> GeneralMerchantsProductModel updateMerchant(id, body)
+> GeneralMerchantsProductModel updateMerchant(generalMerchantId, body)
 
-PUT General/Merchants/{id}
+PUT General/Merchants/{generalMerchantId}
 
 Update general merchant
 
@@ -147,10 +147,10 @@ OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
 oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 GeneralMerchantsApi apiInstance = new GeneralMerchantsApi();
-String id = "id_example"; // String | General merchant id
+String generalMerchantId = "generalMerchantId_example"; // String | General merchant id
 GeneralMerchantsDTO body = new GeneralMerchantsDTO(); // GeneralMerchantsDTO | General merchant properties
 try {
-    GeneralMerchantsProductModel result = apiInstance.updateMerchant(id, body);
+    GeneralMerchantsProductModel result = apiInstance.updateMerchant(generalMerchantId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GeneralMerchantsApi#updateMerchant");
@@ -162,7 +162,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| General merchant id | [required]
+ **generalMerchantId** | **String**| General merchant id | [required]
  **body** | [**GeneralMerchantsDTO**](GeneralMerchantsDTO.md)| General merchant properties | [required]
 
 ### Return type

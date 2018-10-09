@@ -41,7 +41,6 @@ public class PaymentContainerMandate {
    * Sepa mandate id
    * @return sepaMandateId
   **/
-  @ApiModelProperty(value = "Sepa mandate id")
   public String getSepaMandateId() {
     return sepaMandateId;
   }
@@ -59,7 +58,6 @@ public class PaymentContainerMandate {
    * IBAN
    * @return iban
   **/
-  @ApiModelProperty(value = "IBAN")
   public String getIban() {
     return iban;
   }
@@ -77,7 +75,6 @@ public class PaymentContainerMandate {
    * BIC
    * @return bic
   **/
-  @ApiModelProperty(value = "BIC")
   public String getBic() {
     return bic;
   }
@@ -95,7 +92,6 @@ public class PaymentContainerMandate {
    * Type
    * @return type
   **/
-  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }
@@ -113,7 +109,6 @@ public class PaymentContainerMandate {
    * Status
    * @return status
   **/
-  @ApiModelProperty(value = "Status")
   public String getStatus() {
     return status;
   }
@@ -131,7 +126,6 @@ public class PaymentContainerMandate {
    * Identification
    * @return identification
   **/
-  @ApiModelProperty(value = "Identification")
   public String getIdentification() {
     return identification;
   }

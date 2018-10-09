@@ -33,7 +33,6 @@ public class PaymentContainersDTOPrivate {
    * PaymentContainersDTO
    * @return owner
   **/
-  @ApiModelProperty(value = "PaymentContainersDTO")
   public String getOwner() {
     return owner;
   }
@@ -51,7 +50,6 @@ public class PaymentContainersDTOPrivate {
    * PaymentContainersDTO
    * @return iban
   **/
-  @ApiModelProperty(value = "PaymentContainersDTO")
   public String getIban() {
     return iban;
   }
@@ -69,7 +67,6 @@ public class PaymentContainersDTOPrivate {
    * PaymentContainersDTO
    * @return bic
   **/
-  @ApiModelProperty(value = "PaymentContainersDTO")
   public String getBic() {
     return bic;
   }

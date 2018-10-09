@@ -33,7 +33,6 @@ public class PaymentInformation {
    * Owner
    * @return owner
   **/
-  @ApiModelProperty(value = "Owner")
   public String getOwner() {
     return owner;
   }
@@ -51,7 +50,6 @@ public class PaymentInformation {
    * IBAN
    * @return iban
   **/
-  @ApiModelProperty(value = "IBAN")
   public String getIban() {
     return iban;
   }
@@ -69,7 +67,6 @@ public class PaymentInformation {
    * BIC
    * @return bic
   **/
-  @ApiModelProperty(value = "BIC")
   public String getBic() {
     return bic;
   }

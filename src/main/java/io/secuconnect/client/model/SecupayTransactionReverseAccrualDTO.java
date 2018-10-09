@@ -11,28 +11,27 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * LoyaltyCustomersDeleted
+ * SecupayTransactionReverseAccrualDTO
  */
-public class LoyaltyCustomersDeleted {
-  @SerializedName("deleted")
-  private Boolean deleted = null;
+public class SecupayTransactionReverseAccrualDTO {
+  @SerializedName("accrual")
+  private Boolean accrual = false;
 
-  public LoyaltyCustomersDeleted deleted(Boolean deleted) {
-    this.deleted = deleted;
+  public SecupayTransactionReverseAccrualDTO accrual(Boolean accrual) {
+    this.accrual = accrual;
     return this;
   }
 
    /**
-   * Result is true or false
-   * @return deleted
+   * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE).
+   * @return accrual
   **/
-  @ApiModelProperty(value = "Result is true or false")
-  public Boolean getDeleted() {
-    return deleted;
+  public Boolean getAccrual() {
+    return accrual;
   }
 
-  public void setDeleted(Boolean deleted) {
-    this.deleted = deleted;
+  public void setAccrual(Boolean accrual) {
+    this.accrual = accrual;
   }
 
   @Override
@@ -43,21 +42,21 @@ public class LoyaltyCustomersDeleted {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LoyaltyCustomersDeleted loyaltyCustomersDeleted = (LoyaltyCustomersDeleted) o;
-    return Objects.equals(this.deleted, loyaltyCustomersDeleted.deleted);
+    SecupayTransactionReverseAccrualDTO secupayTransactionReverseAccrualDTO = (SecupayTransactionReverseAccrualDTO) o;
+    return Objects.equals(this.accrual, secupayTransactionReverseAccrualDTO.accrual);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(deleted);
+    return Objects.hash(accrual);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LoyaltyCustomersDeleted {\n");
+    sb.append("class SecupayTransactionReverseAccrualDTO {\n");
     
-    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
+    sb.append("    accrual: ").append(toIndentedString(accrual)).append("\n");
     sb.append("}");
     return sb.toString();
   }

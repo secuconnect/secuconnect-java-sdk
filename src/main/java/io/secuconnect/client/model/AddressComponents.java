@@ -34,7 +34,6 @@ public class AddressComponents {
    * Long name
    * @return longName
   **/
-  @ApiModelProperty(value = "Long name")
   public String getLongName() {
     return longName;
   }
@@ -52,7 +51,6 @@ public class AddressComponents {
    * Short name
    * @return shortName
   **/
-  @ApiModelProperty(value = "Short name")
   public String getShortName() {
     return shortName;
   }
@@ -78,7 +76,6 @@ public class AddressComponents {
    * Types
    * @return types
   **/
-  @ApiModelProperty(value = "Types")
   public List<String> getTypes() {
     return types;
   }

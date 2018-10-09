@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** | Text id | 
-**parent** | **Integer** | ParentModel | 
+**parent** | **Integer** | Parent | 
 **desc** | **String** | Desc | 
 
 

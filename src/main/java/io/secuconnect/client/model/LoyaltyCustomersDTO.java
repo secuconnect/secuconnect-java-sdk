@@ -45,7 +45,6 @@ public class LoyaltyCustomersDTO {
    * merchant
    * @return merchant
   **/
-  @ApiModelProperty(value = "merchant")
   public String getMerchant() {
     return merchant;
   }
@@ -63,7 +62,6 @@ public class LoyaltyCustomersDTO {
    * Contact
    * @return merchantContact
   **/
-  @ApiModelProperty(value = "Contact")
   public Contact getMerchantContact() {
     return merchantContact;
   }
@@ -81,7 +79,6 @@ public class LoyaltyCustomersDTO {
    * Age
    * @return age
   **/
-  @ApiModelProperty(value = "Age")
   public Integer getAge() {
     return age;
   }
@@ -99,7 +96,6 @@ public class LoyaltyCustomersDTO {
    * Number of days until birthday
    * @return daysUntilBirthday
   **/
-  @ApiModelProperty(value = "Number of days until birthday")
   public Integer getDaysUntilBirthday() {
     return daysUntilBirthday;
   }
@@ -117,7 +113,6 @@ public class LoyaltyCustomersDTO {
    * Customer number
    * @return customernumber
   **/
-  @ApiModelProperty(value = "Customer number")
   public String getCustomernumber() {
     return customernumber;
   }
@@ -135,7 +130,6 @@ public class LoyaltyCustomersDTO {
    * note
    * @return note
   **/
-  @ApiModelProperty(value = "note")
   public String getNote() {
     return note;
   }
@@ -153,7 +147,6 @@ public class LoyaltyCustomersDTO {
    * Consent for communication
    * @return additionalData
   **/
-  @ApiModelProperty(value = "Consent for communication")
   public Object getAdditionalData() {
     return additionalData;
   }

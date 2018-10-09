@@ -15,6 +15,9 @@ import java.util.Objects;
  */
 @ApiModel(description = "Address")
 public class Address {
+  @SerializedName("type")
+  private String type = null;
+
   @SerializedName("street")
   private String street = null;
 
@@ -30,6 +33,23 @@ public class Address {
   @SerializedName("country")
   private String country = null;
 
+  public Address type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Type
+   * @return type
+  **/
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
   public Address street(String street) {
     this.street = street;
     return this;
@@ -39,7 +59,6 @@ public class Address {
    * Street
    * @return street
   **/
-  @ApiModelProperty(value = "Street")
   public String getStreet() {
     return street;
   }
@@ -57,7 +76,6 @@ public class Address {
    * Street number
    * @return streetNumber
   **/
-  @ApiModelProperty(value = "Street number")
   public String getStreetNumber() {
     return streetNumber;
   }
@@ -75,7 +93,6 @@ public class Address {
    * City
    * @return city
   **/
-  @ApiModelProperty(value = "City")
   public String getCity() {
     return city;
   }
@@ -93,7 +110,6 @@ public class Address {
    * Postal code
    * @return postalCode
   **/
-  @ApiModelProperty(value = "Postal code")
   public String getPostalCode() {
     return postalCode;
   }
@@ -111,7 +127,6 @@ public class Address {
    * Country
    * @return country
   **/
-  @ApiModelProperty(value = "Country")
   public String getCountry() {
     return country;
   }
@@ -129,7 +144,8 @@ public class Address {
       return false;
     }
     Address address = (Address) o;
-    return Objects.equals(this.street, address.street) &&
+    return Objects.equals(this.type, address.type) &&
+        Objects.equals(this.street, address.street) &&
         Objects.equals(this.streetNumber, address.streetNumber) &&
         Objects.equals(this.city, address.city) &&
         Objects.equals(this.postalCode, address.postalCode) &&
@@ -138,7 +154,7 @@ public class Address {
 
   @Override
   public int hashCode() {
-    return Objects.hash(street, streetNumber, city, postalCode, country);
+    return Objects.hash(type, street, streetNumber, city, postalCode, country);
   }
 
   @Override
@@ -146,6 +162,7 @@ public class Address {
     StringBuilder sb = new StringBuilder();
     sb.append("class Address {\n");
     
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    street: ").append(toIndentedString(street)).append("\n");
     sb.append("    streetNumber: ").append(toIndentedString(streetNumber)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");

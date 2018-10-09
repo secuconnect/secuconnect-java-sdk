@@ -41,7 +41,6 @@ public class SmartTransactionsBasket {
    * Products
    * @return products
   **/
-  @ApiModelProperty(value = "Products")
   public List<SmartTransactionsBasketProduct> getProducts() {
     return products;
   }
@@ -67,7 +66,6 @@ public class SmartTransactionsBasket {
    * Texts
    * @return texts
   **/
-  @ApiModelProperty(value = "Texts")
   public List<SmartTransactionsBasketText> getTexts() {
     return texts;
   }

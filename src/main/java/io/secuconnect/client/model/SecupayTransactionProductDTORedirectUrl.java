@@ -33,7 +33,6 @@ public class SecupayTransactionProductDTORedirectUrl {
    * After successfully entering the cash data of the payer is returned to this page.
    * @return urlSuccess
   **/
-  @ApiModelProperty(value = "After successfully entering the cash data of the payer is returned to this page.")
   public String getUrlSuccess() {
     return urlSuccess;
   }
@@ -51,7 +50,6 @@ public class SecupayTransactionProductDTORedirectUrl {
    * After canceling or on errors the payer will be redirected to this page and can select there an another payment method.
    * @return urlFailure
   **/
-  @ApiModelProperty(value = "After canceling or on errors the payer will be redirected to this page and can select there an another payment method.")
   public String getUrlFailure() {
     return urlFailure;
   }
@@ -69,7 +67,6 @@ public class SecupayTransactionProductDTORedirectUrl {
    * The secupay system will be send status change notifications to this URL.
    * @return urlPush
   **/
-  @ApiModelProperty(value = "The secupay system will be send status change notifications to this URL.")
   public String getUrlPush() {
     return urlPush;
   }

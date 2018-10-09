@@ -30,7 +30,6 @@ public class DayTime {
    * Day
    * @return day
   **/
-  @ApiModelProperty(value = "Day")
   public Integer getDay() {
     return day;
   }
@@ -48,7 +47,6 @@ public class DayTime {
    * Time
    * @return time
   **/
-  @ApiModelProperty(value = "Time")
   public String getTime() {
     return time;
   }

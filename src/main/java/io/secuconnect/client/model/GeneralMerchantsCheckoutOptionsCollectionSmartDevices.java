@@ -36,7 +36,6 @@ public class GeneralMerchantsCheckoutOptionsCollectionSmartDevices {
    * Object of smart device
    * @return object
   **/
-  @ApiModelProperty(value = "Object of smart device")
   public String getObject() {
     return object;
   }
@@ -54,7 +53,6 @@ public class GeneralMerchantsCheckoutOptionsCollectionSmartDevices {
    * Id of smart device
    * @return id
   **/
-  @ApiModelProperty(value = "Id of smart device")
   public String getId() {
     return id;
   }
@@ -72,7 +70,6 @@ public class GeneralMerchantsCheckoutOptionsCollectionSmartDevices {
    * Description of smart device
    * @return description
   **/
-  @ApiModelProperty(value = "Description of smart device")
   public String getDescription() {
     return description;
   }
@@ -90,7 +87,6 @@ public class GeneralMerchantsCheckoutOptionsCollectionSmartDevices {
    * Store
    * @return store
   **/
-  @ApiModelProperty(value = "Store")
   public Store getStore() {
     return store;
   }

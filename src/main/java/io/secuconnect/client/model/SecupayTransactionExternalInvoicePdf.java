@@ -27,7 +27,6 @@ public class SecupayTransactionExternalInvoicePdf {
    * Get document
    * @return document
   **/
-  @ApiModelProperty(value = "")
   public SecupayTransactionExternalInvoicePdfDocument getDocument() {
     return document;
   }

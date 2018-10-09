@@ -32,7 +32,6 @@ public class PaymentTransactionsCancelList {
    * Count of returned payment contracts
    * @return count
   **/
-  @ApiModelProperty(value = "Count of returned payment contracts")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class PaymentTransactionsCancelList {
    * POST Payment/Transactions/{paymentTransactionId}/cancel
    * @return data
   **/
-  @ApiModelProperty(value = "POST Payment/Transactions/{paymentTransactionId}/cancel")
   public List<PaymentTransactionsProductModel> getData() {
     return data;
   }

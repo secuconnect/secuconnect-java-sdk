@@ -35,7 +35,6 @@ public class SmartDeviceProductsPrepaid {
    * Enabled
    * @return enabled
   **/
-  @ApiModelProperty(value = "Enabled")
   public Boolean getEnabled() {
     return enabled;
   }
@@ -53,7 +52,6 @@ public class SmartDeviceProductsPrepaid {
    * Simulate force
    * @return simulateForce
   **/
-  @ApiModelProperty(value = "Simulate force")
   public Boolean getSimulateForce() {
     return simulateForce;
   }
@@ -71,7 +69,6 @@ public class SmartDeviceProductsPrepaid {
    * Demo force
    * @return demoForce
   **/
-  @ApiModelProperty(value = "Demo force")
   public Boolean getDemoForce() {
     return demoForce;
   }
@@ -89,7 +86,6 @@ public class SmartDeviceProductsPrepaid {
    * Vtc tid
    * @return vtcTid
   **/
-  @ApiModelProperty(value = "Vtc tid")
   public String getVtcTid() {
     return vtcTid;
   }

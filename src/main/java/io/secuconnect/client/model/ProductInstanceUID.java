@@ -30,7 +30,6 @@ public class ProductInstanceUID {
    * Object type of instance
    * @return object
   **/
-  @ApiModelProperty(value = "Object type of instance")
   public String getObject() {
     return object;
   }
@@ -48,7 +47,6 @@ public class ProductInstanceUID {
    * ID of instance
    * @return id
   **/
-  @ApiModelProperty(value = "ID of instance")
   public String getId() {
     return id;
   }

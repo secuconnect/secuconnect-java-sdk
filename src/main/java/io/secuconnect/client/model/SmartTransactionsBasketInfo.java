@@ -32,7 +32,6 @@ public class SmartTransactionsBasketInfo {
    * Sum
    * @return sum
   **/
-  @ApiModelProperty(value = "Sum")
   public Integer getSum() {
     return sum;
   }
@@ -50,7 +49,6 @@ public class SmartTransactionsBasketInfo {
    * Gratuity
    * @return gratuity
   **/
-  @ApiModelProperty(value = "Gratuity")
   public Integer getGratuity() {
     return gratuity;
   }
@@ -68,7 +66,6 @@ public class SmartTransactionsBasketInfo {
    * Currency
    * @return currency
   **/
-  @ApiModelProperty(value = "Currency")
   public String getCurrency() {
     return currency;
   }

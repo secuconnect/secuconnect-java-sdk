@@ -32,7 +32,6 @@ public class SmartTransactionsBasketProductGroup {
    * Group id
    * @return id
   **/
-  @ApiModelProperty(value = "Group id")
   public String getId() {
     return id;
   }
@@ -50,7 +49,6 @@ public class SmartTransactionsBasketProductGroup {
    * Desc
    * @return desc
   **/
-  @ApiModelProperty(value = "Desc")
   public String getDesc() {
     return desc;
   }
@@ -68,7 +66,6 @@ public class SmartTransactionsBasketProductGroup {
    * Level
    * @return level
   **/
-  @ApiModelProperty(value = "Level")
   public Integer getLevel() {
     return level;
   }

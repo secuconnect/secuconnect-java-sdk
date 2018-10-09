@@ -32,7 +32,6 @@ public class PaymentContainersList {
    * Number of existing payment containers
    * @return count
   **/
-  @ApiModelProperty(value = "Number of existing payment containers")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class PaymentContainersList {
    * GET Payment/Containers
    * @return data
   **/
-  @ApiModelProperty(value = "GET Payment/Containers")
   public List<PaymentContainersProductModel> getData() {
     return data;
   }

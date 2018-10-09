@@ -66,7 +66,6 @@ public class PrepaidItemsProductModel {
    * Object of prepaid item
    * @return object
   **/
-  @ApiModelProperty(value = "Object of prepaid item")
   public String getObject() {
     return object;
   }
@@ -84,7 +83,6 @@ public class PrepaidItemsProductModel {
    * Id of prepaid item
    * @return id
   **/
-  @ApiModelProperty(value = "Id of prepaid item")
   public String getId() {
     return id;
   }
@@ -102,7 +100,6 @@ public class PrepaidItemsProductModel {
    * Retail price
    * @return retailPrice
   **/
-  @ApiModelProperty(value = "Retail price")
   public Integer getRetailPrice() {
     return retailPrice;
   }
@@ -120,7 +117,6 @@ public class PrepaidItemsProductModel {
    * Currency
    * @return currency
   **/
-  @ApiModelProperty(value = "Currency")
   public String getCurrency() {
     return currency;
   }
@@ -138,7 +134,6 @@ public class PrepaidItemsProductModel {
    * Description
    * @return description
   **/
-  @ApiModelProperty(value = "Description")
   public String getDescription() {
     return description;
   }
@@ -156,7 +151,6 @@ public class PrepaidItemsProductModel {
    * Logo
    * @return logo
   **/
-  @ApiModelProperty(value = "Logo")
   public String getLogo() {
     return logo;
   }
@@ -174,7 +168,6 @@ public class PrepaidItemsProductModel {
    * Commission
    * @return commission
   **/
-  @ApiModelProperty(value = "Commission")
   public Integer getCommission() {
     return commission;
   }
@@ -192,7 +185,6 @@ public class PrepaidItemsProductModel {
    * Vtc id
    * @return vtcId
   **/
-  @ApiModelProperty(value = "Vtc id")
   public String getVtcId() {
     return vtcId;
   }
@@ -210,7 +202,6 @@ public class PrepaidItemsProductModel {
    * Ean intern
    * @return eanIntern
   **/
-  @ApiModelProperty(value = "Ean intern")
   public String getEanIntern() {
     return eanIntern;
   }
@@ -228,7 +219,6 @@ public class PrepaidItemsProductModel {
    * Item group
    * @return itemgroup
   **/
-  @ApiModelProperty(value = "Item group")
   public ItemGroup getItemgroup() {
     return itemgroup;
   }
@@ -246,7 +236,6 @@ public class PrepaidItemsProductModel {
    * Stock limit max
    * @return stockLimitMax
   **/
-  @ApiModelProperty(value = "Stock limit max")
   public Integer getStockLimitMax() {
     return stockLimitMax;
   }
@@ -264,7 +253,6 @@ public class PrepaidItemsProductModel {
    * Stock limit min
    * @return stockLimitMin
   **/
-  @ApiModelProperty(value = "Stock limit min")
   public Integer getStockLimitMin() {
     return stockLimitMin;
   }
@@ -282,7 +270,6 @@ public class PrepaidItemsProductModel {
    * Taxable
    * @return taxable
   **/
-  @ApiModelProperty(value = "Taxable")
   public Boolean getTaxable() {
     return taxable;
   }
@@ -300,7 +287,6 @@ public class PrepaidItemsProductModel {
    * Type
    * @return type
   **/
-  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }

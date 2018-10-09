@@ -38,7 +38,6 @@ public class PrepaidSalesItem {
    * Object of item
    * @return object
   **/
-  @ApiModelProperty(value = "Object of item")
   public String getObject() {
     return object;
   }
@@ -56,7 +55,6 @@ public class PrepaidSalesItem {
    * Id of item
    * @return id
   **/
-  @ApiModelProperty(value = "Id of item")
   public String getId() {
     return id;
   }
@@ -74,7 +72,6 @@ public class PrepaidSalesItem {
    * Item description
    * @return description
   **/
-  @ApiModelProperty(value = "Item description")
   public String getDescription() {
     return description;
   }
@@ -92,7 +89,6 @@ public class PrepaidSalesItem {
    * Item logo
    * @return logo
   **/
-  @ApiModelProperty(value = "Item logo")
   public String getLogo() {
     return logo;
   }
@@ -110,7 +106,6 @@ public class PrepaidSalesItem {
    * Item type
    * @return type
   **/
-  @ApiModelProperty(value = "Item type")
   public String getType() {
     return type;
   }

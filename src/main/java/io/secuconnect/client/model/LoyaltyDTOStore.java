@@ -47,7 +47,6 @@ public class LoyaltyDTOStore {
    * LoyaltyDTOStore
    * @return object
   **/
-  @ApiModelProperty(value = "LoyaltyDTOStore")
   public String getObject() {
     return object;
   }
@@ -65,7 +64,6 @@ public class LoyaltyDTOStore {
    * LoyaltyDTOStore
    * @return id
   **/
-  @ApiModelProperty(value = "LoyaltyDTOStore")
   public String getId() {
     return id;
   }
@@ -91,7 +89,6 @@ public class LoyaltyDTOStore {
    * LoyaltyDTOStore
    * @return addressComponents
   **/
-  @ApiModelProperty(value = "LoyaltyDTOStore")
   public List<LoyaltyStoregroupsDTOStoresAddressComponents> getAddressComponents() {
     return addressComponents;
   }
@@ -109,7 +106,6 @@ public class LoyaltyDTOStore {
    * Address formatted
    * @return addressFormatted
   **/
-  @ApiModelProperty(value = "Address formatted")
   public String getAddressFormatted() {
     return addressFormatted;
   }
@@ -127,7 +123,6 @@ public class LoyaltyDTOStore {
    * Geometry
    * @return geometry
   **/
-  @ApiModelProperty(value = "Geometry")
   public String getGeometry() {
     return geometry;
   }
@@ -145,7 +140,6 @@ public class LoyaltyDTOStore {
    * Name
    * @return name
   **/
-  @ApiModelProperty(value = "Name")
   public String getName() {
     return name;
   }
@@ -163,7 +157,6 @@ public class LoyaltyDTOStore {
    * Raw name
    * @return nameRaw
   **/
-  @ApiModelProperty(value = "Raw name")
   public String getNameRaw() {
     return nameRaw;
   }

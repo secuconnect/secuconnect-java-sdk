@@ -31,7 +31,6 @@ public class ReceiptTypeValue {
    * Type
    * @return type
   **/
-  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }
@@ -49,7 +48,6 @@ public class ReceiptTypeValue {
    * Value object
    * @return value
   **/
-  @ApiModelProperty(value = "Value object")
   public ReceiptValue getValue() {
     return value;
   }

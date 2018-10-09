@@ -11,6 +11,8 @@ import io.secuconnect.client.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import io.secuconnect.client.model.PaymentContractsDTO;
+import io.secuconnect.client.model.PaymentContractsDTOClone;
+import io.secuconnect.client.model.PaymentContractsDTORequestId;
 import io.secuconnect.client.model.PaymentContractsList;
 import io.secuconnect.client.model.PaymentContractsProductModel;
 import io.secuconnect.client.model.PaymentContractsRequestIdResult;
@@ -40,6 +42,136 @@ public class PaymentContractsApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for clone
+     * @param paymentContractId Contract identifier (required)
+     * @param body Payment contract clone properties (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cloneCall(String paymentContractId, PaymentContractsDTOClone body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts/{paymentContractId}/clone"
+            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cloneValidateBeforeCall(String paymentContractId, PaymentContractsDTOClone body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'paymentContractId' is set
+        if (paymentContractId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContractId' when calling clone(Async)");
+        }
+        
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling clone(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cloneCall(paymentContractId, body, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/clone
+     * Clone an existing payment contract
+     * @param paymentContractId Contract identifier (required)
+     * @param body Payment contract clone properties (required)
+     * @return PaymentContractsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentContractsProductModel clone(String paymentContractId, PaymentContractsDTOClone body) throws ApiException {
+        ApiResponse<PaymentContractsProductModel> resp = cloneWithHttpInfo(paymentContractId, body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/clone
+     * Clone an existing payment contract
+     * @param paymentContractId Contract identifier (required)
+     * @param body Payment contract clone properties (required)
+     * @return ApiResponse&lt;PaymentContractsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentContractsProductModel> cloneWithHttpInfo(String paymentContractId, PaymentContractsDTOClone body) throws ApiException {
+        com.squareup.okhttp.Call call = cloneValidateBeforeCall(paymentContractId, body, null, null);
+        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/clone (asynchronously)
+     * Clone an existing payment contract
+     * @param paymentContractId Contract identifier (required)
+     * @param body Payment contract clone properties (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cloneAsync(String paymentContractId, PaymentContractsDTOClone body, final ApiCallback<PaymentContractsProductModel> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cloneValidateBeforeCall(paymentContractId, body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /**
      * Build call for paymentContractsGet
      * @param count The number of items to return.
@@ -298,127 +430,6 @@ public class PaymentContractsApi {
         }
 
         com.squareup.okhttp.Call call = paymentContractsGetByIdValidateBeforeCall(paymentContractId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for paymentContractsIdClonePost
-     * @param paymentContractId Contract identifier (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call paymentContractsIdClonePostCall(String paymentContractId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/Payment/Contracts/{paymentContractId}/clone"
-            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call paymentContractsIdClonePostValidateBeforeCall(String paymentContractId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'paymentContractId' is set
-        if (paymentContractId == null) {
-            throw new ApiException("Missing the required parameter 'paymentContractId' when calling paymentContractsIdClonePost(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = paymentContractsIdClonePostCall(paymentContractId, progressListener, progressRequestListener);
-        return call;
-    }
-
-    /**
-     * POST Payment/Contracts/{paymentContractId}/clone
-     * Clone an existing payment contract
-     * @param paymentContractId Contract identifier (required)
-     * @return PaymentContractsProductModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PaymentContractsProductModel paymentContractsIdClonePost(String paymentContractId) throws ApiException {
-        ApiResponse<PaymentContractsProductModel> resp = paymentContractsIdClonePostWithHttpInfo(paymentContractId);
-        return resp.getData();
-    }
-
-    /**
-     * POST Payment/Contracts/{paymentContractId}/clone
-     * Clone an existing payment contract
-     * @param paymentContractId Contract identifier (required)
-     * @return ApiResponse&lt;PaymentContractsProductModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PaymentContractsProductModel> paymentContractsIdClonePostWithHttpInfo(String paymentContractId) throws ApiException {
-        com.squareup.okhttp.Call call = paymentContractsIdClonePostValidateBeforeCall(paymentContractId, null, null);
-        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * POST Payment/Contracts/{paymentContractId}/clone (asynchronously)
-     * Clone an existing payment contract
-     * @param paymentContractId Contract identifier (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call paymentContractsIdClonePostAsync(String paymentContractId, final ApiCallback<PaymentContractsProductModel> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = paymentContractsIdClonePostValidateBeforeCall(paymentContractId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -796,127 +807,6 @@ public class PaymentContractsApi {
         return call;
     }
     /**
-     * Build call for paymentContractsIdRequestIdPost
-     * @param paymentContractId Contract identifier (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call paymentContractsIdRequestIdPostCall(String paymentContractId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/Payment/Contracts/{paymentContractId}/requestId"
-            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call paymentContractsIdRequestIdPostValidateBeforeCall(String paymentContractId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'paymentContractId' is set
-        if (paymentContractId == null) {
-            throw new ApiException("Missing the required parameter 'paymentContractId' when calling paymentContractsIdRequestIdPost(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = paymentContractsIdRequestIdPostCall(paymentContractId, progressListener, progressRequestListener);
-        return call;
-    }
-
-    /**
-     * POST Payment/Contracts/{paymentContractId}/requestId
-     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
-     * @param paymentContractId Contract identifier (required)
-     * @return PaymentContractsRequestIdResult
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PaymentContractsRequestIdResult paymentContractsIdRequestIdPost(String paymentContractId) throws ApiException {
-        ApiResponse<PaymentContractsRequestIdResult> resp = paymentContractsIdRequestIdPostWithHttpInfo(paymentContractId);
-        return resp.getData();
-    }
-
-    /**
-     * POST Payment/Contracts/{paymentContractId}/requestId
-     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
-     * @param paymentContractId Contract identifier (required)
-     * @return ApiResponse&lt;PaymentContractsRequestIdResult&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PaymentContractsRequestIdResult> paymentContractsIdRequestIdPostWithHttpInfo(String paymentContractId) throws ApiException {
-        com.squareup.okhttp.Call call = paymentContractsIdRequestIdPostValidateBeforeCall(paymentContractId, null, null);
-        Type localVarReturnType = new TypeToken<PaymentContractsRequestIdResult>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * POST Payment/Contracts/{paymentContractId}/requestId (asynchronously)
-     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
-     * @param paymentContractId Contract identifier (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call paymentContractsIdRequestIdPostAsync(String paymentContractId, final ApiCallback<PaymentContractsRequestIdResult> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = paymentContractsIdRequestIdPostValidateBeforeCall(paymentContractId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaymentContractsRequestIdResult>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for paymentContractsPost
      * @param body Payment contracts properties (required)
      * @param progressListener Progress listener
@@ -1033,6 +923,136 @@ public class PaymentContractsApi {
 
         com.squareup.okhttp.Call call = paymentContractsPostValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for requestId
+     * @param paymentContractId Contract identifier of the parent (required)
+     * @param body Payment contract request id properties (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call requestIdCall(String paymentContractId, PaymentContractsDTORequestId body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts/{paymentContractId}/requestId"
+            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call requestIdValidateBeforeCall(String paymentContractId, PaymentContractsDTORequestId body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'paymentContractId' is set
+        if (paymentContractId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContractId' when calling requestId(Async)");
+        }
+        
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling requestId(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = requestIdCall(paymentContractId, body, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/requestId
+     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
+     * @param paymentContractId Contract identifier of the parent (required)
+     * @param body Payment contract request id properties (required)
+     * @return PaymentContractsRequestIdResult
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentContractsRequestIdResult requestId(String paymentContractId, PaymentContractsDTORequestId body) throws ApiException {
+        ApiResponse<PaymentContractsRequestIdResult> resp = requestIdWithHttpInfo(paymentContractId, body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/requestId
+     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
+     * @param paymentContractId Contract identifier of the parent (required)
+     * @param body Payment contract request id properties (required)
+     * @return ApiResponse&lt;PaymentContractsRequestIdResult&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentContractsRequestIdResult> requestIdWithHttpInfo(String paymentContractId, PaymentContractsDTORequestId body) throws ApiException {
+        com.squareup.okhttp.Call call = requestIdValidateBeforeCall(paymentContractId, body, null, null);
+        Type localVarReturnType = new TypeToken<PaymentContractsRequestIdResult>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/requestId (asynchronously)
+     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
+     * @param paymentContractId Contract identifier of the parent (required)
+     * @param body Payment contract request id properties (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call requestIdAsync(String paymentContractId, PaymentContractsDTORequestId body, final ApiCallback<PaymentContractsRequestIdResult> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = requestIdValidateBeforeCall(paymentContractId, body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaymentContractsRequestIdResult>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

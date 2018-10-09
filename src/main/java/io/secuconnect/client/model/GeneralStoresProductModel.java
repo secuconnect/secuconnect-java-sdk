@@ -111,7 +111,6 @@ public class GeneralStoresProductModel {
    * Object of general store
    * @return object
   **/
-  @ApiModelProperty(value = "Object of general store")
   public String getObject() {
     return object;
   }
@@ -129,7 +128,6 @@ public class GeneralStoresProductModel {
    * Id of general store
    * @return id
   **/
-  @ApiModelProperty(value = "Id of general store")
   public String getId() {
     return id;
   }
@@ -147,7 +145,6 @@ public class GeneralStoresProductModel {
    * Old id of general store
    * @return idOld
   **/
-  @ApiModelProperty(value = "Old id of general store")
   public String getIdOld() {
     return idOld;
   }
@@ -165,7 +162,6 @@ public class GeneralStoresProductModel {
    * General merchant of general store
    * @return merchant
   **/
-  @ApiModelProperty(value = "General merchant of general store")
   public ProductInstanceUID getMerchant() {
     return merchant;
   }
@@ -183,7 +179,6 @@ public class GeneralStoresProductModel {
    * Facebook id
    * @return facebookId
   **/
-  @ApiModelProperty(value = "Facebook id")
   public String getFacebookId() {
     return facebookId;
   }
@@ -201,7 +196,6 @@ public class GeneralStoresProductModel {
    * Source
    * @return source
   **/
-  @ApiModelProperty(value = "Source")
   public String getSource() {
     return source;
   }
@@ -219,7 +213,6 @@ public class GeneralStoresProductModel {
    * Key
    * @return key
   **/
-  @ApiModelProperty(value = "Key")
   public String getKey() {
     return key;
   }
@@ -237,7 +230,6 @@ public class GeneralStoresProductModel {
    * Hash
    * @return hash
   **/
-  @ApiModelProperty(value = "Hash")
   public String getHash() {
     return hash;
   }
@@ -263,7 +255,6 @@ public class GeneralStoresProductModel {
    * Address components
    * @return addressComponents
   **/
-  @ApiModelProperty(value = "Address components")
   public List<AddressComponents> getAddressComponents() {
     return addressComponents;
   }
@@ -281,7 +272,6 @@ public class GeneralStoresProductModel {
    * General store formatted address
    * @return addressFormatted
   **/
-  @ApiModelProperty(value = "General store formatted address")
   public String getAddressFormatted() {
     return addressFormatted;
   }
@@ -299,7 +289,6 @@ public class GeneralStoresProductModel {
    * General store formatted phone number
    * @return phoneNumberFormatted
   **/
-  @ApiModelProperty(value = "General store formatted phone number")
   public String getPhoneNumberFormatted() {
     return phoneNumberFormatted;
   }
@@ -317,7 +306,6 @@ public class GeneralStoresProductModel {
    * General store geometry
    * @return geometry
   **/
-  @ApiModelProperty(value = "General store geometry")
   public String getGeometry() {
     return geometry;
   }
@@ -335,7 +323,6 @@ public class GeneralStoresProductModel {
    * General store name
    * @return name
   **/
-  @ApiModelProperty(value = "General store name")
   public String getName() {
     return name;
   }
@@ -353,7 +340,6 @@ public class GeneralStoresProductModel {
    * General store raw name
    * @return nameRaw
   **/
-  @ApiModelProperty(value = "General store raw name")
   public String getNameRaw() {
     return nameRaw;
   }
@@ -371,7 +357,6 @@ public class GeneralStoresProductModel {
    * General store main photo
    * @return photoMain
   **/
-  @ApiModelProperty(value = "General store main photo")
   public String getPhotoMain() {
     return photoMain;
   }
@@ -397,7 +382,6 @@ public class GeneralStoresProductModel {
    * General store photos
    * @return photo
   **/
-  @ApiModelProperty(value = "General store photos")
   public List<String> getPhoto() {
     return photo;
   }
@@ -415,7 +399,6 @@ public class GeneralStoresProductModel {
    * General store main category
    * @return categoryMain
   **/
-  @ApiModelProperty(value = "General store main category")
   public String getCategoryMain() {
     return categoryMain;
   }
@@ -433,7 +416,6 @@ public class GeneralStoresProductModel {
    * General store category
    * @return category
   **/
-  @ApiModelProperty(value = "General store category")
   public String getCategory() {
     return category;
   }
@@ -451,7 +433,6 @@ public class GeneralStoresProductModel {
    * Url to general store google plus
    * @return urlGoogleplus
   **/
-  @ApiModelProperty(value = "Url to general store google plus")
   public String getUrlGoogleplus() {
     return urlGoogleplus;
   }
@@ -469,7 +450,6 @@ public class GeneralStoresProductModel {
    * Url to general store website
    * @return urlWebsite
   **/
-  @ApiModelProperty(value = "Url to general store website")
   public String getUrlWebsite() {
     return urlWebsite;
   }
@@ -495,7 +475,6 @@ public class GeneralStoresProductModel {
    * Open hours in every day
    * @return openHours
   **/
-  @ApiModelProperty(value = "Open hours in every day")
   public List<OpenHours> getOpenHours() {
     return openHours;
   }
@@ -513,7 +492,6 @@ public class GeneralStoresProductModel {
    * Open now
    * @return openNow
   **/
-  @ApiModelProperty(value = "Open now")
   public Boolean getOpenNow() {
     return openNow;
   }
@@ -531,7 +509,6 @@ public class GeneralStoresProductModel {
    * Open time
    * @return openTime
   **/
-  @ApiModelProperty(value = "Open time")
   public String getOpenTime() {
     return openTime;
   }
@@ -549,7 +526,6 @@ public class GeneralStoresProductModel {
    * Utc offset
    * @return utcOffset
   **/
-  @ApiModelProperty(value = "Utc offset")
   public String getUtcOffset() {
     return utcOffset;
   }
@@ -575,7 +551,6 @@ public class GeneralStoresProductModel {
    * Assigned by
    * @return assignedBy
   **/
-  @ApiModelProperty(value = "Assigned by")
   public List<AssignedBy> getAssignedBy() {
     return assignedBy;
   }
@@ -601,7 +576,6 @@ public class GeneralStoresProductModel {
    * Invited by
    * @return invitedBy
   **/
-  @ApiModelProperty(value = "Invited by")
   public List<InvitedBy> getInvitedBy() {
     return invitedBy;
   }
@@ -619,7 +593,6 @@ public class GeneralStoresProductModel {
    * Has beacon
    * @return hasBeacon
   **/
-  @ApiModelProperty(value = "Has beacon")
   public Boolean getHasBeacon() {
     return hasBeacon;
   }

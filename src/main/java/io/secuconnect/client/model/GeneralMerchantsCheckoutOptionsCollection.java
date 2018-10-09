@@ -30,7 +30,6 @@ public class GeneralMerchantsCheckoutOptionsCollection {
    * Enabled
    * @return enabled
   **/
-  @ApiModelProperty(value = "Enabled")
   public Boolean getEnabled() {
     return enabled;
   }
@@ -48,7 +47,6 @@ public class GeneralMerchantsCheckoutOptionsCollection {
    * Smart devices
    * @return smartDevices
   **/
-  @ApiModelProperty(value = "Smart devices")
   public GeneralMerchantsCheckoutOptionsCollectionSmartDevices getSmartDevices() {
     return smartDevices;
   }

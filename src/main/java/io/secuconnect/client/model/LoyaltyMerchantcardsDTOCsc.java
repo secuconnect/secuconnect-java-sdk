@@ -29,7 +29,6 @@ public class LoyaltyMerchantcardsDTOCsc {
    * Card number
    * @return cardnumber
   **/
-  @ApiModelProperty(value = "Card number")
   public Integer getCardnumber() {
     return cardnumber;
   }
@@ -47,7 +46,6 @@ public class LoyaltyMerchantcardsDTOCsc {
    * Card security code
    * @return csc
   **/
-  @ApiModelProperty(value = "Card security code")
   public Integer getCsc() {
     return csc;
   }

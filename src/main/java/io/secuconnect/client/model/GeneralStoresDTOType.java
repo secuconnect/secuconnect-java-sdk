@@ -26,7 +26,6 @@ public class GeneralStoresDTOType {
    * Type
    * @return type
   **/
-  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }

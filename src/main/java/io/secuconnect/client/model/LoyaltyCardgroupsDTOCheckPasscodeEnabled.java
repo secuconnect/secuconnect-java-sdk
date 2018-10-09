@@ -29,7 +29,6 @@ public class LoyaltyCardgroupsDTOCheckPasscodeEnabled {
    * Action type
    * @return action
   **/
-  @ApiModelProperty(value = "Action type")
   public String getAction() {
     return action;
   }
@@ -47,7 +46,6 @@ public class LoyaltyCardgroupsDTOCheckPasscodeEnabled {
    * Secucard number
    * @return cardnumber
   **/
-  @ApiModelProperty(value = "Secucard number")
   public String getCardnumber() {
     return cardnumber;
   }

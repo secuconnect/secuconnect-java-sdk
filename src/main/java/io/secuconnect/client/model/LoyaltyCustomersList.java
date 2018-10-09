@@ -32,7 +32,6 @@ public class LoyaltyCustomersList {
    * Number of existing loyalty customers
    * @return count
   **/
-  @ApiModelProperty(value = "Number of existing loyalty customers")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class LoyaltyCustomersList {
    * GET Loyalty/Customers
    * @return data
   **/
-  @ApiModelProperty(value = "GET Loyalty/Customers")
   public List<LoyaltyCustomersProductModel> getData() {
     return data;
   }

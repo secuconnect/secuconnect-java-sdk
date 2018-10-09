@@ -110,7 +110,6 @@ public class PrepaidSalesProductModel {
    * Object of prepaid sale
    * @return object
   **/
-  @ApiModelProperty(value = "Object of prepaid sale")
   public String getObject() {
     return object;
   }
@@ -128,7 +127,6 @@ public class PrepaidSalesProductModel {
    * Id of prepaid sale
    * @return id
   **/
-  @ApiModelProperty(value = "Id of prepaid sale")
   public String getId() {
     return id;
   }
@@ -146,7 +144,6 @@ public class PrepaidSalesProductModel {
    * Status
    * @return status
   **/
-  @ApiModelProperty(value = "Status")
   public String getStatus() {
     return status;
   }
@@ -164,7 +161,6 @@ public class PrepaidSalesProductModel {
    * Prepaid stock
    * @return stock
   **/
-  @ApiModelProperty(value = "Prepaid stock")
   public ProductInstanceUID getStock() {
     return stock;
   }
@@ -182,7 +178,6 @@ public class PrepaidSalesProductModel {
    * Prepaid item
    * @return item
   **/
-  @ApiModelProperty(value = "Prepaid item")
   public PrepaidSalesItem getItem() {
     return item;
   }
@@ -200,7 +195,6 @@ public class PrepaidSalesProductModel {
    * Prepaid item group
    * @return itemgroup
   **/
-  @ApiModelProperty(value = "Prepaid item group")
   public ItemGroup getItemgroup() {
     return itemgroup;
   }
@@ -218,7 +212,6 @@ public class PrepaidSalesProductModel {
    * Smart device
    * @return smartDevice
   **/
-  @ApiModelProperty(value = "Smart device")
   public PrepaidSalesSmartDevice getSmartDevice() {
     return smartDevice;
   }
@@ -236,7 +229,6 @@ public class PrepaidSalesProductModel {
    * General merchant
    * @return merchant
   **/
-  @ApiModelProperty(value = "General merchant")
   public ProductInstanceUID getMerchant() {
     return merchant;
   }
@@ -254,7 +246,6 @@ public class PrepaidSalesProductModel {
    * General store
    * @return store
   **/
-  @ApiModelProperty(value = "General store")
   public Store getStore() {
     return store;
   }
@@ -272,7 +263,6 @@ public class PrepaidSalesProductModel {
    * Prepaid contract
    * @return contract
   **/
-  @ApiModelProperty(value = "Prepaid contract")
   public ProductInstanceUID getContract() {
     return contract;
   }
@@ -290,7 +280,6 @@ public class PrepaidSalesProductModel {
    * Prepaid sale creation date
    * @return created
   **/
-  @ApiModelProperty(value = "Prepaid sale creation date")
   public DateTime getCreated() {
     return created;
   }
@@ -308,7 +297,6 @@ public class PrepaidSalesProductModel {
    * Demo
    * @return demo
   **/
-  @ApiModelProperty(value = "Demo")
   public Boolean getDemo() {
     return demo;
   }
@@ -326,7 +314,6 @@ public class PrepaidSalesProductModel {
    * Description
    * @return description
   **/
-  @ApiModelProperty(value = "Description")
   public String getDescription() {
     return description;
   }
@@ -344,7 +331,6 @@ public class PrepaidSalesProductModel {
    * Amount
    * @return amount
   **/
-  @ApiModelProperty(value = "Amount")
   public Integer getAmount() {
     return amount;
   }
@@ -362,7 +348,6 @@ public class PrepaidSalesProductModel {
    * Currency
    * @return currency
   **/
-  @ApiModelProperty(value = "Currency")
   public String getCurrency() {
     return currency;
   }
@@ -380,7 +365,6 @@ public class PrepaidSalesProductModel {
    * Commission
    * @return commission
   **/
-  @ApiModelProperty(value = "Commission")
   public Integer getCommission() {
     return commission;
   }
@@ -398,7 +382,6 @@ public class PrepaidSalesProductModel {
    * Commission currency
    * @return commissionCurrency
   **/
-  @ApiModelProperty(value = "Commission currency")
   public String getCommissionCurrency() {
     return commissionCurrency;
   }
@@ -416,7 +399,6 @@ public class PrepaidSalesProductModel {
    * Code
    * @return code
   **/
-  @ApiModelProperty(value = "Code")
   public String getCode() {
     return code;
   }
@@ -434,7 +416,6 @@ public class PrepaidSalesProductModel {
    * Serial
    * @return serial
   **/
-  @ApiModelProperty(value = "Serial")
   public String getSerial() {
     return serial;
   }
@@ -452,7 +433,6 @@ public class PrepaidSalesProductModel {
    * Card number
    * @return cardnumber
   **/
-  @ApiModelProperty(value = "Card number")
   public String getCardnumber() {
     return cardnumber;
   }
@@ -470,7 +450,6 @@ public class PrepaidSalesProductModel {
    * Expire date
    * @return expireDate
   **/
-  @ApiModelProperty(value = "Expire date")
   public DateTime getExpireDate() {
     return expireDate;
   }
@@ -488,7 +467,6 @@ public class PrepaidSalesProductModel {
    * Provider delivery number
    * @return providerDeliveryNumber
   **/
-  @ApiModelProperty(value = "Provider delivery number")
   public String getProviderDeliveryNumber() {
     return providerDeliveryNumber;
   }
@@ -506,7 +484,6 @@ public class PrepaidSalesProductModel {
    * Receipt header
    * @return receiptHeader
   **/
-  @ApiModelProperty(value = "Receipt header")
   public String getReceiptHeader() {
     return receiptHeader;
   }
@@ -524,7 +501,6 @@ public class PrepaidSalesProductModel {
    * Receipt customer
    * @return receiptCustomer
   **/
-  @ApiModelProperty(value = "Receipt customer")
   public String getReceiptCustomer() {
     return receiptCustomer;
   }
@@ -542,7 +518,6 @@ public class PrepaidSalesProductModel {
    * Receipt zvt
    * @return receiptZvt
   **/
-  @ApiModelProperty(value = "Receipt zvt")
   public String getReceiptZvt() {
     return receiptZvt;
   }
@@ -560,7 +535,6 @@ public class PrepaidSalesProductModel {
    * Receipt dealer
    * @return receiptDealer
   **/
-  @ApiModelProperty(value = "Receipt dealer")
   public String getReceiptDealer() {
     return receiptDealer;
   }
@@ -578,7 +552,6 @@ public class PrepaidSalesProductModel {
    * Vtc tid
    * @return vtcTid
   **/
-  @ApiModelProperty(value = "Vtc tid")
   public String getVtcTid() {
     return vtcTid;
   }

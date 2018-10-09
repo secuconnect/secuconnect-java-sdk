@@ -32,7 +32,6 @@ public class LoyaltyCardgroupsList {
    * Number of existing loyalty card groups
    * @return count
   **/
-  @ApiModelProperty(value = "Number of existing loyalty card groups")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class LoyaltyCardgroupsList {
    * GET Loyalty/Cardgroups
    * @return data
   **/
-  @ApiModelProperty(value = "GET Loyalty/Cardgroups")
   public List<LoyaltyCardgroupsProductModel> getData() {
     return data;
   }

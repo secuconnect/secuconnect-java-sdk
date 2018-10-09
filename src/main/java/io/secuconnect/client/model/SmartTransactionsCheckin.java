@@ -32,7 +32,6 @@ public class SmartTransactionsCheckin {
    * Object of smart transaction check in
    * @return object
   **/
-  @ApiModelProperty(value = "Object of smart transaction check in")
   public String getObject() {
     return object;
   }
@@ -50,7 +49,6 @@ public class SmartTransactionsCheckin {
    * Id of smart transaction check in
    * @return id
   **/
-  @ApiModelProperty(value = "Id of smart transaction check in")
   public String getId() {
     return id;
   }
@@ -68,7 +66,6 @@ public class SmartTransactionsCheckin {
    * Email
    * @return email
   **/
-  @ApiModelProperty(value = "Email")
   public String getEmail() {
     return email;
   }

@@ -40,7 +40,6 @@ public class SmartDevicesSecubaseConfig {
    * Apps
    * @return apps
   **/
-  @ApiModelProperty(value = "Apps")
   public List<String> getApps() {
     return apps;
   }
@@ -58,7 +57,6 @@ public class SmartDevicesSecubaseConfig {
    * Logging
    * @return logging
   **/
-  @ApiModelProperty(value = "Logging")
   public SmartDevicesSecubaseConfigLogging getLogging() {
     return logging;
   }

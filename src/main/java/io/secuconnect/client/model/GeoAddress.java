@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.AddressComponents;
+import io.secuconnect.client.model.GeoAddressGeometry;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class GeoAddress {
   private String addressFormatted = null;
 
   @SerializedName("geometry")
-  private String geometry = null;
+  private GeoAddressGeometry geometry = null;
 
   public GeoAddress type(String type) {
     this.type = type;
@@ -36,7 +37,6 @@ public class GeoAddress {
    * Address type
    * @return type
   **/
-  @ApiModelProperty(value = "Address type")
   public String getType() {
     return type;
   }
@@ -54,7 +54,6 @@ public class GeoAddress {
    * Address components
    * @return addressComponents
   **/
-  @ApiModelProperty(value = "Address components")
   public AddressComponents getAddressComponents() {
     return addressComponents;
   }
@@ -72,7 +71,6 @@ public class GeoAddress {
    * Address formatted
    * @return addressFormatted
   **/
-  @ApiModelProperty(value = "Address formatted")
   public String getAddressFormatted() {
     return addressFormatted;
   }
@@ -81,21 +79,20 @@ public class GeoAddress {
     this.addressFormatted = addressFormatted;
   }
 
-  public GeoAddress geometry(String geometry) {
+  public GeoAddress geometry(GeoAddressGeometry geometry) {
     this.geometry = geometry;
     return this;
   }
 
    /**
-   * Geometry
+   * Get geometry
    * @return geometry
   **/
-  @ApiModelProperty(value = "Geometry")
-  public String getGeometry() {
+  public GeoAddressGeometry getGeometry() {
     return geometry;
   }
 
-  public void setGeometry(String geometry) {
+  public void setGeometry(GeoAddressGeometry geometry) {
     this.geometry = geometry;
   }
 

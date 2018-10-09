@@ -40,7 +40,6 @@ public class VirtualTerminalData {
    * Store
    * @return store
   **/
-  @ApiModelProperty(value = "Store")
   public Object getStore() {
     return store;
   }
@@ -58,7 +57,6 @@ public class VirtualTerminalData {
    * Terminal id
    * @return tid
   **/
-  @ApiModelProperty(value = "Terminal id")
   public String getTid() {
     return tid;
   }
@@ -84,7 +82,6 @@ public class VirtualTerminalData {
    * Actions
    * @return actions
   **/
-  @ApiModelProperty(value = "Actions")
   public List<String> getActions() {
     return actions;
   }
@@ -102,7 +99,6 @@ public class VirtualTerminalData {
    * Gift terminal
    * @return giftTerminal
   **/
-  @ApiModelProperty(value = "Gift terminal")
   public Integer getGiftTerminal() {
     return giftTerminal;
   }
@@ -120,7 +116,6 @@ public class VirtualTerminalData {
    * Amount split enabled
    * @return amountSplitEnabled
   **/
-  @ApiModelProperty(value = "Amount split enabled")
   public Integer getAmountSplitEnabled() {
     return amountSplitEnabled;
   }

@@ -36,7 +36,6 @@ public class BankAccountDescriptor {
    * Owner
    * @return owner
   **/
-  @ApiModelProperty(value = "Owner")
   public String getOwner() {
     return owner;
   }
@@ -54,7 +53,6 @@ public class BankAccountDescriptor {
    * IBAN
    * @return iban
   **/
-  @ApiModelProperty(value = "IBAN")
   public String getIban() {
     return iban;
   }
@@ -72,7 +70,6 @@ public class BankAccountDescriptor {
    * BIC
    * @return bic
   **/
-  @ApiModelProperty(value = "BIC")
   public String getBic() {
     return bic;
   }
@@ -90,7 +87,6 @@ public class BankAccountDescriptor {
    * Bank name
    * @return bankname
   **/
-  @ApiModelProperty(value = "Bank name")
   public String getBankname() {
     return bankname;
   }

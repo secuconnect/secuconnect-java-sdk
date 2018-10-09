@@ -30,7 +30,6 @@ public class SecupayTransactionProductDTOExperience {
    * Score of positive experience (paid orders)
    * @return positive
   **/
-  @ApiModelProperty(value = "Score of positive experience (paid orders)")
   public Integer getPositive() {
     return positive;
   }
@@ -48,7 +47,6 @@ public class SecupayTransactionProductDTOExperience {
    * Score of negative experience (open/unpaid orders)
    * @return negative
   **/
-  @ApiModelProperty(value = "Score of negative experience (open/unpaid orders)")
   public Integer getNegative() {
     return negative;
   }

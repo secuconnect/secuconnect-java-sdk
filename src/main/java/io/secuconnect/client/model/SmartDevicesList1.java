@@ -32,7 +32,6 @@ public class SmartDevicesList1 {
    * Number of existing smart devices
    * @return count
   **/
-  @ApiModelProperty(value = "Number of existing smart devices")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class SmartDevicesList1 {
    * GET Smart/Devices/{smartDeviceId}/routing/type/{type}
    * @return data
   **/
-  @ApiModelProperty(value = "GET Smart/Devices/{smartDeviceId}/routing/type/{type}")
   public List<SmartDevicesProductModel> getData() {
     return data;
   }

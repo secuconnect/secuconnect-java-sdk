@@ -50,7 +50,6 @@ public class LoyaltyMerchantcardsDTOTransaction {
    * Action
    * @return action
   **/
-  @ApiModelProperty(value = "Action")
   public String getAction() {
     return action;
   }
@@ -68,7 +67,6 @@ public class LoyaltyMerchantcardsDTOTransaction {
    * Terminal id
    * @return terminalId
   **/
-  @ApiModelProperty(value = "Terminal id")
   public String getTerminalId() {
     return terminalId;
   }
@@ -86,7 +84,6 @@ public class LoyaltyMerchantcardsDTOTransaction {
    * Amount
    * @return amount
   **/
-  @ApiModelProperty(value = "Amount")
   public Integer getAmount() {
     return amount;
   }
@@ -104,7 +101,6 @@ public class LoyaltyMerchantcardsDTOTransaction {
    * Tid
    * @return tid
   **/
-  @ApiModelProperty(value = "Tid")
   public String getTid() {
     return tid;
   }
@@ -122,7 +118,6 @@ public class LoyaltyMerchantcardsDTOTransaction {
    * Store id
    * @return store
   **/
-  @ApiModelProperty(value = "Store id")
   public String getStore() {
     return store;
   }
@@ -140,7 +135,6 @@ public class LoyaltyMerchantcardsDTOTransaction {
    * Card number
    * @return cardnumber
   **/
-  @ApiModelProperty(value = "Card number")
   public Integer getCardnumber() {
     return cardnumber;
   }
@@ -158,7 +152,6 @@ public class LoyaltyMerchantcardsDTOTransaction {
    * Bonus amount
    * @return bonusAmount
   **/
-  @ApiModelProperty(value = "Bonus amount")
   public Integer getBonusAmount() {
     return bonusAmount;
   }
@@ -176,7 +169,6 @@ public class LoyaltyMerchantcardsDTOTransaction {
    * Amount split allowed
    * @return amountSplitAllowed
   **/
-  @ApiModelProperty(value = "Amount split allowed")
   public String getAmountSplitAllowed() {
     return amountSplitAllowed;
   }
@@ -194,7 +186,6 @@ public class LoyaltyMerchantcardsDTOTransaction {
    * Merchant id
    * @return merchantId
   **/
-  @ApiModelProperty(value = "Merchant id")
   public String getMerchantId() {
     return merchantId;
   }

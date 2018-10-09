@@ -31,7 +31,6 @@ public class OpenHours {
    * Open
    * @return open
   **/
-  @ApiModelProperty(value = "Open")
   public DayTime getOpen() {
     return open;
   }
@@ -49,7 +48,6 @@ public class OpenHours {
    * Close
    * @return close
   **/
-  @ApiModelProperty(value = "Close")
   public DayTime getClose() {
     return close;
   }

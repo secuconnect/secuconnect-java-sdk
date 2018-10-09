@@ -5,11 +5,11 @@ All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addCustomer**](LoyaltyCustomersApi.md#addCustomer) | **POST** /Loyalty/Customers | POST Loyalty/Customers
-[**assignPaymentContainer**](LoyaltyCustomersApi.md#assignPaymentContainer) | **POST** /Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId} | POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId}
+[**assignPaymentContainer**](LoyaltyCustomersApi.md#assignPaymentContainer) | **POST** /Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId} | POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
 [**checkForDuplicates**](LoyaltyCustomersApi.md#checkForDuplicates) | **POST** /Loyalty/Customers/{loyaltyCustomerId}/checkDuplicated/ | POST Loyalty/Customers/{loyaltyCustomerId}/checkDuplicated/
 [**getAll**](LoyaltyCustomersApi.md#getAll) | **GET** /Loyalty/Customers | GET Loyalty/Customers
 [**getOne**](LoyaltyCustomersApi.md#getOne) | **GET** /Loyalty/Customers/{loyaltyCustomerId} | GET Loyalty/Customers/{loyaltyCustomerId}
-[**removeAssignedPaymentContainer**](LoyaltyCustomersApi.md#removeAssignedPaymentContainer) | **DELETE** /Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId} | DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId}
+[**removeAssignedPaymentContainer**](LoyaltyCustomersApi.md#removeAssignedPaymentContainer) | **DELETE** /Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId} | DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
 [**removeCustomer**](LoyaltyCustomersApi.md#removeCustomer) | **DELETE** /Loyalty/Customers/{loyaltyCustomerId} | DELETE Loyalty/Customers/{loyaltyCustomerId}
 [**updateCustomer**](LoyaltyCustomersApi.md#updateCustomer) | **PUT** /Loyalty/Customers/{loyaltyCustomerId} | PUT Loyalty/Customers/{loyaltyCustomerId}
 
@@ -71,9 +71,9 @@ Name | Type | Description  | Notes
 # **assignPaymentContainer**
 > LoyaltyCustomersProductModel assignPaymentContainer(loyaltyCustomerId, loyaltyPaymentContainerId)
 
-POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId}
+POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
 
-Assigns LoyaltyPaymentcontainer to customer
+Assigns LoyaltyPaymentContainer to customer
 
 ### Example
 ```java
@@ -92,7 +92,7 @@ oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 LoyaltyCustomersApi apiInstance = new LoyaltyCustomersApi();
 String loyaltyCustomerId = "loyaltyCustomerId_example"; // String | Loyalty customer id
-String loyaltyPaymentContainerId = "loyaltyPaymentContainerId_example"; // String | LoyaltyPaymentcontainer id
+String loyaltyPaymentContainerId = "loyaltyPaymentContainerId_example"; // String | LoyaltyPaymentContainer id
 try {
     LoyaltyCustomersProductModel result = apiInstance.assignPaymentContainer(loyaltyCustomerId, loyaltyPaymentContainerId);
     System.out.println(result);
@@ -107,7 +107,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyCustomerId** | **String**| Loyalty customer id | [required]
- **loyaltyPaymentContainerId** | **String**| LoyaltyPaymentcontainer id | [required]
+ **loyaltyPaymentContainerId** | **String**| LoyaltyPaymentContainer id | [required]
 
 ### Return type
 
@@ -293,9 +293,9 @@ Name | Type | Description  | Notes
 # **removeAssignedPaymentContainer**
 > LoyaltyCustomersProductModel removeAssignedPaymentContainer(loyaltyCustomerId, loyaltyPaymentContainerId)
 
-DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId}
+DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
 
-Removes an assigned LoyaltyPaymentcontainer from customer
+Removes an assigned LoyaltyPaymentContainer from customer
 
 ### Example
 ```java
@@ -314,7 +314,7 @@ oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 
 LoyaltyCustomersApi apiInstance = new LoyaltyCustomersApi();
 String loyaltyCustomerId = "loyaltyCustomerId_example"; // String | Loyalty customer id
-String loyaltyPaymentContainerId = "loyaltyPaymentContainerId_example"; // String | LoyaltyPaymentcontainer id
+String loyaltyPaymentContainerId = "loyaltyPaymentContainerId_example"; // String | LoyaltyPaymentContainer id
 try {
     LoyaltyCustomersProductModel result = apiInstance.removeAssignedPaymentContainer(loyaltyCustomerId, loyaltyPaymentContainerId);
     System.out.println(result);
@@ -329,7 +329,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **loyaltyCustomerId** | **String**| Loyalty customer id | [required]
- **loyaltyPaymentContainerId** | **String**| LoyaltyPaymentcontainer id | [required]
+ **loyaltyPaymentContainerId** | **String**| LoyaltyPaymentContainer id | [required]
 
 ### Return type
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 <a name="removeCustomer"></a>
 # **removeCustomer**
-> LoyaltyCustomersDeleted removeCustomer(loyaltyCustomerId)
+> LoyaltyCustomersRemoved removeCustomer(loyaltyCustomerId)
 
 DELETE Loyalty/Customers/{loyaltyCustomerId}
 
@@ -370,7 +370,7 @@ oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 LoyaltyCustomersApi apiInstance = new LoyaltyCustomersApi();
 String loyaltyCustomerId = "loyaltyCustomerId_example"; // String | Loyalty customer id
 try {
-    LoyaltyCustomersDeleted result = apiInstance.removeCustomer(loyaltyCustomerId);
+    LoyaltyCustomersRemoved result = apiInstance.removeCustomer(loyaltyCustomerId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LoyaltyCustomersApi#removeCustomer");
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoyaltyCustomersDeleted**](LoyaltyCustomersDeleted.md)
+[**LoyaltyCustomersRemoved**](LoyaltyCustomersRemoved.md)
 
 ### Authorization
 

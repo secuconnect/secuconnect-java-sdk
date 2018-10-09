@@ -41,7 +41,6 @@ public class GeneralMerchantsUser {
    * Object of general merchant user
    * @return object
   **/
-  @ApiModelProperty(value = "Object of general merchant user")
   public String getObject() {
     return object;
   }
@@ -59,7 +58,6 @@ public class GeneralMerchantsUser {
    * Id of general merchant user
    * @return id
   **/
-  @ApiModelProperty(value = "Id of general merchant user")
   public String getId() {
     return id;
   }
@@ -77,7 +75,6 @@ public class GeneralMerchantsUser {
    * Name of general merchant user
    * @return name
   **/
-  @ApiModelProperty(value = "Name of general merchant user")
   public String getName() {
     return name;
   }
@@ -95,7 +92,6 @@ public class GeneralMerchantsUser {
    * Company name of general merchant user
    * @return companyname
   **/
-  @ApiModelProperty(value = "Company name of general merchant user")
   public String getCompanyname() {
     return companyname;
   }
@@ -121,7 +117,6 @@ public class GeneralMerchantsUser {
    * Address of general merchant user
    * @return address
   **/
-  @ApiModelProperty(value = "Address of general merchant user")
   public List<GeoAddress> getAddress() {
     return address;
   }

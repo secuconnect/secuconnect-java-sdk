@@ -29,7 +29,6 @@ public class LoyaltyMerchantcardsDTOCheckPasscode {
    * Loyalty Card number
    * @return cardnumber
   **/
-  @ApiModelProperty(value = "Loyalty Card number")
   public Integer getCardnumber() {
     return cardnumber;
   }
@@ -47,7 +46,6 @@ public class LoyaltyMerchantcardsDTOCheckPasscode {
    * Loyalty Card pin
    * @return pin
   **/
-  @ApiModelProperty(value = "Loyalty Card pin")
   public Integer getPin() {
     return pin;
   }

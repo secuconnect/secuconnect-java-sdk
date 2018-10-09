@@ -40,7 +40,6 @@ public class LoyaltyCardsProductModel {
    * Object of loyalty card
    * @return object
   **/
-  @ApiModelProperty(value = "Object of loyalty card")
   public String getObject() {
     return object;
   }
@@ -58,7 +57,6 @@ public class LoyaltyCardsProductModel {
    * Id of loyalty card
    * @return id
   **/
-  @ApiModelProperty(value = "Id of loyalty card")
   public String getId() {
     return id;
   }
@@ -76,7 +74,6 @@ public class LoyaltyCardsProductModel {
    * Loyalty card account
    * @return account
   **/
-  @ApiModelProperty(value = "Loyalty card account")
   public LoyaltyCardsDTOAccount getAccount() {
     return account;
   }
@@ -94,7 +91,6 @@ public class LoyaltyCardsProductModel {
    * Loyalty card number
    * @return cardnumber
   **/
-  @ApiModelProperty(value = "Loyalty card number")
   public String getCardnumber() {
     return cardnumber;
   }
@@ -112,7 +108,6 @@ public class LoyaltyCardsProductModel {
    * Creation date
    * @return created
   **/
-  @ApiModelProperty(value = "Creation date")
   public DateTime getCreated() {
     return created;
   }

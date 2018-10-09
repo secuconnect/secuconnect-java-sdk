@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **itemType** | **String** | Category of item | 
-**articleNumber** | **String** | Article number, if item is of article category | 
+**articleNumber** | **String** | Article number of item | 
 **quantity** | **Integer** | Quantity of articles in item | 
 **name** | **String** | Descriptive name of item | 
 **model** | **String** | Model of item | 
@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **apikey** | **String** | Special param for stakeholder payments | 
 **transactionHash** | **String** | Special param for payout payments | 
 **contractId** | **String** | Contract id - Special param for stakeholder payments | 
+**referenceId** | **String** | Reference id - must be unique for the entire basket | 
+**subBasket** | [**List&lt;SecupayBasketItem&gt;**](SecupayBasketItem.md) | Mixed-Basket: All basket items for one merchant. | 
 
 
 

@@ -9,6 +9,8 @@ import io.secuconnect.client.model.SmartTransactionsBasketProductGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -40,7 +42,7 @@ public class SmartTransactionsBasketProduct {
   private Integer tax = null;
 
   @SerializedName("group")
-  private SmartTransactionsBasketProductGroup group = null;
+  private List<SmartTransactionsBasketProductGroup> group = null;
 
   public SmartTransactionsBasketProduct id(Integer id) {
     this.id = id;
@@ -51,7 +53,6 @@ public class SmartTransactionsBasketProduct {
    * Product id
    * @return id
   **/
-  @ApiModelProperty(value = "Product id")
   public Integer getId() {
     return id;
   }
@@ -69,7 +70,6 @@ public class SmartTransactionsBasketProduct {
    * Parent
    * @return parent
   **/
-  @ApiModelProperty(value = "Parent")
   public Integer getParent() {
     return parent;
   }
@@ -87,7 +87,6 @@ public class SmartTransactionsBasketProduct {
    * Desc
    * @return desc
   **/
-  @ApiModelProperty(value = "Desc")
   public String getDesc() {
     return desc;
   }
@@ -105,7 +104,6 @@ public class SmartTransactionsBasketProduct {
    * Article number
    * @return articleNumber
   **/
-  @ApiModelProperty(value = "Article number")
   public String getArticleNumber() {
     return articleNumber;
   }
@@ -123,7 +121,6 @@ public class SmartTransactionsBasketProduct {
    * Ean
    * @return ean
   **/
-  @ApiModelProperty(value = "Ean")
   public String getEan() {
     return ean;
   }
@@ -141,7 +138,6 @@ public class SmartTransactionsBasketProduct {
    * Quantity
    * @return quantity
   **/
-  @ApiModelProperty(value = "Quantity")
   public Integer getQuantity() {
     return quantity;
   }
@@ -159,7 +155,6 @@ public class SmartTransactionsBasketProduct {
    * Price one
    * @return priceOne
   **/
-  @ApiModelProperty(value = "Price one")
   public Integer getPriceOne() {
     return priceOne;
   }
@@ -177,7 +172,6 @@ public class SmartTransactionsBasketProduct {
    * Tax
    * @return tax
   **/
-  @ApiModelProperty(value = "Tax")
   public Integer getTax() {
     return tax;
   }
@@ -186,8 +180,16 @@ public class SmartTransactionsBasketProduct {
     this.tax = tax;
   }
 
-  public SmartTransactionsBasketProduct group(SmartTransactionsBasketProductGroup group) {
+  public SmartTransactionsBasketProduct group(List<SmartTransactionsBasketProductGroup> group) {
     this.group = group;
+    return this;
+  }
+
+  public SmartTransactionsBasketProduct addGroupItem(SmartTransactionsBasketProductGroup groupItem) {
+    if (this.group == null) {
+      this.group = new ArrayList<SmartTransactionsBasketProductGroup>();
+    }
+    this.group.add(groupItem);
     return this;
   }
 
@@ -195,12 +197,11 @@ public class SmartTransactionsBasketProduct {
    * Group
    * @return group
   **/
-  @ApiModelProperty(value = "Group")
-  public SmartTransactionsBasketProductGroup getGroup() {
+  public List<SmartTransactionsBasketProductGroup> getGroup() {
     return group;
   }
 
-  public void setGroup(SmartTransactionsBasketProductGroup group) {
+  public void setGroup(List<SmartTransactionsBasketProductGroup> group) {
     this.group = group;
   }
 

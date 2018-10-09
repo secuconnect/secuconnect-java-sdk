@@ -11,9 +11,9 @@ import io.secuconnect.client.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import io.secuconnect.client.model.LoyaltyCustomersDTO;
-import io.secuconnect.client.model.LoyaltyCustomersDeleted;
 import io.secuconnect.client.model.LoyaltyCustomersList;
 import io.secuconnect.client.model.LoyaltyCustomersProductModel;
+import io.secuconnect.client.model.LoyaltyCustomersRemoved;
 import io.secuconnect.client.model.ProductExceptionPayload;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -163,7 +163,7 @@ public class LoyaltyCustomersApi {
     /**
      * Build call for assignPaymentContainer
      * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentcontainer id (required)
+     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -173,7 +173,7 @@ public class LoyaltyCustomersApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId}"
+        String localVarPath = "/Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}"
             .replaceAll("\\{" + "loyaltyCustomerId" + "\\}", apiClient.escapeString(loyaltyCustomerId.toString()))
             .replaceAll("\\{" + "loyaltyPaymentContainerId" + "\\}", apiClient.escapeString(loyaltyPaymentContainerId.toString()));
 
@@ -230,10 +230,10 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId}
-     * Assigns LoyaltyPaymentcontainer to customer
+     * POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
+     * Assigns LoyaltyPaymentContainer to customer
      * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentcontainer id (required)
+     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -243,10 +243,10 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId}
-     * Assigns LoyaltyPaymentcontainer to customer
+     * POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
+     * Assigns LoyaltyPaymentContainer to customer
      * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentcontainer id (required)
+     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -257,10 +257,10 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId} (asynchronously)
-     * Assigns LoyaltyPaymentcontainer to customer
+     * POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId} (asynchronously)
+     * Assigns LoyaltyPaymentContainer to customer
      * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentcontainer id (required)
+     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -677,7 +677,7 @@ public class LoyaltyCustomersApi {
     /**
      * Build call for removeAssignedPaymentContainer
      * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentcontainer id (required)
+     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -687,7 +687,7 @@ public class LoyaltyCustomersApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId}"
+        String localVarPath = "/Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}"
             .replaceAll("\\{" + "loyaltyCustomerId" + "\\}", apiClient.escapeString(loyaltyCustomerId.toString()))
             .replaceAll("\\{" + "loyaltyPaymentContainerId" + "\\}", apiClient.escapeString(loyaltyPaymentContainerId.toString()));
 
@@ -744,10 +744,10 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId}
-     * Removes an assigned LoyaltyPaymentcontainer from customer
+     * DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
+     * Removes an assigned LoyaltyPaymentContainer from customer
      * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentcontainer id (required)
+     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -757,10 +757,10 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId}
-     * Removes an assigned LoyaltyPaymentcontainer from customer
+     * DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
+     * Removes an assigned LoyaltyPaymentContainer from customer
      * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentcontainer id (required)
+     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -771,10 +771,10 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentcontainer/{loyaltyPaymentContainerId} (asynchronously)
-     * Removes an assigned LoyaltyPaymentcontainer from customer
+     * DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId} (asynchronously)
+     * Removes an assigned LoyaltyPaymentContainer from customer
      * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentcontainer id (required)
+     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -871,11 +871,11 @@ public class LoyaltyCustomersApi {
      * DELETE Loyalty/Customers/{loyaltyCustomerId}
      * Remove assigned loyalty customer
      * @param loyaltyCustomerId Loyalty customer id (required)
-     * @return LoyaltyCustomersDeleted
+     * @return LoyaltyCustomersRemoved
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LoyaltyCustomersDeleted removeCustomer(String loyaltyCustomerId) throws ApiException {
-        ApiResponse<LoyaltyCustomersDeleted> resp = removeCustomerWithHttpInfo(loyaltyCustomerId);
+    public LoyaltyCustomersRemoved removeCustomer(String loyaltyCustomerId) throws ApiException {
+        ApiResponse<LoyaltyCustomersRemoved> resp = removeCustomerWithHttpInfo(loyaltyCustomerId);
         return resp.getData();
     }
 
@@ -883,12 +883,12 @@ public class LoyaltyCustomersApi {
      * DELETE Loyalty/Customers/{loyaltyCustomerId}
      * Remove assigned loyalty customer
      * @param loyaltyCustomerId Loyalty customer id (required)
-     * @return ApiResponse&lt;LoyaltyCustomersDeleted&gt;
+     * @return ApiResponse&lt;LoyaltyCustomersRemoved&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LoyaltyCustomersDeleted> removeCustomerWithHttpInfo(String loyaltyCustomerId) throws ApiException {
+    public ApiResponse<LoyaltyCustomersRemoved> removeCustomerWithHttpInfo(String loyaltyCustomerId) throws ApiException {
         com.squareup.okhttp.Call call = removeCustomerValidateBeforeCall(loyaltyCustomerId, null, null);
-        Type localVarReturnType = new TypeToken<LoyaltyCustomersDeleted>(){}.getType();
+        Type localVarReturnType = new TypeToken<LoyaltyCustomersRemoved>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -900,7 +900,7 @@ public class LoyaltyCustomersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call removeCustomerAsync(String loyaltyCustomerId, final ApiCallback<LoyaltyCustomersDeleted> callback) throws ApiException {
+    public com.squareup.okhttp.Call removeCustomerAsync(String loyaltyCustomerId, final ApiCallback<LoyaltyCustomersRemoved> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -922,7 +922,7 @@ public class LoyaltyCustomersApi {
         }
 
         com.squareup.okhttp.Call call = removeCustomerValidateBeforeCall(loyaltyCustomerId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<LoyaltyCustomersDeleted>(){}.getType();
+        Type localVarReturnType = new TypeToken<LoyaltyCustomersRemoved>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

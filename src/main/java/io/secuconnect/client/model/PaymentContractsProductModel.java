@@ -49,7 +49,6 @@ public class PaymentContractsProductModel {
    * Object of payment contract
    * @return object
   **/
-  @ApiModelProperty(example = "payment.contracts", value = "Object of payment contract")
   public String getObject() {
     return object;
   }
@@ -67,7 +66,6 @@ public class PaymentContractsProductModel {
    * Id of payment contract
    * @return id
   **/
-  @ApiModelProperty(example = "PCR_W8VVN3QCN2M7690ZR5GQGH5YJNVVAU", value = "Id of payment contract")
   public String getId() {
     return id;
   }
@@ -85,7 +83,6 @@ public class PaymentContractsProductModel {
    * Payment contract
    * @return parent
   **/
-  @ApiModelProperty(value = "Payment contract")
   public ProductInstanceUID getParent() {
     return parent;
   }
@@ -103,7 +100,6 @@ public class PaymentContractsProductModel {
    * Is this a demo contract
    * @return demo
   **/
-  @ApiModelProperty(value = "Is this a demo contract")
   public Boolean getDemo() {
     return demo;
   }
@@ -121,7 +117,6 @@ public class PaymentContractsProductModel {
    * Allow to create sub-contracts
    * @return allowCloning
   **/
-  @ApiModelProperty(value = "Allow to create sub-contracts")
   public Boolean getAllowCloning() {
     return allowCloning;
   }
@@ -139,7 +134,6 @@ public class PaymentContractsProductModel {
    * Inform the customer about the created sepa mandate
    * @return sepaMandateInform
   **/
-  @ApiModelProperty(example = "never", value = "Inform the customer about the created sepa mandate")
   public String getSepaMandateInform() {
     return sepaMandateInform;
   }
@@ -157,7 +151,6 @@ public class PaymentContractsProductModel {
    * Created at date
    * @return created
   **/
-  @ApiModelProperty(value = "Created at date")
   public DateTime getCreated() {
     return created;
   }
@@ -175,7 +168,6 @@ public class PaymentContractsProductModel {
    * Updated at date
    * @return updated
   **/
-  @ApiModelProperty(value = "Updated at date")
   public DateTime getUpdated() {
     return updated;
   }

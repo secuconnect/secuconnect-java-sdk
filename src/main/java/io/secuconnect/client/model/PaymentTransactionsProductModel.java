@@ -78,7 +78,6 @@ public class PaymentTransactionsProductModel {
    * Object of payment transaction
    * @return object
   **/
-  @ApiModelProperty(value = "Object of payment transaction")
   public String getObject() {
     return object;
   }
@@ -96,7 +95,6 @@ public class PaymentTransactionsProductModel {
    * Id of payment transaction
    * @return id
   **/
-  @ApiModelProperty(value = "Id of payment transaction")
   public String getId() {
     return id;
   }
@@ -114,7 +112,6 @@ public class PaymentTransactionsProductModel {
    * Get merchant
    * @return merchant
   **/
-  @ApiModelProperty(value = "")
   public PaymentTransactionsProductModelMerchant getMerchant() {
     return merchant;
   }
@@ -132,7 +129,6 @@ public class PaymentTransactionsProductModel {
    * Transaction identifier
    * @return transId
   **/
-  @ApiModelProperty(value = "Transaction identifier")
   public Integer getTransId() {
     return transId;
   }
@@ -150,7 +146,6 @@ public class PaymentTransactionsProductModel {
    * Product identifier
    * @return productId
   **/
-  @ApiModelProperty(value = "Product identifier")
   public Integer getProductId() {
     return productId;
   }
@@ -168,7 +163,6 @@ public class PaymentTransactionsProductModel {
    * Product type
    * @return product
   **/
-  @ApiModelProperty(value = "Product type")
   public String getProduct() {
     return product;
   }
@@ -186,7 +180,6 @@ public class PaymentTransactionsProductModel {
    * the name of the payment product
    * @return productRaw
   **/
-  @ApiModelProperty(value = "the name of the payment product")
   public String getProductRaw() {
     return productRaw;
   }
@@ -204,7 +197,6 @@ public class PaymentTransactionsProductModel {
    * The internal id of the stored payment instrument.
    * @return zahlungsmittelId
   **/
-  @ApiModelProperty(value = "The internal id of the stored payment instrument.")
   public Integer getZahlungsmittelId() {
     return zahlungsmittelId;
   }
@@ -222,7 +214,6 @@ public class PaymentTransactionsProductModel {
    * Contract identifier
    * @return contractId
   **/
-  @ApiModelProperty(value = "Contract identifier")
   public Integer getContractId() {
     return contractId;
   }
@@ -240,7 +231,6 @@ public class PaymentTransactionsProductModel {
    * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
    * @return amount
   **/
-  @ApiModelProperty(value = "Total amount of payment in cents (or the smallest cash unit of the relevant currency)")
   public Integer getAmount() {
     return amount;
   }
@@ -258,7 +248,6 @@ public class PaymentTransactionsProductModel {
    * ISO 4217 code of currency, eg EUR for Euro.
    * @return currency
   **/
-  @ApiModelProperty(value = "ISO 4217 code of currency, eg EUR for Euro.")
   public String getCurrency() {
     return currency;
   }
@@ -276,7 +265,6 @@ public class PaymentTransactionsProductModel {
    * Created at date
    * @return created
   **/
-  @ApiModelProperty(value = "Created at date")
   public DateTime getCreated() {
     return created;
   }
@@ -294,7 +282,6 @@ public class PaymentTransactionsProductModel {
    * Updated at date
    * @return updated
   **/
-  @ApiModelProperty(value = "Updated at date")
   public DateTime getUpdated() {
     return updated;
   }
@@ -312,7 +299,6 @@ public class PaymentTransactionsProductModel {
    * WTF??
    * @return status
   **/
-  @ApiModelProperty(value = "WTF??")
   public Integer getStatus() {
     return status;
   }
@@ -330,7 +316,6 @@ public class PaymentTransactionsProductModel {
    * Transaction status
    * @return statusText
   **/
-  @ApiModelProperty(value = "Transaction status")
   public String getStatusText() {
     return statusText;
   }
@@ -348,7 +333,6 @@ public class PaymentTransactionsProductModel {
    * Get details
    * @return details
   **/
-  @ApiModelProperty(value = "")
   public PaymentTransactionsProductModelDetails getDetails() {
     return details;
   }
@@ -366,7 +350,6 @@ public class PaymentTransactionsProductModel {
    * Get customer
    * @return customer
   **/
-  @ApiModelProperty(value = "")
   public PaymentTransactionsProductModelCustomer getCustomer() {
     return customer;
   }

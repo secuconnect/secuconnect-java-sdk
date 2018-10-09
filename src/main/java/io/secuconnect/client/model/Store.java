@@ -35,7 +35,6 @@ public class Store {
    * Object of store
    * @return object
   **/
-  @ApiModelProperty(value = "Object of store")
   public String getObject() {
     return object;
   }
@@ -53,7 +52,6 @@ public class Store {
    * Id of store
    * @return id
   **/
-  @ApiModelProperty(value = "Id of store")
   public String getId() {
     return id;
   }
@@ -71,7 +69,6 @@ public class Store {
    * Store name
    * @return name
   **/
-  @ApiModelProperty(value = "Store name")
   public String getName() {
     return name;
   }
@@ -89,7 +86,6 @@ public class Store {
    * Store name raw
    * @return nameRaw
   **/
-  @ApiModelProperty(value = "Store name raw")
   public String getNameRaw() {
     return nameRaw;
   }

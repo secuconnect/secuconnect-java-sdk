@@ -29,7 +29,6 @@ public class GeneralMerchantsUrls {
    * Type of urls
    * @return type
   **/
-  @ApiModelProperty(value = "Type of urls")
   public String getType() {
     return type;
   }
@@ -47,7 +46,6 @@ public class GeneralMerchantsUrls {
    * Url
    * @return url
   **/
-  @ApiModelProperty(value = "Url")
   public String getUrl() {
     return url;
   }

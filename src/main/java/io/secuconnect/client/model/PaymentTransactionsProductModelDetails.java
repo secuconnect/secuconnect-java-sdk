@@ -48,7 +48,6 @@ public class PaymentTransactionsProductModelDetails {
    * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
    * @return amount
   **/
-  @ApiModelProperty(value = "Total amount of payment in cents (or the smallest cash unit of the relevant currency)")
   public Integer getAmount() {
     return amount;
   }
@@ -66,7 +65,6 @@ public class PaymentTransactionsProductModelDetails {
    * Clearing status
    * @return cleared
   **/
-  @ApiModelProperty(value = "Clearing status")
   public String getCleared() {
     return cleared;
   }
@@ -84,7 +82,6 @@ public class PaymentTransactionsProductModelDetails {
    * Transaction status ID
    * @return status
   **/
-  @ApiModelProperty(value = "Transaction status ID")
   public Integer getStatus() {
     return status;
   }
@@ -102,7 +99,6 @@ public class PaymentTransactionsProductModelDetails {
    * Transaction status description
    * @return statusText
   **/
-  @ApiModelProperty(value = "Transaction status description")
   public String getStatusText() {
     return statusText;
   }
@@ -120,7 +116,6 @@ public class PaymentTransactionsProductModelDetails {
    * Transaction simple-status ID
    * @return statusSimple
   **/
-  @ApiModelProperty(value = "Transaction simple-status ID")
   public Integer getStatusSimple() {
     return statusSimple;
   }
@@ -138,7 +133,6 @@ public class PaymentTransactionsProductModelDetails {
    * Transaction simple-status description
    * @return statusTextSimple
   **/
-  @ApiModelProperty(value = "Transaction simple-status description")
   public String getStatusTextSimple() {
     return statusTextSimple;
   }
@@ -156,7 +150,6 @@ public class PaymentTransactionsProductModelDetails {
    * Transaction description
    * @return description
   **/
-  @ApiModelProperty(value = "Transaction description")
   public String getDescription() {
     return description;
   }
@@ -174,7 +167,6 @@ public class PaymentTransactionsProductModelDetails {
    * Transaction description (plain text)
    * @return descriptionRaw
   **/
-  @ApiModelProperty(value = "Transaction description (plain text)")
   public String getDescriptionRaw() {
     return descriptionRaw;
   }

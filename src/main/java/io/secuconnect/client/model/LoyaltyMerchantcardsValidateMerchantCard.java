@@ -32,7 +32,6 @@ public class LoyaltyMerchantcardsValidateMerchantCard {
    * Result has true or false value
    * @return isValid
   **/
-  @ApiModelProperty(value = "Result has true or false value")
   public Boolean getIsValid() {
     return isValid;
   }
@@ -50,7 +49,6 @@ public class LoyaltyMerchantcardsValidateMerchantCard {
    * Result has true or false value
    * @return hasPasscode
   **/
-  @ApiModelProperty(value = "Result has true or false value")
   public Boolean getHasPasscode() {
     return hasPasscode;
   }
@@ -68,7 +66,6 @@ public class LoyaltyMerchantcardsValidateMerchantCard {
    * Result has true or false value
    * @return isLocked
   **/
-  @ApiModelProperty(value = "Result has true or false value")
   public Boolean getIsLocked() {
     return isLocked;
   }

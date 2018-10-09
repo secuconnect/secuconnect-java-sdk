@@ -26,7 +26,6 @@ public class SmartDeviceProductsEnabled {
    * Enabled
    * @return enabled
   **/
-  @ApiModelProperty(value = "Enabled")
   public Boolean getEnabled() {
     return enabled;
   }

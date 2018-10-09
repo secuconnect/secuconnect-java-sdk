@@ -48,7 +48,6 @@ public class SmartTransactionsIdent {
    * Object of smart transaction ident
    * @return object
   **/
-  @ApiModelProperty(value = "Object of smart transaction ident")
   public String getObject() {
     return object;
   }
@@ -66,7 +65,6 @@ public class SmartTransactionsIdent {
    * Id of smart transaction ident
    * @return id
   **/
-  @ApiModelProperty(value = "Id of smart transaction ident")
   public String getId() {
     return id;
   }
@@ -84,7 +82,6 @@ public class SmartTransactionsIdent {
    * Prefix
    * @return prefix
   **/
-  @ApiModelProperty(value = "Prefix")
   public String getPrefix() {
     return prefix;
   }
@@ -102,7 +99,6 @@ public class SmartTransactionsIdent {
    * Name
    * @return name
   **/
-  @ApiModelProperty(value = "Name")
   public String getName() {
     return name;
   }
@@ -120,7 +116,6 @@ public class SmartTransactionsIdent {
    * Type
    * @return type
   **/
-  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }
@@ -138,7 +133,6 @@ public class SmartTransactionsIdent {
    * Value
    * @return value
   **/
-  @ApiModelProperty(value = "Value")
   public String getValue() {
     return value;
   }
@@ -156,7 +150,6 @@ public class SmartTransactionsIdent {
    * Valid
    * @return valid
   **/
-  @ApiModelProperty(value = "Valid")
   public Boolean getValid() {
     return valid;
   }
@@ -174,7 +167,6 @@ public class SmartTransactionsIdent {
    * Loyalty merchant card
    * @return merchantcard
   **/
-  @ApiModelProperty(value = "Loyalty merchant card")
   public LoyaltyMerchantcardsProductModel getMerchantcard() {
     return merchantcard;
   }

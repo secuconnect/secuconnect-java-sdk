@@ -26,7 +26,6 @@ public class LoyaltyMerchantcardsDTOCardsAmount {
    * Cards amount
    * @return cardsAmount
   **/
-  @ApiModelProperty(value = "Cards amount")
   public Integer getCardsAmount() {
     return cardsAmount;
   }

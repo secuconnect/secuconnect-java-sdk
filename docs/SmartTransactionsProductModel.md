@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **object** | **String** | Object of smart transaction | 
 **id** | **String** | Id of smart transaction | 
 **status** | **String** | Status of smart transaction | 
-**merchant** | [**ProductInstanceUID**](ProductInstanceUID.md) | Merchant | 
+**merchant** | [**SmartTransactionsMerchant**](SmartTransactionsMerchant.md) | Merchant | 
 **contract** | [**ProductInstanceUID**](ProductInstanceUID.md) | Contract | 
 **marketplaceContract** | [**ProductInstanceUID**](ProductInstanceUID.md) | Marketplace contract | 
 **customer** | [**LoyaltyCustomersProductModel**](LoyaltyCustomersProductModel.md) | Customer | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **created** | [**DateTime**](DateTime.md) | Created at date | 
 **updated** | [**DateTime**](DateTime.md) | Updated at date | 
 **receiptNumber** | **Integer** | Receipt number | 
-**receipt** | **String** | Receipt | 
+**receipt** | [**List&lt;SmartTransactionsReceipt&gt;**](SmartTransactionsReceipt.md) | Receipt | 
 **receiptMerchant** | **String** | Receipt merchant | 
 **receiptMerchantPrint** | **Boolean** | Receipt merchant print | 
 **basketInfo** | [**SmartTransactionsBasketInfo**](SmartTransactionsBasketInfo.md) | Basket info | 

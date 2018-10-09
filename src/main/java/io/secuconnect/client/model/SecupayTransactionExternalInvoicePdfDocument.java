@@ -39,7 +39,6 @@ public class SecupayTransactionExternalInvoicePdfDocument {
    * The Document File ID
    * @return id
   **/
-  @ApiModelProperty(value = "The Document File ID")
   public String getId() {
     return id;
   }
@@ -57,7 +56,6 @@ public class SecupayTransactionExternalInvoicePdfDocument {
    * The MIME Type
    * @return mimeType
   **/
-  @ApiModelProperty(value = "The MIME Type")
   public String getMimeType() {
     return mimeType;
   }
@@ -75,7 +73,6 @@ public class SecupayTransactionExternalInvoicePdfDocument {
    * The file name
    * @return name
   **/
-  @ApiModelProperty(value = "The file name")
   public String getName() {
     return name;
   }
@@ -93,7 +90,6 @@ public class SecupayTransactionExternalInvoicePdfDocument {
    * The size of the file in bytes
    * @return size
   **/
-  @ApiModelProperty(value = "The size of the file in bytes")
   public Integer getSize() {
     return size;
   }
@@ -111,7 +107,6 @@ public class SecupayTransactionExternalInvoicePdfDocument {
    * The download-url to this file
    * @return url
   **/
-  @ApiModelProperty(value = "The download-url to this file")
   public String getUrl() {
     return url;
   }

@@ -34,7 +34,6 @@ public class GeneralMerchantsCheckoutOptions {
    * Enabled
    * @return enabled
   **/
-  @ApiModelProperty(value = "Enabled")
   public Boolean getEnabled() {
     return enabled;
   }
@@ -52,7 +51,6 @@ public class GeneralMerchantsCheckoutOptions {
    * Shipping
    * @return shipping
   **/
-  @ApiModelProperty(value = "Shipping")
   public GeneralMerchantsCheckoutOptionsShipping getShipping() {
     return shipping;
   }
@@ -70,7 +68,6 @@ public class GeneralMerchantsCheckoutOptions {
    * Collection
    * @return collection
   **/
-  @ApiModelProperty(value = "Collection")
   public GeneralMerchantsCheckoutOptionsCollection getCollection() {
     return collection;
   }

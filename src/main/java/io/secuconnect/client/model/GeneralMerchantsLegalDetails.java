@@ -35,7 +35,6 @@ public class GeneralMerchantsLegalDetails {
    * Url
    * @return url
   **/
-  @ApiModelProperty(value = "Url")
   public String getUrl() {
     return url;
   }
@@ -53,7 +52,6 @@ public class GeneralMerchantsLegalDetails {
    * Type
    * @return type
   **/
-  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }
@@ -71,7 +69,6 @@ public class GeneralMerchantsLegalDetails {
    * Content type
    * @return contentType
   **/
-  @ApiModelProperty(value = "Content type")
   public String getContentType() {
     return contentType;
   }
@@ -89,7 +86,6 @@ public class GeneralMerchantsLegalDetails {
    * Language
    * @return language
   **/
-  @ApiModelProperty(value = "Language")
   public String getLanguage() {
     return language;
   }

@@ -32,7 +32,6 @@ public class SmartDevicesDevice {
    * Object of device
    * @return object
   **/
-  @ApiModelProperty(value = "Object of device")
   public String getObject() {
     return object;
   }
@@ -50,7 +49,6 @@ public class SmartDevicesDevice {
    * Id of device
    * @return id
   **/
-  @ApiModelProperty(value = "Id of device")
   public String getId() {
     return id;
   }
@@ -68,7 +66,6 @@ public class SmartDevicesDevice {
    * Serial number
    * @return serialNumber
   **/
-  @ApiModelProperty(value = "Serial number")
   public String getSerialNumber() {
     return serialNumber;
   }

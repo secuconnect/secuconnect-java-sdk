@@ -30,7 +30,6 @@ public class SecupayTransactionProductDTOSubscription {
    * The purpose of the subscription
    * @return purpose
   **/
-  @ApiModelProperty(value = "The purpose of the subscription")
   public String getPurpose() {
     return purpose;
   }
@@ -48,7 +47,6 @@ public class SecupayTransactionProductDTOSubscription {
    * Id of subscription, if exists
    * @return id
   **/
-  @ApiModelProperty(value = "Id of subscription, if exists")
   public Integer getId() {
     return id;
   }

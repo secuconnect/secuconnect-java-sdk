@@ -27,7 +27,6 @@ public class ProductInstanceID {
    * ID of instance
    * @return id
   **/
-  @ApiModelProperty(value = "ID of instance")
   public String getId() {
     return id;
   }

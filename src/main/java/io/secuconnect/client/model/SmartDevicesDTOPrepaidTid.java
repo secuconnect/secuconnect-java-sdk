@@ -29,7 +29,6 @@ public class SmartDevicesDTOPrepaidTid {
    * Tid
    * @return tid
   **/
-  @ApiModelProperty(value = "Tid")
   public String getTid() {
     return tid;
   }
@@ -47,7 +46,6 @@ public class SmartDevicesDTOPrepaidTid {
    * Force
    * @return force
   **/
-  @ApiModelProperty(value = "Force")
   public Boolean getForce() {
     return force;
   }

@@ -26,7 +26,6 @@ public class DocumentUploadsDTOContent {
    * Content
    * @return content
   **/
-  @ApiModelProperty(value = "Content")
   public String getContent() {
     return content;
   }

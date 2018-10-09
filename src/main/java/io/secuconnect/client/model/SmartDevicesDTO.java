@@ -55,7 +55,6 @@ public class SmartDevicesDTO {
    * Merchant
    * @return merchant
   **/
-  @ApiModelProperty(value = "Merchant")
   public String getMerchant() {
     return merchant;
   }
@@ -73,7 +72,6 @@ public class SmartDevicesDTO {
    * Store
    * @return store
   **/
-  @ApiModelProperty(value = "Store")
   public String getStore() {
     return store;
   }
@@ -91,7 +89,6 @@ public class SmartDevicesDTO {
    * Terminal
    * @return terminal
   **/
-  @ApiModelProperty(value = "Terminal")
   public String getTerminal() {
     return terminal;
   }
@@ -109,7 +106,6 @@ public class SmartDevicesDTO {
    * Vendor
    * @return vendor
   **/
-  @ApiModelProperty(value = "Vendor")
   public String getVendor() {
     return vendor;
   }
@@ -127,7 +123,6 @@ public class SmartDevicesDTO {
    * Vendor uid
    * @return vendorUid
   **/
-  @ApiModelProperty(value = "Vendor uid")
   public String getVendorUid() {
     return vendorUid;
   }
@@ -145,7 +140,6 @@ public class SmartDevicesDTO {
    * Type
    * @return type
   **/
-  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }
@@ -163,7 +157,6 @@ public class SmartDevicesDTO {
    * Description
    * @return description
   **/
-  @ApiModelProperty(value = "Description")
   public String getDescription() {
     return description;
   }
@@ -189,7 +182,6 @@ public class SmartDevicesDTO {
    * Products
    * @return products
   **/
-  @ApiModelProperty(value = "Products")
   public List<String> getProducts() {
     return products;
   }
@@ -207,7 +199,6 @@ public class SmartDevicesDTO {
    * Base version
    * @return baseVersion
   **/
-  @ApiModelProperty(value = "Base version")
   public String getBaseVersion() {
     return baseVersion;
   }
@@ -225,7 +216,6 @@ public class SmartDevicesDTO {
    * Terminal type
    * @return terminalType
   **/
-  @ApiModelProperty(value = "Terminal type")
   public String getTerminalType() {
     return terminalType;
   }

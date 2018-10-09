@@ -29,7 +29,6 @@ public class LoyaltyMerchantcardsDTOValidateMerchantCard {
    * General Merchant id
    * @return merchant
   **/
-  @ApiModelProperty(value = "General Merchant id")
   public String getMerchant() {
     return merchant;
   }
@@ -47,7 +46,6 @@ public class LoyaltyMerchantcardsDTOValidateMerchantCard {
    * Loyalty Card number
    * @return cardnumber
   **/
-  @ApiModelProperty(value = "Loyalty Card number")
   public Integer getCardnumber() {
     return cardnumber;
   }

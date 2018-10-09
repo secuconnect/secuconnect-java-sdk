@@ -44,7 +44,6 @@ public class SmartTransactionsBonusProducts {
    * Bonus Product ID
    * @return id
   **/
-  @ApiModelProperty(value = "Bonus Product ID")
   public Integer getId() {
     return id;
   }
@@ -62,7 +61,6 @@ public class SmartTransactionsBonusProducts {
    * Tax
    * @return tax
   **/
-  @ApiModelProperty(value = "Tax")
   public Integer getTax() {
     return tax;
   }
@@ -80,7 +78,6 @@ public class SmartTransactionsBonusProducts {
    * price of one bonus product
    * @return priceOne
   **/
-  @ApiModelProperty(value = "price of one bonus product")
   public Integer getPriceOne() {
     return priceOne;
   }
@@ -98,7 +95,6 @@ public class SmartTransactionsBonusProducts {
    * amount of bonus products
    * @return quantity
   **/
-  @ApiModelProperty(value = "amount of bonus products")
   public Integer getQuantity() {
     return quantity;
   }
@@ -116,7 +112,6 @@ public class SmartTransactionsBonusProducts {
    * description
    * @return desc
   **/
-  @ApiModelProperty(value = "description")
   public String getDesc() {
     return desc;
   }
@@ -134,7 +129,6 @@ public class SmartTransactionsBonusProducts {
    * article Number
    * @return articleNumber
   **/
-  @ApiModelProperty(value = "article Number")
   public String getArticleNumber() {
     return articleNumber;
   }
@@ -152,7 +146,6 @@ public class SmartTransactionsBonusProducts {
    * ean
    * @return ean
   **/
-  @ApiModelProperty(value = "ean")
   public String getEan() {
     return ean;
   }

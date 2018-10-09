@@ -93,7 +93,6 @@ public class SmartTransactionsDTO {
    * Merchant
    * @return merchant
   **/
-  @ApiModelProperty(value = "Merchant")
   public String getMerchant() {
     return merchant;
   }
@@ -111,7 +110,6 @@ public class SmartTransactionsDTO {
    * Marketplace contract
    * @return marketplaceContract
   **/
-  @ApiModelProperty(value = "Marketplace contract")
   public ProductInstanceID getMarketplaceContract() {
     return marketplaceContract;
   }
@@ -129,7 +127,6 @@ public class SmartTransactionsDTO {
    * Order option
    * @return orderOption
   **/
-  @ApiModelProperty(value = "Order option")
   public String getOrderOption() {
     return orderOption;
   }
@@ -147,7 +144,6 @@ public class SmartTransactionsDTO {
    * Status
    * @return status
   **/
-  @ApiModelProperty(value = "Status")
   public String getStatus() {
     return status;
   }
@@ -165,7 +161,6 @@ public class SmartTransactionsDTO {
    * Transaction ref
    * @return transactionRef
   **/
-  @ApiModelProperty(value = "Transaction ref")
   public String getTransactionRef() {
     return transactionRef;
   }
@@ -183,7 +178,6 @@ public class SmartTransactionsDTO {
    * Merchant ref
    * @return merchantRef
   **/
-  @ApiModelProperty(value = "Merchant ref")
   public String getMerchantRef() {
     return merchantRef;
   }
@@ -201,7 +195,6 @@ public class SmartTransactionsDTO {
    * Basket
    * @return basket
   **/
-  @ApiModelProperty(value = "Basket")
   public SmartTransactionsBasket getBasket() {
     return basket;
   }
@@ -219,7 +212,6 @@ public class SmartTransactionsDTO {
    * Basket info
    * @return basketInfo
   **/
-  @ApiModelProperty(value = "Basket info")
   public SmartTransactionsBasketInfo getBasketInfo() {
     return basketInfo;
   }
@@ -245,7 +237,6 @@ public class SmartTransactionsDTO {
    * Idents
    * @return idents
   **/
-  @ApiModelProperty(value = "Idents")
   public List<SmartTransactionsIdent> getIdents() {
     return idents;
   }
@@ -263,7 +254,6 @@ public class SmartTransactionsDTO {
    * Tax amount
    * @return taxAmount
   **/
-  @ApiModelProperty(value = "Tax amount")
   public Integer getTaxAmount() {
     return taxAmount;
   }
@@ -281,7 +271,6 @@ public class SmartTransactionsDTO {
    * Tax rate
    * @return taxRate
   **/
-  @ApiModelProperty(value = "Tax rate")
   public Integer getTaxRate() {
     return taxRate;
   }
@@ -299,7 +288,6 @@ public class SmartTransactionsDTO {
    * Market
    * @return market
   **/
-  @ApiModelProperty(value = "Market")
   public String getMarket() {
     return market;
   }
@@ -317,7 +305,6 @@ public class SmartTransactionsDTO {
    * Cashier
    * @return cashier
   **/
-  @ApiModelProperty(value = "Cashier")
   public String getCashier() {
     return cashier;
   }
@@ -335,7 +322,6 @@ public class SmartTransactionsDTO {
    * Product
    * @return product
   **/
-  @ApiModelProperty(value = "Product")
   public String getProduct() {
     return product;
   }
@@ -353,7 +339,6 @@ public class SmartTransactionsDTO {
    * Receipt
    * @return receipt
   **/
-  @ApiModelProperty(value = "Receipt")
   public String getReceipt() {
     return receipt;
   }
@@ -371,7 +356,6 @@ public class SmartTransactionsDTO {
    * Receipt number
    * @return receiptNumber
   **/
-  @ApiModelProperty(value = "Receipt number")
   public Integer getReceiptNumber() {
     return receiptNumber;
   }
@@ -389,7 +373,6 @@ public class SmartTransactionsDTO {
    * Device source
    * @return deviceSource
   **/
-  @ApiModelProperty(value = "Device source")
   public String getDeviceSource() {
     return deviceSource;
   }
@@ -407,7 +390,6 @@ public class SmartTransactionsDTO {
    * Transaction id
    * @return transId
   **/
-  @ApiModelProperty(value = "Transaction id")
   public Integer getTransId() {
     return transId;
   }
@@ -425,7 +407,6 @@ public class SmartTransactionsDTO {
    * Contract
    * @return contract
   **/
-  @ApiModelProperty(value = "Contract")
   public ProductInstanceID getContract() {
     return contract;
   }
@@ -443,7 +424,6 @@ public class SmartTransactionsDTO {
    * Pickup options
    * @return pickupOptions
   **/
-  @ApiModelProperty(value = "Pickup options")
   public SmartTransactionsPickupOptions getPickupOptions() {
     return pickupOptions;
   }
@@ -461,7 +441,6 @@ public class SmartTransactionsDTO {
    * Last visited page
    * @return lastVisitedPage
   **/
-  @ApiModelProperty(value = "Last visited page")
   public String getLastVisitedPage() {
     return lastVisitedPage;
   }

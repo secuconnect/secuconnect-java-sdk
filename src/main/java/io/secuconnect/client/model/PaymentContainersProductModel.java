@@ -62,7 +62,6 @@ public class PaymentContainersProductModel {
    * Object of payment container
    * @return object
   **/
-  @ApiModelProperty(value = "Object of payment container")
   public String getObject() {
     return object;
   }
@@ -80,7 +79,6 @@ public class PaymentContainersProductModel {
    * Id of payment container
    * @return id
   **/
-  @ApiModelProperty(value = "Id of payment container")
   public String getId() {
     return id;
   }
@@ -98,7 +96,6 @@ public class PaymentContainersProductModel {
    * Payment container contract
    * @return contract
   **/
-  @ApiModelProperty(value = "Payment container contract")
   public PaymentContractsProductModel getContract() {
     return contract;
   }
@@ -116,7 +113,6 @@ public class PaymentContainersProductModel {
    * Payment container customer
    * @return customer
   **/
-  @ApiModelProperty(value = "Payment container customer")
   public PaymentCustomersProductModel getCustomer() {
     return customer;
   }
@@ -134,7 +130,6 @@ public class PaymentContainersProductModel {
    * Assign to
    * @return assign
   **/
-  @ApiModelProperty(value = "Assign to")
   public ProductInstanceUID getAssign() {
     return assign;
   }
@@ -152,7 +147,6 @@ public class PaymentContainersProductModel {
    * Type of payment container
    * @return type
   **/
-  @ApiModelProperty(value = "Type of payment container")
   public String getType() {
     return type;
   }
@@ -170,7 +164,6 @@ public class PaymentContainersProductModel {
    * Public payment instrument data
    * @return _public
   **/
-  @ApiModelProperty(value = "Public payment instrument data")
   public BankAccountDescriptor getPublic() {
     return _public;
   }
@@ -188,7 +181,6 @@ public class PaymentContainersProductModel {
    * Private payment instrument data
    * @return _private
   **/
-  @ApiModelProperty(value = "Private payment instrument data")
   public BankAccountDescriptor getPrivate() {
     return _private;
   }
@@ -206,7 +198,6 @@ public class PaymentContainersProductModel {
    * Creation date
    * @return created
   **/
-  @ApiModelProperty(value = "Creation date")
   public DateTime getCreated() {
     return created;
   }
@@ -224,7 +215,6 @@ public class PaymentContainersProductModel {
    * Last update date
    * @return updated
   **/
-  @ApiModelProperty(value = "Last update date")
   public DateTime getUpdated() {
     return updated;
   }
@@ -242,7 +232,6 @@ public class PaymentContainersProductModel {
    * Payment container mandate
    * @return mandate
   **/
-  @ApiModelProperty(value = "Payment container mandate")
   public PaymentContainerMandate getMandate() {
     return mandate;
   }

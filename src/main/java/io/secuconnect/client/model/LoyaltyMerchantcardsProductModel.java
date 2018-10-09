@@ -86,7 +86,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Object of loyalty merchant card
    * @return object
   **/
-  @ApiModelProperty(value = "Object of loyalty merchant card")
   public String getObject() {
     return object;
   }
@@ -104,7 +103,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Id of loyalty merchant card
    * @return id
   **/
-  @ApiModelProperty(value = "Id of loyalty merchant card")
   public String getId() {
     return id;
   }
@@ -122,7 +120,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Id of loyalty store group
    * @return card
   **/
-  @ApiModelProperty(value = "Id of loyalty store group")
   public LoyaltyCardsProductModel getCard() {
     return card;
   }
@@ -140,7 +137,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Current merchant id
    * @return merchant
   **/
-  @ApiModelProperty(value = "Current merchant id")
   public ProductInstanceUID getMerchant() {
     return merchant;
   }
@@ -158,7 +154,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Merchant id, that loyalty merchant card object was created for
    * @return createdForMerchant
   **/
-  @ApiModelProperty(value = "Merchant id, that loyalty merchant card object was created for")
   public ProductInstanceUID getCreatedForMerchant() {
     return createdForMerchant;
   }
@@ -176,7 +171,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Store id, that loyalty merchant card object was created for
    * @return createdForStore
   **/
-  @ApiModelProperty(value = "Store id, that loyalty merchant card object was created for")
   public ProductInstanceUID getCreatedForStore() {
     return createdForStore;
   }
@@ -194,7 +188,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card customer
    * @return customer
   **/
-  @ApiModelProperty(value = "Loyalty merchant card customer")
   public LoyaltyCustomersProductModel getCustomer() {
     return customer;
   }
@@ -212,7 +205,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card card group
    * @return cardgroup
   **/
-  @ApiModelProperty(value = "Loyalty merchant card card group")
   public LoyaltyCardgroupsProductModel getCardgroup() {
     return cardgroup;
   }
@@ -230,7 +222,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card payment container
    * @return paymentContainer
   **/
-  @ApiModelProperty(value = "Loyalty merchant card payment container")
   public LoyaltyMerchantcardsDTOPaymentContainer getPaymentContainer() {
     return paymentContainer;
   }
@@ -248,7 +239,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card balance
    * @return balance
   **/
-  @ApiModelProperty(value = "Loyalty merchant card balance")
   public Integer getBalance() {
     return balance;
   }
@@ -266,7 +256,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card points
    * @return points
   **/
-  @ApiModelProperty(value = "Loyalty merchant card points")
   public Integer getPoints() {
     return points;
   }
@@ -284,7 +273,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card bonus balance
    * @return bonusBalance
   **/
-  @ApiModelProperty(value = "Loyalty merchant card bonus balance")
   public Integer getBonusBalance() {
     return bonusBalance;
   }
@@ -302,7 +290,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card cash balance
    * @return cashBalance
   **/
-  @ApiModelProperty(value = "Loyalty merchant card cash balance")
   public Integer getCashBalance() {
     return cashBalance;
   }
@@ -320,7 +307,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card stock status
    * @return stockStatus
   **/
-  @ApiModelProperty(value = "Loyalty merchant card stock status")
   public String getStockStatus() {
     return stockStatus;
   }
@@ -338,7 +324,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card lock status
    * @return lockStatus
   **/
-  @ApiModelProperty(value = "Loyalty merchant card lock status")
   public String getLockStatus() {
     return lockStatus;
   }
@@ -356,7 +341,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card last usage
    * @return lastUsage
   **/
-  @ApiModelProperty(value = "Loyalty merchant card last usage")
   public DateTime getLastUsage() {
     return lastUsage;
   }
@@ -374,7 +358,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card last charge
    * @return lastCharge
   **/
-  @ApiModelProperty(value = "Loyalty merchant card last charge")
   public DateTime getLastCharge() {
     return lastCharge;
   }
@@ -392,7 +375,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Information whether loyalty merchant card is base card
    * @return isBaseCard
   **/
-  @ApiModelProperty(value = "Information whether loyalty merchant card is base card")
   public Boolean getIsBaseCard() {
     return isBaseCard;
   }
@@ -410,7 +392,6 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card passcode
    * @return passcode
   **/
-  @ApiModelProperty(value = "Loyalty merchant card passcode")
   public Integer getPasscode() {
     return passcode;
   }

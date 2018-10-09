@@ -26,7 +26,6 @@ public class GeneralStoresDTOReason {
    * Reason
    * @return reason
   **/
-  @ApiModelProperty(value = "Reason")
   public String getReason() {
     return reason;
   }

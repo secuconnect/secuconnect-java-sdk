@@ -32,7 +32,6 @@ public class LoyaltyMerchantcardsList {
    * Number of existing loyalty merchant cards
    * @return count
   **/
-  @ApiModelProperty(value = "Number of existing loyalty merchant cards")
   public Integer getCount() {
     return count;
   }
@@ -58,7 +57,6 @@ public class LoyaltyMerchantcardsList {
    * GET Loyalty/MerchantCards
    * @return data
   **/
-  @ApiModelProperty(value = "GET Loyalty/MerchantCards")
   public List<LoyaltyMerchantcardsProductModel> getData() {
     return data;
   }

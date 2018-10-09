@@ -46,7 +46,6 @@ public class LoyaltyStoregroupsProductModel {
    * Object of loyalty store group
    * @return object
   **/
-  @ApiModelProperty(value = "Object of loyalty store group")
   public String getObject() {
     return object;
   }
@@ -64,7 +63,6 @@ public class LoyaltyStoregroupsProductModel {
    * Id of loyalty store group
    * @return id
   **/
-  @ApiModelProperty(value = "Id of loyalty store group")
   public String getId() {
     return id;
   }
@@ -82,7 +80,6 @@ public class LoyaltyStoregroupsProductModel {
    * Merchant data for loyalty
    * @return merchant
   **/
-  @ApiModelProperty(value = "Merchant data for loyalty")
   public LoyaltyDTOMerchant getMerchant() {
     return merchant;
   }
@@ -108,7 +105,6 @@ public class LoyaltyStoregroupsProductModel {
    * LoyaltyStoregroupsProductModel
    * @return stores
   **/
-  @ApiModelProperty(value = "LoyaltyStoregroupsProductModel")
   public List<LoyaltyDTOStore> getStores() {
     return stores;
   }
@@ -126,7 +122,6 @@ public class LoyaltyStoregroupsProductModel {
    * Creation date
    * @return created
   **/
-  @ApiModelProperty(value = "Creation date")
   public DateTime getCreated() {
     return created;
   }
@@ -144,7 +139,6 @@ public class LoyaltyStoregroupsProductModel {
    * Update date
    * @return updated
   **/
-  @ApiModelProperty(value = "Update date")
   public DateTime getUpdated() {
     return updated;
   }

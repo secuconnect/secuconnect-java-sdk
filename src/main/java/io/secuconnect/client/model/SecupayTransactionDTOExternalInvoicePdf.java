@@ -26,7 +26,6 @@ public class SecupayTransactionDTOExternalInvoicePdf {
    * Update existing invoice PDF
    * @return updateExisting
   **/
-  @ApiModelProperty(value = "Update existing invoice PDF")
   public Boolean getUpdateExisting() {
     return updateExisting;
   }

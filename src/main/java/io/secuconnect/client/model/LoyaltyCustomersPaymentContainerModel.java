@@ -40,7 +40,6 @@ public class LoyaltyCustomersPaymentContainerModel {
    * LoyaltyCustomersPaymentContainerModel
    * @return object
   **/
-  @ApiModelProperty(value = "LoyaltyCustomersPaymentContainerModel")
   public String getObject() {
     return object;
   }
@@ -58,7 +57,6 @@ public class LoyaltyCustomersPaymentContainerModel {
    * LoyaltyCustomersPaymentContainerModel
    * @return id
   **/
-  @ApiModelProperty(value = "LoyaltyCustomersPaymentContainerModel")
   public String getId() {
     return id;
   }
@@ -76,7 +74,6 @@ public class LoyaltyCustomersPaymentContainerModel {
    * LoyaltyCustomersPaymentContainerModel
    * @return type
   **/
-  @ApiModelProperty(value = "LoyaltyCustomersPaymentContainerModel")
   public String getType() {
     return type;
   }
@@ -94,7 +91,6 @@ public class LoyaltyCustomersPaymentContainerModel {
    * Payment instrument data
    * @return paymentInformation
   **/
-  @ApiModelProperty(value = "Payment instrument data")
   public BankAccountDescriptor getPaymentInformation() {
     return paymentInformation;
   }
@@ -112,7 +108,6 @@ public class LoyaltyCustomersPaymentContainerModel {
    * Last Usage date
    * @return lastUsage
   **/
-  @ApiModelProperty(value = "Last Usage date")
   public DateTime getLastUsage() {
     return lastUsage;
   }

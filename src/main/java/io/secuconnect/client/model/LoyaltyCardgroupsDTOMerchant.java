@@ -26,7 +26,6 @@ public class LoyaltyCardgroupsDTOMerchant {
    * Merchant id
    * @return id
   **/
-  @ApiModelProperty(value = "Merchant id")
   public String getId() {
     return id;
   }

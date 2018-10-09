@@ -32,7 +32,6 @@ public class SmartTransactionsBasketText {
    * Text id
    * @return id
   **/
-  @ApiModelProperty(value = "Text id")
   public Integer getId() {
     return id;
   }
@@ -47,10 +46,9 @@ public class SmartTransactionsBasketText {
   }
 
    /**
-   * ParentModel
+   * Parent
    * @return parent
   **/
-  @ApiModelProperty(value = "ParentModel")
   public Integer getParent() {
     return parent;
   }
@@ -68,7 +66,6 @@ public class SmartTransactionsBasketText {
    * Desc
    * @return desc
   **/
-  @ApiModelProperty(value = "Desc")
   public String getDesc() {
     return desc;
   }

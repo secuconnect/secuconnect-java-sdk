@@ -4,15 +4,70 @@ All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**clone**](PaymentContractsApi.md#clone) | **POST** /Payment/Contracts/{paymentContractId}/clone | POST Payment/Contracts/{paymentContractId}/clone
 [**paymentContractsGet**](PaymentContractsApi.md#paymentContractsGet) | **GET** /Payment/Contracts | GET Payment/Contracts
 [**paymentContractsGetById**](PaymentContractsApi.md#paymentContractsGetById) | **GET** /Payment/Contracts/{paymentContractId} | GET Payment/Contracts/{paymentContractId}
-[**paymentContractsIdClonePost**](PaymentContractsApi.md#paymentContractsIdClonePost) | **POST** /Payment/Contracts/{paymentContractId}/clone | POST Payment/Contracts/{paymentContractId}/clone
 [**paymentContractsIdDelete**](PaymentContractsApi.md#paymentContractsIdDelete) | **DELETE** /Payment/Contracts/{paymentContractId} | DELETE Payment/Contracts/{paymentContractId}
 [**paymentContractsIdPaymentMethodsGet**](PaymentContractsApi.md#paymentContractsIdPaymentMethodsGet) | **GET** /Payment/Contracts/{paymentContractId}/PaymentMethods | GET Payment/Contracts/{paymentContractId}/PaymentMethods
 [**paymentContractsIdPut**](PaymentContractsApi.md#paymentContractsIdPut) | **PUT** /Payment/Contracts/{paymentContractId} | PUT Payment/Contracts/{paymentContractId}
-[**paymentContractsIdRequestIdPost**](PaymentContractsApi.md#paymentContractsIdRequestIdPost) | **POST** /Payment/Contracts/{paymentContractId}/requestId | POST Payment/Contracts/{paymentContractId}/requestId
 [**paymentContractsPost**](PaymentContractsApi.md#paymentContractsPost) | **POST** /Payment/Contracts | POST Payment/Contracts
+[**requestId**](PaymentContractsApi.md#requestId) | **POST** /Payment/Contracts/{paymentContractId}/requestId | POST Payment/Contracts/{paymentContractId}/requestId
 
+
+<a name="clone"></a>
+# **clone**
+> PaymentContractsProductModel clone(paymentContractId, body)
+
+POST Payment/Contracts/{paymentContractId}/clone
+
+Clone an existing payment contract
+
+### Example
+```java
+// Import classes:
+//import io.secuconnect.client.ApiClient;
+//import io.secuconnect.client.ApiException;
+//import io.secuconnect.client.Configuration;
+//import io.secuconnect.client.auth.*;
+//import io.secuconnect.client.api.PaymentContractsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth_token
+OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
+oauth_token.setAccessToken("YOUR ACCESS TOKEN");
+
+PaymentContractsApi apiInstance = new PaymentContractsApi();
+String paymentContractId = "paymentContractId_example"; // String | Contract identifier
+PaymentContractsDTOClone body = new PaymentContractsDTOClone(); // PaymentContractsDTOClone | Payment contract clone properties
+try {
+    PaymentContractsProductModel result = apiInstance.clone(paymentContractId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PaymentContractsApi#clone");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **paymentContractId** | **String**| Contract identifier | [required]
+ **body** | [**PaymentContractsDTOClone**](PaymentContractsDTOClone.md)| Payment contract clone properties | [required]
+
+### Return type
+
+[**PaymentContractsProductModel**](PaymentContractsProductModel.md)
+
+### Authorization
+
+[oauth_token](../README.md#oauth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="paymentContractsGet"></a>
 # **paymentContractsGet**
@@ -114,59 +169,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **paymentContractId** | **String**| Search one by provided id | [required]
-
-### Return type
-
-[**PaymentContractsProductModel**](PaymentContractsProductModel.md)
-
-### Authorization
-
-[oauth_token](../README.md#oauth_token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="paymentContractsIdClonePost"></a>
-# **paymentContractsIdClonePost**
-> PaymentContractsProductModel paymentContractsIdClonePost(paymentContractId)
-
-POST Payment/Contracts/{paymentContractId}/clone
-
-Clone an existing payment contract
-
-### Example
-```java
-// Import classes:
-//import io.secuconnect.client.ApiClient;
-//import io.secuconnect.client.ApiException;
-//import io.secuconnect.client.Configuration;
-//import io.secuconnect.client.auth.*;
-//import io.secuconnect.client.api.PaymentContractsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: oauth_token
-OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
-oauth_token.setAccessToken("YOUR ACCESS TOKEN");
-
-PaymentContractsApi apiInstance = new PaymentContractsApi();
-String paymentContractId = "paymentContractId_example"; // String | Contract identifier
-try {
-    PaymentContractsProductModel result = apiInstance.paymentContractsIdClonePost(paymentContractId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentContractsApi#paymentContractsIdClonePost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentContractId** | **String**| Contract identifier | [required]
 
 ### Return type
 
@@ -342,59 +344,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentContractsIdRequestIdPost"></a>
-# **paymentContractsIdRequestIdPost**
-> PaymentContractsRequestIdResult paymentContractsIdRequestIdPost(paymentContractId)
-
-POST Payment/Contracts/{paymentContractId}/requestId
-
-This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
-
-### Example
-```java
-// Import classes:
-//import io.secuconnect.client.ApiClient;
-//import io.secuconnect.client.ApiException;
-//import io.secuconnect.client.Configuration;
-//import io.secuconnect.client.auth.*;
-//import io.secuconnect.client.api.PaymentContractsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: oauth_token
-OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
-oauth_token.setAccessToken("YOUR ACCESS TOKEN");
-
-PaymentContractsApi apiInstance = new PaymentContractsApi();
-String paymentContractId = "paymentContractId_example"; // String | Contract identifier
-try {
-    PaymentContractsRequestIdResult result = apiInstance.paymentContractsIdRequestIdPost(paymentContractId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentContractsApi#paymentContractsIdRequestIdPost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentContractId** | **String**| Contract identifier | [required]
-
-### Return type
-
-[**PaymentContractsRequestIdResult**](PaymentContractsRequestIdResult.md)
-
-### Authorization
-
-[oauth_token](../README.md#oauth_token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="paymentContractsPost"></a>
 # **paymentContractsPost**
 > PaymentContractsProductModel paymentContractsPost(body)
@@ -438,6 +387,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentContractsProductModel**](PaymentContractsProductModel.md)
+
+### Authorization
+
+[oauth_token](../README.md#oauth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="requestId"></a>
+# **requestId**
+> PaymentContractsRequestIdResult requestId(paymentContractId, body)
+
+POST Payment/Contracts/{paymentContractId}/requestId
+
+This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
+
+### Example
+```java
+// Import classes:
+//import io.secuconnect.client.ApiClient;
+//import io.secuconnect.client.ApiException;
+//import io.secuconnect.client.Configuration;
+//import io.secuconnect.client.auth.*;
+//import io.secuconnect.client.api.PaymentContractsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth_token
+OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
+oauth_token.setAccessToken("YOUR ACCESS TOKEN");
+
+PaymentContractsApi apiInstance = new PaymentContractsApi();
+String paymentContractId = "paymentContractId_example"; // String | Contract identifier of the parent
+PaymentContractsDTORequestId body = new PaymentContractsDTORequestId(); // PaymentContractsDTORequestId | Payment contract request id properties
+try {
+    PaymentContractsRequestIdResult result = apiInstance.requestId(paymentContractId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PaymentContractsApi#requestId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **paymentContractId** | **String**| Contract identifier of the parent | [required]
+ **body** | [**PaymentContractsDTORequestId**](PaymentContractsDTORequestId.md)| Payment contract request id properties | [required]
+
+### Return type
+
+[**PaymentContractsRequestIdResult**](PaymentContractsRequestIdResult.md)
 
 ### Authorization
 

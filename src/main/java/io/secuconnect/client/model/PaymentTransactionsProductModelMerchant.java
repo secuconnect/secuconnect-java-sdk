@@ -33,7 +33,6 @@ public class PaymentTransactionsProductModelMerchant {
    * Type of product
    * @return object
   **/
-  @ApiModelProperty(value = "Type of product")
   public String getObject() {
     return object;
   }
@@ -51,7 +50,6 @@ public class PaymentTransactionsProductModelMerchant {
    * Identifier of product
    * @return id
   **/
-  @ApiModelProperty(value = "Identifier of product")
   public String getId() {
     return id;
   }
@@ -69,7 +67,6 @@ public class PaymentTransactionsProductModelMerchant {
    * Type of merchant
    * @return type
   **/
-  @ApiModelProperty(value = "Type of merchant")
   public String getType() {
     return type;
   }

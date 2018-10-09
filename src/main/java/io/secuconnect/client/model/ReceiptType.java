@@ -26,7 +26,6 @@ public class ReceiptType {
    * Type
    * @return type
   **/
-  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }

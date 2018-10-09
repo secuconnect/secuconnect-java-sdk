@@ -39,7 +39,6 @@ public class LoyaltyCardgroupsDTO {
    * Display name
    * @return displayName
   **/
-  @ApiModelProperty(value = "Display name")
   public String getDisplayName() {
     return displayName;
   }
@@ -57,7 +56,6 @@ public class LoyaltyCardgroupsDTO {
    * Display name raw
    * @return displayNameRaw
   **/
-  @ApiModelProperty(value = "Display name raw")
   public String getDisplayNameRaw() {
     return displayNameRaw;
   }
@@ -75,7 +73,6 @@ public class LoyaltyCardgroupsDTO {
    * Stock warn limit
    * @return stockWarnLimit
   **/
-  @ApiModelProperty(value = "Stock warn limit")
   public String getStockWarnLimit() {
     return stockWarnLimit;
   }
@@ -93,7 +90,6 @@ public class LoyaltyCardgroupsDTO {
    * Picture
    * @return picture
   **/
-  @ApiModelProperty(value = "Picture")
   public String getPicture() {
     return picture;
   }
@@ -111,7 +107,6 @@ public class LoyaltyCardgroupsDTO {
    * LoyaltyCardgroupsDTO
    * @return merchant
   **/
-  @ApiModelProperty(value = "LoyaltyCardgroupsDTO")
   public LoyaltyCardgroupsDTOMerchant getMerchant() {
     return merchant;
   }

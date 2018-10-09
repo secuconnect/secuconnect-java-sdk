@@ -39,7 +39,6 @@ public class SecupayTransactionProductModelTransferAccount {
    * IBAN
    * @return iban
   **/
-  @ApiModelProperty(value = "IBAN")
   public String getIban() {
     return iban;
   }
@@ -57,7 +56,6 @@ public class SecupayTransactionProductModelTransferAccount {
    * BIC
    * @return bic
   **/
-  @ApiModelProperty(value = "BIC")
   public String getBic() {
     return bic;
   }
@@ -75,7 +73,6 @@ public class SecupayTransactionProductModelTransferAccount {
    * Bank account number
    * @return accountnumber
   **/
-  @ApiModelProperty(value = "Bank account number")
   public String getAccountnumber() {
     return accountnumber;
   }
@@ -93,7 +90,6 @@ public class SecupayTransactionProductModelTransferAccount {
    * The name of the bank institute
    * @return bankcode
   **/
-  @ApiModelProperty(value = "The name of the bank institute")
   public String getBankcode() {
     return bankcode;
   }
@@ -111,7 +107,6 @@ public class SecupayTransactionProductModelTransferAccount {
    * The owner of bank account
    * @return accountOwner
   **/
-  @ApiModelProperty(value = "The owner of bank account")
   public String getAccountOwner() {
     return accountOwner;
   }

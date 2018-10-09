@@ -45,7 +45,6 @@ public class GeneralMerchantsDTO {
    * Legal details
    * @return legalDetails
   **/
-  @ApiModelProperty(value = "Legal details")
   public List<GeneralMerchantsLegalDetails> getLegalDetails() {
     return legalDetails;
   }
@@ -63,7 +62,6 @@ public class GeneralMerchantsDTO {
    * Checkout options
    * @return checkoutOptions
   **/
-  @ApiModelProperty(value = "Checkout options")
   public GeneralMerchantsCheckoutOptions getCheckoutOptions() {
     return checkoutOptions;
   }
@@ -89,7 +87,6 @@ public class GeneralMerchantsDTO {
    * Urls
    * @return urls
   **/
-  @ApiModelProperty(value = "Urls")
   public List<GeneralMerchantsUrls> getUrls() {
     return urls;
   }

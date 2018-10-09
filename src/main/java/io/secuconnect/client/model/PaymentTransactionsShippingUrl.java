@@ -26,7 +26,6 @@ public class PaymentTransactionsShippingUrl {
    * The url of the shipping information form
    * @return url
   **/
-  @ApiModelProperty(value = "The url of the shipping information form")
   public String getUrl() {
     return url;
   }

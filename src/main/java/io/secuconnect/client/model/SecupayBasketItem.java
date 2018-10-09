@@ -5,9 +5,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.secuconnect.client.model.SecupayBasketItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -16,7 +19,7 @@ import java.util.Objects;
 @ApiModel(description = "Item describing single position in basket in transaction")
 public class SecupayBasketItem {
   @SerializedName("item_type")
-  private String itemType = null;
+  private String itemType = "article";
 
   @SerializedName("article_number")
   private String articleNumber = null;
@@ -51,6 +54,12 @@ public class SecupayBasketItem {
   @SerializedName("contract_id")
   private String contractId = null;
 
+  @SerializedName("reference_id")
+  private String referenceId = null;
+
+  @SerializedName("sub_basket")
+  private List<SecupayBasketItem> subBasket = null;
+
   public SecupayBasketItem itemType(String itemType) {
     this.itemType = itemType;
     return this;
@@ -60,7 +69,6 @@ public class SecupayBasketItem {
    * Category of item
    * @return itemType
   **/
-  @ApiModelProperty(value = "Category of item")
   public String getItemType() {
     return itemType;
   }
@@ -75,10 +83,9 @@ public class SecupayBasketItem {
   }
 
    /**
-   * Article number, if item is of article category
+   * Article number of item
    * @return articleNumber
   **/
-  @ApiModelProperty(value = "Article number, if item is of article category")
   public String getArticleNumber() {
     return articleNumber;
   }
@@ -96,7 +103,6 @@ public class SecupayBasketItem {
    * Quantity of articles in item
    * @return quantity
   **/
-  @ApiModelProperty(value = "Quantity of articles in item")
   public Integer getQuantity() {
     return quantity;
   }
@@ -114,7 +120,6 @@ public class SecupayBasketItem {
    * Descriptive name of item
    * @return name
   **/
-  @ApiModelProperty(value = "Descriptive name of item")
   public String getName() {
     return name;
   }
@@ -132,7 +137,6 @@ public class SecupayBasketItem {
    * Model of item
    * @return model
   **/
-  @ApiModelProperty(value = "Model of item")
   public String getModel() {
     return model;
   }
@@ -150,7 +154,6 @@ public class SecupayBasketItem {
    * EAN, European Article Number
    * @return ean
   **/
-  @ApiModelProperty(value = "EAN, European Article Number")
   public String getEan() {
     return ean;
   }
@@ -168,7 +171,6 @@ public class SecupayBasketItem {
    * Applicable tax in percentages
    * @return tax
   **/
-  @ApiModelProperty(value = "Applicable tax in percentages")
   public String getTax() {
     return tax;
   }
@@ -186,7 +188,6 @@ public class SecupayBasketItem {
    * Total price
    * @return total
   **/
-  @ApiModelProperty(value = "Total price")
   public Integer getTotal() {
     return total;
   }
@@ -204,7 +205,6 @@ public class SecupayBasketItem {
    * Price of single article, if item is of article category
    * @return price
   **/
-  @ApiModelProperty(value = "Price of single article, if item is of article category")
   public Integer getPrice() {
     return price;
   }
@@ -222,7 +222,6 @@ public class SecupayBasketItem {
    * Special param for stakeholder payments
    * @return apikey
   **/
-  @ApiModelProperty(value = "Special param for stakeholder payments")
   public String getApikey() {
     return apikey;
   }
@@ -240,7 +239,6 @@ public class SecupayBasketItem {
    * Special param for payout payments
    * @return transactionHash
   **/
-  @ApiModelProperty(value = "Special param for payout payments")
   public String getTransactionHash() {
     return transactionHash;
   }
@@ -258,13 +256,54 @@ public class SecupayBasketItem {
    * Contract id - Special param for stakeholder payments
    * @return contractId
   **/
-  @ApiModelProperty(value = "Contract id - Special param for stakeholder payments")
   public String getContractId() {
     return contractId;
   }
 
   public void setContractId(String contractId) {
     this.contractId = contractId;
+  }
+
+  public SecupayBasketItem referenceId(String referenceId) {
+    this.referenceId = referenceId;
+    return this;
+  }
+
+   /**
+   * Reference id - must be unique for the entire basket
+   * @return referenceId
+  **/
+  public String getReferenceId() {
+    return referenceId;
+  }
+
+  public void setReferenceId(String referenceId) {
+    this.referenceId = referenceId;
+  }
+
+  public SecupayBasketItem subBasket(List<SecupayBasketItem> subBasket) {
+    this.subBasket = subBasket;
+    return this;
+  }
+
+  public SecupayBasketItem addSubBasketItem(SecupayBasketItem subBasketItem) {
+    if (this.subBasket == null) {
+      this.subBasket = new ArrayList<SecupayBasketItem>();
+    }
+    this.subBasket.add(subBasketItem);
+    return this;
+  }
+
+   /**
+   * Mixed-Basket: All basket items for one merchant.
+   * @return subBasket
+  **/
+  public List<SecupayBasketItem> getSubBasket() {
+    return subBasket;
+  }
+
+  public void setSubBasket(List<SecupayBasketItem> subBasket) {
+    this.subBasket = subBasket;
   }
 
   @Override
@@ -287,12 +326,14 @@ public class SecupayBasketItem {
         Objects.equals(this.price, secupayBasketItem.price) &&
         Objects.equals(this.apikey, secupayBasketItem.apikey) &&
         Objects.equals(this.transactionHash, secupayBasketItem.transactionHash) &&
-        Objects.equals(this.contractId, secupayBasketItem.contractId);
+        Objects.equals(this.contractId, secupayBasketItem.contractId) &&
+        Objects.equals(this.referenceId, secupayBasketItem.referenceId) &&
+        Objects.equals(this.subBasket, secupayBasketItem.subBasket);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(itemType, articleNumber, quantity, name, model, ean, tax, total, price, apikey, transactionHash, contractId);
+    return Objects.hash(itemType, articleNumber, quantity, name, model, ean, tax, total, price, apikey, transactionHash, contractId, referenceId, subBasket);
   }
 
   @Override
@@ -312,6 +353,8 @@ public class SecupayBasketItem {
     sb.append("    apikey: ").append(toIndentedString(apikey)).append("\n");
     sb.append("    transactionHash: ").append(toIndentedString(transactionHash)).append("\n");
     sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
+    sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    sb.append("    subBasket: ").append(toIndentedString(subBasket)).append("\n");
     sb.append("}");
     return sb.toString();
   }

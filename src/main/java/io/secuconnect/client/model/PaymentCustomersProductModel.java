@@ -44,7 +44,6 @@ public class PaymentCustomersProductModel {
    * Object of payment customer
    * @return object
   **/
-  @ApiModelProperty(value = "Object of payment customer")
   public String getObject() {
     return object;
   }
@@ -62,7 +61,6 @@ public class PaymentCustomersProductModel {
    * Id of payment customer
    * @return id
   **/
-  @ApiModelProperty(value = "Id of payment customer")
   public String getId() {
     return id;
   }
@@ -80,7 +78,6 @@ public class PaymentCustomersProductModel {
    * Payment contract
    * @return contract
   **/
-  @ApiModelProperty(value = "Payment contract")
   public ProductInstanceUID getContract() {
     return contract;
   }
@@ -98,7 +95,6 @@ public class PaymentCustomersProductModel {
    * Customer contact info
    * @return contact
   **/
-  @ApiModelProperty(value = "Customer contact info")
   public Contact getContact() {
     return contact;
   }
@@ -116,7 +112,6 @@ public class PaymentCustomersProductModel {
    * Created at date
    * @return created
   **/
-  @ApiModelProperty(value = "Created at date")
   public DateTime getCreated() {
     return created;
   }
@@ -134,7 +129,6 @@ public class PaymentCustomersProductModel {
    * Updated at date
    * @return updated
   **/
-  @ApiModelProperty(value = "Updated at date")
   public DateTime getUpdated() {
     return updated;
   }

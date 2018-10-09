@@ -42,7 +42,6 @@ public class ProductExceptionPayload {
    * Request status (always equals to &#39;error&#39;)
    * @return status
   **/
-  @ApiModelProperty(value = "Request status (always equals to 'error')")
   public String getStatus() {
     return status;
   }
@@ -60,7 +59,6 @@ public class ProductExceptionPayload {
    * Error type identifier
    * @return error
   **/
-  @ApiModelProperty(value = "Error type identifier")
   public String getError() {
     return error;
   }
@@ -78,7 +76,6 @@ public class ProductExceptionPayload {
    * Error details
    * @return errorDetails
   **/
-  @ApiModelProperty(value = "Error details")
   public String getErrorDetails() {
     return errorDetails;
   }
@@ -96,7 +93,6 @@ public class ProductExceptionPayload {
    * Error details in German
    * @return errorUser
   **/
-  @ApiModelProperty(value = "Error details in German")
   public String getErrorUser() {
     return errorUser;
   }
@@ -114,7 +110,6 @@ public class ProductExceptionPayload {
    * HTTP code corresponding to error
    * @return code
   **/
-  @ApiModelProperty(value = "HTTP code corresponding to error")
   public String getCode() {
     return code;
   }
@@ -132,7 +127,6 @@ public class ProductExceptionPayload {
    * ID by which support team can relate error with action(s) that caused it
    * @return supportId
   **/
-  @ApiModelProperty(value = "ID by which support team can relate error with action(s) that caused it")
   public String getSupportId() {
     return supportId;
   }

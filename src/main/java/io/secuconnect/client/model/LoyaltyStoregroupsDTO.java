@@ -34,7 +34,6 @@ public class LoyaltyStoregroupsDTO {
    * Loyalty store group name
    * @return name
   **/
-  @ApiModelProperty(value = "Loyalty store group name")
   public String getName() {
     return name;
   }
@@ -52,7 +51,6 @@ public class LoyaltyStoregroupsDTO {
    * Loyalty store group merchant id
    * @return merchant
   **/
-  @ApiModelProperty(value = "Loyalty store group merchant id")
   public String getMerchant() {
     return merchant;
   }
@@ -78,7 +76,6 @@ public class LoyaltyStoregroupsDTO {
    * List of loyalty stores ids
    * @return stores
   **/
-  @ApiModelProperty(value = "List of loyalty stores ids")
   public List<String> getStores() {
     return stores;
   }

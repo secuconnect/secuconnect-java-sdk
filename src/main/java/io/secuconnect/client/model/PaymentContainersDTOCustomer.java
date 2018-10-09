@@ -27,7 +27,6 @@ public class PaymentContainersDTOCustomer {
    * Customer identifier
    * @return id
   **/
-  @ApiModelProperty(value = "Customer identifier")
   public String getId() {
     return id;
   }

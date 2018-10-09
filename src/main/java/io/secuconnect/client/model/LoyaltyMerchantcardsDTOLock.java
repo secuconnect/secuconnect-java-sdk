@@ -32,7 +32,6 @@ public class LoyaltyMerchantcardsDTOLock {
    * Lock status
    * @return lockStatus
   **/
-  @ApiModelProperty(value = "Lock status")
   public String getLockStatus() {
     return lockStatus;
   }
@@ -50,7 +49,6 @@ public class LoyaltyMerchantcardsDTOLock {
    * Lock reason
    * @return reason
   **/
-  @ApiModelProperty(value = "Lock reason")
   public String getReason() {
     return reason;
   }
@@ -68,7 +66,6 @@ public class LoyaltyMerchantcardsDTOLock {
    * Lock note
    * @return note
   **/
-  @ApiModelProperty(value = "Lock note")
   public String getNote() {
     return note;
   }

@@ -43,7 +43,6 @@ public class DocumentUploadsProductModel {
    * Object of document upload
    * @return object
   **/
-  @ApiModelProperty(value = "Object of document upload")
   public String getObject() {
     return object;
   }
@@ -61,7 +60,6 @@ public class DocumentUploadsProductModel {
    * Id of document upload
    * @return id
   **/
-  @ApiModelProperty(value = "Id of document upload")
   public String getId() {
     return id;
   }
@@ -79,7 +77,6 @@ public class DocumentUploadsProductModel {
    * Created at date
    * @return created
   **/
-  @ApiModelProperty(value = "Created at date")
   public DateTime getCreated() {
     return created;
   }
@@ -97,7 +94,6 @@ public class DocumentUploadsProductModel {
    * Type
    * @return type
   **/
-  @ApiModelProperty(value = "Type")
   public String getType() {
     return type;
   }
@@ -115,7 +111,6 @@ public class DocumentUploadsProductModel {
    * Name
    * @return name
   **/
-  @ApiModelProperty(value = "Name")
   public String getName() {
     return name;
   }
@@ -133,7 +128,6 @@ public class DocumentUploadsProductModel {
    * Size
    * @return size
   **/
-  @ApiModelProperty(value = "Size")
   public Integer getSize() {
     return size;
   }

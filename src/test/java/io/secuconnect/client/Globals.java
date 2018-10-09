@@ -10,6 +10,11 @@ public class Globals {
             ""
     );
 
+    public static final OAuthClientCredentials O_AUTH_CLIENT_CREDENTIALS_FOR_PAYMENT_CONTRACTS = new OAuthClientCredentials(
+            "",
+            ""
+    );
+
     public static final OAuthApplicationUserCredentials O_AUTH_APPLICATION_USER_CREDENTIALS = new OAuthApplicationUserCredentials(
             "app.main.secucard",
             "not set",

@@ -32,7 +32,6 @@ public class SmartDevicesDTOSecubaseConfig {
    * Secubase version
    * @return secubaseVersion
   **/
-  @ApiModelProperty(value = "Secubase version")
   public String getSecubaseVersion() {
     return secubaseVersion;
   }
@@ -50,7 +49,6 @@ public class SmartDevicesDTOSecubaseConfig {
    * Base version
    * @return baseVersion
   **/
-  @ApiModelProperty(value = "Base version")
   public String getBaseVersion() {
     return baseVersion;
   }
@@ -68,7 +66,6 @@ public class SmartDevicesDTOSecubaseConfig {
    * Oai version
    * @return oaiVersion
   **/
-  @ApiModelProperty(value = "Oai version")
   public String getOaiVersion() {
     return oaiVersion;
   }

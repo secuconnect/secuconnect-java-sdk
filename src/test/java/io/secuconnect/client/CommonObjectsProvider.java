@@ -4,6 +4,7 @@ import io.secuconnect.client.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class CommonObjectsProvider {
     public static PaymentCustomersDTO prepareCustomer() {
@@ -68,5 +69,66 @@ public class CommonObjectsProvider {
         transactionData.setRedirectUrl(redirectUrl);
 
         return transactionData;
+    }
+
+    public static PaymentContractsDTOClone prepareDataForClone() {
+        int  number = getRandomNumber();
+
+        PaymentContractsDTOClone cloneData = new PaymentContractsDTOClone();
+        cloneData.setProject("project_name 2017-05-15 #" + number);
+        cloneData.setPayinAccount(false);
+
+        return cloneData;
+    }
+
+    public static PaymentContractsDTORequestId prepareDataFoRequestId() {
+        Address address = new Address();
+        address.setType("invoice");
+        address.setStreet("Hainweg");
+        address.setStreetNumber("7");
+        address.setPostalCode("01324");
+        address.setCity("Dresden");
+        address.setCountry("Germany");
+
+        Contact contact = new Contact();
+        contact.setSalutation("Mr.");
+        contact.setForename("Tony");
+        contact.setSurname("Stark");
+        contact.setCompanyname("Stark Industries");
+        contact.setGender("m");
+        contact.setDob("1987-06-16");
+        contact.setUrlWebsite("https://en.wikipedia.org/wiki/Stark_Industries");
+        contact.setBirthplace("New York");
+        contact.setNationality("german");
+        contact.setAddress(address);
+        contact.setEmail("testing@secupay.ag");
+        contact.setPhone("0049-173-456789");
+
+        PaymentInformation paymentInformation = new PaymentInformation();
+        paymentInformation.setIban("DE89370400440532013000");
+        paymentInformation.setOwner("Test #1");
+
+        PaymentContractsDTOIFrameOpts iFrameOpts = new PaymentContractsDTOIFrameOpts();
+        iFrameOpts.setShowBasket(true);
+        iFrameOpts.setBasketTitle("Projext XY unterstützen");
+        iFrameOpts.setSubmitButtonTitle("Zahlungspflichtig unterstützen");
+
+        int number = getRandomNumber();
+
+        PaymentContractsDTORequestId requestIdData = new PaymentContractsDTORequestId();
+        requestIdData.setContact(contact);
+        requestIdData.setProject("project_name 2017-05-15 #" + number);
+        requestIdData.setPayoutAccount(paymentInformation);
+        requestIdData.setIframeOpts(iFrameOpts);
+        requestIdData.setPayinAccount(false);
+
+        return requestIdData;
+    }
+
+    public static int getRandomNumber() {
+        Random random = new Random();
+        int  number = random.nextInt(999999999) + 1;
+
+        return number;
     }
 }

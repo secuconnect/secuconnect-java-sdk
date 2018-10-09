@@ -31,7 +31,6 @@ public class SecupayTransactionProductModelUsedPaymentInstrument {
    * The type of the payment instrument data, like: &#39;bank_account&#39; or &#39;credit_card&#39;
    * @return type
   **/
-  @ApiModelProperty(value = "The type of the payment instrument data, like: 'bank_account' or 'credit_card'")
   public String getType() {
     return type;
   }
@@ -49,7 +48,6 @@ public class SecupayTransactionProductModelUsedPaymentInstrument {
    * Holds the payment instrument data
    * @return data
   **/
-  @ApiModelProperty(value = "Holds the payment instrument data")
   public BankAccountDescriptor getData() {
     return data;
   }

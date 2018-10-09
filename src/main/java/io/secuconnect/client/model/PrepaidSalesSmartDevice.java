@@ -35,7 +35,6 @@ public class PrepaidSalesSmartDevice {
    * Object of smart device
    * @return object
   **/
-  @ApiModelProperty(value = "Object of smart device")
   public String getObject() {
     return object;
   }
@@ -53,7 +52,6 @@ public class PrepaidSalesSmartDevice {
    * Id of smart device
    * @return id
   **/
-  @ApiModelProperty(value = "Id of smart device")
   public String getId() {
     return id;
   }
@@ -71,7 +69,6 @@ public class PrepaidSalesSmartDevice {
    * Smart device description
    * @return description
   **/
-  @ApiModelProperty(value = "Smart device description")
   public String getDescription() {
     return description;
   }
@@ -89,7 +86,6 @@ public class PrepaidSalesSmartDevice {
    * Smart device vendor uid
    * @return vendorUid
   **/
-  @ApiModelProperty(value = "Smart device vendor uid")
   public String getVendorUid() {
     return vendorUid;
   }

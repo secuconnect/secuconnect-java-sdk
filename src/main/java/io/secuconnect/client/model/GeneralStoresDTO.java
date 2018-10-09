@@ -48,7 +48,6 @@ public class GeneralStoresDTO {
    * New address
    * @return address
   **/
-  @ApiModelProperty(value = "New address")
   public Address getAddress() {
     return address;
   }
@@ -66,7 +65,6 @@ public class GeneralStoresDTO {
    * New facebook id
    * @return facebookId
   **/
-  @ApiModelProperty(value = "New facebook id")
   public String getFacebookId() {
     return facebookId;
   }
@@ -84,7 +82,6 @@ public class GeneralStoresDTO {
    * New phone number
    * @return phone
   **/
-  @ApiModelProperty(value = "New phone number")
   public String getPhone() {
     return phone;
   }
@@ -102,7 +99,6 @@ public class GeneralStoresDTO {
    * New url to general store website
    * @return urlWebsite
   **/
-  @ApiModelProperty(value = "New url to general store website")
   public String getUrlWebsite() {
     return urlWebsite;
   }
@@ -120,7 +116,6 @@ public class GeneralStoresDTO {
    * New main photo
    * @return photoMain
   **/
-  @ApiModelProperty(value = "New main photo")
   public String getPhotoMain() {
     return photoMain;
   }
@@ -146,7 +141,6 @@ public class GeneralStoresDTO {
    * New photos
    * @return photo
   **/
-  @ApiModelProperty(value = "New photos")
   public List<String> getPhoto() {
     return photo;
   }
@@ -172,7 +166,6 @@ public class GeneralStoresDTO {
    * Open hours in every day
    * @return openHours
   **/
-  @ApiModelProperty(value = "Open hours in every day")
   public List<OpenHours> getOpenHours() {
     return openHours;
   }

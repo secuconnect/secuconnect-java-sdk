@@ -33,7 +33,6 @@ public class DocumentUploadsBaseProductModel {
    * Object of document upload
    * @return object
   **/
-  @ApiModelProperty(value = "Object of document upload")
   public String getObject() {
     return object;
   }
@@ -51,7 +50,6 @@ public class DocumentUploadsBaseProductModel {
    * Id of document upload
    * @return id
   **/
-  @ApiModelProperty(value = "Id of document upload")
   public String getId() {
     return id;
   }
@@ -69,7 +67,6 @@ public class DocumentUploadsBaseProductModel {
    * Created at date
    * @return created
   **/
-  @ApiModelProperty(value = "Created at date")
   public DateTime getCreated() {
     return created;
   }

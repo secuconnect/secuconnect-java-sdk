@@ -30,7 +30,6 @@ public class SecupayTransactionProductDTOOptData {
    * Customer accepted disclaimer
    * @return hasAcceptedDisclaimer
   **/
-  @ApiModelProperty(value = "Customer accepted disclaimer")
   public String getHasAcceptedDisclaimer() {
     return hasAcceptedDisclaimer;
   }
@@ -48,7 +47,6 @@ public class SecupayTransactionProductDTOOptData {
    * Client language
    * @return language
   **/
-  @ApiModelProperty(value = "Client language")
   public String getLanguage() {
     return language;
   }
