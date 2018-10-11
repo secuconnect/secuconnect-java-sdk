@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **redirectUrl** | [**SecupayTransactionProductModelRedirectUrl**](SecupayTransactionProductModelRedirectUrl.md) |  | 
 **iframeUrl** | **String** | The url of the payment checkout iframe | 
 **container** | [**PaymentContainersProductModel**](PaymentContainersProductModel.md) | The container object | 
+**subTransactions** | [**List&lt;SecupaySubTransactionProductModel&gt;**](SecupaySubTransactionProductModel.md) | A list of sub-transactions (for mixed basket) | 
 
 
 

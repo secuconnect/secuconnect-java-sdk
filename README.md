@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>io.secuconnect</groupId>
     <artifactId>secuconnect-java-sdk</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.secuconnect:secuconnect-java-sdk:1.2.0"
+compile "io.secuconnect:secuconnect-java-sdk:1.2.1"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/secuconnect-java-sdk-1.2.0.jar
+* target/secuconnect-java-sdk-1.2.1.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -335,6 +335,7 @@ Class | Method | HTTP request | Description
  - [ReceiptType](docs/ReceiptType.md)
  - [ReceiptValue](docs/ReceiptValue.md)
  - [SecupayBasketItem](docs/SecupayBasketItem.md)
+ - [SecupaySubTransactionProductModel](docs/SecupaySubTransactionProductModel.md)
  - [SecupayTransactionCancelDTO](docs/SecupayTransactionCancelDTO.md)
  - [SecupayTransactionCaptureDTO](docs/SecupayTransactionCaptureDTO.md)
  - [SecupayTransactionDTOExternalInvoicePdf](docs/SecupayTransactionDTOExternalInvoicePdf.md)
