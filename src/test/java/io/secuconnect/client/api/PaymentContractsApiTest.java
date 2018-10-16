@@ -107,6 +107,6 @@ public class PaymentContractsApiTest {
         assertEquals("never", requestIdResult.getContract().getSepaMandateInform());
         assertNotNull(requestIdResult.getContract().getCreated());
         assertNotNull(requestIdResult.getApikey());
-        assertNull(requestIdResult.getPayingAccount());
+        assertNull(requestIdResult.getPayinAccount());
     }
 }
