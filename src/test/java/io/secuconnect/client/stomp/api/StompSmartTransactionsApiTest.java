@@ -20,6 +20,9 @@ import static io.secuconnect.client.Globals.O_AUTH_DEVICE_CREDENTIALS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Ignore;
+
+@Ignore
 public class StompSmartTransactionsApiTest {
     static final String SMART_TRANSACTIONS = "smart.transactions";
     static final String SMART_TRANSACTION_STATUS_AFTER_CREATE = "created";
@@ -80,7 +83,7 @@ public class StompSmartTransactionsApiTest {
         basketInfo = null;
         basket = null;
     }
-
+	
     @Test
     public void stompSmartTransactionsApiTest() {
         String accessToken = authenticator.getDeviceAccessToken(O_AUTH_DEVICE_CREDENTIALS.getClientId(), O_AUTH_DEVICE_CREDENTIALS.getClientSecret(), O_AUTH_DEVICE_CREDENTIALS.getUuid());

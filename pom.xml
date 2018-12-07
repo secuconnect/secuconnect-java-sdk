@@ -249,6 +249,11 @@
       <artifactId>okhttp</artifactId>
       <version>${okhttp-version}</version>
     </dependency>
+	<dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-stomp</artifactId>
+      <version>${activemq-stomp-version}</version>
+    </dependency>
     <dependency>
       <groupId>com.squareup.okhttp</groupId>
       <artifactId>logging-interceptor</artifactId>

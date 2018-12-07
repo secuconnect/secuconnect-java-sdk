@@ -12,8 +12,11 @@ import org.junit.Test;
 
 import static io.secuconnect.client.Globals.O_AUTH_CLIENT_CREDENTIALS;
 
+import org.junit.Ignore;
+
 public class StompTest {
 
+	@Ignore
     @Test
     public void stompTest() {
         Authenticator authenticator = new Authenticator(O_AUTH_CLIENT_CREDENTIALS);

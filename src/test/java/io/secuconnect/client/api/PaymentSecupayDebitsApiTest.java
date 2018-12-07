@@ -29,6 +29,9 @@ import static io.secuconnect.client.Globals.O_AUTH_CLIENT_CREDENTIALS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Ignore;
+
+
 /**
  * API tests for PaymentSecupayDebitsApi
  */
@@ -269,6 +272,7 @@ public class PaymentSecupayDebitsApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
+	@Ignore
     @Test
     public void e_paymentSecupayDebitsCancelByIdTest() throws ApiException {
         Object response = debitApi.paymentSecupayDebitsCancelById(debitTransactionData.getId());
