@@ -23,18 +23,13 @@ import java.util.concurrent.TimeUnit;
 import javax.cache.Cache;
 
 public class Authenticator {
-
   private AuthenticationCredentials credentials;
-  private final ApiClient apiClient;
-  private final Cache<String, CacheItem> cache;
-  private final CacheItem cacheItem;
+  private ApiClient apiClient;
 
   public Authenticator(AuthenticationCredentials credentials) {
     this.credentials = credentials;
     this.apiClient = new ApiClient();
     this.apiClient.setBasePath("https://connect-testing.secupay-ag.de/");
-    this.cache = apiClient.getCache();
-    this.cacheItem = apiClient.getCacheItem();
   }
 
   public com.squareup.okhttp.Call getTokenCall(AuthenticationCredentials credentials) throws ApiException {
@@ -99,6 +94,7 @@ public class Authenticator {
   public AccessToken getToken() throws ApiException {
     AccessToken accessToken;
     String uniqueKey = credentials.getUniqueKey();
+    CacheItem cacheItem = apiClient.getCacheItem();
 
     if (cacheItem == null) {
       accessToken = getTokenFromApi();
@@ -263,6 +259,8 @@ public class Authenticator {
 
   private void saveTokenInCache(AccessToken accessToken) {
     String uniqueKey = credentials.getUniqueKey();
+    Cache<String, CacheItem> cache = apiClient.getCache();
+    CacheItem cacheItem = apiClient.getCacheItem();
 
     cacheItem.set(uniqueKey, accessToken);
 
@@ -277,5 +275,13 @@ public class Authenticator {
 
   public void setCredentials(AuthenticationCredentials credentials) {
     this.credentials = credentials;
+  }
+
+  public ApiClient getApiClient() {
+    return apiClient;
+  }
+
+  public void setApiClient(ApiClient apiClient) {
+    this.apiClient = apiClient;
   }
 }

@@ -3,27 +3,21 @@ package io.secuconnect.client.stomp;
 import io.secuconnect.client.ApiException;
 import io.secuconnect.client.auth.Authenticator;
 import io.secuconnect.client.auth.tokens.OAuthClientToken;
-import org.apache.activemq.transport.stomp.StompConnection;
-import org.apache.activemq.transport.stomp.StompFrame;
+import io.secuconnect.client.stomp.communication.StompCommunicationManager;
+import io.secuconnect.client.stomp.listeners.def.impl.ConnectedFrameListener;
+import io.secuconnect.client.stomp.listeners.def.impl.ErrorFrameListener;
+import io.secuconnect.client.stomp.listeners.def.impl.MessageFrameListener;
+import io.secuconnect.client.stomp.listeners.def.impl.ReceiptFrameListener;
 import org.junit.Test;
 
-import java.util.HashMap;
-
 import static io.secuconnect.client.Globals.O_AUTH_CLIENT_CREDENTIALS;
-import static io.secuconnect.client.Globals.O_AUTH_DEVICE_CREDENTIALS;
-import static junit.framework.TestCase.assertTrue;
 
 public class StompTest {
-    Authenticator authenticator;
-    String accessToken = null;
-    StompClient stompClient = new StompClient();
 
     @Test
     public void stompTest() {
-//        authenticator = new Authenticator(O_AUTH_DEVICE_CREDENTIALS);
-//        accessToken = authenticator.getDeviceAccessToken(O_AUTH_DEVICE_CREDENTIALS.getClientId(), O_AUTH_DEVICE_CREDENTIALS.getClientSecret(), O_AUTH_DEVICE_CREDENTIALS.getUuid());
-
-        authenticator = new Authenticator(O_AUTH_CLIENT_CREDENTIALS);
+        Authenticator authenticator = new Authenticator(O_AUTH_CLIENT_CREDENTIALS);
+        String accessToken = null;
 
         try {
             OAuthClientToken token = (OAuthClientToken) authenticator.getToken();
@@ -32,27 +26,22 @@ public class StompTest {
             e.printStackTrace();
         }
 
-        stompClient.setAccessToken(accessToken);
-        stompClient.completeHeaders();
+        StompCommunicationManager scm = StompCommunicationManager.createInstance(accessToken);
 
-        stompClient.connect(accessToken, accessToken);
+        scm.addFrameListener(new ConnectedFrameListener());
+        scm.addFrameListener(new MessageFrameListener());
+        scm.addFrameListener(new ReceiptFrameListener());
+        scm.addFrameListener(new ErrorFrameListener());
 
-        String destination = stompClient.destinationOf("api:get:Payment.Customers");
-//        HashMap<String, String> headers = stompClient.getHeaders();
-        String msg = "";
+        scm.connect(1000);
 
-//        connection.send(destination, msg, null, headers);
-        stompClient.send(destination, msg, null);
+        scm.send("api:get:Payment.Customers", "");
+        scm.send("api:get:Payment.Customers", "", "my-receipt1");
 
-//        StompFrame message = stompClient.receive();
-//        String messageBody = message.getBody();
-
-        String message = stompClient.receive();
-
-        assertTrue("status is missing in messageBody", message.contains("status"));
-        assertTrue("data is missing in messageBody", message.contains("data"));
-
-        stompClient.disconnect();
-        stompClient.close();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

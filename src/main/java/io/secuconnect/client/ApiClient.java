@@ -121,7 +121,7 @@ public class ApiClient {
   private HttpLoggingInterceptor loggingInterceptor;
 
   private Cache<String, CacheItem> cache;
-  private FileCache cacheItem;
+  private CacheItem cacheItem;
   private Printer printer;
 
   /*
@@ -148,7 +148,7 @@ public class ApiClient {
     this.lenientDatetimeFormat = true;
 
     // Set default User-Agent.
-    setUserAgent("secuconnect-java-sdk/1.2.1");
+    setUserAgent("secuconnect-java-sdk/1.3.1");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
@@ -171,6 +171,10 @@ public class ApiClient {
 
   public CacheItem getCacheItem() {
     return cacheItem;
+  }
+
+  public void setCacheItem(CacheItem cacheItem) {
+    this.cacheItem = cacheItem;
   }
 
   public Cache<String, CacheItem> getCache() {
