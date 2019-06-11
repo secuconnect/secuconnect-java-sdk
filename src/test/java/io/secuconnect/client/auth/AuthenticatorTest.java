@@ -28,6 +28,7 @@ public class AuthenticatorTest {
         assertNotNull(accessToken.getCreatedAt());
     }
 
+    @Ignore
     @Test
     public void oAuthApplicationUserCredentialsTest() throws ApiException {
         Authenticator authenticator = new Authenticator(O_AUTH_APPLICATION_USER_CREDENTIALS);

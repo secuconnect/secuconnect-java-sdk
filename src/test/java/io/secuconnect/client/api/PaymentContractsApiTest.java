@@ -2,6 +2,7 @@ package io.secuconnect.client.api;
 
 import io.secuconnect.client.ApiClient;
 import io.secuconnect.client.ApiException;
+import io.secuconnect.client.Globals;
 import io.secuconnect.client.auth.Authenticator;
 import io.secuconnect.client.auth.tokens.OAuthClientToken;
 import io.secuconnect.client.model.*;
@@ -11,7 +12,6 @@ import org.junit.Test;
 
 import static io.secuconnect.client.CommonObjectsProvider.prepareDataFoRequestId;
 import static io.secuconnect.client.CommonObjectsProvider.prepareDataForClone;
-import static io.secuconnect.client.Globals.O_AUTH_CLIENT_CREDENTIALS_FOR_PAYMENT_CONTRACTS;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.*;
 
@@ -28,7 +28,7 @@ public class PaymentContractsApiTest {
 
     @BeforeClass
     public static void setUp() {
-        authenticator = new Authenticator(O_AUTH_CLIENT_CREDENTIALS_FOR_PAYMENT_CONTRACTS);
+        authenticator = new Authenticator(Globals.O_AUTH_CLIENT_CREDENTIALS);
         String accessToken = null;
 
         try {
@@ -77,8 +77,6 @@ public class PaymentContractsApiTest {
         assertEquals(PAYMENT_CONTRACTS, paymentContract.getParent().getObject());
         assertNotNull(paymentContract.getParent().getId());
         assertTrue(paymentContract.getDemo());
-        assertFalse(paymentContract.getAllowCloning());
-        assertEquals("never", paymentContract.getSepaMandateInform());
         assertNotNull(paymentContract.getCreated());
     }
 
@@ -99,13 +97,6 @@ public class PaymentContractsApiTest {
         assertNotNull(requestIdResult);
         assertEquals(PAYMENT_CONTRACTS, requestIdResult.getContract().getObject());
         assertNotNull(requestIdResult.getContract().getId());
-        assertNotNull(requestIdResult.getContract().getParent());
-        assertEquals(PAYMENT_CONTRACTS, requestIdResult.getContract().getParent().getObject());
-        assertNotNull(requestIdResult.getContract().getParent().getId());
-        assertTrue(requestIdResult.getContract().getDemo());
-        assertFalse(requestIdResult.getContract().getAllowCloning());
-        assertEquals("never", requestIdResult.getContract().getSepaMandateInform());
-        assertNotNull(requestIdResult.getContract().getCreated());
         assertNotNull(requestIdResult.getApikey());
         assertNull(requestIdResult.getPayinAccount());
     }

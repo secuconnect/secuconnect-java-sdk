@@ -99,52 +99,54 @@ public class StompSmartTransactionsApiTest {
 
             @Override
             public void onMessage(StompFrame frame) {
-                String receivedBody = frame.getBody();
-                StompResponseWithSmartTransactionsProductModel response = StompResponseWithSmartTransactionsProductModel.getStompResponseFromJson(receivedBody);
-                SmartTransactionsProductModelForTests smartTransactionsProductModel = response.getData();
+                if (!frame.toString().contains("{\"status\":\"ok\",\"data\":{\"result\":true}}")) {
+                    String receivedBody = frame.getBody();
+                    StompResponseWithSmartTransactionsProductModel response = StompResponseWithSmartTransactionsProductModel.getStompResponseFromJson(receivedBody);
+                    SmartTransactionsProductModelForTests smartTransactionsProductModel = response.getData();
 
-                if (state == 0) {
-                    createdSmartTransactionObj = smartTransactionsProductModel;
+                    if (state == 0) {
+                        createdSmartTransactionObj = smartTransactionsProductModel;
 
-                    assertEquals(createdSmartTransactionObj.getObject(), SMART_TRANSACTIONS);
-                    assertEquals(createdSmartTransactionObj.getIdents(), smartTransactionsDTO.getIdents());
-                    assertEquals(createdSmartTransactionObj.getBasket(), smartTransactionsDTO.getBasket());
-                    assertEquals(createdSmartTransactionObj.getMerchantRef(), smartTransactionsDTO.getMerchantRef());
-                    assertEquals(createdSmartTransactionObj.getTransactionRef(), smartTransactionsDTO.getTransactionRef());
-                    assertEquals(createdSmartTransactionObj.getStatus(), SMART_TRANSACTION_STATUS_AFTER_CREATE);
-                    assertNotNull(createdSmartTransactionObj.getMerchant());
+                        assertEquals(createdSmartTransactionObj.getObject(), SMART_TRANSACTIONS);
+                        assertEquals(createdSmartTransactionObj.getIdents(), smartTransactionsDTO.getIdents());
+                        assertEquals(createdSmartTransactionObj.getBasket(), smartTransactionsDTO.getBasket());
+                        assertEquals(createdSmartTransactionObj.getMerchantRef(), smartTransactionsDTO.getMerchantRef());
+                        assertEquals(createdSmartTransactionObj.getTransactionRef(), smartTransactionsDTO.getTransactionRef());
+                        assertEquals(createdSmartTransactionObj.getStatus(), SMART_TRANSACTION_STATUS_AFTER_CREATE);
+                        assertNotNull(createdSmartTransactionObj.getMerchant());
 
-                    smartTransactionsDTO.getBasket().getProducts().get(0).setQuantity(3);
-                    smartTransactionsDTO.getBasket().getProducts().get(0).setPriceOne(200);
-                    smartTransactionsDTO.getBasket().getProducts().get(0).setDesc("Bonbons");
-                    smartTransactionsDTO.getBasket().getProducts().get(0).setTax(7);
+                        smartTransactionsDTO.getBasket().getProducts().get(0).setQuantity(3);
+                        smartTransactionsDTO.getBasket().getProducts().get(0).setPriceOne(200);
+                        smartTransactionsDTO.getBasket().getProducts().get(0).setDesc("Bonbons");
+                        smartTransactionsDTO.getBasket().getProducts().get(0).setTax(7);
 
-                    smartTransactionsDTO.getBasketInfo().setSum(600);
+                        smartTransactionsDTO.getBasketInfo().setSum(600);
 
-                    smartTransactionsDTO.setBasket(basket);
-                    smartTransactionsDTO.setBasketInfo(basketInfo);
-                    smartTransactionsDTO.setMerchantRef("Kunde54321");
-                    smartTransactionsDTO.setTransactionRef("Beleg54321");
+                        smartTransactionsDTO.setBasket(basket);
+                        smartTransactionsDTO.setBasketInfo(basketInfo);
+                        smartTransactionsDTO.setMerchantRef("Kunde54321");
+                        smartTransactionsDTO.setTransactionRef("Beleg54321");
 
-                    smartTransactionsApi.updateTransaction(createdSmartTransactionObj.getId(), smartTransactionsDTO);
+                        smartTransactionsApi.updateTransaction(createdSmartTransactionObj.getId(), smartTransactionsDTO);
 
-                    state++;
-                } else if (state == 1) {
-                    updatedSmartTransactionObj = smartTransactionsProductModel;
+                        state++;
+                    } else if (state == 1) {
+                        updatedSmartTransactionObj = smartTransactionsProductModel;
 
-                    assertEquals(updatedSmartTransactionObj.getObject(), SMART_TRANSACTIONS);
-                    assertEquals(updatedSmartTransactionObj.getBasket(), smartTransactionsDTO.getBasket());
-                    assertEquals(updatedSmartTransactionObj.getMerchantRef(), smartTransactionsDTO.getMerchantRef());
-                    assertEquals(updatedSmartTransactionObj.getTransactionRef(), smartTransactionsDTO.getTransactionRef());
+                        assertEquals(updatedSmartTransactionObj.getObject(), SMART_TRANSACTIONS);
+                        assertEquals(updatedSmartTransactionObj.getBasket(), smartTransactionsDTO.getBasket());
+                        assertEquals(updatedSmartTransactionObj.getMerchantRef(), smartTransactionsDTO.getMerchantRef());
+                        assertEquals(updatedSmartTransactionObj.getTransactionRef(), smartTransactionsDTO.getTransactionRef());
 
-                    smartTransactionsApi.startTransaction(createdSmartTransactionObj.getId(), "demo");
-                    state++;
-                } else if (state == 2) {
-                    smartTransactionAfterStartObj = smartTransactionsProductModel;
+                        smartTransactionsApi.startTransaction(createdSmartTransactionObj.getId(), "demo");
+                        state++;
+                    } else if (state == 2) {
+                        smartTransactionAfterStartObj = smartTransactionsProductModel;
 
-                    assertEquals(smartTransactionAfterStartObj.getObject(), SMART_TRANSACTIONS);
-                    assertEquals(smartTransactionAfterStartObj.getStatus(), SMART_TRANSACTION_STATUS_AFTER_START);
-                    assertNotNull(smartTransactionAfterStartObj.getDeviceSource());
+                        assertEquals(smartTransactionAfterStartObj.getObject(), SMART_TRANSACTIONS);
+                        assertEquals(smartTransactionAfterStartObj.getStatus(), SMART_TRANSACTION_STATUS_AFTER_START);
+                        assertNotNull(smartTransactionAfterStartObj.getDeviceSource());
+                    }
                 }
             }
         });
@@ -154,7 +156,7 @@ public class StompSmartTransactionsApiTest {
         smartTransactionsApi.addTransaction(smartTransactionsDTO);
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(120000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

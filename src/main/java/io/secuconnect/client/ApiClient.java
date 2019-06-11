@@ -48,12 +48,6 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.cache.Cache;
-import javax.cache.CacheManager;
-import javax.cache.Caching;
-import javax.cache.configuration.MutableConfiguration;
-import javax.cache.expiry.AccessedExpiryPolicy;
-import javax.cache.expiry.Duration;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLContext;
@@ -120,7 +114,6 @@ public class ApiClient {
 
   private HttpLoggingInterceptor loggingInterceptor;
 
-  private Cache<String, CacheItem> cache;
   private CacheItem cacheItem;
   private Printer printer;
 
@@ -148,22 +141,13 @@ public class ApiClient {
     this.lenientDatetimeFormat = true;
 
     // Set default User-Agent.
-    setUserAgent("secuconnect-java-sdk/1.3.1");
+    setUserAgent("secuconnect-java-sdk/1.4.0");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
     authentications.put("oauth_token", new OAuth());
     // Prevent the authentications from being modified.
     authentications = Collections.unmodifiableMap(authentications);
-
-    CacheManager cacheManager = Caching.getCachingProvider().getCacheManager();
-    cache = cacheManager.getCache("mainCache");
-
-    if (cache == null) {
-      MutableConfiguration<String, CacheItem> configuration = new MutableConfiguration<>();
-      configuration.setExpiryPolicyFactory(AccessedExpiryPolicy.factoryOf(Duration.ETERNAL));
-      cache = cacheManager.createCache("mainCache", configuration);
-    }
 
     cacheItem = new FileCache();
     printer = new ImitationDevicePrinter();
@@ -175,10 +159,6 @@ public class ApiClient {
 
   public void setCacheItem(CacheItem cacheItem) {
     this.cacheItem = cacheItem;
-  }
-
-  public Cache<String, CacheItem> getCache() {
-    return cache;
   }
 
   public Printer getPrinter() {

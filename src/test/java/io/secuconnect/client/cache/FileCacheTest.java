@@ -28,6 +28,7 @@ public class FileCacheTest {
         assertEquals(accessToken1.getCreatedAt(), accessToken2.getCreatedAt());
     }
 
+    @Ignore
     @Test
     public void oAuthApplicationUserCredentialsTest() throws ApiException {
         Authenticator authenticator = new Authenticator(O_AUTH_APPLICATION_USER_CREDENTIALS);

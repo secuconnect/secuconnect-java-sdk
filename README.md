@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>io.secuconnect</groupId>
     <artifactId>secuconnect-java-sdk</artifactId>
-    <version>1.3.1</version>
+    <version>1.4.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.secuconnect:secuconnect-java-sdk:1.3.1"
+compile "io.secuconnect:secuconnect-java-sdk:1.4.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/secuconnect-java-sdk-1.3.1.jar
+* target/secuconnect-java-sdk-1.4.0.jar
 * target/lib/*.jar
 
 ## Getting Started

@@ -3,16 +3,15 @@ package io.secuconnect.client.stomp.communication;
 import io.secuconnect.client.stomp.communication.frame.StompFrame;
 import io.secuconnect.client.stomp.listeners.IConnectedFrameListener;
 import io.secuconnect.client.stomp.listeners.IFrameListener;
+import io.secuconnect.client.model.stomp.AuthSessionsRefresh;
+import io.secuconnect.client.model.stomp.StompRequest;
 
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-import java.util.UUID;
+import java.util.*;
 
 import static io.secuconnect.client.stomp.communication.frame.FrameCommands.Request.CONNECT;
 import static io.secuconnect.client.stomp.communication.frame.FrameCommands.Request.SEND;
@@ -22,7 +21,7 @@ import static io.secuconnect.client.stomp.communication.frame.FrameHeaders.Reque
 import static io.secuconnect.client.stomp.communication.frame.FrameHeaders.Request.Send.DESTINATION;
 
 public class StompCommunicationManager {
-
+    private static final int SESSION_REFRESH_INTERVAL = 120;
     private static StompCommunicationManager instance;
     private StompMessageSender sender;
     private StompMessageReader reader;
@@ -106,6 +105,49 @@ public class StompCommunicationManager {
                 e.printStackTrace();
             }
         }
+
+        runRefreshAuthSession();
+    }
+
+    /**
+     * Function to refreshing authentication session.
+     */
+    public void refreshAuthSession() {
+        String path = "Auth.Sessions.refresh";
+        String destination = "api:add:" + path;
+
+        AuthSessionsRefresh authSessionsRefresh = new AuthSessionsRefresh();
+        authSessionsRefresh.setRefreshInterval(SESSION_REFRESH_INTERVAL);
+
+        StompRequest stompRequest = new StompRequest();
+        stompRequest.setMethod(path);
+        stompRequest.setAction("exec");
+        stompRequest.setPid("me");
+        stompRequest.setActionId(UUID.randomUUID().toString());
+
+        String stompRequestToSend = stompRequest.toJson();
+
+        while (connected) {
+            this.send(destination, stompRequestToSend);
+
+            try {
+                Thread.sleep(SESSION_REFRESH_INTERVAL * 1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * Function to running refreshAuthSession() method in the separate thread.
+     */
+    public void runRefreshAuthSession() {
+        Thread refreshAuthSessionThread = new Thread(new Runnable() {
+            public void run() {
+                refreshAuthSession();
+            }
+        });
+        refreshAuthSessionThread.start();
     }
 
     /**

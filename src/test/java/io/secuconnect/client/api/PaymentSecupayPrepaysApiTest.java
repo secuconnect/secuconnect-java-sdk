@@ -195,9 +195,6 @@ public class PaymentSecupayPrepaysApiTest {
         assertEquals(prepayTransactionData.getPurpose(), prepayTransactionDataFetchedUsingGet.getPurpose());
         assertEquals(prepayTransactionData.getTransferAccount().getIban(), prepayTransactionDataFetchedUsingGet.getTransferAccount().getIban());
         assertEquals(prepayTransactionData.getTransferAccount().getBic(), prepayTransactionDataFetchedUsingGet.getTransferAccount().getBic());
-        assertEquals(prepayTransactionData.getTransferAccount().getAccountnumber(), prepayTransactionDataFetchedUsingGet.getTransferAccount().getAccountnumber());
-        assertEquals(prepayTransactionData.getTransferAccount().getBankcode(), prepayTransactionDataFetchedUsingGet.getTransferAccount().getBankcode());
-        assertEquals(prepayTransactionData.getTransferAccount().getAccountOwner(), prepayTransactionDataFetchedUsingGet.getTransferAccount().getAccountOwner());
         assertEquals(prepayTransactionData.getCustomer().getObject(), prepayTransactionDataFetchedUsingGet.getCustomer().getObject());
         assertEquals(prepayTransactionData.getCustomer().getId(), prepayTransactionDataFetchedUsingGet.getCustomer().getId());
         assertEquals(prepayTransactionData.getCustomer().getContract().getObject(), prepayTransactionDataFetchedUsingGet.getCustomer().getContract().getObject());

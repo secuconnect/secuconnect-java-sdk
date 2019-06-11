@@ -20,7 +20,6 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import javax.cache.Cache;
 
 public class Authenticator {
   private AuthenticationCredentials credentials;
@@ -259,14 +258,8 @@ public class Authenticator {
 
   private void saveTokenInCache(AccessToken accessToken) {
     String uniqueKey = credentials.getUniqueKey();
-    Cache<String, CacheItem> cache = apiClient.getCache();
     CacheItem cacheItem = apiClient.getCacheItem();
-
     cacheItem.set(uniqueKey, accessToken);
-
-    if (cache == null) {
-      cache.put(credentials.getUniqueKey(), cacheItem);
-    }
   }
 
   public AuthenticationCredentials getCredentials() {
@@ -275,13 +268,5 @@ public class Authenticator {
 
   public void setCredentials(AuthenticationCredentials credentials) {
     this.credentials = credentials;
-  }
-
-  public ApiClient getApiClient() {
-    return apiClient;
-  }
-
-  public void setApiClient(ApiClient apiClient) {
-    this.apiClient = apiClient;
   }
 }

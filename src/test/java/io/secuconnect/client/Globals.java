@@ -10,16 +10,11 @@ public class Globals {
             "9c5f250b69f6436cb38fd780349bc00810d8d5051d3dcf821e428f65a32724bd"
     );
 
-    public static final OAuthClientCredentials O_AUTH_CLIENT_CREDENTIALS_FOR_PAYMENT_CONTRACTS = new OAuthClientCredentials(
-            "61c4e67fca435d864436fc174a0c309d",
-            "0ecfb081e6af8c5bae90923ec8fa384b83bb7097c21ee1457fad0ab994a81617"
-    );
-
     public static final OAuthApplicationUserCredentials O_AUTH_APPLICATION_USER_CREDENTIALS = new OAuthApplicationUserCredentials(
             "app.main.secucard",
             "not set",
             "testing@secupay-ag.de",
-            "Test12345!",
+            "...",
             "XYZ",
             "value"
     );
