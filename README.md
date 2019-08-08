@@ -28,14 +28,14 @@ To use this projects artifacts with Maven add the following dependency and repos
     <dependency>
       <groupId>io.secuconnect</groupId>
       <artifactId>secuconnect-java-sdk</artifactId>
-      <version>1.4.0</version>
+      <version>LATEST</version>
     </dependency>
     .
     .
     .
     <repository>
-        <id>github-secuconnect</id>
-        <url>https://raw.githubusercontent.com/secuconnect/secuconnect-java-sdk/mvn-repo</url>
+        <id>secuconnect-java-sdk-mvn</id>
+        <url>https://raw.github.com/secuconnect/secuconnect-java-sdk/mvn-repo/</url>
     </repository>
 ```
 
