@@ -22,15 +22,21 @@ Refer to the [official documentation](https://maven.apache.org/plugins/maven-dep
 
 ### Maven users
 
-Add this dependency to your project's POM:
+To use this projects artifacts with Maven add the following dependency and repository to your POM:
 
-```xml
-<dependency>
-    <groupId>io.secuconnect</groupId>
-    <artifactId>secuconnect-java-sdk</artifactId>
-    <version>1.4.0</version>
-    <scope>compile</scope>
-</dependency>
+``` xml
+    <dependency>
+      <groupId>io.secuconnect</groupId>
+      <artifactId>secuconnect-java-sdk</artifactId>
+      <version>1.4.0</version>
+    </dependency>
+    .
+    .
+    .
+    <repository>
+        <id>github-secuconnect</id>
+        <url>https://raw.githubusercontent.com/secuconnect/secuconnect-java-sdk/mvn-repo</url>
+    </repository>
 ```
 
 ### Gradle users
