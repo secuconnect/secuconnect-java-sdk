@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **String** | Id of loyalty card | 
 **account** | [**LoyaltyCardsDTOAccount**](LoyaltyCardsDTOAccount.md) | Loyalty card account | 
 **cardnumber** | **String** | Loyalty card number | 
-**created** | [**DateTime**](DateTime.md) | Creation date | 
+**created** | **String** | Creation date | 
 
 
 

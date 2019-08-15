@@ -55,7 +55,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/secuconnect-java-sdk-1.4.0.jar
+* target/secuconnect-java-sdk-1.5.0.jar
 * target/lib/*.jar
 
 ## Getting Started

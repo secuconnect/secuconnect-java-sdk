@@ -1,13 +1,8 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.Objects;
 
 /**
@@ -22,6 +17,18 @@ public class SecupaySubTransactionProductModel {
 
   @SerializedName("reference_id")
   private String referenceId = null;
+
+  @SerializedName("amount")
+  private Integer amount = null;
+
+  @SerializedName("transaction_status")
+  private String transactionStatus = null;
+
+  @SerializedName("status")
+  private String status = null;
+
+  @SerializedName("currency")
+  private String currency = null;
 
   public SecupaySubTransactionProductModel id(String id) {
     this.id = id;
@@ -74,8 +81,76 @@ public class SecupaySubTransactionProductModel {
     this.referenceId = referenceId;
   }
 
+  public SecupaySubTransactionProductModel amount(Integer amount) {
+    this.amount = amount;
+    return this;
+  }
+
+   /**
+   * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+   * @return amount
+  **/
+  public Integer getAmount() {
+    return amount;
+  }
+
+  public void setAmount(Integer amount) {
+    this.amount = amount;
+  }
+
+  public SecupaySubTransactionProductModel transactionStatus(String transactionStatus) {
+    this.transactionStatus = transactionStatus;
+    return this;
+  }
+
+   /**
+   * Transaction status (number)
+   * @return transactionStatus
+  **/
+  public String getTransactionStatus() {
+    return transactionStatus;
+  }
+
+  public void setTransactionStatus(String transactionStatus) {
+    this.transactionStatus = transactionStatus;
+  }
+
+  public SecupaySubTransactionProductModel status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Transaction status
+   * @return status
+  **/
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public SecupaySubTransactionProductModel currency(String currency) {
+    this.currency = currency;
+    return this;
+  }
+
+   /**
+   * ISO 4217 code of currency, eg EUR for Euro.
+   * @return currency
+  **/
+  public String getCurrency() {
+    return currency;
+  }
+
+  public void setCurrency(String currency) {
+    this.currency = currency;
+  }
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -85,12 +160,16 @@ public class SecupaySubTransactionProductModel {
     SecupaySubTransactionProductModel secupaySubTransactionProductModel = (SecupaySubTransactionProductModel) o;
     return Objects.equals(this.id, secupaySubTransactionProductModel.id) &&
         Objects.equals(this.transId, secupaySubTransactionProductModel.transId) &&
-        Objects.equals(this.referenceId, secupaySubTransactionProductModel.referenceId);
+        Objects.equals(this.referenceId, secupaySubTransactionProductModel.referenceId) &&
+        Objects.equals(this.amount, secupaySubTransactionProductModel.amount) &&
+        Objects.equals(this.transactionStatus, secupaySubTransactionProductModel.transactionStatus) &&
+        Objects.equals(this.status, secupaySubTransactionProductModel.status) &&
+        Objects.equals(this.currency, secupaySubTransactionProductModel.currency);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, transId, referenceId);
+    return Objects.hash(id, transId, referenceId, amount, transactionStatus, status, currency);
   }
 
   @Override
@@ -101,6 +180,10 @@ public class SecupaySubTransactionProductModel {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,7 +191,7 @@ public class SecupaySubTransactionProductModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

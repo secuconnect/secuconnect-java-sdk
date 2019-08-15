@@ -1,25 +1,22 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.secuconnect.client.model.LoyaltyCustomersProductModel;
+import io.secuconnect.client.model.PaymentCustomersProductModel;
+import io.secuconnect.client.model.PaymentTransactionsProductModel;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.secuconnect.client.model.SmartTransactionsBasket;
 import io.secuconnect.client.model.SmartTransactionsBasketInfo;
 import io.secuconnect.client.model.SmartTransactionsCheckin;
+import io.secuconnect.client.model.SmartTransactionsCheckoutLinks;
 import io.secuconnect.client.model.SmartTransactionsIdent;
 import io.secuconnect.client.model.SmartTransactionsMerchant;
 import io.secuconnect.client.model.SmartTransactionsPickupOptions;
 import io.secuconnect.client.model.SmartTransactionsReceipt;
+import io.secuconnect.client.model.SmartTransactionsShipmentDetails;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.joda.time.DateTime;
 import java.util.Objects;
 
 /**
@@ -41,11 +38,17 @@ public class SmartTransactionsProductModel {
   @SerializedName("contract")
   private ProductInstanceUID contract = null;
 
-  @SerializedName("marketplace_contract")
-  private ProductInstanceUID marketplaceContract = null;
+  @SerializedName("provider_contract")
+  private ProductInstanceUID providerContract = null;
 
   @SerializedName("customer")
-  private LoyaltyCustomersProductModel customer = null;
+  private PaymentCustomersProductModel customer = null;
+
+  @SerializedName("shipping_address")
+  private PaymentCustomersProductModel shippingAddress = null;
+
+  @SerializedName("container")
+  private ProductInstanceUID container = null;
 
   @SerializedName("checkin")
   private SmartTransactionsCheckin checkin = null;
@@ -66,10 +69,10 @@ public class SmartTransactionsProductModel {
   private ProductInstanceUID deviceDestination = null;
 
   @SerializedName("created")
-  private DateTime created = null;
+  private String created = null;
 
   @SerializedName("updated")
-  private DateTime updated = null;
+  private String updated = null;
 
   @SerializedName("receipt_number")
   private Integer receiptNumber = null;
@@ -78,7 +81,7 @@ public class SmartTransactionsProductModel {
   private List<SmartTransactionsReceipt> receipt = null;
 
   @SerializedName("receipt_merchant")
-  private String receiptMerchant = null;
+  private List<SmartTransactionsReceipt> receiptMerchant = null;
 
   @SerializedName("receipt_merchant_print")
   private Boolean receiptMerchantPrint = null;
@@ -110,6 +113,9 @@ public class SmartTransactionsProductModel {
   @SerializedName("pickup_options")
   private SmartTransactionsPickupOptions pickupOptions = null;
 
+  @SerializedName("shipment_details")
+  private SmartTransactionsShipmentDetails shipmentDetails = null;
+
   @SerializedName("product")
   private String product = null;
 
@@ -120,10 +126,16 @@ public class SmartTransactionsProductModel {
   private String paymentMethod = null;
 
   @SerializedName("transactions")
-  private ProductInstanceUID transactions = null;
+  private List<PaymentTransactionsProductModel> transactions = null;
 
   @SerializedName("last_visited_page")
   private String lastVisitedPage = null;
+
+  @SerializedName("is_demo")
+  private Boolean isDemo = null;
+
+  @SerializedName("checkout_links")
+  private SmartTransactionsCheckoutLinks checkoutLinks = null;
 
   public SmartTransactionsProductModel object(String object) {
     this.object = object;
@@ -210,24 +222,24 @@ public class SmartTransactionsProductModel {
     this.contract = contract;
   }
 
-  public SmartTransactionsProductModel marketplaceContract(ProductInstanceUID marketplaceContract) {
-    this.marketplaceContract = marketplaceContract;
+  public SmartTransactionsProductModel providerContract(ProductInstanceUID providerContract) {
+    this.providerContract = providerContract;
     return this;
   }
 
    /**
-   * Marketplace contract
-   * @return marketplaceContract
+   * Provider contract
+   * @return providerContract
   **/
-  public ProductInstanceUID getMarketplaceContract() {
-    return marketplaceContract;
+  public ProductInstanceUID getProviderContract() {
+    return providerContract;
   }
 
-  public void setMarketplaceContract(ProductInstanceUID marketplaceContract) {
-    this.marketplaceContract = marketplaceContract;
+  public void setProviderContract(ProductInstanceUID providerContract) {
+    this.providerContract = providerContract;
   }
 
-  public SmartTransactionsProductModel customer(LoyaltyCustomersProductModel customer) {
+  public SmartTransactionsProductModel customer(PaymentCustomersProductModel customer) {
     this.customer = customer;
     return this;
   }
@@ -236,12 +248,46 @@ public class SmartTransactionsProductModel {
    * Customer
    * @return customer
   **/
-  public LoyaltyCustomersProductModel getCustomer() {
+  public PaymentCustomersProductModel getCustomer() {
     return customer;
   }
 
-  public void setCustomer(LoyaltyCustomersProductModel customer) {
+  public void setCustomer(PaymentCustomersProductModel customer) {
     this.customer = customer;
+  }
+
+  public SmartTransactionsProductModel shippingAddress(PaymentCustomersProductModel shippingAddress) {
+    this.shippingAddress = shippingAddress;
+    return this;
+  }
+
+   /**
+   * Customers delivery address
+   * @return shippingAddress
+  **/
+  public PaymentCustomersProductModel getShippingAddress() {
+    return shippingAddress;
+  }
+
+  public void setShippingAddress(PaymentCustomersProductModel shippingAddress) {
+    this.shippingAddress = shippingAddress;
+  }
+
+  public SmartTransactionsProductModel container(ProductInstanceUID container) {
+    this.container = container;
+    return this;
+  }
+
+   /**
+   * Payment Container
+   * @return container
+  **/
+  public ProductInstanceUID getContainer() {
+    return container;
+  }
+
+  public void setContainer(ProductInstanceUID container) {
+    this.container = container;
   }
 
   public SmartTransactionsProductModel checkin(SmartTransactionsCheckin checkin) {
@@ -267,7 +313,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Merchant ref
+   * Merchant reference
    * @return merchantRef
   **/
   public String getMerchantRef() {
@@ -284,7 +330,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Transaction ref
+   * Transaction reference
    * @return transactionRef
   **/
   public String getTransactionRef() {
@@ -346,7 +392,7 @@ public class SmartTransactionsProductModel {
     this.deviceDestination = deviceDestination;
   }
 
-  public SmartTransactionsProductModel created(DateTime created) {
+  public SmartTransactionsProductModel created(String created) {
     this.created = created;
     return this;
   }
@@ -355,15 +401,15 @@ public class SmartTransactionsProductModel {
    * Created at date
    * @return created
   **/
-  public DateTime getCreated() {
+  public String getCreated() {
     return created;
   }
 
-  public void setCreated(DateTime created) {
+  public void setCreated(String created) {
     this.created = created;
   }
 
-  public SmartTransactionsProductModel updated(DateTime updated) {
+  public SmartTransactionsProductModel updated(String updated) {
     this.updated = updated;
     return this;
   }
@@ -372,11 +418,11 @@ public class SmartTransactionsProductModel {
    * Updated at date
    * @return updated
   **/
-  public DateTime getUpdated() {
+  public String getUpdated() {
     return updated;
   }
 
-  public void setUpdated(DateTime updated) {
+  public void setUpdated(String updated) {
     this.updated = updated;
   }
 
@@ -422,8 +468,16 @@ public class SmartTransactionsProductModel {
     this.receipt = receipt;
   }
 
-  public SmartTransactionsProductModel receiptMerchant(String receiptMerchant) {
+  public SmartTransactionsProductModel receiptMerchant(List<SmartTransactionsReceipt> receiptMerchant) {
     this.receiptMerchant = receiptMerchant;
+    return this;
+  }
+
+  public SmartTransactionsProductModel addReceiptMerchantItem(SmartTransactionsReceipt receiptMerchantItem) {
+    if (this.receiptMerchant == null) {
+      this.receiptMerchant = new ArrayList<SmartTransactionsReceipt>();
+    }
+    this.receiptMerchant.add(receiptMerchantItem);
     return this;
   }
 
@@ -431,11 +485,11 @@ public class SmartTransactionsProductModel {
    * Receipt merchant
    * @return receiptMerchant
   **/
-  public String getReceiptMerchant() {
+  public List<SmartTransactionsReceipt> getReceiptMerchant() {
     return receiptMerchant;
   }
 
-  public void setReceiptMerchant(String receiptMerchant) {
+  public void setReceiptMerchant(List<SmartTransactionsReceipt> receiptMerchant) {
     this.receiptMerchant = receiptMerchant;
   }
 
@@ -617,6 +671,23 @@ public class SmartTransactionsProductModel {
     this.pickupOptions = pickupOptions;
   }
 
+  public SmartTransactionsProductModel shipmentDetails(SmartTransactionsShipmentDetails shipmentDetails) {
+    this.shipmentDetails = shipmentDetails;
+    return this;
+  }
+
+   /**
+   * Shipment details
+   * @return shipmentDetails
+  **/
+  public SmartTransactionsShipmentDetails getShipmentDetails() {
+    return shipmentDetails;
+  }
+
+  public void setShipmentDetails(SmartTransactionsShipmentDetails shipmentDetails) {
+    this.shipmentDetails = shipmentDetails;
+  }
+
   public SmartTransactionsProductModel product(String product) {
     this.product = product;
     return this;
@@ -668,20 +739,28 @@ public class SmartTransactionsProductModel {
     this.paymentMethod = paymentMethod;
   }
 
-  public SmartTransactionsProductModel transactions(ProductInstanceUID transactions) {
+  public SmartTransactionsProductModel transactions(List<PaymentTransactionsProductModel> transactions) {
     this.transactions = transactions;
     return this;
   }
 
+  public SmartTransactionsProductModel addTransactionsItem(PaymentTransactionsProductModel transactionsItem) {
+    if (this.transactions == null) {
+      this.transactions = new ArrayList<PaymentTransactionsProductModel>();
+    }
+    this.transactions.add(transactionsItem);
+    return this;
+  }
+
    /**
-   * Transactions
+   * Payment Transactions
    * @return transactions
   **/
-  public ProductInstanceUID getTransactions() {
+  public List<PaymentTransactionsProductModel> getTransactions() {
     return transactions;
   }
 
-  public void setTransactions(ProductInstanceUID transactions) {
+  public void setTransactions(List<PaymentTransactionsProductModel> transactions) {
     this.transactions = transactions;
   }
 
@@ -702,8 +781,42 @@ public class SmartTransactionsProductModel {
     this.lastVisitedPage = lastVisitedPage;
   }
 
+  public SmartTransactionsProductModel isDemo(Boolean isDemo) {
+    this.isDemo = isDemo;
+    return this;
+  }
+
+   /**
+   * Demo payment
+   * @return isDemo
+  **/
+  public Boolean getIsDemo() {
+    return isDemo;
+  }
+
+  public void setIsDemo(Boolean isDemo) {
+    this.isDemo = isDemo;
+  }
+
+  public SmartTransactionsProductModel checkoutLinks(SmartTransactionsCheckoutLinks checkoutLinks) {
+    this.checkoutLinks = checkoutLinks;
+    return this;
+  }
+
+   /**
+   * Checkout Links
+   * @return checkoutLinks
+  **/
+  public SmartTransactionsCheckoutLinks getCheckoutLinks() {
+    return checkoutLinks;
+  }
+
+  public void setCheckoutLinks(SmartTransactionsCheckoutLinks checkoutLinks) {
+    this.checkoutLinks = checkoutLinks;
+  }
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -716,8 +829,10 @@ public class SmartTransactionsProductModel {
         Objects.equals(this.status, smartTransactionsProductModel.status) &&
         Objects.equals(this.merchant, smartTransactionsProductModel.merchant) &&
         Objects.equals(this.contract, smartTransactionsProductModel.contract) &&
-        Objects.equals(this.marketplaceContract, smartTransactionsProductModel.marketplaceContract) &&
+        Objects.equals(this.providerContract, smartTransactionsProductModel.providerContract) &&
         Objects.equals(this.customer, smartTransactionsProductModel.customer) &&
+        Objects.equals(this.shippingAddress, smartTransactionsProductModel.shippingAddress) &&
+        Objects.equals(this.container, smartTransactionsProductModel.container) &&
         Objects.equals(this.checkin, smartTransactionsProductModel.checkin) &&
         Objects.equals(this.merchantRef, smartTransactionsProductModel.merchantRef) &&
         Objects.equals(this.transactionRef, smartTransactionsProductModel.transactionRef) &&
@@ -739,16 +854,19 @@ public class SmartTransactionsProductModel {
         Objects.equals(this.market, smartTransactionsProductModel.market) &&
         Objects.equals(this.orderOption, smartTransactionsProductModel.orderOption) &&
         Objects.equals(this.pickupOptions, smartTransactionsProductModel.pickupOptions) &&
+        Objects.equals(this.shipmentDetails, smartTransactionsProductModel.shipmentDetails) &&
         Objects.equals(this.product, smartTransactionsProductModel.product) &&
         Objects.equals(this.transId, smartTransactionsProductModel.transId) &&
         Objects.equals(this.paymentMethod, smartTransactionsProductModel.paymentMethod) &&
         Objects.equals(this.transactions, smartTransactionsProductModel.transactions) &&
-        Objects.equals(this.lastVisitedPage, smartTransactionsProductModel.lastVisitedPage);
+        Objects.equals(this.lastVisitedPage, smartTransactionsProductModel.lastVisitedPage) &&
+        Objects.equals(this.isDemo, smartTransactionsProductModel.isDemo) &&
+        Objects.equals(this.checkoutLinks, smartTransactionsProductModel.checkoutLinks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, status, merchant, contract, marketplaceContract, customer, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, orderOption, pickupOptions, product, transId, paymentMethod, transactions, lastVisitedPage);
+    return Objects.hash(object, id, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, orderOption, pickupOptions, shipmentDetails, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks);
   }
 
   @Override
@@ -761,8 +879,10 @@ public class SmartTransactionsProductModel {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
-    sb.append("    marketplaceContract: ").append(toIndentedString(marketplaceContract)).append("\n");
+    sb.append("    providerContract: ").append(toIndentedString(providerContract)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    sb.append("    container: ").append(toIndentedString(container)).append("\n");
     sb.append("    checkin: ").append(toIndentedString(checkin)).append("\n");
     sb.append("    merchantRef: ").append(toIndentedString(merchantRef)).append("\n");
     sb.append("    transactionRef: ").append(toIndentedString(transactionRef)).append("\n");
@@ -784,11 +904,14 @@ public class SmartTransactionsProductModel {
     sb.append("    market: ").append(toIndentedString(market)).append("\n");
     sb.append("    orderOption: ").append(toIndentedString(orderOption)).append("\n");
     sb.append("    pickupOptions: ").append(toIndentedString(pickupOptions)).append("\n");
+    sb.append("    shipmentDetails: ").append(toIndentedString(shipmentDetails)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
     sb.append("    transactions: ").append(toIndentedString(transactions)).append("\n");
     sb.append("    lastVisitedPage: ").append(toIndentedString(lastVisitedPage)).append("\n");
+    sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");
+    sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -796,7 +919,7 @@ public class SmartTransactionsProductModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

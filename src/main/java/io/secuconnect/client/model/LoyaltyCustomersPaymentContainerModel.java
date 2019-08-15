@@ -1,15 +1,9 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.BankAccountDescriptor;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.joda.time.DateTime;
 import java.util.Objects;
 
 /**
@@ -29,7 +23,7 @@ public class LoyaltyCustomersPaymentContainerModel {
   private BankAccountDescriptor paymentInformation = null;
 
   @SerializedName("last_usage")
-  private DateTime lastUsage = null;
+  private String lastUsage = null;
 
   public LoyaltyCustomersPaymentContainerModel object(String object) {
     this.object = object;
@@ -99,7 +93,7 @@ public class LoyaltyCustomersPaymentContainerModel {
     this.paymentInformation = paymentInformation;
   }
 
-  public LoyaltyCustomersPaymentContainerModel lastUsage(DateTime lastUsage) {
+  public LoyaltyCustomersPaymentContainerModel lastUsage(String lastUsage) {
     this.lastUsage = lastUsage;
     return this;
   }
@@ -108,16 +102,16 @@ public class LoyaltyCustomersPaymentContainerModel {
    * Last Usage date
    * @return lastUsage
   **/
-  public DateTime getLastUsage() {
+  public String getLastUsage() {
     return lastUsage;
   }
 
-  public void setLastUsage(DateTime lastUsage) {
+  public void setLastUsage(String lastUsage) {
     this.lastUsage = lastUsage;
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -154,7 +148,7 @@ public class LoyaltyCustomersPaymentContainerModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

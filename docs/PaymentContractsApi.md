@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**paymentContractsGet**](PaymentContractsApi.md#paymentContractsGet) | **GET** /Payment/Contracts | GET Payment/Contracts
 [**paymentContractsGetById**](PaymentContractsApi.md#paymentContractsGetById) | **GET** /Payment/Contracts/{paymentContractId} | GET Payment/Contracts/{paymentContractId}
 [**paymentContractsIdDelete**](PaymentContractsApi.md#paymentContractsIdDelete) | **DELETE** /Payment/Contracts/{paymentContractId} | DELETE Payment/Contracts/{paymentContractId}
-[**paymentContractsIdPaymentMethodsGet**](PaymentContractsApi.md#paymentContractsIdPaymentMethodsGet) | **GET** /Payment/Contracts/{paymentContractId}/PaymentMethods | GET Payment/Contracts/{paymentContractId}/PaymentMethods
+[**paymentContractsIdPaymentMethodsGet**](PaymentContractsApi.md#paymentContractsIdPaymentMethodsGet) | **GET** /Payment/Contracts/{paymentContractId}/paymentMethods | GET Payment/Contracts/{paymentContractId}/paymentMethods
 [**paymentContractsIdPut**](PaymentContractsApi.md#paymentContractsIdPut) | **PUT** /Payment/Contracts/{paymentContractId} | PUT Payment/Contracts/{paymentContractId}
 [**paymentContractsPost**](PaymentContractsApi.md#paymentContractsPost) | **POST** /Payment/Contracts | POST Payment/Contracts
 [**requestId**](PaymentContractsApi.md#requestId) | **POST** /Payment/Contracts/{paymentContractId}/requestId | POST Payment/Contracts/{paymentContractId}/requestId
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 # **paymentContractsIdPaymentMethodsGet**
 > List&lt;String&gt; paymentContractsIdPaymentMethodsGet(paymentContractId)
 
-GET Payment/Contracts/{paymentContractId}/PaymentMethods
+GET Payment/Contracts/{paymentContractId}/paymentMethods
 
 Get available payment methods for given contract
 

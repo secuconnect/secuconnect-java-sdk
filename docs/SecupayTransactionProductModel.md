@@ -17,10 +17,10 @@ Name | Type | Description | Notes
 **accrual** | **Boolean** | Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE. | 
 **paymentAction** | **String** | Specifies whether a pre-authorization (\&quot;authorization\&quot;) or instant payment ( \&quot;sale\&quot;) is to be performed. Standard value here is \&quot;sale\&quot;. The collection of the pre-authorized payment is made with the \&quot;capture\&quot; command. | 
 **transferPurpose** | **String** | The purpose the payer needs to use for his transfer | 
-**transferAccount** | [**SecupayTransactionProductModelTransferAccount**](SecupayTransactionProductModelTransferAccount.md) |  | 
+**transferAccount** | [**PaymentInformation**](PaymentInformation.md) | The bank account the payer needs to use for his transfer | 
 **customer** | [**PaymentCustomersProductModel**](PaymentCustomersProductModel.md) | The customer object | 
 **usedPaymentInstrument** | [**SecupayTransactionProductModelUsedPaymentInstrument**](SecupayTransactionProductModelUsedPaymentInstrument.md) |  | 
-**redirectUrl** | [**SecupayTransactionProductModelRedirectUrl**](SecupayTransactionProductModelRedirectUrl.md) |  | 
+**redirectUrl** | [**SecupayRedirectUrl**](SecupayRedirectUrl.md) | A list of redirect urls used for the payment checkout page | 
 **iframeUrl** | **String** | The url of the payment checkout iframe | 
 **container** | [**PaymentContainersProductModel**](PaymentContainersProductModel.md) | The container object | 
 **subTransactions** | [**List&lt;SecupaySubTransactionProductModel&gt;**](SecupaySubTransactionProductModel.md) | A list of sub-transactions (for mixed basket) | 

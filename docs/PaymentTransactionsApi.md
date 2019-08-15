@@ -4,15 +4,71 @@ All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**paymentTransactionsGet**](PaymentTransactionsApi.md#paymentTransactionsGet) | **GET** /Payment/Transactions | GET Payment/Transactions
-[**paymentTransactionsGetById**](PaymentTransactionsApi.md#paymentTransactionsGetById) | **GET** /Payment/Transactions/{paymentTransactionId} | GET Payment/Transactions/{paymentTransactionId}
-[**paymentTransactionsIdCancelPost**](PaymentTransactionsApi.md#paymentTransactionsIdCancelPost) | **POST** /Payment/Transactions/{paymentTransactionId}/cancel | POST Payment/Transactions/{paymentTransactionId}/cancel
-[**paymentTransactionsIdShippingUrlGet**](PaymentTransactionsApi.md#paymentTransactionsIdShippingUrlGet) | **GET** /Payment/Transactions/{paymentTransactionId}/ShippingUrl | GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
+[**cancel**](PaymentTransactionsApi.md#cancel) | **POST** /Payment/Transactions/{paymentTransactionId}/cancel | POST Payment/Transactions/{paymentTransactionId}/cancel
+[**getAll**](PaymentTransactionsApi.md#getAll) | **GET** /Payment/Transactions | GET Payment/Transactions
+[**getOne**](PaymentTransactionsApi.md#getOne) | **GET** /Payment/Transactions/{paymentTransactionId} | GET Payment/Transactions/{paymentTransactionId}
+[**getShippingUrl**](PaymentTransactionsApi.md#getShippingUrl) | **GET** /Payment/Transactions/{paymentTransactionId}/shippingUrl | GET Payment/Transactions/{paymentTransactionId}/shippingUrl
+[**revokeAccrual**](PaymentTransactionsApi.md#revokeAccrual) | **POST** /Payment/Transactions/{paymentTransactionId}/revokeAccrual | POST Payment/Transactions/{paymentTransactionId}/revokeAccrual
 
 
-<a name="paymentTransactionsGet"></a>
-# **paymentTransactionsGet**
-> PaymentTransactionsList paymentTransactionsGet(count, offset, fields, q, sort)
+<a name="cancel"></a>
+# **cancel**
+> List&lt;PaymentTransactionsProductModel&gt; cancel(paymentTransactionId, body)
+
+POST Payment/Transactions/{paymentTransactionId}/cancel
+
+Cancel a payment transaction
+
+### Example
+```java
+// Import classes:
+//import io.secuconnect.client.ApiClient;
+//import io.secuconnect.client.ApiException;
+//import io.secuconnect.client.Configuration;
+//import io.secuconnect.client.auth.*;
+//import io.secuconnect.client.api.PaymentTransactionsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth_token
+OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
+oauth_token.setAccessToken("YOUR ACCESS TOKEN");
+
+PaymentTransactionsApi apiInstance = new PaymentTransactionsApi();
+String paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
+PaymentTransactionCancelDTO body = new PaymentTransactionCancelDTO(); // PaymentTransactionCancelDTO | Cancel payment transaction input properties
+try {
+    List<PaymentTransactionsProductModel> result = apiInstance.cancel(paymentTransactionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PaymentTransactionsApi#cancel");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **paymentTransactionId** | **String**| Payment transaction id | [required]
+ **body** | [**PaymentTransactionCancelDTO**](PaymentTransactionCancelDTO.md)| Cancel payment transaction input properties |
+
+### Return type
+
+[**List&lt;PaymentTransactionsProductModel&gt;**](PaymentTransactionsProductModel.md)
+
+### Authorization
+
+[oauth_token](../README.md#oauth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="getAll"></a>
+# **getAll**
+> PaymentTransactionsList getAll(count, offset, fields, q, sort)
 
 GET Payment/Transactions
 
@@ -40,10 +96,10 @@ String fields = "fields_example"; // String | List of fields to include in the r
 String q = "q_example"; // String | A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \"*\" for any number of characters  *                      - wildcard \"?\" for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by 'AND', 'OR', 'NOT' operators and parenthesis '(', ')' for grouping.  *                  Property names can be nested like \"prop1.prop2\".  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
 String sort = "sort_example"; // String | String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending 'asc', or descending 'dsc' order.
 try {
-    PaymentTransactionsList result = apiInstance.paymentTransactionsGet(count, offset, fields, q, sort);
+    PaymentTransactionsList result = apiInstance.getAll(count, offset, fields, q, sort);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTransactionsApi#paymentTransactionsGet");
+    System.err.println("Exception when calling PaymentTransactionsApi#getAll");
     e.printStackTrace();
 }
 ```
@@ -71,9 +127,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentTransactionsGetById"></a>
-# **paymentTransactionsGetById**
-> PaymentTransactionsProductModel paymentTransactionsGetById(paymentTransactionId)
+<a name="getOne"></a>
+# **getOne**
+> PaymentTransactionsProductModel getOne(paymentTransactionId)
 
 GET Payment/Transactions/{paymentTransactionId}
 
@@ -97,10 +153,10 @@ oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 PaymentTransactionsApi apiInstance = new PaymentTransactionsApi();
 String paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 try {
-    PaymentTransactionsProductModel result = apiInstance.paymentTransactionsGetById(paymentTransactionId);
+    PaymentTransactionsProductModel result = apiInstance.getOne(paymentTransactionId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTransactionsApi#paymentTransactionsGetById");
+    System.err.println("Exception when calling PaymentTransactionsApi#getOne");
     e.printStackTrace();
 }
 ```
@@ -124,64 +180,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="paymentTransactionsIdCancelPost"></a>
-# **paymentTransactionsIdCancelPost**
-> List&lt;PaymentTransactionsCancelList&gt; paymentTransactionsIdCancelPost(paymentTransactionId)
+<a name="getShippingUrl"></a>
+# **getShippingUrl**
+> PaymentTransactionsShippingUrl getShippingUrl(paymentTransactionId)
 
-POST Payment/Transactions/{paymentTransactionId}/cancel
-
-Cancel a payment transaction
-
-### Example
-```java
-// Import classes:
-//import io.secuconnect.client.ApiClient;
-//import io.secuconnect.client.ApiException;
-//import io.secuconnect.client.Configuration;
-//import io.secuconnect.client.auth.*;
-//import io.secuconnect.client.api.PaymentTransactionsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: oauth_token
-OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
-oauth_token.setAccessToken("YOUR ACCESS TOKEN");
-
-PaymentTransactionsApi apiInstance = new PaymentTransactionsApi();
-String paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
-try {
-    List<PaymentTransactionsCancelList> result = apiInstance.paymentTransactionsIdCancelPost(paymentTransactionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTransactionsApi#paymentTransactionsIdCancelPost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentTransactionId** | **String**| Payment transaction id | [required]
-
-### Return type
-
-[**List&lt;PaymentTransactionsCancelList&gt;**](PaymentTransactionsCancelList.md)
-
-### Authorization
-
-[oauth_token](../README.md#oauth_token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="paymentTransactionsIdShippingUrlGet"></a>
-# **paymentTransactionsIdShippingUrlGet**
-> PaymentTransactionsShippingUrl paymentTransactionsIdShippingUrlGet(paymentTransactionId)
-
-GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
+GET Payment/Transactions/{paymentTransactionId}/shippingUrl
 
 Get the url where you can fill the shipping information
 
@@ -203,10 +206,10 @@ oauth_token.setAccessToken("YOUR ACCESS TOKEN");
 PaymentTransactionsApi apiInstance = new PaymentTransactionsApi();
 String paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
 try {
-    PaymentTransactionsShippingUrl result = apiInstance.paymentTransactionsIdShippingUrlGet(paymentTransactionId);
+    PaymentTransactionsShippingUrl result = apiInstance.getShippingUrl(paymentTransactionId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTransactionsApi#paymentTransactionsIdShippingUrlGet");
+    System.err.println("Exception when calling PaymentTransactionsApi#getShippingUrl");
     e.printStackTrace();
 }
 ```
@@ -220,6 +223,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaymentTransactionsShippingUrl**](PaymentTransactionsShippingUrl.md)
+
+### Authorization
+
+[oauth_token](../README.md#oauth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="revokeAccrual"></a>
+# **revokeAccrual**
+> PaymentTransactionsProductModel revokeAccrual(paymentTransactionId, body)
+
+POST Payment/Transactions/{paymentTransactionId}/revokeAccrual
+
+Revoke the accrual flag of a payment transaction
+
+### Example
+```java
+// Import classes:
+//import io.secuconnect.client.ApiClient;
+//import io.secuconnect.client.ApiException;
+//import io.secuconnect.client.Configuration;
+//import io.secuconnect.client.auth.*;
+//import io.secuconnect.client.api.PaymentTransactionsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth_token
+OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
+oauth_token.setAccessToken("YOUR ACCESS TOKEN");
+
+PaymentTransactionsApi apiInstance = new PaymentTransactionsApi();
+String paymentTransactionId = "paymentTransactionId_example"; // String | Payment transaction id
+Object body = null; // Object | Reverse accrual input properties
+try {
+    PaymentTransactionsProductModel result = apiInstance.revokeAccrual(paymentTransactionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PaymentTransactionsApi#revokeAccrual");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **paymentTransactionId** | **String**| Payment transaction id | [required]
+ **body** | **Object**| Reverse accrual input properties |
+
+### Return type
+
+[**PaymentTransactionsProductModel**](PaymentTransactionsProductModel.md)
 
 ### Authorization
 

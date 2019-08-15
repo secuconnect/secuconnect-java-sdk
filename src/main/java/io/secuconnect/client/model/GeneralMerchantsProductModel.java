@@ -1,10 +1,6 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.AssignedBy;
 import io.secuconnect.client.model.GeneralMerchantsCheckoutOptions;
 import io.secuconnect.client.model.GeneralMerchantsLegalDetails;
@@ -14,7 +10,6 @@ import io.secuconnect.client.model.InvitedBy;
 import io.secuconnect.client.model.ParentModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -55,6 +50,9 @@ public class GeneralMerchantsProductModel {
 
   @SerializedName("urls")
   private GeneralMerchantsUrls urls = null;
+
+  @SerializedName("store_name")
+  private String storeName = null;
 
   public GeneralMerchantsProductModel object(String object) {
     this.object = object;
@@ -259,8 +257,25 @@ public class GeneralMerchantsProductModel {
     this.urls = urls;
   }
 
+  public GeneralMerchantsProductModel storeName(String storeName) {
+    this.storeName = storeName;
+    return this;
+  }
+
+   /**
+   * store name
+   * @return storeName
+  **/
+  public String getStoreName() {
+    return storeName;
+  }
+
+  public void setStoreName(String storeName) {
+    this.storeName = storeName;
+  }
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -278,12 +293,13 @@ public class GeneralMerchantsProductModel {
         Objects.equals(this.invitedBy, generalMerchantsProductModel.invitedBy) &&
         Objects.equals(this.legalDetails, generalMerchantsProductModel.legalDetails) &&
         Objects.equals(this.checkoutOptions, generalMerchantsProductModel.checkoutOptions) &&
-        Objects.equals(this.urls, generalMerchantsProductModel.urls);
+        Objects.equals(this.urls, generalMerchantsProductModel.urls) &&
+        Objects.equals(this.storeName, generalMerchantsProductModel.storeName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, idOld, type, user, parent, assignedBy, invitedBy, legalDetails, checkoutOptions, urls);
+    return Objects.hash(object, id, idOld, type, user, parent, assignedBy, invitedBy, legalDetails, checkoutOptions, urls, storeName);
   }
 
   @Override
@@ -302,6 +318,7 @@ public class GeneralMerchantsProductModel {
     sb.append("    legalDetails: ").append(toIndentedString(legalDetails)).append("\n");
     sb.append("    checkoutOptions: ").append(toIndentedString(checkoutOptions)).append("\n");
     sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
+    sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -309,7 +326,7 @@ public class GeneralMerchantsProductModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

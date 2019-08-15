@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**getAll**](LoyaltyMerchantcardsApi.md#getAll) | **GET** /Loyalty/MerchantCards | GET Loyalty/MerchantCards
 [**getLock**](LoyaltyMerchantcardsApi.md#getLock) | **GET** /Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock | GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
 [**getOne**](LoyaltyMerchantcardsApi.md#getOne) | **GET** /Loyalty/MerchantCards/{loyaltyMerchantCardId} | GET Loyalty/MerchantCards/{loyaltyMerchantCardId}
-[**getRawMerchantCardId**](LoyaltyMerchantcardsApi.md#getRawMerchantCardId) | **GET** /Loyalty/MerchantCards/{generalMerchantId}/merchantcard/{loyaltyCardId} | GET Loyalty/MerchantCards/{generalMerchantId}/merchantcard/{loyaltyCardId}
 [**getVirtualTerminalData**](LoyaltyMerchantcardsApi.md#getVirtualTerminalData) | **GET** /Loyalty/MerchantCards/{loyaltyMerchantCardId}/virtualTerminalData/{loyaltyMerchantId} | GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/virtualTerminalData/{loyaltyMerchantId}
 [**lock**](LoyaltyMerchantcardsApi.md#lock) | **POST** /Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock | POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
 [**newPassCode**](LoyaltyMerchantcardsApi.md#newPassCode) | **POST** /Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode | POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode
@@ -458,61 +457,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LoyaltyMerchantcardsProductModel**](LoyaltyMerchantcardsProductModel.md)
-
-### Authorization
-
-[oauth_token](../README.md#oauth_token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="getRawMerchantCardId"></a>
-# **getRawMerchantCardId**
-> Object getRawMerchantCardId(generalMerchantId, loyaltyCardId)
-
-GET Loyalty/MerchantCards/{generalMerchantId}/merchantcard/{loyaltyCardId}
-
-Get raw merchant card id for merchant id and card id
-
-### Example
-```java
-// Import classes:
-//import io.secuconnect.client.ApiClient;
-//import io.secuconnect.client.ApiException;
-//import io.secuconnect.client.Configuration;
-//import io.secuconnect.client.auth.*;
-//import io.secuconnect.client.api.LoyaltyMerchantcardsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: oauth_token
-OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
-oauth_token.setAccessToken("YOUR ACCESS TOKEN");
-
-LoyaltyMerchantcardsApi apiInstance = new LoyaltyMerchantcardsApi();
-String generalMerchantId = "generalMerchantId_example"; // String | Merchant id
-String loyaltyCardId = "loyaltyCardId_example"; // String | Card id
-try {
-    Object result = apiInstance.getRawMerchantCardId(generalMerchantId, loyaltyCardId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LoyaltyMerchantcardsApi#getRawMerchantCardId");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **generalMerchantId** | **String**| Merchant id | [required]
- **loyaltyCardId** | **String**| Card id | [required]
-
-### Return type
-
-**Object**
 
 ### Authorization
 

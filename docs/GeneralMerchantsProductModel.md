@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **legalDetails** | [**GeneralMerchantsLegalDetails**](GeneralMerchantsLegalDetails.md) | Legal details | 
 **checkoutOptions** | [**GeneralMerchantsCheckoutOptions**](GeneralMerchantsCheckoutOptions.md) | Checkout options | 
 **urls** | [**GeneralMerchantsUrls**](GeneralMerchantsUrls.md) | Urls | 
+**storeName** | **String** | store name | 
 
 
 

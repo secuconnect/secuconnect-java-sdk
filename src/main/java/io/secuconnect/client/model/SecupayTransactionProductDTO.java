@@ -1,19 +1,14 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.SecupayBasketItem;
+import io.secuconnect.client.model.SecupayRedirectUrl;
 import io.secuconnect.client.model.SecupayTransactionProductDTOExperience;
 import io.secuconnect.client.model.SecupayTransactionProductDTOOptData;
-import io.secuconnect.client.model.SecupayTransactionProductDTORedirectUrl;
 import io.secuconnect.client.model.SecupayTransactionProductDTOSubscription;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -47,7 +42,7 @@ public class SecupayTransactionProductDTO {
   private PaymentCustomersProductModel customer = null;
 
   @SerializedName("redirect_url")
-  private SecupayTransactionProductDTORedirectUrl redirectUrl = null;
+  private SecupayRedirectUrl redirectUrl = null;
 
   @SerializedName("contract")
   private String contract = null;
@@ -211,20 +206,20 @@ public class SecupayTransactionProductDTO {
     this.customer = customer;
   }
 
-  public SecupayTransactionProductDTO redirectUrl(SecupayTransactionProductDTORedirectUrl redirectUrl) {
+  public SecupayTransactionProductDTO redirectUrl(SecupayRedirectUrl redirectUrl) {
     this.redirectUrl = redirectUrl;
     return this;
   }
 
    /**
-   * Get redirectUrl
+   * A list of redirect urls used for the payment checkout page
    * @return redirectUrl
   **/
-  public SecupayTransactionProductDTORedirectUrl getRedirectUrl() {
+  public SecupayRedirectUrl getRedirectUrl() {
     return redirectUrl;
   }
 
-  public void setRedirectUrl(SecupayTransactionProductDTORedirectUrl redirectUrl) {
+  public void setRedirectUrl(SecupayRedirectUrl redirectUrl) {
     this.redirectUrl = redirectUrl;
   }
 
@@ -331,7 +326,7 @@ public class SecupayTransactionProductDTO {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -388,7 +383,7 @@ public class SecupayTransactionProductDTO {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

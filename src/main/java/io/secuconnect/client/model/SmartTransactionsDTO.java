@@ -1,18 +1,18 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
+import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.ProductInstanceID;
+import io.secuconnect.client.model.ProductInstanceUID;
 import io.secuconnect.client.model.SmartTransactionsBasket;
 import io.secuconnect.client.model.SmartTransactionsBasketInfo;
+import io.secuconnect.client.model.SmartTransactionsCheckin;
+import io.secuconnect.client.model.SmartTransactionsCheckoutLinks;
 import io.secuconnect.client.model.SmartTransactionsIdent;
 import io.secuconnect.client.model.SmartTransactionsPickupOptions;
+import io.secuconnect.client.model.SmartTransactionsReceipt;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -24,8 +24,8 @@ public class SmartTransactionsDTO {
   @SerializedName("merchant")
   private String merchant = null;
 
-  @SerializedName("marketplace_contract")
-  private ProductInstanceID marketplaceContract = null;
+  @SerializedName("provider_contract")
+  private ProductInstanceUID providerContract = null;
 
   @SerializedName("order_option")
   private String orderOption = null;
@@ -64,7 +64,7 @@ public class SmartTransactionsDTO {
   private String product = null;
 
   @SerializedName("receipt")
-  private String receipt = null;
+  private List<SmartTransactionsReceipt> receipt = null;
 
   @SerializedName("receipt_number")
   private Integer receiptNumber = null;
@@ -84,6 +84,27 @@ public class SmartTransactionsDTO {
   @SerializedName("last_visited_page")
   private String lastVisitedPage = null;
 
+  @SerializedName("customer")
+  private PaymentCustomersProductModel customer = null;
+
+  @SerializedName("shipping_address")
+  private PaymentCustomersProductModel shippingAddress = null;
+
+  @SerializedName("container")
+  private ProductInstanceUID container = null;
+
+  @SerializedName("checkin")
+  private SmartTransactionsCheckin checkin = null;
+
+  @SerializedName("payment_method")
+  private String paymentMethod = null;
+
+  @SerializedName("is_demo")
+  private Boolean isDemo = null;
+
+  @SerializedName("checkout_links")
+  private SmartTransactionsCheckoutLinks checkoutLinks = null;
+
   public SmartTransactionsDTO merchant(String merchant) {
     this.merchant = merchant;
     return this;
@@ -101,21 +122,21 @@ public class SmartTransactionsDTO {
     this.merchant = merchant;
   }
 
-  public SmartTransactionsDTO marketplaceContract(ProductInstanceID marketplaceContract) {
-    this.marketplaceContract = marketplaceContract;
+  public SmartTransactionsDTO providerContract(ProductInstanceUID providerContract) {
+    this.providerContract = providerContract;
     return this;
   }
 
    /**
-   * Marketplace contract
-   * @return marketplaceContract
+   * Provider contract
+   * @return providerContract
   **/
-  public ProductInstanceID getMarketplaceContract() {
-    return marketplaceContract;
+  public ProductInstanceUID getProviderContract() {
+    return providerContract;
   }
 
-  public void setMarketplaceContract(ProductInstanceID marketplaceContract) {
-    this.marketplaceContract = marketplaceContract;
+  public void setProviderContract(ProductInstanceUID providerContract) {
+    this.providerContract = providerContract;
   }
 
   public SmartTransactionsDTO orderOption(String orderOption) {
@@ -330,8 +351,16 @@ public class SmartTransactionsDTO {
     this.product = product;
   }
 
-  public SmartTransactionsDTO receipt(String receipt) {
+  public SmartTransactionsDTO receipt(List<SmartTransactionsReceipt> receipt) {
     this.receipt = receipt;
+    return this;
+  }
+
+  public SmartTransactionsDTO addReceiptItem(SmartTransactionsReceipt receiptItem) {
+    if (this.receipt == null) {
+      this.receipt = new ArrayList<SmartTransactionsReceipt>();
+    }
+    this.receipt.add(receiptItem);
     return this;
   }
 
@@ -339,11 +368,11 @@ public class SmartTransactionsDTO {
    * Receipt
    * @return receipt
   **/
-  public String getReceipt() {
+  public List<SmartTransactionsReceipt> getReceipt() {
     return receipt;
   }
 
-  public void setReceipt(String receipt) {
+  public void setReceipt(List<SmartTransactionsReceipt> receipt) {
     this.receipt = receipt;
   }
 
@@ -449,8 +478,127 @@ public class SmartTransactionsDTO {
     this.lastVisitedPage = lastVisitedPage;
   }
 
+  public SmartTransactionsDTO customer(PaymentCustomersProductModel customer) {
+    this.customer = customer;
+    return this;
+  }
+
+   /**
+   * Customer
+   * @return customer
+  **/
+  public PaymentCustomersProductModel getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(PaymentCustomersProductModel customer) {
+    this.customer = customer;
+  }
+
+  public SmartTransactionsDTO shippingAddress(PaymentCustomersProductModel shippingAddress) {
+    this.shippingAddress = shippingAddress;
+    return this;
+  }
+
+   /**
+   * Customers delivery address
+   * @return shippingAddress
+  **/
+  public PaymentCustomersProductModel getShippingAddress() {
+    return shippingAddress;
+  }
+
+  public void setShippingAddress(PaymentCustomersProductModel shippingAddress) {
+    this.shippingAddress = shippingAddress;
+  }
+
+  public SmartTransactionsDTO container(ProductInstanceUID container) {
+    this.container = container;
+    return this;
+  }
+
+   /**
+   * Payment Container
+   * @return container
+  **/
+  public ProductInstanceUID getContainer() {
+    return container;
+  }
+
+  public void setContainer(ProductInstanceUID container) {
+    this.container = container;
+  }
+
+  public SmartTransactionsDTO checkin(SmartTransactionsCheckin checkin) {
+    this.checkin = checkin;
+    return this;
+  }
+
+   /**
+   * Check in
+   * @return checkin
+  **/
+  public SmartTransactionsCheckin getCheckin() {
+    return checkin;
+  }
+
+  public void setCheckin(SmartTransactionsCheckin checkin) {
+    this.checkin = checkin;
+  }
+
+  public SmartTransactionsDTO paymentMethod(String paymentMethod) {
+    this.paymentMethod = paymentMethod;
+    return this;
+  }
+
+   /**
+   * Payment method
+   * @return paymentMethod
+  **/
+  public String getPaymentMethod() {
+    return paymentMethod;
+  }
+
+  public void setPaymentMethod(String paymentMethod) {
+    this.paymentMethod = paymentMethod;
+  }
+
+  public SmartTransactionsDTO isDemo(Boolean isDemo) {
+    this.isDemo = isDemo;
+    return this;
+  }
+
+   /**
+   * Demo payment
+   * @return isDemo
+  **/
+  public Boolean getIsDemo() {
+    return isDemo;
+  }
+
+  public void setIsDemo(Boolean isDemo) {
+    this.isDemo = isDemo;
+  }
+
+  public SmartTransactionsDTO checkoutLinks(SmartTransactionsCheckoutLinks checkoutLinks) {
+    this.checkoutLinks = checkoutLinks;
+    return this;
+  }
+
+   /**
+   * Checkout Links
+   * @return checkoutLinks
+  **/
+  public SmartTransactionsCheckoutLinks getCheckoutLinks() {
+    return checkoutLinks;
+  }
+
+  public void setCheckoutLinks(SmartTransactionsCheckoutLinks checkoutLinks) {
+    this.checkoutLinks = checkoutLinks;
+  }
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -459,7 +607,7 @@ public class SmartTransactionsDTO {
     }
     SmartTransactionsDTO smartTransactionsDTO = (SmartTransactionsDTO) o;
     return Objects.equals(this.merchant, smartTransactionsDTO.merchant) &&
-        Objects.equals(this.marketplaceContract, smartTransactionsDTO.marketplaceContract) &&
+        Objects.equals(this.providerContract, smartTransactionsDTO.providerContract) &&
         Objects.equals(this.orderOption, smartTransactionsDTO.orderOption) &&
         Objects.equals(this.status, smartTransactionsDTO.status) &&
         Objects.equals(this.transactionRef, smartTransactionsDTO.transactionRef) &&
@@ -478,12 +626,19 @@ public class SmartTransactionsDTO {
         Objects.equals(this.transId, smartTransactionsDTO.transId) &&
         Objects.equals(this.contract, smartTransactionsDTO.contract) &&
         Objects.equals(this.pickupOptions, smartTransactionsDTO.pickupOptions) &&
-        Objects.equals(this.lastVisitedPage, smartTransactionsDTO.lastVisitedPage);
+        Objects.equals(this.lastVisitedPage, smartTransactionsDTO.lastVisitedPage) &&
+        Objects.equals(this.customer, smartTransactionsDTO.customer) &&
+        Objects.equals(this.shippingAddress, smartTransactionsDTO.shippingAddress) &&
+        Objects.equals(this.container, smartTransactionsDTO.container) &&
+        Objects.equals(this.checkin, smartTransactionsDTO.checkin) &&
+        Objects.equals(this.paymentMethod, smartTransactionsDTO.paymentMethod) &&
+        Objects.equals(this.isDemo, smartTransactionsDTO.isDemo) &&
+        Objects.equals(this.checkoutLinks, smartTransactionsDTO.checkoutLinks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, marketplaceContract, orderOption, status, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, receipt, receiptNumber, deviceSource, transId, contract, pickupOptions, lastVisitedPage);
+    return Objects.hash(merchant, providerContract, orderOption, status, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, receipt, receiptNumber, deviceSource, transId, contract, pickupOptions, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, checkoutLinks);
   }
 
   @Override
@@ -492,7 +647,7 @@ public class SmartTransactionsDTO {
     sb.append("class SmartTransactionsDTO {\n");
     
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
-    sb.append("    marketplaceContract: ").append(toIndentedString(marketplaceContract)).append("\n");
+    sb.append("    providerContract: ").append(toIndentedString(providerContract)).append("\n");
     sb.append("    orderOption: ").append(toIndentedString(orderOption)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    transactionRef: ").append(toIndentedString(transactionRef)).append("\n");
@@ -512,6 +667,13 @@ public class SmartTransactionsDTO {
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    pickupOptions: ").append(toIndentedString(pickupOptions)).append("\n");
     sb.append("    lastVisitedPage: ").append(toIndentedString(lastVisitedPage)).append("\n");
+    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    sb.append("    container: ").append(toIndentedString(container)).append("\n");
+    sb.append("    checkin: ").append(toIndentedString(checkin)).append("\n");
+    sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
+    sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");
+    sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -519,7 +681,7 @@ public class SmartTransactionsDTO {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

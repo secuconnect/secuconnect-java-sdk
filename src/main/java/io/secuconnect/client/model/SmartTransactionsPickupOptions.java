@@ -1,15 +1,9 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.joda.time.DateTime;
 import java.util.Objects;
 
 /**
@@ -20,7 +14,7 @@ public class SmartTransactionsPickupOptions {
   private String code = null;
 
   @SerializedName("date")
-  private DateTime date = null;
+  private String date = null;
 
   @SerializedName("store")
   private ProductInstanceUID store = null;
@@ -42,7 +36,7 @@ public class SmartTransactionsPickupOptions {
     this.code = code;
   }
 
-  public SmartTransactionsPickupOptions date(DateTime date) {
+  public SmartTransactionsPickupOptions date(String date) {
     this.date = date;
     return this;
   }
@@ -51,11 +45,11 @@ public class SmartTransactionsPickupOptions {
    * Date
    * @return date
   **/
-  public DateTime getDate() {
+  public String getDate() {
     return date;
   }
 
-  public void setDate(DateTime date) {
+  public void setDate(String date) {
     this.date = date;
   }
 
@@ -77,7 +71,7 @@ public class SmartTransactionsPickupOptions {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -110,7 +104,7 @@ public class SmartTransactionsPickupOptions {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

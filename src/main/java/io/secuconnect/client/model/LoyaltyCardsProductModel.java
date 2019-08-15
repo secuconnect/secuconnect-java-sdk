@@ -1,15 +1,9 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.LoyaltyCardsDTOAccount;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.joda.time.DateTime;
 import java.util.Objects;
 
 /**
@@ -29,7 +23,7 @@ public class LoyaltyCardsProductModel {
   private String cardnumber = null;
 
   @SerializedName("created")
-  private DateTime created = null;
+  private String created = null;
 
   public LoyaltyCardsProductModel object(String object) {
     this.object = object;
@@ -99,7 +93,7 @@ public class LoyaltyCardsProductModel {
     this.cardnumber = cardnumber;
   }
 
-  public LoyaltyCardsProductModel created(DateTime created) {
+  public LoyaltyCardsProductModel created(String created) {
     this.created = created;
     return this;
   }
@@ -108,16 +102,16 @@ public class LoyaltyCardsProductModel {
    * Creation date
    * @return created
   **/
-  public DateTime getCreated() {
+  public String getCreated() {
     return created;
   }
 
-  public void setCreated(DateTime created) {
+  public void setCreated(String created) {
     this.created = created;
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -154,7 +148,7 @@ public class LoyaltyCardsProductModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

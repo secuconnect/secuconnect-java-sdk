@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **logo** | **String** | Logo | 
 **commission** | **Integer** | Commission | 
 **vtcId** | **String** | Vtc id | 
-**eanIntern** | **String** | Ean intern | 
 **itemgroup** | [**ItemGroup**](ItemGroup.md) | Item group | 
 **stockLimitMax** | **Integer** | Stock limit max | 
 **stockLimitMin** | **Integer** | Stock limit min | 

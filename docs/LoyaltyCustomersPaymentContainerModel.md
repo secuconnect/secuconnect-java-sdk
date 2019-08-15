@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **String** | LoyaltyCustomersPaymentContainerModel | 
 **type** | **String** | LoyaltyCustomersPaymentContainerModel | 
 **paymentInformation** | [**BankAccountDescriptor**](BankAccountDescriptor.md) | Payment instrument data | 
-**lastUsage** | [**DateTime**](DateTime.md) | Last Usage date | 
+**lastUsage** | **String** | Last Usage date | 
 
 
 

@@ -1,14 +1,9 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.ItemGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.Objects;
 
 /**
@@ -38,9 +33,6 @@ public class PrepaidItemsProductModel {
 
   @SerializedName("vtc_id")
   private String vtcId = null;
-
-  @SerializedName("ean_intern")
-  private String eanIntern = null;
 
   @SerializedName("itemgroup")
   private ItemGroup itemgroup = null;
@@ -193,23 +185,6 @@ public class PrepaidItemsProductModel {
     this.vtcId = vtcId;
   }
 
-  public PrepaidItemsProductModel eanIntern(String eanIntern) {
-    this.eanIntern = eanIntern;
-    return this;
-  }
-
-   /**
-   * Ean intern
-   * @return eanIntern
-  **/
-  public String getEanIntern() {
-    return eanIntern;
-  }
-
-  public void setEanIntern(String eanIntern) {
-    this.eanIntern = eanIntern;
-  }
-
   public PrepaidItemsProductModel itemgroup(ItemGroup itemgroup) {
     this.itemgroup = itemgroup;
     return this;
@@ -296,7 +271,7 @@ public class PrepaidItemsProductModel {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -312,7 +287,6 @@ public class PrepaidItemsProductModel {
         Objects.equals(this.logo, prepaidItemsProductModel.logo) &&
         Objects.equals(this.commission, prepaidItemsProductModel.commission) &&
         Objects.equals(this.vtcId, prepaidItemsProductModel.vtcId) &&
-        Objects.equals(this.eanIntern, prepaidItemsProductModel.eanIntern) &&
         Objects.equals(this.itemgroup, prepaidItemsProductModel.itemgroup) &&
         Objects.equals(this.stockLimitMax, prepaidItemsProductModel.stockLimitMax) &&
         Objects.equals(this.stockLimitMin, prepaidItemsProductModel.stockLimitMin) &&
@@ -322,7 +296,7 @@ public class PrepaidItemsProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, retailPrice, currency, description, logo, commission, vtcId, eanIntern, itemgroup, stockLimitMax, stockLimitMin, taxable, type);
+    return Objects.hash(object, id, retailPrice, currency, description, logo, commission, vtcId, itemgroup, stockLimitMax, stockLimitMin, taxable, type);
   }
 
   @Override
@@ -338,7 +312,6 @@ public class PrepaidItemsProductModel {
     sb.append("    logo: ").append(toIndentedString(logo)).append("\n");
     sb.append("    commission: ").append(toIndentedString(commission)).append("\n");
     sb.append("    vtcId: ").append(toIndentedString(vtcId)).append("\n");
-    sb.append("    eanIntern: ").append(toIndentedString(eanIntern)).append("\n");
     sb.append("    itemgroup: ").append(toIndentedString(itemgroup)).append("\n");
     sb.append("    stockLimitMax: ").append(toIndentedString(stockLimitMax)).append("\n");
     sb.append("    stockLimitMin: ").append(toIndentedString(stockLimitMin)).append("\n");
@@ -351,7 +324,7 @@ public class PrepaidItemsProductModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

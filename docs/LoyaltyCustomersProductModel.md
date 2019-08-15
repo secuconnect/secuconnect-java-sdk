@@ -11,11 +11,9 @@ Name | Type | Description | Notes
 **merchantContact** | [**Contact**](Contact.md) | merchant contact | 
 **accountContact** | [**Contact**](Contact.md) | merchant contact | 
 **paymentContainer** | [**List&lt;LoyaltyCustomersPaymentContainerModel&gt;**](LoyaltyCustomersPaymentContainerModel.md) | payment container | 
-**age** | **Integer** | Age | 
-**daysUntilBirthday** | **Integer** | Number of days until birthday | 
 **customernumber** | **String** | Customer number | 
 **note** | **String** | Customer number | 
-**created** | [**DateTime**](DateTime.md) | Creation date | 
+**created** | **String** | Creation date | 
 
 
 

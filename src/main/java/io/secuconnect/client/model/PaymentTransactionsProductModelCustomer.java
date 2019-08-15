@@ -1,26 +1,14 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.Objects;
 
 /**
  * PaymentTransactionsProductModel
  */
-@ApiModel(description = "PaymentTransactionsProductModel")
 public class PaymentTransactionsProductModelCustomer {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
   @SerializedName("companyname")
   private String companyname = null;
 
@@ -35,40 +23,6 @@ public class PaymentTransactionsProductModelCustomer {
 
   @SerializedName("surname")
   private String surname = null;
-
-  public PaymentTransactionsProductModelCustomer object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Customer type name
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public PaymentTransactionsProductModelCustomer id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of customer
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
 
   public PaymentTransactionsProductModelCustomer companyname(String companyname) {
     this.companyname = companyname;
@@ -156,7 +110,7 @@ public class PaymentTransactionsProductModelCustomer {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -164,9 +118,7 @@ public class PaymentTransactionsProductModelCustomer {
       return false;
     }
     PaymentTransactionsProductModelCustomer paymentTransactionsProductModelCustomer = (PaymentTransactionsProductModelCustomer) o;
-    return Objects.equals(this.object, paymentTransactionsProductModelCustomer.object) &&
-        Objects.equals(this.id, paymentTransactionsProductModelCustomer.id) &&
-        Objects.equals(this.companyname, paymentTransactionsProductModelCustomer.companyname) &&
+    return Objects.equals(this.companyname, paymentTransactionsProductModelCustomer.companyname) &&
         Objects.equals(this.salutation, paymentTransactionsProductModelCustomer.salutation) &&
         Objects.equals(this.title, paymentTransactionsProductModelCustomer.title) &&
         Objects.equals(this.forename, paymentTransactionsProductModelCustomer.forename) &&
@@ -175,7 +127,7 @@ public class PaymentTransactionsProductModelCustomer {
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, companyname, salutation, title, forename, surname);
+    return Objects.hash(companyname, salutation, title, forename, surname);
   }
 
   @Override
@@ -183,8 +135,6 @@ public class PaymentTransactionsProductModelCustomer {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentTransactionsProductModelCustomer {\n");
     
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    companyname: ").append(toIndentedString(companyname)).append("\n");
     sb.append("    salutation: ").append(toIndentedString(salutation)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
@@ -197,7 +147,7 @@ public class PaymentTransactionsProductModelCustomer {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

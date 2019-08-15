@@ -1,45 +1,25 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.Objects;
 
 /**
  * Payment information
  */
-@ApiModel(description = "Payment information")
 public class PaymentInformation {
-  @SerializedName("owner")
-  private String owner = null;
-
   @SerializedName("iban")
   private String iban = null;
 
   @SerializedName("bic")
   private String bic = null;
 
-  public PaymentInformation owner(String owner) {
-    this.owner = owner;
-    return this;
-  }
+  @SerializedName("owner")
+  private String owner = null;
 
-   /**
-   * Owner
-   * @return owner
-  **/
-  public String getOwner() {
-    return owner;
-  }
-
-  public void setOwner(String owner) {
-    this.owner = owner;
-  }
+  @SerializedName("bankname")
+  private String bankname = null;
 
   public PaymentInformation iban(String iban) {
     this.iban = iban;
@@ -75,8 +55,42 @@ public class PaymentInformation {
     this.bic = bic;
   }
 
+  public PaymentInformation owner(String owner) {
+    this.owner = owner;
+    return this;
+  }
+
+   /**
+   * Owner
+   * @return owner
+  **/
+  public String getOwner() {
+    return owner;
+  }
+
+  public void setOwner(String owner) {
+    this.owner = owner;
+  }
+
+  public PaymentInformation bankname(String bankname) {
+    this.bankname = bankname;
+    return this;
+  }
+
+   /**
+   * Bank name
+   * @return bankname
+  **/
+  public String getBankname() {
+    return bankname;
+  }
+
+  public void setBankname(String bankname) {
+    this.bankname = bankname;
+  }
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -84,14 +98,15 @@ public class PaymentInformation {
       return false;
     }
     PaymentInformation paymentInformation = (PaymentInformation) o;
-    return Objects.equals(this.owner, paymentInformation.owner) &&
-        Objects.equals(this.iban, paymentInformation.iban) &&
-        Objects.equals(this.bic, paymentInformation.bic);
+    return Objects.equals(this.iban, paymentInformation.iban) &&
+        Objects.equals(this.bic, paymentInformation.bic) &&
+        Objects.equals(this.owner, paymentInformation.owner) &&
+        Objects.equals(this.bankname, paymentInformation.bankname);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(owner, iban, bic);
+    return Objects.hash(iban, bic, owner, bankname);
   }
 
   @Override
@@ -99,9 +114,10 @@ public class PaymentInformation {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentInformation {\n");
     
-    sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    iban: ").append(toIndentedString(iban)).append("\n");
     sb.append("    bic: ").append(toIndentedString(bic)).append("\n");
+    sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+    sb.append("    bankname: ").append(toIndentedString(bankname)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -109,7 +125,7 @@ public class PaymentInformation {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

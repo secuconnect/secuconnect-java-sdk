@@ -1,14 +1,10 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.SmartTransactionsBasketProductGroup;
+import io.secuconnect.client.model.SmartTransactionsSubBasketProduct;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -23,11 +19,17 @@ public class SmartTransactionsBasketProduct {
   @SerializedName("parent")
   private Integer parent = null;
 
+  @SerializedName("item_type")
+  private String itemType = null;
+
   @SerializedName("desc")
   private String desc = null;
 
   @SerializedName("articleNumber")
   private String articleNumber = null;
+
+  @SerializedName("serialNumber")
+  private String serialNumber = null;
 
   @SerializedName("ean")
   private String ean = null;
@@ -38,11 +40,23 @@ public class SmartTransactionsBasketProduct {
   @SerializedName("priceOne")
   private Integer priceOne = null;
 
+  @SerializedName("sum")
+  private Integer sum = null;
+
   @SerializedName("tax")
   private Integer tax = null;
 
+  @SerializedName("reference_id")
+  private String referenceId = null;
+
+  @SerializedName("contract_id")
+  private String contractId = null;
+
   @SerializedName("group")
   private List<SmartTransactionsBasketProductGroup> group = null;
+
+  @SerializedName("sub_basket")
+  private List<SmartTransactionsSubBasketProduct> subBasket = null;
 
   public SmartTransactionsBasketProduct id(Integer id) {
     this.id = id;
@@ -76,6 +90,23 @@ public class SmartTransactionsBasketProduct {
 
   public void setParent(Integer parent) {
     this.parent = parent;
+  }
+
+  public SmartTransactionsBasketProduct itemType(String itemType) {
+    this.itemType = itemType;
+    return this;
+  }
+
+   /**
+   * Category of item
+   * @return itemType
+  **/
+  public String getItemType() {
+    return itemType;
+  }
+
+  public void setItemType(String itemType) {
+    this.itemType = itemType;
   }
 
   public SmartTransactionsBasketProduct desc(String desc) {
@@ -112,13 +143,30 @@ public class SmartTransactionsBasketProduct {
     this.articleNumber = articleNumber;
   }
 
+  public SmartTransactionsBasketProduct serialNumber(String serialNumber) {
+    this.serialNumber = serialNumber;
+    return this;
+  }
+
+   /**
+   * The serialnumber of the scanned posa card
+   * @return serialNumber
+  **/
+  public String getSerialNumber() {
+    return serialNumber;
+  }
+
+  public void setSerialNumber(String serialNumber) {
+    this.serialNumber = serialNumber;
+  }
+
   public SmartTransactionsBasketProduct ean(String ean) {
     this.ean = ean;
     return this;
   }
 
    /**
-   * Ean
+   * international article number
    * @return ean
   **/
   public String getEan() {
@@ -163,6 +211,23 @@ public class SmartTransactionsBasketProduct {
     this.priceOne = priceOne;
   }
 
+  public SmartTransactionsBasketProduct sum(Integer sum) {
+    this.sum = sum;
+    return this;
+  }
+
+   /**
+   * it is the value of the sum of the product with all items in sub_basket
+   * @return sum
+  **/
+  public Integer getSum() {
+    return sum;
+  }
+
+  public void setSum(Integer sum) {
+    this.sum = sum;
+  }
+
   public SmartTransactionsBasketProduct tax(Integer tax) {
     this.tax = tax;
     return this;
@@ -178,6 +243,40 @@ public class SmartTransactionsBasketProduct {
 
   public void setTax(Integer tax) {
     this.tax = tax;
+  }
+
+  public SmartTransactionsBasketProduct referenceId(String referenceId) {
+    this.referenceId = referenceId;
+    return this;
+  }
+
+   /**
+   * The reference_id must be unique, it&#39;s a Reference for to the reference_id of SmartTransactionsSubBasketProduct [example: SmartTransactionsBasketProduct-&gt;reference_id is 1000 then all SmartTransactionsSubBasketProduct must have unique reference_id like 1000.1, 1000.2 etc.]
+   * @return referenceId
+  **/
+  public String getReferenceId() {
+    return referenceId;
+  }
+
+  public void setReferenceId(String referenceId) {
+    this.referenceId = referenceId;
+  }
+
+  public SmartTransactionsBasketProduct contractId(String contractId) {
+    this.contractId = contractId;
+    return this;
+  }
+
+   /**
+   * contract id
+   * @return contractId
+  **/
+  public String getContractId() {
+    return contractId;
+  }
+
+  public void setContractId(String contractId) {
+    this.contractId = contractId;
   }
 
   public SmartTransactionsBasketProduct group(List<SmartTransactionsBasketProductGroup> group) {
@@ -205,8 +304,33 @@ public class SmartTransactionsBasketProduct {
     this.group = group;
   }
 
+  public SmartTransactionsBasketProduct subBasket(List<SmartTransactionsSubBasketProduct> subBasket) {
+    this.subBasket = subBasket;
+    return this;
+  }
+
+  public SmartTransactionsBasketProduct addSubBasketItem(SmartTransactionsSubBasketProduct subBasketItem) {
+    if (this.subBasket == null) {
+      this.subBasket = new ArrayList<SmartTransactionsSubBasketProduct>();
+    }
+    this.subBasket.add(subBasketItem);
+    return this;
+  }
+
+   /**
+   * sub basket Product
+   * @return subBasket
+  **/
+  public List<SmartTransactionsSubBasketProduct> getSubBasket() {
+    return subBasket;
+  }
+
+  public void setSubBasket(List<SmartTransactionsSubBasketProduct> subBasket) {
+    this.subBasket = subBasket;
+  }
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -216,18 +340,24 @@ public class SmartTransactionsBasketProduct {
     SmartTransactionsBasketProduct smartTransactionsBasketProduct = (SmartTransactionsBasketProduct) o;
     return Objects.equals(this.id, smartTransactionsBasketProduct.id) &&
         Objects.equals(this.parent, smartTransactionsBasketProduct.parent) &&
+        Objects.equals(this.itemType, smartTransactionsBasketProduct.itemType) &&
         Objects.equals(this.desc, smartTransactionsBasketProduct.desc) &&
         Objects.equals(this.articleNumber, smartTransactionsBasketProduct.articleNumber) &&
+        Objects.equals(this.serialNumber, smartTransactionsBasketProduct.serialNumber) &&
         Objects.equals(this.ean, smartTransactionsBasketProduct.ean) &&
         Objects.equals(this.quantity, smartTransactionsBasketProduct.quantity) &&
         Objects.equals(this.priceOne, smartTransactionsBasketProduct.priceOne) &&
+        Objects.equals(this.sum, smartTransactionsBasketProduct.sum) &&
         Objects.equals(this.tax, smartTransactionsBasketProduct.tax) &&
-        Objects.equals(this.group, smartTransactionsBasketProduct.group);
+        Objects.equals(this.referenceId, smartTransactionsBasketProduct.referenceId) &&
+        Objects.equals(this.contractId, smartTransactionsBasketProduct.contractId) &&
+        Objects.equals(this.group, smartTransactionsBasketProduct.group) &&
+        Objects.equals(this.subBasket, smartTransactionsBasketProduct.subBasket);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parent, desc, articleNumber, ean, quantity, priceOne, tax, group);
+    return Objects.hash(id, parent, itemType, desc, articleNumber, serialNumber, ean, quantity, priceOne, sum, tax, referenceId, contractId, group, subBasket);
   }
 
   @Override
@@ -237,13 +367,19 @@ public class SmartTransactionsBasketProduct {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
+    sb.append("    itemType: ").append(toIndentedString(itemType)).append("\n");
     sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
     sb.append("    articleNumber: ").append(toIndentedString(articleNumber)).append("\n");
+    sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
     sb.append("    ean: ").append(toIndentedString(ean)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
     sb.append("    priceOne: ").append(toIndentedString(priceOne)).append("\n");
+    sb.append("    sum: ").append(toIndentedString(sum)).append("\n");
     sb.append("    tax: ").append(toIndentedString(tax)).append("\n");
+    sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    sb.append("    subBasket: ").append(toIndentedString(subBasket)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -251,7 +387,7 @@ public class SmartTransactionsBasketProduct {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

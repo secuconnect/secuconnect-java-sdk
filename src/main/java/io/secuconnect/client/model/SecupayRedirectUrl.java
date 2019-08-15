@@ -1,20 +1,14 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.Objects;
 
 /**
- * A list of redirect urls used for the payment checkout page
+ * SecupayRedirectUrl
  */
-@ApiModel(description = "A list of redirect urls used for the payment checkout page")
-public class SecupayTransactionProductModelRedirectUrl {
+public class SecupayRedirectUrl {
   @SerializedName("iframe_url")
   private String iframeUrl = null;
 
@@ -27,7 +21,7 @@ public class SecupayTransactionProductModelRedirectUrl {
   @SerializedName("url_push")
   private String urlPush = null;
 
-  public SecupayTransactionProductModelRedirectUrl iframeUrl(String iframeUrl) {
+  public SecupayRedirectUrl iframeUrl(String iframeUrl) {
     this.iframeUrl = iframeUrl;
     return this;
   }
@@ -44,7 +38,7 @@ public class SecupayTransactionProductModelRedirectUrl {
     this.iframeUrl = iframeUrl;
   }
 
-  public SecupayTransactionProductModelRedirectUrl urlSuccess(String urlSuccess) {
+  public SecupayRedirectUrl urlSuccess(String urlSuccess) {
     this.urlSuccess = urlSuccess;
     return this;
   }
@@ -61,7 +55,7 @@ public class SecupayTransactionProductModelRedirectUrl {
     this.urlSuccess = urlSuccess;
   }
 
-  public SecupayTransactionProductModelRedirectUrl urlFailure(String urlFailure) {
+  public SecupayRedirectUrl urlFailure(String urlFailure) {
     this.urlFailure = urlFailure;
     return this;
   }
@@ -78,7 +72,7 @@ public class SecupayTransactionProductModelRedirectUrl {
     this.urlFailure = urlFailure;
   }
 
-  public SecupayTransactionProductModelRedirectUrl urlPush(String urlPush) {
+  public SecupayRedirectUrl urlPush(String urlPush) {
     this.urlPush = urlPush;
     return this;
   }
@@ -96,18 +90,18 @@ public class SecupayTransactionProductModelRedirectUrl {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SecupayTransactionProductModelRedirectUrl secupayTransactionProductModelRedirectUrl = (SecupayTransactionProductModelRedirectUrl) o;
-    return Objects.equals(this.iframeUrl, secupayTransactionProductModelRedirectUrl.iframeUrl) &&
-        Objects.equals(this.urlSuccess, secupayTransactionProductModelRedirectUrl.urlSuccess) &&
-        Objects.equals(this.urlFailure, secupayTransactionProductModelRedirectUrl.urlFailure) &&
-        Objects.equals(this.urlPush, secupayTransactionProductModelRedirectUrl.urlPush);
+    SecupayRedirectUrl secupayRedirectUrl = (SecupayRedirectUrl) o;
+    return Objects.equals(this.iframeUrl, secupayRedirectUrl.iframeUrl) &&
+        Objects.equals(this.urlSuccess, secupayRedirectUrl.urlSuccess) &&
+        Objects.equals(this.urlFailure, secupayRedirectUrl.urlFailure) &&
+        Objects.equals(this.urlPush, secupayRedirectUrl.urlPush);
   }
 
   @Override
@@ -118,7 +112,7 @@ public class SecupayTransactionProductModelRedirectUrl {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SecupayTransactionProductModelRedirectUrl {\n");
+    sb.append("class SecupayRedirectUrl {\n");
     
     sb.append("    iframeUrl: ").append(toIndentedString(iframeUrl)).append("\n");
     sb.append("    urlSuccess: ").append(toIndentedString(urlSuccess)).append("\n");
@@ -131,7 +125,7 @@ public class SecupayTransactionProductModelRedirectUrl {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

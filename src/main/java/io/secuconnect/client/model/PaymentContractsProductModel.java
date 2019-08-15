@@ -1,15 +1,9 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.joda.time.DateTime;
 import java.util.Objects;
 
 /**
@@ -28,17 +22,11 @@ public class PaymentContractsProductModel {
   @SerializedName("demo")
   private Boolean demo = null;
 
-  @SerializedName("allow_cloning")
-  private Boolean allowCloning = null;
-
-  @SerializedName("sepa_mandate_inform")
-  private String sepaMandateInform = "never";
-
   @SerializedName("created")
-  private DateTime created = null;
+  private String created = null;
 
   @SerializedName("updated")
-  private DateTime updated = null;
+  private String updated = null;
 
   public PaymentContractsProductModel object(String object) {
     this.object = object;
@@ -108,41 +96,7 @@ public class PaymentContractsProductModel {
     this.demo = demo;
   }
 
-  public PaymentContractsProductModel allowCloning(Boolean allowCloning) {
-    this.allowCloning = allowCloning;
-    return this;
-  }
-
-   /**
-   * Allow to create sub-contracts
-   * @return allowCloning
-  **/
-  public Boolean getAllowCloning() {
-    return allowCloning;
-  }
-
-  public void setAllowCloning(Boolean allowCloning) {
-    this.allowCloning = allowCloning;
-  }
-
-  public PaymentContractsProductModel sepaMandateInform(String sepaMandateInform) {
-    this.sepaMandateInform = sepaMandateInform;
-    return this;
-  }
-
-   /**
-   * Inform the customer about the created sepa mandate
-   * @return sepaMandateInform
-  **/
-  public String getSepaMandateInform() {
-    return sepaMandateInform;
-  }
-
-  public void setSepaMandateInform(String sepaMandateInform) {
-    this.sepaMandateInform = sepaMandateInform;
-  }
-
-  public PaymentContractsProductModel created(DateTime created) {
+  public PaymentContractsProductModel created(String created) {
     this.created = created;
     return this;
   }
@@ -151,15 +105,15 @@ public class PaymentContractsProductModel {
    * Created at date
    * @return created
   **/
-  public DateTime getCreated() {
+  public String getCreated() {
     return created;
   }
 
-  public void setCreated(DateTime created) {
+  public void setCreated(String created) {
     this.created = created;
   }
 
-  public PaymentContractsProductModel updated(DateTime updated) {
+  public PaymentContractsProductModel updated(String updated) {
     this.updated = updated;
     return this;
   }
@@ -168,16 +122,16 @@ public class PaymentContractsProductModel {
    * Updated at date
    * @return updated
   **/
-  public DateTime getUpdated() {
+  public String getUpdated() {
     return updated;
   }
 
-  public void setUpdated(DateTime updated) {
+  public void setUpdated(String updated) {
     this.updated = updated;
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -189,15 +143,13 @@ public class PaymentContractsProductModel {
         Objects.equals(this.id, paymentContractsProductModel.id) &&
         Objects.equals(this.parent, paymentContractsProductModel.parent) &&
         Objects.equals(this.demo, paymentContractsProductModel.demo) &&
-        Objects.equals(this.allowCloning, paymentContractsProductModel.allowCloning) &&
-        Objects.equals(this.sepaMandateInform, paymentContractsProductModel.sepaMandateInform) &&
         Objects.equals(this.created, paymentContractsProductModel.created) &&
         Objects.equals(this.updated, paymentContractsProductModel.updated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, parent, demo, allowCloning, sepaMandateInform, created, updated);
+    return Objects.hash(object, id, parent, demo, created, updated);
   }
 
   @Override
@@ -209,8 +161,6 @@ public class PaymentContractsProductModel {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    demo: ").append(toIndentedString(demo)).append("\n");
-    sb.append("    allowCloning: ").append(toIndentedString(allowCloning)).append("\n");
-    sb.append("    sepaMandateInform: ").append(toIndentedString(sepaMandateInform)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("}");
@@ -220,7 +170,7 @@ public class PaymentContractsProductModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

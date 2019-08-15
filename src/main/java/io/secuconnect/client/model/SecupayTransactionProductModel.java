@@ -1,20 +1,15 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.PaymentContainersProductModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
+import io.secuconnect.client.model.PaymentInformation;
 import io.secuconnect.client.model.SecupayBasketItem;
+import io.secuconnect.client.model.SecupayRedirectUrl;
 import io.secuconnect.client.model.SecupaySubTransactionProductModel;
-import io.secuconnect.client.model.SecupayTransactionProductModelRedirectUrl;
-import io.secuconnect.client.model.SecupayTransactionProductModelTransferAccount;
 import io.secuconnect.client.model.SecupayTransactionProductModelUsedPaymentInstrument;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -63,7 +58,7 @@ public class SecupayTransactionProductModel {
   private String transferPurpose = null;
 
   @SerializedName("transfer_account")
-  private SecupayTransactionProductModelTransferAccount transferAccount = null;
+  private PaymentInformation transferAccount = null;
 
   @SerializedName("customer")
   private PaymentCustomersProductModel customer = null;
@@ -72,7 +67,7 @@ public class SecupayTransactionProductModel {
   private SecupayTransactionProductModelUsedPaymentInstrument usedPaymentInstrument = null;
 
   @SerializedName("redirect_url")
-  private SecupayTransactionProductModelRedirectUrl redirectUrl = null;
+  private SecupayRedirectUrl redirectUrl = null;
 
   @SerializedName("iframe_url")
   private String iframeUrl = null;
@@ -312,20 +307,20 @@ public class SecupayTransactionProductModel {
     this.transferPurpose = transferPurpose;
   }
 
-  public SecupayTransactionProductModel transferAccount(SecupayTransactionProductModelTransferAccount transferAccount) {
+  public SecupayTransactionProductModel transferAccount(PaymentInformation transferAccount) {
     this.transferAccount = transferAccount;
     return this;
   }
 
    /**
-   * Get transferAccount
+   * The bank account the payer needs to use for his transfer
    * @return transferAccount
   **/
-  public SecupayTransactionProductModelTransferAccount getTransferAccount() {
+  public PaymentInformation getTransferAccount() {
     return transferAccount;
   }
 
-  public void setTransferAccount(SecupayTransactionProductModelTransferAccount transferAccount) {
+  public void setTransferAccount(PaymentInformation transferAccount) {
     this.transferAccount = transferAccount;
   }
 
@@ -363,20 +358,20 @@ public class SecupayTransactionProductModel {
     this.usedPaymentInstrument = usedPaymentInstrument;
   }
 
-  public SecupayTransactionProductModel redirectUrl(SecupayTransactionProductModelRedirectUrl redirectUrl) {
+  public SecupayTransactionProductModel redirectUrl(SecupayRedirectUrl redirectUrl) {
     this.redirectUrl = redirectUrl;
     return this;
   }
 
    /**
-   * Get redirectUrl
+   * A list of redirect urls used for the payment checkout page
    * @return redirectUrl
   **/
-  public SecupayTransactionProductModelRedirectUrl getRedirectUrl() {
+  public SecupayRedirectUrl getRedirectUrl() {
     return redirectUrl;
   }
 
-  public void setRedirectUrl(SecupayTransactionProductModelRedirectUrl redirectUrl) {
+  public void setRedirectUrl(SecupayRedirectUrl redirectUrl) {
     this.redirectUrl = redirectUrl;
   }
 
@@ -440,7 +435,7 @@ public class SecupayTransactionProductModel {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -507,7 +502,7 @@ public class SecupayTransactionProductModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

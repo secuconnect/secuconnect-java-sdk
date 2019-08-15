@@ -1,16 +1,10 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.Contact;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.joda.time.DateTime;
 import java.util.Objects;
 
 /**
@@ -30,10 +24,10 @@ public class PaymentCustomersProductModel {
   private Contact contact = null;
 
   @SerializedName("created")
-  private DateTime created = null;
+  private String created = null;
 
   @SerializedName("updated")
-  private DateTime updated = null;
+  private String updated = null;
 
   public PaymentCustomersProductModel object(String object) {
     this.object = object;
@@ -103,7 +97,7 @@ public class PaymentCustomersProductModel {
     this.contact = contact;
   }
 
-  public PaymentCustomersProductModel created(DateTime created) {
+  public PaymentCustomersProductModel created(String created) {
     this.created = created;
     return this;
   }
@@ -112,15 +106,15 @@ public class PaymentCustomersProductModel {
    * Created at date
    * @return created
   **/
-  public DateTime getCreated() {
+  public String getCreated() {
     return created;
   }
 
-  public void setCreated(DateTime created) {
+  public void setCreated(String created) {
     this.created = created;
   }
 
-  public PaymentCustomersProductModel updated(DateTime updated) {
+  public PaymentCustomersProductModel updated(String updated) {
     this.updated = updated;
     return this;
   }
@@ -129,16 +123,16 @@ public class PaymentCustomersProductModel {
    * Updated at date
    * @return updated
   **/
-  public DateTime getUpdated() {
+  public String getUpdated() {
     return updated;
   }
 
-  public void setUpdated(DateTime updated) {
+  public void setUpdated(String updated) {
     this.updated = updated;
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -177,7 +171,7 @@ public class PaymentCustomersProductModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

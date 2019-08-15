@@ -1,15 +1,10 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.SmartTransactionsBasketProduct;
 import io.secuconnect.client.model.SmartTransactionsBasketText;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -23,6 +18,9 @@ public class SmartTransactionsBasket {
 
   @SerializedName("texts")
   private List<SmartTransactionsBasketText> texts = null;
+
+  @SerializedName("type")
+  private String type = null;
 
   public SmartTransactionsBasket products(List<SmartTransactionsBasketProduct> products) {
     this.products = products;
@@ -74,8 +72,25 @@ public class SmartTransactionsBasket {
     this.texts = texts;
   }
 
+  public SmartTransactionsBasket type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Basket Type
+   * @return type
+  **/
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -84,12 +99,13 @@ public class SmartTransactionsBasket {
     }
     SmartTransactionsBasket smartTransactionsBasket = (SmartTransactionsBasket) o;
     return Objects.equals(this.products, smartTransactionsBasket.products) &&
-        Objects.equals(this.texts, smartTransactionsBasket.texts);
+        Objects.equals(this.texts, smartTransactionsBasket.texts) &&
+        Objects.equals(this.type, smartTransactionsBasket.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(products, texts);
+    return Objects.hash(products, texts, type);
   }
 
   @Override
@@ -99,6 +115,7 @@ public class SmartTransactionsBasket {
     
     sb.append("    products: ").append(toIndentedString(products)).append("\n");
     sb.append("    texts: ").append(toIndentedString(texts)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -106,7 +123,7 @@ public class SmartTransactionsBasket {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

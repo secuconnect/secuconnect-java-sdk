@@ -1,10 +1,6 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.LoyaltyCardgroupsProductModel;
 import io.secuconnect.client.model.LoyaltyCardsProductModel;
 import io.secuconnect.client.model.LoyaltyCustomersProductModel;
@@ -12,8 +8,6 @@ import io.secuconnect.client.model.LoyaltyMerchantcardsDTOPaymentContainer;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.joda.time.DateTime;
 import java.util.Objects;
 
 /**
@@ -66,10 +60,10 @@ public class LoyaltyMerchantcardsProductModel {
   private String lockStatus = null;
 
   @SerializedName("last_usage")
-  private DateTime lastUsage = null;
+  private String lastUsage = null;
 
   @SerializedName("last_charge")
-  private DateTime lastCharge = null;
+  private String lastCharge = null;
 
   @SerializedName("is_base_card")
   private Boolean isBaseCard = null;
@@ -332,7 +326,7 @@ public class LoyaltyMerchantcardsProductModel {
     this.lockStatus = lockStatus;
   }
 
-  public LoyaltyMerchantcardsProductModel lastUsage(DateTime lastUsage) {
+  public LoyaltyMerchantcardsProductModel lastUsage(String lastUsage) {
     this.lastUsage = lastUsage;
     return this;
   }
@@ -341,15 +335,15 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card last usage
    * @return lastUsage
   **/
-  public DateTime getLastUsage() {
+  public String getLastUsage() {
     return lastUsage;
   }
 
-  public void setLastUsage(DateTime lastUsage) {
+  public void setLastUsage(String lastUsage) {
     this.lastUsage = lastUsage;
   }
 
-  public LoyaltyMerchantcardsProductModel lastCharge(DateTime lastCharge) {
+  public LoyaltyMerchantcardsProductModel lastCharge(String lastCharge) {
     this.lastCharge = lastCharge;
     return this;
   }
@@ -358,11 +352,11 @@ public class LoyaltyMerchantcardsProductModel {
    * Loyalty merchant card last charge
    * @return lastCharge
   **/
-  public DateTime getLastCharge() {
+  public String getLastCharge() {
     return lastCharge;
   }
 
-  public void setLastCharge(DateTime lastCharge) {
+  public void setLastCharge(String lastCharge) {
     this.lastCharge = lastCharge;
   }
 
@@ -401,7 +395,7 @@ public class LoyaltyMerchantcardsProductModel {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -466,7 +460,7 @@ public class LoyaltyMerchantcardsProductModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

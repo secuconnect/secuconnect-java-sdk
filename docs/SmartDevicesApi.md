@@ -5,13 +5,14 @@ All URIs are relative to *https://connect-testing.secupay-ag.de/api/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addDevice**](SmartDevicesApi.md#addDevice) | **POST** /Smart/Devices | POST Smart/Devices
-[**createPrepaidTid**](SmartDevicesApi.md#createPrepaidTid) | **POST** /Smart/Devices/{smartDeviceId}/CreatePrepaidTid | POST Smart/Devices/{smartDeviceId}/CreatePrepaidTid
-[**createVirtualDevice**](SmartDevicesApi.md#createVirtualDevice) | **POST** /Smart/Devices/{smartDeviceId}/CreateVirtualDevice | POST Smart/Devices/{smartDeviceId}/CreateVirtualDevice
+[**createPrepaidTid**](SmartDevicesApi.md#createPrepaidTid) | **POST** /Smart/Devices/{smartDeviceId}/createPrepaidTid | POST Smart/Devices/{smartDeviceId}/createPrepaidTid
+[**createVirtualDevice**](SmartDevicesApi.md#createVirtualDevice) | **POST** /Smart/Devices/{smartDeviceId}/createVirtualDevice | POST Smart/Devices/{smartDeviceId}/createVirtualDevice
 [**getAll**](SmartDevicesApi.md#getAll) | **GET** /Smart/Devices | GET Smart/Devices
 [**getOne**](SmartDevicesApi.md#getOne) | **GET** /Smart/Devices/{smartDeviceId} | GET Smart/Devices/{smartDeviceId}
 [**getRouting**](SmartDevicesApi.md#getRouting) | **GET** /Smart/Devices/{smartDeviceId}/routing/type/{type} | GET Smart/Devices/{smartDeviceId}/routing/type/{type}
-[**getSecubaseConfig**](SmartDevicesApi.md#getSecubaseConfig) | **POST** /Smart/Devices/{smartDeviceId}/GetSecubaseConfig | POST Smart/Devices/{smartDeviceId}/GetSecubaseConfig
+[**getSecubaseConfig**](SmartDevicesApi.md#getSecubaseConfig) | **POST** /Smart/Devices/{smartDeviceId}/getSecubaseConfig | POST Smart/Devices/{smartDeviceId}/getSecubaseConfig
 [**updateDevice**](SmartDevicesApi.md#updateDevice) | **PUT** /Smart/Devices/{smartDeviceId} | PUT Smart/Devices/{smartDeviceId}
+[**updatePin**](SmartDevicesApi.md#updatePin) | **PUT** /Smart/Devices/{smartDeviceId}/pin | PUT /Smart/Devices/{smartDeviceId}/pin
 
 
 <a name="addDevice"></a>
@@ -71,7 +72,7 @@ Name | Type | Description  | Notes
 # **createPrepaidTid**
 > SmartDevicesProductModel createPrepaidTid(smartDeviceId, prepaidTidProperties)
 
-POST Smart/Devices/{smartDeviceId}/CreatePrepaidTid
+POST Smart/Devices/{smartDeviceId}/createPrepaidTid
 
 Create prepaid tid
 
@@ -126,7 +127,7 @@ Name | Type | Description  | Notes
 # **createVirtualDevice**
 > SmartDevicesProductModel createVirtualDevice(smartDeviceId)
 
-POST Smart/Devices/{smartDeviceId}/CreateVirtualDevice
+POST Smart/Devices/{smartDeviceId}/createVirtualDevice
 
 Create virtual device
 
@@ -348,7 +349,7 @@ Name | Type | Description  | Notes
 # **getSecubaseConfig**
 > SmartDevicesSecubaseConfig getSecubaseConfig(smartDeviceId, secubaseConfigProperties)
 
-POST Smart/Devices/{smartDeviceId}/GetSecubaseConfig
+POST Smart/Devices/{smartDeviceId}/getSecubaseConfig
 
 Get secubase config
 
@@ -440,6 +441,61 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **smartDeviceId** | **String**| Smart device id | [required]
  **smartDeviceProperties** | [**SmartDevicesDTO**](SmartDevicesDTO.md)| Smart device properties | [required]
+
+### Return type
+
+[**SmartDevicesProductModel**](SmartDevicesProductModel.md)
+
+### Authorization
+
+[oauth_token](../README.md#oauth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="updatePin"></a>
+# **updatePin**
+> SmartDevicesProductModel updatePin(smartDeviceId, smartDeviceProperties)
+
+PUT /Smart/Devices/{smartDeviceId}/pin
+
+Create new smart device
+
+### Example
+```java
+// Import classes:
+//import io.secuconnect.client.ApiClient;
+//import io.secuconnect.client.ApiException;
+//import io.secuconnect.client.Configuration;
+//import io.secuconnect.client.auth.*;
+//import io.secuconnect.client.api.SmartDevicesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth_token
+OAuth oauth_token = (OAuth) defaultClient.getAuthentication("oauth_token");
+oauth_token.setAccessToken("YOUR ACCESS TOKEN");
+
+SmartDevicesApi apiInstance = new SmartDevicesApi();
+String smartDeviceId = "smartDeviceId_example"; // String | Smart device id
+SmartDeviceUserPin smartDeviceProperties = new SmartDeviceUserPin(); // SmartDeviceUserPin | Smart device properties
+try {
+    SmartDevicesProductModel result = apiInstance.updatePin(smartDeviceId, smartDeviceProperties);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SmartDevicesApi#updatePin");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **smartDeviceId** | **String**| Smart device id | [required]
+ **smartDeviceProperties** | [**SmartDeviceUserPin**](SmartDeviceUserPin.md)| Smart device properties | [required]
 
 ### Return type
 

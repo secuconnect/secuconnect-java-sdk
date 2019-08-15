@@ -1,19 +1,13 @@
 package io.secuconnect.client.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.Contact;
 import io.secuconnect.client.model.LoyaltyCustomersPaymentContainerModel;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.joda.time.DateTime;
 import java.util.Objects;
 
 /**
@@ -41,12 +35,6 @@ public class LoyaltyCustomersProductModel {
   @SerializedName("payment_container")
   private List<LoyaltyCustomersPaymentContainerModel> paymentContainer = null;
 
-  @SerializedName("age")
-  private Integer age = null;
-
-  @SerializedName("days_until_birthday")
-  private Integer daysUntilBirthday = null;
-
   @SerializedName("customernumber")
   private String customernumber = null;
 
@@ -54,7 +42,7 @@ public class LoyaltyCustomersProductModel {
   private String note = null;
 
   @SerializedName("created")
-  private DateTime created = null;
+  private String created = null;
 
   public LoyaltyCustomersProductModel object(String object) {
     this.object = object;
@@ -183,40 +171,6 @@ public class LoyaltyCustomersProductModel {
     this.paymentContainer = paymentContainer;
   }
 
-  public LoyaltyCustomersProductModel age(Integer age) {
-    this.age = age;
-    return this;
-  }
-
-   /**
-   * Age
-   * @return age
-  **/
-  public Integer getAge() {
-    return age;
-  }
-
-  public void setAge(Integer age) {
-    this.age = age;
-  }
-
-  public LoyaltyCustomersProductModel daysUntilBirthday(Integer daysUntilBirthday) {
-    this.daysUntilBirthday = daysUntilBirthday;
-    return this;
-  }
-
-   /**
-   * Number of days until birthday
-   * @return daysUntilBirthday
-  **/
-  public Integer getDaysUntilBirthday() {
-    return daysUntilBirthday;
-  }
-
-  public void setDaysUntilBirthday(Integer daysUntilBirthday) {
-    this.daysUntilBirthday = daysUntilBirthday;
-  }
-
   public LoyaltyCustomersProductModel customernumber(String customernumber) {
     this.customernumber = customernumber;
     return this;
@@ -251,7 +205,7 @@ public class LoyaltyCustomersProductModel {
     this.note = note;
   }
 
-  public LoyaltyCustomersProductModel created(DateTime created) {
+  public LoyaltyCustomersProductModel created(String created) {
     this.created = created;
     return this;
   }
@@ -260,16 +214,16 @@ public class LoyaltyCustomersProductModel {
    * Creation date
    * @return created
   **/
-  public DateTime getCreated() {
+  public String getCreated() {
     return created;
   }
 
-  public void setCreated(DateTime created) {
+  public void setCreated(String created) {
     this.created = created;
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -284,8 +238,6 @@ public class LoyaltyCustomersProductModel {
         Objects.equals(this.merchantContact, loyaltyCustomersProductModel.merchantContact) &&
         Objects.equals(this.accountContact, loyaltyCustomersProductModel.accountContact) &&
         Objects.equals(this.paymentContainer, loyaltyCustomersProductModel.paymentContainer) &&
-        Objects.equals(this.age, loyaltyCustomersProductModel.age) &&
-        Objects.equals(this.daysUntilBirthday, loyaltyCustomersProductModel.daysUntilBirthday) &&
         Objects.equals(this.customernumber, loyaltyCustomersProductModel.customernumber) &&
         Objects.equals(this.note, loyaltyCustomersProductModel.note) &&
         Objects.equals(this.created, loyaltyCustomersProductModel.created);
@@ -293,7 +245,7 @@ public class LoyaltyCustomersProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, merchant, contact, merchantContact, accountContact, paymentContainer, age, daysUntilBirthday, customernumber, note, created);
+    return Objects.hash(object, id, merchant, contact, merchantContact, accountContact, paymentContainer, customernumber, note, created);
   }
 
   @Override
@@ -308,8 +260,6 @@ public class LoyaltyCustomersProductModel {
     sb.append("    merchantContact: ").append(toIndentedString(merchantContact)).append("\n");
     sb.append("    accountContact: ").append(toIndentedString(accountContact)).append("\n");
     sb.append("    paymentContainer: ").append(toIndentedString(paymentContainer)).append("\n");
-    sb.append("    age: ").append(toIndentedString(age)).append("\n");
-    sb.append("    daysUntilBirthday: ").append(toIndentedString(daysUntilBirthday)).append("\n");
     sb.append("    customernumber: ").append(toIndentedString(customernumber)).append("\n");
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
@@ -320,7 +270,7 @@ public class LoyaltyCustomersProductModel {
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

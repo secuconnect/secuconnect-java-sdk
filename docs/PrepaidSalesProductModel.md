@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **merchant** | [**ProductInstanceUID**](ProductInstanceUID.md) | General merchant | 
 **store** | [**Store**](Store.md) | General store | 
 **contract** | [**ProductInstanceUID**](ProductInstanceUID.md) | Prepaid contract | 
-**created** | [**DateTime**](DateTime.md) | Prepaid sale creation date | 
+**created** | **String** | Prepaid sale creation date | 
 **demo** | **Boolean** | Demo | 
 **description** | **String** | Description | 
 **amount** | **Integer** | Amount | 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **code** | **String** | Code | 
 **serial** | **String** | Serial | 
 **cardnumber** | **String** | Card number | 
-**expireDate** | [**DateTime**](DateTime.md) | Expire date | 
+**expireDate** | **String** | Expire date | 
 **providerDeliveryNumber** | **String** | Provider delivery number | 
 **receiptHeader** | **String** | Receipt header | 
 **receiptCustomer** | **String** | Receipt customer | 

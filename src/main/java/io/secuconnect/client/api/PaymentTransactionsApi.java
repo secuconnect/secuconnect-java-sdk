@@ -10,7 +10,7 @@ import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
-import io.secuconnect.client.model.PaymentTransactionsCancelList;
+import io.secuconnect.client.model.PaymentTransactionCancelDTO;
 import io.secuconnect.client.model.PaymentTransactionsList;
 import io.secuconnect.client.model.PaymentTransactionsProductModel;
 import io.secuconnect.client.model.PaymentTransactionsShippingUrl;
@@ -41,7 +41,132 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * Build call for paymentTransactionsGet
+     * Build call for cancel
+     * @param paymentTransactionId Payment transaction id (required)
+     * @param body Cancel payment transaction input properties
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cancelCall(String paymentTransactionId, PaymentTransactionCancelDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/cancel"
+            .replaceAll("\\{" + "paymentTransactionId" + "\\}", apiClient.escapeString(paymentTransactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cancelValidateBeforeCall(String paymentTransactionId, PaymentTransactionCancelDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'paymentTransactionId' is set
+        if (paymentTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling cancel(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = cancelCall(paymentTransactionId, body, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * POST Payment/Transactions/{paymentTransactionId}/cancel
+     * Cancel a payment transaction
+     * @param paymentTransactionId Payment transaction id (required)
+     * @param body Cancel payment transaction input properties
+     * @return List&lt;PaymentTransactionsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<PaymentTransactionsProductModel> cancel(String paymentTransactionId, PaymentTransactionCancelDTO body) throws ApiException {
+        ApiResponse<List<PaymentTransactionsProductModel>> resp = cancelWithHttpInfo(paymentTransactionId, body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Transactions/{paymentTransactionId}/cancel
+     * Cancel a payment transaction
+     * @param paymentTransactionId Payment transaction id (required)
+     * @param body Cancel payment transaction input properties
+     * @return ApiResponse&lt;List&lt;PaymentTransactionsProductModel&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<PaymentTransactionsProductModel>> cancelWithHttpInfo(String paymentTransactionId, PaymentTransactionCancelDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = cancelValidateBeforeCall(paymentTransactionId, body, null, null);
+        Type localVarReturnType = new TypeToken<List<PaymentTransactionsProductModel>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Transactions/{paymentTransactionId}/cancel (asynchronously)
+     * Cancel a payment transaction
+     * @param paymentTransactionId Payment transaction id (required)
+     * @param body Cancel payment transaction input properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cancelAsync(String paymentTransactionId, PaymentTransactionCancelDTO body, final ApiCallback<List<PaymentTransactionsProductModel>> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cancelValidateBeforeCall(paymentTransactionId, body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<PaymentTransactionsProductModel>>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getAll
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
@@ -52,7 +177,7 @@ public class PaymentTransactionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call paymentTransactionsGetCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -89,7 +214,7 @@ public class PaymentTransactionsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -103,10 +228,10 @@ public class PaymentTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call paymentTransactionsGetValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = paymentTransactionsGetCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         return call;
     }
 
@@ -121,8 +246,8 @@ public class PaymentTransactionsApi {
      * @return PaymentTransactionsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaymentTransactionsList paymentTransactionsGet(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        ApiResponse<PaymentTransactionsList> resp = paymentTransactionsGetWithHttpInfo(count, offset, fields, q, sort);
+    public PaymentTransactionsList getAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        ApiResponse<PaymentTransactionsList> resp = getAllWithHttpInfo(count, offset, fields, q, sort);
         return resp.getData();
     }
 
@@ -137,8 +262,8 @@ public class PaymentTransactionsApi {
      * @return ApiResponse&lt;PaymentTransactionsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaymentTransactionsList> paymentTransactionsGetWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        com.squareup.okhttp.Call call = paymentTransactionsGetValidateBeforeCall(count, offset, fields, q, sort, null, null);
+    public ApiResponse<PaymentTransactionsList> getAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        com.squareup.okhttp.Call call = getAllValidateBeforeCall(count, offset, fields, q, sort, null, null);
         Type localVarReturnType = new TypeToken<PaymentTransactionsList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -155,7 +280,7 @@ public class PaymentTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call paymentTransactionsGetAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<PaymentTransactionsList> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<PaymentTransactionsList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -176,20 +301,20 @@ public class PaymentTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = paymentTransactionsGetValidateBeforeCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllValidateBeforeCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaymentTransactionsList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for paymentTransactionsGetById
+     * Build call for getOne
      * @param paymentTransactionId Payment transaction id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call paymentTransactionsGetByIdCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getOneCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -217,7 +342,7 @@ public class PaymentTransactionsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -231,15 +356,15 @@ public class PaymentTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call paymentTransactionsGetByIdValidateBeforeCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOneValidateBeforeCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'paymentTransactionId' is set
         if (paymentTransactionId == null) {
-            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling paymentTransactionsGetById(Async)");
+            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling getOne(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = paymentTransactionsGetByIdCall(paymentTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOneCall(paymentTransactionId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -250,8 +375,8 @@ public class PaymentTransactionsApi {
      * @return PaymentTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaymentTransactionsProductModel paymentTransactionsGetById(String paymentTransactionId) throws ApiException {
-        ApiResponse<PaymentTransactionsProductModel> resp = paymentTransactionsGetByIdWithHttpInfo(paymentTransactionId);
+    public PaymentTransactionsProductModel getOne(String paymentTransactionId) throws ApiException {
+        ApiResponse<PaymentTransactionsProductModel> resp = getOneWithHttpInfo(paymentTransactionId);
         return resp.getData();
     }
 
@@ -262,8 +387,8 @@ public class PaymentTransactionsApi {
      * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaymentTransactionsProductModel> paymentTransactionsGetByIdWithHttpInfo(String paymentTransactionId) throws ApiException {
-        com.squareup.okhttp.Call call = paymentTransactionsGetByIdValidateBeforeCall(paymentTransactionId, null, null);
+    public ApiResponse<PaymentTransactionsProductModel> getOneWithHttpInfo(String paymentTransactionId) throws ApiException {
+        com.squareup.okhttp.Call call = getOneValidateBeforeCall(paymentTransactionId, null, null);
         Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -276,7 +401,7 @@ public class PaymentTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call paymentTransactionsGetByIdAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOneAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -297,24 +422,24 @@ public class PaymentTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = paymentTransactionsGetByIdValidateBeforeCall(paymentTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOneValidateBeforeCall(paymentTransactionId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for paymentTransactionsIdCancelPost
+     * Build call for getShippingUrl
      * @param paymentTransactionId Payment transaction id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call paymentTransactionsIdCancelPostCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getShippingUrlCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/cancel"
+        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/shippingUrl"
             .replaceAll("\\{" + "paymentTransactionId" + "\\}", apiClient.escapeString(paymentTransactionId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -338,7 +463,129 @@ public class PaymentTransactionsApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getShippingUrlValidateBeforeCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'paymentTransactionId' is set
+        if (paymentTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling getShippingUrl(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = getShippingUrlCall(paymentTransactionId, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * GET Payment/Transactions/{paymentTransactionId}/shippingUrl
+     * Get the url where you can fill the shipping information
+     * @param paymentTransactionId Payment transaction id (required)
+     * @return PaymentTransactionsShippingUrl
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentTransactionsShippingUrl getShippingUrl(String paymentTransactionId) throws ApiException {
+        ApiResponse<PaymentTransactionsShippingUrl> resp = getShippingUrlWithHttpInfo(paymentTransactionId);
+        return resp.getData();
+    }
+
+    /**
+     * GET Payment/Transactions/{paymentTransactionId}/shippingUrl
+     * Get the url where you can fill the shipping information
+     * @param paymentTransactionId Payment transaction id (required)
+     * @return ApiResponse&lt;PaymentTransactionsShippingUrl&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentTransactionsShippingUrl> getShippingUrlWithHttpInfo(String paymentTransactionId) throws ApiException {
+        com.squareup.okhttp.Call call = getShippingUrlValidateBeforeCall(paymentTransactionId, null, null);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsShippingUrl>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET Payment/Transactions/{paymentTransactionId}/shippingUrl (asynchronously)
+     * Get the url where you can fill the shipping information
+     * @param paymentTransactionId Payment transaction id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getShippingUrlAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsShippingUrl> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getShippingUrlValidateBeforeCall(paymentTransactionId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsShippingUrl>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for revokeAccrual
+     * @param paymentTransactionId Payment transaction id (required)
+     * @param body Reverse accrual input properties
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call revokeAccrualCall(String paymentTransactionId, Object body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/revokeAccrual"
+            .replaceAll("\\{" + "paymentTransactionId" + "\\}", apiClient.escapeString(paymentTransactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -352,52 +599,55 @@ public class PaymentTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call paymentTransactionsIdCancelPostValidateBeforeCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call revokeAccrualValidateBeforeCall(String paymentTransactionId, Object body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'paymentTransactionId' is set
         if (paymentTransactionId == null) {
-            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling paymentTransactionsIdCancelPost(Async)");
+            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling revokeAccrual(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = paymentTransactionsIdCancelPostCall(paymentTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = revokeAccrualCall(paymentTransactionId, body, progressListener, progressRequestListener);
         return call;
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/cancel
-     * Cancel a payment transaction
+     * POST Payment/Transactions/{paymentTransactionId}/revokeAccrual
+     * Revoke the accrual flag of a payment transaction
      * @param paymentTransactionId Payment transaction id (required)
-     * @return List&lt;PaymentTransactionsCancelList&gt;
+     * @param body Reverse accrual input properties
+     * @return PaymentTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<PaymentTransactionsCancelList> paymentTransactionsIdCancelPost(String paymentTransactionId) throws ApiException {
-        ApiResponse<List<PaymentTransactionsCancelList>> resp = paymentTransactionsIdCancelPostWithHttpInfo(paymentTransactionId);
+    public PaymentTransactionsProductModel revokeAccrual(String paymentTransactionId, Object body) throws ApiException {
+        ApiResponse<PaymentTransactionsProductModel> resp = revokeAccrualWithHttpInfo(paymentTransactionId, body);
         return resp.getData();
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/cancel
-     * Cancel a payment transaction
+     * POST Payment/Transactions/{paymentTransactionId}/revokeAccrual
+     * Revoke the accrual flag of a payment transaction
      * @param paymentTransactionId Payment transaction id (required)
-     * @return ApiResponse&lt;List&lt;PaymentTransactionsCancelList&gt;&gt;
+     * @param body Reverse accrual input properties
+     * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<PaymentTransactionsCancelList>> paymentTransactionsIdCancelPostWithHttpInfo(String paymentTransactionId) throws ApiException {
-        com.squareup.okhttp.Call call = paymentTransactionsIdCancelPostValidateBeforeCall(paymentTransactionId, null, null);
-        Type localVarReturnType = new TypeToken<List<PaymentTransactionsCancelList>>(){}.getType();
+    public ApiResponse<PaymentTransactionsProductModel> revokeAccrualWithHttpInfo(String paymentTransactionId, Object body) throws ApiException {
+        com.squareup.okhttp.Call call = revokeAccrualValidateBeforeCall(paymentTransactionId, body, null, null);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/cancel (asynchronously)
-     * Cancel a payment transaction
+     * POST Payment/Transactions/{paymentTransactionId}/revokeAccrual (asynchronously)
+     * Revoke the accrual flag of a payment transaction
      * @param paymentTransactionId Payment transaction id (required)
+     * @param body Reverse accrual input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call paymentTransactionsIdCancelPostAsync(String paymentTransactionId, final ApiCallback<List<PaymentTransactionsCancelList>> callback) throws ApiException {
+    public com.squareup.okhttp.Call revokeAccrualAsync(String paymentTransactionId, Object body, final ApiCallback<PaymentTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -418,129 +668,8 @@ public class PaymentTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = paymentTransactionsIdCancelPostValidateBeforeCall(paymentTransactionId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<PaymentTransactionsCancelList>>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for paymentTransactionsIdShippingUrlGet
-     * @param paymentTransactionId Payment transaction id (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call paymentTransactionsIdShippingUrlGetCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/ShippingUrl"
-            .replaceAll("\\{" + "paymentTransactionId" + "\\}", apiClient.escapeString(paymentTransactionId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call paymentTransactionsIdShippingUrlGetValidateBeforeCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'paymentTransactionId' is set
-        if (paymentTransactionId == null) {
-            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling paymentTransactionsIdShippingUrlGet(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = paymentTransactionsIdShippingUrlGetCall(paymentTransactionId, progressListener, progressRequestListener);
-        return call;
-    }
-
-    /**
-     * GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
-     * Get the url where you can fill the shipping information
-     * @param paymentTransactionId Payment transaction id (required)
-     * @return PaymentTransactionsShippingUrl
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PaymentTransactionsShippingUrl paymentTransactionsIdShippingUrlGet(String paymentTransactionId) throws ApiException {
-        ApiResponse<PaymentTransactionsShippingUrl> resp = paymentTransactionsIdShippingUrlGetWithHttpInfo(paymentTransactionId);
-        return resp.getData();
-    }
-
-    /**
-     * GET Payment/Transactions/{paymentTransactionId}/ShippingUrl
-     * Get the url where you can fill the shipping information
-     * @param paymentTransactionId Payment transaction id (required)
-     * @return ApiResponse&lt;PaymentTransactionsShippingUrl&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PaymentTransactionsShippingUrl> paymentTransactionsIdShippingUrlGetWithHttpInfo(String paymentTransactionId) throws ApiException {
-        com.squareup.okhttp.Call call = paymentTransactionsIdShippingUrlGetValidateBeforeCall(paymentTransactionId, null, null);
-        Type localVarReturnType = new TypeToken<PaymentTransactionsShippingUrl>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * GET Payment/Transactions/{paymentTransactionId}/ShippingUrl (asynchronously)
-     * Get the url where you can fill the shipping information
-     * @param paymentTransactionId Payment transaction id (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call paymentTransactionsIdShippingUrlGetAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsShippingUrl> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = paymentTransactionsIdShippingUrlGetValidateBeforeCall(paymentTransactionId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaymentTransactionsShippingUrl>(){}.getType();
+        com.squareup.okhttp.Call call = revokeAccrualValidateBeforeCall(paymentTransactionId, body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

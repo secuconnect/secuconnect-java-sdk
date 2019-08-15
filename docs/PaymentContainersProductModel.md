@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **type** | **String** | Type of payment container | 
 **_public** | [**BankAccountDescriptor**](BankAccountDescriptor.md) | Public payment instrument data | 
 **_private** | [**BankAccountDescriptor**](BankAccountDescriptor.md) | Private payment instrument data | 
-**created** | [**DateTime**](DateTime.md) | Creation date | 
-**updated** | [**DateTime**](DateTime.md) | Last update date | 
+**created** | **String** | Creation date | 
+**updated** | **String** | Last update date | 
 **mandate** | [**PaymentContainerMandate**](PaymentContainerMandate.md) | Payment container mandate | 
 
 
