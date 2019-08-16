@@ -23,13 +23,50 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Deprecated
 
+- PaymentTransactionsApi: method paymentTransactionsGet replaced by getAll
+- PaymentTransactionsApi: method paymentTransactionsGetById replaced by getOne
+- PaymentTransactionsApi: method paymentTransactionsIdCancelPost replaced by cancel
+- PaymentTransactionsApi: method paymentTransactionsIdShippingUrlGet replaced by getShippingUrl
+- model SecupayTransactionProductModelRedirectUrl replaced by SecupayRedirectUrl
+
 ### Added
+
+- PaymentSecupayPayoutApi
+- PaymentSecupaySofortApi
+- PrepaidContractsProductApi
+- PrepaidSalesProductApi
+- SmartDevicesApi method updatePin
+- SmartRoutingsApi
+- SmartTransactionsApi method prepare
+
+#### Fields added in model
+
+- BankAccountDescriptor
+- GeneralMerchantsProductModel
+- PaymentInformation
+- PaymentTransactionsProductModel
+- SecupaySubTransactionProductModel
+- SmartTransactionsBasket
+- SmartTransactionsBasketProduct
+- SmartTransactionsDTO
+- SmartTransactionsProductModel
 
 ### Changed
 
-### Fixed
+- Dates are now defined as String instead of DateTime
+- PaymentTransactionsApi: response type fixed in paymentTransactionsIdCancelPost methods
+- BankAccountDescriptor
 
 ### Removed
+
+- removed LoyaltyMerchantcardsApi methods for getRawMerchantCardId
+- removed model PaymentTransactionsProductModelMerchant
+- removed model SecupayTransactionProductModelTransferAccount
+- unused fields removed in LoyaltyCustomersProductModel
+- unused fields removed in PaymentContractsDTO
+- unused fields removed in PaymentContractsDTOClone
+- unused fields removed in PaymentContractsProductModel
+- unused fields removed in PrepaidItemsProductModel
 
 
 ## [1.4.0] - 2019-06-11
