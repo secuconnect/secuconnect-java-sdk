@@ -57,7 +57,7 @@ public class CommonObjectsProvider {
 
     public static SecupayTransactionProductDTO prepareTransactionData() {
         SecupayTransactionProductDTO transactionData = new SecupayTransactionProductDTO();
-        transactionData.setAmount(100);
+        transactionData.setAmount(6200);
         transactionData.setCurrency("EUR");
         transactionData.setPurpose("for what text");
         transactionData.setOrderId("ZZZZZZ");

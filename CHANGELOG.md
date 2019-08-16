@@ -56,6 +56,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Dates are now defined as String instead of DateTime
 - PaymentTransactionsApi: response type fixed in paymentTransactionsIdCancelPost methods
 - BankAccountDescriptor
+- updated dependencies
 
 ### Removed
 
@@ -67,6 +68,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - unused fields removed in PaymentContractsDTOClone
 - unused fields removed in PaymentContractsProductModel
 - unused fields removed in PrepaidItemsProductModel
+- removed dependency "joda-time"
 
 
 ## [1.4.0] - 2019-06-11
