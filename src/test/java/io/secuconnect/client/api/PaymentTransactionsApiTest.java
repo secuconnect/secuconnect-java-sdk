@@ -14,7 +14,7 @@
 package io.secuconnect.client.api;
 
 import io.secuconnect.client.ApiException;
-import io.secuconnect.client.model.PaymentTransactionsCancelList;
+import io.secuconnect.client.model.PaymentTransactionCancelDTO;
 import io.secuconnect.client.model.PaymentTransactionsList;
 import io.secuconnect.client.model.PaymentTransactionsProductModel;
 import io.secuconnect.client.model.PaymentTransactionsShippingUrl;
@@ -47,7 +47,7 @@ public class PaymentTransactionsApiTest {
         String fields = null;
         String q = null;
         String sort = null;
-        PaymentTransactionsList response = api.paymentTransactionsGet(count, offset, fields, q, sort);
+        PaymentTransactionsList response = api.getAll(count, offset, fields, q, sort);
 
         // TODO: test validations
     }
@@ -63,7 +63,7 @@ public class PaymentTransactionsApiTest {
     @Test
     public void paymentTransactionsGetByIdTest() throws ApiException {
         String id = null;
-        PaymentTransactionsProductModel response = api.paymentTransactionsGetById(id);
+        PaymentTransactionsProductModel response = api.getOne(id);
 
         // TODO: test validations
     }
@@ -79,7 +79,8 @@ public class PaymentTransactionsApiTest {
     @Test
     public void paymentTransactionsIdCancelPostTest() throws ApiException {
         String id = null;
-        List<PaymentTransactionsCancelList> response = api.paymentTransactionsIdCancelPost(id);
+        PaymentTransactionCancelDTO body = new PaymentTransactionCancelDTO();
+        List<PaymentTransactionsProductModel> response = api.cancel(id, body);
 
         // TODO: test validations
     }
@@ -95,7 +96,7 @@ public class PaymentTransactionsApiTest {
     @Test
     public void paymentTransactionsIdShippingUrlGetTest() throws ApiException {
         String id = null;
-        PaymentTransactionsShippingUrl response = api.paymentTransactionsIdShippingUrlGet(id);
+        PaymentTransactionsShippingUrl response = api.getShippingUrl(id);
 
         // TODO: test validations
     }

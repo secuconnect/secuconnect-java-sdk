@@ -62,7 +62,7 @@ public class CommonObjectsProvider {
         transactionData.setPurpose("for what text");
         transactionData.setOrderId("ZZZZZZ");
 
-        SecupayTransactionProductDTORedirectUrl redirectUrl = new SecupayTransactionProductDTORedirectUrl();
+        SecupayRedirectUrl redirectUrl = new SecupayRedirectUrl();
         redirectUrl.setUrlSuccess("http://shop.example.com?success=true");
         redirectUrl.setUrlFailure("http://shop.example.com?success=false");
         redirectUrl.setUrlPush("https://requestb.in/14f6a1j1");

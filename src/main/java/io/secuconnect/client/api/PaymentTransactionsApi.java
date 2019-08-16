@@ -673,4 +673,117 @@ public class PaymentTransactionsApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+
+    /**
+     * @deprecated use getAllCall()
+     */
+    public com.squareup.okhttp.Call paymentTransactionsGetCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        return this.getAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+    }
+
+    /**
+     * @deprecated use getAll()
+     */
+    public PaymentTransactionsList paymentTransactionsGet(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        return this.getAll(count, offset, fields, q, sort);
+    }
+
+    /**
+     * @deprecated use getAllWithHttpInfo()
+     */
+    public ApiResponse<PaymentTransactionsList> paymentTransactionsGetWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        return this.getAllWithHttpInfo(count, offset, fields, q, sort);
+    }
+
+    /**
+     * @deprecated use getAllAsync()
+     */
+    public com.squareup.okhttp.Call paymentTransactionsGetAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<PaymentTransactionsList> callback) throws ApiException {
+        return this.getAllAsync(count, offset, fields, q, sort, callback);
+    }
+
+    /**
+     * @deprecated use getOneCall()
+     */
+    public com.squareup.okhttp.Call paymentTransactionsGetByIdCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        return this.getOneCall(paymentTransactionId, progressListener, progressRequestListener);
+    }
+
+    /**
+     * @deprecated use getOne()
+     */
+    public PaymentTransactionsProductModel paymentTransactionsGetById(String paymentTransactionId) throws ApiException {
+        return this.getOne(paymentTransactionId);
+    }
+
+    /**
+     * @deprecated use getOneWithHttpInfo()
+     */
+    public ApiResponse<PaymentTransactionsProductModel> paymentTransactionsGetByIdWithHttpInfo(String paymentTransactionId) throws ApiException {
+        return this.getOneWithHttpInfo(paymentTransactionId);
+    }
+
+    /**
+     * @deprecated use getOneAsync()
+     */
+    public com.squareup.okhttp.Call paymentTransactionsGetByIdAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsProductModel> callback) throws ApiException {
+        return this.getOneAsync(paymentTransactionId, callback);
+    }
+
+    /**
+     * @deprecated use cancelCall()
+     */
+    public com.squareup.okhttp.Call paymentTransactionsIdCancelPostCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        return this.cancelCall(paymentTransactionId, new PaymentTransactionCancelDTO(), progressListener, progressRequestListener);
+    }
+
+    /**
+     * @deprecated use cancel()
+     */
+    public List<PaymentTransactionsProductModel> paymentTransactionsIdCancelPost(String paymentTransactionId) throws ApiException {
+        return this.cancel(paymentTransactionId, new PaymentTransactionCancelDTO());
+    }
+
+    /**
+     * @deprecated use cancelWithHttpInfo()
+     */
+    public ApiResponse<List<PaymentTransactionsProductModel>> paymentTransactionsIdCancelPostWithHttpInfo(String paymentTransactionId) throws ApiException {
+        return this.cancelWithHttpInfo(paymentTransactionId, new PaymentTransactionCancelDTO());
+    }
+
+    /**
+     * @deprecated use cancelAsync()
+     */
+    public com.squareup.okhttp.Call paymentTransactionsIdCancelPostAsync(String paymentTransactionId, final ApiCallback<List<PaymentTransactionsProductModel>> callback) throws ApiException {
+        return this.cancelAsync(paymentTransactionId, new PaymentTransactionCancelDTO(), callback);
+    }
+
+    /**
+     * @deprecated use getShippingUrlCall()
+     */
+    public com.squareup.okhttp.Call paymentTransactionsIdShippingUrlGetCall(String paymentTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        return this.getShippingUrlCall(paymentTransactionId, progressListener, progressRequestListener);
+    }
+
+    /**
+     * @deprecated use getShippingUrl()
+     */
+    public PaymentTransactionsShippingUrl paymentTransactionsIdShippingUrlGet(String paymentTransactionId) throws ApiException {
+        return this.getShippingUrl(paymentTransactionId);
+    }
+
+    /**
+     * @deprecated use getShippingUrlWithHttpInfo()
+     */
+    public ApiResponse<PaymentTransactionsShippingUrl> paymentTransactionsIdShippingUrlGetWithHttpInfo(String paymentTransactionId) throws ApiException {
+        return this.getShippingUrlWithHttpInfo(paymentTransactionId);
+    }
+
+    /**
+     * @deprecated use getShippingUrlAsync()
+     */
+    public com.squareup.okhttp.Call paymentTransactionsIdShippingUrlGetAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsShippingUrl> callback) throws ApiException {
+        return this.getShippingUrlAsync(paymentTransactionId, callback);
+    }
+
 }
