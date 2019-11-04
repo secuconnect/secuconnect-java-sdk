@@ -142,7 +142,7 @@ public class ApiClient {
     this.lenientDatetimeFormat = true;
 
     // Set default User-Agent.
-    setUserAgent("secuconnect-java-sdk/1.6.0");
+    setUserAgent("secuconnect-java-sdk/1.6.1");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
