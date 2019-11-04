@@ -93,6 +93,7 @@ public class ApiClient {
   }
 
   private String basePath = "https://connect-testing.secupay-ag.de/api/v2";
+  private String authHost = "https://connect-testing.secupay-ag.de/";
   private boolean lenientOnJson = false;
   private boolean debugging = false;
   private final Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -141,7 +142,7 @@ public class ApiClient {
     this.lenientDatetimeFormat = true;
 
     // Set default User-Agent.
-    setUserAgent("secuconnect-java-sdk/1.5.0");
+    setUserAgent("secuconnect-java-sdk/1.6.0");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
@@ -172,7 +173,7 @@ public class ApiClient {
   /**
    * Get base path
    *
-   * @return Baes path
+   * @return Base path
    */
   public String getBasePath() {
     return basePath;
@@ -182,10 +183,30 @@ public class ApiClient {
    * Set base path
    *
    * @param basePath Base path of the URL (e.g https://connect-testing.secupay-ag.de/api/v2 )
-   * @return An instance of OkHttpClient
+   * @return The instance of ApiClient
    */
   public ApiClient setBasePath(String basePath) {
     this.basePath = basePath;
+    return this;
+  }
+
+  /**
+   * Gets the authentication host
+   *
+   * @return The authentication host URL
+   */
+  public String getAuthHost() {
+    return authHost;
+  }
+
+  /**
+   * Sets the authentication host
+   *
+   * @param authHost The authentication host URL (e.g https://connect-testing.secupay-ag.de/ )
+   * @return The instance of ApiClient
+   */
+  public ApiClient setAuthHost(String authHost) {
+    this.authHost = authHost;
     return this;
   }
 

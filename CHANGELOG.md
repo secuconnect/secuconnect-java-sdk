@@ -19,6 +19,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [1.6.0] - 2019-11-04
+
+### Security
+
+- dependency updates
+
+### Added
+
+- ApiClient method setAuthHost(String authHost) to change the URL of the oauth service
+
+
 ## [1.5.0] - 2019-08-16
 
 ### Deprecated
@@ -84,3 +95,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [1.3.1]:https://github.com/secuconnect/secuconnect-php-sdk/releases/tag/v0.1.0
 [1.4.0]:https://github.com/secuconnect/secuconnect-php-sdk/compare/1.3.1...1.4.0
 [1.5.0]:https://github.com/secuconnect/secuconnect-php-sdk/compare/1.4.0...1.5.0
+[1.6.0]:https://github.com/secuconnect/secuconnect-php-sdk/compare/1.5.0...1.6.0

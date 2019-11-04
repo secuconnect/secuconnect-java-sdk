@@ -44,7 +44,7 @@ To use this projects artifacts with Maven add the following dependency and repos
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.secuconnect:secuconnect-java-sdk:1.4.0"
+compile "io.secuconnect:secuconnect-java-sdk:1.6.0"
 ```
 
 ### Others
@@ -55,7 +55,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/secuconnect-java-sdk-1.5.0.jar
+* target/secuconnect-java-sdk-1.6.0.jar
 * target/lib/*.jar
 
 ## Getting Started
