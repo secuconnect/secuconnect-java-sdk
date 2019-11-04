@@ -587,13 +587,25 @@ public class ApiClient {
   }
 
   /**
-   * Sets the connect timeout (in milliseconds). A value of 0 means no timeout, otherwise values must be between 1 and
+   * Sets the connect timeout (in milliseconds). A value of 0 means no timeout, otherwise values must be greater than 1
    *
    * @param connectionTimeout connection timeout in milliseconds
    * @return Api client
    */
   public ApiClient setConnectTimeout(int connectionTimeout) {
     httpClient.setConnectTimeout(connectionTimeout, TimeUnit.MILLISECONDS);
+    return this;
+  }
+
+  /**
+   * Sets the read/write timeout (in milliseconds). A value of 0 means no timeout, otherwise values must be greater than 1
+   *
+   * @param timeout read/write timeout in milliseconds
+   * @return Api client
+   */
+  public ApiClient setTimeout(int timeout) {
+    httpClient.setReadTimeout(timeout, TimeUnit.MILLISECONDS);
+    httpClient.setWriteTimeout(timeout, TimeUnit.MILLISECONDS);
     return this;
   }
 

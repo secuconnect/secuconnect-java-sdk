@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - ApiClient method setAuthHost(String authHost) to change the URL of the oauth service
+- ApiClient method setTimeout(int timeout) to change the timeout settings of the httpClient
 
 
 ## [1.5.0] - 2019-08-16
