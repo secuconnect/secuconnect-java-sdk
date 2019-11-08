@@ -118,6 +118,50 @@ public class ApiClient {
   private CacheItem cacheItem;
   private Printer printer;
 
+  public ApiClient(String basePath, String authHost, boolean lenientOnJson, boolean debugging, String tempFolderPath, Map<String, Authentication> authentications, DateFormat dateFormat, DateFormat datetimeFormat, boolean lenientDatetimeFormat, int dateLength, InputStream sslCaCert, boolean verifyingSsl, KeyManager[] keyManagers, OkHttpClient httpClient, JSON json, HttpLoggingInterceptor loggingInterceptor, CacheItem cacheItem, Printer printer) {
+    this.basePath = basePath;
+    this.authHost = authHost;
+    this.lenientOnJson = lenientOnJson;
+    this.debugging = debugging;
+    this.tempFolderPath = tempFolderPath;
+    this.authentications = authentications;
+    this.dateFormat = dateFormat;
+    this.datetimeFormat = datetimeFormat;
+    this.lenientDatetimeFormat = lenientDatetimeFormat;
+    this.dateLength = dateLength;
+    this.sslCaCert = sslCaCert;
+    this.verifyingSsl = verifyingSsl;
+    this.keyManagers = keyManagers;
+    this.httpClient = httpClient;
+    this.json = json;
+    this.loggingInterceptor = loggingInterceptor;
+    this.cacheItem = cacheItem;
+    this.printer = printer;
+  }
+
+  public ApiClient(ApiClient apiClient) {
+    this(
+            apiClient.getBasePath(),
+            apiClient.getAuthHost(),
+            apiClient.isLenientOnJson(),
+            apiClient.isDebugging(),
+            apiClient.getTempFolderPath(),
+            apiClient.getAuthentications(),
+            apiClient.getDateFormat(),
+            apiClient.getDatetimeFormat(),
+            apiClient.isLenientDatetimeFormat(),
+            apiClient.getDateLength(),
+            apiClient.getSslCaCert(),
+            apiClient.isVerifyingSsl(),
+            apiClient.getKeyManagers(),
+            apiClient.getHttpClient(),
+            apiClient.getJSON(),
+            apiClient.getLoggingInterceptor(),
+            apiClient.getCacheItem(),
+            apiClient.getPrinter()
+    );
+  }
+
   /*
    * Constructor for ApiClient
    */
@@ -142,7 +186,7 @@ public class ApiClient {
     this.lenientDatetimeFormat = true;
 
     // Set default User-Agent.
-    setUserAgent("secuconnect-java-sdk/1.6.1");
+    setUserAgent("secuconnect-java-sdk/1.6.2");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
@@ -168,6 +212,14 @@ public class ApiClient {
 
   public void setPrinter(Printer printer) {
     this.printer = printer;
+  }
+
+  public int getDateLength() {
+    return dateLength;
+  }
+
+  public HttpLoggingInterceptor getLoggingInterceptor() {
+    return loggingInterceptor;
   }
 
   /**

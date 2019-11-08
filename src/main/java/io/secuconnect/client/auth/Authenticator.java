@@ -38,7 +38,7 @@ public class Authenticator {
             authHost = Configuration.getDefaultApiClient().getAuthHost();
         }
 
-        this.apiClient = new ApiClient();
+        this.apiClient = new ApiClient(Configuration.getDefaultApiClient());
         this.apiClient.setBasePath(authHost);
     }
 

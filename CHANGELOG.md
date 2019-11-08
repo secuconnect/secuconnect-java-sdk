@@ -19,12 +19,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [1.6.2] - 2019-11-08
+
+
+### Fixed
+
+- The class Authenticator does not got all options from the `Configuration.getDefaultApiClient()`
+
+
 ## [1.6.1] - 2019-11-04
 
 
 ### Fixed
 
-- Missing change in Authenticator.java for the new method "setAuthHost"
+- Missing change in class Authenticator for the new method "setAuthHost"
 
 
 ## [1.6.0] - 2019-11-04
@@ -106,3 +114,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [1.5.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.4.0...1.5.0
 [1.6.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.5.0...1.6.0
 [1.6.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.0...1.6.1
+[1.6.2]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.1...1.6.2
