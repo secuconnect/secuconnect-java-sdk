@@ -19,6 +19,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [1.7.0] - 2019-11-29
+
+
+### Added
+
+- General.Contracts endpoint
+
+
 ## [1.6.2] - 2019-11-08
 
 
@@ -115,3 +123,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [1.6.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.5.0...1.6.0
 [1.6.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.0...1.6.1
 [1.6.2]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.1...1.6.2
+[1.7.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.2...1.7.0
