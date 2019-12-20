@@ -11,10 +11,10 @@ import io.secuconnect.client.model.SmartTransactionsCheckoutLinks;
 import io.secuconnect.client.model.SmartTransactionsIdent;
 import io.secuconnect.client.model.SmartTransactionsPickupOptions;
 import io.secuconnect.client.model.SmartTransactionsReceipt;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
@@ -128,7 +128,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Provider contract
+   * Get providerContract
    * @return providerContract
   **/
   public ProductInstanceUID getProviderContract() {
@@ -213,7 +213,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Basket
+   * Get basket
    * @return basket
   **/
   public SmartTransactionsBasket getBasket() {
@@ -230,7 +230,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Basket info
+   * Get basketInfo
    * @return basketInfo
   **/
   public SmartTransactionsBasketInfo getBasketInfo() {
@@ -433,7 +433,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Contract
+   * Get contract
    * @return contract
   **/
   public ProductInstanceID getContract() {
@@ -450,7 +450,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Pickup options
+   * Get pickupOptions
    * @return pickupOptions
   **/
   public SmartTransactionsPickupOptions getPickupOptions() {
@@ -484,7 +484,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Customer
+   * Get customer
    * @return customer
   **/
   public PaymentCustomersProductModel getCustomer() {
@@ -501,7 +501,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Customers delivery address
+   * Get shippingAddress
    * @return shippingAddress
   **/
   public PaymentCustomersProductModel getShippingAddress() {
@@ -518,7 +518,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Payment Container
+   * Get container
    * @return container
   **/
   public ProductInstanceUID getContainer() {
@@ -535,7 +535,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Check in
+   * Get checkin
    * @return checkin
   **/
   public SmartTransactionsCheckin getCheckin() {
@@ -586,7 +586,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Checkout Links
+   * Get checkoutLinks
    * @return checkoutLinks
   **/
   public SmartTransactionsCheckoutLinks getCheckoutLinks() {

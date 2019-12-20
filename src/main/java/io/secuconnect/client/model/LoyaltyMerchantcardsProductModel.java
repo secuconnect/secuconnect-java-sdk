@@ -1,6 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.LoyaltyCardgroupsProductModel;
 import io.secuconnect.client.model.LoyaltyCardsProductModel;
 import io.secuconnect.client.model.LoyaltyCustomersProductModel;
@@ -11,15 +12,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
- * LoyaltyMerchantcardsProductModel
+ * Loyalty merchant card
  */
-public class LoyaltyMerchantcardsProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   @SerializedName("card")
   private LoyaltyCardsProductModel card = null;
 
@@ -71,47 +66,13 @@ public class LoyaltyMerchantcardsProductModel {
   @SerializedName("passcode")
   private Integer passcode = null;
 
-  public LoyaltyMerchantcardsProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of loyalty merchant card
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public LoyaltyMerchantcardsProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of loyalty merchant card
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public LoyaltyMerchantcardsProductModel card(LoyaltyCardsProductModel card) {
     this.card = card;
     return this;
   }
 
    /**
-   * Id of loyalty store group
+   * Get card
    * @return card
   **/
   public LoyaltyCardsProductModel getCard() {
@@ -128,7 +89,7 @@ public class LoyaltyMerchantcardsProductModel {
   }
 
    /**
-   * Current merchant id
+   * Get merchant
    * @return merchant
   **/
   public ProductInstanceUID getMerchant() {
@@ -145,7 +106,7 @@ public class LoyaltyMerchantcardsProductModel {
   }
 
    /**
-   * Merchant id, that loyalty merchant card object was created for
+   * Get createdForMerchant
    * @return createdForMerchant
   **/
   public ProductInstanceUID getCreatedForMerchant() {
@@ -162,7 +123,7 @@ public class LoyaltyMerchantcardsProductModel {
   }
 
    /**
-   * Store id, that loyalty merchant card object was created for
+   * Get createdForStore
    * @return createdForStore
   **/
   public ProductInstanceUID getCreatedForStore() {
@@ -179,7 +140,7 @@ public class LoyaltyMerchantcardsProductModel {
   }
 
    /**
-   * Loyalty merchant card customer
+   * Get customer
    * @return customer
   **/
   public LoyaltyCustomersProductModel getCustomer() {
@@ -196,7 +157,7 @@ public class LoyaltyMerchantcardsProductModel {
   }
 
    /**
-   * Loyalty merchant card card group
+   * Get cardgroup
    * @return cardgroup
   **/
   public LoyaltyCardgroupsProductModel getCardgroup() {
@@ -213,7 +174,7 @@ public class LoyaltyMerchantcardsProductModel {
   }
 
    /**
-   * Loyalty merchant card payment container
+   * Get paymentContainer
    * @return paymentContainer
   **/
   public LoyaltyMerchantcardsDTOPaymentContainer getPaymentContainer() {
@@ -403,9 +364,7 @@ public class LoyaltyMerchantcardsProductModel {
       return false;
     }
     LoyaltyMerchantcardsProductModel loyaltyMerchantcardsProductModel = (LoyaltyMerchantcardsProductModel) o;
-    return Objects.equals(this.object, loyaltyMerchantcardsProductModel.object) &&
-        Objects.equals(this.id, loyaltyMerchantcardsProductModel.id) &&
-        Objects.equals(this.card, loyaltyMerchantcardsProductModel.card) &&
+    return Objects.equals(this.card, loyaltyMerchantcardsProductModel.card) &&
         Objects.equals(this.merchant, loyaltyMerchantcardsProductModel.merchant) &&
         Objects.equals(this.createdForMerchant, loyaltyMerchantcardsProductModel.createdForMerchant) &&
         Objects.equals(this.createdForStore, loyaltyMerchantcardsProductModel.createdForStore) &&
@@ -421,21 +380,20 @@ public class LoyaltyMerchantcardsProductModel {
         Objects.equals(this.lastUsage, loyaltyMerchantcardsProductModel.lastUsage) &&
         Objects.equals(this.lastCharge, loyaltyMerchantcardsProductModel.lastCharge) &&
         Objects.equals(this.isBaseCard, loyaltyMerchantcardsProductModel.isBaseCard) &&
-        Objects.equals(this.passcode, loyaltyMerchantcardsProductModel.passcode);
+        Objects.equals(this.passcode, loyaltyMerchantcardsProductModel.passcode) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, card, merchant, createdForMerchant, createdForStore, customer, cardgroup, paymentContainer, balance, points, bonusBalance, cashBalance, stockStatus, lockStatus, lastUsage, lastCharge, isBaseCard, passcode);
+    return Objects.hash(card, merchant, createdForMerchant, createdForStore, customer, cardgroup, paymentContainer, balance, points, bonusBalance, cashBalance, stockStatus, lockStatus, lastUsage, lastCharge, isBaseCard, passcode, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoyaltyMerchantcardsProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    createdForMerchant: ").append(toIndentedString(createdForMerchant)).append("\n");

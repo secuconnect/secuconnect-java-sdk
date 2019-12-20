@@ -60,7 +60,7 @@ public class PaymentSecupayPayoutApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -89,12 +89,10 @@ public class PaymentSecupayPayoutApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getSecupaypayoutValidateBeforeCall(String paymentPayoutId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'paymentPayoutId' is set
         if (paymentPayoutId == null) {
             throw new ApiException("Missing the required parameter 'paymentPayoutId' when calling getSecupaypayout(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = getSecupaypayoutCall(paymentPayoutId, progressListener, progressRequestListener);
         return call;
@@ -180,13 +178,13 @@ public class PaymentSecupayPayoutApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -209,7 +207,6 @@ public class PaymentSecupayPayoutApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call paymentSecupaypayoutPostValidateBeforeCall(SecupayPayoutDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         
         com.squareup.okhttp.Call call = paymentSecupaypayoutPostCall(body, progressListener, progressRequestListener);
         return call;

@@ -1,24 +1,19 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.PaymentInformation;
 import io.secuconnect.client.model.SecupayTransactionListItem;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * SecupayPayoutProductModel
  */
-public class SecupayPayoutProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class SecupayPayoutProductModel extends BaseProductModel {
   @SerializedName("trans_id")
   private Integer transId = null;
 
@@ -48,40 +43,6 @@ public class SecupayPayoutProductModel {
 
   @SerializedName("transfer_account")
   private PaymentInformation transferAccount = null;
-
-  public SecupayPayoutProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Product name
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public SecupayPayoutProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * ID of instance
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
 
   public SecupayPayoutProductModel transId(Integer transId) {
     this.transId = transId;
@@ -123,7 +84,7 @@ public class SecupayPayoutProductModel {
   }
 
    /**
-   * Total amount of transaction lit&#39;s items
+   * Total amount of transaction lit&#x27;s items
    * @return amount
   **/
   public Integer getAmount() {
@@ -250,7 +211,7 @@ public class SecupayPayoutProductModel {
   }
 
    /**
-   * The bank account the payer needs to use for his transfer
+   * Get transferAccount
    * @return transferAccount
   **/
   public PaymentInformation getTransferAccount() {
@@ -270,9 +231,7 @@ public class SecupayPayoutProductModel {
       return false;
     }
     SecupayPayoutProductModel secupayPayoutProductModel = (SecupayPayoutProductModel) o;
-    return Objects.equals(this.object, secupayPayoutProductModel.object) &&
-        Objects.equals(this.id, secupayPayoutProductModel.id) &&
-        Objects.equals(this.transId, secupayPayoutProductModel.transId) &&
+    return Objects.equals(this.transId, secupayPayoutProductModel.transId) &&
         Objects.equals(this.status, secupayPayoutProductModel.status) &&
         Objects.equals(this.amount, secupayPayoutProductModel.amount) &&
         Objects.equals(this.currency, secupayPayoutProductModel.currency) &&
@@ -281,21 +240,20 @@ public class SecupayPayoutProductModel {
         Objects.equals(this.transactionStatus, secupayPayoutProductModel.transactionStatus) &&
         Objects.equals(this.transactionList, secupayPayoutProductModel.transactionList) &&
         Objects.equals(this.transferPurpose, secupayPayoutProductModel.transferPurpose) &&
-        Objects.equals(this.transferAccount, secupayPayoutProductModel.transferAccount);
+        Objects.equals(this.transferAccount, secupayPayoutProductModel.transferAccount) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, transId, status, amount, currency, purpose, orderId, transactionStatus, transactionList, transferPurpose, transferAccount);
+    return Objects.hash(transId, status, amount, currency, purpose, orderId, transactionStatus, transactionList, transferPurpose, transferAccount, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SecupayPayoutProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");

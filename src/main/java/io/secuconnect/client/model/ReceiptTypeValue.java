@@ -10,29 +10,9 @@ import java.util.Objects;
 /**
  * ReceiptTypeValue
  */
-public class ReceiptTypeValue {
-  @SerializedName("type")
-  private String type = null;
-
+public class ReceiptTypeValue extends ReceiptType {
   @SerializedName("value")
   private ReceiptValue value = null;
-
-  public ReceiptTypeValue type(String type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Type
-   * @return type
-  **/
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
 
   public ReceiptTypeValue value(ReceiptValue value) {
     this.value = value;
@@ -40,7 +20,7 @@ public class ReceiptTypeValue {
   }
 
    /**
-   * Value object
+   * Get value
    * @return value
   **/
   public ReceiptValue getValue() {
@@ -60,21 +40,20 @@ public class ReceiptTypeValue {
       return false;
     }
     ReceiptTypeValue receiptTypeValue = (ReceiptTypeValue) o;
-    return Objects.equals(this.type, receiptTypeValue.type) &&
-        Objects.equals(this.value, receiptTypeValue.value);
+    return Objects.equals(this.value, receiptTypeValue.value) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, value);
+    return Objects.hash(value, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReceiptTypeValue {\n");
-    
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -79,7 +79,7 @@ public class LoyaltyMerchantcardsDTOPaymentContainer {
   }
 
    /**
-   * Payment information
+   * Get paymentInformation
    * @return paymentInformation
   **/
   public PaymentInformation getPaymentInformation() {

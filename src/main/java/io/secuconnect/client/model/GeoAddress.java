@@ -46,7 +46,7 @@ public class GeoAddress {
   }
 
    /**
-   * Address components
+   * Get addressComponents
    * @return addressComponents
   **/
   public AddressComponents getAddressComponents() {

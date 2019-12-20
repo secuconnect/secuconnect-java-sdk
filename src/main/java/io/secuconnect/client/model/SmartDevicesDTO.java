@@ -1,16 +1,19 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * SmartDevicesDTO
  */
 public class SmartDevicesDTO {
+  @SerializedName("contract")
+  private String contract = null;
+
   @SerializedName("merchant")
   private String merchant = null;
 
@@ -40,6 +43,23 @@ public class SmartDevicesDTO {
 
   @SerializedName("terminal_type")
   private String terminalType = null;
+
+  public SmartDevicesDTO contract(String contract) {
+    this.contract = contract;
+    return this;
+  }
+
+   /**
+   * Contract
+   * @return contract
+  **/
+  public String getContract() {
+    return contract;
+  }
+
+  public void setContract(String contract) {
+    this.contract = contract;
+  }
 
   public SmartDevicesDTO merchant(String merchant) {
     this.merchant = merchant;
@@ -228,7 +248,8 @@ public class SmartDevicesDTO {
       return false;
     }
     SmartDevicesDTO smartDevicesDTO = (SmartDevicesDTO) o;
-    return Objects.equals(this.merchant, smartDevicesDTO.merchant) &&
+    return Objects.equals(this.contract, smartDevicesDTO.contract) &&
+        Objects.equals(this.merchant, smartDevicesDTO.merchant) &&
         Objects.equals(this.store, smartDevicesDTO.store) &&
         Objects.equals(this.terminal, smartDevicesDTO.terminal) &&
         Objects.equals(this.vendor, smartDevicesDTO.vendor) &&
@@ -242,7 +263,7 @@ public class SmartDevicesDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, store, terminal, vendor, vendorUid, type, description, products, baseVersion, terminalType);
+    return Objects.hash(contract, merchant, store, terminal, vendor, vendorUid, type, description, products, baseVersion, terminalType);
   }
 
   @Override
@@ -250,6 +271,7 @@ public class SmartDevicesDTO {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartDevicesDTO {\n");
     
+    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");

@@ -1,6 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -9,13 +10,7 @@ import java.util.Objects;
 /**
  * PaymentContractsProductModel
  */
-public class PaymentContractsProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class PaymentContractsProductModel extends BaseProductModel {
   @SerializedName("parent")
   private ProductInstanceUID parent = null;
 
@@ -28,47 +23,13 @@ public class PaymentContractsProductModel {
   @SerializedName("updated")
   private String updated = null;
 
-  public PaymentContractsProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of payment contract
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public PaymentContractsProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of payment contract
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public PaymentContractsProductModel parent(ProductInstanceUID parent) {
     this.parent = parent;
     return this;
   }
 
    /**
-   * Payment contract
+   * Get parent
    * @return parent
   **/
   public ProductInstanceUID getParent() {
@@ -139,26 +100,23 @@ public class PaymentContractsProductModel {
       return false;
     }
     PaymentContractsProductModel paymentContractsProductModel = (PaymentContractsProductModel) o;
-    return Objects.equals(this.object, paymentContractsProductModel.object) &&
-        Objects.equals(this.id, paymentContractsProductModel.id) &&
-        Objects.equals(this.parent, paymentContractsProductModel.parent) &&
+    return Objects.equals(this.parent, paymentContractsProductModel.parent) &&
         Objects.equals(this.demo, paymentContractsProductModel.demo) &&
         Objects.equals(this.created, paymentContractsProductModel.created) &&
-        Objects.equals(this.updated, paymentContractsProductModel.updated);
+        Objects.equals(this.updated, paymentContractsProductModel.updated) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, parent, demo, created, updated);
+    return Objects.hash(parent, demo, created, updated, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentContractsProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    demo: ").append(toIndentedString(demo)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");

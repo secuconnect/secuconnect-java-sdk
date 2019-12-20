@@ -2,10 +2,10 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.SmartTransactionsBasketProductGroup;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
@@ -213,7 +213,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * 
+   * Get sum
    * @return sum
   **/
   public Integer getSum() {
@@ -247,7 +247,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * The reference_id must be unique, it&#39;s Referring to the reference_id of SmartTransactionsBasketProduct [example: SmartTransactionsBasketProduct-&gt;reference_id is 1000 then all SmartTransactionsSubBasketProduct must have unique reference_id like 1000.1, 1000.2 etc.]
+   * The reference_id must be unique, it&#x27;s Referring to the reference_id of SmartTransactionsBasketProduct [example: SmartTransactionsBasketProduct-&gt;reference_id is 1000 then all SmartTransactionsSubBasketProduct must have unique reference_id like 1000.1, 1000.2 etc.]
    * @return referenceId
   **/
   public String getReferenceId() {

@@ -1,6 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
@@ -8,49 +9,9 @@ import java.util.Objects;
 /**
  * DocumentUploadsBaseProductModel
  */
-public class DocumentUploadsBaseProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class DocumentUploadsBaseProductModel extends BaseProductModel {
   @SerializedName("created")
   private String created = null;
-
-  public DocumentUploadsBaseProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of document upload
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public DocumentUploadsBaseProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of document upload
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
 
   public DocumentUploadsBaseProductModel created(String created) {
     this.created = created;
@@ -78,23 +39,20 @@ public class DocumentUploadsBaseProductModel {
       return false;
     }
     DocumentUploadsBaseProductModel documentUploadsBaseProductModel = (DocumentUploadsBaseProductModel) o;
-    return Objects.equals(this.object, documentUploadsBaseProductModel.object) &&
-        Objects.equals(this.id, documentUploadsBaseProductModel.id) &&
-        Objects.equals(this.created, documentUploadsBaseProductModel.created);
+    return Objects.equals(this.created, documentUploadsBaseProductModel.created) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, created);
+    return Objects.hash(created, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocumentUploadsBaseProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("}");
     return sb.toString();

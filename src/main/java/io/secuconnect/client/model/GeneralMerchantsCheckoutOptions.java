@@ -43,7 +43,7 @@ public class GeneralMerchantsCheckoutOptions {
   }
 
    /**
-   * Shipping
+   * Get shipping
    * @return shipping
   **/
   public GeneralMerchantsCheckoutOptionsShipping getShipping() {
@@ -60,7 +60,7 @@ public class GeneralMerchantsCheckoutOptions {
   }
 
    /**
-   * Collection
+   * Get collection
    * @return collection
   **/
   public GeneralMerchantsCheckoutOptionsCollection getCollection() {

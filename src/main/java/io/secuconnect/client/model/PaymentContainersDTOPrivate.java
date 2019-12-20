@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
- * 
+ * PaymentContainersDTOPrivate
  */
 public class PaymentContainersDTOPrivate {
   @SerializedName("owner")

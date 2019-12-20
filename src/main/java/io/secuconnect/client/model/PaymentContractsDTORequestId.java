@@ -27,13 +27,19 @@ public class PaymentContractsDTORequestId {
   @SerializedName("payin_account")
   private Boolean payinAccount = false;
 
+  @SerializedName("create_first_store")
+  private Boolean createFirstStore = false;
+
+  @SerializedName("store_name")
+  private String storeName = null;
+
   public PaymentContractsDTORequestId contact(Contact contact) {
     this.contact = contact;
     return this;
   }
 
    /**
-   * Contact
+   * Get contact
    * @return contact
   **/
   public Contact getContact() {
@@ -67,7 +73,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Merchants bank account for the payout
+   * Get payoutAccount
    * @return payoutAccount
   **/
   public PaymentInformation getPayoutAccount() {
@@ -84,7 +90,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * IFrame opts
+   * Get iframeOpts
    * @return iframeOpts
   **/
   public PaymentContractsDTOIFrameOpts getIframeOpts() {
@@ -112,6 +118,40 @@ public class PaymentContractsDTORequestId {
     this.payinAccount = payinAccount;
   }
 
+  public PaymentContractsDTORequestId createFirstStore(Boolean createFirstStore) {
+    this.createFirstStore = createFirstStore;
+    return this;
+  }
+
+   /**
+   * Create first store
+   * @return createFirstStore
+  **/
+  public Boolean getCreateFirstStore() {
+    return createFirstStore;
+  }
+
+  public void setCreateFirstStore(Boolean createFirstStore) {
+    this.createFirstStore = createFirstStore;
+  }
+
+  public PaymentContractsDTORequestId storeName(String storeName) {
+    this.storeName = storeName;
+    return this;
+  }
+
+   /**
+   * Store name
+   * @return storeName
+  **/
+  public String getStoreName() {
+    return storeName;
+  }
+
+  public void setStoreName(String storeName) {
+    this.storeName = storeName;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -125,12 +165,14 @@ public class PaymentContractsDTORequestId {
         Objects.equals(this.project, paymentContractsDTORequestId.project) &&
         Objects.equals(this.payoutAccount, paymentContractsDTORequestId.payoutAccount) &&
         Objects.equals(this.iframeOpts, paymentContractsDTORequestId.iframeOpts) &&
-        Objects.equals(this.payinAccount, paymentContractsDTORequestId.payinAccount);
+        Objects.equals(this.payinAccount, paymentContractsDTORequestId.payinAccount) &&
+        Objects.equals(this.createFirstStore, paymentContractsDTORequestId.createFirstStore) &&
+        Objects.equals(this.storeName, paymentContractsDTORequestId.storeName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contact, project, payoutAccount, iframeOpts, payinAccount);
+    return Objects.hash(contact, project, payoutAccount, iframeOpts, payinAccount, createFirstStore, storeName);
   }
 
   @Override
@@ -143,6 +185,8 @@ public class PaymentContractsDTORequestId {
     sb.append("    payoutAccount: ").append(toIndentedString(payoutAccount)).append("\n");
     sb.append("    iframeOpts: ").append(toIndentedString(iframeOpts)).append("\n");
     sb.append("    payinAccount: ").append(toIndentedString(payinAccount)).append("\n");
+    sb.append("    createFirstStore: ").append(toIndentedString(createFirstStore)).append("\n");
+    sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

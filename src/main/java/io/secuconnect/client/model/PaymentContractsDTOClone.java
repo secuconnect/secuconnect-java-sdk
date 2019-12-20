@@ -45,7 +45,7 @@ public class PaymentContractsDTOClone {
   }
 
    /**
-   * Merchants bank account for the payout
+   * Get paymentData
    * @return paymentData
   **/
   public PaymentInformation getPaymentData() {

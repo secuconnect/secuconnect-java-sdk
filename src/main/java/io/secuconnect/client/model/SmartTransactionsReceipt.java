@@ -39,7 +39,7 @@ public class SmartTransactionsReceipt {
   }
 
    /**
-   * Value
+   * Get value
    * @return value
   **/
   public SmartTransactionsReceiptValue getValue() {

@@ -3,16 +3,22 @@ package io.secuconnect.client.model;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.Address;
 import io.secuconnect.client.model.OpenHours;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * GeneralStoresDTO
  */
 public class GeneralStoresDTO {
+  @SerializedName("name")
+  private String name = null;
+
+  @SerializedName("merchant")
+  private String merchant = null;
+
   @SerializedName("address")
   private Address address = null;
 
@@ -34,13 +40,47 @@ public class GeneralStoresDTO {
   @SerializedName("open_hours")
   private List<OpenHours> openHours = null;
 
+  public GeneralStoresDTO name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Name
+   * @return name
+  **/
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public GeneralStoresDTO merchant(String merchant) {
+    this.merchant = merchant;
+    return this;
+  }
+
+   /**
+   * Merchant
+   * @return merchant
+  **/
+  public String getMerchant() {
+    return merchant;
+  }
+
+  public void setMerchant(String merchant) {
+    this.merchant = merchant;
+  }
+
   public GeneralStoresDTO address(Address address) {
     this.address = address;
     return this;
   }
 
    /**
-   * New address
+   * Get address
    * @return address
   **/
   public Address getAddress() {
@@ -178,7 +218,9 @@ public class GeneralStoresDTO {
       return false;
     }
     GeneralStoresDTO generalStoresDTO = (GeneralStoresDTO) o;
-    return Objects.equals(this.address, generalStoresDTO.address) &&
+    return Objects.equals(this.name, generalStoresDTO.name) &&
+        Objects.equals(this.merchant, generalStoresDTO.merchant) &&
+        Objects.equals(this.address, generalStoresDTO.address) &&
         Objects.equals(this.facebookId, generalStoresDTO.facebookId) &&
         Objects.equals(this.phone, generalStoresDTO.phone) &&
         Objects.equals(this.urlWebsite, generalStoresDTO.urlWebsite) &&
@@ -189,7 +231,7 @@ public class GeneralStoresDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, facebookId, phone, urlWebsite, photoMain, photo, openHours);
+    return Objects.hash(name, merchant, address, facebookId, phone, urlWebsite, photoMain, photo, openHours);
   }
 
   @Override
@@ -197,6 +239,8 @@ public class GeneralStoresDTO {
     StringBuilder sb = new StringBuilder();
     sb.append("class GeneralStoresDTO {\n");
     
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");

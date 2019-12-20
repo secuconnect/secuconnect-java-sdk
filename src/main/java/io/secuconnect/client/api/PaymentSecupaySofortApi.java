@@ -50,7 +50,7 @@ public class PaymentSecupaySofortApi {
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
-     * @param body Request body for assigning external invoice pdf (required)
+     * @param body Request body for assigning external invoice pdf
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -72,13 +72,13 @@ public class PaymentSecupaySofortApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -101,27 +101,18 @@ public class PaymentSecupaySofortApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call assignExternalInvoicePdfValidateBeforeCall(String paymentMethod, String paymentId, String documentId, SecupayTransactionDTOExternalInvoicePdf body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'paymentMethod' is set
         if (paymentMethod == null) {
             throw new ApiException("Missing the required parameter 'paymentMethod' when calling assignExternalInvoicePdf(Async)");
         }
-        
         // verify the required parameter 'paymentId' is set
         if (paymentId == null) {
             throw new ApiException("Missing the required parameter 'paymentId' when calling assignExternalInvoicePdf(Async)");
         }
-        
         // verify the required parameter 'documentId' is set
         if (documentId == null) {
             throw new ApiException("Missing the required parameter 'documentId' when calling assignExternalInvoicePdf(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling assignExternalInvoicePdf(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = assignExternalInvoicePdfCall(paymentMethod, paymentId, documentId, body, progressListener, progressRequestListener);
         return call;
@@ -133,7 +124,7 @@ public class PaymentSecupaySofortApi {
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
-     * @param body Request body for assigning external invoice pdf (required)
+     * @param body Request body for assigning external invoice pdf
      * @return SecupayTransactionExternalInvoicePdf
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -148,7 +139,7 @@ public class PaymentSecupaySofortApi {
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
-     * @param body Request body for assigning external invoice pdf (required)
+     * @param body Request body for assigning external invoice pdf
      * @return ApiResponse&lt;SecupayTransactionExternalInvoicePdf&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -164,7 +155,7 @@ public class PaymentSecupaySofortApi {
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
-     * @param body Request body for assigning external invoice pdf (required)
+     * @param body Request body for assigning external invoice pdf
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -220,13 +211,13 @@ public class PaymentSecupaySofortApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -249,17 +240,14 @@ public class PaymentSecupaySofortApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call cancelPaymentTransactionByIdValidateBeforeCall(String paymentMethod, String paymentId, SecupayTransactionCancelDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'paymentMethod' is set
         if (paymentMethod == null) {
             throw new ApiException("Missing the required parameter 'paymentMethod' when calling cancelPaymentTransactionById(Async)");
         }
-        
         // verify the required parameter 'paymentId' is set
         if (paymentId == null) {
             throw new ApiException("Missing the required parameter 'paymentId' when calling cancelPaymentTransactionById(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = cancelPaymentTransactionByIdCall(paymentMethod, paymentId, body, progressListener, progressRequestListener);
         return call;
@@ -355,13 +343,13 @@ public class PaymentSecupaySofortApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -384,17 +372,14 @@ public class PaymentSecupaySofortApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call capturePaymentTransactionByIdValidateBeforeCall(String paymentMethod, String paymentId, SecupayTransactionCaptureDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'paymentMethod' is set
         if (paymentMethod == null) {
             throw new ApiException("Missing the required parameter 'paymentMethod' when calling capturePaymentTransactionById(Async)");
         }
-        
         // verify the required parameter 'paymentId' is set
         if (paymentId == null) {
             throw new ApiException("Missing the required parameter 'paymentId' when calling capturePaymentTransactionById(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = capturePaymentTransactionByIdCall(paymentMethod, paymentId, body, progressListener, progressRequestListener);
         return call;
@@ -487,7 +472,7 @@ public class PaymentSecupaySofortApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -516,12 +501,10 @@ public class PaymentSecupaySofortApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call paymentSecupaySofortGetByIdValidateBeforeCall(String paymentPrepayId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'paymentPrepayId' is set
         if (paymentPrepayId == null) {
             throw new ApiException("Missing the required parameter 'paymentPrepayId' when calling paymentSecupaySofortGetById(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = paymentSecupaySofortGetByIdCall(paymentPrepayId, progressListener, progressRequestListener);
         return call;
@@ -607,13 +590,13 @@ public class PaymentSecupaySofortApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -636,7 +619,6 @@ public class PaymentSecupaySofortApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call paymentSecupaysofortPostValidateBeforeCall(SecupayTransactionProductDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         
         com.squareup.okhttp.Call call = paymentSecupaysofortPostCall(body, progressListener, progressRequestListener);
         return call;
@@ -705,7 +687,7 @@ public class PaymentSecupaySofortApi {
      * Build call for reverseAccrualByPaymentId
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Reverse accrual input properties (required)
+     * @param body Reverse accrual input properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -726,13 +708,13 @@ public class PaymentSecupaySofortApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -755,22 +737,14 @@ public class PaymentSecupaySofortApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call reverseAccrualByPaymentIdValidateBeforeCall(String paymentMethod, String paymentId, SecupayTransactionReverseAccrualDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'paymentMethod' is set
         if (paymentMethod == null) {
             throw new ApiException("Missing the required parameter 'paymentMethod' when calling reverseAccrualByPaymentId(Async)");
         }
-        
         // verify the required parameter 'paymentId' is set
         if (paymentId == null) {
             throw new ApiException("Missing the required parameter 'paymentId' when calling reverseAccrualByPaymentId(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling reverseAccrualByPaymentId(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = reverseAccrualByPaymentIdCall(paymentMethod, paymentId, body, progressListener, progressRequestListener);
         return call;
@@ -781,7 +755,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Reverse accrual input properties (required)
+     * @param body Reverse accrual input properties
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -795,7 +769,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Reverse accrual input properties (required)
+     * @param body Reverse accrual input properties
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -810,7 +784,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Reverse accrual input properties (required)
+     * @param body Reverse accrual input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -845,7 +819,7 @@ public class PaymentSecupaySofortApi {
      * Build call for setShippingInformationByPaymentId
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information properties (required)
+     * @param body Shipping information propertie
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -866,13 +840,13 @@ public class PaymentSecupaySofortApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -895,22 +869,14 @@ public class PaymentSecupaySofortApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call setShippingInformationByPaymentIdValidateBeforeCall(String paymentMethod, String paymentId, SecupayTransactionSetShippingInformationDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'paymentMethod' is set
         if (paymentMethod == null) {
             throw new ApiException("Missing the required parameter 'paymentMethod' when calling setShippingInformationByPaymentId(Async)");
         }
-        
         // verify the required parameter 'paymentId' is set
         if (paymentId == null) {
             throw new ApiException("Missing the required parameter 'paymentId' when calling setShippingInformationByPaymentId(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling setShippingInformationByPaymentId(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = setShippingInformationByPaymentIdCall(paymentMethod, paymentId, body, progressListener, progressRequestListener);
         return call;
@@ -921,7 +887,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information properties (required)
+     * @param body Shipping information propertie
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -935,7 +901,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information properties (required)
+     * @param body Shipping information propertie
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -950,7 +916,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information properties (required)
+     * @param body Shipping information propertie
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -985,7 +951,7 @@ public class PaymentSecupaySofortApi {
      * Build call for updateBasketByPaymentId
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Update basket input properties (required)
+     * @param body Update basket input properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1006,13 +972,13 @@ public class PaymentSecupaySofortApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1035,22 +1001,14 @@ public class PaymentSecupaySofortApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call updateBasketByPaymentIdValidateBeforeCall(String paymentMethod, String paymentId, SecupayTransactionUpdateBasketDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'paymentMethod' is set
         if (paymentMethod == null) {
             throw new ApiException("Missing the required parameter 'paymentMethod' when calling updateBasketByPaymentId(Async)");
         }
-        
         // verify the required parameter 'paymentId' is set
         if (paymentId == null) {
             throw new ApiException("Missing the required parameter 'paymentId' when calling updateBasketByPaymentId(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling updateBasketByPaymentId(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = updateBasketByPaymentIdCall(paymentMethod, paymentId, body, progressListener, progressRequestListener);
         return call;
@@ -1061,7 +1019,7 @@ public class PaymentSecupaySofortApi {
      * Update a basket of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Update basket input properties (required)
+     * @param body Update basket input properties
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1075,7 +1033,7 @@ public class PaymentSecupaySofortApi {
      * Update a basket of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Update basket input properties (required)
+     * @param body Update basket input properties
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1090,7 +1048,7 @@ public class PaymentSecupaySofortApi {
      * Update a basket of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Update basket input properties (required)
+     * @param body Update basket input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

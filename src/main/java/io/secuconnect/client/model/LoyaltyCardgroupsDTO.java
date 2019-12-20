@@ -99,7 +99,7 @@ public class LoyaltyCardgroupsDTO {
   }
 
    /**
-   * LoyaltyCardgroupsDTO
+   * Get merchant
    * @return merchant
   **/
   public LoyaltyCardgroupsDTOMerchant getMerchant() {

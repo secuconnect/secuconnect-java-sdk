@@ -1,6 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.PaymentTransactionsProductModel;
 import io.secuconnect.client.model.ProductInstanceUID;
@@ -13,22 +14,16 @@ import io.secuconnect.client.model.SmartTransactionsMerchant;
 import io.secuconnect.client.model.SmartTransactionsPickupOptions;
 import io.secuconnect.client.model.SmartTransactionsReceipt;
 import io.secuconnect.client.model.SmartTransactionsShipmentDetails;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * SmartTransactionsProductModel
  */
-public class SmartTransactionsProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class SmartTransactionsProductModel extends BaseProductModel {
   @SerializedName("status")
   private String status = null;
 
@@ -137,39 +132,8 @@ public class SmartTransactionsProductModel {
   @SerializedName("checkout_links")
   private SmartTransactionsCheckoutLinks checkoutLinks = null;
 
-  public SmartTransactionsProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of smart transaction
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public SmartTransactionsProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of smart transaction
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
+  @SerializedName("iframe_url")
+  private String iframeUrl = null;
 
   public SmartTransactionsProductModel status(String status) {
     this.status = status;
@@ -194,7 +158,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Merchant
+   * Get merchant
    * @return merchant
   **/
   public SmartTransactionsMerchant getMerchant() {
@@ -211,7 +175,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Contract
+   * Get contract
    * @return contract
   **/
   public ProductInstanceUID getContract() {
@@ -228,7 +192,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Provider contract
+   * Get providerContract
    * @return providerContract
   **/
   public ProductInstanceUID getProviderContract() {
@@ -245,7 +209,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Customer
+   * Get customer
    * @return customer
   **/
   public PaymentCustomersProductModel getCustomer() {
@@ -262,7 +226,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Customers delivery address
+   * Get shippingAddress
    * @return shippingAddress
   **/
   public PaymentCustomersProductModel getShippingAddress() {
@@ -279,7 +243,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Payment Container
+   * Get container
    * @return container
   **/
   public ProductInstanceUID getContainer() {
@@ -296,7 +260,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Check in
+   * Get checkin
    * @return checkin
   **/
   public SmartTransactionsCheckin getCheckin() {
@@ -347,7 +311,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Store
+   * Get store
    * @return store
   **/
   public ProductInstanceUID getStore() {
@@ -364,7 +328,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Device source
+   * Get deviceSource
    * @return deviceSource
   **/
   public ProductInstanceUID getDeviceSource() {
@@ -381,7 +345,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Device destination
+   * Get deviceDestination
    * @return deviceDestination
   **/
   public ProductInstanceUID getDeviceDestination() {
@@ -516,7 +480,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Basket info
+   * Get basketInfo
    * @return basketInfo
   **/
   public SmartTransactionsBasketInfo getBasketInfo() {
@@ -533,7 +497,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Basket
+   * Get basket
    * @return basket
   **/
   public SmartTransactionsBasket getBasket() {
@@ -660,7 +624,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Pickup options
+   * Get pickupOptions
    * @return pickupOptions
   **/
   public SmartTransactionsPickupOptions getPickupOptions() {
@@ -677,7 +641,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Shipment details
+   * Get shipmentDetails
    * @return shipmentDetails
   **/
   public SmartTransactionsShipmentDetails getShipmentDetails() {
@@ -804,7 +768,7 @@ public class SmartTransactionsProductModel {
   }
 
    /**
-   * Checkout Links
+   * Get checkoutLinks
    * @return checkoutLinks
   **/
   public SmartTransactionsCheckoutLinks getCheckoutLinks() {
@@ -813,6 +777,23 @@ public class SmartTransactionsProductModel {
 
   public void setCheckoutLinks(SmartTransactionsCheckoutLinks checkoutLinks) {
     this.checkoutLinks = checkoutLinks;
+  }
+
+  public SmartTransactionsProductModel iframeUrl(String iframeUrl) {
+    this.iframeUrl = iframeUrl;
+    return this;
+  }
+
+   /**
+   * IFrame URL
+   * @return iframeUrl
+  **/
+  public String getIframeUrl() {
+    return iframeUrl;
+  }
+
+  public void setIframeUrl(String iframeUrl) {
+    this.iframeUrl = iframeUrl;
   }
 
   @Override
@@ -824,9 +805,7 @@ public class SmartTransactionsProductModel {
       return false;
     }
     SmartTransactionsProductModel smartTransactionsProductModel = (SmartTransactionsProductModel) o;
-    return Objects.equals(this.object, smartTransactionsProductModel.object) &&
-        Objects.equals(this.id, smartTransactionsProductModel.id) &&
-        Objects.equals(this.status, smartTransactionsProductModel.status) &&
+    return Objects.equals(this.status, smartTransactionsProductModel.status) &&
         Objects.equals(this.merchant, smartTransactionsProductModel.merchant) &&
         Objects.equals(this.contract, smartTransactionsProductModel.contract) &&
         Objects.equals(this.providerContract, smartTransactionsProductModel.providerContract) &&
@@ -861,21 +840,21 @@ public class SmartTransactionsProductModel {
         Objects.equals(this.transactions, smartTransactionsProductModel.transactions) &&
         Objects.equals(this.lastVisitedPage, smartTransactionsProductModel.lastVisitedPage) &&
         Objects.equals(this.isDemo, smartTransactionsProductModel.isDemo) &&
-        Objects.equals(this.checkoutLinks, smartTransactionsProductModel.checkoutLinks);
+        Objects.equals(this.checkoutLinks, smartTransactionsProductModel.checkoutLinks) &&
+        Objects.equals(this.iframeUrl, smartTransactionsProductModel.iframeUrl) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, orderOption, pickupOptions, shipmentDetails, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks);
+    return Objects.hash(status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, orderOption, pickupOptions, shipmentDetails, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, iframeUrl, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartTransactionsProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
@@ -912,6 +891,7 @@ public class SmartTransactionsProductModel {
     sb.append("    lastVisitedPage: ").append(toIndentedString(lastVisitedPage)).append("\n");
     sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");
     sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
+    sb.append("    iframeUrl: ").append(toIndentedString(iframeUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

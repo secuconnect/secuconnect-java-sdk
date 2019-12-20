@@ -1,6 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.secuconnect.client.model.SmartDevicesDevice;
 import io.secuconnect.client.model.SmartDevicesProducts;
@@ -12,15 +13,12 @@ import java.util.Objects;
 /**
  * SmartDevicesProductModel
  */
-public class SmartDevicesProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class SmartDevicesProductModel extends BaseProductModel {
   @SerializedName("merchant")
   private ProductInstanceUID merchant = null;
+
+  @SerializedName("contract")
+  private ProductInstanceUID contract = null;
 
   @SerializedName("store")
   private Store store = null;
@@ -67,47 +65,13 @@ public class SmartDevicesProductModel {
   @SerializedName("base_version")
   private String baseVersion = null;
 
-  public SmartDevicesProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of smart device
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public SmartDevicesProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of smart device
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public SmartDevicesProductModel merchant(ProductInstanceUID merchant) {
     this.merchant = merchant;
     return this;
   }
 
    /**
-   * Merchant
+   * Get merchant
    * @return merchant
   **/
   public ProductInstanceUID getMerchant() {
@@ -118,13 +82,30 @@ public class SmartDevicesProductModel {
     this.merchant = merchant;
   }
 
+  public SmartDevicesProductModel contract(ProductInstanceUID contract) {
+    this.contract = contract;
+    return this;
+  }
+
+   /**
+   * Get contract
+   * @return contract
+  **/
+  public ProductInstanceUID getContract() {
+    return contract;
+  }
+
+  public void setContract(ProductInstanceUID contract) {
+    this.contract = contract;
+  }
+
   public SmartDevicesProductModel store(Store store) {
     this.store = store;
     return this;
   }
 
    /**
-   * Store
+   * Get store
    * @return store
   **/
   public Store getStore() {
@@ -192,7 +173,7 @@ public class SmartDevicesProductModel {
   }
 
    /**
-   * Device
+   * Get device
    * @return device
   **/
   public SmartDevicesDevice getDevice() {
@@ -209,7 +190,7 @@ public class SmartDevicesProductModel {
   }
 
    /**
-   * Routing
+   * Get routing
    * @return routing
   **/
   public ProductInstanceUID getRouting() {
@@ -243,7 +224,7 @@ public class SmartDevicesProductModel {
   }
 
    /**
-   * Products
+   * Get products
    * @return products
   **/
   public SmartDevicesProducts getProducts() {
@@ -382,9 +363,8 @@ public class SmartDevicesProductModel {
       return false;
     }
     SmartDevicesProductModel smartDevicesProductModel = (SmartDevicesProductModel) o;
-    return Objects.equals(this.object, smartDevicesProductModel.object) &&
-        Objects.equals(this.id, smartDevicesProductModel.id) &&
-        Objects.equals(this.merchant, smartDevicesProductModel.merchant) &&
+    return Objects.equals(this.merchant, smartDevicesProductModel.merchant) &&
+        Objects.equals(this.contract, smartDevicesProductModel.contract) &&
         Objects.equals(this.store, smartDevicesProductModel.store) &&
         Objects.equals(this.vendor, smartDevicesProductModel.vendor) &&
         Objects.equals(this.vendorUid, smartDevicesProductModel.vendorUid) &&
@@ -399,22 +379,22 @@ public class SmartDevicesProductModel {
         Objects.equals(this.created, smartDevicesProductModel.created) &&
         Objects.equals(this.online, smartDevicesProductModel.online) &&
         Objects.equals(this.terminalType, smartDevicesProductModel.terminalType) &&
-        Objects.equals(this.baseVersion, smartDevicesProductModel.baseVersion);
+        Objects.equals(this.baseVersion, smartDevicesProductModel.baseVersion) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, merchant, store, vendor, vendorUid, type, device, routing, userPin, products, description, idleScreenRegister, idleScreenTerminal, created, online, terminalType, baseVersion);
+    return Objects.hash(merchant, contract, store, vendor, vendorUid, type, device, routing, userPin, products, description, idleScreenRegister, idleScreenTerminal, created, online, terminalType, baseVersion, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartDevicesProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
+    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    vendor: ").append(toIndentedString(vendor)).append("\n");
     sb.append("    vendorUid: ").append(toIndentedString(vendorUid)).append("\n");

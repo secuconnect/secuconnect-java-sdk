@@ -1,6 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.ItemGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -9,13 +10,7 @@ import java.util.Objects;
 /**
  * PrepaidItemsProductModel
  */
-public class PrepaidItemsProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class PrepaidItemsProductModel extends BaseProductModel {
   @SerializedName("retail_price")
   private Integer retailPrice = null;
 
@@ -48,40 +43,6 @@ public class PrepaidItemsProductModel {
 
   @SerializedName("type")
   private String type = null;
-
-  public PrepaidItemsProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of prepaid item
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public PrepaidItemsProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of prepaid item
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
 
   public PrepaidItemsProductModel retailPrice(Integer retailPrice) {
     this.retailPrice = retailPrice;
@@ -191,7 +152,7 @@ public class PrepaidItemsProductModel {
   }
 
    /**
-   * Item group
+   * Get itemgroup
    * @return itemgroup
   **/
   public ItemGroup getItemgroup() {
@@ -279,9 +240,7 @@ public class PrepaidItemsProductModel {
       return false;
     }
     PrepaidItemsProductModel prepaidItemsProductModel = (PrepaidItemsProductModel) o;
-    return Objects.equals(this.object, prepaidItemsProductModel.object) &&
-        Objects.equals(this.id, prepaidItemsProductModel.id) &&
-        Objects.equals(this.retailPrice, prepaidItemsProductModel.retailPrice) &&
+    return Objects.equals(this.retailPrice, prepaidItemsProductModel.retailPrice) &&
         Objects.equals(this.currency, prepaidItemsProductModel.currency) &&
         Objects.equals(this.description, prepaidItemsProductModel.description) &&
         Objects.equals(this.logo, prepaidItemsProductModel.logo) &&
@@ -291,21 +250,20 @@ public class PrepaidItemsProductModel {
         Objects.equals(this.stockLimitMax, prepaidItemsProductModel.stockLimitMax) &&
         Objects.equals(this.stockLimitMin, prepaidItemsProductModel.stockLimitMin) &&
         Objects.equals(this.taxable, prepaidItemsProductModel.taxable) &&
-        Objects.equals(this.type, prepaidItemsProductModel.type);
+        Objects.equals(this.type, prepaidItemsProductModel.type) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, retailPrice, currency, description, logo, commission, vtcId, itemgroup, stockLimitMax, stockLimitMin, taxable, type);
+    return Objects.hash(retailPrice, currency, description, logo, commission, vtcId, itemgroup, stockLimitMax, stockLimitMin, taxable, type, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PrepaidItemsProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    retailPrice: ").append(toIndentedString(retailPrice)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");

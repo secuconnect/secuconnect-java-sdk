@@ -1,6 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.ItemGroup;
 import io.secuconnect.client.model.PrepaidSalesItem;
 import io.secuconnect.client.model.PrepaidSalesSmartDevice;
@@ -13,13 +14,7 @@ import java.util.Objects;
 /**
  * PrepaidSalesProductModel
  */
-public class PrepaidSalesProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class PrepaidSalesProductModel extends BaseProductModel {
   @SerializedName("status")
   private String status = null;
 
@@ -95,40 +90,6 @@ public class PrepaidSalesProductModel {
   @SerializedName("vtc_tid")
   private String vtcTid = null;
 
-  public PrepaidSalesProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of prepaid sale
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public PrepaidSalesProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of prepaid sale
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public PrepaidSalesProductModel status(String status) {
     this.status = status;
     return this;
@@ -152,7 +113,7 @@ public class PrepaidSalesProductModel {
   }
 
    /**
-   * Prepaid stock
+   * Get stock
    * @return stock
   **/
   public ProductInstanceUID getStock() {
@@ -169,7 +130,7 @@ public class PrepaidSalesProductModel {
   }
 
    /**
-   * Prepaid item
+   * Get item
    * @return item
   **/
   public PrepaidSalesItem getItem() {
@@ -186,7 +147,7 @@ public class PrepaidSalesProductModel {
   }
 
    /**
-   * Prepaid item group
+   * Get itemgroup
    * @return itemgroup
   **/
   public ItemGroup getItemgroup() {
@@ -203,7 +164,7 @@ public class PrepaidSalesProductModel {
   }
 
    /**
-   * Smart device
+   * Get smartDevice
    * @return smartDevice
   **/
   public PrepaidSalesSmartDevice getSmartDevice() {
@@ -220,7 +181,7 @@ public class PrepaidSalesProductModel {
   }
 
    /**
-   * General merchant
+   * Get merchant
    * @return merchant
   **/
   public ProductInstanceUID getMerchant() {
@@ -237,7 +198,7 @@ public class PrepaidSalesProductModel {
   }
 
    /**
-   * General store
+   * Get store
    * @return store
   **/
   public Store getStore() {
@@ -254,7 +215,7 @@ public class PrepaidSalesProductModel {
   }
 
    /**
-   * Prepaid contract
+   * Get contract
    * @return contract
   **/
   public ProductInstanceUID getContract() {
@@ -563,9 +524,7 @@ public class PrepaidSalesProductModel {
       return false;
     }
     PrepaidSalesProductModel prepaidSalesProductModel = (PrepaidSalesProductModel) o;
-    return Objects.equals(this.object, prepaidSalesProductModel.object) &&
-        Objects.equals(this.id, prepaidSalesProductModel.id) &&
-        Objects.equals(this.status, prepaidSalesProductModel.status) &&
+    return Objects.equals(this.status, prepaidSalesProductModel.status) &&
         Objects.equals(this.stock, prepaidSalesProductModel.stock) &&
         Objects.equals(this.item, prepaidSalesProductModel.item) &&
         Objects.equals(this.itemgroup, prepaidSalesProductModel.itemgroup) &&
@@ -589,21 +548,20 @@ public class PrepaidSalesProductModel {
         Objects.equals(this.receiptCustomer, prepaidSalesProductModel.receiptCustomer) &&
         Objects.equals(this.receiptZvt, prepaidSalesProductModel.receiptZvt) &&
         Objects.equals(this.receiptDealer, prepaidSalesProductModel.receiptDealer) &&
-        Objects.equals(this.vtcTid, prepaidSalesProductModel.vtcTid);
+        Objects.equals(this.vtcTid, prepaidSalesProductModel.vtcTid) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, status, stock, item, itemgroup, smartDevice, merchant, store, contract, created, demo, description, amount, currency, commission, commissionCurrency, code, serial, cardnumber, expireDate, providerDeliveryNumber, receiptHeader, receiptCustomer, receiptZvt, receiptDealer, vtcTid);
+    return Objects.hash(status, stock, item, itemgroup, smartDevice, merchant, store, contract, created, demo, description, amount, currency, commission, commissionCurrency, code, serial, cardnumber, expireDate, providerDeliveryNumber, receiptHeader, receiptCustomer, receiptZvt, receiptDealer, vtcTid, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PrepaidSalesProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    stock: ").append(toIndentedString(stock)).append("\n");
     sb.append("    item: ").append(toIndentedString(item)).append("\n");

@@ -6,10 +6,10 @@ import io.secuconnect.client.model.GeneralMerchantsCheckoutOptions;
 import io.secuconnect.client.model.GeneralMerchantsLegalDetails;
 import io.secuconnect.client.model.GeneralMerchantsUrls;
 import io.secuconnect.client.model.PaymentInformation;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
@@ -197,7 +197,7 @@ public class GeneralMerchantsDTO {
   }
 
    /**
-   * Address
+   * Get address
    * @return address
   **/
   public Address getAddress() {
@@ -214,7 +214,7 @@ public class GeneralMerchantsDTO {
   }
 
    /**
-   * Merchants bank account for the payout
+   * Get paymentData
    * @return paymentData
   **/
   public PaymentInformation getPaymentData() {
@@ -256,7 +256,7 @@ public class GeneralMerchantsDTO {
   }
 
    /**
-   * Checkout options
+   * Get checkoutOptions
    * @return checkoutOptions
   **/
   public GeneralMerchantsCheckoutOptions getCheckoutOptions() {

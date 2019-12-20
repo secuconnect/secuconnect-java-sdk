@@ -39,7 +39,7 @@ public class GeneralMerchantsCheckoutOptionsCollection {
   }
 
    /**
-   * Smart devices
+   * Get smartDevices
    * @return smartDevices
   **/
   public GeneralMerchantsCheckoutOptionsCollectionSmartDevices getSmartDevices() {

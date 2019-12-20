@@ -33,7 +33,7 @@ public class ProductExceptionPayload {
   }
 
    /**
-   * Request status (always equals to &#39;error&#39;)
+   * Request status (always equals to &#x27;error&#x27;)
    * @return status
   **/
   public String getStatus() {

@@ -22,7 +22,7 @@ public class SecupayTransactionProductModelUsedPaymentInstrument {
   }
 
    /**
-   * The type of the payment instrument data, like: &#39;bank_account&#39; or &#39;credit_card&#39;
+   * The type of the payment instrument data, like: &#x27;bank_account&#x27; or &#x27;credit_card&#x27;
    * @return type
   **/
   public String getType() {
@@ -39,7 +39,7 @@ public class SecupayTransactionProductModelUsedPaymentInstrument {
   }
 
    /**
-   * Holds the payment instrument data
+   * Get data
    * @return data
   **/
   public BankAccountDescriptor getData() {

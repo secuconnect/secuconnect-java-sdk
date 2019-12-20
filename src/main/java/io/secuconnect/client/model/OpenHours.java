@@ -22,7 +22,7 @@ public class OpenHours {
   }
 
    /**
-   * Open
+   * Get open
    * @return open
   **/
   public DayTime getOpen() {
@@ -39,7 +39,7 @@ public class OpenHours {
   }
 
    /**
-   * Close
+   * Get close
    * @return close
   **/
   public DayTime getClose() {

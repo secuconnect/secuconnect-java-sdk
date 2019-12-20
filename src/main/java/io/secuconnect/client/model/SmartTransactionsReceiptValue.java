@@ -1,6 +1,8 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import java.util.ArrayList;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
@@ -14,6 +16,9 @@ public class SmartTransactionsReceiptValue {
 
   @SerializedName("text")
   private String text = null;
+
+  @SerializedName("decoration")
+  private List<String> decoration = null;
 
   @SerializedName("name")
   private String name = null;
@@ -53,6 +58,31 @@ public class SmartTransactionsReceiptValue {
 
   public void setText(String text) {
     this.text = text;
+  }
+
+  public SmartTransactionsReceiptValue decoration(List<String> decoration) {
+    this.decoration = decoration;
+    return this;
+  }
+
+  public SmartTransactionsReceiptValue addDecorationItem(String decorationItem) {
+    if (this.decoration == null) {
+      this.decoration = new ArrayList<String>();
+    }
+    this.decoration.add(decorationItem);
+    return this;
+  }
+
+   /**
+   * Decoration
+   * @return decoration
+  **/
+  public List<String> getDecoration() {
+    return decoration;
+  }
+
+  public void setDecoration(List<String> decoration) {
+    this.decoration = decoration;
   }
 
   public SmartTransactionsReceiptValue name(String name) {
@@ -100,13 +130,14 @@ public class SmartTransactionsReceiptValue {
     SmartTransactionsReceiptValue smartTransactionsReceiptValue = (SmartTransactionsReceiptValue) o;
     return Objects.equals(this.caption, smartTransactionsReceiptValue.caption) &&
         Objects.equals(this.text, smartTransactionsReceiptValue.text) &&
+        Objects.equals(this.decoration, smartTransactionsReceiptValue.decoration) &&
         Objects.equals(this.name, smartTransactionsReceiptValue.name) &&
         Objects.equals(this.value, smartTransactionsReceiptValue.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(caption, text, name, value);
+    return Objects.hash(caption, text, decoration, name, value);
   }
 
   @Override
@@ -116,6 +147,7 @@ public class SmartTransactionsReceiptValue {
     
     sb.append("    caption: ").append(toIndentedString(caption)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    decoration: ").append(toIndentedString(decoration)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");

@@ -54,7 +54,7 @@ public class LoyaltyCustomersDTO {
   }
 
    /**
-   * Contact
+   * Get merchantContact
    * @return merchantContact
   **/
   public Contact getMerchantContact() {

@@ -19,8 +19,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
-## [1.7.0] - 2019-11-29
+## [1.8.0] - 2019-12-20
 
+### Fixed
+- Smart.Transaction action to prepare a transaction
+- Smart.Transaction Receipt decoration parameter was missing
+- Payment.SecupayPayout fixed request model
+
+### Changed
+- Smart.Devices added & fixed some parameters
+
+### Added
+- Payment.SecupayTransactions added subscription object
+- Payment.Transaction added additional parameters
+- Payment.Contracts added additional parameters
+
+
+## [1.7.0] - 2019-11-29
 
 ### Added
 
@@ -29,14 +44,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.6.2] - 2019-11-08
 
-
 ### Fixed
 
 - The class Authenticator does not got all options from the `Configuration.getDefaultApiClient()`
 
 
 ## [1.6.1] - 2019-11-04
-
 
 ### Fixed
 
@@ -124,3 +137,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [1.6.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.0...1.6.1
 [1.6.2]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.1...1.6.2
 [1.7.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.2...1.7.0
+[1.8.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.7.0...1.8.0

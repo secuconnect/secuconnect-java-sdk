@@ -159,7 +159,7 @@ public class SmartTransactionsIdent {
   }
 
    /**
-   * Loyalty merchant card
+   * Get merchantcard
    * @return merchantcard
   **/
   public LoyaltyMerchantcardsProductModel getMerchantcard() {

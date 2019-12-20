@@ -22,7 +22,7 @@ public class SmartDevicesSecubaseConfigLogging {
   }
 
    /**
-   * Secubase
+   * Get secubase
    * @return secubase
   **/
   public SmartDevicesSecubaseConfigLoggingFileNet getSecubase() {
@@ -39,7 +39,7 @@ public class SmartDevicesSecubaseConfigLogging {
   }
 
    /**
-   * App
+   * Get app
    * @return app
   **/
   public SmartDevicesSecubaseConfigLoggingFileNet getApp() {

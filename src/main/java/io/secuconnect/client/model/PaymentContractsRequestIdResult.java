@@ -3,6 +3,7 @@ package io.secuconnect.client.model;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.PaymentContractsProductModel;
 import io.secuconnect.client.model.PaymentInformation;
+import io.secuconnect.client.model.ProductInstanceUID;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
@@ -13,6 +14,12 @@ import java.util.Objects;
 public class PaymentContractsRequestIdResult {
   @SerializedName("contract")
   private PaymentContractsProductModel contract = null;
+
+  @SerializedName("merchant")
+  private ProductInstanceUID merchant = null;
+
+  @SerializedName("store")
+  private ProductInstanceUID store = null;
 
   @SerializedName("apikey")
   private String apikey = null;
@@ -35,6 +42,40 @@ public class PaymentContractsRequestIdResult {
 
   public void setContract(PaymentContractsProductModel contract) {
     this.contract = contract;
+  }
+
+  public PaymentContractsRequestIdResult merchant(ProductInstanceUID merchant) {
+    this.merchant = merchant;
+    return this;
+  }
+
+   /**
+   * Get merchant
+   * @return merchant
+  **/
+  public ProductInstanceUID getMerchant() {
+    return merchant;
+  }
+
+  public void setMerchant(ProductInstanceUID merchant) {
+    this.merchant = merchant;
+  }
+
+  public PaymentContractsRequestIdResult store(ProductInstanceUID store) {
+    this.store = store;
+    return this;
+  }
+
+   /**
+   * Get store
+   * @return store
+  **/
+  public ProductInstanceUID getStore() {
+    return store;
+  }
+
+  public void setStore(ProductInstanceUID store) {
+    this.store = store;
   }
 
   public PaymentContractsRequestIdResult apikey(String apikey) {
@@ -81,13 +122,15 @@ public class PaymentContractsRequestIdResult {
     }
     PaymentContractsRequestIdResult paymentContractsRequestIdResult = (PaymentContractsRequestIdResult) o;
     return Objects.equals(this.contract, paymentContractsRequestIdResult.contract) &&
+        Objects.equals(this.merchant, paymentContractsRequestIdResult.merchant) &&
+        Objects.equals(this.store, paymentContractsRequestIdResult.store) &&
         Objects.equals(this.apikey, paymentContractsRequestIdResult.apikey) &&
         Objects.equals(this.payinAccount, paymentContractsRequestIdResult.payinAccount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contract, apikey, payinAccount);
+    return Objects.hash(contract, merchant, store, apikey, payinAccount);
   }
 
   @Override
@@ -96,6 +139,8 @@ public class PaymentContractsRequestIdResult {
     sb.append("class PaymentContractsRequestIdResult {\n");
     
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
+    sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
+    sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    apikey: ").append(toIndentedString(apikey)).append("\n");
     sb.append("    payinAccount: ").append(toIndentedString(payinAccount)).append("\n");
     sb.append("}");

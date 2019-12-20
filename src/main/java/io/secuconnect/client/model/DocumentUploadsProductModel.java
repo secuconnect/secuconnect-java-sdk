@@ -9,16 +9,7 @@ import java.util.Objects;
 /**
  * DocumentUploadsProductModel
  */
-public class DocumentUploadsProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
-  @SerializedName("created")
-  private String created = null;
-
+public class DocumentUploadsProductModel extends DocumentUploadsBaseProductModel {
   @SerializedName("type")
   private String type = null;
 
@@ -27,57 +18,6 @@ public class DocumentUploadsProductModel {
 
   @SerializedName("size")
   private Integer size = null;
-
-  public DocumentUploadsProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of document upload
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public DocumentUploadsProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of document upload
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public DocumentUploadsProductModel created(String created) {
-    this.created = created;
-    return this;
-  }
-
-   /**
-   * Created at date
-   * @return created
-  **/
-  public String getCreated() {
-    return created;
-  }
-
-  public void setCreated(String created) {
-    this.created = created;
-  }
 
   public DocumentUploadsProductModel type(String type) {
     this.type = type;
@@ -139,27 +79,22 @@ public class DocumentUploadsProductModel {
       return false;
     }
     DocumentUploadsProductModel documentUploadsProductModel = (DocumentUploadsProductModel) o;
-    return Objects.equals(this.object, documentUploadsProductModel.object) &&
-        Objects.equals(this.id, documentUploadsProductModel.id) &&
-        Objects.equals(this.created, documentUploadsProductModel.created) &&
-        Objects.equals(this.type, documentUploadsProductModel.type) &&
+    return Objects.equals(this.type, documentUploadsProductModel.type) &&
         Objects.equals(this.name, documentUploadsProductModel.name) &&
-        Objects.equals(this.size, documentUploadsProductModel.size);
+        Objects.equals(this.size, documentUploadsProductModel.size) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, created, type, name, size);
+    return Objects.hash(type, name, size, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocumentUploadsProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");

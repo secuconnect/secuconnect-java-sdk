@@ -1,6 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.LoyaltyCardgroupsDTOMerchant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -9,13 +10,7 @@ import java.util.Objects;
 /**
  * LoyaltyCardgroupsProductModel
  */
-public class LoyaltyCardgroupsProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   @SerializedName("merchant")
   private LoyaltyCardgroupsDTOMerchant merchant = null;
 
@@ -31,47 +26,13 @@ public class LoyaltyCardgroupsProductModel {
   @SerializedName("picture")
   private String picture = null;
 
-  public LoyaltyCardgroupsProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of loyalty card group
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public LoyaltyCardgroupsProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of loyalty card group
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public LoyaltyCardgroupsProductModel merchant(LoyaltyCardgroupsDTOMerchant merchant) {
     this.merchant = merchant;
     return this;
   }
 
    /**
-   * Loyalty card group merchant
+   * Get merchant
    * @return merchant
   **/
   public LoyaltyCardgroupsDTOMerchant getMerchant() {
@@ -159,27 +120,24 @@ public class LoyaltyCardgroupsProductModel {
       return false;
     }
     LoyaltyCardgroupsProductModel loyaltyCardgroupsProductModel = (LoyaltyCardgroupsProductModel) o;
-    return Objects.equals(this.object, loyaltyCardgroupsProductModel.object) &&
-        Objects.equals(this.id, loyaltyCardgroupsProductModel.id) &&
-        Objects.equals(this.merchant, loyaltyCardgroupsProductModel.merchant) &&
+    return Objects.equals(this.merchant, loyaltyCardgroupsProductModel.merchant) &&
         Objects.equals(this.displayName, loyaltyCardgroupsProductModel.displayName) &&
         Objects.equals(this.displayNameRaw, loyaltyCardgroupsProductModel.displayNameRaw) &&
         Objects.equals(this.stockWarnLimit, loyaltyCardgroupsProductModel.stockWarnLimit) &&
-        Objects.equals(this.picture, loyaltyCardgroupsProductModel.picture);
+        Objects.equals(this.picture, loyaltyCardgroupsProductModel.picture) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, merchant, displayName, displayNameRaw, stockWarnLimit, picture);
+    return Objects.hash(merchant, displayName, displayNameRaw, stockWarnLimit, picture, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoyaltyCardgroupsProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    displayNameRaw: ").append(toIndentedString(displayNameRaw)).append("\n");

@@ -2,10 +2,10 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.GeneralMerchantsProductModel;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
@@ -49,7 +49,7 @@ public class GeneralMerchantsList {
   }
 
    /**
-   * GET General/Merchants
+   * GeneralMerchantsList
    * @return data
   **/
   public List<GeneralMerchantsProductModel> getData() {

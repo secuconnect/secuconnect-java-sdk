@@ -1,25 +1,20 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.Contact;
 import io.secuconnect.client.model.LoyaltyCustomersPaymentContainerModel;
 import io.secuconnect.client.model.ProductInstanceUID;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * LoyaltyCustomersProductModel
  */
-public class LoyaltyCustomersProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class LoyaltyCustomersProductModel extends BaseProductModel {
   @SerializedName("merchant")
   private ProductInstanceUID merchant = null;
 
@@ -44,47 +39,13 @@ public class LoyaltyCustomersProductModel {
   @SerializedName("created")
   private String created = null;
 
-  public LoyaltyCustomersProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of loyalty customer
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public LoyaltyCustomersProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of loyalty customer
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public LoyaltyCustomersProductModel merchant(ProductInstanceUID merchant) {
     this.merchant = merchant;
     return this;
   }
 
    /**
-   * merchant
+   * Get merchant
    * @return merchant
   **/
   public ProductInstanceUID getMerchant() {
@@ -101,7 +62,7 @@ public class LoyaltyCustomersProductModel {
   }
 
    /**
-   * Contact
+   * Get contact
    * @return contact
   **/
   public Contact getContact() {
@@ -118,7 +79,7 @@ public class LoyaltyCustomersProductModel {
   }
 
    /**
-   * merchant contact
+   * Get merchantContact
    * @return merchantContact
   **/
   public Contact getMerchantContact() {
@@ -135,7 +96,7 @@ public class LoyaltyCustomersProductModel {
   }
 
    /**
-   * merchant contact
+   * Get accountContact
    * @return accountContact
   **/
   public Contact getAccountContact() {
@@ -231,30 +192,27 @@ public class LoyaltyCustomersProductModel {
       return false;
     }
     LoyaltyCustomersProductModel loyaltyCustomersProductModel = (LoyaltyCustomersProductModel) o;
-    return Objects.equals(this.object, loyaltyCustomersProductModel.object) &&
-        Objects.equals(this.id, loyaltyCustomersProductModel.id) &&
-        Objects.equals(this.merchant, loyaltyCustomersProductModel.merchant) &&
+    return Objects.equals(this.merchant, loyaltyCustomersProductModel.merchant) &&
         Objects.equals(this.contact, loyaltyCustomersProductModel.contact) &&
         Objects.equals(this.merchantContact, loyaltyCustomersProductModel.merchantContact) &&
         Objects.equals(this.accountContact, loyaltyCustomersProductModel.accountContact) &&
         Objects.equals(this.paymentContainer, loyaltyCustomersProductModel.paymentContainer) &&
         Objects.equals(this.customernumber, loyaltyCustomersProductModel.customernumber) &&
         Objects.equals(this.note, loyaltyCustomersProductModel.note) &&
-        Objects.equals(this.created, loyaltyCustomersProductModel.created);
+        Objects.equals(this.created, loyaltyCustomersProductModel.created) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, merchant, contact, merchantContact, accountContact, paymentContainer, customernumber, note, created);
+    return Objects.hash(merchant, contact, merchantContact, accountContact, paymentContainer, customernumber, note, created, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoyaltyCustomersProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
     sb.append("    merchantContact: ").append(toIndentedString(merchantContact)).append("\n");

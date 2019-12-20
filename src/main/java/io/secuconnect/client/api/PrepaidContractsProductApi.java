@@ -61,13 +61,13 @@ public class PrepaidContractsProductApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -90,19 +90,17 @@ public class PrepaidContractsProductApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call mappingZvtValidateBeforeCall(String prepaidContractId, PrepaidZvtDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'prepaidContractId' is set
         if (prepaidContractId == null) {
             throw new ApiException("Missing the required parameter 'prepaidContractId' when calling mappingZvt(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = mappingZvtCall(prepaidContractId, body, progressListener, progressRequestListener);
         return call;
     }
 
     /**
-     * POST Prepaid/Contracts/null/mappingZvt
+     * POST Prepaid/Contracts/me/mappingZvt
      * Gets prepaid item id from product id which is configured in prepaid contracts
      * @param prepaidContractId Prepaid contract id (required)
      * @param body Prepaid transaction input properties
@@ -115,7 +113,7 @@ public class PrepaidContractsProductApi {
     }
 
     /**
-     * POST Prepaid/Contracts/null/mappingZvt
+     * POST Prepaid/Contracts/me/mappingZvt
      * Gets prepaid item id from product id which is configured in prepaid contracts
      * @param prepaidContractId Prepaid contract id (required)
      * @param body Prepaid transaction input properties
@@ -129,7 +127,7 @@ public class PrepaidContractsProductApi {
     }
 
     /**
-     * POST Prepaid/Contracts/null/mappingZvt (asynchronously)
+     * POST Prepaid/Contracts/me/mappingZvt (asynchronously)
      * Gets prepaid item id from product id which is configured in prepaid contracts
      * @param prepaidContractId Prepaid contract id (required)
      * @param body Prepaid transaction input properties

@@ -99,7 +99,7 @@ public class LoyaltyCustomersContactDTO {
   }
 
    /**
-   * Address
+   * Get address
    * @return address
   **/
   public Address getAddress() {

@@ -59,7 +59,7 @@ public class SmartTransactionsPickupOptions {
   }
 
    /**
-   * Store
+   * Get store
    * @return store
   **/
   public ProductInstanceUID getStore() {

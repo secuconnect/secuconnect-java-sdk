@@ -2,28 +2,23 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.AssignedBy;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.GeneralMerchantsCheckoutOptions;
 import io.secuconnect.client.model.GeneralMerchantsLegalDetails;
 import io.secuconnect.client.model.GeneralMerchantsUrls;
 import io.secuconnect.client.model.GeneralMerchantsUser;
 import io.secuconnect.client.model.InvitedBy;
 import io.secuconnect.client.model.ParentModel;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * GeneralMerchantsProductModel
  */
-public class GeneralMerchantsProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class GeneralMerchantsProductModel extends BaseProductModel {
   @SerializedName("id_old")
   private String idOld = null;
 
@@ -53,40 +48,6 @@ public class GeneralMerchantsProductModel {
 
   @SerializedName("store_name")
   private String storeName = null;
-
-  public GeneralMerchantsProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of general merchant
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public GeneralMerchantsProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of general merchant
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
 
   public GeneralMerchantsProductModel idOld(String idOld) {
     this.idOld = idOld;
@@ -128,7 +89,7 @@ public class GeneralMerchantsProductModel {
   }
 
    /**
-   * General merchant user
+   * Get user
    * @return user
   **/
   public GeneralMerchantsUser getUser() {
@@ -145,7 +106,7 @@ public class GeneralMerchantsProductModel {
   }
 
    /**
-   * Parent of general merchant user
+   * Get parent
    * @return parent
   **/
   public ParentModel getParent() {
@@ -212,7 +173,7 @@ public class GeneralMerchantsProductModel {
   }
 
    /**
-   * Legal details
+   * Get legalDetails
    * @return legalDetails
   **/
   public GeneralMerchantsLegalDetails getLegalDetails() {
@@ -229,7 +190,7 @@ public class GeneralMerchantsProductModel {
   }
 
    /**
-   * Checkout options
+   * Get checkoutOptions
    * @return checkoutOptions
   **/
   public GeneralMerchantsCheckoutOptions getCheckoutOptions() {
@@ -246,7 +207,7 @@ public class GeneralMerchantsProductModel {
   }
 
    /**
-   * Urls
+   * Get urls
    * @return urls
   **/
   public GeneralMerchantsUrls getUrls() {
@@ -283,9 +244,7 @@ public class GeneralMerchantsProductModel {
       return false;
     }
     GeneralMerchantsProductModel generalMerchantsProductModel = (GeneralMerchantsProductModel) o;
-    return Objects.equals(this.object, generalMerchantsProductModel.object) &&
-        Objects.equals(this.id, generalMerchantsProductModel.id) &&
-        Objects.equals(this.idOld, generalMerchantsProductModel.idOld) &&
+    return Objects.equals(this.idOld, generalMerchantsProductModel.idOld) &&
         Objects.equals(this.type, generalMerchantsProductModel.type) &&
         Objects.equals(this.user, generalMerchantsProductModel.user) &&
         Objects.equals(this.parent, generalMerchantsProductModel.parent) &&
@@ -294,21 +253,20 @@ public class GeneralMerchantsProductModel {
         Objects.equals(this.legalDetails, generalMerchantsProductModel.legalDetails) &&
         Objects.equals(this.checkoutOptions, generalMerchantsProductModel.checkoutOptions) &&
         Objects.equals(this.urls, generalMerchantsProductModel.urls) &&
-        Objects.equals(this.storeName, generalMerchantsProductModel.storeName);
+        Objects.equals(this.storeName, generalMerchantsProductModel.storeName) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, idOld, type, user, parent, assignedBy, invitedBy, legalDetails, checkoutOptions, urls, storeName);
+    return Objects.hash(idOld, type, user, parent, assignedBy, invitedBy, legalDetails, checkoutOptions, urls, storeName, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GeneralMerchantsProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    idOld: ").append(toIndentedString(idOld)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

@@ -82,7 +82,7 @@ public class LoyaltyCustomersPaymentContainerModel {
   }
 
    /**
-   * Payment instrument data
+   * Get paymentInformation
    * @return paymentInformation
   **/
   public BankAccountDescriptor getPaymentInformation() {

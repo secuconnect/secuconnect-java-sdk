@@ -98,7 +98,7 @@ public class PaymentContractsDTOIFrameOpts {
   }
 
    /**
-   * Cession (&#39;formal&#39;, &#39;personal&#39;)
+   * Cession (&#x27;formal&#x27;, &#x27;personal&#x27;)
    * @return cession
   **/
   public String getCession() {

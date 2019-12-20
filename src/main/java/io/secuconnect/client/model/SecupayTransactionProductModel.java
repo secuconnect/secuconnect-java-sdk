@@ -1,29 +1,25 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.PaymentContainersProductModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.PaymentInformation;
 import io.secuconnect.client.model.SecupayBasketItem;
 import io.secuconnect.client.model.SecupayRedirectUrl;
 import io.secuconnect.client.model.SecupaySubTransactionProductModel;
+import io.secuconnect.client.model.SecupayTransactionProductDTOSubscription;
 import io.secuconnect.client.model.SecupayTransactionProductModelUsedPaymentInstrument;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * SecupayTransactionProductModel
  */
-public class SecupayTransactionProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class SecupayTransactionProductModel extends BaseProductModel {
   @SerializedName("trans_id")
   private Integer transId = null;
 
@@ -69,6 +65,9 @@ public class SecupayTransactionProductModel {
   @SerializedName("redirect_url")
   private SecupayRedirectUrl redirectUrl = null;
 
+  @SerializedName("subscription")
+  private SecupayTransactionProductDTOSubscription subscription = null;
+
   @SerializedName("iframe_url")
   private String iframeUrl = null;
 
@@ -77,40 +76,6 @@ public class SecupayTransactionProductModel {
 
   @SerializedName("sub_transactions")
   private List<SecupaySubTransactionProductModel> subTransactions = null;
-
-  public SecupayTransactionProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Product name
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public SecupayTransactionProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * ID of instance
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
 
   public SecupayTransactionProductModel transId(Integer transId) {
     this.transId = transId;
@@ -313,7 +278,7 @@ public class SecupayTransactionProductModel {
   }
 
    /**
-   * The bank account the payer needs to use for his transfer
+   * Get transferAccount
    * @return transferAccount
   **/
   public PaymentInformation getTransferAccount() {
@@ -330,7 +295,7 @@ public class SecupayTransactionProductModel {
   }
 
    /**
-   * The customer object
+   * Get customer
    * @return customer
   **/
   public PaymentCustomersProductModel getCustomer() {
@@ -364,7 +329,7 @@ public class SecupayTransactionProductModel {
   }
 
    /**
-   * A list of redirect urls used for the payment checkout page
+   * Get redirectUrl
    * @return redirectUrl
   **/
   public SecupayRedirectUrl getRedirectUrl() {
@@ -373,6 +338,23 @@ public class SecupayTransactionProductModel {
 
   public void setRedirectUrl(SecupayRedirectUrl redirectUrl) {
     this.redirectUrl = redirectUrl;
+  }
+
+  public SecupayTransactionProductModel subscription(SecupayTransactionProductDTOSubscription subscription) {
+    this.subscription = subscription;
+    return this;
+  }
+
+   /**
+   * Get subscription
+   * @return subscription
+  **/
+  public SecupayTransactionProductDTOSubscription getSubscription() {
+    return subscription;
+  }
+
+  public void setSubscription(SecupayTransactionProductDTOSubscription subscription) {
+    this.subscription = subscription;
   }
 
   public SecupayTransactionProductModel iframeUrl(String iframeUrl) {
@@ -398,7 +380,7 @@ public class SecupayTransactionProductModel {
   }
 
    /**
-   * The container object
+   * Get container
    * @return container
   **/
   public PaymentContainersProductModel getContainer() {
@@ -423,7 +405,7 @@ public class SecupayTransactionProductModel {
   }
 
    /**
-   * A list of sub-transactions (for mixed basket)
+   * A list of sub transactions (for mixed basket)
    * @return subTransactions
   **/
   public List<SecupaySubTransactionProductModel> getSubTransactions() {
@@ -443,9 +425,7 @@ public class SecupayTransactionProductModel {
       return false;
     }
     SecupayTransactionProductModel secupayTransactionProductModel = (SecupayTransactionProductModel) o;
-    return Objects.equals(this.object, secupayTransactionProductModel.object) &&
-        Objects.equals(this.id, secupayTransactionProductModel.id) &&
-        Objects.equals(this.transId, secupayTransactionProductModel.transId) &&
+    return Objects.equals(this.transId, secupayTransactionProductModel.transId) &&
         Objects.equals(this.status, secupayTransactionProductModel.status) &&
         Objects.equals(this.amount, secupayTransactionProductModel.amount) &&
         Objects.equals(this.currency, secupayTransactionProductModel.currency) &&
@@ -460,23 +440,23 @@ public class SecupayTransactionProductModel {
         Objects.equals(this.customer, secupayTransactionProductModel.customer) &&
         Objects.equals(this.usedPaymentInstrument, secupayTransactionProductModel.usedPaymentInstrument) &&
         Objects.equals(this.redirectUrl, secupayTransactionProductModel.redirectUrl) &&
+        Objects.equals(this.subscription, secupayTransactionProductModel.subscription) &&
         Objects.equals(this.iframeUrl, secupayTransactionProductModel.iframeUrl) &&
         Objects.equals(this.container, secupayTransactionProductModel.container) &&
-        Objects.equals(this.subTransactions, secupayTransactionProductModel.subTransactions);
+        Objects.equals(this.subTransactions, secupayTransactionProductModel.subTransactions) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, transId, status, amount, currency, purpose, orderId, basket, transactionStatus, accrual, paymentAction, transferPurpose, transferAccount, customer, usedPaymentInstrument, redirectUrl, iframeUrl, container, subTransactions);
+    return Objects.hash(transId, status, amount, currency, purpose, orderId, basket, transactionStatus, accrual, paymentAction, transferPurpose, transferAccount, customer, usedPaymentInstrument, redirectUrl, subscription, iframeUrl, container, subTransactions, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SecupayTransactionProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
@@ -492,6 +472,7 @@ public class SecupayTransactionProductModel {
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    usedPaymentInstrument: ").append(toIndentedString(usedPaymentInstrument)).append("\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
+    sb.append("    subscription: ").append(toIndentedString(subscription)).append("\n");
     sb.append("    iframeUrl: ").append(toIndentedString(iframeUrl)).append("\n");
     sb.append("    container: ").append(toIndentedString(container)).append("\n");
     sb.append("    subTransactions: ").append(toIndentedString(subTransactions)).append("\n");

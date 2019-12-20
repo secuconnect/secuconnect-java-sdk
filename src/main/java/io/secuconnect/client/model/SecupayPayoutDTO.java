@@ -1,22 +1,20 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.SecupayPayoutDTOOptData;
 import io.secuconnect.client.model.SecupayRedirectUrl;
 import io.secuconnect.client.model.SecupayTransactionListItem;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * SecupayPayoutDTO
  */
 public class SecupayPayoutDTO {
-  @SerializedName("demo")
-  private Boolean demo = null;
-
   @SerializedName("redirect_url")
   private SecupayRedirectUrl redirectUrl = null;
 
@@ -24,7 +22,7 @@ public class SecupayPayoutDTO {
   private String contract = null;
 
   @SerializedName("customer")
-  private String customer = null;
+  private PaymentCustomersProductModel customer = null;
 
   @SerializedName("opt_data")
   private SecupayPayoutDTOOptData optData = null;
@@ -44,30 +42,13 @@ public class SecupayPayoutDTO {
   @SerializedName("transaction_list")
   private List<SecupayTransactionListItem> transactionList = null;
 
-  public SecupayPayoutDTO demo(Boolean demo) {
-    this.demo = demo;
-    return this;
-  }
-
-   /**
-   * demo env value
-   * @return demo
-  **/
-  public Boolean getDemo() {
-    return demo;
-  }
-
-  public void setDemo(Boolean demo) {
-    this.demo = demo;
-  }
-
   public SecupayPayoutDTO redirectUrl(SecupayRedirectUrl redirectUrl) {
     this.redirectUrl = redirectUrl;
     return this;
   }
 
    /**
-   * A list of redirect urls used for the payment checkout page
+   * Get redirectUrl
    * @return redirectUrl
   **/
   public SecupayRedirectUrl getRedirectUrl() {
@@ -84,7 +65,7 @@ public class SecupayPayoutDTO {
   }
 
    /**
-   * Contract ID
+   * The contract ID
    * @return contract
   **/
   public String getContract() {
@@ -95,20 +76,20 @@ public class SecupayPayoutDTO {
     this.contract = contract;
   }
 
-  public SecupayPayoutDTO customer(String customer) {
+  public SecupayPayoutDTO customer(PaymentCustomersProductModel customer) {
     this.customer = customer;
     return this;
   }
 
    /**
-   * Payment customer ID
+   * Get customer
    * @return customer
   **/
-  public String getCustomer() {
+  public PaymentCustomersProductModel getCustomer() {
     return customer;
   }
 
-  public void setCustomer(String customer) {
+  public void setCustomer(PaymentCustomersProductModel customer) {
     this.customer = customer;
   }
 
@@ -135,7 +116,7 @@ public class SecupayPayoutDTO {
   }
 
    /**
-   * Total amount of transaction lit&#39;s items
+   * Total amount of transaction lit&#x27;s items
    * @return amount
   **/
   public Integer getAmount() {
@@ -231,8 +212,7 @@ public class SecupayPayoutDTO {
       return false;
     }
     SecupayPayoutDTO secupayPayoutDTO = (SecupayPayoutDTO) o;
-    return Objects.equals(this.demo, secupayPayoutDTO.demo) &&
-        Objects.equals(this.redirectUrl, secupayPayoutDTO.redirectUrl) &&
+    return Objects.equals(this.redirectUrl, secupayPayoutDTO.redirectUrl) &&
         Objects.equals(this.contract, secupayPayoutDTO.contract) &&
         Objects.equals(this.customer, secupayPayoutDTO.customer) &&
         Objects.equals(this.optData, secupayPayoutDTO.optData) &&
@@ -245,7 +225,7 @@ public class SecupayPayoutDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(demo, redirectUrl, contract, customer, optData, amount, currency, purpose, orderId, transactionList);
+    return Objects.hash(redirectUrl, contract, customer, optData, amount, currency, purpose, orderId, transactionList);
   }
 
   @Override
@@ -253,7 +233,6 @@ public class SecupayPayoutDTO {
     StringBuilder sb = new StringBuilder();
     sb.append("class SecupayPayoutDTO {\n");
     
-    sb.append("    demo: ").append(toIndentedString(demo)).append("\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");

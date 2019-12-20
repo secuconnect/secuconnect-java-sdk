@@ -2,6 +2,7 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BankAccountDescriptor;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.PaymentContainerMandate;
 import io.secuconnect.client.model.PaymentContractsProductModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
@@ -13,13 +14,7 @@ import java.util.Objects;
 /**
  * PaymentContainersProductModel
  */
-public class PaymentContainersProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class PaymentContainersProductModel extends BaseProductModel {
   @SerializedName("contract")
   private PaymentContractsProductModel contract = null;
 
@@ -47,47 +42,13 @@ public class PaymentContainersProductModel {
   @SerializedName("mandate")
   private PaymentContainerMandate mandate = null;
 
-  public PaymentContainersProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of payment container
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public PaymentContainersProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of payment container
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public PaymentContainersProductModel contract(PaymentContractsProductModel contract) {
     this.contract = contract;
     return this;
   }
 
    /**
-   * Payment container contract
+   * Get contract
    * @return contract
   **/
   public PaymentContractsProductModel getContract() {
@@ -104,7 +65,7 @@ public class PaymentContainersProductModel {
   }
 
    /**
-   * Payment container customer
+   * Get customer
    * @return customer
   **/
   public PaymentCustomersProductModel getCustomer() {
@@ -121,7 +82,7 @@ public class PaymentContainersProductModel {
   }
 
    /**
-   * Assign to
+   * Get assign
    * @return assign
   **/
   public ProductInstanceUID getAssign() {
@@ -155,7 +116,7 @@ public class PaymentContainersProductModel {
   }
 
    /**
-   * Public payment instrument data
+   * Get _public
    * @return _public
   **/
   public BankAccountDescriptor getPublic() {
@@ -172,7 +133,7 @@ public class PaymentContainersProductModel {
   }
 
    /**
-   * Private payment instrument data
+   * Get _private
    * @return _private
   **/
   public BankAccountDescriptor getPrivate() {
@@ -223,7 +184,7 @@ public class PaymentContainersProductModel {
   }
 
    /**
-   * Payment container mandate
+   * Get mandate
    * @return mandate
   **/
   public PaymentContainerMandate getMandate() {
@@ -243,9 +204,7 @@ public class PaymentContainersProductModel {
       return false;
     }
     PaymentContainersProductModel paymentContainersProductModel = (PaymentContainersProductModel) o;
-    return Objects.equals(this.object, paymentContainersProductModel.object) &&
-        Objects.equals(this.id, paymentContainersProductModel.id) &&
-        Objects.equals(this.contract, paymentContainersProductModel.contract) &&
+    return Objects.equals(this.contract, paymentContainersProductModel.contract) &&
         Objects.equals(this.customer, paymentContainersProductModel.customer) &&
         Objects.equals(this.assign, paymentContainersProductModel.assign) &&
         Objects.equals(this.type, paymentContainersProductModel.type) &&
@@ -253,21 +212,20 @@ public class PaymentContainersProductModel {
         Objects.equals(this._private, paymentContainersProductModel._private) &&
         Objects.equals(this.created, paymentContainersProductModel.created) &&
         Objects.equals(this.updated, paymentContainersProductModel.updated) &&
-        Objects.equals(this.mandate, paymentContainersProductModel.mandate);
+        Objects.equals(this.mandate, paymentContainersProductModel.mandate) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, contract, customer, assign, type, _public, _private, created, updated, mandate);
+    return Objects.hash(contract, customer, assign, type, _public, _private, created, updated, mandate, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentContainersProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    assign: ").append(toIndentedString(assign)).append("\n");

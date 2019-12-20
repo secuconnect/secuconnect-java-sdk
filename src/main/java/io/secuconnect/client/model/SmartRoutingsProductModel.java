@@ -1,25 +1,20 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.secuconnect.client.model.SmartRoutingsAssign;
 import io.secuconnect.client.model.Store;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * SmartRoutingsProductModel
  */
-public class SmartRoutingsProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class SmartRoutingsProductModel extends BaseProductModel {
   @SerializedName("merchant")
   private ProductInstanceUID merchant = null;
 
@@ -38,47 +33,13 @@ public class SmartRoutingsProductModel {
   @SerializedName("assign")
   private List<SmartRoutingsAssign> assign = null;
 
-  public SmartRoutingsProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of smart routing
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public SmartRoutingsProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of smart routing
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public SmartRoutingsProductModel merchant(ProductInstanceUID merchant) {
     this.merchant = merchant;
     return this;
   }
 
    /**
-   * Merchant
+   * Get merchant
    * @return merchant
   **/
   public ProductInstanceUID getMerchant() {
@@ -95,7 +56,7 @@ public class SmartRoutingsProductModel {
   }
 
    /**
-   * Store
+   * Get store
    * @return store
   **/
   public Store getStore() {
@@ -191,28 +152,25 @@ public class SmartRoutingsProductModel {
       return false;
     }
     SmartRoutingsProductModel smartRoutingsProductModel = (SmartRoutingsProductModel) o;
-    return Objects.equals(this.object, smartRoutingsProductModel.object) &&
-        Objects.equals(this.id, smartRoutingsProductModel.id) &&
-        Objects.equals(this.merchant, smartRoutingsProductModel.merchant) &&
+    return Objects.equals(this.merchant, smartRoutingsProductModel.merchant) &&
         Objects.equals(this.store, smartRoutingsProductModel.store) &&
         Objects.equals(this.created, smartRoutingsProductModel.created) &&
         Objects.equals(this.updated, smartRoutingsProductModel.updated) &&
         Objects.equals(this.description, smartRoutingsProductModel.description) &&
-        Objects.equals(this.assign, smartRoutingsProductModel.assign);
+        Objects.equals(this.assign, smartRoutingsProductModel.assign) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, merchant, store, created, updated, description, assign);
+    return Objects.hash(merchant, store, created, updated, description, assign, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartRoutingsProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");

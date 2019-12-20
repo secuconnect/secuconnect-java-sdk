@@ -38,7 +38,7 @@ public class SmartDevicesProducts {
   }
 
    /**
-   * Loyalty
+   * Get loyalty
    * @return loyalty
   **/
   public SmartDeviceProductsEnabled getLoyalty() {
@@ -55,7 +55,7 @@ public class SmartDevicesProducts {
   }
 
    /**
-   * Smart
+   * Get smart
    * @return smart
   **/
   public SmartDeviceProductsEnabled getSmart() {
@@ -72,7 +72,7 @@ public class SmartDevicesProducts {
   }
 
    /**
-   * Cashreg
+   * Get cashreg
    * @return cashreg
   **/
   public SmartDeviceProductsEnabled getCashreg() {
@@ -89,7 +89,7 @@ public class SmartDevicesProducts {
   }
 
    /**
-   * Collect
+   * Get collect
    * @return collect
   **/
   public SmartDeviceProductsEnabled getCollect() {
@@ -106,7 +106,7 @@ public class SmartDevicesProducts {
   }
 
    /**
-   * Showcase
+   * Get showcase
    * @return showcase
   **/
   public SmartDeviceProductsEnabled getShowcase() {
@@ -123,7 +123,7 @@ public class SmartDevicesProducts {
   }
 
    /**
-   * Vtm
+   * Get vtm
    * @return vtm
   **/
   public SmartDeviceProductsEnabled getVtm() {
@@ -140,7 +140,7 @@ public class SmartDevicesProducts {
   }
 
    /**
-   * Prepaid
+   * Get prepaid
    * @return prepaid
   **/
   public SmartDeviceProductsPrepaid getPrepaid() {

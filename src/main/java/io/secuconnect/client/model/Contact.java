@@ -319,7 +319,7 @@ public class Contact {
   }
 
    /**
-   * Address
+   * Get address
    * @return address
   **/
   public Address getAddress() {

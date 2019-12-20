@@ -3,25 +3,20 @@ package io.secuconnect.client.model;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.AddressComponents;
 import io.secuconnect.client.model.AssignedBy;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.InvitedBy;
 import io.secuconnect.client.model.OpenHours;
 import io.secuconnect.client.model.ProductInstanceUID;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * GeneralStoresProductModel
  */
-public class GeneralStoresProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class GeneralStoresProductModel extends BaseProductModel {
   @SerializedName("id_old")
   private String idOld = null;
 
@@ -97,40 +92,6 @@ public class GeneralStoresProductModel {
   @SerializedName("has_beacon")
   private Boolean hasBeacon = null;
 
-  public GeneralStoresProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of general store
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public GeneralStoresProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of general store
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public GeneralStoresProductModel idOld(String idOld) {
     this.idOld = idOld;
     return this;
@@ -154,7 +115,7 @@ public class GeneralStoresProductModel {
   }
 
    /**
-   * General merchant of general store
+   * Get merchant
    * @return merchant
   **/
   public ProductInstanceUID getMerchant() {
@@ -605,9 +566,7 @@ public class GeneralStoresProductModel {
       return false;
     }
     GeneralStoresProductModel generalStoresProductModel = (GeneralStoresProductModel) o;
-    return Objects.equals(this.object, generalStoresProductModel.object) &&
-        Objects.equals(this.id, generalStoresProductModel.id) &&
-        Objects.equals(this.idOld, generalStoresProductModel.idOld) &&
+    return Objects.equals(this.idOld, generalStoresProductModel.idOld) &&
         Objects.equals(this.merchant, generalStoresProductModel.merchant) &&
         Objects.equals(this.facebookId, generalStoresProductModel.facebookId) &&
         Objects.equals(this.source, generalStoresProductModel.source) &&
@@ -631,21 +590,20 @@ public class GeneralStoresProductModel {
         Objects.equals(this.utcOffset, generalStoresProductModel.utcOffset) &&
         Objects.equals(this.assignedBy, generalStoresProductModel.assignedBy) &&
         Objects.equals(this.invitedBy, generalStoresProductModel.invitedBy) &&
-        Objects.equals(this.hasBeacon, generalStoresProductModel.hasBeacon);
+        Objects.equals(this.hasBeacon, generalStoresProductModel.hasBeacon) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, idOld, merchant, facebookId, source, key, hash, addressComponents, addressFormatted, phoneNumberFormatted, geometry, name, nameRaw, photoMain, photo, categoryMain, category, urlGoogleplus, urlWebsite, openHours, openNow, openTime, utcOffset, assignedBy, invitedBy, hasBeacon);
+    return Objects.hash(idOld, merchant, facebookId, source, key, hash, addressComponents, addressFormatted, phoneNumberFormatted, geometry, name, nameRaw, photoMain, photo, categoryMain, category, urlGoogleplus, urlWebsite, openHours, openNow, openTime, utcOffset, assignedBy, invitedBy, hasBeacon, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GeneralStoresProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    idOld: ").append(toIndentedString(idOld)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");

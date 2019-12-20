@@ -7,10 +7,10 @@ import io.secuconnect.client.model.SecupayRedirectUrl;
 import io.secuconnect.client.model.SecupayTransactionProductDTOExperience;
 import io.secuconnect.client.model.SecupayTransactionProductDTOOptData;
 import io.secuconnect.client.model.SecupayTransactionProductDTOSubscription;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
@@ -195,7 +195,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * The customer object
+   * Get customer
    * @return customer
   **/
   public PaymentCustomersProductModel getCustomer() {
@@ -212,7 +212,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * A list of redirect urls used for the payment checkout page
+   * Get redirectUrl
    * @return redirectUrl
   **/
   public SecupayRedirectUrl getRedirectUrl() {

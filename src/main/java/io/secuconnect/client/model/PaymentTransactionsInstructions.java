@@ -79,7 +79,7 @@ public class PaymentTransactionsInstructions {
   }
 
    /**
-   * Payment data
+   * Get payment
    * @return payment
   **/
   public BankAccountDescriptor getPayment() {

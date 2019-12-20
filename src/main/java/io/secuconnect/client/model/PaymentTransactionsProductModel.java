@@ -1,10 +1,15 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.GeneralMerchantsProductModel;
 import io.secuconnect.client.model.GeneralStoresProductModel;
+import io.secuconnect.client.model.ParentObj;
 import io.secuconnect.client.model.PaymentTransactionsProductModelCustomer;
 import io.secuconnect.client.model.PaymentTransactionsProductModelDetails;
+import io.secuconnect.client.model.ProductInstanceUID;
+import java.util.ArrayList;
+import java.util.List;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
@@ -12,12 +17,15 @@ import java.util.Objects;
 /**
  * PaymentTransactionsProductModel
  */
-public class PaymentTransactionsProductModel {
+public class PaymentTransactionsProductModel extends BaseProductModel {
   @SerializedName("object")
   private String object = null;
 
   @SerializedName("id")
   private String id = null;
+
+  @SerializedName("platform")
+  private ProductInstanceUID platform = null;
 
   @SerializedName("merchant")
   private GeneralMerchantsProductModel merchant = null;
@@ -27,6 +35,9 @@ public class PaymentTransactionsProductModel {
 
   @SerializedName("trans_id")
   private Integer transId = null;
+
+  @SerializedName("parents")
+  private List<ParentObj> parents = null;
 
   @SerializedName("product_id")
   private Integer productId = null;
@@ -128,13 +139,30 @@ public class PaymentTransactionsProductModel {
     this.id = id;
   }
 
+  public PaymentTransactionsProductModel platform(ProductInstanceUID platform) {
+    this.platform = platform;
+    return this;
+  }
+
+   /**
+   * Get platform
+   * @return platform
+  **/
+  public ProductInstanceUID getPlatform() {
+    return platform;
+  }
+
+  public void setPlatform(ProductInstanceUID platform) {
+    this.platform = platform;
+  }
+
   public PaymentTransactionsProductModel merchant(GeneralMerchantsProductModel merchant) {
     this.merchant = merchant;
     return this;
   }
 
    /**
-   * Merchant information
+   * Get merchant
    * @return merchant
   **/
   public GeneralMerchantsProductModel getMerchant() {
@@ -151,7 +179,7 @@ public class PaymentTransactionsProductModel {
   }
 
    /**
-   * Merchants store information
+   * Get store
    * @return store
   **/
   public GeneralStoresProductModel getStore() {
@@ -177,6 +205,31 @@ public class PaymentTransactionsProductModel {
 
   public void setTransId(Integer transId) {
     this.transId = transId;
+  }
+
+  public PaymentTransactionsProductModel parents(List<ParentObj> parents) {
+    this.parents = parents;
+    return this;
+  }
+
+  public PaymentTransactionsProductModel addParentsItem(ParentObj parentsItem) {
+    if (this.parents == null) {
+      this.parents = new ArrayList<ParentObj>();
+    }
+    this.parents.add(parentsItem);
+    return this;
+  }
+
+   /**
+   * Parents
+   * @return parents
+  **/
+  public List<ParentObj> getParents() {
+    return parents;
+  }
+
+  public void setParents(List<ParentObj> parents) {
+    this.parents = parents;
   }
 
   public PaymentTransactionsProductModel productId(Integer productId) {
@@ -564,9 +617,11 @@ public class PaymentTransactionsProductModel {
     PaymentTransactionsProductModel paymentTransactionsProductModel = (PaymentTransactionsProductModel) o;
     return Objects.equals(this.object, paymentTransactionsProductModel.object) &&
         Objects.equals(this.id, paymentTransactionsProductModel.id) &&
+        Objects.equals(this.platform, paymentTransactionsProductModel.platform) &&
         Objects.equals(this.merchant, paymentTransactionsProductModel.merchant) &&
         Objects.equals(this.store, paymentTransactionsProductModel.store) &&
         Objects.equals(this.transId, paymentTransactionsProductModel.transId) &&
+        Objects.equals(this.parents, paymentTransactionsProductModel.parents) &&
         Objects.equals(this.productId, paymentTransactionsProductModel.productId) &&
         Objects.equals(this.product, paymentTransactionsProductModel.product) &&
         Objects.equals(this.productRaw, paymentTransactionsProductModel.productRaw) &&
@@ -588,24 +643,27 @@ public class PaymentTransactionsProductModel {
         Objects.equals(this.invoiceNumber, paymentTransactionsProductModel.invoiceNumber) &&
         Objects.equals(this.transactionHash, paymentTransactionsProductModel.transactionHash) &&
         Objects.equals(this.referenceId, paymentTransactionsProductModel.referenceId) &&
-        Objects.equals(this.accrual, paymentTransactionsProductModel.accrual);
+        Objects.equals(this.accrual, paymentTransactionsProductModel.accrual) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, merchant, store, transId, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, created, updated, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, accrual);
+    return Objects.hash(object, id, platform, merchant, store, transId, parents, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, created, updated, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, accrual, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentTransactionsProductModel {\n");
-    
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    object: ").append(toIndentedString(object)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
+    sb.append("    parents: ").append(toIndentedString(parents)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    productRaw: ").append(toIndentedString(productRaw)).append("\n");

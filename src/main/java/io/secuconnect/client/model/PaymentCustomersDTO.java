@@ -19,7 +19,7 @@ public class PaymentCustomersDTO {
   }
 
    /**
-   * PaymentCustomersDTO
+   * Get contact
    * @return contact
   **/
   public Contact getContact() {

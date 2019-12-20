@@ -79,7 +79,7 @@ public class GeneralMerchantsCheckoutOptionsCollectionSmartDevices {
   }
 
    /**
-   * Store
+   * Get store
    * @return store
   **/
   public Store getStore() {
