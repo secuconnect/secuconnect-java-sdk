@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - PaymentTransactionsProductModel was invalid
+- LoyaltyCardsApi fixed some response parameters
 
 
 ## [1.8.0] - 2019-12-20
