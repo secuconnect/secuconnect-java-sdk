@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
-## [1.8.0] - 2019-12-23
+## [1.8.1] - 2019-12-23
 
 ### Fixed
 - PaymentTransactionsProductModel was invalid
