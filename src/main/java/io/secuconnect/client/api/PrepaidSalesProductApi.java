@@ -59,13 +59,13 @@ public class PrepaidSalesProductApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -88,7 +88,6 @@ public class PrepaidSalesProductApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call addSaleValidateBeforeCall(PrepaidSalesProductDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         
         com.squareup.okhttp.Call call = addSaleCall(body, progressListener, progressRequestListener);
         return call;

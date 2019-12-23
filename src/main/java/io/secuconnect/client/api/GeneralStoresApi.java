@@ -43,7 +43,7 @@ public class GeneralStoresApi {
 
     /**
      * Build call for addStore
-     * @param body General store properties (required)
+     * @param body General store properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -62,13 +62,13 @@ public class GeneralStoresApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -92,12 +92,6 @@ public class GeneralStoresApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call addStoreValidateBeforeCall(GeneralStoresDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling addStore(Async)");
-        }
-        
-        
         com.squareup.okhttp.Call call = addStoreCall(body, progressListener, progressRequestListener);
         return call;
     }
@@ -105,7 +99,7 @@ public class GeneralStoresApi {
     /**
      * POST General/Stores
      * Create general store
-     * @param body General store properties (required)
+     * @param body General store properties
      * @return GeneralStoresProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -117,7 +111,7 @@ public class GeneralStoresApi {
     /**
      * POST General/Stores
      * Create general store
-     * @param body General store properties (required)
+     * @param body General store properties
      * @return ApiResponse&lt;GeneralStoresProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -130,7 +124,7 @@ public class GeneralStoresApi {
     /**
      * POST General/Stores (asynchronously)
      * Create general store
-     * @param body General store properties (required)
+     * @param body General store properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -185,7 +179,7 @@ public class GeneralStoresApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -214,17 +208,14 @@ public class GeneralStoresApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call assignGoogleKeyValidateBeforeCall(String generalStoreId, String googleKey, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'generalStoreId' is set
         if (generalStoreId == null) {
             throw new ApiException("Missing the required parameter 'generalStoreId' when calling assignGoogleKey(Async)");
         }
-        
         // verify the required parameter 'googleKey' is set
         if (googleKey == null) {
             throw new ApiException("Missing the required parameter 'googleKey' when calling assignGoogleKey(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = assignGoogleKeyCall(generalStoreId, googleKey, progressListener, progressRequestListener);
         return call;
@@ -295,7 +286,7 @@ public class GeneralStoresApi {
     /**
      * Build call for checkIn
      * @param generalStoreId General store id (required)
-     * @param body Type (required)
+     * @param body General store properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -315,13 +306,13 @@ public class GeneralStoresApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -344,17 +335,10 @@ public class GeneralStoresApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call checkInValidateBeforeCall(String generalStoreId, GeneralStoresDTOType body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'generalStoreId' is set
         if (generalStoreId == null) {
             throw new ApiException("Missing the required parameter 'generalStoreId' when calling checkIn(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling checkIn(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = checkInCall(generalStoreId, body, progressListener, progressRequestListener);
         return call;
@@ -391,7 +375,7 @@ public class GeneralStoresApi {
      * POST General/Stores/{generalStoreId}/checkin (asynchronously)
      * Check in
      * @param generalStoreId General store id (required)
-     * @param body Type (required)
+     * @param body General store properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -427,8 +411,8 @@ public class GeneralStoresApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -457,7 +441,7 @@ public class GeneralStoresApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -487,7 +471,6 @@ public class GeneralStoresApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        
         com.squareup.okhttp.Call call = getAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         return call;
     }
@@ -498,8 +481,8 @@ public class GeneralStoresApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @return GeneralStoresList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -514,8 +497,8 @@ public class GeneralStoresApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @return ApiResponse&lt;GeneralStoresList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -531,8 +514,8 @@ public class GeneralStoresApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -585,7 +568,7 @@ public class GeneralStoresApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -614,12 +597,10 @@ public class GeneralStoresApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getOneValidateBeforeCall(String generalStoreId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'generalStoreId' is set
         if (generalStoreId == null) {
             throw new ApiException("Missing the required parameter 'generalStoreId' when calling getOne(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = getOneCall(generalStoreId, progressListener, progressRequestListener);
         return call;
@@ -707,13 +688,13 @@ public class GeneralStoresApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -736,12 +717,10 @@ public class GeneralStoresApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call setDefaultValidateBeforeCall(String generalStoreId, GeneralStoresDTOReason body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'generalStoreId' is set
         if (generalStoreId == null) {
             throw new ApiException("Missing the required parameter 'generalStoreId' when calling setDefault(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = setDefaultCall(generalStoreId, body, progressListener, progressRequestListener);
         return call;
@@ -812,7 +791,7 @@ public class GeneralStoresApi {
     /**
      * Build call for updateStore
      * @param generalStoreId General store id (required)
-     * @param body General store properties (required)
+     * @param body General store properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -832,13 +811,13 @@ public class GeneralStoresApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -861,17 +840,10 @@ public class GeneralStoresApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call updateStoreValidateBeforeCall(String generalStoreId, GeneralStoresDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'generalStoreId' is set
         if (generalStoreId == null) {
             throw new ApiException("Missing the required parameter 'generalStoreId' when calling updateStore(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling updateStore(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = updateStoreCall(generalStoreId, body, progressListener, progressRequestListener);
         return call;
@@ -881,7 +853,7 @@ public class GeneralStoresApi {
      * PUT General/Stores/{generalStoreId}
      * Update general store
      * @param generalStoreId General store id (required)
-     * @param body General store properties (required)
+     * @param body General store properties
      * @return GeneralStoresProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -894,7 +866,7 @@ public class GeneralStoresApi {
      * PUT General/Stores/{generalStoreId}
      * Update general store
      * @param generalStoreId General store id (required)
-     * @param body General store properties (required)
+     * @param body General store properties
      * @return ApiResponse&lt;GeneralStoresProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -908,7 +880,7 @@ public class GeneralStoresApi {
      * PUT General/Stores/{generalStoreId} (asynchronously)
      * Update general store
      * @param generalStoreId General store id (required)
-     * @param body General store properties (required)
+     * @param body General store properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
