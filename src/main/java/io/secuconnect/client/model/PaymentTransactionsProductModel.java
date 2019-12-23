@@ -18,12 +18,6 @@ import java.util.Objects;
  * PaymentTransactionsProductModel
  */
 public class PaymentTransactionsProductModel extends BaseProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
   @SerializedName("platform")
   private ProductInstanceUID platform = null;
 
@@ -104,45 +98,6 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("accrual")
   private Boolean accrual = null;
-
-  public PaymentTransactionsProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of payment transaction
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public PaymentTransactionsProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of payment transaction
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public PaymentTransactionsProductModel platform(ProductInstanceUID platform) {
-    this.platform = platform;
-    return this;
-  }
 
    /**
    * Get platform
@@ -615,9 +570,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
       return false;
     }
     PaymentTransactionsProductModel paymentTransactionsProductModel = (PaymentTransactionsProductModel) o;
-    return Objects.equals(this.object, paymentTransactionsProductModel.object) &&
-        Objects.equals(this.id, paymentTransactionsProductModel.id) &&
-        Objects.equals(this.platform, paymentTransactionsProductModel.platform) &&
+    return Objects.equals(this.platform, paymentTransactionsProductModel.platform) &&
         Objects.equals(this.merchant, paymentTransactionsProductModel.merchant) &&
         Objects.equals(this.store, paymentTransactionsProductModel.store) &&
         Objects.equals(this.transId, paymentTransactionsProductModel.transId) &&
@@ -649,7 +602,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, platform, merchant, store, transId, parents, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, created, updated, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, accrual, super.hashCode());
+    return Objects.hash(platform, merchant, store, transId, parents, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, created, updated, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, accrual, super.hashCode());
   }
 
   @Override
@@ -657,8 +610,6 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentTransactionsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");

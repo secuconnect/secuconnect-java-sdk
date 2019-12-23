@@ -42,7 +42,7 @@ public class LoyaltyCustomersApi {
 
     /**
      * Build call for addCustomer
-     * @param body loyalty Customer container properties (required)
+     * @param body loyalty Customer container properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -61,13 +61,13 @@ public class LoyaltyCustomersApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -91,12 +91,6 @@ public class LoyaltyCustomersApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call addCustomerValidateBeforeCall(LoyaltyCustomersDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling addCustomer(Async)");
-        }
-        
-        
         com.squareup.okhttp.Call call = addCustomerCall(body, progressListener, progressRequestListener);
         return call;
     }
@@ -104,7 +98,7 @@ public class LoyaltyCustomersApi {
     /**
      * POST Loyalty/Customers
      * Add loyalty customer
-     * @param body loyalty Customer container properties (required)
+     * @param body loyalty Customer container properties
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -116,7 +110,7 @@ public class LoyaltyCustomersApi {
     /**
      * POST Loyalty/Customers
      * Add loyalty customer
-     * @param body loyalty Customer container properties (required)
+     * @param body loyalty Customer container properties
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -129,7 +123,7 @@ public class LoyaltyCustomersApi {
     /**
      * POST Loyalty/Customers (asynchronously)
      * Add loyalty customer
-     * @param body loyalty Customer container properties (required)
+     * @param body loyalty Customer container properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -184,7 +178,7 @@ public class LoyaltyCustomersApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -213,17 +207,14 @@ public class LoyaltyCustomersApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call assignPaymentContainerValidateBeforeCall(String loyaltyCustomerId, String loyaltyPaymentContainerId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyCustomerId' is set
         if (loyaltyCustomerId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyCustomerId' when calling assignPaymentContainer(Async)");
         }
-        
         // verify the required parameter 'loyaltyPaymentContainerId' is set
         if (loyaltyPaymentContainerId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyPaymentContainerId' when calling assignPaymentContainer(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = assignPaymentContainerCall(loyaltyCustomerId, loyaltyPaymentContainerId, progressListener, progressRequestListener);
         return call;
@@ -313,7 +304,7 @@ public class LoyaltyCustomersApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -342,12 +333,10 @@ public class LoyaltyCustomersApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call checkForDuplicatesValidateBeforeCall(String loyaltyCustomerId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyCustomerId' is set
         if (loyaltyCustomerId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyCustomerId' when calling checkForDuplicates(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = checkForDuplicatesCall(loyaltyCustomerId, progressListener, progressRequestListener);
         return call;
@@ -447,7 +436,7 @@ public class LoyaltyCustomersApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -477,7 +466,6 @@ public class LoyaltyCustomersApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        
         com.squareup.okhttp.Call call = getAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         return call;
     }
@@ -488,8 +476,8 @@ public class LoyaltyCustomersApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @return LoyaltyCustomersList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -504,8 +492,8 @@ public class LoyaltyCustomersApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @return ApiResponse&lt;LoyaltyCustomersList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -521,8 +509,8 @@ public class LoyaltyCustomersApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -575,7 +563,7 @@ public class LoyaltyCustomersApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -604,12 +592,10 @@ public class LoyaltyCustomersApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getOneValidateBeforeCall(String loyaltyCustomerId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyCustomerId' is set
         if (loyaltyCustomerId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyCustomerId' when calling getOne(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = getOneCall(loyaltyCustomerId, progressListener, progressRequestListener);
         return call;
@@ -698,7 +684,7 @@ public class LoyaltyCustomersApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -727,17 +713,14 @@ public class LoyaltyCustomersApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call removeAssignedPaymentContainerValidateBeforeCall(String loyaltyCustomerId, String loyaltyPaymentContainerId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyCustomerId' is set
         if (loyaltyCustomerId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyCustomerId' when calling removeAssignedPaymentContainer(Async)");
         }
-        
         // verify the required parameter 'loyaltyPaymentContainerId' is set
         if (loyaltyPaymentContainerId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyPaymentContainerId' when calling removeAssignedPaymentContainer(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = removeAssignedPaymentContainerCall(loyaltyCustomerId, loyaltyPaymentContainerId, progressListener, progressRequestListener);
         return call;
@@ -827,7 +810,7 @@ public class LoyaltyCustomersApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -856,12 +839,10 @@ public class LoyaltyCustomersApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call removeCustomerValidateBeforeCall(String loyaltyCustomerId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyCustomerId' is set
         if (loyaltyCustomerId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyCustomerId' when calling removeCustomer(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = removeCustomerCall(loyaltyCustomerId, progressListener, progressRequestListener);
         return call;
@@ -929,7 +910,7 @@ public class LoyaltyCustomersApi {
     /**
      * Build call for updateCustomer
      * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
-     * @param body loyalty Customer container properties (required)
+     * @param body loyalty Customer container properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -949,13 +930,13 @@ public class LoyaltyCustomersApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -978,17 +959,10 @@ public class LoyaltyCustomersApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call updateCustomerValidateBeforeCall(String loyaltyCustomerId, LoyaltyCustomersDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyCustomerId' is set
         if (loyaltyCustomerId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyCustomerId' when calling updateCustomer(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling updateCustomer(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = updateCustomerCall(loyaltyCustomerId, body, progressListener, progressRequestListener);
         return call;
@@ -996,9 +970,9 @@ public class LoyaltyCustomersApi {
 
     /**
      * PUT Loyalty/Customers/{loyaltyCustomerId}
-     * Function to update customer&#39;s data
+     * Function to update customer&#x27;s data
      * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
-     * @param body loyalty Customer container properties (required)
+     * @param body loyalty Customer container properties
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1009,9 +983,9 @@ public class LoyaltyCustomersApi {
 
     /**
      * PUT Loyalty/Customers/{loyaltyCustomerId}
-     * Function to update customer&#39;s data
+     * Function to update customer&#x27;s data
      * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
-     * @param body loyalty Customer container properties (required)
+     * @param body loyalty Customer container properties
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1023,9 +997,9 @@ public class LoyaltyCustomersApi {
 
     /**
      * PUT Loyalty/Customers/{loyaltyCustomerId} (asynchronously)
-     * Function to update customer&#39;s data
+     * Function to update customer&#x27;s data
      * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
-     * @param body loyalty Customer container properties (required)
+     * @param body loyalty Customer container properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -53,7 +53,7 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for addMerchantCard
-     * @param body Loyalty merchant card properties (required)
+     * @param body Loyalty merchant card properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -72,13 +72,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -102,12 +102,6 @@ public class LoyaltyMerchantcardsApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call addMerchantCardValidateBeforeCall(LoyaltyMerchantcardsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling addMerchantCard(Async)");
-        }
-        
-        
         com.squareup.okhttp.Call call = addMerchantCardCall(body, progressListener, progressRequestListener);
         return call;
     }
@@ -115,7 +109,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * POST Loyalty/MerchantCards
      * Add new loyalty merchant card
-     * @param body Loyalty merchant card properties (required)
+     * @param body Loyalty merchant card properties
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -127,7 +121,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * POST Loyalty/MerchantCards
      * Add new loyalty merchant card
-     * @param body Loyalty merchant card properties (required)
+     * @param body Loyalty merchant card properties
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -140,7 +134,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * POST Loyalty/MerchantCards (asynchronously)
      * Add new loyalty merchant card
-     * @param body Loyalty merchant card properties (required)
+     * @param body Loyalty merchant card properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -174,7 +168,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for checkCsc
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -194,13 +188,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -223,17 +217,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call checkCscValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCsc body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling checkCsc(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling checkCsc(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = checkCscCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
         return call;
@@ -270,7 +257,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkCsc (asynchronously)
      * Check CSC
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -304,7 +291,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for checkPassCode
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -324,13 +311,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -353,17 +340,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call checkPassCodeValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCheckPasscode body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling checkPassCode(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling checkPassCode(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = checkPassCodeCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
         return call;
@@ -400,7 +380,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkPasscode (asynchronously)
      * Function to check the Passcode card with cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -435,7 +415,7 @@ public class LoyaltyMerchantcardsApi {
      * Build call for createMerchantcards
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount (required)
+     * @param body Cards amount
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -456,13 +436,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -485,22 +465,14 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call createMerchantcardsValidateBeforeCall(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCardsAmount body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'generalMerchantId' is set
         if (generalMerchantId == null) {
             throw new ApiException("Missing the required parameter 'generalMerchantId' when calling createMerchantcards(Async)");
         }
-        
         // verify the required parameter 'loyaltyCardgroupId' is set
         if (loyaltyCardgroupId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyCardgroupId' when calling createMerchantcards(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createMerchantcards(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = createMerchantcardsCall(generalMerchantId, loyaltyCardgroupId, body, progressListener, progressRequestListener);
         return call;
@@ -511,7 +483,7 @@ public class LoyaltyMerchantcardsApi {
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount (required)
+     * @param body Cards amount
      * @return List&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -525,7 +497,7 @@ public class LoyaltyMerchantcardsApi {
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount (required)
+     * @param body Cards amount
      * @return ApiResponse&lt;List&lt;LoyaltyMerchantcardsProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -540,7 +512,7 @@ public class LoyaltyMerchantcardsApi {
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount (required)
+     * @param body Cards amount
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -574,7 +546,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for executeTransaction
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties (required)
+     * @param body Transaction properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -594,13 +566,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -623,17 +595,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call executeTransactionValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOTransaction body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling executeTransaction(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling executeTransaction(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = executeTransactionCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
         return call;
@@ -643,7 +608,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction
      * Execute transaction from SDK
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties (required)
+     * @param body Transaction properties
      * @return LoyaltyMerchantcardsProductWithReceiptModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -656,7 +621,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction
      * Execute transaction from SDK
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties (required)
+     * @param body Transaction properties
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductWithReceiptModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -670,7 +635,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction (asynchronously)
      * Execute transaction from SDK
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties (required)
+     * @param body Transaction properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -706,8 +671,8 @@ public class LoyaltyMerchantcardsApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -736,7 +701,7 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -766,7 +731,6 @@ public class LoyaltyMerchantcardsApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        
         com.squareup.okhttp.Call call = getAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         return call;
     }
@@ -777,8 +741,8 @@ public class LoyaltyMerchantcardsApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @return LoyaltyMerchantcardsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -793,8 +757,8 @@ public class LoyaltyMerchantcardsApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @return ApiResponse&lt;LoyaltyMerchantcardsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -810,8 +774,8 @@ public class LoyaltyMerchantcardsApi {
      * @param count The number of items to return.
      * @param offset The position within the whole result set to start returning items (First element is at 0).
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                  A condition may contain:  *                      - wildcard \&quot;*\&quot; for any number of characters  *                      - wildcard \&quot;?\&quot; for one character  *                      - ranges in the form [value TO value]  *  *                  Single expressions may combined by &#39;AND&#39;, &#39;OR&#39;, &#39;NOT&#39; operators and parenthesis &#39;(&#39;, &#39;)&#39; for grouping.  *                  Property names can be nested like \&quot;prop1.prop2\&quot;.  *                  Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                  
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#39;asc&#39;, or descending &#39;dsc&#39; order.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -864,7 +828,7 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -893,12 +857,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getLockValidateBeforeCall(String loyaltyMerchantCardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling getLock(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = getLockCall(loyaltyMerchantCardId, progressListener, progressRequestListener);
         return call;
@@ -985,7 +947,7 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -1014,12 +976,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getOneValidateBeforeCall(String loyaltyMerchantCardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling getOne(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = getOneCall(loyaltyMerchantCardId, progressListener, progressRequestListener);
         return call;
@@ -1108,7 +1068,7 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -1137,17 +1097,14 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getVirtualTerminalDataValidateBeforeCall(String loyaltyMerchantCardId, String loyaltyMerchantId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling getVirtualTerminalData(Async)");
         }
-        
         // verify the required parameter 'loyaltyMerchantId' is set
         if (loyaltyMerchantId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantId' when calling getVirtualTerminalData(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = getVirtualTerminalDataCall(loyaltyMerchantCardId, loyaltyMerchantId, progressListener, progressRequestListener);
         return call;
@@ -1238,13 +1195,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1267,17 +1224,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call lockValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling lock(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling lock(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = lockCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
         return call;
@@ -1287,7 +1237,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
      * Lock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock (required)
+     * @param body Information about lock
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1300,7 +1250,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
      * Lock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock (required)
+     * @param body Information about lock
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1314,7 +1264,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock (asynchronously)
      * Lock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock (required)
+     * @param body Information about lock
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1348,7 +1298,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for newPassCode
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1368,13 +1318,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1397,17 +1347,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call newPassCodeValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTONewPasscode body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling newPassCode(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling newPassCode(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = newPassCodeCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
         return call;
@@ -1444,7 +1387,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode (asynchronously)
      * Function to save new given passcode for given merchantcard identified by cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1478,7 +1421,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for registerCustomer
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties (required)
+     * @param body Loyalty customer properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1498,13 +1441,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1527,17 +1470,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call registerCustomerValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyCustomersDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling registerCustomer(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling registerCustomer(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = registerCustomerCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
         return call;
@@ -1547,7 +1483,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/registerCustomer
      * Register new customer for a card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties (required)
+     * @param body Loyalty customer properties
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1560,7 +1496,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/registerCustomer
      * Register new customer for a card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties (required)
+     * @param body Loyalty customer properties
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1574,7 +1510,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/registerCustomer (asynchronously)
      * Register new customer for a card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties (required)
+     * @param body Loyalty customer properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1627,7 +1563,7 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -1656,12 +1592,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call removeMerchantCardValidateBeforeCall(String loyaltyMerchantCardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling removeMerchantCard(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = removeMerchantCardCall(loyaltyMerchantCardId, progressListener, progressRequestListener);
         return call;
@@ -1729,7 +1663,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for resetPassCode
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1749,13 +1683,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1778,17 +1712,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call resetPassCodeValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOResetPasscode body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling resetPassCode(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling resetPassCode(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = resetPassCodeCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
         return call;
@@ -1825,7 +1752,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/resetPasscode (asynchronously)
      * Function to reset a passcode for given merchantcard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1880,7 +1807,7 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -1909,17 +1836,14 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call setCustomerValidateBeforeCall(String loyaltyMerchantCardId, String loyaltyCustomerId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling setCustomer(Async)");
         }
-        
         // verify the required parameter 'loyaltyCustomerId' is set
         if (loyaltyCustomerId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyCustomerId' when calling setCustomer(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = setCustomerCall(loyaltyMerchantCardId, loyaltyCustomerId, progressListener, progressRequestListener);
         return call;
@@ -1990,7 +1914,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for unlock
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock (required)
+     * @param body Information about unlock
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2010,13 +1934,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2039,17 +1963,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call unlockValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling unlock(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling unlock(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = unlockCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
         return call;
@@ -2059,7 +1976,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock
      * Unlock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock (required)
+     * @param body Information about unlock
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2072,7 +1989,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock
      * Unlock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock (required)
+     * @param body Information about unlock
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2086,7 +2003,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock (asynchronously)
      * Unlock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock (required)
+     * @param body Information about unlock
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2141,7 +2058,7 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
@@ -2170,17 +2087,14 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call updateCardGroupOfMerchantCardValidateBeforeCall(String loyaltyMerchantCardId, String loyaltyCardGroupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling updateCardGroupOfMerchantCard(Async)");
         }
-        
         // verify the required parameter 'loyaltyCardGroupId' is set
         if (loyaltyCardGroupId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyCardGroupId' when calling updateCardGroupOfMerchantCard(Async)");
         }
-        
         
         com.squareup.okhttp.Call call = updateCardGroupOfMerchantCardCall(loyaltyMerchantCardId, loyaltyCardGroupId, progressListener, progressRequestListener);
         return call;
@@ -2251,7 +2165,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for updateMerchantCard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties (required)
+     * @param body Loyalty merchant card properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2271,13 +2185,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2300,17 +2214,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call updateMerchantCardValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling updateMerchantCard(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling updateMerchantCard(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = updateMerchantCardCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
         return call;
@@ -2320,7 +2227,7 @@ public class LoyaltyMerchantcardsApi {
      * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId}
      * Update loyalty merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties (required)
+     * @param body Loyalty merchant card properties
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2333,7 +2240,7 @@ public class LoyaltyMerchantcardsApi {
      * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId}
      * Update loyalty merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties (required)
+     * @param body Loyalty merchant card properties
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2347,7 +2254,7 @@ public class LoyaltyMerchantcardsApi {
      * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId} (asynchronously)
      * Update loyalty merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties (required)
+     * @param body Loyalty merchant card properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2381,7 +2288,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for validateMerchantCard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2401,13 +2308,13 @@ public class LoyaltyMerchantcardsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2430,17 +2337,10 @@ public class LoyaltyMerchantcardsApi {
     
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call validateMerchantCardValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOValidateMerchantCard body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling validateMerchantCard(Async)");
         }
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling validateMerchantCard(Async)");
-        }
-        
         
         com.squareup.okhttp.Call call = validateMerchantCardCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
         return call;
@@ -2450,7 +2350,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/validateMerchantcard
      * Function to check the merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @return LoyaltyMerchantcardsValidateMerchantCard
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2463,7 +2363,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/validateMerchantcard
      * Function to check the merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @return ApiResponse&lt;LoyaltyMerchantcardsValidateMerchantCard&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2477,7 +2377,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/validateMerchantcard (asynchronously)
      * Function to check the merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
+     * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
