@@ -1,4 +1,4 @@
-package io.secuconnect.client.model.stomp;
+package io.secuconnect.client.stomp.model;
 
 import com.google.gson.annotations.SerializedName;
 
