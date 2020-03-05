@@ -3,8 +3,8 @@ package io.secuconnect.client.stomp.communication;
 import io.secuconnect.client.stomp.communication.frame.StompFrame;
 import io.secuconnect.client.stomp.listeners.IConnectedFrameListener;
 import io.secuconnect.client.stomp.listeners.IFrameListener;
-import io.secuconnect.client.model.stomp.AuthSessionsRefresh;
-import io.secuconnect.client.model.stomp.StompRequest;
+import io.secuconnect.client.stomp.model.AuthSessionsRefresh;
+import io.secuconnect.client.stomp.model.StompRequest;
 
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;

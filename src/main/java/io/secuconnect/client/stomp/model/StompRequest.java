@@ -1,16 +1,39 @@
 package io.secuconnect.client.stomp.model;
 
 import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 
 public class StompRequest {
+    private String method;
+    private String action;
+    @SerializedName("action_id")
+    private String actionId;
     private String pid;
     private String sid;
     private Object data;
 
-    public StompRequest(String pid, String sid, Object data) {
-        this.pid = pid;
-        this.sid = sid;
-        this.data = data;
+    public String  getMethod() {
+        return this.method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    public String getAction() {
+        return this.action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public String getActionId() {
+        return this.actionId;
+    }
+
+    public void setActionId(String actionId) {
+        this.actionId = actionId;
     }
 
     public String getPid() {

@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [1.9.0] - 2020-03-05
+
+### Security
+- Dependency updates
+
+
 ## [1.8.1] - 2019-12-23
 
 ### Fixed
@@ -146,3 +152,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [1.7.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.2...1.7.0
 [1.8.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.7.0...1.8.0
 [1.8.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.0...1.8.1
+[1.9.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.1...1.9.0

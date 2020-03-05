@@ -12,6 +12,7 @@ public class CommonObjectsProvider {
         contact.setForename("John");
         contact.setSurname("Doe");
         contact.setCompanyname("Example Inc.");
+        contact.setEmail("mail@example.com");
 
         PaymentCustomersDTO customerDTO = new PaymentCustomersDTO();
         customerDTO.setContact(contact);

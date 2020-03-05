@@ -2,7 +2,7 @@ package io.secuconnect.client.stomp.api;
 
 import io.secuconnect.client.model.SmartTransactionsDTO;
 import io.secuconnect.client.stomp.communication.StompCommunicationManager;
-import io.secuconnect.client.model.stomp.StompRequest;
+import io.secuconnect.client.stomp.model.StompRequest;
 
 /**
  * StompSmartTransactionsApi is the class which allows calling Smart Transactions Product methods using STOMP protocol.
