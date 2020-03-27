@@ -1,8 +1,8 @@
-package com.secuconnect.client;
+package io.secuconnect.client;
 
-import com.secuconnect.client.auth.credentials.OAuthApplicationUserCredentials;
-import com.secuconnect.client.auth.credentials.OAuthClientCredentials;
-import com.secuconnect.client.auth.credentials.OAuthDeviceCodeCredentials;
+import io.secuconnect.client.auth.credentials.OAuthApplicationUserCredentials;
+import io.secuconnect.client.auth.credentials.OAuthClientCredentials;
+import io.secuconnect.client.auth.credentials.OAuthDeviceCodeCredentials;
 
 public class Globals {
     public static final OAuthClientCredentials O_AUTH_CLIENT_CREDENTIALS = new OAuthClientCredentials(

@@ -1,17 +1,20 @@
-package com.secuconnect.client.api;
+package io.secuconnect.client.api;
 
-import com.secuconnect.client.ApiClient;
-import com.secuconnect.client.ApiException;
-import com.secuconnect.client.Globals;
-import com.secuconnect.client.auth.Authenticator;
-import com.secuconnect.client.auth.tokens.OAuthClientToken;
-import com.secuconnect.client.model.*;
+import io.secuconnect.client.ApiClient;
+import io.secuconnect.client.ApiException;
+import io.secuconnect.client.Globals;
+import io.secuconnect.client.auth.Authenticator;
+import io.secuconnect.client.auth.tokens.OAuthClientToken;
+import io.secuconnect.client.model.PaymentContractsDTOClone;
+import io.secuconnect.client.model.PaymentContractsDTORequestId;
+import io.secuconnect.client.model.PaymentContractsProductModel;
+import io.secuconnect.client.model.PaymentContractsRequestIdResult;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static com.secuconnect.client.CommonObjectsProvider.prepareDataFoRequestId;
-import static com.secuconnect.client.CommonObjectsProvider.prepareDataForClone;
+import static io.secuconnect.client.CommonObjectsProvider.prepareDataFoRequestId;
+import static io.secuconnect.client.CommonObjectsProvider.prepareDataForClone;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.*;
 

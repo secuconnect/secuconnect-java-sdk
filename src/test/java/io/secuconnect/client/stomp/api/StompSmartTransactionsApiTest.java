@@ -1,22 +1,22 @@
-package com.secuconnect.client.stomp.api;
+package io.secuconnect.client.stomp.api;
 
-import com.secuconnect.client.auth.Authenticator;
-import com.secuconnect.client.model.*;
-import com.secuconnect.client.stomp.api.modelsForStompApiTest.SmartTransactionsProductModelForTests;
-import com.secuconnect.client.stomp.communication.StompCommunicationManager;
-import com.secuconnect.client.stomp.communication.frame.StompFrame;
-import com.secuconnect.client.stomp.listeners.def.impl.ConnectedFrameListener;
-import com.secuconnect.client.stomp.listeners.def.impl.ErrorFrameListener;
-import com.secuconnect.client.stomp.listeners.def.impl.MessageFrameListener;
-import com.secuconnect.client.stomp.listeners.def.impl.ReceiptFrameListener;
-import com.secuconnect.client.stomp.api.modelsForStompApiTest.StompResponseWithSmartTransactionsProductModel;
+import io.secuconnect.client.auth.Authenticator;
+import io.secuconnect.client.stomp.api.modelsForStompApiTest.SmartTransactionsProductModelForTests;
+import io.secuconnect.client.stomp.communication.StompCommunicationManager;
+import io.secuconnect.client.model.*;
+import io.secuconnect.client.stomp.communication.frame.StompFrame;
+import io.secuconnect.client.stomp.listeners.def.impl.ConnectedFrameListener;
+import io.secuconnect.client.stomp.listeners.def.impl.ErrorFrameListener;
+import io.secuconnect.client.stomp.listeners.def.impl.MessageFrameListener;
+import io.secuconnect.client.stomp.listeners.def.impl.ReceiptFrameListener;
+import io.secuconnect.client.stomp.api.modelsForStompApiTest.StompResponseWithSmartTransactionsProductModel;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static com.secuconnect.client.Globals.O_AUTH_DEVICE_CREDENTIALS;
+import static io.secuconnect.client.Globals.O_AUTH_DEVICE_CREDENTIALS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 

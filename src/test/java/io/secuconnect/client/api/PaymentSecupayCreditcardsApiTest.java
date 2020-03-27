@@ -11,19 +11,14 @@
  */
 
 
-package com.secuconnect.client.api;
+package io.secuconnect.client.api;
 
-import com.secuconnect.client.ApiException;
-import com.secuconnect.client.model.ProductExceptionPayload;
-import com.secuconnect.client.model.SecupayTransactionProductDTO;
-import com.secuconnect.client.model.SecupayTransactionProductModel;
+import io.secuconnect.client.ApiException;
+import io.secuconnect.client.api.PaymentSecupayCreditcardsApi;
+import io.secuconnect.client.model.SecupayTransactionProductDTO;
+import io.secuconnect.client.model.SecupayTransactionProductModel;
 import org.junit.Test;
 import org.junit.Ignore;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for PaymentSecupayCreditcardsApi

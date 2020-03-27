@@ -1,16 +1,16 @@
-package com.secuconnect.client.stomp;
+package io.secuconnect.client.stomp;
 
-import com.secuconnect.client.ApiException;
-import com.secuconnect.client.auth.Authenticator;
-import com.secuconnect.client.auth.tokens.OAuthClientToken;
-import com.secuconnect.client.stomp.communication.StompCommunicationManager;
-import com.secuconnect.client.stomp.listeners.def.impl.ConnectedFrameListener;
-import com.secuconnect.client.stomp.listeners.def.impl.ErrorFrameListener;
-import com.secuconnect.client.stomp.listeners.def.impl.MessageFrameListener;
-import com.secuconnect.client.stomp.listeners.def.impl.ReceiptFrameListener;
+import io.secuconnect.client.ApiException;
+import io.secuconnect.client.auth.Authenticator;
+import io.secuconnect.client.auth.tokens.OAuthClientToken;
+import io.secuconnect.client.stomp.communication.StompCommunicationManager;
+import io.secuconnect.client.stomp.listeners.def.impl.ConnectedFrameListener;
+import io.secuconnect.client.stomp.listeners.def.impl.ErrorFrameListener;
+import io.secuconnect.client.stomp.listeners.def.impl.MessageFrameListener;
+import io.secuconnect.client.stomp.listeners.def.impl.ReceiptFrameListener;
 import org.junit.Test;
 
-import static com.secuconnect.client.Globals.O_AUTH_CLIENT_CREDENTIALS;
+import static io.secuconnect.client.Globals.O_AUTH_CLIENT_CREDENTIALS;
 
 import org.junit.Ignore;
 

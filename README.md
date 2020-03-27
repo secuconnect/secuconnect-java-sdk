@@ -70,13 +70,9 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-import com.secuconnect.client.*;
-import com.secuconnect.client.auth.*;
-import io.swagger.client.model.*;
+import io.secuconnect.client.*;
+import io.secuconnect.client.auth.OAuth;import io.swagger.client.model.*;
 import io.swagger.client.api.DocumentUploadsApi;
-
-import java.io.File;
-import java.util.*;
 
 public class DocumentUploadsApiExample {
 
@@ -99,8 +95,8 @@ public class DocumentUploadsApiExample {
         }
     }
 }
-import com.secuconnect.client.*;
-import com.secuconnect.client.auth.*;
+import io.secuconnect.client.*;
+import io.secuconnect.client.auth.*;
 import io.swagger.client.model.*;
 import io.swagger.client.api.DocumentUploadsApi;
 
