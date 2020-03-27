@@ -1,9 +1,19 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.secuconnect.client.model.AddressComponents;
+import io.secuconnect.client.model.AssignedBy;
+import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.InvitedBy;
+import io.secuconnect.client.model.OpenHours;
+import io.secuconnect.client.model.ProductInstanceUID;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -442,7 +452,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
    * Open now
    * @return openNow
   **/
-  public Boolean isOpenNow() {
+  public Boolean getOpenNow() {
     return openNow;
   }
 
@@ -543,7 +553,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
    * Has beacon
    * @return hasBeacon
   **/
-  public Boolean isHasBeacon() {
+  public Boolean getHasBeacon() {
     return hasBeacon;
   }
 

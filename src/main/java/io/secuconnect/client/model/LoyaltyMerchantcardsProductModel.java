@@ -1,8 +1,19 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.LoyaltyCardgroupsProductModel;
+import io.secuconnect.client.model.LoyaltyCardsProductModel;
+import io.secuconnect.client.model.LoyaltyCustomersProductModel;
+import io.secuconnect.client.model.LoyaltyMerchantcardsDTOPaymentContainer;
+import io.secuconnect.client.model.ProductInstanceUID;
+import java.io.IOException;
 
 /**
  * Loyalty merchant card
@@ -323,7 +334,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
    * Information whether loyalty merchant card is base card
    * @return isBaseCard
   **/
-  public Boolean isIsBaseCard() {
+  public Boolean getIsBaseCard() {
     return isBaseCard;
   }
 

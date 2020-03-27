@@ -1,8 +1,19 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.ItemGroup;
+import io.secuconnect.client.model.PrepaidSalesItem;
+import io.secuconnect.client.model.PrepaidSalesSmartDevice;
+import io.secuconnect.client.model.ProductInstanceUID;
+import io.secuconnect.client.model.Store;
+import java.io.IOException;
 
 /**
  * PrepaidSalesProductModel
@@ -245,7 +256,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
    * Demo
    * @return demo
   **/
-  public Boolean isDemo() {
+  public Boolean getDemo() {
     return demo;
   }
 

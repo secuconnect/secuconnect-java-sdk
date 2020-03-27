@@ -1,8 +1,13 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 /**
  * LoyaltyMerchantcardsValidateMerchantCard
@@ -26,7 +31,7 @@ public class LoyaltyMerchantcardsValidateMerchantCard {
    * Result has true or false value
    * @return isValid
   **/
-  public Boolean isIsValid() {
+  public Boolean getIsValid() {
     return isValid;
   }
 
@@ -43,7 +48,7 @@ public class LoyaltyMerchantcardsValidateMerchantCard {
    * Result has true or false value
    * @return hasPasscode
   **/
-  public Boolean isHasPasscode() {
+  public Boolean getHasPasscode() {
     return hasPasscode;
   }
 
@@ -60,7 +65,7 @@ public class LoyaltyMerchantcardsValidateMerchantCard {
    * Result has true or false value
    * @return isLocked
   **/
-  public Boolean isIsLocked() {
+  public Boolean getIsLocked() {
     return isLocked;
   }
 

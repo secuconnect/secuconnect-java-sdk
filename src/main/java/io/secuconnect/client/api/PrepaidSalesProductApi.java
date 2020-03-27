@@ -15,6 +15,7 @@ import java.io.IOException;
 
 import io.secuconnect.client.model.PrepaidSalesProductDTO;
 import io.secuconnect.client.model.PrepaidSalesProductModel;
+import io.secuconnect.client.model.ProductExceptionPayload;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -42,14 +43,14 @@ public class PrepaidSalesProductApi {
     }
 
     /**
-     * Build call for prepaidSalesaddSale
+     * Build call for addSale
      * @param body Prepaid transaction input properties (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call prepaidSalesaddSaleCall(PrepaidSalesProductDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addSaleCall(PrepaidSalesProductDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -91,9 +92,9 @@ public class PrepaidSalesProductApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call prepaidSalesaddSaleValidateBeforeCall(PrepaidSalesProductDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addSaleValidateBeforeCall(PrepaidSalesProductDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = prepaidSalesaddSaleCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addSaleCall(body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -104,8 +105,8 @@ public class PrepaidSalesProductApi {
      * @return PrepaidSalesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PrepaidSalesProductModel prepaidSalesaddSale(PrepaidSalesProductDTO body) throws ApiException {
-        ApiResponse<PrepaidSalesProductModel> resp = prepaidSalesaddSaleWithHttpInfo(body);
+    public PrepaidSalesProductModel addSale(PrepaidSalesProductDTO body) throws ApiException {
+        ApiResponse<PrepaidSalesProductModel> resp = addSaleWithHttpInfo(body);
         return resp.getData();
     }
 
@@ -116,8 +117,8 @@ public class PrepaidSalesProductApi {
      * @return ApiResponse&lt;PrepaidSalesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PrepaidSalesProductModel> prepaidSalesaddSaleWithHttpInfo(PrepaidSalesProductDTO body) throws ApiException {
-        com.squareup.okhttp.Call call = prepaidSalesaddSaleValidateBeforeCall(body, null, null);
+    public ApiResponse<PrepaidSalesProductModel> addSaleWithHttpInfo(PrepaidSalesProductDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = addSaleValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<PrepaidSalesProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -130,7 +131,7 @@ public class PrepaidSalesProductApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call prepaidSalesaddSaleAsync(PrepaidSalesProductDTO body, final ApiCallback<PrepaidSalesProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call addSaleAsync(PrepaidSalesProductDTO body, final ApiCallback<PrepaidSalesProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -151,7 +152,7 @@ public class PrepaidSalesProductApi {
             };
         }
 
-        com.squareup.okhttp.Call call = prepaidSalesaddSaleValidateBeforeCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addSaleValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PrepaidSalesProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

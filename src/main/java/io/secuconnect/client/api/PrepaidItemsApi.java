@@ -15,6 +15,7 @@ import java.io.IOException;
 
 import io.secuconnect.client.model.PrepaidItemsList;
 import io.secuconnect.client.model.PrepaidItemsProductModel;
+import io.secuconnect.client.model.ProductExceptionPayload;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class PrepaidItemsApi {
     }
 
     /**
-     * Build call for prepaidItemsgetAll
+     * Build call for getAll
      * @param count The number of items to return. (optional)
      * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
@@ -53,7 +54,7 @@ public class PrepaidItemsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call prepaidItemsgetAllCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -105,9 +106,9 @@ public class PrepaidItemsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call prepaidItemsgetAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = prepaidItemsgetAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         return call;
     }
 
@@ -122,8 +123,8 @@ public class PrepaidItemsApi {
      * @return PrepaidItemsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PrepaidItemsList prepaidItemsgetAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        ApiResponse<PrepaidItemsList> resp = prepaidItemsgetAllWithHttpInfo(count, offset, fields, q, sort);
+    public PrepaidItemsList getAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        ApiResponse<PrepaidItemsList> resp = getAllWithHttpInfo(count, offset, fields, q, sort);
         return resp.getData();
     }
 
@@ -138,8 +139,8 @@ public class PrepaidItemsApi {
      * @return ApiResponse&lt;PrepaidItemsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PrepaidItemsList> prepaidItemsgetAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        com.squareup.okhttp.Call call = prepaidItemsgetAllValidateBeforeCall(count, offset, fields, q, sort, null, null);
+    public ApiResponse<PrepaidItemsList> getAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        com.squareup.okhttp.Call call = getAllValidateBeforeCall(count, offset, fields, q, sort, null, null);
         Type localVarReturnType = new TypeToken<PrepaidItemsList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -156,7 +157,7 @@ public class PrepaidItemsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call prepaidItemsgetAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<PrepaidItemsList> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<PrepaidItemsList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,20 +178,20 @@ public class PrepaidItemsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = prepaidItemsgetAllValidateBeforeCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllValidateBeforeCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PrepaidItemsList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for prepaidItemsgetOne
+     * Build call for getOne
      * @param prepaidItemId Prepaid item id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call prepaidItemsgetOneCall(String prepaidItemId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getOneCall(String prepaidItemId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -233,13 +234,13 @@ public class PrepaidItemsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call prepaidItemsgetOneValidateBeforeCall(String prepaidItemId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOneValidateBeforeCall(String prepaidItemId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'prepaidItemId' is set
         if (prepaidItemId == null) {
-            throw new ApiException("Missing the required parameter 'prepaidItemId' when calling prepaidItemsgetOne(Async)");
+            throw new ApiException("Missing the required parameter 'prepaidItemId' when calling getOne(Async)");
         }
         
-        com.squareup.okhttp.Call call = prepaidItemsgetOneCall(prepaidItemId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOneCall(prepaidItemId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -250,8 +251,8 @@ public class PrepaidItemsApi {
      * @return PrepaidItemsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PrepaidItemsProductModel prepaidItemsgetOne(String prepaidItemId) throws ApiException {
-        ApiResponse<PrepaidItemsProductModel> resp = prepaidItemsgetOneWithHttpInfo(prepaidItemId);
+    public PrepaidItemsProductModel getOne(String prepaidItemId) throws ApiException {
+        ApiResponse<PrepaidItemsProductModel> resp = getOneWithHttpInfo(prepaidItemId);
         return resp.getData();
     }
 
@@ -262,8 +263,8 @@ public class PrepaidItemsApi {
      * @return ApiResponse&lt;PrepaidItemsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PrepaidItemsProductModel> prepaidItemsgetOneWithHttpInfo(String prepaidItemId) throws ApiException {
-        com.squareup.okhttp.Call call = prepaidItemsgetOneValidateBeforeCall(prepaidItemId, null, null);
+    public ApiResponse<PrepaidItemsProductModel> getOneWithHttpInfo(String prepaidItemId) throws ApiException {
+        com.squareup.okhttp.Call call = getOneValidateBeforeCall(prepaidItemId, null, null);
         Type localVarReturnType = new TypeToken<PrepaidItemsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -276,7 +277,7 @@ public class PrepaidItemsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call prepaidItemsgetOneAsync(String prepaidItemId, final ApiCallback<PrepaidItemsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOneAsync(String prepaidItemId, final ApiCallback<PrepaidItemsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -297,7 +298,7 @@ public class PrepaidItemsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = prepaidItemsgetOneValidateBeforeCall(prepaidItemId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOneValidateBeforeCall(prepaidItemId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PrepaidItemsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

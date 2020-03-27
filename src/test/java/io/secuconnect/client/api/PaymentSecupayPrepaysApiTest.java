@@ -218,7 +218,7 @@ public class PaymentSecupayPrepaysApiTest {
 	@Ignore
     @Test
     public void d_paymentSecupayPrepaysCancelByIdTest() throws ApiException {
-        Object response = prepayApi.paymentSecupayPrepaysCancelById(prepayTransactionData.getId());
+        Object response = prepayApi.cancelPaymentTransactionById("secupayprepays", prepayTransactionData.getId(), null);
 
         assertEquals("{result=true, demo=true}", response.toString());
     }

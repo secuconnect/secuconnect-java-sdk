@@ -1,8 +1,15 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.secuconnect.client.model.ProductInstanceUID;
+import io.secuconnect.client.model.SmartTransactionsPrepareCallbackUrls;
+import java.io.IOException;
 
 /**
  * SmartTransactionsPrepare
@@ -143,7 +150,7 @@ public class SmartTransactionsPrepare {
    * Is paypal basic or not
    * @return isPaypalBasic
   **/
-  public Boolean isIsPaypalBasic() {
+  public Boolean getIsPaypalBasic() {
     return isPaypalBasic;
   }
 
@@ -160,7 +167,7 @@ public class SmartTransactionsPrepare {
    * Is demo or not
    * @return isDemo
   **/
-  public Boolean isIsDemo() {
+  public Boolean getIsDemo() {
     return isDemo;
   }
 

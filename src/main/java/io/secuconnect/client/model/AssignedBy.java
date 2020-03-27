@@ -1,8 +1,13 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 /**
  * AssignedBy
@@ -60,7 +65,7 @@ public class AssignedBy {
    * Owner
    * @return owner
   **/
-  public Boolean isOwner() {
+  public Boolean getOwner() {
     return owner;
   }
 

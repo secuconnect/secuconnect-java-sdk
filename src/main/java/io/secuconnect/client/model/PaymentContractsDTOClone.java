@@ -1,8 +1,14 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.secuconnect.client.model.PaymentInformation;
+import java.io.IOException;
 
 /**
  * PaymentContractsDTOClone
@@ -63,7 +69,7 @@ public class PaymentContractsDTOClone {
    * Pay in account
    * @return payinAccount
   **/
-  public Boolean isPayinAccount() {
+  public Boolean getPayinAccount() {
     return payinAccount;
   }
 

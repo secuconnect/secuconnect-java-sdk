@@ -15,6 +15,7 @@ import java.io.IOException;
 
 import io.secuconnect.client.model.PrepaidMappingZvt;
 import io.secuconnect.client.model.PrepaidZvtDTO;
+import io.secuconnect.client.model.ProductExceptionPayload;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class PrepaidContractsProductApi {
     }
 
     /**
-     * Build call for prepaidContractsmappingZvt
+     * Build call for mappingZvt
      * @param prepaidContractId Prepaid contract id (required)
      * @param body Prepaid transaction input properties (optional)
      * @param progressListener Progress listener
@@ -50,7 +51,7 @@ public class PrepaidContractsProductApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call prepaidContractsmappingZvtCall(String prepaidContractId, PrepaidZvtDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call mappingZvtCall(String prepaidContractId, PrepaidZvtDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -93,13 +94,13 @@ public class PrepaidContractsProductApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call prepaidContractsmappingZvtValidateBeforeCall(String prepaidContractId, PrepaidZvtDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call mappingZvtValidateBeforeCall(String prepaidContractId, PrepaidZvtDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'prepaidContractId' is set
         if (prepaidContractId == null) {
-            throw new ApiException("Missing the required parameter 'prepaidContractId' when calling prepaidContractsmappingZvt(Async)");
+            throw new ApiException("Missing the required parameter 'prepaidContractId' when calling mappingZvt(Async)");
         }
         
-        com.squareup.okhttp.Call call = prepaidContractsmappingZvtCall(prepaidContractId, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = mappingZvtCall(prepaidContractId, body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -111,8 +112,8 @@ public class PrepaidContractsProductApi {
      * @return PrepaidMappingZvt
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PrepaidMappingZvt prepaidContractsmappingZvt(String prepaidContractId, PrepaidZvtDTO body) throws ApiException {
-        ApiResponse<PrepaidMappingZvt> resp = prepaidContractsmappingZvtWithHttpInfo(prepaidContractId, body);
+    public PrepaidMappingZvt mappingZvt(String prepaidContractId, PrepaidZvtDTO body) throws ApiException {
+        ApiResponse<PrepaidMappingZvt> resp = mappingZvtWithHttpInfo(prepaidContractId, body);
         return resp.getData();
     }
 
@@ -124,8 +125,8 @@ public class PrepaidContractsProductApi {
      * @return ApiResponse&lt;PrepaidMappingZvt&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PrepaidMappingZvt> prepaidContractsmappingZvtWithHttpInfo(String prepaidContractId, PrepaidZvtDTO body) throws ApiException {
-        com.squareup.okhttp.Call call = prepaidContractsmappingZvtValidateBeforeCall(prepaidContractId, body, null, null);
+    public ApiResponse<PrepaidMappingZvt> mappingZvtWithHttpInfo(String prepaidContractId, PrepaidZvtDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = mappingZvtValidateBeforeCall(prepaidContractId, body, null, null);
         Type localVarReturnType = new TypeToken<PrepaidMappingZvt>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -139,7 +140,7 @@ public class PrepaidContractsProductApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call prepaidContractsmappingZvtAsync(String prepaidContractId, PrepaidZvtDTO body, final ApiCallback<PrepaidMappingZvt> callback) throws ApiException {
+    public com.squareup.okhttp.Call mappingZvtAsync(String prepaidContractId, PrepaidZvtDTO body, final ApiCallback<PrepaidMappingZvt> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -160,7 +161,7 @@ public class PrepaidContractsProductApi {
             };
         }
 
-        com.squareup.okhttp.Call call = prepaidContractsmappingZvtValidateBeforeCall(prepaidContractId, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = mappingZvtValidateBeforeCall(prepaidContractId, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PrepaidMappingZvt>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

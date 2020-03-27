@@ -1,8 +1,13 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 /**
  * PaymentContractsDTO
@@ -123,7 +128,7 @@ public class PaymentContractsDTO {
    * Bool, default FALSE. If TRUE, an error message will be thrown if you try to create a new payment transaction with the same order_id of an previous transaction.
    * @return uniqueOrderId
   **/
-  public Boolean isUniqueOrderId() {
+  public Boolean getUniqueOrderId() {
     return uniqueOrderId;
   }
 
@@ -140,7 +145,7 @@ public class PaymentContractsDTO {
    * Bool, default TRUE. If FALSE, the customer scoring is disabled for your payment contract
    * @return scoring
   **/
-  public Boolean isScoring() {
+  public Boolean getScoring() {
     return scoring;
   }
 

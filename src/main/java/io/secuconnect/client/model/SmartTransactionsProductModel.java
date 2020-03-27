@@ -1,9 +1,26 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.PaymentCustomersProductModel;
+import io.secuconnect.client.model.PaymentTransactionsProductModel;
+import io.secuconnect.client.model.ProductInstanceUID;
+import io.secuconnect.client.model.SmartTransactionsBasket;
+import io.secuconnect.client.model.SmartTransactionsBasketInfo;
+import io.secuconnect.client.model.SmartTransactionsCheckin;
+import io.secuconnect.client.model.SmartTransactionsCheckoutLinks;
+import io.secuconnect.client.model.SmartTransactionsIdent;
+import io.secuconnect.client.model.SmartTransactionsMerchant;
+import io.secuconnect.client.model.SmartTransactionsPickupOptions;
+import io.secuconnect.client.model.SmartTransactionsReceipt;
+import io.secuconnect.client.model.SmartTransactionsShipmentDetails;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -453,7 +470,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
    * Receipt merchant print
    * @return receiptMerchantPrint
   **/
-  public Boolean isReceiptMerchantPrint() {
+  public Boolean getReceiptMerchantPrint() {
     return receiptMerchantPrint;
   }
 
@@ -741,7 +758,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
    * Demo payment
    * @return isDemo
   **/
-  public Boolean isIsDemo() {
+  public Boolean getIsDemo() {
     return isDemo;
   }
 

@@ -1,8 +1,13 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 /**
  * LoyaltyMerchantcardsDTO
@@ -83,7 +88,7 @@ public class LoyaltyMerchantcardsDTO {
    * Created by general merchant or not
    * @return createdByMerchant
   **/
-  public Boolean isCreatedByMerchant() {
+  public Boolean getCreatedByMerchant() {
     return createdByMerchant;
   }
 
@@ -100,7 +105,7 @@ public class LoyaltyMerchantcardsDTO {
    * Used by general merchant or not
    * @return usedByMerchant
   **/
-  public Boolean isUsedByMerchant() {
+  public Boolean getUsedByMerchant() {
     return usedByMerchant;
   }
 

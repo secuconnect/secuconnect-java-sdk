@@ -1,8 +1,13 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 /**
  * SmartDeviceProductsPrepaid
@@ -29,7 +34,7 @@ public class SmartDeviceProductsPrepaid {
    * Enabled
    * @return enabled
   **/
-  public Boolean isEnabled() {
+  public Boolean getEnabled() {
     return enabled;
   }
 
@@ -46,7 +51,7 @@ public class SmartDeviceProductsPrepaid {
    * Simulate force
    * @return simulateForce
   **/
-  public Boolean isSimulateForce() {
+  public Boolean getSimulateForce() {
     return simulateForce;
   }
 
@@ -63,7 +68,7 @@ public class SmartDeviceProductsPrepaid {
    * Demo force
    * @return demoForce
   **/
-  public Boolean isDemoForce() {
+  public Boolean getDemoForce() {
     return demoForce;
   }
 

@@ -40,7 +40,7 @@ public class PaymentSecupayInvoicesApiTest {
     @Test
     public void paymentSecupayInvoicesCancelByIdTest() throws ApiException {
         String hash = null;
-        Object response = api.paymentSecupayInvoicesCancelById(hash);
+        Object response = api.cancelPaymentTransactionById("secupayinvoicess", hash, null);
 
         // TODO: test validations
     }

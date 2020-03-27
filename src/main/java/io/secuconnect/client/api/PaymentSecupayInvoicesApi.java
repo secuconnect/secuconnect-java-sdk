@@ -14,6 +14,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 import io.secuconnect.client.model.PaymentCancelResult;
+import io.secuconnect.client.model.ProductExceptionPayload;
 import io.secuconnect.client.model.SecupayTransactionCancelDTO;
 import io.secuconnect.client.model.SecupayTransactionCaptureDTO;
 import io.secuconnect.client.model.SecupayTransactionDTOExternalInvoicePdf;
@@ -458,14 +459,14 @@ public class PaymentSecupayInvoicesApi {
         return call;
     }
     /**
-     * Build call for paymentSecupayinvoicespaymentSecupayInvoicesGetById
+     * Build call for paymentSecupayInvoicesGetById
      * @param paymentInvoiceId Payment transaction ID (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call paymentSecupayinvoicespaymentSecupayInvoicesGetByIdCall(String paymentInvoiceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call paymentSecupayInvoicesGetByIdCall(String paymentInvoiceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -508,13 +509,13 @@ public class PaymentSecupayInvoicesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call paymentSecupayinvoicespaymentSecupayInvoicesGetByIdValidateBeforeCall(String paymentInvoiceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call paymentSecupayInvoicesGetByIdValidateBeforeCall(String paymentInvoiceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'paymentInvoiceId' is set
         if (paymentInvoiceId == null) {
-            throw new ApiException("Missing the required parameter 'paymentInvoiceId' when calling paymentSecupayinvoicespaymentSecupayInvoicesGetById(Async)");
+            throw new ApiException("Missing the required parameter 'paymentInvoiceId' when calling paymentSecupayInvoicesGetById(Async)");
         }
         
-        com.squareup.okhttp.Call call = paymentSecupayinvoicespaymentSecupayInvoicesGetByIdCall(paymentInvoiceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = paymentSecupayInvoicesGetByIdCall(paymentInvoiceId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -525,8 +526,8 @@ public class PaymentSecupayInvoicesApi {
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SecupayTransactionProductModel paymentSecupayinvoicespaymentSecupayInvoicesGetById(String paymentInvoiceId) throws ApiException {
-        ApiResponse<SecupayTransactionProductModel> resp = paymentSecupayinvoicespaymentSecupayInvoicesGetByIdWithHttpInfo(paymentInvoiceId);
+    public SecupayTransactionProductModel paymentSecupayInvoicesGetById(String paymentInvoiceId) throws ApiException {
+        ApiResponse<SecupayTransactionProductModel> resp = paymentSecupayInvoicesGetByIdWithHttpInfo(paymentInvoiceId);
         return resp.getData();
     }
 
@@ -537,8 +538,8 @@ public class PaymentSecupayInvoicesApi {
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SecupayTransactionProductModel> paymentSecupayinvoicespaymentSecupayInvoicesGetByIdWithHttpInfo(String paymentInvoiceId) throws ApiException {
-        com.squareup.okhttp.Call call = paymentSecupayinvoicespaymentSecupayInvoicesGetByIdValidateBeforeCall(paymentInvoiceId, null, null);
+    public ApiResponse<SecupayTransactionProductModel> paymentSecupayInvoicesGetByIdWithHttpInfo(String paymentInvoiceId) throws ApiException {
+        com.squareup.okhttp.Call call = paymentSecupayInvoicesGetByIdValidateBeforeCall(paymentInvoiceId, null, null);
         Type localVarReturnType = new TypeToken<SecupayTransactionProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -551,7 +552,7 @@ public class PaymentSecupayInvoicesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call paymentSecupayinvoicespaymentSecupayInvoicesGetByIdAsync(String paymentInvoiceId, final ApiCallback<SecupayTransactionProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call paymentSecupayInvoicesGetByIdAsync(String paymentInvoiceId, final ApiCallback<SecupayTransactionProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -572,20 +573,20 @@ public class PaymentSecupayInvoicesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = paymentSecupayinvoicespaymentSecupayInvoicesGetByIdValidateBeforeCall(paymentInvoiceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = paymentSecupayInvoicesGetByIdValidateBeforeCall(paymentInvoiceId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SecupayTransactionProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for paymentSecupayinvoicespaymentSecupayinvoicesPost
+     * Build call for paymentSecupayinvoicesPost
      * @param body Invoice payment transaction input properties (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call paymentSecupayinvoicespaymentSecupayinvoicesPostCall(SecupayTransactionProductDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call paymentSecupayinvoicesPostCall(SecupayTransactionProductDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -627,9 +628,9 @@ public class PaymentSecupayInvoicesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call paymentSecupayinvoicespaymentSecupayinvoicesPostValidateBeforeCall(SecupayTransactionProductDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call paymentSecupayinvoicesPostValidateBeforeCall(SecupayTransactionProductDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = paymentSecupayinvoicespaymentSecupayinvoicesPostCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = paymentSecupayinvoicesPostCall(body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -640,8 +641,8 @@ public class PaymentSecupayInvoicesApi {
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SecupayTransactionProductModel paymentSecupayinvoicespaymentSecupayinvoicesPost(SecupayTransactionProductDTO body) throws ApiException {
-        ApiResponse<SecupayTransactionProductModel> resp = paymentSecupayinvoicespaymentSecupayinvoicesPostWithHttpInfo(body);
+    public SecupayTransactionProductModel paymentSecupayinvoicesPost(SecupayTransactionProductDTO body) throws ApiException {
+        ApiResponse<SecupayTransactionProductModel> resp = paymentSecupayinvoicesPostWithHttpInfo(body);
         return resp.getData();
     }
 
@@ -652,8 +653,8 @@ public class PaymentSecupayInvoicesApi {
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SecupayTransactionProductModel> paymentSecupayinvoicespaymentSecupayinvoicesPostWithHttpInfo(SecupayTransactionProductDTO body) throws ApiException {
-        com.squareup.okhttp.Call call = paymentSecupayinvoicespaymentSecupayinvoicesPostValidateBeforeCall(body, null, null);
+    public ApiResponse<SecupayTransactionProductModel> paymentSecupayinvoicesPostWithHttpInfo(SecupayTransactionProductDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = paymentSecupayinvoicesPostValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<SecupayTransactionProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -666,7 +667,7 @@ public class PaymentSecupayInvoicesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call paymentSecupayinvoicespaymentSecupayinvoicesPostAsync(SecupayTransactionProductDTO body, final ApiCallback<SecupayTransactionProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call paymentSecupayinvoicesPostAsync(SecupayTransactionProductDTO body, final ApiCallback<SecupayTransactionProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -687,7 +688,7 @@ public class PaymentSecupayInvoicesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = paymentSecupayinvoicespaymentSecupayinvoicesPostValidateBeforeCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = paymentSecupayinvoicesPostValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SecupayTransactionProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

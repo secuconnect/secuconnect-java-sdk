@@ -13,6 +13,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
+import io.secuconnect.client.model.ProductExceptionPayload;
 import io.secuconnect.client.model.SmartRoutingPriority;
 import io.secuconnect.client.model.SmartRoutingsDTO;
 import io.secuconnect.client.model.SmartRoutingsList;
@@ -44,14 +45,14 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * Build call for smartRoutingsaddRouting
+     * Build call for addRouting
      * @param body Smart routing properties (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsaddRoutingCall(SmartRoutingsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addRoutingCall(SmartRoutingsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -93,9 +94,9 @@ public class SmartRoutingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartRoutingsaddRoutingValidateBeforeCall(SmartRoutingsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addRoutingValidateBeforeCall(SmartRoutingsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = smartRoutingsaddRoutingCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addRoutingCall(body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -106,8 +107,8 @@ public class SmartRoutingsApi {
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartRoutingsProductModel smartRoutingsaddRouting(SmartRoutingsDTO body) throws ApiException {
-        ApiResponse<SmartRoutingsProductModel> resp = smartRoutingsaddRoutingWithHttpInfo(body);
+    public SmartRoutingsProductModel addRouting(SmartRoutingsDTO body) throws ApiException {
+        ApiResponse<SmartRoutingsProductModel> resp = addRoutingWithHttpInfo(body);
         return resp.getData();
     }
 
@@ -118,8 +119,8 @@ public class SmartRoutingsApi {
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartRoutingsProductModel> smartRoutingsaddRoutingWithHttpInfo(SmartRoutingsDTO body) throws ApiException {
-        com.squareup.okhttp.Call call = smartRoutingsaddRoutingValidateBeforeCall(body, null, null);
+    public ApiResponse<SmartRoutingsProductModel> addRoutingWithHttpInfo(SmartRoutingsDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = addRoutingValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -132,7 +133,7 @@ public class SmartRoutingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsaddRoutingAsync(SmartRoutingsDTO body, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call addRoutingAsync(SmartRoutingsDTO body, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -153,13 +154,13 @@ public class SmartRoutingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartRoutingsaddRoutingValidateBeforeCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addRoutingValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartRoutingsassignDeviceToRouting
+     * Build call for assignDeviceToRouting
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
      * @param body Smart routing assignment properties (optional)
@@ -168,7 +169,7 @@ public class SmartRoutingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsassignDeviceToRoutingCall(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call assignDeviceToRoutingCall(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -212,17 +213,17 @@ public class SmartRoutingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartRoutingsassignDeviceToRoutingValidateBeforeCall(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call assignDeviceToRoutingValidateBeforeCall(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartRoutingId' is set
         if (smartRoutingId == null) {
-            throw new ApiException("Missing the required parameter 'smartRoutingId' when calling smartRoutingsassignDeviceToRouting(Async)");
+            throw new ApiException("Missing the required parameter 'smartRoutingId' when calling assignDeviceToRouting(Async)");
         }
         // verify the required parameter 'smartDeviceId' is set
         if (smartDeviceId == null) {
-            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling smartRoutingsassignDeviceToRouting(Async)");
+            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling assignDeviceToRouting(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartRoutingsassignDeviceToRoutingCall(smartRoutingId, smartDeviceId, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = assignDeviceToRoutingCall(smartRoutingId, smartDeviceId, body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -235,8 +236,8 @@ public class SmartRoutingsApi {
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartRoutingsProductModel smartRoutingsassignDeviceToRouting(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body) throws ApiException {
-        ApiResponse<SmartRoutingsProductModel> resp = smartRoutingsassignDeviceToRoutingWithHttpInfo(smartRoutingId, smartDeviceId, body);
+    public SmartRoutingsProductModel assignDeviceToRouting(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body) throws ApiException {
+        ApiResponse<SmartRoutingsProductModel> resp = assignDeviceToRoutingWithHttpInfo(smartRoutingId, smartDeviceId, body);
         return resp.getData();
     }
 
@@ -249,8 +250,8 @@ public class SmartRoutingsApi {
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartRoutingsProductModel> smartRoutingsassignDeviceToRoutingWithHttpInfo(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body) throws ApiException {
-        com.squareup.okhttp.Call call = smartRoutingsassignDeviceToRoutingValidateBeforeCall(smartRoutingId, smartDeviceId, body, null, null);
+    public ApiResponse<SmartRoutingsProductModel> assignDeviceToRoutingWithHttpInfo(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body) throws ApiException {
+        com.squareup.okhttp.Call call = assignDeviceToRoutingValidateBeforeCall(smartRoutingId, smartDeviceId, body, null, null);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -265,7 +266,7 @@ public class SmartRoutingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsassignDeviceToRoutingAsync(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call assignDeviceToRoutingAsync(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -286,13 +287,13 @@ public class SmartRoutingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartRoutingsassignDeviceToRoutingValidateBeforeCall(smartRoutingId, smartDeviceId, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = assignDeviceToRoutingValidateBeforeCall(smartRoutingId, smartDeviceId, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartRoutingsgetAll
+     * Build call for getAll
      * @param count The number of items to return. (optional)
      * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
@@ -303,7 +304,7 @@ public class SmartRoutingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsgetAllCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -355,9 +356,9 @@ public class SmartRoutingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartRoutingsgetAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = smartRoutingsgetAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         return call;
     }
 
@@ -372,8 +373,8 @@ public class SmartRoutingsApi {
      * @return SmartRoutingsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartRoutingsList smartRoutingsgetAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        ApiResponse<SmartRoutingsList> resp = smartRoutingsgetAllWithHttpInfo(count, offset, fields, q, sort);
+    public SmartRoutingsList getAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        ApiResponse<SmartRoutingsList> resp = getAllWithHttpInfo(count, offset, fields, q, sort);
         return resp.getData();
     }
 
@@ -388,8 +389,8 @@ public class SmartRoutingsApi {
      * @return ApiResponse&lt;SmartRoutingsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartRoutingsList> smartRoutingsgetAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        com.squareup.okhttp.Call call = smartRoutingsgetAllValidateBeforeCall(count, offset, fields, q, sort, null, null);
+    public ApiResponse<SmartRoutingsList> getAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        com.squareup.okhttp.Call call = getAllValidateBeforeCall(count, offset, fields, q, sort, null, null);
         Type localVarReturnType = new TypeToken<SmartRoutingsList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -406,7 +407,7 @@ public class SmartRoutingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsgetAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<SmartRoutingsList> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<SmartRoutingsList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -427,20 +428,20 @@ public class SmartRoutingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartRoutingsgetAllValidateBeforeCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllValidateBeforeCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartRoutingsList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartRoutingsgetOne
+     * Build call for getOne
      * @param smartRoutingId Smart routing id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsgetOneCall(String smartRoutingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getOneCall(String smartRoutingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -483,13 +484,13 @@ public class SmartRoutingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartRoutingsgetOneValidateBeforeCall(String smartRoutingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOneValidateBeforeCall(String smartRoutingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartRoutingId' is set
         if (smartRoutingId == null) {
-            throw new ApiException("Missing the required parameter 'smartRoutingId' when calling smartRoutingsgetOne(Async)");
+            throw new ApiException("Missing the required parameter 'smartRoutingId' when calling getOne(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartRoutingsgetOneCall(smartRoutingId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOneCall(smartRoutingId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -500,8 +501,8 @@ public class SmartRoutingsApi {
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartRoutingsProductModel smartRoutingsgetOne(String smartRoutingId) throws ApiException {
-        ApiResponse<SmartRoutingsProductModel> resp = smartRoutingsgetOneWithHttpInfo(smartRoutingId);
+    public SmartRoutingsProductModel getOne(String smartRoutingId) throws ApiException {
+        ApiResponse<SmartRoutingsProductModel> resp = getOneWithHttpInfo(smartRoutingId);
         return resp.getData();
     }
 
@@ -512,8 +513,8 @@ public class SmartRoutingsApi {
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartRoutingsProductModel> smartRoutingsgetOneWithHttpInfo(String smartRoutingId) throws ApiException {
-        com.squareup.okhttp.Call call = smartRoutingsgetOneValidateBeforeCall(smartRoutingId, null, null);
+    public ApiResponse<SmartRoutingsProductModel> getOneWithHttpInfo(String smartRoutingId) throws ApiException {
+        com.squareup.okhttp.Call call = getOneValidateBeforeCall(smartRoutingId, null, null);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -526,7 +527,7 @@ public class SmartRoutingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsgetOneAsync(String smartRoutingId, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOneAsync(String smartRoutingId, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -547,20 +548,20 @@ public class SmartRoutingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartRoutingsgetOneValidateBeforeCall(smartRoutingId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOneValidateBeforeCall(smartRoutingId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartRoutingsremoveRouting
+     * Build call for removeRouting
      * @param smartRoutingId Smart routing id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsremoveRoutingCall(String smartRoutingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call removeRoutingCall(String smartRoutingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -603,13 +604,13 @@ public class SmartRoutingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartRoutingsremoveRoutingValidateBeforeCall(String smartRoutingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call removeRoutingValidateBeforeCall(String smartRoutingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartRoutingId' is set
         if (smartRoutingId == null) {
-            throw new ApiException("Missing the required parameter 'smartRoutingId' when calling smartRoutingsremoveRouting(Async)");
+            throw new ApiException("Missing the required parameter 'smartRoutingId' when calling removeRouting(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartRoutingsremoveRoutingCall(smartRoutingId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeRoutingCall(smartRoutingId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -620,8 +621,8 @@ public class SmartRoutingsApi {
      * @return List&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<SmartRoutingsProductModel> smartRoutingsremoveRouting(String smartRoutingId) throws ApiException {
-        ApiResponse<List<SmartRoutingsProductModel>> resp = smartRoutingsremoveRoutingWithHttpInfo(smartRoutingId);
+    public List<SmartRoutingsProductModel> removeRouting(String smartRoutingId) throws ApiException {
+        ApiResponse<List<SmartRoutingsProductModel>> resp = removeRoutingWithHttpInfo(smartRoutingId);
         return resp.getData();
     }
 
@@ -632,8 +633,8 @@ public class SmartRoutingsApi {
      * @return ApiResponse&lt;List&lt;SmartRoutingsProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<SmartRoutingsProductModel>> smartRoutingsremoveRoutingWithHttpInfo(String smartRoutingId) throws ApiException {
-        com.squareup.okhttp.Call call = smartRoutingsremoveRoutingValidateBeforeCall(smartRoutingId, null, null);
+    public ApiResponse<List<SmartRoutingsProductModel>> removeRoutingWithHttpInfo(String smartRoutingId) throws ApiException {
+        com.squareup.okhttp.Call call = removeRoutingValidateBeforeCall(smartRoutingId, null, null);
         Type localVarReturnType = new TypeToken<List<SmartRoutingsProductModel>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -646,7 +647,7 @@ public class SmartRoutingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsremoveRoutingAsync(String smartRoutingId, final ApiCallback<List<SmartRoutingsProductModel>> callback) throws ApiException {
+    public com.squareup.okhttp.Call removeRoutingAsync(String smartRoutingId, final ApiCallback<List<SmartRoutingsProductModel>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -667,13 +668,13 @@ public class SmartRoutingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartRoutingsremoveRoutingValidateBeforeCall(smartRoutingId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeRoutingValidateBeforeCall(smartRoutingId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<SmartRoutingsProductModel>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartRoutingsremoveSmartRoutingAssignment
+     * Build call for removeSmartRoutingAssignment
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
      * @param progressListener Progress listener
@@ -681,7 +682,7 @@ public class SmartRoutingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsremoveSmartRoutingAssignmentCall(String smartRoutingId, String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call removeSmartRoutingAssignmentCall(String smartRoutingId, String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -725,17 +726,17 @@ public class SmartRoutingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartRoutingsremoveSmartRoutingAssignmentValidateBeforeCall(String smartRoutingId, String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call removeSmartRoutingAssignmentValidateBeforeCall(String smartRoutingId, String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartRoutingId' is set
         if (smartRoutingId == null) {
-            throw new ApiException("Missing the required parameter 'smartRoutingId' when calling smartRoutingsremoveSmartRoutingAssignment(Async)");
+            throw new ApiException("Missing the required parameter 'smartRoutingId' when calling removeSmartRoutingAssignment(Async)");
         }
         // verify the required parameter 'smartDeviceId' is set
         if (smartDeviceId == null) {
-            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling smartRoutingsremoveSmartRoutingAssignment(Async)");
+            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling removeSmartRoutingAssignment(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartRoutingsremoveSmartRoutingAssignmentCall(smartRoutingId, smartDeviceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeSmartRoutingAssignmentCall(smartRoutingId, smartDeviceId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -747,8 +748,8 @@ public class SmartRoutingsApi {
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartRoutingsProductModel smartRoutingsremoveSmartRoutingAssignment(String smartRoutingId, String smartDeviceId) throws ApiException {
-        ApiResponse<SmartRoutingsProductModel> resp = smartRoutingsremoveSmartRoutingAssignmentWithHttpInfo(smartRoutingId, smartDeviceId);
+    public SmartRoutingsProductModel removeSmartRoutingAssignment(String smartRoutingId, String smartDeviceId) throws ApiException {
+        ApiResponse<SmartRoutingsProductModel> resp = removeSmartRoutingAssignmentWithHttpInfo(smartRoutingId, smartDeviceId);
         return resp.getData();
     }
 
@@ -760,8 +761,8 @@ public class SmartRoutingsApi {
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartRoutingsProductModel> smartRoutingsremoveSmartRoutingAssignmentWithHttpInfo(String smartRoutingId, String smartDeviceId) throws ApiException {
-        com.squareup.okhttp.Call call = smartRoutingsremoveSmartRoutingAssignmentValidateBeforeCall(smartRoutingId, smartDeviceId, null, null);
+    public ApiResponse<SmartRoutingsProductModel> removeSmartRoutingAssignmentWithHttpInfo(String smartRoutingId, String smartDeviceId) throws ApiException {
+        com.squareup.okhttp.Call call = removeSmartRoutingAssignmentValidateBeforeCall(smartRoutingId, smartDeviceId, null, null);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -775,7 +776,7 @@ public class SmartRoutingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsremoveSmartRoutingAssignmentAsync(String smartRoutingId, String smartDeviceId, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call removeSmartRoutingAssignmentAsync(String smartRoutingId, String smartDeviceId, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -796,13 +797,13 @@ public class SmartRoutingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartRoutingsremoveSmartRoutingAssignmentValidateBeforeCall(smartRoutingId, smartDeviceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeSmartRoutingAssignmentValidateBeforeCall(smartRoutingId, smartDeviceId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartRoutingsupdateRouting
+     * Build call for updateRouting
      * @param smartRoutingId Smart routing id (required)
      * @param body Smart routing properties (optional)
      * @param progressListener Progress listener
@@ -810,7 +811,7 @@ public class SmartRoutingsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsupdateRoutingCall(String smartRoutingId, SmartRoutingsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateRoutingCall(String smartRoutingId, SmartRoutingsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -853,13 +854,13 @@ public class SmartRoutingsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartRoutingsupdateRoutingValidateBeforeCall(String smartRoutingId, SmartRoutingsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateRoutingValidateBeforeCall(String smartRoutingId, SmartRoutingsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartRoutingId' is set
         if (smartRoutingId == null) {
-            throw new ApiException("Missing the required parameter 'smartRoutingId' when calling smartRoutingsupdateRouting(Async)");
+            throw new ApiException("Missing the required parameter 'smartRoutingId' when calling updateRouting(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartRoutingsupdateRoutingCall(smartRoutingId, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateRoutingCall(smartRoutingId, body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -871,8 +872,8 @@ public class SmartRoutingsApi {
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartRoutingsProductModel smartRoutingsupdateRouting(String smartRoutingId, SmartRoutingsDTO body) throws ApiException {
-        ApiResponse<SmartRoutingsProductModel> resp = smartRoutingsupdateRoutingWithHttpInfo(smartRoutingId, body);
+    public SmartRoutingsProductModel updateRouting(String smartRoutingId, SmartRoutingsDTO body) throws ApiException {
+        ApiResponse<SmartRoutingsProductModel> resp = updateRoutingWithHttpInfo(smartRoutingId, body);
         return resp.getData();
     }
 
@@ -884,8 +885,8 @@ public class SmartRoutingsApi {
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartRoutingsProductModel> smartRoutingsupdateRoutingWithHttpInfo(String smartRoutingId, SmartRoutingsDTO body) throws ApiException {
-        com.squareup.okhttp.Call call = smartRoutingsupdateRoutingValidateBeforeCall(smartRoutingId, body, null, null);
+    public ApiResponse<SmartRoutingsProductModel> updateRoutingWithHttpInfo(String smartRoutingId, SmartRoutingsDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = updateRoutingValidateBeforeCall(smartRoutingId, body, null, null);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -899,7 +900,7 @@ public class SmartRoutingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartRoutingsupdateRoutingAsync(String smartRoutingId, SmartRoutingsDTO body, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateRoutingAsync(String smartRoutingId, SmartRoutingsDTO body, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -920,7 +921,7 @@ public class SmartRoutingsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartRoutingsupdateRoutingValidateBeforeCall(smartRoutingId, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateRoutingValidateBeforeCall(smartRoutingId, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

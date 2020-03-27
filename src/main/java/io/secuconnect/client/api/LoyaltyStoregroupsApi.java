@@ -16,6 +16,7 @@ import java.io.IOException;
 import io.secuconnect.client.model.LoyaltyStoregroupsDTO;
 import io.secuconnect.client.model.LoyaltyStoregroupsList;
 import io.secuconnect.client.model.LoyaltyStoregroupsProductModel;
+import io.secuconnect.client.model.ProductExceptionPayload;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -43,14 +44,14 @@ public class LoyaltyStoregroupsApi {
     }
 
     /**
-     * Build call for loyaltyStoreGroupsaddStoreGroup
+     * Build call for addStoreGroup
      * @param body Loyalty store group properties (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call loyaltyStoreGroupsaddStoreGroupCall(LoyaltyStoregroupsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addStoreGroupCall(LoyaltyStoregroupsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -92,9 +93,9 @@ public class LoyaltyStoregroupsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call loyaltyStoreGroupsaddStoreGroupValidateBeforeCall(LoyaltyStoregroupsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addStoreGroupValidateBeforeCall(LoyaltyStoregroupsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsaddStoreGroupCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addStoreGroupCall(body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -105,8 +106,8 @@ public class LoyaltyStoregroupsApi {
      * @return LoyaltyStoregroupsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LoyaltyStoregroupsProductModel loyaltyStoreGroupsaddStoreGroup(LoyaltyStoregroupsDTO body) throws ApiException {
-        ApiResponse<LoyaltyStoregroupsProductModel> resp = loyaltyStoreGroupsaddStoreGroupWithHttpInfo(body);
+    public LoyaltyStoregroupsProductModel addStoreGroup(LoyaltyStoregroupsDTO body) throws ApiException {
+        ApiResponse<LoyaltyStoregroupsProductModel> resp = addStoreGroupWithHttpInfo(body);
         return resp.getData();
     }
 
@@ -117,8 +118,8 @@ public class LoyaltyStoregroupsApi {
      * @return ApiResponse&lt;LoyaltyStoregroupsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LoyaltyStoregroupsProductModel> loyaltyStoreGroupsaddStoreGroupWithHttpInfo(LoyaltyStoregroupsDTO body) throws ApiException {
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsaddStoreGroupValidateBeforeCall(body, null, null);
+    public ApiResponse<LoyaltyStoregroupsProductModel> addStoreGroupWithHttpInfo(LoyaltyStoregroupsDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = addStoreGroupValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<LoyaltyStoregroupsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -131,7 +132,7 @@ public class LoyaltyStoregroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call loyaltyStoreGroupsaddStoreGroupAsync(LoyaltyStoregroupsDTO body, final ApiCallback<LoyaltyStoregroupsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call addStoreGroupAsync(LoyaltyStoregroupsDTO body, final ApiCallback<LoyaltyStoregroupsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -152,13 +153,13 @@ public class LoyaltyStoregroupsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsaddStoreGroupValidateBeforeCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addStoreGroupValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<LoyaltyStoregroupsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for loyaltyStoreGroupsgetAll
+     * Build call for getAll
      * @param count The number of items to return. (optional)
      * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
@@ -169,7 +170,7 @@ public class LoyaltyStoregroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call loyaltyStoreGroupsgetAllCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -221,9 +222,9 @@ public class LoyaltyStoregroupsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call loyaltyStoreGroupsgetAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsgetAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         return call;
     }
 
@@ -238,8 +239,8 @@ public class LoyaltyStoregroupsApi {
      * @return LoyaltyStoregroupsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LoyaltyStoregroupsList loyaltyStoreGroupsgetAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        ApiResponse<LoyaltyStoregroupsList> resp = loyaltyStoreGroupsgetAllWithHttpInfo(count, offset, fields, q, sort);
+    public LoyaltyStoregroupsList getAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        ApiResponse<LoyaltyStoregroupsList> resp = getAllWithHttpInfo(count, offset, fields, q, sort);
         return resp.getData();
     }
 
@@ -254,8 +255,8 @@ public class LoyaltyStoregroupsApi {
      * @return ApiResponse&lt;LoyaltyStoregroupsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LoyaltyStoregroupsList> loyaltyStoreGroupsgetAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsgetAllValidateBeforeCall(count, offset, fields, q, sort, null, null);
+    public ApiResponse<LoyaltyStoregroupsList> getAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        com.squareup.okhttp.Call call = getAllValidateBeforeCall(count, offset, fields, q, sort, null, null);
         Type localVarReturnType = new TypeToken<LoyaltyStoregroupsList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -272,7 +273,7 @@ public class LoyaltyStoregroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call loyaltyStoreGroupsgetAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<LoyaltyStoregroupsList> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<LoyaltyStoregroupsList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -293,20 +294,20 @@ public class LoyaltyStoregroupsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsgetAllValidateBeforeCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllValidateBeforeCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<LoyaltyStoregroupsList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for loyaltyStoreGroupsgetOne
+     * Build call for getOne
      * @param loyaltyStoreGroupId loyalty store group id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call loyaltyStoreGroupsgetOneCall(String loyaltyStoreGroupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getOneCall(String loyaltyStoreGroupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -349,13 +350,13 @@ public class LoyaltyStoregroupsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call loyaltyStoreGroupsgetOneValidateBeforeCall(String loyaltyStoreGroupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOneValidateBeforeCall(String loyaltyStoreGroupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'loyaltyStoreGroupId' is set
         if (loyaltyStoreGroupId == null) {
-            throw new ApiException("Missing the required parameter 'loyaltyStoreGroupId' when calling loyaltyStoreGroupsgetOne(Async)");
+            throw new ApiException("Missing the required parameter 'loyaltyStoreGroupId' when calling getOne(Async)");
         }
         
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsgetOneCall(loyaltyStoreGroupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOneCall(loyaltyStoreGroupId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -366,8 +367,8 @@ public class LoyaltyStoregroupsApi {
      * @return LoyaltyStoregroupsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LoyaltyStoregroupsProductModel loyaltyStoreGroupsgetOne(String loyaltyStoreGroupId) throws ApiException {
-        ApiResponse<LoyaltyStoregroupsProductModel> resp = loyaltyStoreGroupsgetOneWithHttpInfo(loyaltyStoreGroupId);
+    public LoyaltyStoregroupsProductModel getOne(String loyaltyStoreGroupId) throws ApiException {
+        ApiResponse<LoyaltyStoregroupsProductModel> resp = getOneWithHttpInfo(loyaltyStoreGroupId);
         return resp.getData();
     }
 
@@ -378,8 +379,8 @@ public class LoyaltyStoregroupsApi {
      * @return ApiResponse&lt;LoyaltyStoregroupsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LoyaltyStoregroupsProductModel> loyaltyStoreGroupsgetOneWithHttpInfo(String loyaltyStoreGroupId) throws ApiException {
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsgetOneValidateBeforeCall(loyaltyStoreGroupId, null, null);
+    public ApiResponse<LoyaltyStoregroupsProductModel> getOneWithHttpInfo(String loyaltyStoreGroupId) throws ApiException {
+        com.squareup.okhttp.Call call = getOneValidateBeforeCall(loyaltyStoreGroupId, null, null);
         Type localVarReturnType = new TypeToken<LoyaltyStoregroupsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -392,7 +393,7 @@ public class LoyaltyStoregroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call loyaltyStoreGroupsgetOneAsync(String loyaltyStoreGroupId, final ApiCallback<LoyaltyStoregroupsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOneAsync(String loyaltyStoreGroupId, final ApiCallback<LoyaltyStoregroupsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -413,20 +414,20 @@ public class LoyaltyStoregroupsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsgetOneValidateBeforeCall(loyaltyStoreGroupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOneValidateBeforeCall(loyaltyStoreGroupId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<LoyaltyStoregroupsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for loyaltyStoreGroupsremoveStoreGroup
+     * Build call for removeStoreGroup
      * @param loyaltyStoreGroupId Loyalty store group id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call loyaltyStoreGroupsremoveStoreGroupCall(String loyaltyStoreGroupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call removeStoreGroupCall(String loyaltyStoreGroupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -469,13 +470,13 @@ public class LoyaltyStoregroupsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call loyaltyStoreGroupsremoveStoreGroupValidateBeforeCall(String loyaltyStoreGroupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call removeStoreGroupValidateBeforeCall(String loyaltyStoreGroupId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'loyaltyStoreGroupId' is set
         if (loyaltyStoreGroupId == null) {
-            throw new ApiException("Missing the required parameter 'loyaltyStoreGroupId' when calling loyaltyStoreGroupsremoveStoreGroup(Async)");
+            throw new ApiException("Missing the required parameter 'loyaltyStoreGroupId' when calling removeStoreGroup(Async)");
         }
         
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsremoveStoreGroupCall(loyaltyStoreGroupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeStoreGroupCall(loyaltyStoreGroupId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -486,8 +487,8 @@ public class LoyaltyStoregroupsApi {
      * @return List&lt;LoyaltyStoregroupsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<LoyaltyStoregroupsProductModel> loyaltyStoreGroupsremoveStoreGroup(String loyaltyStoreGroupId) throws ApiException {
-        ApiResponse<List<LoyaltyStoregroupsProductModel>> resp = loyaltyStoreGroupsremoveStoreGroupWithHttpInfo(loyaltyStoreGroupId);
+    public List<LoyaltyStoregroupsProductModel> removeStoreGroup(String loyaltyStoreGroupId) throws ApiException {
+        ApiResponse<List<LoyaltyStoregroupsProductModel>> resp = removeStoreGroupWithHttpInfo(loyaltyStoreGroupId);
         return resp.getData();
     }
 
@@ -498,8 +499,8 @@ public class LoyaltyStoregroupsApi {
      * @return ApiResponse&lt;List&lt;LoyaltyStoregroupsProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<LoyaltyStoregroupsProductModel>> loyaltyStoreGroupsremoveStoreGroupWithHttpInfo(String loyaltyStoreGroupId) throws ApiException {
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsremoveStoreGroupValidateBeforeCall(loyaltyStoreGroupId, null, null);
+    public ApiResponse<List<LoyaltyStoregroupsProductModel>> removeStoreGroupWithHttpInfo(String loyaltyStoreGroupId) throws ApiException {
+        com.squareup.okhttp.Call call = removeStoreGroupValidateBeforeCall(loyaltyStoreGroupId, null, null);
         Type localVarReturnType = new TypeToken<List<LoyaltyStoregroupsProductModel>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -512,7 +513,7 @@ public class LoyaltyStoregroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call loyaltyStoreGroupsremoveStoreGroupAsync(String loyaltyStoreGroupId, final ApiCallback<List<LoyaltyStoregroupsProductModel>> callback) throws ApiException {
+    public com.squareup.okhttp.Call removeStoreGroupAsync(String loyaltyStoreGroupId, final ApiCallback<List<LoyaltyStoregroupsProductModel>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -533,13 +534,13 @@ public class LoyaltyStoregroupsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsremoveStoreGroupValidateBeforeCall(loyaltyStoreGroupId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeStoreGroupValidateBeforeCall(loyaltyStoreGroupId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<LoyaltyStoregroupsProductModel>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for loyaltyStoreGroupsupdateStoreGroup
+     * Build call for updateStoreGroup
      * @param loyaltyStoreGroupId Loyalty store group id (required)
      * @param body Loyalty store group properties (optional)
      * @param progressListener Progress listener
@@ -547,7 +548,7 @@ public class LoyaltyStoregroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call loyaltyStoreGroupsupdateStoreGroupCall(String loyaltyStoreGroupId, LoyaltyStoregroupsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateStoreGroupCall(String loyaltyStoreGroupId, LoyaltyStoregroupsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -590,13 +591,13 @@ public class LoyaltyStoregroupsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call loyaltyStoreGroupsupdateStoreGroupValidateBeforeCall(String loyaltyStoreGroupId, LoyaltyStoregroupsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateStoreGroupValidateBeforeCall(String loyaltyStoreGroupId, LoyaltyStoregroupsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'loyaltyStoreGroupId' is set
         if (loyaltyStoreGroupId == null) {
-            throw new ApiException("Missing the required parameter 'loyaltyStoreGroupId' when calling loyaltyStoreGroupsupdateStoreGroup(Async)");
+            throw new ApiException("Missing the required parameter 'loyaltyStoreGroupId' when calling updateStoreGroup(Async)");
         }
         
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsupdateStoreGroupCall(loyaltyStoreGroupId, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateStoreGroupCall(loyaltyStoreGroupId, body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -608,8 +609,8 @@ public class LoyaltyStoregroupsApi {
      * @return LoyaltyStoregroupsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LoyaltyStoregroupsProductModel loyaltyStoreGroupsupdateStoreGroup(String loyaltyStoreGroupId, LoyaltyStoregroupsDTO body) throws ApiException {
-        ApiResponse<LoyaltyStoregroupsProductModel> resp = loyaltyStoreGroupsupdateStoreGroupWithHttpInfo(loyaltyStoreGroupId, body);
+    public LoyaltyStoregroupsProductModel updateStoreGroup(String loyaltyStoreGroupId, LoyaltyStoregroupsDTO body) throws ApiException {
+        ApiResponse<LoyaltyStoregroupsProductModel> resp = updateStoreGroupWithHttpInfo(loyaltyStoreGroupId, body);
         return resp.getData();
     }
 
@@ -621,8 +622,8 @@ public class LoyaltyStoregroupsApi {
      * @return ApiResponse&lt;LoyaltyStoregroupsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LoyaltyStoregroupsProductModel> loyaltyStoreGroupsupdateStoreGroupWithHttpInfo(String loyaltyStoreGroupId, LoyaltyStoregroupsDTO body) throws ApiException {
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsupdateStoreGroupValidateBeforeCall(loyaltyStoreGroupId, body, null, null);
+    public ApiResponse<LoyaltyStoregroupsProductModel> updateStoreGroupWithHttpInfo(String loyaltyStoreGroupId, LoyaltyStoregroupsDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = updateStoreGroupValidateBeforeCall(loyaltyStoreGroupId, body, null, null);
         Type localVarReturnType = new TypeToken<LoyaltyStoregroupsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -636,7 +637,7 @@ public class LoyaltyStoregroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call loyaltyStoreGroupsupdateStoreGroupAsync(String loyaltyStoreGroupId, LoyaltyStoregroupsDTO body, final ApiCallback<LoyaltyStoregroupsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateStoreGroupAsync(String loyaltyStoreGroupId, LoyaltyStoregroupsDTO body, final ApiCallback<LoyaltyStoregroupsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -657,7 +658,7 @@ public class LoyaltyStoregroupsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = loyaltyStoreGroupsupdateStoreGroupValidateBeforeCall(loyaltyStoreGroupId, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateStoreGroupValidateBeforeCall(loyaltyStoreGroupId, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<LoyaltyStoregroupsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

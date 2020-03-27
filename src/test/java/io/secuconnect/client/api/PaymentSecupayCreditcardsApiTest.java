@@ -40,7 +40,7 @@ public class PaymentSecupayCreditcardsApiTest {
     @Test
     public void paymentSecupayCreditcardsCancelByIdTest() throws ApiException {
         String hash = null;
-        Object response = api.paymentSecupayCreditcardsCancelById(hash);
+        Object response = api.cancelPaymentTransactionById("secupaycreditcards", hash, null);
 
         // TODO: test validations
     }

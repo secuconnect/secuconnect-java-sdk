@@ -1,8 +1,13 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 /**
  * ResultAlwaysTrue
@@ -20,7 +25,7 @@ public class ResultAlwaysTrue {
    * Result (will always be equal to true)
    * @return result
   **/
-  public Boolean isResult() {
+  public Boolean getResult() {
     return result;
   }
 

@@ -13,6 +13,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
+import io.secuconnect.client.model.ProductExceptionPayload;
 import io.secuconnect.client.model.SmartTransactionsDTO;
 import io.secuconnect.client.model.SmartTransactionsList;
 import io.secuconnect.client.model.SmartTransactionsPreTransactionModel;
@@ -45,14 +46,14 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Build call for smartTransactionsaddTransaction
+     * Build call for addTransaction
      * @param body Smart transaction properties (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsaddTransactionCall(SmartTransactionsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addTransactionCall(SmartTransactionsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -94,9 +95,9 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionsaddTransactionValidateBeforeCall(SmartTransactionsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addTransactionValidateBeforeCall(SmartTransactionsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = smartTransactionsaddTransactionCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addTransactionCall(body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -107,8 +108,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel smartTransactionsaddTransaction(SmartTransactionsDTO body) throws ApiException {
-        ApiResponse<SmartTransactionsProductModel> resp = smartTransactionsaddTransactionWithHttpInfo(body);
+    public SmartTransactionsProductModel addTransaction(SmartTransactionsDTO body) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = addTransactionWithHttpInfo(body);
         return resp.getData();
     }
 
@@ -119,8 +120,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> smartTransactionsaddTransactionWithHttpInfo(SmartTransactionsDTO body) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionsaddTransactionValidateBeforeCall(body, null, null);
+    public ApiResponse<SmartTransactionsProductModel> addTransactionWithHttpInfo(SmartTransactionsDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = addTransactionValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -133,7 +134,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsaddTransactionAsync(SmartTransactionsDTO body, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call addTransactionAsync(SmartTransactionsDTO body, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -154,20 +155,20 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionsaddTransactionValidateBeforeCall(body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addTransactionValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartTransactionscancelTransaction
+     * Build call for cancelTransaction
      * @param smartTransactionId Smart transaction id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionscancelTransactionCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cancelTransactionCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -210,13 +211,13 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionscancelTransactionValidateBeforeCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cancelTransactionValidateBeforeCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartTransactionId' is set
         if (smartTransactionId == null) {
-            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling smartTransactionscancelTransaction(Async)");
+            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling cancelTransaction(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartTransactionscancelTransactionCall(smartTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cancelTransactionCall(smartTransactionId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -227,8 +228,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel smartTransactionscancelTransaction(String smartTransactionId) throws ApiException {
-        ApiResponse<SmartTransactionsProductModel> resp = smartTransactionscancelTransactionWithHttpInfo(smartTransactionId);
+    public SmartTransactionsProductModel cancelTransaction(String smartTransactionId) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = cancelTransactionWithHttpInfo(smartTransactionId);
         return resp.getData();
     }
 
@@ -239,8 +240,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> smartTransactionscancelTransactionWithHttpInfo(String smartTransactionId) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionscancelTransactionValidateBeforeCall(smartTransactionId, null, null);
+    public ApiResponse<SmartTransactionsProductModel> cancelTransactionWithHttpInfo(String smartTransactionId) throws ApiException {
+        com.squareup.okhttp.Call call = cancelTransactionValidateBeforeCall(smartTransactionId, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -253,7 +254,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionscancelTransactionAsync(String smartTransactionId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call cancelTransactionAsync(String smartTransactionId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -274,20 +275,20 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionscancelTransactionValidateBeforeCall(smartTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cancelTransactionValidateBeforeCall(smartTransactionId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartTransactionscancelTrx
+     * Build call for cancelTrx
      * @param smartTransactionId Smart transaction id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionscancelTrxCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cancelTrxCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -330,13 +331,13 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionscancelTrxValidateBeforeCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cancelTrxValidateBeforeCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartTransactionId' is set
         if (smartTransactionId == null) {
-            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling smartTransactionscancelTrx(Async)");
+            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling cancelTrx(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartTransactionscancelTrxCall(smartTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cancelTrxCall(smartTransactionId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -347,8 +348,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel smartTransactionscancelTrx(String smartTransactionId) throws ApiException {
-        ApiResponse<SmartTransactionsProductModel> resp = smartTransactionscancelTrxWithHttpInfo(smartTransactionId);
+    public SmartTransactionsProductModel cancelTrx(String smartTransactionId) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = cancelTrxWithHttpInfo(smartTransactionId);
         return resp.getData();
     }
 
@@ -359,8 +360,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> smartTransactionscancelTrxWithHttpInfo(String smartTransactionId) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionscancelTrxValidateBeforeCall(smartTransactionId, null, null);
+    public ApiResponse<SmartTransactionsProductModel> cancelTrxWithHttpInfo(String smartTransactionId) throws ApiException {
+        com.squareup.okhttp.Call call = cancelTrxValidateBeforeCall(smartTransactionId, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -373,7 +374,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionscancelTrxAsync(String smartTransactionId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call cancelTrxAsync(String smartTransactionId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -394,20 +395,20 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionscancelTrxValidateBeforeCall(smartTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cancelTrxValidateBeforeCall(smartTransactionId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartTransactionsdiagnose
+     * Build call for diagnose
      * @param smartDeviceId Smart device id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsdiagnoseCall(String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call diagnoseCall(String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -450,13 +451,13 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionsdiagnoseValidateBeforeCall(String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call diagnoseValidateBeforeCall(String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartDeviceId' is set
         if (smartDeviceId == null) {
-            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling smartTransactionsdiagnose(Async)");
+            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling diagnose(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartTransactionsdiagnoseCall(smartDeviceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = diagnoseCall(smartDeviceId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -467,8 +468,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel smartTransactionsdiagnose(String smartDeviceId) throws ApiException {
-        ApiResponse<SmartTransactionsProductModel> resp = smartTransactionsdiagnoseWithHttpInfo(smartDeviceId);
+    public SmartTransactionsProductModel diagnose(String smartDeviceId) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = diagnoseWithHttpInfo(smartDeviceId);
         return resp.getData();
     }
 
@@ -479,8 +480,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> smartTransactionsdiagnoseWithHttpInfo(String smartDeviceId) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionsdiagnoseValidateBeforeCall(smartDeviceId, null, null);
+    public ApiResponse<SmartTransactionsProductModel> diagnoseWithHttpInfo(String smartDeviceId) throws ApiException {
+        com.squareup.okhttp.Call call = diagnoseValidateBeforeCall(smartDeviceId, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -493,7 +494,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsdiagnoseAsync(String smartDeviceId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call diagnoseAsync(String smartDeviceId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -514,13 +515,13 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionsdiagnoseValidateBeforeCall(smartDeviceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = diagnoseValidateBeforeCall(smartDeviceId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartTransactionsgetAll
+     * Build call for getAll
      * @param count The number of items to return. (optional)
      * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
@@ -531,7 +532,7 @@ public class SmartTransactionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsgetAllCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -583,9 +584,9 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionsgetAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = smartTransactionsgetAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         return call;
     }
 
@@ -600,8 +601,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsList smartTransactionsgetAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        ApiResponse<SmartTransactionsList> resp = smartTransactionsgetAllWithHttpInfo(count, offset, fields, q, sort);
+    public SmartTransactionsList getAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        ApiResponse<SmartTransactionsList> resp = getAllWithHttpInfo(count, offset, fields, q, sort);
         return resp.getData();
     }
 
@@ -616,8 +617,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsList> smartTransactionsgetAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionsgetAllValidateBeforeCall(count, offset, fields, q, sort, null, null);
+    public ApiResponse<SmartTransactionsList> getAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        com.squareup.okhttp.Call call = getAllValidateBeforeCall(count, offset, fields, q, sort, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -634,7 +635,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsgetAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<SmartTransactionsList> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<SmartTransactionsList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -655,20 +656,20 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionsgetAllValidateBeforeCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllValidateBeforeCall(count, offset, fields, q, sort, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartTransactionsgetOne
+     * Build call for getOne
      * @param smartTransactionId Smart transaction id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsgetOneCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getOneCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -711,13 +712,13 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionsgetOneValidateBeforeCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOneValidateBeforeCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartTransactionId' is set
         if (smartTransactionId == null) {
-            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling smartTransactionsgetOne(Async)");
+            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling getOne(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartTransactionsgetOneCall(smartTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOneCall(smartTransactionId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -728,8 +729,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel smartTransactionsgetOne(String smartTransactionId) throws ApiException {
-        ApiResponse<SmartTransactionsProductModel> resp = smartTransactionsgetOneWithHttpInfo(smartTransactionId);
+    public SmartTransactionsProductModel getOne(String smartTransactionId) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = getOneWithHttpInfo(smartTransactionId);
         return resp.getData();
     }
 
@@ -740,8 +741,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> smartTransactionsgetOneWithHttpInfo(String smartTransactionId) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionsgetOneValidateBeforeCall(smartTransactionId, null, null);
+    public ApiResponse<SmartTransactionsProductModel> getOneWithHttpInfo(String smartTransactionId) throws ApiException {
+        com.squareup.okhttp.Call call = getOneValidateBeforeCall(smartTransactionId, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -754,7 +755,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsgetOneAsync(String smartTransactionId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOneAsync(String smartTransactionId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -775,20 +776,20 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionsgetOneValidateBeforeCall(smartTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOneValidateBeforeCall(smartTransactionId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartTransactionspreTransaction
+     * Build call for preTransaction
      * @param smartTransactionId Smart transaction id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionspreTransactionCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call preTransactionCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -831,13 +832,13 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionspreTransactionValidateBeforeCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call preTransactionValidateBeforeCall(String smartTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartTransactionId' is set
         if (smartTransactionId == null) {
-            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling smartTransactionspreTransaction(Async)");
+            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling preTransaction(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartTransactionspreTransactionCall(smartTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = preTransactionCall(smartTransactionId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -848,8 +849,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsPreTransactionModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsPreTransactionModel smartTransactionspreTransaction(String smartTransactionId) throws ApiException {
-        ApiResponse<SmartTransactionsPreTransactionModel> resp = smartTransactionspreTransactionWithHttpInfo(smartTransactionId);
+    public SmartTransactionsPreTransactionModel preTransaction(String smartTransactionId) throws ApiException {
+        ApiResponse<SmartTransactionsPreTransactionModel> resp = preTransactionWithHttpInfo(smartTransactionId);
         return resp.getData();
     }
 
@@ -860,8 +861,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsPreTransactionModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsPreTransactionModel> smartTransactionspreTransactionWithHttpInfo(String smartTransactionId) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionspreTransactionValidateBeforeCall(smartTransactionId, null, null);
+    public ApiResponse<SmartTransactionsPreTransactionModel> preTransactionWithHttpInfo(String smartTransactionId) throws ApiException {
+        com.squareup.okhttp.Call call = preTransactionValidateBeforeCall(smartTransactionId, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsPreTransactionModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -874,7 +875,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionspreTransactionAsync(String smartTransactionId, final ApiCallback<SmartTransactionsPreTransactionModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call preTransactionAsync(String smartTransactionId, final ApiCallback<SmartTransactionsPreTransactionModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -895,13 +896,13 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionspreTransactionValidateBeforeCall(smartTransactionId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = preTransactionValidateBeforeCall(smartTransactionId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsPreTransactionModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartTransactionsprepare
+     * Build call for prepare
      * @param smartTransactionId Smart transaction id (required)
      * @param paymentMethod Payment method (required)
      * @param body Information which customer and container will be used to this operation (optional)
@@ -910,7 +911,7 @@ public class SmartTransactionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsprepareCall(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call prepareCall(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -954,17 +955,17 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionsprepareValidateBeforeCall(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call prepareValidateBeforeCall(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartTransactionId' is set
         if (smartTransactionId == null) {
-            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling smartTransactionsprepare(Async)");
+            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling prepare(Async)");
         }
         // verify the required parameter 'paymentMethod' is set
         if (paymentMethod == null) {
-            throw new ApiException("Missing the required parameter 'paymentMethod' when calling smartTransactionsprepare(Async)");
+            throw new ApiException("Missing the required parameter 'paymentMethod' when calling prepare(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartTransactionsprepareCall(smartTransactionId, paymentMethod, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = prepareCall(smartTransactionId, paymentMethod, body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -977,8 +978,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel smartTransactionsprepare(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body) throws ApiException {
-        ApiResponse<SmartTransactionsProductModel> resp = smartTransactionsprepareWithHttpInfo(smartTransactionId, paymentMethod, body);
+    public SmartTransactionsProductModel prepare(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = prepareWithHttpInfo(smartTransactionId, paymentMethod, body);
         return resp.getData();
     }
 
@@ -991,8 +992,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> smartTransactionsprepareWithHttpInfo(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionsprepareValidateBeforeCall(smartTransactionId, paymentMethod, body, null, null);
+    public ApiResponse<SmartTransactionsProductModel> prepareWithHttpInfo(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body) throws ApiException {
+        com.squareup.okhttp.Call call = prepareValidateBeforeCall(smartTransactionId, paymentMethod, body, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1007,7 +1008,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsprepareAsync(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call prepareAsync(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1028,20 +1029,20 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionsprepareValidateBeforeCall(smartTransactionId, paymentMethod, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = prepareValidateBeforeCall(smartTransactionId, paymentMethod, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartTransactionsstartEndOfDayReport
+     * Build call for startEndOfDayReport
      * @param smartDeviceId Smart device id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsstartEndOfDayReportCall(String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call startEndOfDayReportCall(String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1084,13 +1085,13 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionsstartEndOfDayReportValidateBeforeCall(String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call startEndOfDayReportValidateBeforeCall(String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartDeviceId' is set
         if (smartDeviceId == null) {
-            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling smartTransactionsstartEndOfDayReport(Async)");
+            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling startEndOfDayReport(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartTransactionsstartEndOfDayReportCall(smartDeviceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = startEndOfDayReportCall(smartDeviceId, progressListener, progressRequestListener);
         return call;
     }
 
@@ -1101,8 +1102,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel smartTransactionsstartEndOfDayReport(String smartDeviceId) throws ApiException {
-        ApiResponse<SmartTransactionsProductModel> resp = smartTransactionsstartEndOfDayReportWithHttpInfo(smartDeviceId);
+    public SmartTransactionsProductModel startEndOfDayReport(String smartDeviceId) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = startEndOfDayReportWithHttpInfo(smartDeviceId);
         return resp.getData();
     }
 
@@ -1113,8 +1114,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> smartTransactionsstartEndOfDayReportWithHttpInfo(String smartDeviceId) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionsstartEndOfDayReportValidateBeforeCall(smartDeviceId, null, null);
+    public ApiResponse<SmartTransactionsProductModel> startEndOfDayReportWithHttpInfo(String smartDeviceId) throws ApiException {
+        com.squareup.okhttp.Call call = startEndOfDayReportValidateBeforeCall(smartDeviceId, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1127,7 +1128,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsstartEndOfDayReportAsync(String smartDeviceId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call startEndOfDayReportAsync(String smartDeviceId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1148,13 +1149,13 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionsstartEndOfDayReportValidateBeforeCall(smartDeviceId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = startEndOfDayReportValidateBeforeCall(smartDeviceId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartTransactionsstartTransaction
+     * Build call for startTransaction
      * @param smartTransactionId Smart transaction id (required)
      * @param paymentMethod Payment method (required)
      * @param progressListener Progress listener
@@ -1162,7 +1163,7 @@ public class SmartTransactionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsstartTransactionCall(String smartTransactionId, String paymentMethod, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call startTransactionCall(String smartTransactionId, String paymentMethod, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1206,17 +1207,17 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionsstartTransactionValidateBeforeCall(String smartTransactionId, String paymentMethod, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call startTransactionValidateBeforeCall(String smartTransactionId, String paymentMethod, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartTransactionId' is set
         if (smartTransactionId == null) {
-            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling smartTransactionsstartTransaction(Async)");
+            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling startTransaction(Async)");
         }
         // verify the required parameter 'paymentMethod' is set
         if (paymentMethod == null) {
-            throw new ApiException("Missing the required parameter 'paymentMethod' when calling smartTransactionsstartTransaction(Async)");
+            throw new ApiException("Missing the required parameter 'paymentMethod' when calling startTransaction(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartTransactionsstartTransactionCall(smartTransactionId, paymentMethod, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = startTransactionCall(smartTransactionId, paymentMethod, progressListener, progressRequestListener);
         return call;
     }
 
@@ -1228,8 +1229,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel smartTransactionsstartTransaction(String smartTransactionId, String paymentMethod) throws ApiException {
-        ApiResponse<SmartTransactionsProductModel> resp = smartTransactionsstartTransactionWithHttpInfo(smartTransactionId, paymentMethod);
+    public SmartTransactionsProductModel startTransaction(String smartTransactionId, String paymentMethod) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = startTransactionWithHttpInfo(smartTransactionId, paymentMethod);
         return resp.getData();
     }
 
@@ -1241,8 +1242,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> smartTransactionsstartTransactionWithHttpInfo(String smartTransactionId, String paymentMethod) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionsstartTransactionValidateBeforeCall(smartTransactionId, paymentMethod, null, null);
+    public ApiResponse<SmartTransactionsProductModel> startTransactionWithHttpInfo(String smartTransactionId, String paymentMethod) throws ApiException {
+        com.squareup.okhttp.Call call = startTransactionValidateBeforeCall(smartTransactionId, paymentMethod, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1256,7 +1257,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsstartTransactionAsync(String smartTransactionId, String paymentMethod, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call startTransactionAsync(String smartTransactionId, String paymentMethod, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1277,13 +1278,13 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionsstartTransactionValidateBeforeCall(smartTransactionId, paymentMethod, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = startTransactionValidateBeforeCall(smartTransactionId, paymentMethod, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for smartTransactionsupdateTransaction
+     * Build call for updateTransaction
      * @param smartTransactionId Smart transaction id (required)
      * @param body Smart transaction properties (optional)
      * @param progressListener Progress listener
@@ -1291,7 +1292,7 @@ public class SmartTransactionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsupdateTransactionCall(String smartTransactionId, SmartTransactionsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateTransactionCall(String smartTransactionId, SmartTransactionsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -1334,13 +1335,13 @@ public class SmartTransactionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call smartTransactionsupdateTransactionValidateBeforeCall(String smartTransactionId, SmartTransactionsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateTransactionValidateBeforeCall(String smartTransactionId, SmartTransactionsDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartTransactionId' is set
         if (smartTransactionId == null) {
-            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling smartTransactionsupdateTransaction(Async)");
+            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling updateTransaction(Async)");
         }
         
-        com.squareup.okhttp.Call call = smartTransactionsupdateTransactionCall(smartTransactionId, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateTransactionCall(smartTransactionId, body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -1352,8 +1353,8 @@ public class SmartTransactionsApi {
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel smartTransactionsupdateTransaction(String smartTransactionId, SmartTransactionsDTO body) throws ApiException {
-        ApiResponse<SmartTransactionsProductModel> resp = smartTransactionsupdateTransactionWithHttpInfo(smartTransactionId, body);
+    public SmartTransactionsProductModel updateTransaction(String smartTransactionId, SmartTransactionsDTO body) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = updateTransactionWithHttpInfo(smartTransactionId, body);
         return resp.getData();
     }
 
@@ -1365,8 +1366,8 @@ public class SmartTransactionsApi {
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> smartTransactionsupdateTransactionWithHttpInfo(String smartTransactionId, SmartTransactionsDTO body) throws ApiException {
-        com.squareup.okhttp.Call call = smartTransactionsupdateTransactionValidateBeforeCall(smartTransactionId, body, null, null);
+    public ApiResponse<SmartTransactionsProductModel> updateTransactionWithHttpInfo(String smartTransactionId, SmartTransactionsDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = updateTransactionValidateBeforeCall(smartTransactionId, body, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1380,7 +1381,7 @@ public class SmartTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call smartTransactionsupdateTransactionAsync(String smartTransactionId, SmartTransactionsDTO body, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateTransactionAsync(String smartTransactionId, SmartTransactionsDTO body, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1401,7 +1402,7 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = smartTransactionsupdateTransactionValidateBeforeCall(smartTransactionId, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateTransactionValidateBeforeCall(smartTransactionId, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

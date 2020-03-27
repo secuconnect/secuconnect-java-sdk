@@ -78,7 +78,7 @@ public class PaymentSecupayDebitsApiTest {
 
     private static PaymentContainersDTO prepareContainer() {
         PaymentContainersDTO containerDTO = new PaymentContainersDTO();
-        PaymentContainersDTOPrivate privateInfo = new PaymentContainersDTOPrivate();
+        BankAccountDescriptor privateInfo = new BankAccountDescriptor();
         privateInfo.setBic("INGDDEFFXXX");
         privateInfo.setIban("DE12500105170648489890");
         privateInfo.setOwner("John Doe");
@@ -148,7 +148,7 @@ public class PaymentSecupayDebitsApiTest {
     public void b_paymentContainerPostTest() throws ApiException {
         PaymentContainersProductModel container = containerApi.paymentContainersPost(containerDTO);
         String containerId = container.getId();
-        PaymentContainersDTOPrivate privateDataDTO = containerDTO.getPrivate();
+        BankAccountDescriptor privateDataDTO = (BankAccountDescriptor) containerDTO.getPrivate();
         BankAccountDescriptor privateData = container.getPrivate();
         BankAccountDescriptor publicData = container.getPublic();
 
@@ -275,7 +275,7 @@ public class PaymentSecupayDebitsApiTest {
 	@Ignore
     @Test
     public void e_paymentSecupayDebitsCancelByIdTest() throws ApiException {
-        Object response = debitApi.paymentSecupayDebitsCancelById(debitTransactionData.getId());
+        Object response = debitApi.cancelPaymentTransactionById("secupaydebits", debitTransactionData.getId(), null);
 
         assertEquals("{result=true, demo=true}", response.toString());
     }
@@ -293,7 +293,7 @@ public class PaymentSecupayDebitsApiTest {
         PaymentContainersProductModel deletedContainer = containerApi.paymentContainersIdDelete(containerId).get(0);
 
         String deletedContainerId = deletedContainer.getId();
-        PaymentContainersDTOPrivate privateDataDTO = containerDTO.getPrivate();
+        BankAccountDescriptor privateDataDTO = (BankAccountDescriptor) containerDTO.getPrivate();
         BankAccountDescriptor privateData = deletedContainer.getPrivate();
         BankAccountDescriptor publicData = deletedContainer.getPublic();
 

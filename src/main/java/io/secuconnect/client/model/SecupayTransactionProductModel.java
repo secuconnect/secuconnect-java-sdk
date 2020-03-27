@@ -1,9 +1,22 @@
 package io.secuconnect.client.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.PaymentContainersProductModel;
+import io.secuconnect.client.model.PaymentCustomersProductModel;
+import io.secuconnect.client.model.PaymentInformation;
+import io.secuconnect.client.model.SecupayBasketItem;
+import io.secuconnect.client.model.SecupayRedirectUrl;
+import io.secuconnect.client.model.SecupaySubTransactionProductModel;
+import io.secuconnect.client.model.SecupayTransactionProductDTOSubscription;
+import io.secuconnect.client.model.SecupayTransactionProductModelUsedPaymentInstrument;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -221,7 +234,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
    * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
    * @return accrual
   **/
-  public Boolean isAccrual() {
+  public Boolean getAccrual() {
     return accrual;
   }
 
