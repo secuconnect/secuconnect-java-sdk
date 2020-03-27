@@ -11,21 +11,21 @@
  */
 
 
-package io.secuconnect.client.api;
+package com.secuconnect.client.api;
 
-import io.secuconnect.client.ApiClient;
-import io.secuconnect.client.ApiException;
-import io.secuconnect.client.auth.Authenticator;
-import io.secuconnect.client.auth.tokens.OAuthClientToken;
-import io.secuconnect.client.model.*;
+import com.secuconnect.client.ApiClient;
+import com.secuconnect.client.ApiException;
+import com.secuconnect.client.auth.Authenticator;
+import com.secuconnect.client.auth.tokens.OAuthClientToken;
+import com.secuconnect.client.model.*;
 import org.junit.*;
 import org.junit.runners.MethodSorters;
 
 import java.util.List;
 
-import static io.secuconnect.client.CommonObjectsProvider.prepareBasket;
-import static io.secuconnect.client.CommonObjectsProvider.prepareCustomer;
-import static io.secuconnect.client.Globals.O_AUTH_CLIENT_CREDENTIALS;
+import static com.secuconnect.client.CommonObjectsProvider.prepareBasket;
+import static com.secuconnect.client.CommonObjectsProvider.prepareCustomer;
+import static com.secuconnect.client.Globals.O_AUTH_CLIENT_CREDENTIALS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 

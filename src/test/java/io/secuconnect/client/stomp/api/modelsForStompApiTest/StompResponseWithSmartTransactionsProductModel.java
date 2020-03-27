@@ -1,4 +1,4 @@
-package io.secuconnect.client.stomp.api.modelsForStompApiTest;
+package com.secuconnect.client.stomp.api.modelsForStompApiTest;
 
 import com.google.gson.Gson;
 

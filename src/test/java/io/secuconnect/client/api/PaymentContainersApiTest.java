@@ -11,12 +11,12 @@
  */
 
 
-package io.secuconnect.client.api;
+package com.secuconnect.client.api;
 
-import io.secuconnect.client.ApiException;
-import io.secuconnect.client.model.PaymentContainersDTO;
-import io.secuconnect.client.model.PaymentContainersList;
-import io.secuconnect.client.model.PaymentContainersProductModel;
+import com.secuconnect.client.ApiException;
+import com.secuconnect.client.model.PaymentContainersDTO;
+import com.secuconnect.client.model.PaymentContainersList;
+import com.secuconnect.client.model.PaymentContainersProductModel;
 import org.junit.Test;
 import org.junit.Ignore;
 

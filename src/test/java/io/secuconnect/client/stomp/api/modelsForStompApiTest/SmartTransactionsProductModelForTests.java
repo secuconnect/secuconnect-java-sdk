@@ -1,7 +1,7 @@
-package io.secuconnect.client.stomp.api.modelsForStompApiTest;
+package com.secuconnect.client.stomp.api.modelsForStompApiTest;
 
 import com.google.gson.annotations.SerializedName;
-import io.secuconnect.client.model.*;
+import com.secuconnect.client.model.*;
 
 import java.util.ArrayList;
 import java.util.List;

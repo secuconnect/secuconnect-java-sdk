@@ -1,6 +1,6 @@
-package io.secuconnect.client;
+package com.secuconnect.client;
 
-import io.secuconnect.client.model.*;
+import com.secuconnect.client.model.*;
 
 import java.util.ArrayList;
 import java.util.List;

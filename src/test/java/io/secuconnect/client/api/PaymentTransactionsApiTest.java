@@ -11,13 +11,13 @@
  */
 
 
-package io.secuconnect.client.api;
+package com.secuconnect.client.api;
 
-import io.secuconnect.client.ApiException;
-import io.secuconnect.client.model.PaymentTransactionCancelDTO;
-import io.secuconnect.client.model.PaymentTransactionsList;
-import io.secuconnect.client.model.PaymentTransactionsProductModel;
-import io.secuconnect.client.model.PaymentTransactionsShippingUrl;
+import com.secuconnect.client.ApiException;
+import com.secuconnect.client.model.PaymentTransactionCancelDTO;
+import com.secuconnect.client.model.PaymentTransactionsList;
+import com.secuconnect.client.model.PaymentTransactionsProductModel;
+import com.secuconnect.client.model.PaymentTransactionsShippingUrl;
 import org.junit.Test;
 import org.junit.Ignore;
 

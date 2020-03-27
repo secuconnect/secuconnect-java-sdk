@@ -1,11 +1,11 @@
-package io.secuconnect.client.api;
+package com.secuconnect.client.api;
 
-import io.secuconnect.client.ApiClient;
-import io.secuconnect.client.ApiException;
-import io.secuconnect.client.Globals;
-import io.secuconnect.client.auth.Authenticator;
-import io.secuconnect.client.auth.tokens.OAuthClientToken;
-import io.secuconnect.client.model.*;
+import com.secuconnect.client.ApiClient;
+import com.secuconnect.client.ApiException;
+import com.secuconnect.client.Globals;
+import com.secuconnect.client.auth.Authenticator;
+import com.secuconnect.client.auth.tokens.OAuthClientToken;
+import com.secuconnect.client.model.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
