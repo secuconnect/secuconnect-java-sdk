@@ -1,69 +1,73 @@
 package com.secuconnect.client.model;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.util.Objects;
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 /**
  * CardPin
  */
 public class CardPin {
-    @SerializedName("pin")
-    private Integer pin = null;
+  @SerializedName("pin")
+  private Integer pin = null;
 
-    public CardPin pin(Integer pin) {
-        this.pin = pin;
-        return this;
+  public CardPin pin(Integer pin) {
+    this.pin = pin;
+    return this;
+  }
+
+   /**
+   * Loyalty card pin consisting of four numbers
+   * @return pin
+  **/
+  public Integer getPin() {
+    return pin;
+  }
+
+  public void setPin(Integer pin) {
+    this.pin = pin;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
-
-    /**
-     * Loyalty card pin consisting of four numbers
-     *
-     * @return pin
-     **/
-    public Integer getPin() {
-        return pin;
+    if (o == null || getClass() != o.getClass()) {
+      return false;
     }
+    CardPin cardPin = (CardPin) o;
+    return Objects.equals(this.pin, cardPin.pin);
+  }
 
-    public void setPin(Integer pin) {
-        this.pin = pin;
+  @Override
+  public int hashCode() {
+    return Objects.hash(pin);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CardPin {\n");
+    
+    sb.append("    pin: ").append(toIndentedString(pin)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        CardPin cardPin = (CardPin) o;
-        return Objects.equals(this.pin, cardPin.pin);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(pin);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class CardPin {\n");
-
-        sb.append("    pin: ").append(toIndentedString(pin)).append("\n");
-        sb.append("}");
-        return sb.toString();
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n    ");
-    }
+    return o.toString().replace("\n", "\n    ");
+  }
 }
 

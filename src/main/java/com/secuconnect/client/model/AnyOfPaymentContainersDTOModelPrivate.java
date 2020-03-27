@@ -1,8 +1,8 @@
 package com.secuconnect.client.model;
 
 /**
- * AnyOfPaymentContainersDTOModelPrivate
- */
+* AnyOfPaymentContainersDTOModelPrivate
+*/
 public interface AnyOfPaymentContainersDTOModelPrivate {
 
 }
