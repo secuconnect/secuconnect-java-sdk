@@ -52,36 +52,6 @@ public class JSON {
 
     public static GsonBuilder createGson() {
         GsonFireBuilder fireBuilder = new GsonFireBuilder()
-          .registerTypeSelector(BaseProductModel.class, new TypeSelector<BaseProductModel>() {
-            @Override
-            public Class<? extends BaseProductModel> getClassForElement(JsonElement readElement) {
-                Map<String, Class<? extends BaseProductModel>> classByDiscriminatorValue = new HashMap<>();
-                    classByDiscriminatorValue.put("DocumentUploadsBaseProductModel".toUpperCase(), DocumentUploadsBaseProductModel.class);
-                    classByDiscriminatorValue.put("GeneralContractsProductModel".toUpperCase(), GeneralContractsProductModel.class);
-                    classByDiscriminatorValue.put("GeneralMerchantsProductModel".toUpperCase(), GeneralMerchantsProductModel.class);
-                    classByDiscriminatorValue.put("GeneralStoresProductModel".toUpperCase(), GeneralStoresProductModel.class);
-                    classByDiscriminatorValue.put("LoyaltyCardgroupsProductModel".toUpperCase(), LoyaltyCardgroupsProductModel.class);
-                    classByDiscriminatorValue.put("LoyaltyCardsProductModel".toUpperCase(), LoyaltyCardsProductModel.class);
-                    classByDiscriminatorValue.put("LoyaltyCustomersProductModel".toUpperCase(), LoyaltyCustomersProductModel.class);
-                    classByDiscriminatorValue.put("LoyaltyMerchantcardsProductModel".toUpperCase(), LoyaltyMerchantcardsProductModel.class);
-                    classByDiscriminatorValue.put("LoyaltyStoregroupsProductModel".toUpperCase(), LoyaltyStoregroupsProductModel.class);
-                    classByDiscriminatorValue.put("PaymentContainersProductModel".toUpperCase(), PaymentContainersProductModel.class);
-                    classByDiscriminatorValue.put("PaymentContractsProductModel".toUpperCase(), PaymentContractsProductModel.class);
-                    classByDiscriminatorValue.put("PaymentCustomersProductModel".toUpperCase(), PaymentCustomersProductModel.class);
-                    classByDiscriminatorValue.put("PaymentTransactionsProductModel".toUpperCase(), PaymentTransactionsProductModel.class);
-                    classByDiscriminatorValue.put("PrepaidItemsProductModel".toUpperCase(), PrepaidItemsProductModel.class);
-                    classByDiscriminatorValue.put("PrepaidSalesProductModel".toUpperCase(), PrepaidSalesProductModel.class);
-                    classByDiscriminatorValue.put("SecupayPayoutProductModel".toUpperCase(), SecupayPayoutProductModel.class);
-                    classByDiscriminatorValue.put("SecupayTransactionProductModel".toUpperCase(), SecupayTransactionProductModel.class);
-                    classByDiscriminatorValue.put("SmartDevicesProductModel".toUpperCase(), SmartDevicesProductModel.class);
-                    classByDiscriminatorValue.put("SmartRoutingsProductModel".toUpperCase(), SmartRoutingsProductModel.class);
-                    classByDiscriminatorValue.put("SmartTransactionsProductModel".toUpperCase(), SmartTransactionsProductModel.class);
-                    classByDiscriminatorValue.put("BaseProductModel".toUpperCase(), BaseProductModel.class);
-                return getClassByDiscriminator(
-                            classByDiscriminatorValue,
-                            getDiscriminatorValue(readElement, ""));
-            }
-          })
           .registerPostProcessor(BaseProductModel.class, new PostProcessor<BaseProductModel>() {
               @Override
               public void postDeserialize(BaseProductModel result, JsonElement src, Gson gson) {
@@ -121,17 +91,6 @@ public class JSON {
                   }
               }
           })
-          .registerTypeSelector(DocumentUploadsBaseProductModel.class, new TypeSelector<DocumentUploadsBaseProductModel>() {
-            @Override
-            public Class<? extends DocumentUploadsBaseProductModel> getClassForElement(JsonElement readElement) {
-                Map<String, Class<? extends DocumentUploadsBaseProductModel>> classByDiscriminatorValue = new HashMap<>();
-                    classByDiscriminatorValue.put("DocumentUploadsProductModel".toUpperCase(), DocumentUploadsProductModel.class);
-                    classByDiscriminatorValue.put("DocumentUploadsBaseProductModel".toUpperCase(), DocumentUploadsBaseProductModel.class);
-                return getClassByDiscriminator(
-                            classByDiscriminatorValue,
-                            getDiscriminatorValue(readElement, ""));
-            }
-          })
           .registerPostProcessor(DocumentUploadsBaseProductModel.class, new PostProcessor<DocumentUploadsBaseProductModel>() {
               @Override
               public void postDeserialize(DocumentUploadsBaseProductModel result, JsonElement src, Gson gson) {
@@ -151,17 +110,6 @@ public class JSON {
                       }
                   }
               }
-          })
-          .registerTypeSelector(LoyaltyMerchantcardsDTOValidateMerchantCard.class, new TypeSelector<LoyaltyMerchantcardsDTOValidateMerchantCard>() {
-            @Override
-            public Class<? extends LoyaltyMerchantcardsDTOValidateMerchantCard> getClassForElement(JsonElement readElement) {
-                Map<String, Class<? extends LoyaltyMerchantcardsDTOValidateMerchantCard>> classByDiscriminatorValue = new HashMap<>();
-                    classByDiscriminatorValue.put("LoyaltyMerchantcardsDTONewPasscode".toUpperCase(), LoyaltyMerchantcardsDTONewPasscode.class);
-                    classByDiscriminatorValue.put("LoyaltyMerchantcardsDTOValidateMerchantCard".toUpperCase(), LoyaltyMerchantcardsDTOValidateMerchantCard.class);
-                return getClassByDiscriminator(
-                            classByDiscriminatorValue,
-                            getDiscriminatorValue(readElement, ""));
-            }
           })
           .registerPostProcessor(LoyaltyMerchantcardsDTOValidateMerchantCard.class, new PostProcessor<LoyaltyMerchantcardsDTOValidateMerchantCard>() {
               @Override
@@ -183,17 +131,6 @@ public class JSON {
                   }
               }
           })
-          .registerTypeSelector(LoyaltyMerchantcardsProductModel.class, new TypeSelector<LoyaltyMerchantcardsProductModel>() {
-            @Override
-            public Class<? extends LoyaltyMerchantcardsProductModel> getClassForElement(JsonElement readElement) {
-                Map<String, Class<? extends LoyaltyMerchantcardsProductModel>> classByDiscriminatorValue = new HashMap<>();
-                    classByDiscriminatorValue.put("LoyaltyMerchantcardsProductWithReceiptModel".toUpperCase(), LoyaltyMerchantcardsProductWithReceiptModel.class);
-                    classByDiscriminatorValue.put("LoyaltyMerchantcardsProductModel".toUpperCase(), LoyaltyMerchantcardsProductModel.class);
-                return getClassByDiscriminator(
-                            classByDiscriminatorValue,
-                            getDiscriminatorValue(readElement, ""));
-            }
-          })
           .registerPostProcessor(LoyaltyMerchantcardsProductModel.class, new PostProcessor<LoyaltyMerchantcardsProductModel>() {
               @Override
               public void postDeserialize(LoyaltyMerchantcardsProductModel result, JsonElement src, Gson gson) {
@@ -213,17 +150,6 @@ public class JSON {
                       }
                   }
               }
-          })
-          .registerTypeSelector(ReceiptType.class, new TypeSelector<ReceiptType>() {
-            @Override
-            public Class<? extends ReceiptType> getClassForElement(JsonElement readElement) {
-                Map<String, Class<? extends ReceiptType>> classByDiscriminatorValue = new HashMap<>();
-                    classByDiscriminatorValue.put("ReceiptTypeValue".toUpperCase(), ReceiptTypeValue.class);
-                    classByDiscriminatorValue.put("ReceiptType".toUpperCase(), ReceiptType.class);
-                return getClassByDiscriminator(
-                            classByDiscriminatorValue,
-                            getDiscriminatorValue(readElement, ""));
-            }
           })
           .registerPostProcessor(ReceiptType.class, new PostProcessor<ReceiptType>() {
               @Override
@@ -245,17 +171,6 @@ public class JSON {
                   }
               }
           })
-          .registerTypeSelector(SecupayBaseBasketItem.class, new TypeSelector<SecupayBaseBasketItem>() {
-            @Override
-            public Class<? extends SecupayBaseBasketItem> getClassForElement(JsonElement readElement) {
-                Map<String, Class<? extends SecupayBaseBasketItem>> classByDiscriminatorValue = new HashMap<>();
-                    classByDiscriminatorValue.put("SecupayBasketItem".toUpperCase(), SecupayBasketItem.class);
-                    classByDiscriminatorValue.put("SecupayBaseBasketItem".toUpperCase(), SecupayBaseBasketItem.class);
-                return getClassByDiscriminator(
-                            classByDiscriminatorValue,
-                            getDiscriminatorValue(readElement, ""));
-            }
-          })
           .registerPostProcessor(SecupayBaseBasketItem.class, new PostProcessor<SecupayBaseBasketItem>() {
               @Override
               public void postDeserialize(SecupayBaseBasketItem result, JsonElement src, Gson gson) {
@@ -275,17 +190,6 @@ public class JSON {
                       }
                   }
               }
-          })
-          .registerTypeSelector(SmartTransactionsBaseProduct.class, new TypeSelector<SmartTransactionsBaseProduct>() {
-            @Override
-            public Class<? extends SmartTransactionsBaseProduct> getClassForElement(JsonElement readElement) {
-                Map<String, Class<? extends SmartTransactionsBaseProduct>> classByDiscriminatorValue = new HashMap<>();
-                    classByDiscriminatorValue.put("SmartTransactionsBonusProducts".toUpperCase(), SmartTransactionsBonusProducts.class);
-                    classByDiscriminatorValue.put("SmartTransactionsBaseProduct".toUpperCase(), SmartTransactionsBaseProduct.class);
-                return getClassByDiscriminator(
-                            classByDiscriminatorValue,
-                            getDiscriminatorValue(readElement, ""));
-            }
           })
           .registerPostProcessor(SmartTransactionsBaseProduct.class, new PostProcessor<SmartTransactionsBaseProduct>() {
               @Override
@@ -307,6 +211,45 @@ public class JSON {
                   }
               }
           })
+        .registerTypeSelector(OneOfPaymentContainersDTOModelPrivate.class, new TypeSelector<OneOfPaymentContainersDTOModelPrivate>() {
+            @Override
+            public Class<? extends OneOfPaymentContainersDTOModelPrivate> getClassForElement(JsonElement readElement) {
+                if (readElement.getAsJsonObject().has("pan")) {
+                    return CreditCardDescriptor.class;
+                }
+                return BankAccountDescriptor.class;
+            }
+        })
+//          .registerPostProcessor(PaymentContainersProductModel.class, new PostProcessor<PaymentContainersProductModel>() {
+//              @Override
+//              public void postDeserialize(PaymentContainersProductModel result, JsonElement src, Gson gson) {
+//                  if (src.getAsJsonObject().has("type")) {
+//                      if ("credit_card".equals(src.getAsJsonObject().get("type").getAsString())) {
+//                          result.setPublic(gson.fromJson(src, CreditCardDescriptor.class));
+//                          result.setPrivate(gson.fromJson(src, CreditCardDescriptor.class));
+//                      } else {
+//                          result.setPublic(gson.fromJson(src, BankAccountDescriptor.class));
+//                          result.setPrivate(gson.fromJson(src, BankAccountDescriptor.class));
+//                      }
+//                  }
+//              }
+//
+//              @Override
+//              public void postSerialize(JsonElement result, PaymentContainersProductModel src, Gson gson) {
+//
+//              }
+//          })
+//          .registerTypeSelector(OneOfPaymentContainersDTOModelPrivate.class, new TypeSelector<OneOfPaymentContainersDTOModelPrivate>() {
+//              @Override
+//              public Class<? extends OneOfPaymentContainersDTOModelPrivate> getClassForElement(JsonElement readElement) {
+//                  Map<String, Class<? extends OneOfPaymentContainersDTOModelPrivate>> classByDiscriminatorValue = new HashMap<>();
+//                  classByDiscriminatorValue.put("bank_account".toUpperCase(), BankAccountDescriptor.class);
+//                  classByDiscriminatorValue.put("credit_card".toUpperCase(), CreditCardDescriptor.class);
+//                  return getClassByDiscriminator(
+//                          classByDiscriminatorValue,
+//                          getDiscriminatorValue(readElement, "type"));
+//              }
+//          })
         ;
         return fireBuilder.createGsonBuilder();
     }

@@ -79,7 +79,6 @@ public class PaymentContractsApiTest {
         assertNotNull(paymentContract.getParent());
         assertEquals(PAYMENT_CONTRACTS, paymentContract.getParent().getObject());
         assertNotNull(paymentContract.getParent().getId());
-        assertTrue(paymentContract.getDemo());
         assertNotNull(paymentContract.getCreated());
     }
 

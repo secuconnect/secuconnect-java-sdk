@@ -146,8 +146,6 @@ public class PaymentSecupayPrepaysApiTest {
         //assertNotNull(prepayTransactionData.getTransferAccount().getAccountOwner());
         //assertEquals("payment.customers", prepayTransactionData.getCustomer().getObject());
         assertNotNull(prepayTransactionData.getCustomer().getId());
-        assertEquals("payment.contracts", prepayTransactionData.getCustomer().getContract().getObject());
-        assertNotNull(prepayTransactionData.getCustomer().getContract().getId());
         assertEquals(prepaysData.getCustomer().getContact().getForename(), prepayTransactionData.getCustomer().getContact().getForename());
         assertEquals(prepaysData.getCustomer().getContact().getSurname(), prepayTransactionData.getCustomer().getContact().getSurname());
         assertEquals(prepaysData.getCustomer().getContact().getCompanyname(), prepayTransactionData.getCustomer().getContact().getCompanyname());
@@ -198,8 +196,6 @@ public class PaymentSecupayPrepaysApiTest {
         assertEquals(prepayTransactionData.getTransferAccount().getBic(), prepayTransactionDataFetchedUsingGet.getTransferAccount().getBic());
         assertEquals(prepayTransactionData.getCustomer().getObject(), prepayTransactionDataFetchedUsingGet.getCustomer().getObject());
         assertEquals(prepayTransactionData.getCustomer().getId(), prepayTransactionDataFetchedUsingGet.getCustomer().getId());
-        assertEquals(prepayTransactionData.getCustomer().getContract().getObject(), prepayTransactionDataFetchedUsingGet.getCustomer().getContract().getObject());
-        assertEquals(prepayTransactionData.getCustomer().getContract().getId(), prepayTransactionDataFetchedUsingGet.getCustomer().getContract().getId());
         assertEquals(prepayTransactionData.getCustomer().getContact().getForename(), prepayTransactionDataFetchedUsingGet.getCustomer().getContact().getForename());
         assertEquals(prepayTransactionData.getCustomer().getContact().getSurname(), prepayTransactionDataFetchedUsingGet.getCustomer().getContact().getSurname());
         assertEquals(prepayTransactionData.getCustomer().getContact().getCompanyname(), prepayTransactionDataFetchedUsingGet.getCustomer().getContact().getCompanyname());

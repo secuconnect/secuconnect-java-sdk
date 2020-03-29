@@ -24,7 +24,7 @@ public class PaymentContainersDTO {
   private String type = null;
 
   @SerializedName("private")
-  private AnyOfPaymentContainersDTOModelPrivate _private = null;
+  private OneOfPaymentContainersDTOModelPrivate _private = null;
 
   public PaymentContainersDTO customer(PaymentContainersDTOCustomer customer) {
     this.customer = customer;
@@ -77,7 +77,7 @@ public class PaymentContainersDTO {
     this.type = type;
   }
 
-  public PaymentContainersDTO _private(AnyOfPaymentContainersDTOModelPrivate _private) {
+  public PaymentContainersDTO _private(OneOfPaymentContainersDTOModelPrivate _private) {
     this._private = _private;
     return this;
   }
@@ -86,11 +86,11 @@ public class PaymentContainersDTO {
    * Get _private
    * @return _private
   **/
-  public AnyOfPaymentContainersDTOModelPrivate getPrivate() {
+  public OneOfPaymentContainersDTOModelPrivate getPrivate() {
     return _private;
   }
 
-  public void setPrivate(AnyOfPaymentContainersDTOModelPrivate _private) {
+  public void setPrivate(OneOfPaymentContainersDTOModelPrivate _private) {
     this._private = _private;
   }
 

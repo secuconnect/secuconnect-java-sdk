@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Bank account data like owner, iban, bic and bank name
  */
-public class BankAccountDescriptor implements AnyOfPaymentContainersDTOModelPrivate {
+public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   @SerializedName("iban")
   private String iban = null;
 

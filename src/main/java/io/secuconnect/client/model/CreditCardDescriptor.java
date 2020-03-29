@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Credit card data like owner, iban, bic and bank name
  */
-public class CreditCardDescriptor implements AnyOfPaymentContainersDTOModelPrivate {
+public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   @SerializedName("owner")
   private String owner = null;
 
