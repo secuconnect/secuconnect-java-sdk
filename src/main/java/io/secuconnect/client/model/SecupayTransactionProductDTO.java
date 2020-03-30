@@ -2,18 +2,13 @@ package io.secuconnect.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.SecupayBasketItem;
 import io.secuconnect.client.model.SecupayRedirectUrl;
 import io.secuconnect.client.model.SecupayTransactionProductDTOExperience;
 import io.secuconnect.client.model.SecupayTransactionProductDTOOptData;
 import io.secuconnect.client.model.SecupayTransactionProductDTOSubscription;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
