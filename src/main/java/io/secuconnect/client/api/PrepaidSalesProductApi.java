@@ -8,15 +8,11 @@ import io.secuconnect.client.Configuration;
 import io.secuconnect.client.Pair;
 import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
-
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
-
 import io.secuconnect.client.model.PrepaidSalesProductDTO;
 import io.secuconnect.client.model.PrepaidSalesProductModel;
 import io.secuconnect.client.model.ProductExceptionPayload;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +40,7 @@ public class PrepaidSalesProductApi {
 
     /**
      * Build call for addSale
-     * @param body Prepaid transaction input properties (optional)
+     * @param body Prepaid transaction input properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -101,7 +97,7 @@ public class PrepaidSalesProductApi {
     /**
      * POST Prepaid/Sales
      * Create new prepaid transaction
-     * @param body Prepaid transaction input properties (optional)
+     * @param body Prepaid transaction input properties
      * @return PrepaidSalesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -113,7 +109,7 @@ public class PrepaidSalesProductApi {
     /**
      * POST Prepaid/Sales
      * Create new prepaid transaction
-     * @param body Prepaid transaction input properties (optional)
+     * @param body Prepaid transaction input properties
      * @return ApiResponse&lt;PrepaidSalesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -126,7 +122,7 @@ public class PrepaidSalesProductApi {
     /**
      * POST Prepaid/Sales (asynchronously)
      * Create new prepaid transaction
-     * @param body Prepaid transaction input properties (optional)
+     * @param body Prepaid transaction input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

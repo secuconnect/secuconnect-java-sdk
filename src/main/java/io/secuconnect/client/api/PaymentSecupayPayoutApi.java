@@ -8,15 +8,11 @@ import io.secuconnect.client.Configuration;
 import io.secuconnect.client.Pair;
 import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
-
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
-
 import io.secuconnect.client.model.ProductExceptionPayload;
 import io.secuconnect.client.model.SecupayPayoutDTO;
 import io.secuconnect.client.model.SecupayPayoutProductModel;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -164,7 +160,7 @@ public class PaymentSecupayPayoutApi {
     }
     /**
      * Build call for paymentSecupaypayoutPost
-     * @param body Payout payment transaction input properties (optional)
+     * @param body Payout payment transaction input properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -221,7 +217,7 @@ public class PaymentSecupayPayoutApi {
     /**
      * POST Payment/Secupaypayout
      * Start a payout transaction
-     * @param body Payout payment transaction input properties (optional)
+     * @param body Payout payment transaction input properties
      * @return SecupayPayoutProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -233,7 +229,7 @@ public class PaymentSecupayPayoutApi {
     /**
      * POST Payment/Secupaypayout
      * Start a payout transaction
-     * @param body Payout payment transaction input properties (optional)
+     * @param body Payout payment transaction input properties
      * @return ApiResponse&lt;SecupayPayoutProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -246,7 +242,7 @@ public class PaymentSecupayPayoutApi {
     /**
      * POST Payment/Secupaypayout (asynchronously)
      * Start a payout transaction
-     * @param body Payout payment transaction input properties (optional)
+     * @param body Payout payment transaction input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

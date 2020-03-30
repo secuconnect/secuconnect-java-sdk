@@ -8,17 +8,13 @@ import io.secuconnect.client.Configuration;
 import io.secuconnect.client.Pair;
 import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
-
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
-
 import io.secuconnect.client.model.DocumentUploadsBaseProductModel;
 import io.secuconnect.client.model.DocumentUploadsDTOContent;
 import io.secuconnect.client.model.DocumentUploadsProductModel;
 import io.secuconnect.client.model.FileToUpload;
 import io.secuconnect.client.model.ProductExceptionPayload;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,8 +42,8 @@ public class DocumentUploadsApi {
 
     /**
      * Build call for documentUploadsMultipartPost
-     * @param body Input data format (optional)
-     * @param multipart  (optional)
+     * @param body Input data format
+     * @param multipart 
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -106,8 +102,8 @@ public class DocumentUploadsApi {
     /**
      * POST Document/Uploads
      * Store uploaded file
-     * @param body Input data format (optional)
-     * @param multipart  (optional)
+     * @param body Input data format
+     * @param multipart 
      * @return DocumentUploadsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -119,8 +115,8 @@ public class DocumentUploadsApi {
     /**
      * POST Document/Uploads
      * Store uploaded file
-     * @param body Input data format (optional)
-     * @param multipart  (optional)
+     * @param body Input data format
+     * @param multipart 
      * @return ApiResponse&lt;DocumentUploadsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -133,8 +129,8 @@ public class DocumentUploadsApi {
     /**
      * POST Document/Uploads (asynchronously)
      * Store uploaded file
-     * @param body Input data format (optional)
-     * @param multipart  (optional)
+     * @param body Input data format
+     * @param multipart 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -167,7 +163,7 @@ public class DocumentUploadsApi {
     }
     /**
      * Build call for documentUploadsPost
-     * @param body Content (optional)
+     * @param body Content
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -224,7 +220,7 @@ public class DocumentUploadsApi {
     /**
      * POST Document/Uploads
      * Store uploaded file
-     * @param body Content (optional)
+     * @param body Content
      * @return DocumentUploadsBaseProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -236,7 +232,7 @@ public class DocumentUploadsApi {
     /**
      * POST Document/Uploads
      * Store uploaded file
-     * @param body Content (optional)
+     * @param body Content
      * @return ApiResponse&lt;DocumentUploadsBaseProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -249,7 +245,7 @@ public class DocumentUploadsApi {
     /**
      * POST Document/Uploads (asynchronously)
      * Store uploaded file
-     * @param body Content (optional)
+     * @param body Content
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

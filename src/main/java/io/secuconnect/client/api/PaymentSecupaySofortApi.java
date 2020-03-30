@@ -8,11 +8,8 @@ import io.secuconnect.client.Configuration;
 import io.secuconnect.client.Pair;
 import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
-
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
-
 import io.secuconnect.client.model.PaymentCancelResult;
 import io.secuconnect.client.model.ProductExceptionPayload;
 import io.secuconnect.client.model.SecupayTransactionCancelDTO;
@@ -24,7 +21,6 @@ import io.secuconnect.client.model.SecupayTransactionProductModel;
 import io.secuconnect.client.model.SecupayTransactionReverseAccrualDTO;
 import io.secuconnect.client.model.SecupayTransactionSetShippingInformationDTO;
 import io.secuconnect.client.model.SecupayTransactionUpdateBasketDTO;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,7 +51,7 @@ public class PaymentSecupaySofortApi {
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
-     * @param body Request body for assigning external invoice pdf (optional)
+     * @param body Request body for assigning external invoice pdf
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -130,7 +126,7 @@ public class PaymentSecupaySofortApi {
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
-     * @param body Request body for assigning external invoice pdf (optional)
+     * @param body Request body for assigning external invoice pdf
      * @return SecupayTransactionExternalInvoicePdf
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -145,7 +141,7 @@ public class PaymentSecupaySofortApi {
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
-     * @param body Request body for assigning external invoice pdf (optional)
+     * @param body Request body for assigning external invoice pdf
      * @return ApiResponse&lt;SecupayTransactionExternalInvoicePdf&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -161,7 +157,7 @@ public class PaymentSecupaySofortApi {
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
-     * @param body Request body for assigning external invoice pdf (optional)
+     * @param body Request body for assigning external invoice pdf
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -196,7 +192,7 @@ public class PaymentSecupaySofortApi {
      * Build call for cancelPaymentTransactionById
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Cancel payment transaction input properties (optional)
+     * @param body Cancel payment transaction input properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -265,7 +261,7 @@ public class PaymentSecupaySofortApi {
      * Function to cancel the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Cancel payment transaction input properties (optional)
+     * @param body Cancel payment transaction input properties
      * @return PaymentCancelResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -279,7 +275,7 @@ public class PaymentSecupaySofortApi {
      * Function to cancel the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Cancel payment transaction input properties (optional)
+     * @param body Cancel payment transaction input properties
      * @return ApiResponse&lt;PaymentCancelResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -294,7 +290,7 @@ public class PaymentSecupaySofortApi {
      * Function to cancel the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Cancel payment transaction input properties (optional)
+     * @param body Cancel payment transaction input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -329,7 +325,7 @@ public class PaymentSecupaySofortApi {
      * Build call for capturePaymentTransactionById
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Capture payment transaction input properties (optional)
+     * @param body Capture payment transaction input properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -398,7 +394,7 @@ public class PaymentSecupaySofortApi {
      * Function to cancel the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Capture payment transaction input properties (optional)
+     * @param body Capture payment transaction input properties
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -412,7 +408,7 @@ public class PaymentSecupaySofortApi {
      * Function to cancel the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Capture payment transaction input properties (optional)
+     * @param body Capture payment transaction input properties
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -427,7 +423,7 @@ public class PaymentSecupaySofortApi {
      * Function to cancel the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Capture payment transaction input properties (optional)
+     * @param body Capture payment transaction input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -580,7 +576,7 @@ public class PaymentSecupaySofortApi {
     }
     /**
      * Build call for paymentSecupaysofortPost
-     * @param body Prepay payment transaction input properties (optional)
+     * @param body Prepay payment transaction input properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -637,7 +633,7 @@ public class PaymentSecupaySofortApi {
     /**
      * POST Payment/Secupaysofort
      * Start a prepay payment transaction
-     * @param body Prepay payment transaction input properties (optional)
+     * @param body Prepay payment transaction input properties
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -649,7 +645,7 @@ public class PaymentSecupaySofortApi {
     /**
      * POST Payment/Secupaysofort
      * Start a prepay payment transaction
-     * @param body Prepay payment transaction input properties (optional)
+     * @param body Prepay payment transaction input properties
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -662,7 +658,7 @@ public class PaymentSecupaySofortApi {
     /**
      * POST Payment/Secupaysofort (asynchronously)
      * Start a prepay payment transaction
-     * @param body Prepay payment transaction input properties (optional)
+     * @param body Prepay payment transaction input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -697,7 +693,7 @@ public class PaymentSecupaySofortApi {
      * Build call for reverseAccrualByPaymentId
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Reverse accrual input properties (optional)
+     * @param body Reverse accrual input properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -766,7 +762,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Reverse accrual input properties (optional)
+     * @param body Reverse accrual input properties
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -780,7 +776,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Reverse accrual input properties (optional)
+     * @param body Reverse accrual input properties
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -795,7 +791,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Reverse accrual input properties (optional)
+     * @param body Reverse accrual input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -830,7 +826,7 @@ public class PaymentSecupaySofortApi {
      * Build call for setShippingInformationByPaymentId
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information propertie (optional)
+     * @param body Shipping information propertie
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -899,7 +895,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information propertie (optional)
+     * @param body Shipping information propertie
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -913,7 +909,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information propertie (optional)
+     * @param body Shipping information propertie
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -928,7 +924,7 @@ public class PaymentSecupaySofortApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information propertie (optional)
+     * @param body Shipping information propertie
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -963,7 +959,7 @@ public class PaymentSecupaySofortApi {
      * Build call for updateBasketByPaymentId
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Update basket input properties (optional)
+     * @param body Update basket input properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1032,7 +1028,7 @@ public class PaymentSecupaySofortApi {
      * Update a basket of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Update basket input properties (optional)
+     * @param body Update basket input properties
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1046,7 +1042,7 @@ public class PaymentSecupaySofortApi {
      * Update a basket of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Update basket input properties (optional)
+     * @param body Update basket input properties
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1061,7 +1057,7 @@ public class PaymentSecupaySofortApi {
      * Update a basket of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Update basket input properties (optional)
+     * @param body Update basket input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

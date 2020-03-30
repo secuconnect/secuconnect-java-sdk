@@ -8,15 +8,11 @@ import io.secuconnect.client.Configuration;
 import io.secuconnect.client.Pair;
 import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
-
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
-
 import io.secuconnect.client.model.PrepaidMappingZvt;
 import io.secuconnect.client.model.PrepaidZvtDTO;
 import io.secuconnect.client.model.ProductExceptionPayload;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,7 +41,7 @@ public class PrepaidContractsProductApi {
     /**
      * Build call for mappingZvt
      * @param prepaidContractId Prepaid contract id (required)
-     * @param body Prepaid transaction input properties (optional)
+     * @param body Prepaid transaction input properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -108,7 +104,7 @@ public class PrepaidContractsProductApi {
      * POST Prepaid/Contracts/me/mappingZvt
      * Gets prepaid item id from product id which is configured in prepaid contracts
      * @param prepaidContractId Prepaid contract id (required)
-     * @param body Prepaid transaction input properties (optional)
+     * @param body Prepaid transaction input properties
      * @return PrepaidMappingZvt
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -121,7 +117,7 @@ public class PrepaidContractsProductApi {
      * POST Prepaid/Contracts/me/mappingZvt
      * Gets prepaid item id from product id which is configured in prepaid contracts
      * @param prepaidContractId Prepaid contract id (required)
-     * @param body Prepaid transaction input properties (optional)
+     * @param body Prepaid transaction input properties
      * @return ApiResponse&lt;PrepaidMappingZvt&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -135,7 +131,7 @@ public class PrepaidContractsProductApi {
      * POST Prepaid/Contracts/me/mappingZvt (asynchronously)
      * Gets prepaid item id from product id which is configured in prepaid contracts
      * @param prepaidContractId Prepaid contract id (required)
-     * @param body Prepaid transaction input properties (optional)
+     * @param body Prepaid transaction input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

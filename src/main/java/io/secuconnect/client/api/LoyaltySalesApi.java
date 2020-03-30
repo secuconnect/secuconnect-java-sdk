@@ -8,14 +8,10 @@ import io.secuconnect.client.Configuration;
 import io.secuconnect.client.Pair;
 import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
-
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
-
 import io.secuconnect.client.model.LoyaltyCardgroupsProductModel;
 import io.secuconnect.client.model.ProductExceptionPayload;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;

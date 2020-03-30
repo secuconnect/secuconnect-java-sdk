@@ -8,11 +8,8 @@ import io.secuconnect.client.Configuration;
 import io.secuconnect.client.Pair;
 import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
-
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
-
 import io.secuconnect.client.model.LoyaltyCustomersDTO;
 import io.secuconnect.client.model.LoyaltyMerchantcardsDTO;
 import io.secuconnect.client.model.LoyaltyMerchantcardsDTOCardsAmount;
@@ -30,7 +27,6 @@ import io.secuconnect.client.model.LoyaltyMerchantcardsValidateMerchantCard;
 import io.secuconnect.client.model.ProductExceptionPayload;
 import io.secuconnect.client.model.ResultBoolean;
 import io.secuconnect.client.model.VirtualTerminalDataModel;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,7 +54,7 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for addMerchantCard
-     * @param body Loyalty merchant card properties (optional)
+     * @param body Loyalty merchant card properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -115,7 +111,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * POST Loyalty/MerchantCards
      * Add new loyalty merchant card
-     * @param body Loyalty merchant card properties (optional)
+     * @param body Loyalty merchant card properties
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -127,7 +123,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * POST Loyalty/MerchantCards
      * Add new loyalty merchant card
-     * @param body Loyalty merchant card properties (optional)
+     * @param body Loyalty merchant card properties
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -140,7 +136,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * POST Loyalty/MerchantCards (asynchronously)
      * Add new loyalty merchant card
-     * @param body Loyalty merchant card properties (optional)
+     * @param body Loyalty merchant card properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -174,7 +170,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for checkCsc
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -237,7 +233,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkCsc
      * Check CSC
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -250,7 +246,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkCsc
      * Check CSC
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -264,7 +260,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkCsc (asynchronously)
      * Check CSC
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -298,7 +294,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for checkPassCode
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -361,7 +357,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkPasscode
      * Function to check the Passcode card with cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -374,7 +370,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkPasscode
      * Function to check the Passcode card with cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -388,7 +384,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkPasscode (asynchronously)
      * Function to check the Passcode card with cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -423,7 +419,7 @@ public class LoyaltyMerchantcardsApi {
      * Build call for createMerchantcards
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount (optional)
+     * @param body Cards amount
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -492,7 +488,7 @@ public class LoyaltyMerchantcardsApi {
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount (optional)
+     * @param body Cards amount
      * @return List&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -506,7 +502,7 @@ public class LoyaltyMerchantcardsApi {
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount (optional)
+     * @param body Cards amount
      * @return ApiResponse&lt;List&lt;LoyaltyMerchantcardsProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -521,7 +517,7 @@ public class LoyaltyMerchantcardsApi {
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount (optional)
+     * @param body Cards amount
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -555,7 +551,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for executeTransaction
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties (optional)
+     * @param body Transaction properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -618,7 +614,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction
      * Execute transaction from SDK
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties (optional)
+     * @param body Transaction properties
      * @return LoyaltyMerchantcardsProductWithReceiptModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -631,7 +627,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction
      * Execute transaction from SDK
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties (optional)
+     * @param body Transaction properties
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductWithReceiptModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -645,7 +641,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction (asynchronously)
      * Execute transaction from SDK
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties (optional)
+     * @param body Transaction properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -678,11 +674,11 @@ public class LoyaltyMerchantcardsApi {
     }
     /**
      * Build call for getAll
-     * @param count The number of items to return. (optional)
-     * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                    (optional)
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order. (optional)
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -749,11 +745,11 @@ public class LoyaltyMerchantcardsApi {
     /**
      * GET Loyalty/MerchantCards
      * Get a list of loyalty merchant cards
-     * @param count The number of items to return. (optional)
-     * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                    (optional)
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order. (optional)
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @return LoyaltyMerchantcardsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -765,11 +761,11 @@ public class LoyaltyMerchantcardsApi {
     /**
      * GET Loyalty/MerchantCards
      * Get a list of loyalty merchant cards
-     * @param count The number of items to return. (optional)
-     * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                    (optional)
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order. (optional)
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @return ApiResponse&lt;LoyaltyMerchantcardsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -782,11 +778,11 @@ public class LoyaltyMerchantcardsApi {
     /**
      * GET Loyalty/MerchantCards (asynchronously)
      * Get a list of loyalty merchant cards
-     * @param count The number of items to return. (optional)
-     * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                    (optional)
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order. (optional)
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1189,7 +1185,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for lock
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock (optional)
+     * @param body Information about lock
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1252,7 +1248,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
      * Lock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock (optional)
+     * @param body Information about lock
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1265,7 +1261,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
      * Lock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock (optional)
+     * @param body Information about lock
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1279,7 +1275,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock (asynchronously)
      * Lock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock (optional)
+     * @param body Information about lock
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1313,7 +1309,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for newPassCode
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1376,7 +1372,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode
      * Function to save new given passcode for given merchantcard identified by cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1389,7 +1385,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode
      * Function to save new given passcode for given merchantcard identified by cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1403,7 +1399,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode (asynchronously)
      * Function to save new given passcode for given merchantcard identified by cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1437,7 +1433,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for registerCustomer
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties (optional)
+     * @param body Loyalty customer properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1500,7 +1496,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/registerCustomer
      * Register new customer for a card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties (optional)
+     * @param body Loyalty customer properties
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1513,7 +1509,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/registerCustomer
      * Register new customer for a card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties (optional)
+     * @param body Loyalty customer properties
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1527,7 +1523,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/registerCustomer (asynchronously)
      * Register new customer for a card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties (optional)
+     * @param body Loyalty customer properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1681,7 +1677,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for resetPassCode
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1744,7 +1740,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/resetPasscode
      * Function to reset a passcode for given merchantcard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1757,7 +1753,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/resetPasscode
      * Function to reset a passcode for given merchantcard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1771,7 +1767,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/resetPasscode (asynchronously)
      * Function to reset a passcode for given merchantcard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1934,7 +1930,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for unlock
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock (optional)
+     * @param body Information about unlock
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1997,7 +1993,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock
      * Unlock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock (optional)
+     * @param body Information about unlock
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2010,7 +2006,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock
      * Unlock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock (optional)
+     * @param body Information about unlock
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2024,7 +2020,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock (asynchronously)
      * Unlock merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock (optional)
+     * @param body Information about unlock
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2187,7 +2183,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for updateMerchantCard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties (optional)
+     * @param body Loyalty merchant card properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2250,7 +2246,7 @@ public class LoyaltyMerchantcardsApi {
      * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId}
      * Update loyalty merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties (optional)
+     * @param body Loyalty merchant card properties
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2263,7 +2259,7 @@ public class LoyaltyMerchantcardsApi {
      * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId}
      * Update loyalty merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties (optional)
+     * @param body Loyalty merchant card properties
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2277,7 +2273,7 @@ public class LoyaltyMerchantcardsApi {
      * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId} (asynchronously)
      * Update loyalty merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties (optional)
+     * @param body Loyalty merchant card properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2311,7 +2307,7 @@ public class LoyaltyMerchantcardsApi {
     /**
      * Build call for validateMerchantCard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2374,7 +2370,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/validateMerchantcard
      * Function to check the merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @return LoyaltyMerchantcardsValidateMerchantCard
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2387,7 +2383,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/validateMerchantcard
      * Function to check the merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @return ApiResponse&lt;LoyaltyMerchantcardsValidateMerchantCard&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2401,7 +2397,7 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/validateMerchantcard (asynchronously)
      * Function to check the merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (optional)
+     * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -8,11 +8,8 @@ import io.secuconnect.client.Configuration;
 import io.secuconnect.client.Pair;
 import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
-
 import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
-
 import io.secuconnect.client.model.PaymentContractsDTO;
 import io.secuconnect.client.model.PaymentContractsDTOClone;
 import io.secuconnect.client.model.PaymentContractsDTORequestId;
@@ -21,7 +18,6 @@ import io.secuconnect.client.model.PaymentContractsProductModel;
 import io.secuconnect.client.model.PaymentContractsRequestIdResult;
 import io.secuconnect.client.model.ProductExceptionPayload;
 import io.secuconnect.client.model.StringList;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,7 +46,7 @@ public class PaymentContractsApi {
     /**
      * Build call for clone
      * @param paymentContractId Contract identifier (required)
-     * @param body Payment contract clone properties (optional)
+     * @param body Payment contract clone properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -113,7 +109,7 @@ public class PaymentContractsApi {
      * POST Payment/Contracts/{paymentContractId}/clone
      * Clone an existing payment contract
      * @param paymentContractId Contract identifier (required)
-     * @param body Payment contract clone properties (optional)
+     * @param body Payment contract clone properties
      * @return PaymentContractsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -126,7 +122,7 @@ public class PaymentContractsApi {
      * POST Payment/Contracts/{paymentContractId}/clone
      * Clone an existing payment contract
      * @param paymentContractId Contract identifier (required)
-     * @param body Payment contract clone properties (optional)
+     * @param body Payment contract clone properties
      * @return ApiResponse&lt;PaymentContractsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -140,7 +136,7 @@ public class PaymentContractsApi {
      * POST Payment/Contracts/{paymentContractId}/clone (asynchronously)
      * Clone an existing payment contract
      * @param paymentContractId Contract identifier (required)
-     * @param body Payment contract clone properties (optional)
+     * @param body Payment contract clone properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -173,11 +169,11 @@ public class PaymentContractsApi {
     }
     /**
      * Build call for paymentContractsGet
-     * @param count The number of items to return. (optional)
-     * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                    (optional)
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order. (optional)
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -244,11 +240,11 @@ public class PaymentContractsApi {
     /**
      * GET Payment/Contracts
      * Get a list of payment contracts
-     * @param count The number of items to return. (optional)
-     * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                    (optional)
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order. (optional)
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @return PaymentContractsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -260,11 +256,11 @@ public class PaymentContractsApi {
     /**
      * GET Payment/Contracts
      * Get a list of payment contracts
-     * @param count The number of items to return. (optional)
-     * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                    (optional)
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order. (optional)
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @return ApiResponse&lt;PaymentContractsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -277,11 +273,11 @@ public class PaymentContractsApi {
     /**
      * GET Payment/Contracts (asynchronously)
      * Get a list of payment contracts
-     * @param count The number of items to return. (optional)
-     * @param offset The position within the whole result set to start returning items (First element is at 0). (optional)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2 (optional)
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                    (optional)
-     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order. (optional)
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -675,7 +671,7 @@ public class PaymentContractsApi {
     /**
      * Build call for paymentContractsIdPut
      * @param paymentContractId Payment contract id (required)
-     * @param body Payment contracts properties (optional)
+     * @param body Payment contracts properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -738,7 +734,7 @@ public class PaymentContractsApi {
      * PUT Payment/Contracts/{paymentContractId}
      * Update payment contract
      * @param paymentContractId Payment contract id (required)
-     * @param body Payment contracts properties (optional)
+     * @param body Payment contracts properties
      * @return PaymentContractsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -751,7 +747,7 @@ public class PaymentContractsApi {
      * PUT Payment/Contracts/{paymentContractId}
      * Update payment contract
      * @param paymentContractId Payment contract id (required)
-     * @param body Payment contracts properties (optional)
+     * @param body Payment contracts properties
      * @return ApiResponse&lt;PaymentContractsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -765,7 +761,7 @@ public class PaymentContractsApi {
      * PUT Payment/Contracts/{paymentContractId} (asynchronously)
      * Update payment contract
      * @param paymentContractId Payment contract id (required)
-     * @param body Payment contracts properties (optional)
+     * @param body Payment contracts properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -798,7 +794,7 @@ public class PaymentContractsApi {
     }
     /**
      * Build call for paymentContractsPost
-     * @param body Payment contracts properties (optional)
+     * @param body Payment contracts properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -855,7 +851,7 @@ public class PaymentContractsApi {
     /**
      * POST Payment/Contracts
      * Add new contract
-     * @param body Payment contracts properties (optional)
+     * @param body Payment contracts properties
      * @return PaymentContractsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -867,7 +863,7 @@ public class PaymentContractsApi {
     /**
      * POST Payment/Contracts
      * Add new contract
-     * @param body Payment contracts properties (optional)
+     * @param body Payment contracts properties
      * @return ApiResponse&lt;PaymentContractsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -880,7 +876,7 @@ public class PaymentContractsApi {
     /**
      * POST Payment/Contracts (asynchronously)
      * Add new contract
-     * @param body Payment contracts properties (optional)
+     * @param body Payment contracts properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -914,7 +910,7 @@ public class PaymentContractsApi {
     /**
      * Build call for requestId
      * @param paymentContractId Contract identifier of the parent (required)
-     * @param body Payment contract request id properties (optional)
+     * @param body Payment contract request id properties
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -977,7 +973,7 @@ public class PaymentContractsApi {
      * POST Payment/Contracts/{paymentContractId}/requestId
      * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
      * @param paymentContractId Contract identifier of the parent (required)
-     * @param body Payment contract request id properties (optional)
+     * @param body Payment contract request id properties
      * @return PaymentContractsRequestIdResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -990,7 +986,7 @@ public class PaymentContractsApi {
      * POST Payment/Contracts/{paymentContractId}/requestId
      * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
      * @param paymentContractId Contract identifier of the parent (required)
-     * @param body Payment contract request id properties (optional)
+     * @param body Payment contract request id properties
      * @return ApiResponse&lt;PaymentContractsRequestIdResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1004,7 +1000,7 @@ public class PaymentContractsApi {
      * POST Payment/Contracts/{paymentContractId}/requestId (asynchronously)
      * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
      * @param paymentContractId Contract identifier of the parent (required)
-     * @param body Payment contract request id properties (optional)
+     * @param body Payment contract request id properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
