@@ -19,6 +19,42 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [2.0.0] - 2020-03-30
+
+### Security
+- Dependency updates
+
+### Added
+- Model "CreditCardDescriptor" to create payment container for credit card
+- Model "Address" has a new property "additional_address_data" 
+- Model "PaymentContainersDTO" has a new property "customer_id"
+- Model "PaymentTransactionsProductModel" has a new property "account_owner"
+
+### Changed
+- ApiClient: Date functions moved
+- Model "PaymentContainersDTO" property "_private" changed to interface "OneOfPaymentContainersDTOModelPrivate"
+- Model "PaymentContainersProductModel" property "_private" and "_public" changed to interface "OneOfPaymentContainersDTOModelPrivate"
+- Model "PaymentContractsRequestIdResult" property "contract" changed to "ProductInstanceUID"
+- DocumentUploadsApi: changed model from "File" to "FileToUpload"
+- LoyaltyMerchantcardsApi: changed model from "VirtualTerminalData" to "VirtualTerminalDataModel"
+- PaymentTransactionsApi: changed model from "List<PaymentTransactionsProductModel>" to "PaymentTransactionsCancelList"
+- several api classes: changed model from "Object" to some more concrete model like "ResultBoolean", "CustomersWithoutMerchantcardAndDuplicatedCustomers" or "PaymentCancelResult"
+
+### Removed
+- GeneralMerchantsApi: updateMerchant()
+- PaymentSecupayCreditcardsApi: paymentSecupayCreditcardsCancelById()
+- PaymentSecupayDebitsApi: paymentSecupayDebitsCancelById()
+- PaymentSecupayInvoicesApi: paymentSecupayInvoicesCancelById()
+- PaymentSecupayPrepaysApi: paymentSecupayPrepaysCancelById()
+- PaymentTransactionsApi: paymentTransactionsGet()
+- PaymentTransactionsApi: paymentTransactionsGetById()
+- PaymentTransactionsApi: paymentTransactionsIdCancelPost()
+- PaymentTransactionsApi: paymentTransactionsIdShippingUrlGet()
+- Model "PaymentContainersDTOPrivate"
+- Model "VirtualTerminalData"
+- Model "SecupaySubTransactionProductModel" properties removed: "amount", "transaction_status", "status", "currency"
+
+
 ## [1.9.0] - 2020-03-05
 
 ### Security
@@ -153,3 +189,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [1.8.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.7.0...1.8.0
 [1.8.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.0...1.8.1
 [1.9.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.1...1.9.0
+[2.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.9.0...2.0.0
