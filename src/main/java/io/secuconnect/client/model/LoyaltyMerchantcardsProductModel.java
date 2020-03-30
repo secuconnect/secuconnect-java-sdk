@@ -7,8 +7,6 @@ import io.secuconnect.client.model.LoyaltyCardsProductModel;
 import io.secuconnect.client.model.LoyaltyCustomersProductModel;
 import io.secuconnect.client.model.LoyaltyMerchantcardsDTOPaymentContainer;
 import io.secuconnect.client.model.ProductInstanceUID;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

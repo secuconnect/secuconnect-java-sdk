@@ -2,8 +2,6 @@ package io.secuconnect.client.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

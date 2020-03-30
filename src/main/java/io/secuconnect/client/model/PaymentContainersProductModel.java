@@ -1,14 +1,11 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import io.secuconnect.client.model.BankAccountDescriptor;
 import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.PaymentContainerMandate;
 import io.secuconnect.client.model.PaymentContractsProductModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.ProductInstanceUID;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
@@ -28,10 +25,10 @@ public class PaymentContainersProductModel extends BaseProductModel {
   private String type = null;
 
   @SerializedName("public")
-  private BankAccountDescriptor _public = null;
+  private OneOfPaymentContainersDTOModelPrivate _public = null;
 
   @SerializedName("private")
-  private BankAccountDescriptor _private = null;
+  private OneOfPaymentContainersDTOModelPrivate _private = null;
 
   @SerializedName("created")
   private String created = null;
@@ -110,37 +107,37 @@ public class PaymentContainersProductModel extends BaseProductModel {
     this.type = type;
   }
 
-  public PaymentContainersProductModel _public(BankAccountDescriptor _public) {
+  public PaymentContainersProductModel _public(OneOfPaymentContainersDTOModelPrivate _public) {
     this._public = _public;
     return this;
   }
 
    /**
-   * Get _public
+   * Public payment instrument data
    * @return _public
   **/
-  public BankAccountDescriptor getPublic() {
+  public OneOfPaymentContainersDTOModelPrivate getPublic() {
     return _public;
   }
 
-  public void setPublic(BankAccountDescriptor _public) {
+  public void setPublic(OneOfPaymentContainersDTOModelPrivate _public) {
     this._public = _public;
   }
 
-  public PaymentContainersProductModel _private(BankAccountDescriptor _private) {
+  public PaymentContainersProductModel _private(OneOfPaymentContainersDTOModelPrivate _private) {
     this._private = _private;
     return this;
   }
 
    /**
-   * Get _private
+   * Private payment instrument data
    * @return _private
   **/
-  public BankAccountDescriptor getPrivate() {
+  public OneOfPaymentContainersDTOModelPrivate getPrivate() {
     return _private;
   }
 
-  public void setPrivate(BankAccountDescriptor _private) {
+  public void setPrivate(OneOfPaymentContainersDTOModelPrivate _private) {
     this._private = _private;
   }
 

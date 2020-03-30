@@ -5,6 +5,7 @@ import io.secuconnect.client.stomp.listeners.IConnectedFrameListener;
 import io.secuconnect.client.stomp.listeners.IFrameListener;
 import io.secuconnect.client.stomp.model.AuthSessionsRefresh;
 import io.secuconnect.client.stomp.model.StompRequest;
+import io.secuconnect.client.stomp.communication.StompMessageSender;
 
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;

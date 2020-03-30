@@ -1,14 +1,12 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * Bank account data like owner, iban, bic and bank name
  */
-public class BankAccountDescriptor {
+public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   @SerializedName("iban")
   private String iban = null;
 
@@ -98,7 +96,7 @@ public class BankAccountDescriptor {
   }
 
    /**
-   * Purpose
+   * Purpose for the bank statement
    * @return purpose
   **/
   public String getPurpose() {

@@ -9,8 +9,6 @@ import io.secuconnect.client.model.SecupayTransactionProductDTOOptData;
 import io.secuconnect.client.model.SecupayTransactionProductDTOSubscription;
 import java.util.ArrayList;
 import java.util.List;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

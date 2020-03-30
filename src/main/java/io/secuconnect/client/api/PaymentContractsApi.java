@@ -17,6 +17,7 @@ import io.secuconnect.client.model.PaymentContractsList;
 import io.secuconnect.client.model.PaymentContractsProductModel;
 import io.secuconnect.client.model.PaymentContractsRequestIdResult;
 import io.secuconnect.client.model.ProductExceptionPayload;
+import io.secuconnect.client.model.StringList;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,6 +60,7 @@ public class PaymentContractsApi {
             .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -89,7 +91,7 @@ public class PaymentContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -184,16 +186,17 @@ public class PaymentContractsApi {
         String localVarPath = "/Payment/Contracts";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (count != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "count", count));
+        localVarQueryParams.addAll(apiClient.parameterToPair("count", count));
         if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (fields != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "fields", fields));
+        localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
         if (q != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "q", q));
+        localVarQueryParams.addAll(apiClient.parameterToPair("q", q));
         if (sort != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort", sort));
+        localVarQueryParams.addAll(apiClient.parameterToPair("sort", sort));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -224,7 +227,7 @@ public class PaymentContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -321,6 +324,7 @@ public class PaymentContractsApi {
             .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -351,7 +355,7 @@ public class PaymentContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -440,6 +444,7 @@ public class PaymentContractsApi {
             .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -470,7 +475,7 @@ public class PaymentContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -559,6 +564,7 @@ public class PaymentContractsApi {
             .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -589,7 +595,7 @@ public class PaymentContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -607,11 +613,11 @@ public class PaymentContractsApi {
      * GET Payment/Contracts/{paymentContractId}/paymentMethods
      * Get available payment methods for given contract
      * @param paymentContractId Contract identifier (required)
-     * @return List&lt;String&gt;
+     * @return StringList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<String> paymentContractsIdPaymentMethodsGet(String paymentContractId) throws ApiException {
-        ApiResponse<List<String>> resp = paymentContractsIdPaymentMethodsGetWithHttpInfo(paymentContractId);
+    public StringList paymentContractsIdPaymentMethodsGet(String paymentContractId) throws ApiException {
+        ApiResponse<StringList> resp = paymentContractsIdPaymentMethodsGetWithHttpInfo(paymentContractId);
         return resp.getData();
     }
 
@@ -619,12 +625,12 @@ public class PaymentContractsApi {
      * GET Payment/Contracts/{paymentContractId}/paymentMethods
      * Get available payment methods for given contract
      * @param paymentContractId Contract identifier (required)
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;StringList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<String>> paymentContractsIdPaymentMethodsGetWithHttpInfo(String paymentContractId) throws ApiException {
+    public ApiResponse<StringList> paymentContractsIdPaymentMethodsGetWithHttpInfo(String paymentContractId) throws ApiException {
         com.squareup.okhttp.Call call = paymentContractsIdPaymentMethodsGetValidateBeforeCall(paymentContractId, null, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<StringList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -636,7 +642,7 @@ public class PaymentContractsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call paymentContractsIdPaymentMethodsGetAsync(String paymentContractId, final ApiCallback<List<String>> callback) throws ApiException {
+    public com.squareup.okhttp.Call paymentContractsIdPaymentMethodsGetAsync(String paymentContractId, final ApiCallback<StringList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -658,7 +664,7 @@ public class PaymentContractsApi {
         }
 
         com.squareup.okhttp.Call call = paymentContractsIdPaymentMethodsGetValidateBeforeCall(paymentContractId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<StringList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -679,6 +685,7 @@ public class PaymentContractsApi {
             .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -709,7 +716,7 @@ public class PaymentContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -800,6 +807,7 @@ public class PaymentContractsApi {
         String localVarPath = "/Payment/Contracts";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -830,7 +838,7 @@ public class PaymentContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -916,6 +924,7 @@ public class PaymentContractsApi {
             .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -946,7 +955,7 @@ public class PaymentContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")

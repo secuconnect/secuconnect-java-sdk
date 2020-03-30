@@ -56,6 +56,7 @@ public class SmartTransactionsApi {
         String localVarPath = "/Smart/Transactions";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -86,7 +87,7 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -171,6 +172,7 @@ public class SmartTransactionsApi {
             .replaceAll("\\{" + "smartTransactionId" + "\\}", apiClient.escapeString(smartTransactionId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -201,7 +203,7 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -290,6 +292,7 @@ public class SmartTransactionsApi {
             .replaceAll("\\{" + "smartTransactionId" + "\\}", apiClient.escapeString(smartTransactionId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -320,7 +323,7 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -409,6 +412,7 @@ public class SmartTransactionsApi {
             .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -439,7 +443,7 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -531,16 +535,17 @@ public class SmartTransactionsApi {
         String localVarPath = "/Smart/Transactions";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (count != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "count", count));
+        localVarQueryParams.addAll(apiClient.parameterToPair("count", count));
         if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (fields != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "fields", fields));
+        localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
         if (q != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "q", q));
+        localVarQueryParams.addAll(apiClient.parameterToPair("q", q));
         if (sort != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort", sort));
+        localVarQueryParams.addAll(apiClient.parameterToPair("sort", sort));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -571,7 +576,7 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -668,6 +673,7 @@ public class SmartTransactionsApi {
             .replaceAll("\\{" + "smartTransactionId" + "\\}", apiClient.escapeString(smartTransactionId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -698,7 +704,7 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -787,6 +793,7 @@ public class SmartTransactionsApi {
             .replaceAll("\\{" + "smartTransactionId" + "\\}", apiClient.escapeString(smartTransactionId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -817,7 +824,7 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -909,6 +916,7 @@ public class SmartTransactionsApi {
             .replaceAll("\\{" + "paymentMethod" + "\\}", apiClient.escapeString(paymentMethod.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -939,7 +947,7 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1038,6 +1046,7 @@ public class SmartTransactionsApi {
             .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1068,7 +1077,7 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1145,13 +1154,14 @@ public class SmartTransactionsApi {
      * Build call for startTransaction
      * @param smartTransactionId Smart transaction id (required)
      * @param paymentMethod Payment method (required)
+     * @param body Information which customer and container will be used to this operation
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call startTransactionCall(String smartTransactionId, String paymentMethod, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public com.squareup.okhttp.Call startTransactionCall(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
         
         // create path and map variables
         String localVarPath = "/Smart/Transactions/{smartTransactionId}/start/{paymentMethod}"
@@ -1159,6 +1169,7 @@ public class SmartTransactionsApi {
             .replaceAll("\\{" + "paymentMethod" + "\\}", apiClient.escapeString(paymentMethod.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1171,7 +1182,7 @@ public class SmartTransactionsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1189,11 +1200,11 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call startTransactionValidateBeforeCall(String smartTransactionId, String paymentMethod, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call startTransactionValidateBeforeCall(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'smartTransactionId' is set
         if (smartTransactionId == null) {
             throw new ApiException("Missing the required parameter 'smartTransactionId' when calling startTransaction(Async)");
@@ -1203,7 +1214,7 @@ public class SmartTransactionsApi {
             throw new ApiException("Missing the required parameter 'paymentMethod' when calling startTransaction(Async)");
         }
         
-        com.squareup.okhttp.Call call = startTransactionCall(smartTransactionId, paymentMethod, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = startTransactionCall(smartTransactionId, paymentMethod, body, progressListener, progressRequestListener);
         return call;
     }
 
@@ -1212,11 +1223,12 @@ public class SmartTransactionsApi {
      * Start smart transaction with given payment method
      * @param smartTransactionId Smart transaction id (required)
      * @param paymentMethod Payment method (required)
+     * @param body Information which customer and container will be used to this operation
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel startTransaction(String smartTransactionId, String paymentMethod) throws ApiException {
-        ApiResponse<SmartTransactionsProductModel> resp = startTransactionWithHttpInfo(smartTransactionId, paymentMethod);
+    public SmartTransactionsProductModel startTransaction(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = startTransactionWithHttpInfo(smartTransactionId, paymentMethod, body);
         return resp.getData();
     }
 
@@ -1225,11 +1237,12 @@ public class SmartTransactionsApi {
      * Start smart transaction with given payment method
      * @param smartTransactionId Smart transaction id (required)
      * @param paymentMethod Payment method (required)
+     * @param body Information which customer and container will be used to this operation
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> startTransactionWithHttpInfo(String smartTransactionId, String paymentMethod) throws ApiException {
-        com.squareup.okhttp.Call call = startTransactionValidateBeforeCall(smartTransactionId, paymentMethod, null, null);
+    public ApiResponse<SmartTransactionsProductModel> startTransactionWithHttpInfo(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body) throws ApiException {
+        com.squareup.okhttp.Call call = startTransactionValidateBeforeCall(smartTransactionId, paymentMethod, body, null, null);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1239,11 +1252,12 @@ public class SmartTransactionsApi {
      * Start smart transaction with given payment method
      * @param smartTransactionId Smart transaction id (required)
      * @param paymentMethod Payment method (required)
+     * @param body Information which customer and container will be used to this operation
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call startTransactionAsync(String smartTransactionId, String paymentMethod, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call startTransactionAsync(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1264,7 +1278,7 @@ public class SmartTransactionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = startTransactionValidateBeforeCall(smartTransactionId, paymentMethod, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = startTransactionValidateBeforeCall(smartTransactionId, paymentMethod, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1286,6 +1300,7 @@ public class SmartTransactionsApi {
             .replaceAll("\\{" + "smartTransactionId" + "\\}", apiClient.escapeString(smartTransactionId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1316,7 +1331,7 @@ public class SmartTransactionsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")

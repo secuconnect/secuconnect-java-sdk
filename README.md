@@ -1,8 +1,14 @@
 # secuconnect-java-sdk
 
+## Documentation
+
+https://developer.secuconnect.com/
+
 ## Requirements
 
-Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
+Building the API client library requires:
+1. Java 1.7+
+2. Maven/Gradle
 
 ## Installation
 
@@ -11,14 +17,6 @@ To install the API client library to your local Maven repository, simply execute
 ```shell
 mvn install
 ```
-
-To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
-
-```shell
-mvn deploy
-```
-
-Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
 
 ### Maven users
 
@@ -44,19 +42,21 @@ To use this projects artifacts with Maven add the following dependency and repos
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.secuconnect:secuconnect-java-sdk:1.9.0"
+compile "io.secuconnect:secuconnect-java-sdk:2.0.0"
 ```
 
 ### Others
 
 At first generate the JAR by executing:
 
-    mvn package
+```shell
+mvn package
+```
 
 Then manually install the following JARs:
 
-* target/secuconnect-java-sdk-1.9.0.jar
-* target/lib/*.jar
+* `target/secuconnect-java-sdk-2.0.0.jar`
+* `target/lib/*.jar`
 
 ## Getting Started
 
@@ -99,16 +99,6 @@ public class PaymentContainersApiExample {
 
 ```
 
-
-## Documentation
-
-https://developer.secuconnect.com/JAVA/
-
 ## Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
-
-## Author
-
-
-

@@ -59,16 +59,17 @@ public class GeneralContractsApi {
         String localVarPath = "/General/Contracts";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (count != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "count", count));
+        localVarQueryParams.addAll(apiClient.parameterToPair("count", count));
         if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (fields != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "fields", fields));
+        localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
         if (q != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "q", q));
+        localVarQueryParams.addAll(apiClient.parameterToPair("q", q));
         if (sort != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort", sort));
+        localVarQueryParams.addAll(apiClient.parameterToPair("sort", sort));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -99,7 +100,7 @@ public class GeneralContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -197,6 +198,7 @@ public class GeneralContractsApi {
             .replaceAll("\\{" + "generalContractId" + "\\}", apiClient.escapeString(generalContractId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -227,7 +229,7 @@ public class GeneralContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -319,6 +321,7 @@ public class GeneralContractsApi {
             .replaceAll("\\{" + "generalContractId" + "\\}", apiClient.escapeString(generalContractId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -349,7 +352,7 @@ public class GeneralContractsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")

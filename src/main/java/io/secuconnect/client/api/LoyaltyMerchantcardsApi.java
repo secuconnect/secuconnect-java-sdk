@@ -25,7 +25,8 @@ import io.secuconnect.client.model.LoyaltyMerchantcardsProductModel;
 import io.secuconnect.client.model.LoyaltyMerchantcardsProductWithReceiptModel;
 import io.secuconnect.client.model.LoyaltyMerchantcardsValidateMerchantCard;
 import io.secuconnect.client.model.ProductExceptionPayload;
-import io.secuconnect.client.model.VirtualTerminalData;
+import io.secuconnect.client.model.ResultBoolean;
+import io.secuconnect.client.model.VirtualTerminalDataModel;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,6 +67,7 @@ public class LoyaltyMerchantcardsApi {
         String localVarPath = "/Loyalty/MerchantCards";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -96,7 +98,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -182,6 +184,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -212,7 +215,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -230,12 +233,12 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkCsc
      * Check CSC
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
-     * @return Object
+     * @param body Information about card
+     * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object checkCsc(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCsc body) throws ApiException {
-        ApiResponse<Object> resp = checkCscWithHttpInfo(loyaltyMerchantCardId, body);
+    public ResultBoolean checkCsc(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCsc body) throws ApiException {
+        ApiResponse<ResultBoolean> resp = checkCscWithHttpInfo(loyaltyMerchantCardId, body);
         return resp.getData();
     }
 
@@ -243,13 +246,13 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkCsc
      * Check CSC
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @param body Information about card
+     * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> checkCscWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCsc body) throws ApiException {
+    public ApiResponse<ResultBoolean> checkCscWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCsc body) throws ApiException {
         com.squareup.okhttp.Call call = checkCscValidateBeforeCall(loyaltyMerchantCardId, body, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -262,7 +265,7 @@ public class LoyaltyMerchantcardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call checkCscAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCsc body, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call checkCscAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCsc body, final ApiCallback<ResultBoolean> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -284,7 +287,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         com.squareup.okhttp.Call call = checkCscValidateBeforeCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -305,6 +308,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -335,7 +339,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -353,12 +357,12 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkPasscode
      * Function to check the Passcode card with cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
-     * @return Object
+     * @param body Information about card
+     * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object checkPassCode(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCheckPasscode body) throws ApiException {
-        ApiResponse<Object> resp = checkPassCodeWithHttpInfo(loyaltyMerchantCardId, body);
+    public ResultBoolean checkPassCode(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCheckPasscode body) throws ApiException {
+        ApiResponse<ResultBoolean> resp = checkPassCodeWithHttpInfo(loyaltyMerchantCardId, body);
         return resp.getData();
     }
 
@@ -366,13 +370,13 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkPasscode
      * Function to check the Passcode card with cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @param body Information about card
+     * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> checkPassCodeWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCheckPasscode body) throws ApiException {
+    public ApiResponse<ResultBoolean> checkPassCodeWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCheckPasscode body) throws ApiException {
         com.squareup.okhttp.Call call = checkPassCodeValidateBeforeCall(loyaltyMerchantCardId, body, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -385,7 +389,7 @@ public class LoyaltyMerchantcardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call checkPassCodeAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCheckPasscode body, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call checkPassCodeAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOCheckPasscode body, final ApiCallback<ResultBoolean> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -407,7 +411,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         com.squareup.okhttp.Call call = checkPassCodeValidateBeforeCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -430,6 +434,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyCardgroupId" + "\\}", apiClient.escapeString(loyaltyCardgroupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -460,7 +465,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -560,6 +565,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -590,7 +596,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -685,16 +691,17 @@ public class LoyaltyMerchantcardsApi {
         String localVarPath = "/Loyalty/MerchantCards";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (count != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "count", count));
+        localVarQueryParams.addAll(apiClient.parameterToPair("count", count));
         if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (fields != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "fields", fields));
+        localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
         if (q != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "q", q));
+        localVarQueryParams.addAll(apiClient.parameterToPair("q", q));
         if (sort != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort", sort));
+        localVarQueryParams.addAll(apiClient.parameterToPair("sort", sort));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -725,7 +732,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -822,6 +829,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -852,7 +860,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -941,6 +949,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -971,7 +980,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1062,6 +1071,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantId" + "\\}", apiClient.escapeString(loyaltyMerchantId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1092,7 +1102,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1115,11 +1125,11 @@ public class LoyaltyMerchantcardsApi {
      * Get virtual terminal data for merchant
      * @param loyaltyMerchantCardId Merchant card id (required)
      * @param loyaltyMerchantId Merchant id (required)
-     * @return VirtualTerminalData
+     * @return VirtualTerminalDataModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public VirtualTerminalData getVirtualTerminalData(String loyaltyMerchantCardId, String loyaltyMerchantId) throws ApiException {
-        ApiResponse<VirtualTerminalData> resp = getVirtualTerminalDataWithHttpInfo(loyaltyMerchantCardId, loyaltyMerchantId);
+    public VirtualTerminalDataModel getVirtualTerminalData(String loyaltyMerchantCardId, String loyaltyMerchantId) throws ApiException {
+        ApiResponse<VirtualTerminalDataModel> resp = getVirtualTerminalDataWithHttpInfo(loyaltyMerchantCardId, loyaltyMerchantId);
         return resp.getData();
     }
 
@@ -1128,12 +1138,12 @@ public class LoyaltyMerchantcardsApi {
      * Get virtual terminal data for merchant
      * @param loyaltyMerchantCardId Merchant card id (required)
      * @param loyaltyMerchantId Merchant id (required)
-     * @return ApiResponse&lt;VirtualTerminalData&gt;
+     * @return ApiResponse&lt;VirtualTerminalDataModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<VirtualTerminalData> getVirtualTerminalDataWithHttpInfo(String loyaltyMerchantCardId, String loyaltyMerchantId) throws ApiException {
+    public ApiResponse<VirtualTerminalDataModel> getVirtualTerminalDataWithHttpInfo(String loyaltyMerchantCardId, String loyaltyMerchantId) throws ApiException {
         com.squareup.okhttp.Call call = getVirtualTerminalDataValidateBeforeCall(loyaltyMerchantCardId, loyaltyMerchantId, null, null);
-        Type localVarReturnType = new TypeToken<VirtualTerminalData>(){}.getType();
+        Type localVarReturnType = new TypeToken<VirtualTerminalDataModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1146,7 +1156,7 @@ public class LoyaltyMerchantcardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getVirtualTerminalDataAsync(String loyaltyMerchantCardId, String loyaltyMerchantId, final ApiCallback<VirtualTerminalData> callback) throws ApiException {
+    public com.squareup.okhttp.Call getVirtualTerminalDataAsync(String loyaltyMerchantCardId, String loyaltyMerchantId, final ApiCallback<VirtualTerminalDataModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1168,14 +1178,14 @@ public class LoyaltyMerchantcardsApi {
         }
 
         com.squareup.okhttp.Call call = getVirtualTerminalDataValidateBeforeCall(loyaltyMerchantCardId, loyaltyMerchantId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<VirtualTerminalData>(){}.getType();
+        Type localVarReturnType = new TypeToken<VirtualTerminalDataModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for lock
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock (required)
+     * @param body Information about lock
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1189,6 +1199,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1219,7 +1230,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1312,6 +1323,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1342,7 +1354,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1360,12 +1372,12 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode
      * Function to save new given passcode for given merchantcard identified by cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
-     * @return Object
+     * @param body Information about card
+     * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object newPassCode(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTONewPasscode body) throws ApiException {
-        ApiResponse<Object> resp = newPassCodeWithHttpInfo(loyaltyMerchantCardId, body);
+    public ResultBoolean newPassCode(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTONewPasscode body) throws ApiException {
+        ApiResponse<ResultBoolean> resp = newPassCodeWithHttpInfo(loyaltyMerchantCardId, body);
         return resp.getData();
     }
 
@@ -1373,13 +1385,13 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode
      * Function to save new given passcode for given merchantcard identified by cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @param body Information about card
+     * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> newPassCodeWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTONewPasscode body) throws ApiException {
+    public ApiResponse<ResultBoolean> newPassCodeWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTONewPasscode body) throws ApiException {
         com.squareup.okhttp.Call call = newPassCodeValidateBeforeCall(loyaltyMerchantCardId, body, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1392,7 +1404,7 @@ public class LoyaltyMerchantcardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call newPassCodeAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTONewPasscode body, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call newPassCodeAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTONewPasscode body, final ApiCallback<ResultBoolean> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1414,7 +1426,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         com.squareup.okhttp.Call call = newPassCodeValidateBeforeCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1435,6 +1447,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1465,7 +1478,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1557,6 +1570,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1587,7 +1601,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1677,6 +1691,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1707,7 +1722,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1725,12 +1740,12 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/resetPasscode
      * Function to reset a passcode for given merchantcard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
-     * @return Object
+     * @param body Information about card
+     * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object resetPassCode(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOResetPasscode body) throws ApiException {
-        ApiResponse<Object> resp = resetPassCodeWithHttpInfo(loyaltyMerchantCardId, body);
+    public ResultBoolean resetPassCode(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOResetPasscode body) throws ApiException {
+        ApiResponse<ResultBoolean> resp = resetPassCodeWithHttpInfo(loyaltyMerchantCardId, body);
         return resp.getData();
     }
 
@@ -1738,13 +1753,13 @@ public class LoyaltyMerchantcardsApi {
      * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/resetPasscode
      * Function to reset a passcode for given merchantcard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @param body Information about card
+     * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> resetPassCodeWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOResetPasscode body) throws ApiException {
+    public ApiResponse<ResultBoolean> resetPassCodeWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOResetPasscode body) throws ApiException {
         com.squareup.okhttp.Call call = resetPassCodeValidateBeforeCall(loyaltyMerchantCardId, body, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1757,7 +1772,7 @@ public class LoyaltyMerchantcardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call resetPassCodeAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOResetPasscode body, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call resetPassCodeAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOResetPasscode body, final ApiCallback<ResultBoolean> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1779,7 +1794,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         com.squareup.okhttp.Call call = resetPassCodeValidateBeforeCall(loyaltyMerchantCardId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1801,6 +1816,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyCustomerId" + "\\}", apiClient.escapeString(loyaltyCustomerId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1831,7 +1847,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1928,6 +1944,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1958,7 +1975,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -2052,6 +2069,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyCardGroupId" + "\\}", apiClient.escapeString(loyaltyCardGroupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2082,7 +2100,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -2179,6 +2197,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2209,7 +2228,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -2302,6 +2321,7 @@ public class LoyaltyMerchantcardsApi {
             .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -2332,7 +2352,7 @@ public class LoyaltyMerchantcardsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")

@@ -4,8 +4,6 @@ import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.Contact;
 import io.secuconnect.client.model.ProductInstanceUID;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

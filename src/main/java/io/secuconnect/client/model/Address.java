@@ -1,8 +1,6 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
@@ -26,6 +24,9 @@ public class Address {
 
   @SerializedName("country")
   private String country = null;
+
+  @SerializedName("additional_address_data")
+  private String additionalAddressData = null;
 
   public Address type(String type) {
     this.type = type;
@@ -129,6 +130,23 @@ public class Address {
     this.country = country;
   }
 
+  public Address additionalAddressData(String additionalAddressData) {
+    this.additionalAddressData = additionalAddressData;
+    return this;
+  }
+
+   /**
+   * Additional address data
+   * @return additionalAddressData
+  **/
+  public String getAdditionalAddressData() {
+    return additionalAddressData;
+  }
+
+  public void setAdditionalAddressData(String additionalAddressData) {
+    this.additionalAddressData = additionalAddressData;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -143,12 +161,13 @@ public class Address {
         Objects.equals(this.streetNumber, address.streetNumber) &&
         Objects.equals(this.city, address.city) &&
         Objects.equals(this.postalCode, address.postalCode) &&
-        Objects.equals(this.country, address.country);
+        Objects.equals(this.country, address.country) &&
+        Objects.equals(this.additionalAddressData, address.additionalAddressData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, street, streetNumber, city, postalCode, country);
+    return Objects.hash(type, street, streetNumber, city, postalCode, country, additionalAddressData);
   }
 
   @Override
@@ -162,6 +181,7 @@ public class Address {
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    sb.append("    additionalAddressData: ").append(toIndentedString(additionalAddressData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

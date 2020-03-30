@@ -56,7 +56,7 @@ public class Authenticator {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        return apiClient.buildCall(localVarPath, "POST", null, credentials, localVarHeaderParams, null, localVarAuthNames, null);
+        return apiClient.buildCall(localVarPath, "POST", null, null, credentials, localVarHeaderParams, null, localVarAuthNames, null);
     }
 
     public AccessToken getTokenFromApi() throws ApiException {

@@ -5,8 +5,6 @@ import io.secuconnect.client.model.Address;
 import io.secuconnect.client.model.OpenHours;
 import java.util.ArrayList;
 import java.util.List;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

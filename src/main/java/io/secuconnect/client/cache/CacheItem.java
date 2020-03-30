@@ -1,6 +1,7 @@
 package io.secuconnect.client.cache;
 
 import io.secuconnect.client.auth.tokens.AccessToken;
+
 import java.util.Date;
 
 public abstract class CacheItem {

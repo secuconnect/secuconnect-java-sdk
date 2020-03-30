@@ -5,8 +5,6 @@ import io.secuconnect.client.model.SecupayBaseBasketItem;
 import io.secuconnect.client.model.SecupayBasketItem;
 import java.util.ArrayList;
 import java.util.List;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

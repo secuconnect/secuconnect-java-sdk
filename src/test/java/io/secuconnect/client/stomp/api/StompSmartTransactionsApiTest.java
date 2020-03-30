@@ -1,9 +1,9 @@
 package io.secuconnect.client.stomp.api;
 
 import io.secuconnect.client.auth.Authenticator;
-import io.secuconnect.client.model.*;
 import io.secuconnect.client.stomp.api.modelsForStompApiTest.SmartTransactionsProductModelForTests;
 import io.secuconnect.client.stomp.communication.StompCommunicationManager;
+import io.secuconnect.client.model.*;
 import io.secuconnect.client.stomp.communication.frame.StompFrame;
 import io.secuconnect.client.stomp.listeners.def.impl.ConnectedFrameListener;
 import io.secuconnect.client.stomp.listeners.def.impl.ErrorFrameListener;

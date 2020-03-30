@@ -78,7 +78,7 @@ public class PaymentSecupayDebitsApiTest {
 
     private static PaymentContainersDTO prepareContainer() {
         PaymentContainersDTO containerDTO = new PaymentContainersDTO();
-        PaymentContainersDTOPrivate privateInfo = new PaymentContainersDTOPrivate();
+        BankAccountDescriptor privateInfo = new BankAccountDescriptor();
         privateInfo.setBic("INGDDEFFXXX");
         privateInfo.setIban("DE12500105170648489890");
         privateInfo.setOwner("John Doe");
@@ -148,9 +148,9 @@ public class PaymentSecupayDebitsApiTest {
     public void b_paymentContainerPostTest() throws ApiException {
         PaymentContainersProductModel container = containerApi.paymentContainersPost(containerDTO);
         String containerId = container.getId();
-        PaymentContainersDTOPrivate privateDataDTO = containerDTO.getPrivate();
-        BankAccountDescriptor privateData = container.getPrivate();
-        BankAccountDescriptor publicData = container.getPublic();
+        BankAccountDescriptor privateDataDTO = (BankAccountDescriptor) containerDTO.getPrivate();
+        BankAccountDescriptor privateData = (BankAccountDescriptor) container.getPrivate();
+        BankAccountDescriptor publicData = (BankAccountDescriptor) container.getPublic();
 
         assertNotNull(containerId);
         assertEquals(privateDataDTO.getBic(), privateData.getBic());
@@ -205,8 +205,6 @@ public class PaymentSecupayDebitsApiTest {
         assertNotNull(debitTransactionData.getPurpose());
         assertEquals("payment.customers", debitTransactionData.getCustomer().getObject());
         assertNotNull(debitTransactionData.getCustomer().getId());
-        assertEquals("payment.contracts", debitTransactionData.getCustomer().getContract().getObject());
-        assertNotNull(debitTransactionData.getCustomer().getContract().getId());
         assertEquals(debitsData.getCustomer().getContact().getForename(), debitTransactionData.getCustomer().getContact().getForename());
         assertEquals(debitsData.getCustomer().getContact().getSurname(), debitTransactionData.getCustomer().getContact().getSurname());
         assertEquals(debitsData.getCustomer().getContact().getCompanyname(), debitTransactionData.getCustomer().getContact().getCompanyname());
@@ -255,8 +253,6 @@ public class PaymentSecupayDebitsApiTest {
         assertEquals(debitTransactionData.getPurpose(), debitTransactionDataFetchedUsingGet.getPurpose());
         assertEquals(debitTransactionData.getCustomer().getObject(), debitTransactionDataFetchedUsingGet.getCustomer().getObject());
         assertEquals(debitTransactionData.getCustomer().getId(), debitTransactionDataFetchedUsingGet.getCustomer().getId());
-        assertEquals(debitTransactionData.getCustomer().getContract().getObject(), debitTransactionDataFetchedUsingGet.getCustomer().getContract().getObject());
-        assertEquals(debitTransactionData.getCustomer().getContract().getId(), debitTransactionDataFetchedUsingGet.getCustomer().getContract().getId());
         assertEquals(debitTransactionData.getCustomer().getContact().getForename(), debitTransactionDataFetchedUsingGet.getCustomer().getContact().getForename());
         assertEquals(debitTransactionData.getCustomer().getContact().getSurname(), debitTransactionDataFetchedUsingGet.getCustomer().getContact().getSurname());
         assertEquals(debitTransactionData.getCustomer().getContact().getCompanyname(), debitTransactionDataFetchedUsingGet.getCustomer().getContact().getCompanyname());
@@ -275,7 +271,7 @@ public class PaymentSecupayDebitsApiTest {
 	@Ignore
     @Test
     public void e_paymentSecupayDebitsCancelByIdTest() throws ApiException {
-        Object response = debitApi.paymentSecupayDebitsCancelById(debitTransactionData.getId());
+        Object response = debitApi.cancelPaymentTransactionById("secupaydebits", debitTransactionData.getId(), null);
 
         assertEquals("{result=true, demo=true}", response.toString());
     }
@@ -293,9 +289,9 @@ public class PaymentSecupayDebitsApiTest {
         PaymentContainersProductModel deletedContainer = containerApi.paymentContainersIdDelete(containerId).get(0);
 
         String deletedContainerId = deletedContainer.getId();
-        PaymentContainersDTOPrivate privateDataDTO = containerDTO.getPrivate();
-        BankAccountDescriptor privateData = deletedContainer.getPrivate();
-        BankAccountDescriptor publicData = deletedContainer.getPublic();
+        BankAccountDescriptor privateDataDTO = (BankAccountDescriptor) containerDTO.getPrivate();
+        BankAccountDescriptor privateData = (BankAccountDescriptor) deletedContainer.getPrivate();
+        BankAccountDescriptor publicData = (BankAccountDescriptor) deletedContainer.getPublic();
 
         assertEquals(containerId, deletedContainerId);
         assertEquals(privateDataDTO.getBic(), privateData.getBic());

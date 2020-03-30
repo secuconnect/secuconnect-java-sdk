@@ -2,8 +2,6 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.SecupayTransactionExternalInvoicePdfDocument;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

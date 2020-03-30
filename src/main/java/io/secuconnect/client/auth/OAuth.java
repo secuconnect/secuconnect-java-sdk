@@ -1,11 +1,12 @@
+
 package io.secuconnect.client.auth;
 
 import io.secuconnect.client.Pair;
-import java.util.List;
+
 import java.util.Map;
+import java.util.List;
 
 public class OAuth implements Authentication {
-
   private String accessToken;
 
   public String getAccessToken() {

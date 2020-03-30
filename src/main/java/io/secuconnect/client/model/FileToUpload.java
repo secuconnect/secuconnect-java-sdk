@@ -2,8 +2,6 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import java.io.File;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

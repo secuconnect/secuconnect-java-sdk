@@ -1,15 +1,10 @@
 package io.secuconnect.client.stomp.communication;
 
-import io.secuconnect.client.stomp.communication.frame.FrameCommands;
-import io.secuconnect.client.stomp.communication.frame.FrameHeaders;
 import io.secuconnect.client.stomp.communication.frame.StompFrame;
 
-import javax.net.ssl.SSLSocket;
 import java.io.IOException;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
 
 public class StompMessageSender {
 

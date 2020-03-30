@@ -5,8 +5,6 @@ import io.secuconnect.client.model.BankAccountDescriptor;
 import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.ParentModel;
 import io.secuconnect.client.model.ProductInstanceUID;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

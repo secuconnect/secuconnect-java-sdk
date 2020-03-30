@@ -10,6 +10,7 @@ import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
+import io.secuconnect.client.model.PaymentCancelResult;
 import io.secuconnect.client.model.ProductExceptionPayload;
 import io.secuconnect.client.model.SecupayTransactionCancelDTO;
 import io.secuconnect.client.model.SecupayTransactionCaptureDTO;
@@ -66,6 +67,7 @@ public class PaymentSecupayInvoicesApi {
             .replaceAll("\\{" + "documentId" + "\\}", apiClient.escapeString(documentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -96,7 +98,7 @@ public class PaymentSecupayInvoicesApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -205,6 +207,7 @@ public class PaymentSecupayInvoicesApi {
             .replaceAll("\\{" + "paymentId" + "\\}", apiClient.escapeString(paymentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -235,7 +238,7 @@ public class PaymentSecupayInvoicesApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -259,11 +262,11 @@ public class PaymentSecupayInvoicesApi {
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param body Cancel payment transaction input properties
-     * @return Object
+     * @return PaymentCancelResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object cancelPaymentTransactionById(String paymentMethod, String paymentId, SecupayTransactionCancelDTO body) throws ApiException {
-        ApiResponse<Object> resp = cancelPaymentTransactionByIdWithHttpInfo(paymentMethod, paymentId, body);
+    public PaymentCancelResult cancelPaymentTransactionById(String paymentMethod, String paymentId, SecupayTransactionCancelDTO body) throws ApiException {
+        ApiResponse<PaymentCancelResult> resp = cancelPaymentTransactionByIdWithHttpInfo(paymentMethod, paymentId, body);
         return resp.getData();
     }
 
@@ -273,12 +276,12 @@ public class PaymentSecupayInvoicesApi {
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param body Cancel payment transaction input properties
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;PaymentCancelResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> cancelPaymentTransactionByIdWithHttpInfo(String paymentMethod, String paymentId, SecupayTransactionCancelDTO body) throws ApiException {
+    public ApiResponse<PaymentCancelResult> cancelPaymentTransactionByIdWithHttpInfo(String paymentMethod, String paymentId, SecupayTransactionCancelDTO body) throws ApiException {
         com.squareup.okhttp.Call call = cancelPaymentTransactionByIdValidateBeforeCall(paymentMethod, paymentId, body, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaymentCancelResult>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -292,7 +295,7 @@ public class PaymentSecupayInvoicesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cancelPaymentTransactionByIdAsync(String paymentMethod, String paymentId, SecupayTransactionCancelDTO body, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call cancelPaymentTransactionByIdAsync(String paymentMethod, String paymentId, SecupayTransactionCancelDTO body, final ApiCallback<PaymentCancelResult> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -314,7 +317,7 @@ public class PaymentSecupayInvoicesApi {
         }
 
         com.squareup.okhttp.Call call = cancelPaymentTransactionByIdValidateBeforeCall(paymentMethod, paymentId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaymentCancelResult>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -337,6 +340,7 @@ public class PaymentSecupayInvoicesApi {
             .replaceAll("\\{" + "paymentId" + "\\}", apiClient.escapeString(paymentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -367,7 +371,7 @@ public class PaymentSecupayInvoicesApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -451,127 +455,6 @@ public class PaymentSecupayInvoicesApi {
         return call;
     }
     /**
-     * Build call for paymentSecupayInvoicesCancelById
-     * @param paymentInvoiceId Payment invoice id (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call paymentSecupayInvoicesCancelByIdCall(String paymentInvoiceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/Payment/Secupayinvoices/{paymentInvoiceId}/cancel"
-            .replaceAll("\\{" + "paymentInvoiceId" + "\\}", apiClient.escapeString(paymentInvoiceId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call paymentSecupayInvoicesCancelByIdValidateBeforeCall(String paymentInvoiceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'paymentInvoiceId' is set
-        if (paymentInvoiceId == null) {
-            throw new ApiException("Missing the required parameter 'paymentInvoiceId' when calling paymentSecupayInvoicesCancelById(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = paymentSecupayInvoicesCancelByIdCall(paymentInvoiceId, progressListener, progressRequestListener);
-        return call;
-    }
-
-    /**
-     * POST Payment/Secupayinvoices/{paymentInvoiceId}/cancel
-     * DEPRECATED: use cancelPaymentTransactionById
-     * @param paymentInvoiceId Payment invoice id (required)
-     * @return Object
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public Object paymentSecupayInvoicesCancelById(String paymentInvoiceId) throws ApiException {
-        ApiResponse<Object> resp = paymentSecupayInvoicesCancelByIdWithHttpInfo(paymentInvoiceId);
-        return resp.getData();
-    }
-
-    /**
-     * POST Payment/Secupayinvoices/{paymentInvoiceId}/cancel
-     * DEPRECATED: use cancelPaymentTransactionById
-     * @param paymentInvoiceId Payment invoice id (required)
-     * @return ApiResponse&lt;Object&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Object> paymentSecupayInvoicesCancelByIdWithHttpInfo(String paymentInvoiceId) throws ApiException {
-        com.squareup.okhttp.Call call = paymentSecupayInvoicesCancelByIdValidateBeforeCall(paymentInvoiceId, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * POST Payment/Secupayinvoices/{paymentInvoiceId}/cancel (asynchronously)
-     * DEPRECATED: use cancelPaymentTransactionById
-     * @param paymentInvoiceId Payment invoice id (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call paymentSecupayInvoicesCancelByIdAsync(String paymentInvoiceId, final ApiCallback<Object> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = paymentSecupayInvoicesCancelByIdValidateBeforeCall(paymentInvoiceId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for paymentSecupayInvoicesGetById
      * @param paymentInvoiceId Payment transaction ID (required)
      * @param progressListener Progress listener
@@ -587,6 +470,7 @@ public class PaymentSecupayInvoicesApi {
             .replaceAll("\\{" + "paymentInvoiceId" + "\\}", apiClient.escapeString(paymentInvoiceId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -617,7 +501,7 @@ public class PaymentSecupayInvoicesApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -705,6 +589,7 @@ public class PaymentSecupayInvoicesApi {
         String localVarPath = "/Payment/Secupayinvoices";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -735,7 +620,7 @@ public class PaymentSecupayInvoicesApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -823,6 +708,7 @@ public class PaymentSecupayInvoicesApi {
             .replaceAll("\\{" + "paymentId" + "\\}", apiClient.escapeString(paymentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -853,7 +739,7 @@ public class PaymentSecupayInvoicesApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -955,6 +841,7 @@ public class PaymentSecupayInvoicesApi {
             .replaceAll("\\{" + "paymentId" + "\\}", apiClient.escapeString(paymentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -985,7 +872,7 @@ public class PaymentSecupayInvoicesApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -1087,6 +974,7 @@ public class PaymentSecupayInvoicesApi {
             .replaceAll("\\{" + "paymentId" + "\\}", apiClient.escapeString(paymentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1117,7 +1005,7 @@ public class PaymentSecupayInvoicesApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")

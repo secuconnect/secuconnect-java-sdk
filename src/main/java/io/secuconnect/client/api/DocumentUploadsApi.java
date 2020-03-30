@@ -13,7 +13,7 @@ import java.io.IOException;
 import io.secuconnect.client.model.DocumentUploadsBaseProductModel;
 import io.secuconnect.client.model.DocumentUploadsDTOContent;
 import io.secuconnect.client.model.DocumentUploadsProductModel;
-import java.io.File;
+import io.secuconnect.client.model.FileToUpload;
 import io.secuconnect.client.model.ProductExceptionPayload;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -42,34 +42,36 @@ public class DocumentUploadsApi {
 
     /**
      * Build call for documentUploadsMultipartPost
-     * @param fileToUpload File to upload (required)
+     * @param body Input data format
+     * @param multipart 
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call documentUploadsMultipartPostCall(File fileToUpload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public com.squareup.okhttp.Call documentUploadsMultipartPostCall(FileToUpload body, String multipart, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
         
         // create path and map variables
         String localVarPath = "/Document/Uploads?multipart";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (multipart != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("multipart", multipart));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        if (fileToUpload != null)
-        localVarFormParams.put("fileToUpload", fileToUpload);
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "multipart/form-data"
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -87,43 +89,39 @@ public class DocumentUploadsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call documentUploadsMultipartPostValidateBeforeCall(File fileToUpload, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call documentUploadsMultipartPostValidateBeforeCall(FileToUpload body, String multipart, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'fileToUpload' is set
-        if (fileToUpload == null) {
-            throw new ApiException("Missing the required parameter 'fileToUpload' when calling documentUploadsMultipartPost(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = documentUploadsMultipartPostCall(fileToUpload, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = documentUploadsMultipartPostCall(body, multipart, progressListener, progressRequestListener);
         return call;
     }
 
     /**
      * POST Document/Uploads
      * Store uploaded file
-     * @param fileToUpload File to upload (required)
+     * @param body Input data format
+     * @param multipart 
      * @return DocumentUploadsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DocumentUploadsProductModel documentUploadsMultipartPost(File fileToUpload) throws ApiException {
-        ApiResponse<DocumentUploadsProductModel> resp = documentUploadsMultipartPostWithHttpInfo(fileToUpload);
+    public DocumentUploadsProductModel documentUploadsMultipartPost(FileToUpload body, String multipart) throws ApiException {
+        ApiResponse<DocumentUploadsProductModel> resp = documentUploadsMultipartPostWithHttpInfo(body, multipart);
         return resp.getData();
     }
 
     /**
      * POST Document/Uploads
      * Store uploaded file
-     * @param fileToUpload File to upload (required)
+     * @param body Input data format
+     * @param multipart 
      * @return ApiResponse&lt;DocumentUploadsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DocumentUploadsProductModel> documentUploadsMultipartPostWithHttpInfo(File fileToUpload) throws ApiException {
-        com.squareup.okhttp.Call call = documentUploadsMultipartPostValidateBeforeCall(fileToUpload, null, null);
+    public ApiResponse<DocumentUploadsProductModel> documentUploadsMultipartPostWithHttpInfo(FileToUpload body, String multipart) throws ApiException {
+        com.squareup.okhttp.Call call = documentUploadsMultipartPostValidateBeforeCall(body, multipart, null, null);
         Type localVarReturnType = new TypeToken<DocumentUploadsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -131,12 +129,13 @@ public class DocumentUploadsApi {
     /**
      * POST Document/Uploads (asynchronously)
      * Store uploaded file
-     * @param fileToUpload File to upload (required)
+     * @param body Input data format
+     * @param multipart 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call documentUploadsMultipartPostAsync(File fileToUpload, final ApiCallback<DocumentUploadsProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call documentUploadsMultipartPostAsync(FileToUpload body, String multipart, final ApiCallback<DocumentUploadsProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -157,39 +156,40 @@ public class DocumentUploadsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = documentUploadsMultipartPostValidateBeforeCall(fileToUpload, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = documentUploadsMultipartPostValidateBeforeCall(body, multipart, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<DocumentUploadsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for documentUploadsPost
-     * @param content Content (required)
+     * @param body Content
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call documentUploadsPostCall(DocumentUploadsDTOContent content, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = content;
+    public com.squareup.okhttp.Call documentUploadsPostCall(DocumentUploadsDTOContent body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
         
         // create path and map variables
         String localVarPath = "/Document/Uploads";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -207,43 +207,37 @@ public class DocumentUploadsApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call documentUploadsPostValidateBeforeCall(DocumentUploadsDTOContent content, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call documentUploadsPostValidateBeforeCall(DocumentUploadsDTOContent body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'content' is set
-        if (content == null) {
-            throw new ApiException("Missing the required parameter 'content' when calling documentUploadsPost(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = documentUploadsPostCall(content, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = documentUploadsPostCall(body, progressListener, progressRequestListener);
         return call;
     }
 
     /**
      * POST Document/Uploads
      * Store uploaded file
-     * @param content Content (required)
+     * @param body Content
      * @return DocumentUploadsBaseProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DocumentUploadsBaseProductModel documentUploadsPost(DocumentUploadsDTOContent content) throws ApiException {
-        ApiResponse<DocumentUploadsBaseProductModel> resp = documentUploadsPostWithHttpInfo(content);
+    public DocumentUploadsBaseProductModel documentUploadsPost(DocumentUploadsDTOContent body) throws ApiException {
+        ApiResponse<DocumentUploadsBaseProductModel> resp = documentUploadsPostWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * POST Document/Uploads
      * Store uploaded file
-     * @param content Content (required)
+     * @param body Content
      * @return ApiResponse&lt;DocumentUploadsBaseProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DocumentUploadsBaseProductModel> documentUploadsPostWithHttpInfo(DocumentUploadsDTOContent content) throws ApiException {
-        com.squareup.okhttp.Call call = documentUploadsPostValidateBeforeCall(content, null, null);
+    public ApiResponse<DocumentUploadsBaseProductModel> documentUploadsPostWithHttpInfo(DocumentUploadsDTOContent body) throws ApiException {
+        com.squareup.okhttp.Call call = documentUploadsPostValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<DocumentUploadsBaseProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -251,12 +245,12 @@ public class DocumentUploadsApi {
     /**
      * POST Document/Uploads (asynchronously)
      * Store uploaded file
-     * @param content Content (required)
+     * @param body Content
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call documentUploadsPostAsync(DocumentUploadsDTOContent content, final ApiCallback<DocumentUploadsBaseProductModel> callback) throws ApiException {
+    public com.squareup.okhttp.Call documentUploadsPostAsync(DocumentUploadsDTOContent body, final ApiCallback<DocumentUploadsBaseProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -277,7 +271,7 @@ public class DocumentUploadsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = documentUploadsPostValidateBeforeCall(content, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = documentUploadsPostValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<DocumentUploadsBaseProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

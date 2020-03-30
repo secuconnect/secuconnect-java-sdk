@@ -1,26 +1,19 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.LoyaltyDTOMerchant;
 import io.secuconnect.client.model.LoyaltyDTOStore;
 import java.util.ArrayList;
 import java.util.List;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
  * LoyaltyStoregroupsProductModel
  */
-public class LoyaltyStoregroupsProductModel {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
+public class LoyaltyStoregroupsProductModel extends BaseProductModel {
   @SerializedName("merchant")
-  private LoyaltyDTOMerchant merchant = null;
+  private List<LoyaltyDTOMerchant> merchant = null;
 
   @SerializedName("stores")
   private List<LoyaltyDTOStore> stores = null;
@@ -31,54 +24,28 @@ public class LoyaltyStoregroupsProductModel {
   @SerializedName("updated")
   private String updated = null;
 
-  public LoyaltyStoregroupsProductModel object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of loyalty store group
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public LoyaltyStoregroupsProductModel id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Id of loyalty store group
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public LoyaltyStoregroupsProductModel merchant(LoyaltyDTOMerchant merchant) {
+  public LoyaltyStoregroupsProductModel merchant(List<LoyaltyDTOMerchant> merchant) {
     this.merchant = merchant;
     return this;
   }
 
+  public LoyaltyStoregroupsProductModel addMerchantItem(LoyaltyDTOMerchant merchantItem) {
+    if (this.merchant == null) {
+      this.merchant = new ArrayList<LoyaltyDTOMerchant>();
+    }
+    this.merchant.add(merchantItem);
+    return this;
+  }
+
    /**
-   * Merchant data for loyalty
+   * LoyaltyStoregroupsProductModel
    * @return merchant
   **/
-  public LoyaltyDTOMerchant getMerchant() {
+  public List<LoyaltyDTOMerchant> getMerchant() {
     return merchant;
   }
 
-  public void setMerchant(LoyaltyDTOMerchant merchant) {
+  public void setMerchant(List<LoyaltyDTOMerchant> merchant) {
     this.merchant = merchant;
   }
 
@@ -150,26 +117,23 @@ public class LoyaltyStoregroupsProductModel {
       return false;
     }
     LoyaltyStoregroupsProductModel loyaltyStoregroupsProductModel = (LoyaltyStoregroupsProductModel) o;
-    return Objects.equals(this.object, loyaltyStoregroupsProductModel.object) &&
-        Objects.equals(this.id, loyaltyStoregroupsProductModel.id) &&
-        Objects.equals(this.merchant, loyaltyStoregroupsProductModel.merchant) &&
+    return Objects.equals(this.merchant, loyaltyStoregroupsProductModel.merchant) &&
         Objects.equals(this.stores, loyaltyStoregroupsProductModel.stores) &&
         Objects.equals(this.created, loyaltyStoregroupsProductModel.created) &&
-        Objects.equals(this.updated, loyaltyStoregroupsProductModel.updated);
+        Objects.equals(this.updated, loyaltyStoregroupsProductModel.updated) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, merchant, stores, created, updated);
+    return Objects.hash(merchant, stores, created, updated, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoyaltyStoregroupsProductModel {\n");
-    
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    stores: ").append(toIndentedString(stores)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");

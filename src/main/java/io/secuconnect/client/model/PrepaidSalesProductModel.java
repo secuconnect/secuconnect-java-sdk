@@ -7,8 +7,6 @@ import io.secuconnect.client.model.PrepaidSalesItem;
 import io.secuconnect.client.model.PrepaidSalesSmartDevice;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.secuconnect.client.model.Store;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

@@ -14,16 +14,11 @@
 package io.secuconnect.client.api;
 
 import io.secuconnect.client.ApiException;
-import io.secuconnect.client.model.ProductExceptionPayload;
+import io.secuconnect.client.api.PaymentSecupayCreditcardsApi;
 import io.secuconnect.client.model.SecupayTransactionProductDTO;
 import io.secuconnect.client.model.SecupayTransactionProductModel;
 import org.junit.Test;
 import org.junit.Ignore;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for PaymentSecupayCreditcardsApi
@@ -45,7 +40,7 @@ public class PaymentSecupayCreditcardsApiTest {
     @Test
     public void paymentSecupayCreditcardsCancelByIdTest() throws ApiException {
         String hash = null;
-        Object response = api.paymentSecupayCreditcardsCancelById(hash);
+        Object response = api.cancelPaymentTransactionById("secupaycreditcards", hash, null);
 
         // TODO: test validations
     }

@@ -5,7 +5,10 @@ import io.secuconnect.client.ApiException;
 import io.secuconnect.client.Globals;
 import io.secuconnect.client.auth.Authenticator;
 import io.secuconnect.client.auth.tokens.OAuthClientToken;
-import io.secuconnect.client.model.*;
+import io.secuconnect.client.model.PaymentContractsDTOClone;
+import io.secuconnect.client.model.PaymentContractsDTORequestId;
+import io.secuconnect.client.model.PaymentContractsProductModel;
+import io.secuconnect.client.model.PaymentContractsRequestIdResult;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -76,7 +79,6 @@ public class PaymentContractsApiTest {
         assertNotNull(paymentContract.getParent());
         assertEquals(PAYMENT_CONTRACTS, paymentContract.getParent().getObject());
         assertNotNull(paymentContract.getParent().getId());
-        assertTrue(paymentContract.getDemo());
         assertNotNull(paymentContract.getCreated());
     }
 

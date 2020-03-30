@@ -1,11 +1,8 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import io.secuconnect.client.model.PaymentContractsProductModel;
 import io.secuconnect.client.model.PaymentInformation;
 import io.secuconnect.client.model.ProductInstanceUID;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
@@ -13,7 +10,7 @@ import java.util.Objects;
  */
 public class PaymentContractsRequestIdResult {
   @SerializedName("contract")
-  private PaymentContractsProductModel contract = null;
+  private ProductInstanceUID contract = null;
 
   @SerializedName("merchant")
   private ProductInstanceUID merchant = null;
@@ -27,20 +24,20 @@ public class PaymentContractsRequestIdResult {
   @SerializedName("payin_account")
   private PaymentInformation payinAccount = null;
 
-  public PaymentContractsRequestIdResult contract(PaymentContractsProductModel contract) {
+  public PaymentContractsRequestIdResult contract(ProductInstanceUID contract) {
     this.contract = contract;
     return this;
   }
 
    /**
-   * The payment contract object
+   * Get contract
    * @return contract
   **/
-  public PaymentContractsProductModel getContract() {
+  public ProductInstanceUID getContract() {
     return contract;
   }
 
-  public void setContract(PaymentContractsProductModel contract) {
+  public void setContract(ProductInstanceUID contract) {
     this.contract = contract;
   }
 
@@ -101,7 +98,7 @@ public class PaymentContractsRequestIdResult {
   }
 
    /**
-   * The bank account you can use for pay in.
+   * Get payinAccount
    * @return payinAccount
   **/
   public PaymentInformation getPayinAccount() {

@@ -1,8 +1,11 @@
+
 package io.secuconnect.client;
 
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.RequestBody;
+
 import java.io.IOException;
+
 import okio.Buffer;
 import okio.BufferedSink;
 import okio.ForwardingSink;
@@ -11,51 +14,52 @@ import okio.Sink;
 
 public class ProgressRequestBody extends RequestBody {
 
-  private final RequestBody requestBody;
-  private final ProgressRequestListener progressListener;
+    public interface ProgressRequestListener {
+        void onRequestProgress(long bytesWritten, long contentLength, boolean done);
+    }
 
-  public ProgressRequestBody(RequestBody requestBody, ProgressRequestListener progressListener) {
-    this.requestBody = requestBody;
-    this.progressListener = progressListener;
-  }
+    private final RequestBody requestBody;
 
-  @Override
-  public MediaType contentType() {
-    return requestBody.contentType();
-  }
+    private final ProgressRequestListener progressListener;
 
-  @Override
-  public long contentLength() throws IOException {
-    return requestBody.contentLength();
-  }
+    public ProgressRequestBody(RequestBody requestBody, ProgressRequestListener progressListener) {
+        this.requestBody = requestBody;
+        this.progressListener = progressListener;
+    }
 
-  @Override
-  public void writeTo(BufferedSink sink) throws IOException {
-    BufferedSink bufferedSink = Okio.buffer(sink(sink));
-    requestBody.writeTo(bufferedSink);
-    bufferedSink.flush();
-  }
+    @Override
+    public MediaType contentType() {
+        return requestBody.contentType();
+    }
 
-  private Sink sink(Sink sink) {
-    return new ForwardingSink(sink) {
+    @Override
+    public long contentLength() throws IOException {
+        return requestBody.contentLength();
+    }
 
-      long bytesWritten = 0L;
-      long contentLength = 0L;
+    @Override
+    public void writeTo(BufferedSink sink) throws IOException {
+        BufferedSink bufferedSink = Okio.buffer(sink(sink));
+        requestBody.writeTo(bufferedSink);
+        bufferedSink.flush();
+    }
 
-      @Override
-      public void write(Buffer source, long byteCount) throws IOException {
-        super.write(source, byteCount);
-        if (contentLength == 0) {
-          contentLength = contentLength();
-        }
+    private Sink sink(Sink sink) {
+        return new ForwardingSink(sink) {
 
-        bytesWritten += byteCount;
-        progressListener.onRequestProgress(bytesWritten, contentLength, bytesWritten == contentLength);
-      }
-    };
-  }
+            long bytesWritten = 0L;
+            long contentLength = 0L;
 
-  public interface ProgressRequestListener {
-    void onRequestProgress(long bytesWritten, long contentLength, boolean done);
-  }
+            @Override
+            public void write(Buffer source, long byteCount) throws IOException {
+                super.write(source, byteCount);
+                if (contentLength == 0) {
+                    contentLength = contentLength();
+                }
+
+                bytesWritten += byteCount;
+                progressListener.onRequestProgress(bytesWritten, contentLength, bytesWritten == contentLength);
+            }
+        };
+    }
 }

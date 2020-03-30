@@ -11,8 +11,6 @@ import io.secuconnect.client.model.ReceiptType;
 import io.secuconnect.client.model.ReceiptTypeValue;
 import java.util.ArrayList;
 import java.util.List;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

@@ -10,8 +10,6 @@ import io.secuconnect.client.model.PaymentTransactionsProductModelDetails;
 import io.secuconnect.client.model.ProductInstanceUID;
 import java.util.ArrayList;
 import java.util.List;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
@@ -96,8 +94,16 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   @SerializedName("reference_id")
   private String referenceId = null;
 
+  @SerializedName("account_owner")
+  private String accountOwner = null;
+
   @SerializedName("accrual")
   private Boolean accrual = null;
+
+  public PaymentTransactionsProductModel platform(ProductInstanceUID platform) {
+    this.platform = platform;
+    return this;
+  }
 
    /**
    * Get platform
@@ -544,6 +550,23 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     this.referenceId = referenceId;
   }
 
+  public PaymentTransactionsProductModel accountOwner(String accountOwner) {
+    this.accountOwner = accountOwner;
+    return this;
+  }
+
+   /**
+   * Name of the bank account owner
+   * @return accountOwner
+  **/
+  public String getAccountOwner() {
+    return accountOwner;
+  }
+
+  public void setAccountOwner(String accountOwner) {
+    this.accountOwner = accountOwner;
+  }
+
   public PaymentTransactionsProductModel accrual(Boolean accrual) {
     this.accrual = accrual;
     return this;
@@ -596,13 +619,14 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.invoiceNumber, paymentTransactionsProductModel.invoiceNumber) &&
         Objects.equals(this.transactionHash, paymentTransactionsProductModel.transactionHash) &&
         Objects.equals(this.referenceId, paymentTransactionsProductModel.referenceId) &&
+        Objects.equals(this.accountOwner, paymentTransactionsProductModel.accountOwner) &&
         Objects.equals(this.accrual, paymentTransactionsProductModel.accrual) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(platform, merchant, store, transId, parents, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, created, updated, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, accrual, super.hashCode());
+    return Objects.hash(platform, merchant, store, transId, parents, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, created, updated, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, accountOwner, accrual, super.hashCode());
   }
 
   @Override
@@ -636,6 +660,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
     sb.append("    transactionHash: ").append(toIndentedString(transactionHash)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    sb.append("    accountOwner: ").append(toIndentedString(accountOwner)).append("\n");
     sb.append("    accrual: ").append(toIndentedString(accrual)).append("\n");
     sb.append("}");
     return sb.toString();

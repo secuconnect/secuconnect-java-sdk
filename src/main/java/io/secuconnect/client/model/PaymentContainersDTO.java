@@ -2,9 +2,6 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.PaymentContainersDTOCustomer;
-import io.secuconnect.client.model.PaymentContainersDTOPrivate;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
@@ -14,11 +11,14 @@ public class PaymentContainersDTO {
   @SerializedName("customer")
   private PaymentContainersDTOCustomer customer = null;
 
+  @SerializedName("customer_id")
+  private String customerId = null;
+
   @SerializedName("type")
   private String type = null;
 
   @SerializedName("private")
-  private PaymentContainersDTOPrivate _private = null;
+  private OneOfPaymentContainersDTOModelPrivate _private = null;
 
   public PaymentContainersDTO customer(PaymentContainersDTOCustomer customer) {
     this.customer = customer;
@@ -35,6 +35,23 @@ public class PaymentContainersDTO {
 
   public void setCustomer(PaymentContainersDTOCustomer customer) {
     this.customer = customer;
+  }
+
+  public PaymentContainersDTO customerId(String customerId) {
+    this.customerId = customerId;
+    return this;
+  }
+
+   /**
+   * Payment-Customer-ID
+   * @return customerId
+  **/
+  public String getCustomerId() {
+    return customerId;
+  }
+
+  public void setCustomerId(String customerId) {
+    this.customerId = customerId;
   }
 
   public PaymentContainersDTO type(String type) {
@@ -54,7 +71,7 @@ public class PaymentContainersDTO {
     this.type = type;
   }
 
-  public PaymentContainersDTO _private(PaymentContainersDTOPrivate _private) {
+  public PaymentContainersDTO _private(OneOfPaymentContainersDTOModelPrivate _private) {
     this._private = _private;
     return this;
   }
@@ -63,11 +80,11 @@ public class PaymentContainersDTO {
    * Get _private
    * @return _private
   **/
-  public PaymentContainersDTOPrivate getPrivate() {
+  public OneOfPaymentContainersDTOModelPrivate getPrivate() {
     return _private;
   }
 
-  public void setPrivate(PaymentContainersDTOPrivate _private) {
+  public void setPrivate(OneOfPaymentContainersDTOModelPrivate _private) {
     this._private = _private;
   }
 
@@ -81,13 +98,14 @@ public class PaymentContainersDTO {
     }
     PaymentContainersDTO paymentContainersDTO = (PaymentContainersDTO) o;
     return Objects.equals(this.customer, paymentContainersDTO.customer) &&
+        Objects.equals(this.customerId, paymentContainersDTO.customerId) &&
         Objects.equals(this.type, paymentContainersDTO.type) &&
         Objects.equals(this._private, paymentContainersDTO._private);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer, type, _private);
+    return Objects.hash(customer, customerId, type, _private);
   }
 
   @Override
@@ -96,6 +114,7 @@ public class PaymentContainersDTO {
     sb.append("class PaymentContainersDTO {\n");
     
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    _private: ").append(toIndentedString(_private)).append("\n");
     sb.append("}");

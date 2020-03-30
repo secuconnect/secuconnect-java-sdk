@@ -14,10 +14,8 @@
 package io.secuconnect.client.api;
 
 import io.secuconnect.client.ApiException;
-import io.secuconnect.client.model.PaymentTransactionCancelDTO;
-import io.secuconnect.client.model.PaymentTransactionsList;
-import io.secuconnect.client.model.PaymentTransactionsProductModel;
-import io.secuconnect.client.model.PaymentTransactionsShippingUrl;
+import io.secuconnect.client.api.PaymentTransactionsApi;
+import io.secuconnect.client.model.*;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -80,7 +78,7 @@ public class PaymentTransactionsApiTest {
     public void paymentTransactionsIdCancelPostTest() throws ApiException {
         String id = null;
         PaymentTransactionCancelDTO body = new PaymentTransactionCancelDTO();
-        List<PaymentTransactionsProductModel> response = api.cancel(id, body);
+        PaymentTransactionsCancelList response = api.cancel(id, body);
 
         // TODO: test validations
     }

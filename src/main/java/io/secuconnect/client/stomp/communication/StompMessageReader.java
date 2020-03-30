@@ -3,6 +3,7 @@ package io.secuconnect.client.stomp.communication;
 import io.secuconnect.client.stomp.communication.frame.FrameCommands;
 import io.secuconnect.client.stomp.communication.frame.StompFrame;
 import io.secuconnect.client.stomp.listeners.*;
+import io.secuconnect.client.stomp.listeners.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

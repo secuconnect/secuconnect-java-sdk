@@ -3,8 +3,6 @@ package io.secuconnect.client.model;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.AddressComponents;
 import io.secuconnect.client.model.GeoAddressGeometry;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

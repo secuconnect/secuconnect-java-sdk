@@ -11,8 +11,6 @@ import io.secuconnect.client.model.InvitedBy;
 import io.secuconnect.client.model.ParentModel;
 import java.util.ArrayList;
 import java.util.List;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**

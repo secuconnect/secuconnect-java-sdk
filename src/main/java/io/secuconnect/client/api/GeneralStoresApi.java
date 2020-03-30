@@ -16,6 +16,7 @@ import io.secuconnect.client.model.GeneralStoresDTOType;
 import io.secuconnect.client.model.GeneralStoresList;
 import io.secuconnect.client.model.GeneralStoresProductModel;
 import io.secuconnect.client.model.ProductExceptionPayload;
+import io.secuconnect.client.model.ResultBoolean;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,6 +57,7 @@ public class GeneralStoresApi {
         String localVarPath = "/General/Stores";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -86,7 +88,7 @@ public class GeneralStoresApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -173,6 +175,7 @@ public class GeneralStoresApi {
             .replaceAll("\\{" + "googleKey" + "\\}", apiClient.escapeString(googleKey.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -203,7 +206,7 @@ public class GeneralStoresApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -226,11 +229,11 @@ public class GeneralStoresApi {
      * Assign some object to general store
      * @param generalStoreId General store id (required)
      * @param googleKey Google key (required)
-     * @return Object
+     * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object assignGoogleKey(String generalStoreId, String googleKey) throws ApiException {
-        ApiResponse<Object> resp = assignGoogleKeyWithHttpInfo(generalStoreId, googleKey);
+    public ResultBoolean assignGoogleKey(String generalStoreId, String googleKey) throws ApiException {
+        ApiResponse<ResultBoolean> resp = assignGoogleKeyWithHttpInfo(generalStoreId, googleKey);
         return resp.getData();
     }
 
@@ -239,12 +242,12 @@ public class GeneralStoresApi {
      * Assign some object to general store
      * @param generalStoreId General store id (required)
      * @param googleKey Google key (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> assignGoogleKeyWithHttpInfo(String generalStoreId, String googleKey) throws ApiException {
+    public ApiResponse<ResultBoolean> assignGoogleKeyWithHttpInfo(String generalStoreId, String googleKey) throws ApiException {
         com.squareup.okhttp.Call call = assignGoogleKeyValidateBeforeCall(generalStoreId, googleKey, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -257,7 +260,7 @@ public class GeneralStoresApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call assignGoogleKeyAsync(String generalStoreId, String googleKey, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call assignGoogleKeyAsync(String generalStoreId, String googleKey, final ApiCallback<ResultBoolean> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -279,7 +282,7 @@ public class GeneralStoresApi {
         }
 
         com.squareup.okhttp.Call call = assignGoogleKeyValidateBeforeCall(generalStoreId, googleKey, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -300,6 +303,7 @@ public class GeneralStoresApi {
             .replaceAll("\\{" + "generalStoreId" + "\\}", apiClient.escapeString(generalStoreId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -330,7 +334,7 @@ public class GeneralStoresApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -348,12 +352,12 @@ public class GeneralStoresApi {
      * POST General/Stores/{generalStoreId}/checkin
      * Check in
      * @param generalStoreId General store id (required)
-     * @param body Type (required)
-     * @return Object
+     * @param body General store properties
+     * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object checkIn(String generalStoreId, GeneralStoresDTOType body) throws ApiException {
-        ApiResponse<Object> resp = checkInWithHttpInfo(generalStoreId, body);
+    public ResultBoolean checkIn(String generalStoreId, GeneralStoresDTOType body) throws ApiException {
+        ApiResponse<ResultBoolean> resp = checkInWithHttpInfo(generalStoreId, body);
         return resp.getData();
     }
 
@@ -361,13 +365,13 @@ public class GeneralStoresApi {
      * POST General/Stores/{generalStoreId}/checkin
      * Check in
      * @param generalStoreId General store id (required)
-     * @param body Type (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @param body General store properties
+     * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> checkInWithHttpInfo(String generalStoreId, GeneralStoresDTOType body) throws ApiException {
+    public ApiResponse<ResultBoolean> checkInWithHttpInfo(String generalStoreId, GeneralStoresDTOType body) throws ApiException {
         com.squareup.okhttp.Call call = checkInValidateBeforeCall(generalStoreId, body, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -380,7 +384,7 @@ public class GeneralStoresApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call checkInAsync(String generalStoreId, GeneralStoresDTOType body, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call checkInAsync(String generalStoreId, GeneralStoresDTOType body, final ApiCallback<ResultBoolean> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -402,7 +406,7 @@ public class GeneralStoresApi {
         }
 
         com.squareup.okhttp.Call call = checkInValidateBeforeCall(generalStoreId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -425,16 +429,17 @@ public class GeneralStoresApi {
         String localVarPath = "/General/Stores";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (count != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "count", count));
+        localVarQueryParams.addAll(apiClient.parameterToPair("count", count));
         if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (fields != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "fields", fields));
+        localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
         if (q != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "q", q));
+        localVarQueryParams.addAll(apiClient.parameterToPair("q", q));
         if (sort != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort", sort));
+        localVarQueryParams.addAll(apiClient.parameterToPair("sort", sort));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -465,7 +470,7 @@ public class GeneralStoresApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -562,6 +567,7 @@ public class GeneralStoresApi {
             .replaceAll("\\{" + "generalStoreId" + "\\}", apiClient.escapeString(generalStoreId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -592,7 +598,7 @@ public class GeneralStoresApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -682,6 +688,7 @@ public class GeneralStoresApi {
             .replaceAll("\\{" + "generalStoreId" + "\\}", apiClient.escapeString(generalStoreId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -712,7 +719,7 @@ public class GeneralStoresApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -731,11 +738,11 @@ public class GeneralStoresApi {
      * Set default flag on general store
      * @param generalStoreId General store id (required)
      * @param body Reason
-     * @return Object
+     * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object setDefault(String generalStoreId, GeneralStoresDTOReason body) throws ApiException {
-        ApiResponse<Object> resp = setDefaultWithHttpInfo(generalStoreId, body);
+    public ResultBoolean setDefault(String generalStoreId, GeneralStoresDTOReason body) throws ApiException {
+        ApiResponse<ResultBoolean> resp = setDefaultWithHttpInfo(generalStoreId, body);
         return resp.getData();
     }
 
@@ -744,12 +751,12 @@ public class GeneralStoresApi {
      * Set default flag on general store
      * @param generalStoreId General store id (required)
      * @param body Reason
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> setDefaultWithHttpInfo(String generalStoreId, GeneralStoresDTOReason body) throws ApiException {
+    public ApiResponse<ResultBoolean> setDefaultWithHttpInfo(String generalStoreId, GeneralStoresDTOReason body) throws ApiException {
         com.squareup.okhttp.Call call = setDefaultValidateBeforeCall(generalStoreId, body, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -762,7 +769,7 @@ public class GeneralStoresApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call setDefaultAsync(String generalStoreId, GeneralStoresDTOReason body, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call setDefaultAsync(String generalStoreId, GeneralStoresDTOReason body, final ApiCallback<ResultBoolean> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -784,7 +791,7 @@ public class GeneralStoresApi {
         }
 
         com.squareup.okhttp.Call call = setDefaultValidateBeforeCall(generalStoreId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -805,6 +812,7 @@ public class GeneralStoresApi {
             .replaceAll("\\{" + "generalStoreId" + "\\}", apiClient.escapeString(generalStoreId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -835,7 +843,7 @@ public class GeneralStoresApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
