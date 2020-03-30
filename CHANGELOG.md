@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Model "PaymentContainersDTO" property "_private" changed to interface "OneOfPaymentContainersDTOModelPrivate"
 - Model "PaymentContainersProductModel" property "_private" and "_public" changed to interface "OneOfPaymentContainersDTOModelPrivate"
 - Model "PaymentContractsRequestIdResult" property "contract" changed to "ProductInstanceUID"
+- SmartTransactionsApi: the method "startTransaction" has now also a body parameter
 - DocumentUploadsApi: changed model from "File" to "FileToUpload"
 - LoyaltyMerchantcardsApi: changed model from "VirtualTerminalData" to "VirtualTerminalDataModel"
 - PaymentTransactionsApi: changed model from "List<PaymentTransactionsProductModel>" to "PaymentTransactionsCancelList"
