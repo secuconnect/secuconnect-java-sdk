@@ -1,7 +1,5 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.ProductInstanceID;
@@ -15,6 +13,7 @@ import io.secuconnect.client.model.SmartTransactionsPickupOptions;
 import io.secuconnect.client.model.SmartTransactionsReceipt;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * SmartTransactionsDTO

@@ -1,7 +1,5 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.ItemGroup;
@@ -9,6 +7,7 @@ import io.secuconnect.client.model.PrepaidSalesItem;
 import io.secuconnect.client.model.PrepaidSalesSmartDevice;
 import io.secuconnect.client.model.ProductInstanceUID;
 import io.secuconnect.client.model.Store;
+import java.util.Objects;
 
 /**
  * PrepaidSalesProductModel

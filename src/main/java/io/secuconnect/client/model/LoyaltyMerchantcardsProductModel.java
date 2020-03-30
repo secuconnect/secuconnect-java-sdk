@@ -1,7 +1,5 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.LoyaltyCardgroupsProductModel;
@@ -9,6 +7,7 @@ import io.secuconnect.client.model.LoyaltyCardsProductModel;
 import io.secuconnect.client.model.LoyaltyCustomersProductModel;
 import io.secuconnect.client.model.LoyaltyMerchantcardsDTOPaymentContainer;
 import io.secuconnect.client.model.ProductInstanceUID;
+import java.util.Objects;
 
 /**
  * Loyalty merchant card

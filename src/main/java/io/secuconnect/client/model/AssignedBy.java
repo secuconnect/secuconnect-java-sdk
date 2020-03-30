@@ -1,8 +1,7 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
+import java.util.Objects;
 
 /**
  * AssignedBy

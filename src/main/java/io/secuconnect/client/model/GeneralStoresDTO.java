@@ -1,12 +1,11 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.Address;
 import io.secuconnect.client.model.OpenHours;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * GeneralStoresDTO

@@ -1,10 +1,9 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.AddressComponents;
 import io.secuconnect.client.model.GeoAddressGeometry;
+import java.util.Objects;
 
 /**
  * GeoAddress

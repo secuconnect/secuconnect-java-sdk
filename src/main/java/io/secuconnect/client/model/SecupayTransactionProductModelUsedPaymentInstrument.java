@@ -1,9 +1,8 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BankAccountDescriptor;
+import java.util.Objects;
 
 /**
  * The payment data which has the payer used (like bank account, credit card, ...). This data is always masked.

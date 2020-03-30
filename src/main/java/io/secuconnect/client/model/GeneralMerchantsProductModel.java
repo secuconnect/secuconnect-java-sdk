@@ -1,7 +1,5 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.AssignedBy;
 import io.secuconnect.client.model.BaseProductModel;
@@ -13,6 +11,7 @@ import io.secuconnect.client.model.InvitedBy;
 import io.secuconnect.client.model.ParentModel;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * GeneralMerchantsProductModel

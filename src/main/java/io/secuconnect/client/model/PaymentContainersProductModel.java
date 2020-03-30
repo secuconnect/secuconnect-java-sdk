@@ -1,13 +1,12 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.PaymentContainerMandate;
 import io.secuconnect.client.model.PaymentContractsProductModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.ProductInstanceUID;
+import java.util.Objects;
 
 /**
  * PaymentContainersProductModel

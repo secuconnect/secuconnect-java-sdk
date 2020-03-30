@@ -1,7 +1,5 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
 import io.secuconnect.client.model.PaymentContainersProductModel;
@@ -14,6 +12,7 @@ import io.secuconnect.client.model.SecupayTransactionProductDTOSubscription;
 import io.secuconnect.client.model.SecupayTransactionProductModelUsedPaymentInstrument;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * SecupayTransactionProductModel

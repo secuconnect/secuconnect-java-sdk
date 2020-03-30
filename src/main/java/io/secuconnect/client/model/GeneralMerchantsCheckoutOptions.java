@@ -1,10 +1,9 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.GeneralMerchantsCheckoutOptionsCollection;
 import io.secuconnect.client.model.GeneralMerchantsCheckoutOptionsShipping;
+import java.util.Objects;
 
 /**
  * GeneralMerchantsCheckoutOptions

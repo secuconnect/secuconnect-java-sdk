@@ -1,9 +1,8 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.PaymentInformation;
+import java.util.Objects;
 
 /**
  * LoyaltyMerchantcardsDTOPaymentContainer

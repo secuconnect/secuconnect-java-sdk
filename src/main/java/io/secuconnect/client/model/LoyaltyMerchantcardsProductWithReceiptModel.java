@@ -1,7 +1,5 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.LoyaltyCardgroupsProductModel;
 import io.secuconnect.client.model.LoyaltyCardsProductModel;
@@ -13,6 +11,7 @@ import io.secuconnect.client.model.ReceiptType;
 import io.secuconnect.client.model.ReceiptTypeValue;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * LoyaltyMerchantcardsProductWithReceiptModel

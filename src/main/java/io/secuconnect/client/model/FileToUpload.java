@@ -1,9 +1,8 @@
 package io.secuconnect.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 import java.io.File;
+import java.util.Objects;
 
 /**
  * File to upload
