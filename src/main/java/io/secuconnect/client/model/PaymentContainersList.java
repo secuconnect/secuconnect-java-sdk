@@ -47,7 +47,7 @@ public class PaymentContainersList {
   }
 
    /**
-   * Get data
+   * PaymentContainersList
    * @return data
   **/
   public List<PaymentContainersProductModel> getData() {
