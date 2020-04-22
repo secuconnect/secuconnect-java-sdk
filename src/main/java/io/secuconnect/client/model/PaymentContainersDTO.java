@@ -1,6 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.OneOfPaymentContainersDTOModelPrivate;
 import io.secuconnect.client.model.PaymentContainersDTOCustomer;
 import java.util.Objects;
 

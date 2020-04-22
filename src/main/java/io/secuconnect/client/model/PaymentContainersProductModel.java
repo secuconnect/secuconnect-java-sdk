@@ -2,6 +2,7 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.OneOfPaymentContainersDTOModelPrivate;
 import io.secuconnect.client.model.PaymentContainerMandate;
 import io.secuconnect.client.model.PaymentContractsProductModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
@@ -113,7 +114,7 @@ public class PaymentContainersProductModel extends BaseProductModel {
   }
 
    /**
-   * Public payment instrument data
+   * Get _public
    * @return _public
   **/
   public OneOfPaymentContainersDTOModelPrivate getPublic() {
@@ -130,7 +131,7 @@ public class PaymentContainersProductModel extends BaseProductModel {
   }
 
    /**
-   * Private payment instrument data
+   * Get _private
    * @return _private
   **/
   public OneOfPaymentContainersDTOModelPrivate getPrivate() {
