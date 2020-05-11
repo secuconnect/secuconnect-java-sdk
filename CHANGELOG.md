@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Api.LoyaltyMerchantcardsApi`: added call `cardBalanceReceipt`
 - `Api.LoyaltyTransactionsApi` was added
 - `Api.ServicesUploadidentsProductApi` was added
+- `Model.GeneralStoresProductModel`: added element `store_name`
 - `Model.LoyaltyMerchantcardsProductWithReceiptModel`: added elements `trans_id` and `amount`
 - `Model.PaymentContainerMandate`: added element `creditor_id`
 - `Model.PaymentTransactionCancelDTO`: added element `container_id`
