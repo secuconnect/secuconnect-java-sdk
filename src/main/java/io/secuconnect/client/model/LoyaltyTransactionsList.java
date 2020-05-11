@@ -1,28 +1,28 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import io.secuconnect.client.model.PaymentTransactionsProductModel;
+import io.secuconnect.client.model.LoyaltyTransactionsProductModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * PaymentTransactionsCancelList1
+ * LoyaltyTransactionsList
  */
-public class PaymentTransactionsCancelList1 {
+public class LoyaltyTransactionsList {
   @SerializedName("count")
   private Integer count = null;
 
   @SerializedName("data")
-  private List<PaymentTransactionsProductModel> data = null;
+  private List<LoyaltyTransactionsProductModel> data = null;
 
-  public PaymentTransactionsCancelList1 count(Integer count) {
+  public LoyaltyTransactionsList count(Integer count) {
     this.count = count;
     return this;
   }
 
    /**
-   * Count of returned payment contracts
+   * Number of existing loyalty transactions
    * @return count
   **/
   public Integer getCount() {
@@ -33,14 +33,14 @@ public class PaymentTransactionsCancelList1 {
     this.count = count;
   }
 
-  public PaymentTransactionsCancelList1 data(List<PaymentTransactionsProductModel> data) {
+  public LoyaltyTransactionsList data(List<LoyaltyTransactionsProductModel> data) {
     this.data = data;
     return this;
   }
 
-  public PaymentTransactionsCancelList1 addDataItem(PaymentTransactionsProductModel dataItem) {
+  public LoyaltyTransactionsList addDataItem(LoyaltyTransactionsProductModel dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<PaymentTransactionsProductModel>();
+      this.data = new ArrayList<LoyaltyTransactionsProductModel>();
     }
     this.data.add(dataItem);
     return this;
@@ -50,11 +50,11 @@ public class PaymentTransactionsCancelList1 {
    * Get data
    * @return data
   **/
-  public List<PaymentTransactionsProductModel> getData() {
+  public List<LoyaltyTransactionsProductModel> getData() {
     return data;
   }
 
-  public void setData(List<PaymentTransactionsProductModel> data) {
+  public void setData(List<LoyaltyTransactionsProductModel> data) {
     this.data = data;
   }
 
@@ -66,9 +66,9 @@ public class PaymentTransactionsCancelList1 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaymentTransactionsCancelList1 paymentTransactionsCancelList1 = (PaymentTransactionsCancelList1) o;
-    return Objects.equals(this.count, paymentTransactionsCancelList1.count) &&
-        Objects.equals(this.data, paymentTransactionsCancelList1.data);
+    LoyaltyTransactionsList loyaltyTransactionsList = (LoyaltyTransactionsList) o;
+    return Objects.equals(this.count, loyaltyTransactionsList.count) &&
+        Objects.equals(this.data, loyaltyTransactionsList.data);
   }
 
   @Override
@@ -79,7 +79,7 @@ public class PaymentTransactionsCancelList1 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaymentTransactionsCancelList1 {\n");
+    sb.append("class LoyaltyTransactionsList {\n");
     
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");

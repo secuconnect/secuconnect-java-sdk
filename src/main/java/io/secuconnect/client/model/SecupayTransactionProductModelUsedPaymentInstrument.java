@@ -1,7 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import io.secuconnect.client.model.BankAccountDescriptor;
+import io.secuconnect.client.model.OneOfPaymentContainersDTOModelPrivate;
 import java.util.Objects;
 
 /**
@@ -12,7 +12,7 @@ public class SecupayTransactionProductModelUsedPaymentInstrument {
   private String type = null;
 
   @SerializedName("data")
-  private BankAccountDescriptor data = null;
+  private OneOfPaymentContainersDTOModelPrivate data = null;
 
   public SecupayTransactionProductModelUsedPaymentInstrument type(String type) {
     this.type = type;
@@ -31,7 +31,7 @@ public class SecupayTransactionProductModelUsedPaymentInstrument {
     this.type = type;
   }
 
-  public SecupayTransactionProductModelUsedPaymentInstrument data(BankAccountDescriptor data) {
+  public SecupayTransactionProductModelUsedPaymentInstrument data(OneOfPaymentContainersDTOModelPrivate data) {
     this.data = data;
     return this;
   }
@@ -40,11 +40,11 @@ public class SecupayTransactionProductModelUsedPaymentInstrument {
    * Get data
    * @return data
   **/
-  public BankAccountDescriptor getData() {
+  public OneOfPaymentContainersDTOModelPrivate getData() {
     return data;
   }
 
-  public void setData(BankAccountDescriptor data) {
+  public void setData(OneOfPaymentContainersDTOModelPrivate data) {
     this.data = data;
   }
 

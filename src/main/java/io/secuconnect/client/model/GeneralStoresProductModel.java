@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.AddressComponents;
 import io.secuconnect.client.model.AssignedBy;
 import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.GeoAddressGeometry;
 import io.secuconnect.client.model.InvitedBy;
 import io.secuconnect.client.model.OpenHours;
 import io.secuconnect.client.model.ProductInstanceUID;
@@ -20,6 +21,9 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   @SerializedName("merchant")
   private ProductInstanceUID merchant = null;
+
+  @SerializedName("store_name")
+  private String storeName = null;
 
   @SerializedName("facebook_id")
   private String facebookId = null;
@@ -43,7 +47,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   private String phoneNumberFormatted = null;
 
   @SerializedName("geometry")
-  private String geometry = null;
+  private GeoAddressGeometry geometry = null;
 
   @SerializedName("name")
   private String name = null;
@@ -61,7 +65,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   private String categoryMain = null;
 
   @SerializedName("category")
-  private String category = null;
+  private List<String> category = null;
 
   @SerializedName("url_googleplus")
   private String urlGoogleplus = null;
@@ -122,6 +126,23 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   public void setMerchant(ProductInstanceUID merchant) {
     this.merchant = merchant;
+  }
+
+  public GeneralStoresProductModel storeName(String storeName) {
+    this.storeName = storeName;
+    return this;
+  }
+
+   /**
+   * Store Name
+   * @return storeName
+  **/
+  public String getStoreName() {
+    return storeName;
+  }
+
+  public void setStoreName(String storeName) {
+    this.storeName = storeName;
   }
 
   public GeneralStoresProductModel facebookId(String facebookId) {
@@ -251,20 +272,20 @@ public class GeneralStoresProductModel extends BaseProductModel {
     this.phoneNumberFormatted = phoneNumberFormatted;
   }
 
-  public GeneralStoresProductModel geometry(String geometry) {
+  public GeneralStoresProductModel geometry(GeoAddressGeometry geometry) {
     this.geometry = geometry;
     return this;
   }
 
    /**
-   * General store geometry
+   * Get geometry
    * @return geometry
   **/
-  public String getGeometry() {
+  public GeoAddressGeometry getGeometry() {
     return geometry;
   }
 
-  public void setGeometry(String geometry) {
+  public void setGeometry(GeoAddressGeometry geometry) {
     this.geometry = geometry;
   }
 
@@ -361,8 +382,16 @@ public class GeneralStoresProductModel extends BaseProductModel {
     this.categoryMain = categoryMain;
   }
 
-  public GeneralStoresProductModel category(String category) {
+  public GeneralStoresProductModel category(List<String> category) {
     this.category = category;
+    return this;
+  }
+
+  public GeneralStoresProductModel addCategoryItem(String categoryItem) {
+    if (this.category == null) {
+      this.category = new ArrayList<String>();
+    }
+    this.category.add(categoryItem);
     return this;
   }
 
@@ -370,11 +399,11 @@ public class GeneralStoresProductModel extends BaseProductModel {
    * General store category
    * @return category
   **/
-  public String getCategory() {
+  public List<String> getCategory() {
     return category;
   }
 
-  public void setCategory(String category) {
+  public void setCategory(List<String> category) {
     this.category = category;
   }
 
@@ -566,6 +595,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
     GeneralStoresProductModel generalStoresProductModel = (GeneralStoresProductModel) o;
     return Objects.equals(this.idOld, generalStoresProductModel.idOld) &&
         Objects.equals(this.merchant, generalStoresProductModel.merchant) &&
+        Objects.equals(this.storeName, generalStoresProductModel.storeName) &&
         Objects.equals(this.facebookId, generalStoresProductModel.facebookId) &&
         Objects.equals(this.source, generalStoresProductModel.source) &&
         Objects.equals(this.key, generalStoresProductModel.key) &&
@@ -594,7 +624,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idOld, merchant, facebookId, source, key, hash, addressComponents, addressFormatted, phoneNumberFormatted, geometry, name, nameRaw, photoMain, photo, categoryMain, category, urlGoogleplus, urlWebsite, openHours, openNow, openTime, utcOffset, assignedBy, invitedBy, hasBeacon, super.hashCode());
+    return Objects.hash(idOld, merchant, storeName, facebookId, source, key, hash, addressComponents, addressFormatted, phoneNumberFormatted, geometry, name, nameRaw, photoMain, photo, categoryMain, category, urlGoogleplus, urlWebsite, openHours, openNow, openTime, utcOffset, assignedBy, invitedBy, hasBeacon, super.hashCode());
   }
 
   @Override
@@ -604,6 +634,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    idOld: ").append(toIndentedString(idOld)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
+    sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");

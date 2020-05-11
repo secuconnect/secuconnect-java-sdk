@@ -19,6 +19,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [2.1.0] - 2020-05-12
+
+### Added
+
+- `Api.LoyaltyMerchantcardsApi`: added call `cardBalanceReceipt`
+- `Api.LoyaltyTransactionsApi` was added
+- `Api.ServicesUploadidentsProductApi` was added
+- `Model.LoyaltyMerchantcardsProductWithReceiptModel`: added elements `trans_id` and `amount`
+- `Model.PaymentContainerMandate`: added element `creditor_id`
+- `Model.PaymentTransactionCancelDTO`: added element `container_id`
+- `Model.SecupayTransactionProductModel`: added element `mandate`
+
+### Fixed
+
+- `Api.LoyaltyCustomersApi`: fixed response declaration from `List<Object>` to `List<String>`
+- `Api.PaymentTransactionsApi`: changed model from `PaymentTransactionsCancelList` to `List<PaymentTransactionsProductModel>`
+- `Model.GeneralStoresProductModel`: fixed type declaration of element `geometry`
+- `Model.SecupayTransactionProductModelUsedPaymentInstrument`: fixed response declaration from `BankAccountDescriptor` to `OneOfPaymentContainersDTOModelPrivate`
+
+
 ## [2.0.0] - 2020-03-30
 
 ### Security
@@ -191,3 +211,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [1.8.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.0...1.8.1
 [1.9.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.1...1.9.0
 [2.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.9.0...2.0.0
+[2.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.0.0...2.1.0
