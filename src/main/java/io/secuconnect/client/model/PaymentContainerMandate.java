@@ -25,6 +25,9 @@ public class PaymentContainerMandate {
   @SerializedName("identification")
   private String identification = null;
 
+  @SerializedName("creditor_id")
+  private String creditorId = null;
+
   public PaymentContainerMandate sepaMandateId(String sepaMandateId) {
     this.sepaMandateId = sepaMandateId;
     return this;
@@ -127,6 +130,23 @@ public class PaymentContainerMandate {
     this.identification = identification;
   }
 
+  public PaymentContainerMandate creditorId(String creditorId) {
+    this.creditorId = creditorId;
+    return this;
+  }
+
+   /**
+   * Creditor ID
+   * @return creditorId
+  **/
+  public String getCreditorId() {
+    return creditorId;
+  }
+
+  public void setCreditorId(String creditorId) {
+    this.creditorId = creditorId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -141,12 +161,13 @@ public class PaymentContainerMandate {
         Objects.equals(this.bic, paymentContainerMandate.bic) &&
         Objects.equals(this.type, paymentContainerMandate.type) &&
         Objects.equals(this.status, paymentContainerMandate.status) &&
-        Objects.equals(this.identification, paymentContainerMandate.identification);
+        Objects.equals(this.identification, paymentContainerMandate.identification) &&
+        Objects.equals(this.creditorId, paymentContainerMandate.creditorId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sepaMandateId, iban, bic, type, status, identification);
+    return Objects.hash(sepaMandateId, iban, bic, type, status, identification, creditorId);
   }
 
   @Override
@@ -160,6 +181,7 @@ public class PaymentContainerMandate {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    identification: ").append(toIndentedString(identification)).append("\n");
+    sb.append("    creditorId: ").append(toIndentedString(creditorId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

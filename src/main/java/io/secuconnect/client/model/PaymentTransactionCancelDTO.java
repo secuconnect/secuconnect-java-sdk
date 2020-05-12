@@ -16,6 +16,9 @@ public class PaymentTransactionCancelDTO {
   @SerializedName("reduce_stakeholder_payment")
   private Boolean reduceStakeholderPayment = false;
 
+  @SerializedName("container_id")
+  private String containerId = null;
+
   public PaymentTransactionCancelDTO reason(String reason) {
     this.reason = reason;
     return this;
@@ -67,6 +70,23 @@ public class PaymentTransactionCancelDTO {
     this.reduceStakeholderPayment = reduceStakeholderPayment;
   }
 
+  public PaymentTransactionCancelDTO containerId(String containerId) {
+    this.containerId = containerId;
+    return this;
+  }
+
+   /**
+   * Payment Container ID
+   * @return containerId
+  **/
+  public String getContainerId() {
+    return containerId;
+  }
+
+  public void setContainerId(String containerId) {
+    this.containerId = containerId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -78,12 +98,13 @@ public class PaymentTransactionCancelDTO {
     PaymentTransactionCancelDTO paymentTransactionCancelDTO = (PaymentTransactionCancelDTO) o;
     return Objects.equals(this.reason, paymentTransactionCancelDTO.reason) &&
         Objects.equals(this.amount, paymentTransactionCancelDTO.amount) &&
-        Objects.equals(this.reduceStakeholderPayment, paymentTransactionCancelDTO.reduceStakeholderPayment);
+        Objects.equals(this.reduceStakeholderPayment, paymentTransactionCancelDTO.reduceStakeholderPayment) &&
+        Objects.equals(this.containerId, paymentTransactionCancelDTO.containerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reason, amount, reduceStakeholderPayment);
+    return Objects.hash(reason, amount, reduceStakeholderPayment, containerId);
   }
 
   @Override
@@ -94,6 +115,7 @@ public class PaymentTransactionCancelDTO {
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    reduceStakeholderPayment: ").append(toIndentedString(reduceStakeholderPayment)).append("\n");
+    sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

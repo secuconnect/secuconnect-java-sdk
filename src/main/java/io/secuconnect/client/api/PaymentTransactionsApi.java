@@ -11,7 +11,6 @@ import io.secuconnect.client.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import io.secuconnect.client.model.PaymentTransactionCancelDTO;
-import io.secuconnect.client.model.PaymentTransactionsCancelList;
 import io.secuconnect.client.model.PaymentTransactionsList;
 import io.secuconnect.client.model.PaymentTransactionsProductModel;
 import io.secuconnect.client.model.PaymentTransactionsShippingUrl;
@@ -108,11 +107,11 @@ public class PaymentTransactionsApi {
      * Cancel a payment transaction
      * @param paymentTransactionId Payment transaction id (required)
      * @param body Cancel payment transaction input properties
-     * @return PaymentTransactionsCancelList
+     * @return List&lt;PaymentTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaymentTransactionsCancelList cancel(String paymentTransactionId, PaymentTransactionCancelDTO body) throws ApiException {
-        ApiResponse<PaymentTransactionsCancelList> resp = cancelWithHttpInfo(paymentTransactionId, body);
+    public List<PaymentTransactionsProductModel> cancel(String paymentTransactionId, PaymentTransactionCancelDTO body) throws ApiException {
+        ApiResponse<List<PaymentTransactionsProductModel>> resp = cancelWithHttpInfo(paymentTransactionId, body);
         return resp.getData();
     }
 
@@ -121,12 +120,12 @@ public class PaymentTransactionsApi {
      * Cancel a payment transaction
      * @param paymentTransactionId Payment transaction id (required)
      * @param body Cancel payment transaction input properties
-     * @return ApiResponse&lt;PaymentTransactionsCancelList&gt;
+     * @return ApiResponse&lt;List&lt;PaymentTransactionsProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaymentTransactionsCancelList> cancelWithHttpInfo(String paymentTransactionId, PaymentTransactionCancelDTO body) throws ApiException {
+    public ApiResponse<List<PaymentTransactionsProductModel>> cancelWithHttpInfo(String paymentTransactionId, PaymentTransactionCancelDTO body) throws ApiException {
         com.squareup.okhttp.Call call = cancelValidateBeforeCall(paymentTransactionId, body, null, null);
-        Type localVarReturnType = new TypeToken<PaymentTransactionsCancelList>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<PaymentTransactionsProductModel>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -139,7 +138,7 @@ public class PaymentTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cancelAsync(String paymentTransactionId, PaymentTransactionCancelDTO body, final ApiCallback<PaymentTransactionsCancelList> callback) throws ApiException {
+    public com.squareup.okhttp.Call cancelAsync(String paymentTransactionId, PaymentTransactionCancelDTO body, final ApiCallback<List<PaymentTransactionsProductModel>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -161,7 +160,7 @@ public class PaymentTransactionsApi {
         }
 
         com.squareup.okhttp.Call call = cancelValidateBeforeCall(paymentTransactionId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaymentTransactionsCancelList>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<PaymentTransactionsProductModel>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

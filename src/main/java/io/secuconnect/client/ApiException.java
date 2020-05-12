@@ -78,9 +78,9 @@ public class ApiException extends Exception {
     }
 
     public ExceptionBody getExceptionBody() {
-      Gson gson = new Gson();
-      ExceptionBody exceptionBody = gson.fromJson(responseBody, ExceptionBody.class);
+        Gson gson = new Gson();
+        ExceptionBody exceptionBody = gson.fromJson(responseBody, ExceptionBody.class);
 
-      return exceptionBody;
+        return exceptionBody;
     }
 }

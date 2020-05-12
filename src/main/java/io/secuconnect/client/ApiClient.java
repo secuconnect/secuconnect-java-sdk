@@ -83,21 +83,21 @@ public class ApiClient {
 
     public ApiClient(ApiClient apiClient) {
         this(
-                apiClient.getBasePath(),
-                apiClient.getAuthHost(),
-                apiClient.isDebugging(),
-                apiClient.getTempFolderPath(),
-                apiClient.getAuthentications(),
-                apiClient.getDateFormat(),
-                apiClient.getDateLength(),
-                apiClient.getSslCaCert(),
-                apiClient.isVerifyingSsl(),
-                apiClient.getKeyManagers(),
-                apiClient.getHttpClient(),
-                apiClient.getJSON(),
-                apiClient.getLoggingInterceptor(),
-                apiClient.getCacheItem(),
-                apiClient.getPrinter()
+            apiClient.getBasePath(),
+            apiClient.getAuthHost(),
+            apiClient.isDebugging(),
+            apiClient.getTempFolderPath(),
+            apiClient.getAuthentications(),
+            apiClient.getDateFormat(),
+            apiClient.getDateLength(),
+            apiClient.getSslCaCert(),
+            apiClient.isVerifyingSsl(),
+            apiClient.getKeyManagers(),
+            apiClient.getHttpClient(),
+            apiClient.getJSON(),
+            apiClient.getLoggingInterceptor(),
+            apiClient.getCacheItem(),
+            apiClient.getPrinter()
         );
     }
 
@@ -113,7 +113,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("secuconnect-java-sdk/1.9.0");
+        setUserAgent("secuconnect-java-sdk/2.1.0");
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
@@ -442,7 +442,7 @@ public class ApiClient {
 
     /**
      * Sets the connect timeout (in milliseconds).
-     * A value of 0 means no timeout, otherwise values must be greater than 1 and
+     * A value of 0 means no timeout, otherwise values must be greater than 1
      *
      * @param connectionTimeout connection timeout in milliseconds
      * @return Api client
@@ -463,7 +463,7 @@ public class ApiClient {
 
     /**
      * Sets the read timeout (in milliseconds).
-     * A value of 0 means no timeout, otherwise values must be greater than 1 and
+     * A value of 0 means no timeout, otherwise values must be greater than 1
      * {@link Integer#MAX_VALUE}.
      *
      * @param readTimeout read timeout in milliseconds

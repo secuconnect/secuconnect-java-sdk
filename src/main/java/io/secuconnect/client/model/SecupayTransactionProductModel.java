@@ -2,6 +2,7 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.PaymentContainerMandate;
 import io.secuconnect.client.model.PaymentContainersProductModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.PaymentInformation;
@@ -74,6 +75,9 @@ public class SecupayTransactionProductModel extends BaseProductModel {
 
   @SerializedName("sub_transactions")
   private List<SecupaySubTransactionProductModel> subTransactions = null;
+
+  @SerializedName("mandate")
+  private PaymentContainerMandate mandate = null;
 
   public SecupayTransactionProductModel transId(Integer transId) {
     this.transId = transId;
@@ -414,6 +418,23 @@ public class SecupayTransactionProductModel extends BaseProductModel {
     this.subTransactions = subTransactions;
   }
 
+  public SecupayTransactionProductModel mandate(PaymentContainerMandate mandate) {
+    this.mandate = mandate;
+    return this;
+  }
+
+   /**
+   * Get mandate
+   * @return mandate
+  **/
+  public PaymentContainerMandate getMandate() {
+    return mandate;
+  }
+
+  public void setMandate(PaymentContainerMandate mandate) {
+    this.mandate = mandate;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -442,12 +463,13 @@ public class SecupayTransactionProductModel extends BaseProductModel {
         Objects.equals(this.iframeUrl, secupayTransactionProductModel.iframeUrl) &&
         Objects.equals(this.container, secupayTransactionProductModel.container) &&
         Objects.equals(this.subTransactions, secupayTransactionProductModel.subTransactions) &&
+        Objects.equals(this.mandate, secupayTransactionProductModel.mandate) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transId, status, amount, currency, purpose, orderId, basket, transactionStatus, accrual, paymentAction, transferPurpose, transferAccount, customer, usedPaymentInstrument, redirectUrl, subscription, iframeUrl, container, subTransactions, super.hashCode());
+    return Objects.hash(transId, status, amount, currency, purpose, orderId, basket, transactionStatus, accrual, paymentAction, transferPurpose, transferAccount, customer, usedPaymentInstrument, redirectUrl, subscription, iframeUrl, container, subTransactions, mandate, super.hashCode());
   }
 
   @Override
@@ -474,6 +496,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
     sb.append("    iframeUrl: ").append(toIndentedString(iframeUrl)).append("\n");
     sb.append("    container: ").append(toIndentedString(container)).append("\n");
     sb.append("    subTransactions: ").append(toIndentedString(subTransactions)).append("\n");
+    sb.append("    mandate: ").append(toIndentedString(mandate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,6 +1,6 @@
 package io.secuconnect.client.model;
 
-import io.secuconnect.client.model.PaymentTransactionsCancelList1;
+import io.secuconnect.client.model.PaymentTransactionsProductModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * PaymentTransactionsCancelList
  */
-public class PaymentTransactionsCancelList extends ArrayList<PaymentTransactionsCancelList1> {
+public class PaymentTransactionsCancelList extends ArrayList<PaymentTransactionsProductModel> {
   @Override
   public boolean equals(Object o) {
     if (this == o) {

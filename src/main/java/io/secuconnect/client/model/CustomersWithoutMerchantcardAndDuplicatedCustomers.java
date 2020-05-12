@@ -10,19 +10,19 @@ import java.util.Objects;
  */
 public class CustomersWithoutMerchantcardAndDuplicatedCustomers {
   @SerializedName("customers_without_merchantcard")
-  private List<Object> customersWithoutMerchantcard = null;
+  private List<String> customersWithoutMerchantcard = null;
 
   @SerializedName("duplicated_customers")
-  private List<Object> duplicatedCustomers = null;
+  private List<String> duplicatedCustomers = null;
 
-  public CustomersWithoutMerchantcardAndDuplicatedCustomers customersWithoutMerchantcard(List<Object> customersWithoutMerchantcard) {
+  public CustomersWithoutMerchantcardAndDuplicatedCustomers customersWithoutMerchantcard(List<String> customersWithoutMerchantcard) {
     this.customersWithoutMerchantcard = customersWithoutMerchantcard;
     return this;
   }
 
-  public CustomersWithoutMerchantcardAndDuplicatedCustomers addCustomersWithoutMerchantcardItem(Object customersWithoutMerchantcardItem) {
+  public CustomersWithoutMerchantcardAndDuplicatedCustomers addCustomersWithoutMerchantcardItem(String customersWithoutMerchantcardItem) {
     if (this.customersWithoutMerchantcard == null) {
-      this.customersWithoutMerchantcard = new ArrayList<Object>();
+      this.customersWithoutMerchantcard = new ArrayList<String>();
     }
     this.customersWithoutMerchantcard.add(customersWithoutMerchantcardItem);
     return this;
@@ -32,22 +32,22 @@ public class CustomersWithoutMerchantcardAndDuplicatedCustomers {
    * customers without merchantcard
    * @return customersWithoutMerchantcard
   **/
-  public List<Object> getCustomersWithoutMerchantcard() {
+  public List<String> getCustomersWithoutMerchantcard() {
     return customersWithoutMerchantcard;
   }
 
-  public void setCustomersWithoutMerchantcard(List<Object> customersWithoutMerchantcard) {
+  public void setCustomersWithoutMerchantcard(List<String> customersWithoutMerchantcard) {
     this.customersWithoutMerchantcard = customersWithoutMerchantcard;
   }
 
-  public CustomersWithoutMerchantcardAndDuplicatedCustomers duplicatedCustomers(List<Object> duplicatedCustomers) {
+  public CustomersWithoutMerchantcardAndDuplicatedCustomers duplicatedCustomers(List<String> duplicatedCustomers) {
     this.duplicatedCustomers = duplicatedCustomers;
     return this;
   }
 
-  public CustomersWithoutMerchantcardAndDuplicatedCustomers addDuplicatedCustomersItem(Object duplicatedCustomersItem) {
+  public CustomersWithoutMerchantcardAndDuplicatedCustomers addDuplicatedCustomersItem(String duplicatedCustomersItem) {
     if (this.duplicatedCustomers == null) {
-      this.duplicatedCustomers = new ArrayList<Object>();
+      this.duplicatedCustomers = new ArrayList<String>();
     }
     this.duplicatedCustomers.add(duplicatedCustomersItem);
     return this;
@@ -57,11 +57,11 @@ public class CustomersWithoutMerchantcardAndDuplicatedCustomers {
    * duplicated customers
    * @return duplicatedCustomers
   **/
-  public List<Object> getDuplicatedCustomers() {
+  public List<String> getDuplicatedCustomers() {
     return duplicatedCustomers;
   }
 
-  public void setDuplicatedCustomers(List<Object> duplicatedCustomers) {
+  public void setDuplicatedCustomers(List<String> duplicatedCustomers) {
     this.duplicatedCustomers = duplicatedCustomers;
   }
 
