@@ -19,4 +19,6 @@ public abstract class CacheItem {
   public abstract void set(String name, AccessToken accessToken);
 
   public abstract AccessToken get(String name);
+
+  public abstract void delete(String name);
 }

@@ -42,6 +42,20 @@ public class Authenticator {
         this.apiClient.setBasePath(authHost);
     }
 
+    public ApiClient setApiClient(ApiClient apiClient) {
+        return this.setApiClient(apiClient, "");
+    }
+
+    public ApiClient setApiClient(ApiClient apiClient, String authHost) {
+        this.apiClient = apiClient;
+
+        if (!authHost.equals("")) {
+            this.apiClient.setBasePath(authHost);
+        }
+
+        return this.apiClient;
+    }
+
     public com.squareup.okhttp.Call getTokenCall(AuthenticationCredentials credentials) throws ApiException {
         String localVarPath = "oauth/token";
         Map<String, String> localVarHeaderParams = new HashMap<>();
@@ -101,6 +115,14 @@ public class Authenticator {
         return accessToken;
     }
 
+    public AuthenticationCredentials getCredentials() {
+        return credentials;
+    }
+
+    public void setCredentials(AuthenticationCredentials credentials) {
+        this.credentials = credentials;
+    }
+
     public AccessToken getToken() throws ApiException {
         AccessToken accessToken;
         String uniqueKey = credentials.getUniqueKey();
@@ -119,6 +141,23 @@ public class Authenticator {
         }
 
         return accessToken;
+    }
+
+    public AccessToken reauthenticate() {
+        if (credentials != null) {
+            CacheItem cacheItem = apiClient.getCacheItem();
+            String uniqueKey = credentials.getUniqueKey();
+            if (cacheItem.get(uniqueKey) != null) {
+                cacheItem.delete(uniqueKey);
+            }
+            try {
+                return getToken();
+            } catch (ApiException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return null;
     }
 
     public String getDeviceAccessToken(String clientId, String clientSecret, String uuid) {
@@ -271,13 +310,5 @@ public class Authenticator {
         String uniqueKey = credentials.getUniqueKey();
         CacheItem cacheItem = apiClient.getCacheItem();
         cacheItem.set(uniqueKey, accessToken);
-    }
-
-    public AuthenticationCredentials getCredentials() {
-        return credentials;
-    }
-
-    public void setCredentials(AuthenticationCredentials credentials) {
-        this.credentials = credentials;
     }
 }

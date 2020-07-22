@@ -38,24 +38,32 @@ public class FileCache extends CacheItem {
             return null;
         }
 
-        try {
-            FileInputStream file = new FileInputStream(filename);
-            ObjectInputStream in = new ObjectInputStream(file);
+        try (FileInputStream file = new FileInputStream(filename); ObjectInputStream in = new ObjectInputStream(file)) {
             accessToken = (AccessToken) in.readObject();
-
-            in.close();
-            file.close();
         } catch (IOException ex) {
             System.out.println("IOException is caught - GET");
         } catch (ClassNotFoundException ex) {
             System.out.println("ClassNotFoundException is caught");
         }
 
+
         if (accessToken != null && wasExpiring(accessToken) && !accessToken.getClass().getName().contains("OAuthDeviceToken")) {
             accessToken = null;
         }
 
         return accessToken;
+    }
+
+    @Override
+    public void delete(String name) {
+        String filename = "tmp/" + name + ".ser";
+        Path path = Paths.get(filename);
+
+        try {
+            Files.deleteIfExists(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void createDirectory() {
