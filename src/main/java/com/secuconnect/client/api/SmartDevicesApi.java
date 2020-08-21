@@ -1,0 +1,585 @@
+package com.secuconnect.client.api;
+
+import com.google.gson.reflect.TypeToken;
+import com.secuconnect.client.*;
+import com.secuconnect.client.model.ProductExceptionPayload;
+import com.secuconnect.client.model.SmartDeviceUserPin;
+import com.secuconnect.client.model.SmartDevicesDTO;
+import com.secuconnect.client.model.SmartDevicesList;
+import com.secuconnect.client.model.SmartDevicesProductModel;
+import okhttp3.Call;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class SmartDevicesApi {
+    private ApiClient apiClient;
+
+    public SmartDevicesApi() {
+        this(Environment.getGlobalEnv().getApiClient());
+    }
+
+    public SmartDevicesApi(ApiClient apiClient) {
+        this.apiClient = apiClient;
+    }
+
+    public ApiClient getApiClient() {
+        return apiClient;
+    }
+
+    public void setApiClient(ApiClient apiClient) {
+        this.apiClient = apiClient;
+    }
+
+    /**
+     * Build call for addDevice
+     * @param body Smart device properties
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call addDeviceCall(SmartDevicesDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Smart/Devices";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call addDeviceValidateBeforeCall(SmartDevicesDTO body) throws ApiException {
+
+        return addDeviceCall(body);
+    }
+
+    /**
+     * POST Smart/Devices
+     * Create new smart device
+     * @param body Smart device properties
+     * @return SmartDevicesProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SmartDevicesProductModel addDevice(SmartDevicesDTO body) throws ApiException {
+        ApiResponse<SmartDevicesProductModel> resp = addDeviceWithHttpInfo(body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Smart/Devices
+     * Create new smart device
+     * @param body Smart device properties
+     * @return ApiResponse&lt;SmartDevicesProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SmartDevicesProductModel> addDeviceWithHttpInfo(SmartDevicesDTO body) throws ApiException {
+        Call call = addDeviceValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Smart/Devices (asynchronously)
+     * Create new smart device
+     * @param body Smart device properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call addDeviceAsync(SmartDevicesDTO body, final ApiCallback<SmartDevicesProductModel> callback) throws ApiException {
+        Call call = addDeviceValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getAll
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getAllCall(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Smart/Devices";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (count != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("count", count));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (fields != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
+        if (q != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("q", q));
+        if (sort != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("sort", sort));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getAllValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+
+        return getAllCall(count, offset, fields, q, sort);
+    }
+
+    /**
+     * GET Smart/Devices
+     * Get a list of smart devices
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
+     * @return SmartDevicesList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SmartDevicesList getAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        ApiResponse<SmartDevicesList> resp = getAllWithHttpInfo(count, offset, fields, q, sort);
+        return resp.getData();
+    }
+
+    /**
+     * GET Smart/Devices
+     * Get a list of smart devices
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
+     * @return ApiResponse&lt;SmartDevicesList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SmartDevicesList> getAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        Call call = getAllValidateBeforeCall(count, offset, fields, q, sort);
+        Type localVarReturnType = new TypeToken<SmartDevicesList>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET Smart/Devices (asynchronously)
+     * Get a list of smart devices
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<SmartDevicesList> callback) throws ApiException {
+        Call call = getAllValidateBeforeCall(count, offset, fields, q, sort);
+        Type localVarReturnType = new TypeToken<SmartDevicesList>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getOne
+     * @param smartDeviceId Smart device id (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getOneCall(String smartDeviceId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Smart/Devices/{smartDeviceId}"
+            .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getOneValidateBeforeCall(String smartDeviceId) throws ApiException {
+        // verify the required parameter 'smartDeviceId' is set
+        if (smartDeviceId == null) {
+            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling getOne(Async)");
+        }
+
+        return getOneCall(smartDeviceId);
+    }
+
+    /**
+     * GET Smart/Devices/{smartDeviceId}
+     * Get one smart device for a specific id
+     * @param smartDeviceId Smart device id (required)
+     * @return SmartDevicesProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SmartDevicesProductModel getOne(String smartDeviceId) throws ApiException {
+        ApiResponse<SmartDevicesProductModel> resp = getOneWithHttpInfo(smartDeviceId);
+        return resp.getData();
+    }
+
+    /**
+     * GET Smart/Devices/{smartDeviceId}
+     * Get one smart device for a specific id
+     * @param smartDeviceId Smart device id (required)
+     * @return ApiResponse&lt;SmartDevicesProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SmartDevicesProductModel> getOneWithHttpInfo(String smartDeviceId) throws ApiException {
+        Call call = getOneValidateBeforeCall(smartDeviceId);
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET Smart/Devices/{smartDeviceId} (asynchronously)
+     * Get one smart device for a specific id
+     * @param smartDeviceId Smart device id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getOneAsync(String smartDeviceId, final ApiCallback<SmartDevicesProductModel> callback) throws ApiException {
+        Call call = getOneValidateBeforeCall(smartDeviceId);
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getRouting
+     * @param smartDeviceId Smart device id (required)
+     * @param type Smart Device Type (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getRoutingCall(String smartDeviceId, String type) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Smart/Devices/{smartDeviceId}/routing/type/{type}"
+            .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()))
+            .replaceAll("\\{" + "type" + "\\}", apiClient.escapeString(type.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getRoutingValidateBeforeCall(String smartDeviceId, String type) throws ApiException {
+        // verify the required parameter 'smartDeviceId' is set
+        if (smartDeviceId == null) {
+            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling getRouting(Async)");
+        }
+        // verify the required parameter 'type' is set
+        if (type == null) {
+            throw new ApiException("Missing the required parameter 'type' when calling getRouting(Async)");
+        }
+
+        return getRoutingCall(smartDeviceId, type);
+    }
+
+    /**
+     * GET Smart/Devices/{smartDeviceId}/routing/type/{type}
+     * Get requested smart device if it is assigned to a single routing
+     * @param smartDeviceId Smart device id (required)
+     * @param type Smart Device Type (required)
+     * @return SmartDevicesProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SmartDevicesProductModel getRouting(String smartDeviceId, String type) throws ApiException {
+        ApiResponse<SmartDevicesProductModel> resp = getRoutingWithHttpInfo(smartDeviceId, type);
+        return resp.getData();
+    }
+
+    /**
+     * GET Smart/Devices/{smartDeviceId}/routing/type/{type}
+     * Get requested smart device if it is assigned to a single routing
+     * @param smartDeviceId Smart device id (required)
+     * @param type Smart Device Type (required)
+     * @return ApiResponse&lt;SmartDevicesProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SmartDevicesProductModel> getRoutingWithHttpInfo(String smartDeviceId, String type) throws ApiException {
+        Call call = getRoutingValidateBeforeCall(smartDeviceId, type);
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET Smart/Devices/{smartDeviceId}/routing/type/{type} (asynchronously)
+     * Get requested smart device if it is assigned to a single routing
+     * @param smartDeviceId Smart device id (required)
+     * @param type Smart Device Type (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getRoutingAsync(String smartDeviceId, String type, final ApiCallback<SmartDevicesProductModel> callback) throws ApiException {
+        Call call = getRoutingValidateBeforeCall(smartDeviceId, type);
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for updateDevice
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device properties
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call updateDeviceCall(String smartDeviceId, SmartDevicesDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Smart/Devices/{smartDeviceId}"
+            .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call updateDeviceValidateBeforeCall(String smartDeviceId, SmartDevicesDTO body) throws ApiException {
+        // verify the required parameter 'smartDeviceId' is set
+        if (smartDeviceId == null) {
+            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling updateDevice(Async)");
+        }
+
+        return updateDeviceCall(smartDeviceId, body);
+    }
+
+    /**
+     * PUT Smart/Devices/{smartDeviceId}
+     * Update smart device
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device properties
+     * @return SmartDevicesProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SmartDevicesProductModel updateDevice(String smartDeviceId, SmartDevicesDTO body) throws ApiException {
+        ApiResponse<SmartDevicesProductModel> resp = updateDeviceWithHttpInfo(smartDeviceId, body);
+        return resp.getData();
+    }
+
+    /**
+     * PUT Smart/Devices/{smartDeviceId}
+     * Update smart device
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device properties
+     * @return ApiResponse&lt;SmartDevicesProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SmartDevicesProductModel> updateDeviceWithHttpInfo(String smartDeviceId, SmartDevicesDTO body) throws ApiException {
+        Call call = updateDeviceValidateBeforeCall(smartDeviceId, body);
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * PUT Smart/Devices/{smartDeviceId} (asynchronously)
+     * Update smart device
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call updateDeviceAsync(String smartDeviceId, SmartDevicesDTO body, final ApiCallback<SmartDevicesProductModel> callback) throws ApiException {
+        Call call = updateDeviceValidateBeforeCall(smartDeviceId, body);
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for updatePin
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device properties
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call updatePinCall(String smartDeviceId, SmartDeviceUserPin body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Smart/Devices/{smartDeviceId}/pin"
+            .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call updatePinValidateBeforeCall(String smartDeviceId, SmartDeviceUserPin body) throws ApiException {
+        // verify the required parameter 'smartDeviceId' is set
+        if (smartDeviceId == null) {
+            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling updatePin(Async)");
+        }
+
+        return updatePinCall(smartDeviceId, body);
+    }
+
+    /**
+     * PUT /Smart/Devices/{smartDeviceId}/pin
+     * Update Smart Device Pin to authenticate device
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device properties
+     * @return SmartDevicesProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SmartDevicesProductModel updatePin(String smartDeviceId, SmartDeviceUserPin body) throws ApiException {
+        ApiResponse<SmartDevicesProductModel> resp = updatePinWithHttpInfo(smartDeviceId, body);
+        return resp.getData();
+    }
+
+    /**
+     * PUT /Smart/Devices/{smartDeviceId}/pin
+     * Update Smart Device Pin to authenticate device
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device properties
+     * @return ApiResponse&lt;SmartDevicesProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SmartDevicesProductModel> updatePinWithHttpInfo(String smartDeviceId, SmartDeviceUserPin body) throws ApiException {
+        Call call = updatePinValidateBeforeCall(smartDeviceId, body);
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * PUT /Smart/Devices/{smartDeviceId}/pin (asynchronously)
+     * Update Smart Device Pin to authenticate device
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call updatePinAsync(String smartDeviceId, SmartDeviceUserPin body, final ApiCallback<SmartDevicesProductModel> callback) throws ApiException {
+        Call call = updatePinValidateBeforeCall(smartDeviceId, body);
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+}

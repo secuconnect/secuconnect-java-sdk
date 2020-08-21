@@ -19,6 +19,63 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.0.0] - 2020-08-20
+
+### Security
+- Update all dependencies to the latest versions.
+
+### Deprecated
+- Stomp integration will be refactored in a future version.
+
+### Added
+- The access token will be refreshed automatically when the API answers with the HTTP 401 status code.
+- It is now possible to handle multiple client credentials or dev environments at the same time.
+- `Api.LoyaltyCardgroupsApi.getCardgroupsByMerchantId()`
+- `Api.PaymentTransactionsApi.addTransaction()`
+- `Api.SmartTransactionsApi.setDelivery()`
+
+### Changed
+- Require TLS 1.2
+- Require Java 1.8 (or newer)
+- Change package name from `io.secuconnect.client` to `com.secuconnect.client`
+- ApiClient was refactored
+- Cache handling was refactored
+- "okhttp" was replaced by "okhttp3"
+
+### Fixed
+- Multithreaded Maven deployment results in failing tests
+
+### Removed
+- `Api.LoyaltySalesApi`
+- `Api.LoyaltyStoregroupsApi`
+- `Api.SmartDevicesApi.createPrepaidTid()`
+- `Api.SmartDevicesApi.createVirtualDevice()`
+- `Api.SmartDevicesApi.createVirtualDevice()`
+- `Model.GeneralMerchantsCheckoutOptions`
+- `Model.GeneralMerchantsCheckoutOptionsCollection`
+- `Model.GeneralMerchantsCheckoutOptionsCollectionSmartDevices`
+- `Model.LoyaltyDTOStore`
+- `Model.LoyaltyStoregroupsDTOStoresAddressComponents`
+- `Model.LoyaltyStoregroupsList`
+- `Model.LoyaltyStoregroupsProductModel`
+- `Model.SmartDevicesDTOSecubaseConfig`
+- `Model.SmartDevicesSecubaseConfig`
+- `Model.SmartDevicesSecubaseConfigLogging`
+- `Model.SmartDevicesSecubaseConfigLoggingFileNet`
+- `Model.GeneralMerchantsCheckoutOptionsShipping`
+- `Model.SmartTransactionsBasketText`
+- `Model.LoyaltyStoregroupsDTO`
+- `Model.SmartTransactionsDTO.order_option`
+- `Model.SmartTransactionsDTO.pickup_options`
+- `Model.SmartTransactionsPickupOptions`
+- `Model.SmartTransactionsProductModel.order_option` replaced by `delivery_options`
+- `Model.SmartTransactionsProductModel.pickup_options` replaced by `delivery_options`
+- `Model.SmartTransactionsProductModel.shipment_details` replaced by `delivery_options`
+- `Model.LoyaltyDTOMerchant`
+- `Model.SmartTransactionsShipmentDetails`
+- `Model.SmartDevicesDTOPrepaidTid`
+
+
 ## [2.1.0] - 2020-05-12
 
 ### Added
@@ -213,3 +270,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [1.9.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.1...1.9.0
 [2.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.9.0...2.0.0
 [2.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.0.0...2.1.0
+[3.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...3.0.0

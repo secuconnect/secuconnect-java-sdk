@@ -1,0 +1,755 @@
+package com.secuconnect.client.api;
+
+import com.google.gson.reflect.TypeToken;
+import com.secuconnect.client.*;
+import com.secuconnect.client.model.PaymentContractsDTO;
+import com.secuconnect.client.model.PaymentContractsDTOClone;
+import com.secuconnect.client.model.PaymentContractsDTORequestId;
+import com.secuconnect.client.model.PaymentContractsList;
+import com.secuconnect.client.model.PaymentContractsProductModel;
+import com.secuconnect.client.model.PaymentContractsRequestIdResult;
+import com.secuconnect.client.model.ProductExceptionPayload;
+import com.secuconnect.client.model.StringList;
+import okhttp3.Call;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class PaymentContractsApi {
+    private ApiClient apiClient;
+
+    public PaymentContractsApi() {
+        this(Environment.getGlobalEnv().getApiClient());
+    }
+
+    public PaymentContractsApi(ApiClient apiClient) {
+        this.apiClient = apiClient;
+    }
+
+    public ApiClient getApiClient() {
+        return apiClient;
+    }
+
+    public void setApiClient(ApiClient apiClient) {
+        this.apiClient = apiClient;
+    }
+
+    /**
+     * Build call for clone
+     * @param paymentContractId Contract identifier (required)
+     * @param body Payment contract clone properties
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call cloneCall(String paymentContractId, PaymentContractsDTOClone body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts/{paymentContractId}/clone"
+            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call cloneValidateBeforeCall(String paymentContractId, PaymentContractsDTOClone body) throws ApiException {
+        // verify the required parameter 'paymentContractId' is set
+        if (paymentContractId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContractId' when calling clone(Async)");
+        }
+
+        return cloneCall(paymentContractId, body);
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/clone
+     * Clone an existing payment contract
+     * @param paymentContractId Contract identifier (required)
+     * @param body Payment contract clone properties
+     * @return PaymentContractsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentContractsProductModel clone(String paymentContractId, PaymentContractsDTOClone body) throws ApiException {
+        ApiResponse<PaymentContractsProductModel> resp = cloneWithHttpInfo(paymentContractId, body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/clone
+     * Clone an existing payment contract
+     * @param paymentContractId Contract identifier (required)
+     * @param body Payment contract clone properties
+     * @return ApiResponse&lt;PaymentContractsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentContractsProductModel> cloneWithHttpInfo(String paymentContractId, PaymentContractsDTOClone body) throws ApiException {
+        Call call = cloneValidateBeforeCall(paymentContractId, body);
+        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/clone (asynchronously)
+     * Clone an existing payment contract
+     * @param paymentContractId Contract identifier (required)
+     * @param body Payment contract clone properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call cloneAsync(String paymentContractId, PaymentContractsDTOClone body, final ApiCallback<PaymentContractsProductModel> callback) throws ApiException {
+        Call call = cloneValidateBeforeCall(paymentContractId, body);
+        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for paymentContractsGet
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call paymentContractsGetCall(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (count != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("count", count));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (fields != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("fields", fields));
+        if (q != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("q", q));
+        if (sort != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("sort", sort));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call paymentContractsGetValidateBeforeCall(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+
+        return paymentContractsGetCall(count, offset, fields, q, sort);
+    }
+
+    /**
+     * GET Payment/Contracts
+     * Get a list of payment contracts
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
+     * @return PaymentContractsList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentContractsList paymentContractsGet(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        ApiResponse<PaymentContractsList> resp = paymentContractsGetWithHttpInfo(count, offset, fields, q, sort);
+        return resp.getData();
+    }
+
+    /**
+     * GET Payment/Contracts
+     * Get a list of payment contracts
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
+     * @return ApiResponse&lt;PaymentContractsList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentContractsList> paymentContractsGetWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        Call call = paymentContractsGetValidateBeforeCall(count, offset, fields, q, sort);
+        Type localVarReturnType = new TypeToken<PaymentContractsList>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET Payment/Contracts (asynchronously)
+     * Get a list of payment contracts
+     * @param count The number of items to return.
+     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
+     * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call paymentContractsGetAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<PaymentContractsList> callback) throws ApiException {
+        Call call = paymentContractsGetValidateBeforeCall(count, offset, fields, q, sort);
+        Type localVarReturnType = new TypeToken<PaymentContractsList>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for paymentContractsGetById
+     * @param paymentContractId Search one by provided id (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call paymentContractsGetByIdCall(String paymentContractId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts/{paymentContractId}"
+            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call paymentContractsGetByIdValidateBeforeCall(String paymentContractId) throws ApiException {
+        // verify the required parameter 'paymentContractId' is set
+        if (paymentContractId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContractId' when calling paymentContractsGetById(Async)");
+        }
+
+        return paymentContractsGetByIdCall(paymentContractId);
+    }
+
+    /**
+     * GET Payment/Contracts/{paymentContractId}
+     * Get all payment contracts
+     * @param paymentContractId Search one by provided id (required)
+     * @return PaymentContractsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentContractsProductModel paymentContractsGetById(String paymentContractId) throws ApiException {
+        ApiResponse<PaymentContractsProductModel> resp = paymentContractsGetByIdWithHttpInfo(paymentContractId);
+        return resp.getData();
+    }
+
+    /**
+     * GET Payment/Contracts/{paymentContractId}
+     * Get all payment contracts
+     * @param paymentContractId Search one by provided id (required)
+     * @return ApiResponse&lt;PaymentContractsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentContractsProductModel> paymentContractsGetByIdWithHttpInfo(String paymentContractId) throws ApiException {
+        Call call = paymentContractsGetByIdValidateBeforeCall(paymentContractId);
+        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET Payment/Contracts/{paymentContractId} (asynchronously)
+     * Get all payment contracts
+     * @param paymentContractId Search one by provided id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call paymentContractsGetByIdAsync(String paymentContractId, final ApiCallback<PaymentContractsProductModel> callback) throws ApiException {
+        Call call = paymentContractsGetByIdValidateBeforeCall(paymentContractId);
+        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for paymentContractsIdDelete
+     * @param paymentContractId Payment contract id (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call paymentContractsIdDeleteCall(String paymentContractId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts/{paymentContractId}"
+            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call paymentContractsIdDeleteValidateBeforeCall(String paymentContractId) throws ApiException {
+        // verify the required parameter 'paymentContractId' is set
+        if (paymentContractId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContractId' when calling paymentContractsIdDelete(Async)");
+        }
+
+        return paymentContractsIdDeleteCall(paymentContractId);
+    }
+
+    /**
+     * DELETE Payment/Contracts/{paymentContractId}
+     * Delete payment contract
+     * @param paymentContractId Payment contract id (required)
+     * @return List&lt;PaymentContractsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<PaymentContractsProductModel> paymentContractsIdDelete(String paymentContractId) throws ApiException {
+        ApiResponse<List<PaymentContractsProductModel>> resp = paymentContractsIdDeleteWithHttpInfo(paymentContractId);
+        return resp.getData();
+    }
+
+    /**
+     * DELETE Payment/Contracts/{paymentContractId}
+     * Delete payment contract
+     * @param paymentContractId Payment contract id (required)
+     * @return ApiResponse&lt;List&lt;PaymentContractsProductModel&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<PaymentContractsProductModel>> paymentContractsIdDeleteWithHttpInfo(String paymentContractId) throws ApiException {
+        Call call = paymentContractsIdDeleteValidateBeforeCall(paymentContractId);
+        Type localVarReturnType = new TypeToken<List<PaymentContractsProductModel>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * DELETE Payment/Contracts/{paymentContractId} (asynchronously)
+     * Delete payment contract
+     * @param paymentContractId Payment contract id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call paymentContractsIdDeleteAsync(String paymentContractId, final ApiCallback<List<PaymentContractsProductModel>> callback) throws ApiException {
+        Call call = paymentContractsIdDeleteValidateBeforeCall(paymentContractId);
+        Type localVarReturnType = new TypeToken<List<PaymentContractsProductModel>>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for paymentContractsIdPaymentMethodsGet
+     * @param paymentContractId Contract identifier (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call paymentContractsIdPaymentMethodsGetCall(String paymentContractId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts/{paymentContractId}/paymentMethods"
+            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call paymentContractsIdPaymentMethodsGetValidateBeforeCall(String paymentContractId) throws ApiException {
+        // verify the required parameter 'paymentContractId' is set
+        if (paymentContractId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContractId' when calling paymentContractsIdPaymentMethodsGet(Async)");
+        }
+
+        return paymentContractsIdPaymentMethodsGetCall(paymentContractId);
+    }
+
+    /**
+     * GET Payment/Contracts/{paymentContractId}/paymentMethods
+     * Get available payment methods for given contract
+     * @param paymentContractId Contract identifier (required)
+     * @return StringList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public StringList paymentContractsIdPaymentMethodsGet(String paymentContractId) throws ApiException {
+        ApiResponse<StringList> resp = paymentContractsIdPaymentMethodsGetWithHttpInfo(paymentContractId);
+        return resp.getData();
+    }
+
+    /**
+     * GET Payment/Contracts/{paymentContractId}/paymentMethods
+     * Get available payment methods for given contract
+     * @param paymentContractId Contract identifier (required)
+     * @return ApiResponse&lt;StringList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<StringList> paymentContractsIdPaymentMethodsGetWithHttpInfo(String paymentContractId) throws ApiException {
+        Call call = paymentContractsIdPaymentMethodsGetValidateBeforeCall(paymentContractId);
+        Type localVarReturnType = new TypeToken<StringList>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET Payment/Contracts/{paymentContractId}/paymentMethods (asynchronously)
+     * Get available payment methods for given contract
+     * @param paymentContractId Contract identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call paymentContractsIdPaymentMethodsGetAsync(String paymentContractId, final ApiCallback<StringList> callback) throws ApiException {
+        Call call = paymentContractsIdPaymentMethodsGetValidateBeforeCall(paymentContractId);
+        Type localVarReturnType = new TypeToken<StringList>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for paymentContractsIdPut
+     * @param paymentContractId Payment contract id (required)
+     * @param body Payment contracts properties
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call paymentContractsIdPutCall(String paymentContractId, PaymentContractsDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts/{paymentContractId}"
+            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call paymentContractsIdPutValidateBeforeCall(String paymentContractId, PaymentContractsDTO body) throws ApiException {
+        // verify the required parameter 'paymentContractId' is set
+        if (paymentContractId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContractId' when calling paymentContractsIdPut(Async)");
+        }
+
+        return paymentContractsIdPutCall(paymentContractId, body);
+    }
+
+    /**
+     * PUT Payment/Contracts/{paymentContractId}
+     * Update payment contract
+     * @param paymentContractId Payment contract id (required)
+     * @param body Payment contracts properties
+     * @return PaymentContractsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentContractsProductModel paymentContractsIdPut(String paymentContractId, PaymentContractsDTO body) throws ApiException {
+        ApiResponse<PaymentContractsProductModel> resp = paymentContractsIdPutWithHttpInfo(paymentContractId, body);
+        return resp.getData();
+    }
+
+    /**
+     * PUT Payment/Contracts/{paymentContractId}
+     * Update payment contract
+     * @param paymentContractId Payment contract id (required)
+     * @param body Payment contracts properties
+     * @return ApiResponse&lt;PaymentContractsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentContractsProductModel> paymentContractsIdPutWithHttpInfo(String paymentContractId, PaymentContractsDTO body) throws ApiException {
+        Call call = paymentContractsIdPutValidateBeforeCall(paymentContractId, body);
+        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * PUT Payment/Contracts/{paymentContractId} (asynchronously)
+     * Update payment contract
+     * @param paymentContractId Payment contract id (required)
+     * @param body Payment contracts properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call paymentContractsIdPutAsync(String paymentContractId, PaymentContractsDTO body, final ApiCallback<PaymentContractsProductModel> callback) throws ApiException {
+        Call call = paymentContractsIdPutValidateBeforeCall(paymentContractId, body);
+        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for paymentContractsPost
+     * @param body Payment contracts properties
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call paymentContractsPostCall(PaymentContractsDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call paymentContractsPostValidateBeforeCall(PaymentContractsDTO body) throws ApiException {
+
+        return paymentContractsPostCall(body);
+    }
+
+    /**
+     * POST Payment/Contracts
+     * Add new contract
+     * @param body Payment contracts properties
+     * @return PaymentContractsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentContractsProductModel paymentContractsPost(PaymentContractsDTO body) throws ApiException {
+        ApiResponse<PaymentContractsProductModel> resp = paymentContractsPostWithHttpInfo(body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Contracts
+     * Add new contract
+     * @param body Payment contracts properties
+     * @return ApiResponse&lt;PaymentContractsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentContractsProductModel> paymentContractsPostWithHttpInfo(PaymentContractsDTO body) throws ApiException {
+        Call call = paymentContractsPostValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Contracts (asynchronously)
+     * Add new contract
+     * @param body Payment contracts properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call paymentContractsPostAsync(PaymentContractsDTO body, final ApiCallback<PaymentContractsProductModel> callback) throws ApiException {
+        Call call = paymentContractsPostValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for requestId
+     * @param paymentContractId Contract identifier of the parent (required)
+     * @param body Payment contract request id properties
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call requestIdCall(String paymentContractId, PaymentContractsDTORequestId body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts/{paymentContractId}/requestId"
+            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call requestIdValidateBeforeCall(String paymentContractId, PaymentContractsDTORequestId body) throws ApiException {
+        // verify the required parameter 'paymentContractId' is set
+        if (paymentContractId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContractId' when calling requestId(Async)");
+        }
+
+        return requestIdCall(paymentContractId, body);
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/requestId
+     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
+     * @param paymentContractId Contract identifier of the parent (required)
+     * @param body Payment contract request id properties
+     * @return PaymentContractsRequestIdResult
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentContractsRequestIdResult requestId(String paymentContractId, PaymentContractsDTORequestId body) throws ApiException {
+        ApiResponse<PaymentContractsRequestIdResult> resp = requestIdWithHttpInfo(paymentContractId, body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/requestId
+     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
+     * @param paymentContractId Contract identifier of the parent (required)
+     * @param body Payment contract request id properties
+     * @return ApiResponse&lt;PaymentContractsRequestIdResult&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentContractsRequestIdResult> requestIdWithHttpInfo(String paymentContractId, PaymentContractsDTORequestId body) throws ApiException {
+        Call call = requestIdValidateBeforeCall(paymentContractId, body);
+        Type localVarReturnType = new TypeToken<PaymentContractsRequestIdResult>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/requestId (asynchronously)
+     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
+     * @param paymentContractId Contract identifier of the parent (required)
+     * @param body Payment contract request id properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call requestIdAsync(String paymentContractId, PaymentContractsDTORequestId body, final ApiCallback<PaymentContractsRequestIdResult> callback) throws ApiException {
+        Call call = requestIdValidateBeforeCall(paymentContractId, body);
+        Type localVarReturnType = new TypeToken<PaymentContractsRequestIdResult>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+}
