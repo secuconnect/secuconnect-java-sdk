@@ -73,11 +73,17 @@ public class CommonObjectsProvider {
     }
 
     public static PaymentContractsDTOClone prepareDataForClone() {
-        int  number = getRandomNumber();
+        int number = getRandomNumber();
 
         PaymentContractsDTOClone cloneData = new PaymentContractsDTOClone();
         cloneData.setProject("project_name 2017-05-15 #" + number);
         cloneData.setPayinAccount(false);
+
+        PaymentInformation paymentInformation = new PaymentInformation();
+        paymentInformation.setIban("DE89370400440532013000");
+        paymentInformation.setOwner("Test #1");
+
+        cloneData.setPaymentData(paymentInformation);
 
         return cloneData;
     }
@@ -128,7 +134,7 @@ public class CommonObjectsProvider {
 
     public static int getRandomNumber() {
         Random random = new Random();
-        int  number = random.nextInt(999999999) + 1;
+        int number = random.nextInt(999999999) + 1;
 
         return number;
     }

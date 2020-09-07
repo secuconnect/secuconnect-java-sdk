@@ -12,7 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -49,13 +49,11 @@ public class GeneralContractsApiTest {
         contractsApi = null;
         contractId = null;
     }
+
     /**
-     *
-     *
      * Get a list of payment customers
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getListTest() throws ApiException {
@@ -75,12 +73,9 @@ public class GeneralContractsApiTest {
     }
 
     /**
-     *
-     *
      * Get all payment customers
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getOneTest() throws ApiException {

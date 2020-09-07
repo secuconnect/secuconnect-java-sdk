@@ -8,7 +8,7 @@ public class StompResponseWithSmartTransactionsProductModel {
 
     public static StompResponseWithSmartTransactionsProductModel getStompResponseFromJson(String response) {
         Gson gson = new Gson();
-        return  gson.fromJson(response, StompResponseWithSmartTransactionsProductModel.class);
+        return gson.fromJson(response, StompResponseWithSmartTransactionsProductModel.class);
     }
 
     public SmartTransactionsProductModelForTests getData() {

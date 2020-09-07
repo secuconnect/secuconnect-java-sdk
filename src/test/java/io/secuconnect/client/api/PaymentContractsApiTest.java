@@ -16,7 +16,8 @@ import org.junit.Test;
 import static io.secuconnect.client.CommonObjectsProvider.prepareDataFoRequestId;
 import static io.secuconnect.client.CommonObjectsProvider.prepareDataForClone;
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 /**
  * API tests for PaymentContractsApi
@@ -58,7 +59,7 @@ public class PaymentContractsApiTest {
         paymentContractsDTORequestId = null;
         contractId = null;
     }
-    
+
     /**
      * Test case for cloning payment contract.
      */

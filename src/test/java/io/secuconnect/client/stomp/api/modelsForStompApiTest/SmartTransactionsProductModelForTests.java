@@ -111,6 +111,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Object of smart transaction
+     *
      * @return object
      **/
     public String getObject() {
@@ -128,6 +129,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Id of smart transaction
+     *
      * @return id
      **/
     public String getId() {
@@ -145,6 +147,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Status of smart transaction
+     *
      * @return status
      **/
     public String getStatus() {
@@ -162,6 +165,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Merchant
+     *
      * @return merchant
      **/
     public SmartTransactionsMerchant getMerchant() {
@@ -179,6 +183,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Contract
+     *
      * @return contract
      **/
     public ProductInstanceUID getContract() {
@@ -196,6 +201,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Marketplace contract
+     *
      * @return marketplaceContract
      **/
     public ProductInstanceUID getMarketplaceContract() {
@@ -213,6 +219,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Customer
+     *
      * @return customer
      **/
     public LoyaltyCustomersProductModel getCustomer() {
@@ -230,6 +237,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Check in
+     *
      * @return checkin
      **/
     public SmartTransactionsCheckin getCheckin() {
@@ -247,6 +255,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Merchant ref
+     *
      * @return merchantRef
      **/
     public String getMerchantRef() {
@@ -264,6 +273,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Transaction ref
+     *
      * @return transactionRef
      **/
     public String getTransactionRef() {
@@ -281,6 +291,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Store
+     *
      * @return store
      **/
     public ProductInstanceUID getStore() {
@@ -298,6 +309,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Device source
+     *
      * @return deviceSource
      **/
     public ProductInstanceUID getDeviceSource() {
@@ -315,6 +327,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Device destination
+     *
      * @return deviceDestination
      **/
     public ProductInstanceUID getDeviceDestination() {
@@ -327,6 +340,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Created at date
+     *
      * @return created
      **/
     public String getCreated() {
@@ -344,6 +358,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Updated at date
+     *
      * @return updated
      **/
     public String getUpdated() {
@@ -361,6 +376,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Receipt number
+     *
      * @return receiptNumber
      **/
     public Integer getReceiptNumber() {
@@ -386,6 +402,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Receipt
+     *
      * @return receipt
      **/
     public List<SmartTransactionsReceipt> getReceipt() {
@@ -403,6 +420,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Receipt merchant
+     *
      * @return receiptMerchant
      **/
     public String getReceiptMerchant() {
@@ -420,6 +438,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Receipt merchant print
+     *
      * @return receiptMerchantPrint
      **/
     public Boolean getReceiptMerchantPrint() {
@@ -437,6 +456,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Basket info
+     *
      * @return basketInfo
      **/
     public SmartTransactionsBasketInfo getBasketInfo() {
@@ -454,6 +474,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Basket
+     *
      * @return basket
      **/
     public SmartTransactionsBasket getBasket() {
@@ -479,6 +500,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Idents
+     *
      * @return idents
      **/
     public List<SmartTransactionsIdent> getIdents() {
@@ -496,6 +518,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Tax rate
+     *
      * @return taxRate
      **/
     public Integer getTaxRate() {
@@ -513,6 +536,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Tax amount
+     *
      * @return taxAmount
      **/
     public Integer getTaxAmount() {
@@ -530,6 +554,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Cashier
+     *
      * @return cashier
      **/
     public String getCashier() {
@@ -547,6 +572,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Market
+     *
      * @return market
      **/
     public String getMarket() {
@@ -564,6 +590,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Order option
+     *
      * @return orderOption
      **/
     public String getOrderOption() {
@@ -576,6 +603,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Product
+     *
      * @return product
      **/
     public String getProduct() {
@@ -593,6 +621,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Transaction id
+     *
      * @return transId
      **/
     public Integer getTransId() {
@@ -610,6 +639,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Payment method
+     *
      * @return paymentMethod
      **/
     public String getPaymentMethod() {
@@ -627,6 +657,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Transactions
+     *
      * @return transactions
      **/
     public ProductInstanceUID getTransactions() {
@@ -644,6 +675,7 @@ public class SmartTransactionsProductModelForTests {
 
     /**
      * Last visited page
+     *
      * @return lastVisitedPage
      **/
     public String getLastVisitedPage() {
@@ -664,37 +696,37 @@ public class SmartTransactionsProductModelForTests {
         }
         SmartTransactionsProductModelForTests smartTransactionsProductModel = (SmartTransactionsProductModelForTests) o;
         return Objects.equals(this.object, smartTransactionsProductModel.object) &&
-                Objects.equals(this.id, smartTransactionsProductModel.id) &&
-                Objects.equals(this.status, smartTransactionsProductModel.status) &&
-                Objects.equals(this.merchant, smartTransactionsProductModel.merchant) &&
-                Objects.equals(this.contract, smartTransactionsProductModel.contract) &&
-                Objects.equals(this.marketplaceContract, smartTransactionsProductModel.marketplaceContract) &&
-                Objects.equals(this.customer, smartTransactionsProductModel.customer) &&
-                Objects.equals(this.checkin, smartTransactionsProductModel.checkin) &&
-                Objects.equals(this.merchantRef, smartTransactionsProductModel.merchantRef) &&
-                Objects.equals(this.transactionRef, smartTransactionsProductModel.transactionRef) &&
-                Objects.equals(this.store, smartTransactionsProductModel.store) &&
-                Objects.equals(this.deviceSource, smartTransactionsProductModel.deviceSource) &&
-                Objects.equals(this.deviceDestination, smartTransactionsProductModel.deviceDestination) &&
-                Objects.equals(this.created, smartTransactionsProductModel.created) &&
-                Objects.equals(this.updated, smartTransactionsProductModel.updated) &&
-                Objects.equals(this.receiptNumber, smartTransactionsProductModel.receiptNumber) &&
-                Objects.equals(this.receipt, smartTransactionsProductModel.receipt) &&
-                Objects.equals(this.receiptMerchant, smartTransactionsProductModel.receiptMerchant) &&
-                Objects.equals(this.receiptMerchantPrint, smartTransactionsProductModel.receiptMerchantPrint) &&
-                Objects.equals(this.basketInfo, smartTransactionsProductModel.basketInfo) &&
-                Objects.equals(this.basket, smartTransactionsProductModel.basket) &&
-                Objects.equals(this.idents, smartTransactionsProductModel.idents) &&
-                Objects.equals(this.taxRate, smartTransactionsProductModel.taxRate) &&
-                Objects.equals(this.taxAmount, smartTransactionsProductModel.taxAmount) &&
-                Objects.equals(this.cashier, smartTransactionsProductModel.cashier) &&
-                Objects.equals(this.market, smartTransactionsProductModel.market) &&
-                Objects.equals(this.orderOption, smartTransactionsProductModel.orderOption) &&
-                Objects.equals(this.product, smartTransactionsProductModel.product) &&
-                Objects.equals(this.transId, smartTransactionsProductModel.transId) &&
-                Objects.equals(this.paymentMethod, smartTransactionsProductModel.paymentMethod) &&
-                Objects.equals(this.transactions, smartTransactionsProductModel.transactions) &&
-                Objects.equals(this.lastVisitedPage, smartTransactionsProductModel.lastVisitedPage);
+            Objects.equals(this.id, smartTransactionsProductModel.id) &&
+            Objects.equals(this.status, smartTransactionsProductModel.status) &&
+            Objects.equals(this.merchant, smartTransactionsProductModel.merchant) &&
+            Objects.equals(this.contract, smartTransactionsProductModel.contract) &&
+            Objects.equals(this.marketplaceContract, smartTransactionsProductModel.marketplaceContract) &&
+            Objects.equals(this.customer, smartTransactionsProductModel.customer) &&
+            Objects.equals(this.checkin, smartTransactionsProductModel.checkin) &&
+            Objects.equals(this.merchantRef, smartTransactionsProductModel.merchantRef) &&
+            Objects.equals(this.transactionRef, smartTransactionsProductModel.transactionRef) &&
+            Objects.equals(this.store, smartTransactionsProductModel.store) &&
+            Objects.equals(this.deviceSource, smartTransactionsProductModel.deviceSource) &&
+            Objects.equals(this.deviceDestination, smartTransactionsProductModel.deviceDestination) &&
+            Objects.equals(this.created, smartTransactionsProductModel.created) &&
+            Objects.equals(this.updated, smartTransactionsProductModel.updated) &&
+            Objects.equals(this.receiptNumber, smartTransactionsProductModel.receiptNumber) &&
+            Objects.equals(this.receipt, smartTransactionsProductModel.receipt) &&
+            Objects.equals(this.receiptMerchant, smartTransactionsProductModel.receiptMerchant) &&
+            Objects.equals(this.receiptMerchantPrint, smartTransactionsProductModel.receiptMerchantPrint) &&
+            Objects.equals(this.basketInfo, smartTransactionsProductModel.basketInfo) &&
+            Objects.equals(this.basket, smartTransactionsProductModel.basket) &&
+            Objects.equals(this.idents, smartTransactionsProductModel.idents) &&
+            Objects.equals(this.taxRate, smartTransactionsProductModel.taxRate) &&
+            Objects.equals(this.taxAmount, smartTransactionsProductModel.taxAmount) &&
+            Objects.equals(this.cashier, smartTransactionsProductModel.cashier) &&
+            Objects.equals(this.market, smartTransactionsProductModel.market) &&
+            Objects.equals(this.orderOption, smartTransactionsProductModel.orderOption) &&
+            Objects.equals(this.product, smartTransactionsProductModel.product) &&
+            Objects.equals(this.transId, smartTransactionsProductModel.transId) &&
+            Objects.equals(this.paymentMethod, smartTransactionsProductModel.paymentMethod) &&
+            Objects.equals(this.transactions, smartTransactionsProductModel.transactions) &&
+            Objects.equals(this.lastVisitedPage, smartTransactionsProductModel.lastVisitedPage);
     }
 
     @Override

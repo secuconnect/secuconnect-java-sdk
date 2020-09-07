@@ -21,6 +21,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [2.2.0] - 2020-09-07
 
+### Security
+- Update dependencies to the latest versions.
+
 ### Added
 - `Api.LoyaltyCardgroupsApi.getCardgroupsByMerchantId()`
 - `Api.PaymentTransactionsApi.addTransaction()`
