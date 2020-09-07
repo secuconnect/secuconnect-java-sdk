@@ -24,6 +24,9 @@ public class SecupayTransactionProductDTO {
   @SerializedName("purpose")
   private String purpose = null;
 
+  @SerializedName("payment_methods")
+  private List<String> paymentMethods = null;
+
   @SerializedName("order_id")
   private String orderId = null;
 
@@ -109,6 +112,31 @@ public class SecupayTransactionProductDTO {
 
   public void setPurpose(String purpose) {
     this.purpose = purpose;
+  }
+
+  public SecupayTransactionProductDTO paymentMethods(List<String> paymentMethods) {
+    this.paymentMethods = paymentMethods;
+    return this;
+  }
+
+  public SecupayTransactionProductDTO addPaymentMethodsItem(String paymentMethodsItem) {
+    if (this.paymentMethods == null) {
+      this.paymentMethods = new ArrayList<String>();
+    }
+    this.paymentMethods.add(paymentMethodsItem);
+    return this;
+  }
+
+   /**
+   * payment methods
+   * @return paymentMethods
+  **/
+  public List<String> getPaymentMethods() {
+    return paymentMethods;
+  }
+
+  public void setPaymentMethods(List<String> paymentMethods) {
+    this.paymentMethods = paymentMethods;
   }
 
   public SecupayTransactionProductDTO orderId(String orderId) {
@@ -335,6 +363,7 @@ public class SecupayTransactionProductDTO {
     return Objects.equals(this.amount, secupayTransactionProductDTO.amount) &&
         Objects.equals(this.currency, secupayTransactionProductDTO.currency) &&
         Objects.equals(this.purpose, secupayTransactionProductDTO.purpose) &&
+        Objects.equals(this.paymentMethods, secupayTransactionProductDTO.paymentMethods) &&
         Objects.equals(this.orderId, secupayTransactionProductDTO.orderId) &&
         Objects.equals(this.basket, secupayTransactionProductDTO.basket) &&
         Objects.equals(this.accrual, secupayTransactionProductDTO.accrual) &&
@@ -351,7 +380,7 @@ public class SecupayTransactionProductDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, currency, purpose, orderId, basket, accrual, paymentAction, customer, redirectUrl, contract, container, optData, subscription, demo, experience);
+    return Objects.hash(amount, currency, purpose, paymentMethods, orderId, basket, accrual, paymentAction, customer, redirectUrl, contract, container, optData, subscription, demo, experience);
   }
 
   @Override
@@ -362,6 +391,7 @@ public class SecupayTransactionProductDTO {
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
+    sb.append("    paymentMethods: ").append(toIndentedString(paymentMethods)).append("\n");
     sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     sb.append("    basket: ").append(toIndentedString(basket)).append("\n");
     sb.append("    accrual: ").append(toIndentedString(accrual)).append("\n");

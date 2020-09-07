@@ -13,11 +13,8 @@ import java.io.IOException;
 import io.secuconnect.client.model.ProductExceptionPayload;
 import io.secuconnect.client.model.SmartDeviceUserPin;
 import io.secuconnect.client.model.SmartDevicesDTO;
-import io.secuconnect.client.model.SmartDevicesDTOPrepaidTid;
-import io.secuconnect.client.model.SmartDevicesDTOSecubaseConfig;
 import io.secuconnect.client.model.SmartDevicesList;
 import io.secuconnect.client.model.SmartDevicesProductModel;
-import io.secuconnect.client.model.SmartDevicesSecubaseConfig;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -154,250 +151,6 @@ public class SmartDevicesApi {
         }
 
         com.squareup.okhttp.Call call = addDeviceValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for createPrepaidTid
-     * @param smartDeviceId Smart device id (required)
-     * @param body Prepaid tid properties
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call createPrepaidTidCall(String smartDeviceId, SmartDevicesDTOPrepaidTid body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
-        
-        // create path and map variables
-        String localVarPath = "/Smart/Devices/{smartDeviceId}/createPrepaidTid"
-            .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createPrepaidTidValidateBeforeCall(String smartDeviceId, SmartDevicesDTOPrepaidTid body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'smartDeviceId' is set
-        if (smartDeviceId == null) {
-            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling createPrepaidTid(Async)");
-        }
-        
-        com.squareup.okhttp.Call call = createPrepaidTidCall(smartDeviceId, body, progressListener, progressRequestListener);
-        return call;
-    }
-
-    /**
-     * POST Smart/Devices/{smartDeviceId}/createPrepaidTid
-     * Create prepaid tid
-     * @param smartDeviceId Smart device id (required)
-     * @param body Prepaid tid properties
-     * @return SmartDevicesProductModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public SmartDevicesProductModel createPrepaidTid(String smartDeviceId, SmartDevicesDTOPrepaidTid body) throws ApiException {
-        ApiResponse<SmartDevicesProductModel> resp = createPrepaidTidWithHttpInfo(smartDeviceId, body);
-        return resp.getData();
-    }
-
-    /**
-     * POST Smart/Devices/{smartDeviceId}/createPrepaidTid
-     * Create prepaid tid
-     * @param smartDeviceId Smart device id (required)
-     * @param body Prepaid tid properties
-     * @return ApiResponse&lt;SmartDevicesProductModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<SmartDevicesProductModel> createPrepaidTidWithHttpInfo(String smartDeviceId, SmartDevicesDTOPrepaidTid body) throws ApiException {
-        com.squareup.okhttp.Call call = createPrepaidTidValidateBeforeCall(smartDeviceId, body, null, null);
-        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * POST Smart/Devices/{smartDeviceId}/createPrepaidTid (asynchronously)
-     * Create prepaid tid
-     * @param smartDeviceId Smart device id (required)
-     * @param body Prepaid tid properties
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call createPrepaidTidAsync(String smartDeviceId, SmartDevicesDTOPrepaidTid body, final ApiCallback<SmartDevicesProductModel> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = createPrepaidTidValidateBeforeCall(smartDeviceId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for createVirtualDevice
-     * @param smartDeviceId Smart device id (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call createVirtualDeviceCall(String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/Smart/Devices/{smartDeviceId}/createVirtualDevice"
-            .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createVirtualDeviceValidateBeforeCall(String smartDeviceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'smartDeviceId' is set
-        if (smartDeviceId == null) {
-            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling createVirtualDevice(Async)");
-        }
-        
-        com.squareup.okhttp.Call call = createVirtualDeviceCall(smartDeviceId, progressListener, progressRequestListener);
-        return call;
-    }
-
-    /**
-     * POST Smart/Devices/{smartDeviceId}/createVirtualDevice
-     * Create virtual device
-     * @param smartDeviceId Smart device id (required)
-     * @return SmartDevicesProductModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public SmartDevicesProductModel createVirtualDevice(String smartDeviceId) throws ApiException {
-        ApiResponse<SmartDevicesProductModel> resp = createVirtualDeviceWithHttpInfo(smartDeviceId);
-        return resp.getData();
-    }
-
-    /**
-     * POST Smart/Devices/{smartDeviceId}/createVirtualDevice
-     * Create virtual device
-     * @param smartDeviceId Smart device id (required)
-     * @return ApiResponse&lt;SmartDevicesProductModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<SmartDevicesProductModel> createVirtualDeviceWithHttpInfo(String smartDeviceId) throws ApiException {
-        com.squareup.okhttp.Call call = createVirtualDeviceValidateBeforeCall(smartDeviceId, null, null);
-        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * POST Smart/Devices/{smartDeviceId}/createVirtualDevice (asynchronously)
-     * Create virtual device
-     * @param smartDeviceId Smart device id (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call createVirtualDeviceAsync(String smartDeviceId, final ApiCallback<SmartDevicesProductModel> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = createVirtualDeviceValidateBeforeCall(smartDeviceId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -666,7 +419,7 @@ public class SmartDevicesApi {
     /**
      * Build call for getRouting
      * @param smartDeviceId Smart device id (required)
-     * @param type Payment type (required)
+     * @param type Smart Device Type (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -732,41 +485,41 @@ public class SmartDevicesApi {
 
     /**
      * GET Smart/Devices/{smartDeviceId}/routing/type/{type}
-     * Get single routing
+     * Get requested smart device if it is assigned to a single routing
      * @param smartDeviceId Smart device id (required)
-     * @param type Payment type (required)
-     * @return SmartDevicesList
+     * @param type Smart Device Type (required)
+     * @return SmartDevicesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartDevicesList getRouting(String smartDeviceId, String type) throws ApiException {
-        ApiResponse<SmartDevicesList> resp = getRoutingWithHttpInfo(smartDeviceId, type);
+    public SmartDevicesProductModel getRouting(String smartDeviceId, String type) throws ApiException {
+        ApiResponse<SmartDevicesProductModel> resp = getRoutingWithHttpInfo(smartDeviceId, type);
         return resp.getData();
     }
 
     /**
      * GET Smart/Devices/{smartDeviceId}/routing/type/{type}
-     * Get single routing
+     * Get requested smart device if it is assigned to a single routing
      * @param smartDeviceId Smart device id (required)
-     * @param type Payment type (required)
-     * @return ApiResponse&lt;SmartDevicesList&gt;
+     * @param type Smart Device Type (required)
+     * @return ApiResponse&lt;SmartDevicesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartDevicesList> getRoutingWithHttpInfo(String smartDeviceId, String type) throws ApiException {
+    public ApiResponse<SmartDevicesProductModel> getRoutingWithHttpInfo(String smartDeviceId, String type) throws ApiException {
         com.squareup.okhttp.Call call = getRoutingValidateBeforeCall(smartDeviceId, type, null, null);
-        Type localVarReturnType = new TypeToken<SmartDevicesList>(){}.getType();
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * GET Smart/Devices/{smartDeviceId}/routing/type/{type} (asynchronously)
-     * Get single routing
+     * Get requested smart device if it is assigned to a single routing
      * @param smartDeviceId Smart device id (required)
-     * @param type Payment type (required)
+     * @param type Smart Device Type (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getRoutingAsync(String smartDeviceId, String type, final ApiCallback<SmartDevicesList> callback) throws ApiException {
+    public com.squareup.okhttp.Call getRoutingAsync(String smartDeviceId, String type, final ApiCallback<SmartDevicesProductModel> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -788,131 +541,7 @@ public class SmartDevicesApi {
         }
 
         com.squareup.okhttp.Call call = getRoutingValidateBeforeCall(smartDeviceId, type, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SmartDevicesList>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for getSecubaseConfig
-     * @param smartDeviceId Smart device id (required)
-     * @param body Secubase config properties
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getSecubaseConfigCall(String smartDeviceId, SmartDevicesDTOSecubaseConfig body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
-        
-        // create path and map variables
-        String localVarPath = "/Smart/Devices/{smartDeviceId}/getSecubaseConfig"
-            .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSecubaseConfigValidateBeforeCall(String smartDeviceId, SmartDevicesDTOSecubaseConfig body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        // verify the required parameter 'smartDeviceId' is set
-        if (smartDeviceId == null) {
-            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling getSecubaseConfig(Async)");
-        }
-        
-        com.squareup.okhttp.Call call = getSecubaseConfigCall(smartDeviceId, body, progressListener, progressRequestListener);
-        return call;
-    }
-
-    /**
-     * POST Smart/Devices/{smartDeviceId}/getSecubaseConfig
-     * Get secubase config
-     * @param smartDeviceId Smart device id (required)
-     * @param body Secubase config properties
-     * @return SmartDevicesSecubaseConfig
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public SmartDevicesSecubaseConfig getSecubaseConfig(String smartDeviceId, SmartDevicesDTOSecubaseConfig body) throws ApiException {
-        ApiResponse<SmartDevicesSecubaseConfig> resp = getSecubaseConfigWithHttpInfo(smartDeviceId, body);
-        return resp.getData();
-    }
-
-    /**
-     * POST Smart/Devices/{smartDeviceId}/getSecubaseConfig
-     * Get secubase config
-     * @param smartDeviceId Smart device id (required)
-     * @param body Secubase config properties
-     * @return ApiResponse&lt;SmartDevicesSecubaseConfig&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<SmartDevicesSecubaseConfig> getSecubaseConfigWithHttpInfo(String smartDeviceId, SmartDevicesDTOSecubaseConfig body) throws ApiException {
-        com.squareup.okhttp.Call call = getSecubaseConfigValidateBeforeCall(smartDeviceId, body, null, null);
-        Type localVarReturnType = new TypeToken<SmartDevicesSecubaseConfig>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * POST Smart/Devices/{smartDeviceId}/getSecubaseConfig (asynchronously)
-     * Get secubase config
-     * @param smartDeviceId Smart device id (required)
-     * @param body Secubase config properties
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getSecubaseConfigAsync(String smartDeviceId, SmartDevicesDTOSecubaseConfig body, final ApiCallback<SmartDevicesSecubaseConfig> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getSecubaseConfigValidateBeforeCall(smartDeviceId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SmartDevicesSecubaseConfig>(){}.getType();
+        Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1104,7 +733,7 @@ public class SmartDevicesApi {
 
     /**
      * PUT /Smart/Devices/{smartDeviceId}/pin
-     * Create new smart device
+     * Update Smart Device Pin to authenticate device
      * @param smartDeviceId Smart device id (required)
      * @param body Smart device properties
      * @return SmartDevicesProductModel
@@ -1117,7 +746,7 @@ public class SmartDevicesApi {
 
     /**
      * PUT /Smart/Devices/{smartDeviceId}/pin
-     * Create new smart device
+     * Update Smart Device Pin to authenticate device
      * @param smartDeviceId Smart device id (required)
      * @param body Smart device properties
      * @return ApiResponse&lt;SmartDevicesProductModel&gt;
@@ -1131,7 +760,7 @@ public class SmartDevicesApi {
 
     /**
      * PUT /Smart/Devices/{smartDeviceId}/pin (asynchronously)
-     * Create new smart device
+     * Update Smart Device Pin to authenticate device
      * @param smartDeviceId Smart device id (required)
      * @param body Smart device properties
      * @param callback The callback to be executed when the API call finishes

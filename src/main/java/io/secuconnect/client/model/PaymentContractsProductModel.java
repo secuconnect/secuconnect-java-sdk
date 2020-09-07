@@ -2,6 +2,7 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.PaymentInformation;
 import io.secuconnect.client.model.ProductInstanceUID;
 import java.util.Objects;
 
@@ -11,6 +12,9 @@ import java.util.Objects;
 public class PaymentContractsProductModel extends BaseProductModel {
   @SerializedName("parent")
   private ProductInstanceUID parent = null;
+
+  @SerializedName("pay_in_account")
+  private PaymentInformation payInAccount = null;
 
   @SerializedName("demo")
   private Boolean demo = null;
@@ -36,6 +40,23 @@ public class PaymentContractsProductModel extends BaseProductModel {
 
   public void setParent(ProductInstanceUID parent) {
     this.parent = parent;
+  }
+
+  public PaymentContractsProductModel payInAccount(PaymentInformation payInAccount) {
+    this.payInAccount = payInAccount;
+    return this;
+  }
+
+   /**
+   * Get payInAccount
+   * @return payInAccount
+  **/
+  public PaymentInformation getPayInAccount() {
+    return payInAccount;
+  }
+
+  public void setPayInAccount(PaymentInformation payInAccount) {
+    this.payInAccount = payInAccount;
   }
 
   public PaymentContractsProductModel demo(Boolean demo) {
@@ -99,6 +120,7 @@ public class PaymentContractsProductModel extends BaseProductModel {
     }
     PaymentContractsProductModel paymentContractsProductModel = (PaymentContractsProductModel) o;
     return Objects.equals(this.parent, paymentContractsProductModel.parent) &&
+        Objects.equals(this.payInAccount, paymentContractsProductModel.payInAccount) &&
         Objects.equals(this.demo, paymentContractsProductModel.demo) &&
         Objects.equals(this.created, paymentContractsProductModel.created) &&
         Objects.equals(this.updated, paymentContractsProductModel.updated) &&
@@ -107,7 +129,7 @@ public class PaymentContractsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(parent, demo, created, updated, super.hashCode());
+    return Objects.hash(parent, payInAccount, demo, created, updated, super.hashCode());
   }
 
   @Override
@@ -116,6 +138,7 @@ public class PaymentContractsProductModel extends BaseProductModel {
     sb.append("class PaymentContractsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
+    sb.append("    payInAccount: ").append(toIndentedString(payInAccount)).append("\n");
     sb.append("    demo: ").append(toIndentedString(demo)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");

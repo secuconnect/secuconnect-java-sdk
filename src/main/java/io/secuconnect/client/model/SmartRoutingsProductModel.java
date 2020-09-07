@@ -19,14 +19,14 @@ public class SmartRoutingsProductModel extends BaseProductModel {
   @SerializedName("store")
   private Store store = null;
 
+  @SerializedName("description")
+  private String description = null;
+
   @SerializedName("created")
   private String created = null;
 
   @SerializedName("updated")
   private String updated = null;
-
-  @SerializedName("description")
-  private String description = null;
 
   @SerializedName("assign")
   private List<SmartRoutingsAssign> assign = null;
@@ -65,6 +65,23 @@ public class SmartRoutingsProductModel extends BaseProductModel {
     this.store = store;
   }
 
+  public SmartRoutingsProductModel description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Description
+   * @return description
+  **/
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
   public SmartRoutingsProductModel created(String created) {
     this.created = created;
     return this;
@@ -97,23 +114,6 @@ public class SmartRoutingsProductModel extends BaseProductModel {
 
   public void setUpdated(String updated) {
     this.updated = updated;
-  }
-
-  public SmartRoutingsProductModel description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Description
-   * @return description
-  **/
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
   }
 
   public SmartRoutingsProductModel assign(List<SmartRoutingsAssign> assign) {
@@ -152,16 +152,16 @@ public class SmartRoutingsProductModel extends BaseProductModel {
     SmartRoutingsProductModel smartRoutingsProductModel = (SmartRoutingsProductModel) o;
     return Objects.equals(this.merchant, smartRoutingsProductModel.merchant) &&
         Objects.equals(this.store, smartRoutingsProductModel.store) &&
+        Objects.equals(this.description, smartRoutingsProductModel.description) &&
         Objects.equals(this.created, smartRoutingsProductModel.created) &&
         Objects.equals(this.updated, smartRoutingsProductModel.updated) &&
-        Objects.equals(this.description, smartRoutingsProductModel.description) &&
         Objects.equals(this.assign, smartRoutingsProductModel.assign) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, store, created, updated, description, assign, super.hashCode());
+    return Objects.hash(merchant, store, description, created, updated, assign, super.hashCode());
   }
 
   @Override
@@ -171,9 +171,9 @@ public class SmartRoutingsProductModel extends BaseProductModel {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    assign: ").append(toIndentedString(assign)).append("\n");
     sb.append("}");
     return sb.toString();

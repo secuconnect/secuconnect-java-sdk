@@ -2,7 +2,6 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.SmartTransactionsBasketProduct;
-import io.secuconnect.client.model.SmartTransactionsBasketText;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -13,9 +12,6 @@ import java.util.Objects;
 public class SmartTransactionsBasket {
   @SerializedName("products")
   private List<SmartTransactionsBasketProduct> products = null;
-
-  @SerializedName("texts")
-  private List<SmartTransactionsBasketText> texts = null;
 
   @SerializedName("type")
   private String type = null;
@@ -45,31 +41,6 @@ public class SmartTransactionsBasket {
     this.products = products;
   }
 
-  public SmartTransactionsBasket texts(List<SmartTransactionsBasketText> texts) {
-    this.texts = texts;
-    return this;
-  }
-
-  public SmartTransactionsBasket addTextsItem(SmartTransactionsBasketText textsItem) {
-    if (this.texts == null) {
-      this.texts = new ArrayList<SmartTransactionsBasketText>();
-    }
-    this.texts.add(textsItem);
-    return this;
-  }
-
-   /**
-   * Texts
-   * @return texts
-  **/
-  public List<SmartTransactionsBasketText> getTexts() {
-    return texts;
-  }
-
-  public void setTexts(List<SmartTransactionsBasketText> texts) {
-    this.texts = texts;
-  }
-
   public SmartTransactionsBasket type(String type) {
     this.type = type;
     return this;
@@ -97,13 +68,12 @@ public class SmartTransactionsBasket {
     }
     SmartTransactionsBasket smartTransactionsBasket = (SmartTransactionsBasket) o;
     return Objects.equals(this.products, smartTransactionsBasket.products) &&
-        Objects.equals(this.texts, smartTransactionsBasket.texts) &&
         Objects.equals(this.type, smartTransactionsBasket.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(products, texts, type);
+    return Objects.hash(products, type);
   }
 
   @Override
@@ -112,7 +82,6 @@ public class SmartTransactionsBasket {
     sb.append("class SmartTransactionsBasket {\n");
     
     sb.append("    products: ").append(toIndentedString(products)).append("\n");
-    sb.append("    texts: ").append(toIndentedString(texts)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();

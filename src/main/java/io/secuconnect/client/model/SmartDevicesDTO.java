@@ -1,25 +1,24 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
-import java.util.List;
+import io.secuconnect.client.model.SmartDevicesProducts;
 import java.util.Objects;
 
 /**
  * SmartDevicesDTO
  */
 public class SmartDevicesDTO {
-  @SerializedName("contract")
-  private String contract = null;
-
   @SerializedName("merchant")
   private String merchant = null;
 
   @SerializedName("store")
   private String store = null;
 
-  @SerializedName("terminal")
-  private String terminal = null;
+  @SerializedName("device")
+  private String device = null;
+
+  @SerializedName("contract")
+  private String contract = null;
 
   @SerializedName("vendor")
   private String vendor = null;
@@ -33,31 +32,17 @@ public class SmartDevicesDTO {
   @SerializedName("description")
   private String description = null;
 
-  @SerializedName("products")
-  private List<String> products = null;
+  @SerializedName("tid")
+  private String tid = null;
 
-  @SerializedName("base_version")
-  private String baseVersion = null;
+  @SerializedName("products")
+  private SmartDevicesProducts products = null;
 
   @SerializedName("terminal_type")
   private String terminalType = null;
 
-  public SmartDevicesDTO contract(String contract) {
-    this.contract = contract;
-    return this;
-  }
-
-   /**
-   * Contract
-   * @return contract
-  **/
-  public String getContract() {
-    return contract;
-  }
-
-  public void setContract(String contract) {
-    this.contract = contract;
-  }
+  @SerializedName("base_version")
+  private String baseVersion = null;
 
   public SmartDevicesDTO merchant(String merchant) {
     this.merchant = merchant;
@@ -93,21 +78,38 @@ public class SmartDevicesDTO {
     this.store = store;
   }
 
-  public SmartDevicesDTO terminal(String terminal) {
-    this.terminal = terminal;
+  public SmartDevicesDTO device(String device) {
+    this.device = device;
     return this;
   }
 
    /**
-   * Terminal
-   * @return terminal
+   * Device
+   * @return device
   **/
-  public String getTerminal() {
-    return terminal;
+  public String getDevice() {
+    return device;
   }
 
-  public void setTerminal(String terminal) {
-    this.terminal = terminal;
+  public void setDevice(String device) {
+    this.device = device;
+  }
+
+  public SmartDevicesDTO contract(String contract) {
+    this.contract = contract;
+    return this;
+  }
+
+   /**
+   * Contract
+   * @return contract
+  **/
+  public String getContract() {
+    return contract;
+  }
+
+  public void setContract(String contract) {
+    this.contract = contract;
   }
 
   public SmartDevicesDTO vendor(String vendor) {
@@ -178,46 +180,38 @@ public class SmartDevicesDTO {
     this.description = description;
   }
 
-  public SmartDevicesDTO products(List<String> products) {
-    this.products = products;
-    return this;
-  }
-
-  public SmartDevicesDTO addProductsItem(String productsItem) {
-    if (this.products == null) {
-      this.products = new ArrayList<String>();
-    }
-    this.products.add(productsItem);
+  public SmartDevicesDTO tid(String tid) {
+    this.tid = tid;
     return this;
   }
 
    /**
-   * Products
+   * TID
+   * @return tid
+  **/
+  public String getTid() {
+    return tid;
+  }
+
+  public void setTid(String tid) {
+    this.tid = tid;
+  }
+
+  public SmartDevicesDTO products(SmartDevicesProducts products) {
+    this.products = products;
+    return this;
+  }
+
+   /**
+   * Get products
    * @return products
   **/
-  public List<String> getProducts() {
+  public SmartDevicesProducts getProducts() {
     return products;
   }
 
-  public void setProducts(List<String> products) {
+  public void setProducts(SmartDevicesProducts products) {
     this.products = products;
-  }
-
-  public SmartDevicesDTO baseVersion(String baseVersion) {
-    this.baseVersion = baseVersion;
-    return this;
-  }
-
-   /**
-   * Base version
-   * @return baseVersion
-  **/
-  public String getBaseVersion() {
-    return baseVersion;
-  }
-
-  public void setBaseVersion(String baseVersion) {
-    this.baseVersion = baseVersion;
   }
 
   public SmartDevicesDTO terminalType(String terminalType) {
@@ -237,6 +231,23 @@ public class SmartDevicesDTO {
     this.terminalType = terminalType;
   }
 
+  public SmartDevicesDTO baseVersion(String baseVersion) {
+    this.baseVersion = baseVersion;
+    return this;
+  }
+
+   /**
+   * Base version
+   * @return baseVersion
+  **/
+  public String getBaseVersion() {
+    return baseVersion;
+  }
+
+  public void setBaseVersion(String baseVersion) {
+    this.baseVersion = baseVersion;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -246,22 +257,23 @@ public class SmartDevicesDTO {
       return false;
     }
     SmartDevicesDTO smartDevicesDTO = (SmartDevicesDTO) o;
-    return Objects.equals(this.contract, smartDevicesDTO.contract) &&
-        Objects.equals(this.merchant, smartDevicesDTO.merchant) &&
+    return Objects.equals(this.merchant, smartDevicesDTO.merchant) &&
         Objects.equals(this.store, smartDevicesDTO.store) &&
-        Objects.equals(this.terminal, smartDevicesDTO.terminal) &&
+        Objects.equals(this.device, smartDevicesDTO.device) &&
+        Objects.equals(this.contract, smartDevicesDTO.contract) &&
         Objects.equals(this.vendor, smartDevicesDTO.vendor) &&
         Objects.equals(this.vendorUid, smartDevicesDTO.vendorUid) &&
         Objects.equals(this.type, smartDevicesDTO.type) &&
         Objects.equals(this.description, smartDevicesDTO.description) &&
+        Objects.equals(this.tid, smartDevicesDTO.tid) &&
         Objects.equals(this.products, smartDevicesDTO.products) &&
-        Objects.equals(this.baseVersion, smartDevicesDTO.baseVersion) &&
-        Objects.equals(this.terminalType, smartDevicesDTO.terminalType);
+        Objects.equals(this.terminalType, smartDevicesDTO.terminalType) &&
+        Objects.equals(this.baseVersion, smartDevicesDTO.baseVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contract, merchant, store, terminal, vendor, vendorUid, type, description, products, baseVersion, terminalType);
+    return Objects.hash(merchant, store, device, contract, vendor, vendorUid, type, description, tid, products, terminalType, baseVersion);
   }
 
   @Override
@@ -269,17 +281,18 @@ public class SmartDevicesDTO {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartDevicesDTO {\n");
     
-    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
-    sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
+    sb.append("    device: ").append(toIndentedString(device)).append("\n");
+    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    vendor: ").append(toIndentedString(vendor)).append("\n");
     sb.append("    vendorUid: ").append(toIndentedString(vendorUid)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    tid: ").append(toIndentedString(tid)).append("\n");
     sb.append("    products: ").append(toIndentedString(products)).append("\n");
-    sb.append("    baseVersion: ").append(toIndentedString(baseVersion)).append("\n");
     sb.append("    terminalType: ").append(toIndentedString(terminalType)).append("\n");
+    sb.append("    baseVersion: ").append(toIndentedString(baseVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -4,9 +4,12 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsShipmentDetails
+ * SmartTransactionsShippingModel
  */
-public class SmartTransactionsShipmentDetails {
+public class SmartTransactionsShippingModel implements OneOfSmartTransactionsDeliveryOptionsModel {
+  @SerializedName("type")
+  private String type = null;
+
   @SerializedName("shipped_at")
   private String shippedAt = null;
 
@@ -19,7 +22,24 @@ public class SmartTransactionsShipmentDetails {
   @SerializedName("invoice_number")
   private String invoiceNumber = null;
 
-  public SmartTransactionsShipmentDetails shippedAt(String shippedAt) {
+  public SmartTransactionsShippingModel type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Type of delivery option
+   * @return type
+  **/
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public SmartTransactionsShippingModel shippedAt(String shippedAt) {
     this.shippedAt = shippedAt;
     return this;
   }
@@ -36,7 +56,7 @@ public class SmartTransactionsShipmentDetails {
     this.shippedAt = shippedAt;
   }
 
-  public SmartTransactionsShipmentDetails shippedBy(String shippedBy) {
+  public SmartTransactionsShippingModel shippedBy(String shippedBy) {
     this.shippedBy = shippedBy;
     return this;
   }
@@ -53,7 +73,7 @@ public class SmartTransactionsShipmentDetails {
     this.shippedBy = shippedBy;
   }
 
-  public SmartTransactionsShipmentDetails trackingCode(String trackingCode) {
+  public SmartTransactionsShippingModel trackingCode(String trackingCode) {
     this.trackingCode = trackingCode;
     return this;
   }
@@ -70,7 +90,7 @@ public class SmartTransactionsShipmentDetails {
     this.trackingCode = trackingCode;
   }
 
-  public SmartTransactionsShipmentDetails invoiceNumber(String invoiceNumber) {
+  public SmartTransactionsShippingModel invoiceNumber(String invoiceNumber) {
     this.invoiceNumber = invoiceNumber;
     return this;
   }
@@ -95,23 +115,25 @@ public class SmartTransactionsShipmentDetails {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SmartTransactionsShipmentDetails smartTransactionsShipmentDetails = (SmartTransactionsShipmentDetails) o;
-    return Objects.equals(this.shippedAt, smartTransactionsShipmentDetails.shippedAt) &&
-        Objects.equals(this.shippedBy, smartTransactionsShipmentDetails.shippedBy) &&
-        Objects.equals(this.trackingCode, smartTransactionsShipmentDetails.trackingCode) &&
-        Objects.equals(this.invoiceNumber, smartTransactionsShipmentDetails.invoiceNumber);
+    SmartTransactionsShippingModel smartTransactionsShippingModel = (SmartTransactionsShippingModel) o;
+    return Objects.equals(this.type, smartTransactionsShippingModel.type) &&
+        Objects.equals(this.shippedAt, smartTransactionsShippingModel.shippedAt) &&
+        Objects.equals(this.shippedBy, smartTransactionsShippingModel.shippedBy) &&
+        Objects.equals(this.trackingCode, smartTransactionsShippingModel.trackingCode) &&
+        Objects.equals(this.invoiceNumber, smartTransactionsShippingModel.invoiceNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(shippedAt, shippedBy, trackingCode, invoiceNumber);
+    return Objects.hash(type, shippedAt, shippedBy, trackingCode, invoiceNumber);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SmartTransactionsShipmentDetails {\n");
+    sb.append("class SmartTransactionsShippingModel {\n");
     
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    shippedAt: ").append(toIndentedString(shippedAt)).append("\n");
     sb.append("    shippedBy: ").append(toIndentedString(shippedBy)).append("\n");
     sb.append("    trackingCode: ").append(toIndentedString(trackingCode)).append("\n");

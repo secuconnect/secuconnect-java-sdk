@@ -2,6 +2,7 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.PaymentTransactionsProductModel;
 import io.secuconnect.client.model.ProductInstanceUID;
@@ -11,9 +12,7 @@ import io.secuconnect.client.model.SmartTransactionsCheckin;
 import io.secuconnect.client.model.SmartTransactionsCheckoutLinks;
 import io.secuconnect.client.model.SmartTransactionsIdent;
 import io.secuconnect.client.model.SmartTransactionsMerchant;
-import io.secuconnect.client.model.SmartTransactionsPickupOptions;
 import io.secuconnect.client.model.SmartTransactionsReceipt;
-import io.secuconnect.client.model.SmartTransactionsShipmentDetails;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -100,14 +99,8 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   @SerializedName("market")
   private String market = null;
 
-  @SerializedName("order_option")
-  private String orderOption = null;
-
-  @SerializedName("pickup_options")
-  private SmartTransactionsPickupOptions pickupOptions = null;
-
-  @SerializedName("shipment_details")
-  private SmartTransactionsShipmentDetails shipmentDetails = null;
+  @SerializedName("delivery_options")
+  private OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
 
   @SerializedName("product")
   private String product = null;
@@ -129,6 +122,9 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("checkout_links")
   private SmartTransactionsCheckoutLinks checkoutLinks = null;
+
+  @SerializedName("intent")
+  private String intent = null;
 
   @SerializedName("iframe_url")
   private String iframeUrl = null;
@@ -599,55 +595,21 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.market = market;
   }
 
-  public SmartTransactionsProductModel orderOption(String orderOption) {
-    this.orderOption = orderOption;
+  public SmartTransactionsProductModel deliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
+    this.deliveryOptions = deliveryOptions;
     return this;
   }
 
    /**
-   * Order option
-   * @return orderOption
+   * Get deliveryOptions
+   * @return deliveryOptions
   **/
-  public String getOrderOption() {
-    return orderOption;
+  public OneOfSmartTransactionsDeliveryOptionsModel getDeliveryOptions() {
+    return deliveryOptions;
   }
 
-  public void setOrderOption(String orderOption) {
-    this.orderOption = orderOption;
-  }
-
-  public SmartTransactionsProductModel pickupOptions(SmartTransactionsPickupOptions pickupOptions) {
-    this.pickupOptions = pickupOptions;
-    return this;
-  }
-
-   /**
-   * Get pickupOptions
-   * @return pickupOptions
-  **/
-  public SmartTransactionsPickupOptions getPickupOptions() {
-    return pickupOptions;
-  }
-
-  public void setPickupOptions(SmartTransactionsPickupOptions pickupOptions) {
-    this.pickupOptions = pickupOptions;
-  }
-
-  public SmartTransactionsProductModel shipmentDetails(SmartTransactionsShipmentDetails shipmentDetails) {
-    this.shipmentDetails = shipmentDetails;
-    return this;
-  }
-
-   /**
-   * Get shipmentDetails
-   * @return shipmentDetails
-  **/
-  public SmartTransactionsShipmentDetails getShipmentDetails() {
-    return shipmentDetails;
-  }
-
-  public void setShipmentDetails(SmartTransactionsShipmentDetails shipmentDetails) {
-    this.shipmentDetails = shipmentDetails;
+  public void setDeliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
+    this.deliveryOptions = deliveryOptions;
   }
 
   public SmartTransactionsProductModel product(String product) {
@@ -777,6 +739,23 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.checkoutLinks = checkoutLinks;
   }
 
+  public SmartTransactionsProductModel intent(String intent) {
+    this.intent = intent;
+    return this;
+  }
+
+   /**
+   * intent of transaction
+   * @return intent
+  **/
+  public String getIntent() {
+    return intent;
+  }
+
+  public void setIntent(String intent) {
+    this.intent = intent;
+  }
+
   public SmartTransactionsProductModel iframeUrl(String iframeUrl) {
     this.iframeUrl = iframeUrl;
     return this;
@@ -829,9 +808,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.taxAmount, smartTransactionsProductModel.taxAmount) &&
         Objects.equals(this.cashier, smartTransactionsProductModel.cashier) &&
         Objects.equals(this.market, smartTransactionsProductModel.market) &&
-        Objects.equals(this.orderOption, smartTransactionsProductModel.orderOption) &&
-        Objects.equals(this.pickupOptions, smartTransactionsProductModel.pickupOptions) &&
-        Objects.equals(this.shipmentDetails, smartTransactionsProductModel.shipmentDetails) &&
+        Objects.equals(this.deliveryOptions, smartTransactionsProductModel.deliveryOptions) &&
         Objects.equals(this.product, smartTransactionsProductModel.product) &&
         Objects.equals(this.transId, smartTransactionsProductModel.transId) &&
         Objects.equals(this.paymentMethod, smartTransactionsProductModel.paymentMethod) &&
@@ -839,13 +816,14 @@ public class SmartTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.lastVisitedPage, smartTransactionsProductModel.lastVisitedPage) &&
         Objects.equals(this.isDemo, smartTransactionsProductModel.isDemo) &&
         Objects.equals(this.checkoutLinks, smartTransactionsProductModel.checkoutLinks) &&
+        Objects.equals(this.intent, smartTransactionsProductModel.intent) &&
         Objects.equals(this.iframeUrl, smartTransactionsProductModel.iframeUrl) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, orderOption, pickupOptions, shipmentDetails, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, iframeUrl, super.hashCode());
+    return Objects.hash(status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, super.hashCode());
   }
 
   @Override
@@ -879,9 +857,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
     sb.append("    cashier: ").append(toIndentedString(cashier)).append("\n");
     sb.append("    market: ").append(toIndentedString(market)).append("\n");
-    sb.append("    orderOption: ").append(toIndentedString(orderOption)).append("\n");
-    sb.append("    pickupOptions: ").append(toIndentedString(pickupOptions)).append("\n");
-    sb.append("    shipmentDetails: ").append(toIndentedString(shipmentDetails)).append("\n");
+    sb.append("    deliveryOptions: ").append(toIndentedString(deliveryOptions)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
@@ -889,6 +865,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     sb.append("    lastVisitedPage: ").append(toIndentedString(lastVisitedPage)).append("\n");
     sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");
     sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
+    sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
     sb.append("    iframeUrl: ").append(toIndentedString(iframeUrl)).append("\n");
     sb.append("}");
     return sb.toString();

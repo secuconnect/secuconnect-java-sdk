@@ -94,6 +94,9 @@ public class GeneralStoresProductModel extends BaseProductModel {
   @SerializedName("has_beacon")
   private Boolean hasBeacon = null;
 
+  @SerializedName("acceptance_point")
+  private Boolean acceptancePoint = null;
+
   public GeneralStoresProductModel idOld(String idOld) {
     this.idOld = idOld;
     return this;
@@ -584,6 +587,23 @@ public class GeneralStoresProductModel extends BaseProductModel {
     this.hasBeacon = hasBeacon;
   }
 
+  public GeneralStoresProductModel acceptancePoint(Boolean acceptancePoint) {
+    this.acceptancePoint = acceptancePoint;
+    return this;
+  }
+
+   /**
+   * Is Acceptance Point
+   * @return acceptancePoint
+  **/
+  public Boolean getAcceptancePoint() {
+    return acceptancePoint;
+  }
+
+  public void setAcceptancePoint(Boolean acceptancePoint) {
+    this.acceptancePoint = acceptancePoint;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -619,12 +639,13 @@ public class GeneralStoresProductModel extends BaseProductModel {
         Objects.equals(this.assignedBy, generalStoresProductModel.assignedBy) &&
         Objects.equals(this.invitedBy, generalStoresProductModel.invitedBy) &&
         Objects.equals(this.hasBeacon, generalStoresProductModel.hasBeacon) &&
+        Objects.equals(this.acceptancePoint, generalStoresProductModel.acceptancePoint) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(idOld, merchant, storeName, facebookId, source, key, hash, addressComponents, addressFormatted, phoneNumberFormatted, geometry, name, nameRaw, photoMain, photo, categoryMain, category, urlGoogleplus, urlWebsite, openHours, openNow, openTime, utcOffset, assignedBy, invitedBy, hasBeacon, super.hashCode());
+    return Objects.hash(idOld, merchant, storeName, facebookId, source, key, hash, addressComponents, addressFormatted, phoneNumberFormatted, geometry, name, nameRaw, photoMain, photo, categoryMain, category, urlGoogleplus, urlWebsite, openHours, openNow, openTime, utcOffset, assignedBy, invitedBy, hasBeacon, acceptancePoint, super.hashCode());
   }
 
   @Override
@@ -658,6 +679,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
     sb.append("    assignedBy: ").append(toIndentedString(assignedBy)).append("\n");
     sb.append("    invitedBy: ").append(toIndentedString(invitedBy)).append("\n");
     sb.append("    hasBeacon: ").append(toIndentedString(hasBeacon)).append("\n");
+    sb.append("    acceptancePoint: ").append(toIndentedString(acceptancePoint)).append("\n");
     sb.append("}");
     return sb.toString();
   }

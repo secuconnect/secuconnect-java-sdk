@@ -15,11 +15,11 @@ public class SmartDevicesProductModel extends BaseProductModel {
   @SerializedName("merchant")
   private ProductInstanceUID merchant = null;
 
-  @SerializedName("contract")
-  private ProductInstanceUID contract = null;
-
   @SerializedName("store")
   private Store store = null;
+
+  @SerializedName("contract")
+  private ProductInstanceUID contract = null;
 
   @SerializedName("vendor")
   private String vendor = null;
@@ -45,6 +45,9 @@ public class SmartDevicesProductModel extends BaseProductModel {
   @SerializedName("description")
   private String description = null;
 
+  @SerializedName("tid")
+  private String tid = null;
+
   @SerializedName("idle_screen_register")
   private String idleScreenRegister = null;
 
@@ -56,6 +59,9 @@ public class SmartDevicesProductModel extends BaseProductModel {
 
   @SerializedName("online")
   private Boolean online = null;
+
+  @SerializedName("refresh")
+  private Integer refresh = null;
 
   @SerializedName("terminal_type")
   private String terminalType = null;
@@ -80,23 +86,6 @@ public class SmartDevicesProductModel extends BaseProductModel {
     this.merchant = merchant;
   }
 
-  public SmartDevicesProductModel contract(ProductInstanceUID contract) {
-    this.contract = contract;
-    return this;
-  }
-
-   /**
-   * Get contract
-   * @return contract
-  **/
-  public ProductInstanceUID getContract() {
-    return contract;
-  }
-
-  public void setContract(ProductInstanceUID contract) {
-    this.contract = contract;
-  }
-
   public SmartDevicesProductModel store(Store store) {
     this.store = store;
     return this;
@@ -112,6 +101,23 @@ public class SmartDevicesProductModel extends BaseProductModel {
 
   public void setStore(Store store) {
     this.store = store;
+  }
+
+  public SmartDevicesProductModel contract(ProductInstanceUID contract) {
+    this.contract = contract;
+    return this;
+  }
+
+   /**
+   * Get contract
+   * @return contract
+  **/
+  public ProductInstanceUID getContract() {
+    return contract;
+  }
+
+  public void setContract(ProductInstanceUID contract) {
+    this.contract = contract;
   }
 
   public SmartDevicesProductModel vendor(String vendor) {
@@ -250,6 +256,23 @@ public class SmartDevicesProductModel extends BaseProductModel {
     this.description = description;
   }
 
+  public SmartDevicesProductModel tid(String tid) {
+    this.tid = tid;
+    return this;
+  }
+
+   /**
+   * TID
+   * @return tid
+  **/
+  public String getTid() {
+    return tid;
+  }
+
+  public void setTid(String tid) {
+    this.tid = tid;
+  }
+
   public SmartDevicesProductModel idleScreenRegister(String idleScreenRegister) {
     this.idleScreenRegister = idleScreenRegister;
     return this;
@@ -318,6 +341,23 @@ public class SmartDevicesProductModel extends BaseProductModel {
     this.online = online;
   }
 
+  public SmartDevicesProductModel refresh(Integer refresh) {
+    this.refresh = refresh;
+    return this;
+  }
+
+   /**
+   * Last refresh timestamp
+   * @return refresh
+  **/
+  public Integer getRefresh() {
+    return refresh;
+  }
+
+  public void setRefresh(Integer refresh) {
+    this.refresh = refresh;
+  }
+
   public SmartDevicesProductModel terminalType(String terminalType) {
     this.terminalType = terminalType;
     return this;
@@ -362,8 +402,8 @@ public class SmartDevicesProductModel extends BaseProductModel {
     }
     SmartDevicesProductModel smartDevicesProductModel = (SmartDevicesProductModel) o;
     return Objects.equals(this.merchant, smartDevicesProductModel.merchant) &&
-        Objects.equals(this.contract, smartDevicesProductModel.contract) &&
         Objects.equals(this.store, smartDevicesProductModel.store) &&
+        Objects.equals(this.contract, smartDevicesProductModel.contract) &&
         Objects.equals(this.vendor, smartDevicesProductModel.vendor) &&
         Objects.equals(this.vendorUid, smartDevicesProductModel.vendorUid) &&
         Objects.equals(this.type, smartDevicesProductModel.type) &&
@@ -372,10 +412,12 @@ public class SmartDevicesProductModel extends BaseProductModel {
         Objects.equals(this.userPin, smartDevicesProductModel.userPin) &&
         Objects.equals(this.products, smartDevicesProductModel.products) &&
         Objects.equals(this.description, smartDevicesProductModel.description) &&
+        Objects.equals(this.tid, smartDevicesProductModel.tid) &&
         Objects.equals(this.idleScreenRegister, smartDevicesProductModel.idleScreenRegister) &&
         Objects.equals(this.idleScreenTerminal, smartDevicesProductModel.idleScreenTerminal) &&
         Objects.equals(this.created, smartDevicesProductModel.created) &&
         Objects.equals(this.online, smartDevicesProductModel.online) &&
+        Objects.equals(this.refresh, smartDevicesProductModel.refresh) &&
         Objects.equals(this.terminalType, smartDevicesProductModel.terminalType) &&
         Objects.equals(this.baseVersion, smartDevicesProductModel.baseVersion) &&
         super.equals(o);
@@ -383,7 +425,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, contract, store, vendor, vendorUid, type, device, routing, userPin, products, description, idleScreenRegister, idleScreenTerminal, created, online, terminalType, baseVersion, super.hashCode());
+    return Objects.hash(merchant, store, contract, vendor, vendorUid, type, device, routing, userPin, products, description, tid, idleScreenRegister, idleScreenTerminal, created, online, refresh, terminalType, baseVersion, super.hashCode());
   }
 
   @Override
@@ -392,8 +434,8 @@ public class SmartDevicesProductModel extends BaseProductModel {
     sb.append("class SmartDevicesProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
-    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
+    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    vendor: ").append(toIndentedString(vendor)).append("\n");
     sb.append("    vendorUid: ").append(toIndentedString(vendorUid)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -402,10 +444,12 @@ public class SmartDevicesProductModel extends BaseProductModel {
     sb.append("    userPin: ").append(toIndentedString(userPin)).append("\n");
     sb.append("    products: ").append(toIndentedString(products)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    tid: ").append(toIndentedString(tid)).append("\n");
     sb.append("    idleScreenRegister: ").append(toIndentedString(idleScreenRegister)).append("\n");
     sb.append("    idleScreenTerminal: ").append(toIndentedString(idleScreenTerminal)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    online: ").append(toIndentedString(online)).append("\n");
+    sb.append("    refresh: ").append(toIndentedString(refresh)).append("\n");
     sb.append("    terminalType: ").append(toIndentedString(terminalType)).append("\n");
     sb.append("    baseVersion: ").append(toIndentedString(baseVersion)).append("\n");
     sb.append("}");

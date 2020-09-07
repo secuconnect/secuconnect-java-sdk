@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * PaymentTransactionsProductModel
+ * The Payment Transaction manages the payment process, from authorization till the payment is really executed.
  */
 public class PaymentTransactionsProductModel extends BaseProductModel {
   @SerializedName("platform")

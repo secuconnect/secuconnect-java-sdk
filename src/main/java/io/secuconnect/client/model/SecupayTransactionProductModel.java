@@ -37,6 +37,9 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   @SerializedName("order_id")
   private String orderId = null;
 
+  @SerializedName("payment_id")
+  private String paymentId = null;
+
   @SerializedName("basket")
   private List<SecupayBasketItem> basket = null;
 
@@ -179,6 +182,23 @@ public class SecupayTransactionProductModel extends BaseProductModel {
 
   public void setOrderId(String orderId) {
     this.orderId = orderId;
+  }
+
+  public SecupayTransactionProductModel paymentId(String paymentId) {
+    this.paymentId = paymentId;
+    return this;
+  }
+
+   /**
+   * Payment ID
+   * @return paymentId
+  **/
+  public String getPaymentId() {
+    return paymentId;
+  }
+
+  public void setPaymentId(String paymentId) {
+    this.paymentId = paymentId;
   }
 
   public SecupayTransactionProductModel basket(List<SecupayBasketItem> basket) {
@@ -450,6 +470,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
         Objects.equals(this.currency, secupayTransactionProductModel.currency) &&
         Objects.equals(this.purpose, secupayTransactionProductModel.purpose) &&
         Objects.equals(this.orderId, secupayTransactionProductModel.orderId) &&
+        Objects.equals(this.paymentId, secupayTransactionProductModel.paymentId) &&
         Objects.equals(this.basket, secupayTransactionProductModel.basket) &&
         Objects.equals(this.transactionStatus, secupayTransactionProductModel.transactionStatus) &&
         Objects.equals(this.accrual, secupayTransactionProductModel.accrual) &&
@@ -469,7 +490,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(transId, status, amount, currency, purpose, orderId, basket, transactionStatus, accrual, paymentAction, transferPurpose, transferAccount, customer, usedPaymentInstrument, redirectUrl, subscription, iframeUrl, container, subTransactions, mandate, super.hashCode());
+    return Objects.hash(transId, status, amount, currency, purpose, orderId, paymentId, basket, transactionStatus, accrual, paymentAction, transferPurpose, transferAccount, customer, usedPaymentInstrument, redirectUrl, subscription, iframeUrl, container, subTransactions, mandate, super.hashCode());
   }
 
   @Override
@@ -483,6 +504,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+    sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
     sb.append("    basket: ").append(toIndentedString(basket)).append("\n");
     sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
     sb.append("    accrual: ").append(toIndentedString(accrual)).append("\n");

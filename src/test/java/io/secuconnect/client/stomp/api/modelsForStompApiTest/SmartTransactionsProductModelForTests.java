@@ -89,9 +89,6 @@ public class SmartTransactionsProductModelForTests {
     @SerializedName("order_option")
     private String orderOption = null;
 
-    @SerializedName("pickup_options")
-    private SmartTransactionsPickupOptions pickupOptions = null;
-
     @SerializedName("product")
     private String product = null;
 
@@ -577,28 +574,6 @@ public class SmartTransactionsProductModelForTests {
         this.orderOption = orderOption;
     }
 
-    public SmartTransactionsProductModelForTests pickupOptions(SmartTransactionsPickupOptions pickupOptions) {
-        this.pickupOptions = pickupOptions;
-        return this;
-    }
-
-    /**
-     * Pickup options
-     * @return pickupOptions
-     **/
-    public SmartTransactionsPickupOptions getPickupOptions() {
-        return pickupOptions;
-    }
-
-    public void setPickupOptions(SmartTransactionsPickupOptions pickupOptions) {
-        this.pickupOptions = pickupOptions;
-    }
-
-    public SmartTransactionsProductModelForTests product(String product) {
-        this.product = product;
-        return this;
-    }
-
     /**
      * Product
      * @return product
@@ -715,7 +690,6 @@ public class SmartTransactionsProductModelForTests {
                 Objects.equals(this.cashier, smartTransactionsProductModel.cashier) &&
                 Objects.equals(this.market, smartTransactionsProductModel.market) &&
                 Objects.equals(this.orderOption, smartTransactionsProductModel.orderOption) &&
-                Objects.equals(this.pickupOptions, smartTransactionsProductModel.pickupOptions) &&
                 Objects.equals(this.product, smartTransactionsProductModel.product) &&
                 Objects.equals(this.transId, smartTransactionsProductModel.transId) &&
                 Objects.equals(this.paymentMethod, smartTransactionsProductModel.paymentMethod) &&
@@ -725,7 +699,7 @@ public class SmartTransactionsProductModelForTests {
 
     @Override
     public int hashCode() {
-        return Objects.hash(object, id, status, merchant, contract, marketplaceContract, customer, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, orderOption, pickupOptions, product, transId, paymentMethod, transactions, lastVisitedPage);
+        return Objects.hash(object, id, status, merchant, contract, marketplaceContract, customer, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, orderOption, product, transId, paymentMethod, transactions, lastVisitedPage);
     }
 
     @Override
@@ -760,7 +734,6 @@ public class SmartTransactionsProductModelForTests {
         sb.append("    cashier: ").append(toIndentedString(cashier)).append("\n");
         sb.append("    market: ").append(toIndentedString(market)).append("\n");
         sb.append("    orderOption: ").append(toIndentedString(orderOption)).append("\n");
-        sb.append("    pickupOptions: ").append(toIndentedString(pickupOptions)).append("\n");
         sb.append("    product: ").append(toIndentedString(product)).append("\n");
         sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
         sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");

@@ -3,7 +3,6 @@ package io.secuconnect.client.model;
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.AssignedBy;
 import io.secuconnect.client.model.BaseProductModel;
-import io.secuconnect.client.model.GeneralMerchantsCheckoutOptions;
 import io.secuconnect.client.model.GeneralMerchantsLegalDetails;
 import io.secuconnect.client.model.GeneralMerchantsUrls;
 import io.secuconnect.client.model.GeneralMerchantsUser;
@@ -37,9 +36,6 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
 
   @SerializedName("legal_details")
   private GeneralMerchantsLegalDetails legalDetails = null;
-
-  @SerializedName("checkout_options")
-  private GeneralMerchantsCheckoutOptions checkoutOptions = null;
 
   @SerializedName("urls")
   private GeneralMerchantsUrls urls = null;
@@ -182,23 +178,6 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
     this.legalDetails = legalDetails;
   }
 
-  public GeneralMerchantsProductModel checkoutOptions(GeneralMerchantsCheckoutOptions checkoutOptions) {
-    this.checkoutOptions = checkoutOptions;
-    return this;
-  }
-
-   /**
-   * Get checkoutOptions
-   * @return checkoutOptions
-  **/
-  public GeneralMerchantsCheckoutOptions getCheckoutOptions() {
-    return checkoutOptions;
-  }
-
-  public void setCheckoutOptions(GeneralMerchantsCheckoutOptions checkoutOptions) {
-    this.checkoutOptions = checkoutOptions;
-  }
-
   public GeneralMerchantsProductModel urls(GeneralMerchantsUrls urls) {
     this.urls = urls;
     return this;
@@ -249,7 +228,6 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
         Objects.equals(this.assignedBy, generalMerchantsProductModel.assignedBy) &&
         Objects.equals(this.invitedBy, generalMerchantsProductModel.invitedBy) &&
         Objects.equals(this.legalDetails, generalMerchantsProductModel.legalDetails) &&
-        Objects.equals(this.checkoutOptions, generalMerchantsProductModel.checkoutOptions) &&
         Objects.equals(this.urls, generalMerchantsProductModel.urls) &&
         Objects.equals(this.storeName, generalMerchantsProductModel.storeName) &&
         super.equals(o);
@@ -257,7 +235,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idOld, type, user, parent, assignedBy, invitedBy, legalDetails, checkoutOptions, urls, storeName, super.hashCode());
+    return Objects.hash(idOld, type, user, parent, assignedBy, invitedBy, legalDetails, urls, storeName, super.hashCode());
   }
 
   @Override
@@ -272,7 +250,6 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
     sb.append("    assignedBy: ").append(toIndentedString(assignedBy)).append("\n");
     sb.append("    invitedBy: ").append(toIndentedString(invitedBy)).append("\n");
     sb.append("    legalDetails: ").append(toIndentedString(legalDetails)).append("\n");
-    sb.append("    checkoutOptions: ").append(toIndentedString(checkoutOptions)).append("\n");
     sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
     sb.append("}");

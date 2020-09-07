@@ -16,9 +16,6 @@ public class Store {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("name_raw")
-  private String nameRaw = null;
-
   public Store object(String object) {
     this.object = object;
     return this;
@@ -70,23 +67,6 @@ public class Store {
     this.name = name;
   }
 
-  public Store nameRaw(String nameRaw) {
-    this.nameRaw = nameRaw;
-    return this;
-  }
-
-   /**
-   * Store name raw
-   * @return nameRaw
-  **/
-  public String getNameRaw() {
-    return nameRaw;
-  }
-
-  public void setNameRaw(String nameRaw) {
-    this.nameRaw = nameRaw;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -98,13 +78,12 @@ public class Store {
     Store store = (Store) o;
     return Objects.equals(this.object, store.object) &&
         Objects.equals(this.id, store.id) &&
-        Objects.equals(this.name, store.name) &&
-        Objects.equals(this.nameRaw, store.nameRaw);
+        Objects.equals(this.name, store.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, name, nameRaw);
+    return Objects.hash(object, id, name);
   }
 
   @Override
@@ -115,7 +94,6 @@ public class Store {
     sb.append("    object: ").append(toIndentedString(object)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    nameRaw: ").append(toIndentedString(nameRaw)).append("\n");
     sb.append("}");
     return sb.toString();
   }

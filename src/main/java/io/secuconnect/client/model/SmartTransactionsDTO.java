@@ -1,6 +1,7 @@
 package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import io.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.ProductInstanceID;
 import io.secuconnect.client.model.ProductInstanceUID;
@@ -9,7 +10,6 @@ import io.secuconnect.client.model.SmartTransactionsBasketInfo;
 import io.secuconnect.client.model.SmartTransactionsCheckin;
 import io.secuconnect.client.model.SmartTransactionsCheckoutLinks;
 import io.secuconnect.client.model.SmartTransactionsIdent;
-import io.secuconnect.client.model.SmartTransactionsPickupOptions;
 import io.secuconnect.client.model.SmartTransactionsReceipt;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +24,6 @@ public class SmartTransactionsDTO {
 
   @SerializedName("provider_contract")
   private ProductInstanceUID providerContract = null;
-
-  @SerializedName("order_option")
-  private String orderOption = null;
 
   @SerializedName("status")
   private String status = null;
@@ -76,9 +73,6 @@ public class SmartTransactionsDTO {
   @SerializedName("contract")
   private ProductInstanceID contract = null;
 
-  @SerializedName("pickup_options")
-  private SmartTransactionsPickupOptions pickupOptions = null;
-
   @SerializedName("last_visited_page")
   private String lastVisitedPage = null;
 
@@ -100,8 +94,14 @@ public class SmartTransactionsDTO {
   @SerializedName("is_demo")
   private Boolean isDemo = null;
 
+  @SerializedName("intent")
+  private String intent = null;
+
   @SerializedName("checkout_links")
   private SmartTransactionsCheckoutLinks checkoutLinks = null;
+
+  @SerializedName("delivery_options")
+  private OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
 
   public SmartTransactionsDTO merchant(String merchant) {
     this.merchant = merchant;
@@ -135,23 +135,6 @@ public class SmartTransactionsDTO {
 
   public void setProviderContract(ProductInstanceUID providerContract) {
     this.providerContract = providerContract;
-  }
-
-  public SmartTransactionsDTO orderOption(String orderOption) {
-    this.orderOption = orderOption;
-    return this;
-  }
-
-   /**
-   * Order option
-   * @return orderOption
-  **/
-  public String getOrderOption() {
-    return orderOption;
-  }
-
-  public void setOrderOption(String orderOption) {
-    this.orderOption = orderOption;
   }
 
   public SmartTransactionsDTO status(String status) {
@@ -442,23 +425,6 @@ public class SmartTransactionsDTO {
     this.contract = contract;
   }
 
-  public SmartTransactionsDTO pickupOptions(SmartTransactionsPickupOptions pickupOptions) {
-    this.pickupOptions = pickupOptions;
-    return this;
-  }
-
-   /**
-   * Get pickupOptions
-   * @return pickupOptions
-  **/
-  public SmartTransactionsPickupOptions getPickupOptions() {
-    return pickupOptions;
-  }
-
-  public void setPickupOptions(SmartTransactionsPickupOptions pickupOptions) {
-    this.pickupOptions = pickupOptions;
-  }
-
   public SmartTransactionsDTO lastVisitedPage(String lastVisitedPage) {
     this.lastVisitedPage = lastVisitedPage;
     return this;
@@ -578,6 +544,23 @@ public class SmartTransactionsDTO {
     this.isDemo = isDemo;
   }
 
+  public SmartTransactionsDTO intent(String intent) {
+    this.intent = intent;
+    return this;
+  }
+
+   /**
+   * intent of transaction
+   * @return intent
+  **/
+  public String getIntent() {
+    return intent;
+  }
+
+  public void setIntent(String intent) {
+    this.intent = intent;
+  }
+
   public SmartTransactionsDTO checkoutLinks(SmartTransactionsCheckoutLinks checkoutLinks) {
     this.checkoutLinks = checkoutLinks;
     return this;
@@ -595,6 +578,23 @@ public class SmartTransactionsDTO {
     this.checkoutLinks = checkoutLinks;
   }
 
+  public SmartTransactionsDTO deliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
+    this.deliveryOptions = deliveryOptions;
+    return this;
+  }
+
+   /**
+   * Get deliveryOptions
+   * @return deliveryOptions
+  **/
+  public OneOfSmartTransactionsDeliveryOptionsModel getDeliveryOptions() {
+    return deliveryOptions;
+  }
+
+  public void setDeliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
+    this.deliveryOptions = deliveryOptions;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -606,7 +606,6 @@ public class SmartTransactionsDTO {
     SmartTransactionsDTO smartTransactionsDTO = (SmartTransactionsDTO) o;
     return Objects.equals(this.merchant, smartTransactionsDTO.merchant) &&
         Objects.equals(this.providerContract, smartTransactionsDTO.providerContract) &&
-        Objects.equals(this.orderOption, smartTransactionsDTO.orderOption) &&
         Objects.equals(this.status, smartTransactionsDTO.status) &&
         Objects.equals(this.transactionRef, smartTransactionsDTO.transactionRef) &&
         Objects.equals(this.merchantRef, smartTransactionsDTO.merchantRef) &&
@@ -623,7 +622,6 @@ public class SmartTransactionsDTO {
         Objects.equals(this.deviceSource, smartTransactionsDTO.deviceSource) &&
         Objects.equals(this.transId, smartTransactionsDTO.transId) &&
         Objects.equals(this.contract, smartTransactionsDTO.contract) &&
-        Objects.equals(this.pickupOptions, smartTransactionsDTO.pickupOptions) &&
         Objects.equals(this.lastVisitedPage, smartTransactionsDTO.lastVisitedPage) &&
         Objects.equals(this.customer, smartTransactionsDTO.customer) &&
         Objects.equals(this.shippingAddress, smartTransactionsDTO.shippingAddress) &&
@@ -631,12 +629,14 @@ public class SmartTransactionsDTO {
         Objects.equals(this.checkin, smartTransactionsDTO.checkin) &&
         Objects.equals(this.paymentMethod, smartTransactionsDTO.paymentMethod) &&
         Objects.equals(this.isDemo, smartTransactionsDTO.isDemo) &&
-        Objects.equals(this.checkoutLinks, smartTransactionsDTO.checkoutLinks);
+        Objects.equals(this.intent, smartTransactionsDTO.intent) &&
+        Objects.equals(this.checkoutLinks, smartTransactionsDTO.checkoutLinks) &&
+        Objects.equals(this.deliveryOptions, smartTransactionsDTO.deliveryOptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, providerContract, orderOption, status, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, receipt, receiptNumber, deviceSource, transId, contract, pickupOptions, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, checkoutLinks);
+    return Objects.hash(merchant, providerContract, status, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, receipt, receiptNumber, deviceSource, transId, contract, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, intent, checkoutLinks, deliveryOptions);
   }
 
   @Override
@@ -646,7 +646,6 @@ public class SmartTransactionsDTO {
     
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    providerContract: ").append(toIndentedString(providerContract)).append("\n");
-    sb.append("    orderOption: ").append(toIndentedString(orderOption)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    transactionRef: ").append(toIndentedString(transactionRef)).append("\n");
     sb.append("    merchantRef: ").append(toIndentedString(merchantRef)).append("\n");
@@ -663,7 +662,6 @@ public class SmartTransactionsDTO {
     sb.append("    deviceSource: ").append(toIndentedString(deviceSource)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
-    sb.append("    pickupOptions: ").append(toIndentedString(pickupOptions)).append("\n");
     sb.append("    lastVisitedPage: ").append(toIndentedString(lastVisitedPage)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
@@ -671,7 +669,9 @@ public class SmartTransactionsDTO {
     sb.append("    checkin: ").append(toIndentedString(checkin)).append("\n");
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
     sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");
+    sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
     sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
+    sb.append("    deliveryOptions: ").append(toIndentedString(deliveryOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2,7 +2,6 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.Address;
-import io.secuconnect.client.model.GeneralMerchantsCheckoutOptions;
 import io.secuconnect.client.model.GeneralMerchantsLegalDetails;
 import io.secuconnect.client.model.GeneralMerchantsUrls;
 import io.secuconnect.client.model.PaymentInformation;
@@ -46,9 +45,6 @@ public class GeneralMerchantsDTO {
 
   @SerializedName("legal_details")
   private List<GeneralMerchantsLegalDetails> legalDetails = null;
-
-  @SerializedName("checkout_options")
-  private GeneralMerchantsCheckoutOptions checkoutOptions = null;
 
   @SerializedName("urls")
   private List<GeneralMerchantsUrls> urls = null;
@@ -248,23 +244,6 @@ public class GeneralMerchantsDTO {
     this.legalDetails = legalDetails;
   }
 
-  public GeneralMerchantsDTO checkoutOptions(GeneralMerchantsCheckoutOptions checkoutOptions) {
-    this.checkoutOptions = checkoutOptions;
-    return this;
-  }
-
-   /**
-   * Get checkoutOptions
-   * @return checkoutOptions
-  **/
-  public GeneralMerchantsCheckoutOptions getCheckoutOptions() {
-    return checkoutOptions;
-  }
-
-  public void setCheckoutOptions(GeneralMerchantsCheckoutOptions checkoutOptions) {
-    this.checkoutOptions = checkoutOptions;
-  }
-
   public GeneralMerchantsDTO urls(List<GeneralMerchantsUrls> urls) {
     this.urls = urls;
     return this;
@@ -310,13 +289,12 @@ public class GeneralMerchantsDTO {
         Objects.equals(this.address, generalMerchantsDTO.address) &&
         Objects.equals(this.paymentData, generalMerchantsDTO.paymentData) &&
         Objects.equals(this.legalDetails, generalMerchantsDTO.legalDetails) &&
-        Objects.equals(this.checkoutOptions, generalMerchantsDTO.checkoutOptions) &&
         Objects.equals(this.urls, generalMerchantsDTO.urls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(salutation, companyname, forename, surname, dob, homepage, email, phone, address, paymentData, legalDetails, checkoutOptions, urls);
+    return Objects.hash(salutation, companyname, forename, surname, dob, homepage, email, phone, address, paymentData, legalDetails, urls);
   }
 
   @Override
@@ -335,7 +313,6 @@ public class GeneralMerchantsDTO {
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    paymentData: ").append(toIndentedString(paymentData)).append("\n");
     sb.append("    legalDetails: ").append(toIndentedString(legalDetails)).append("\n");
-    sb.append("    checkoutOptions: ").append(toIndentedString(checkoutOptions)).append("\n");
     sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("}");
     return sb.toString();
