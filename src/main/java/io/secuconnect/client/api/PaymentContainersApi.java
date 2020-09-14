@@ -10,10 +10,14 @@ import io.secuconnect.client.ProgressRequestBody;
 import io.secuconnect.client.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
+import io.secuconnect.client.model.MandateDTO;
+import io.secuconnect.client.model.MandateProductModel;
 import io.secuconnect.client.model.PaymentContainersDTO;
 import io.secuconnect.client.model.PaymentContainersList;
 import io.secuconnect.client.model.PaymentContainersProductModel;
 import io.secuconnect.client.model.ProductExceptionPayload;
+import io.secuconnect.client.model.UploadMandateDTO;
+import io.secuconnect.client.model.UploadMandateProductModel;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,9 +44,133 @@ public class PaymentContainersApi {
     }
 
     /**
+     * Build call for mandate
+     * @param paymentContainerId Payment container id (required)
+     * @param body Get an B2B mandate form properties
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call mandateCall(String paymentContainerId, MandateDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
+        // create path and map variables
+        String localVarPath = "/Payment/Containers/{paymentContainerId}/mandate"
+            .replaceAll("\\{" + "paymentContainerId" + "\\}", apiClient.escapeString(paymentContainerId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call mandateValidateBeforeCall(String paymentContainerId, MandateDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'paymentContainerId' is set
+        if (paymentContainerId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContainerId' when calling mandate(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = mandateCall(paymentContainerId, body, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * POST Payment/Containers/&lt;id&gt;/mandate
+     * Get an B2B mandate form
+     * @param paymentContainerId Payment container id (required)
+     * @param body Get an B2B mandate form properties
+     * @return MandateProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public MandateProductModel mandate(String paymentContainerId, MandateDTO body) throws ApiException {
+        ApiResponse<MandateProductModel> resp = mandateWithHttpInfo(paymentContainerId, body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Containers/&lt;id&gt;/mandate
+     * Get an B2B mandate form
+     * @param paymentContainerId Payment container id (required)
+     * @param body Get an B2B mandate form properties
+     * @return ApiResponse&lt;MandateProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<MandateProductModel> mandateWithHttpInfo(String paymentContainerId, MandateDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = mandateValidateBeforeCall(paymentContainerId, body, null, null);
+        Type localVarReturnType = new TypeToken<MandateProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Containers/&lt;id&gt;/mandate (asynchronously)
+     * Get an B2B mandate form
+     * @param paymentContainerId Payment container id (required)
+     * @param body Get an B2B mandate form properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call mandateAsync(String paymentContainerId, MandateDTO body, final ApiCallback<MandateProductModel> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = mandateValidateBeforeCall(paymentContainerId, body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<MandateProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for paymentContainersGet
-     * @param count The number of items to return.
-     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param count The maximum number of items to return
+     * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
      * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
      * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
@@ -112,8 +240,8 @@ public class PaymentContainersApi {
     /**
      * GET Payment/Containers
      * Get a list of payment containers
-     * @param count The number of items to return.
-     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param count The maximum number of items to return
+     * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
      * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
      * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
@@ -128,8 +256,8 @@ public class PaymentContainersApi {
     /**
      * GET Payment/Containers
      * Get a list of payment containers
-     * @param count The number of items to return.
-     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param count The maximum number of items to return
+     * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
      * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
      * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
@@ -145,8 +273,8 @@ public class PaymentContainersApi {
     /**
      * GET Payment/Containers (asynchronously)
      * Get a list of payment containers
-     * @param count The number of items to return.
-     * @param offset The position within the whole result set to start returning items (First element is at 0).
+     * @param count The maximum number of items to return
+     * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: prop1.prop2  Example: prop3,prop1.prop2
      * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form property:condition.  *                   A condition may contain:  *                       - wildcard \&quot;*\&quot; for any number of characters  *                       - wildcard \&quot;?\&quot; for one character  *                       - ranges in the form [value TO value]  *  *                   Single expressions may combined by &#x27;AND&#x27;, &#x27;OR&#x27;, &#x27;NOT&#x27; operators and parenthesis &#x27;(&#x27;, &#x27;)&#x27; for grouping.  *                   Property names can be nested like \&quot;prop1.prop2\&quot;.  *                   Example: (NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])  *                   
      * @param sort String with comma separated pairs of field:order (e.g. contact.surname:asc,contact.comapnyname:desc). Result set will be sorted by included fields, in ascending &#x27;asc&#x27;, or descending &#x27;dsc&#x27; order.
@@ -914,6 +1042,130 @@ public class PaymentContainersApi {
 
         com.squareup.okhttp.Call call = paymentContainersPostValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaymentContainersProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for uploadMandate
+     * @param paymentContainerId Payment container id (required)
+     * @param body Signed B2B mandate properties
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call uploadMandateCall(String paymentContainerId, UploadMandateDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+        
+        // create path and map variables
+        String localVarPath = "/Payment/Containers/{paymentContainerId}/Uploadmandate"
+            .replaceAll("\\{" + "paymentContainerId" + "\\}", apiClient.escapeString(paymentContainerId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call uploadMandateValidateBeforeCall(String paymentContainerId, UploadMandateDTO body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        // verify the required parameter 'paymentContainerId' is set
+        if (paymentContainerId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContainerId' when calling uploadMandate(Async)");
+        }
+        
+        com.squareup.okhttp.Call call = uploadMandateCall(paymentContainerId, body, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * POST Payment/Containers/&lt;id&gt;/Uploadmandate
+     * Submit a signed B2B mandate
+     * @param paymentContainerId Payment container id (required)
+     * @param body Signed B2B mandate properties
+     * @return UploadMandateProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public UploadMandateProductModel uploadMandate(String paymentContainerId, UploadMandateDTO body) throws ApiException {
+        ApiResponse<UploadMandateProductModel> resp = uploadMandateWithHttpInfo(paymentContainerId, body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Containers/&lt;id&gt;/Uploadmandate
+     * Submit a signed B2B mandate
+     * @param paymentContainerId Payment container id (required)
+     * @param body Signed B2B mandate properties
+     * @return ApiResponse&lt;UploadMandateProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<UploadMandateProductModel> uploadMandateWithHttpInfo(String paymentContainerId, UploadMandateDTO body) throws ApiException {
+        com.squareup.okhttp.Call call = uploadMandateValidateBeforeCall(paymentContainerId, body, null, null);
+        Type localVarReturnType = new TypeToken<UploadMandateProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Containers/&lt;id&gt;/Uploadmandate (asynchronously)
+     * Submit a signed B2B mandate
+     * @param paymentContainerId Payment container id (required)
+     * @param body Signed B2B mandate properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call uploadMandateAsync(String paymentContainerId, UploadMandateDTO body, final ApiCallback<UploadMandateProductModel> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = uploadMandateValidateBeforeCall(paymentContainerId, body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<UploadMandateProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

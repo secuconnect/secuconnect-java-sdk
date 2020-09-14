@@ -22,7 +22,7 @@ public class GeneralContractsList {
   }
 
    /**
-   * Number of existing general contracts
+   * Number of existing General Contracts
    * @return count
   **/
   public Integer getCount() {

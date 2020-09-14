@@ -5,7 +5,7 @@ import io.secuconnect.client.model.DayTime;
 import java.util.Objects;
 
 /**
- * Open hours
+ * Opening hours
  */
 public class OpenHours {
   @SerializedName("open")

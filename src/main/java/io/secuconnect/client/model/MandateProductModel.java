@@ -4,27 +4,27 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Product instance id
+ * MandateProductModel
  */
-public class ProductInstanceID {
-  @SerializedName("id")
-  private String id = null;
+public class MandateProductModel {
+  @SerializedName("mandate_url")
+  private String mandateUrl = null;
 
-  public ProductInstanceID id(String id) {
-    this.id = id;
+  public MandateProductModel mandateUrl(String mandateUrl) {
+    this.mandateUrl = mandateUrl;
     return this;
   }
 
    /**
-   * Object ID
-   * @return id
+   * Link to sepamandate B2B doc
+   * @return mandateUrl
   **/
-  public String getId() {
-    return id;
+  public String getMandateUrl() {
+    return mandateUrl;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public void setMandateUrl(String mandateUrl) {
+    this.mandateUrl = mandateUrl;
   }
 
   @Override
@@ -35,21 +35,21 @@ public class ProductInstanceID {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProductInstanceID productInstanceID = (ProductInstanceID) o;
-    return Objects.equals(this.id, productInstanceID.id);
+    MandateProductModel mandateProductModel = (MandateProductModel) o;
+    return Objects.equals(this.mandateUrl, mandateProductModel.mandateUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(mandateUrl);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProductInstanceID {\n");
+    sb.append("class MandateProductModel {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    mandateUrl: ").append(toIndentedString(mandateUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

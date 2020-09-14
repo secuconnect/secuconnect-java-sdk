@@ -62,7 +62,7 @@ public class Contact {
   }
 
    /**
-   * Forename
+   * First name
    * @return forename
   **/
   public String getForename() {
@@ -79,7 +79,7 @@ public class Contact {
   }
 
    /**
-   * Surname
+   * Last name
    * @return surname
   **/
   public String getSurname() {
@@ -147,7 +147,7 @@ public class Contact {
   }
 
    /**
-   * Title
+   * Title or academic degree
    * @return title
   **/
   public String getTitle() {
@@ -164,7 +164,7 @@ public class Contact {
   }
 
    /**
-   * Email
+   * E-mail address
    * @return email
   **/
   public String getEmail() {
@@ -181,7 +181,7 @@ public class Contact {
   }
 
    /**
-   * Phone
+   * Landline number
    * @return phone
   **/
   public String getPhone() {
@@ -198,7 +198,7 @@ public class Contact {
   }
 
    /**
-   * Mobile
+   * Mobile phone number
    * @return mobile
   **/
   public String getMobile() {
@@ -215,7 +215,7 @@ public class Contact {
   }
 
    /**
-   * Fax
+   * Fax number
    * @return fax
   **/
   public String getFax() {
@@ -249,7 +249,7 @@ public class Contact {
   }
 
    /**
-   * The document id of an user picture (To upload the picture use our document service.)
+   * The document ID of an user picture; s. Document service
    * @return picture
   **/
   public String getPicture() {

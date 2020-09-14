@@ -4,27 +4,27 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Product instance id
+ * UploadMandateDTO
  */
-public class ProductInstanceID {
-  @SerializedName("id")
-  private String id = null;
+public class UploadMandateDTO {
+  @SerializedName("document_id")
+  private String documentId = null;
 
-  public ProductInstanceID id(String id) {
-    this.id = id;
+  public UploadMandateDTO documentId(String documentId) {
+    this.documentId = documentId;
     return this;
   }
 
    /**
-   * Object ID
-   * @return id
+   * Document id for assign
+   * @return documentId
   **/
-  public String getId() {
-    return id;
+  public String getDocumentId() {
+    return documentId;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public void setDocumentId(String documentId) {
+    this.documentId = documentId;
   }
 
   @Override
@@ -35,21 +35,21 @@ public class ProductInstanceID {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProductInstanceID productInstanceID = (ProductInstanceID) o;
-    return Objects.equals(this.id, productInstanceID.id);
+    UploadMandateDTO uploadMandateDTO = (UploadMandateDTO) o;
+    return Objects.equals(this.documentId, uploadMandateDTO.documentId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(documentId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProductInstanceID {\n");
+    sb.append("class UploadMandateDTO {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    documentId: ").append(toIndentedString(documentId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

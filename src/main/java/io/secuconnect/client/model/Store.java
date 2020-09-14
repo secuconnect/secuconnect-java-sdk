@@ -22,7 +22,7 @@ public class Store {
   }
 
    /**
-   * Object of store
+   * Store object type
    * @return object
   **/
   public String getObject() {
@@ -39,7 +39,7 @@ public class Store {
   }
 
    /**
-   * Id of store
+   * Store object ID
    * @return id
   **/
   public String getId() {

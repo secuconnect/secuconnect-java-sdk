@@ -25,7 +25,7 @@ public class GeneralMerchantsLegalDetails {
   }
 
    /**
-   * Url
+   * URL
    * @return url
   **/
   public String getUrl() {

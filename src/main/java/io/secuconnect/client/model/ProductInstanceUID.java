@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Product name and instance id, uniquely identifying instance of Product
+ * Object type and ID
  */
 public class ProductInstanceUID {
   @SerializedName("object")
@@ -19,7 +19,7 @@ public class ProductInstanceUID {
   }
 
    /**
-   * Object type of instance
+   * Object type
    * @return object
   **/
   public String getObject() {
@@ -36,7 +36,7 @@ public class ProductInstanceUID {
   }
 
    /**
-   * ID of instance
+   * Object ID
    * @return id
   **/
   public String getId() {

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Address
+ * Postal address
  */
 public class Address {
   @SerializedName("type")
@@ -51,7 +51,7 @@ public class Address {
   }
 
    /**
-   * Street
+   * Street name without house number
    * @return street
   **/
   public String getStreet() {
@@ -68,7 +68,7 @@ public class Address {
   }
 
    /**
-   * Street number
+   * House number
    * @return streetNumber
   **/
   public String getStreetNumber() {
@@ -102,7 +102,7 @@ public class Address {
   }
 
    /**
-   * Postal code
+   * Postal code / ZIP code
    * @return postalCode
   **/
   public String getPostalCode() {
@@ -119,7 +119,7 @@ public class Address {
   }
 
    /**
-   * Country
+   * Two-letter country code
    * @return country
   **/
   public String getCountry() {
@@ -136,7 +136,7 @@ public class Address {
   }
 
    /**
-   * Additional address data
+   * Additional address line, like c/o, or an appartment number
    * @return additionalAddressData
   **/
   public String getAdditionalAddressData() {

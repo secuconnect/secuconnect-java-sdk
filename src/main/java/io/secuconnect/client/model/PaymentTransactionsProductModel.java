@@ -157,7 +157,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Transaction identifier
+   * Transaction ID in secupay Frontend
    * @return transId
   **/
   public Integer getTransId() {
@@ -182,7 +182,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Parents
+   * Parent transactions
    * @return parents
   **/
   public List<ParentObj> getParents() {
@@ -199,7 +199,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Product identifier
+   * Payment product ID
    * @return productId
   **/
   public Integer getProductId() {
@@ -216,7 +216,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Product type
+   * Payment product type
    * @return product
   **/
   public String getProduct() {
@@ -233,7 +233,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * the name of the payment product
+   * Payment product name
    * @return productRaw
   **/
   public String getProductRaw() {
@@ -250,7 +250,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * The internal id of the stored payment instrument.
+   * Internal ID of the payment instrument
    * @return zahlungsmittelId
   **/
   public Integer getZahlungsmittelId() {
@@ -267,7 +267,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Contract identifier
+   * Merchant&#x27;s contract ID
    * @return contractId
   **/
   public Integer getContractId() {
@@ -284,7 +284,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+   * Total amount to payment in the minor currency unit (e. g. Euro Cents)
    * @return amount
   **/
   public Integer getAmount() {
@@ -301,7 +301,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * ISO 4217 code of currency, eg EUR for Euro.
+   * ISO 4217 three-letter currency (e. g. EUR for Euro)
    * @return currency
   **/
   public String getCurrency() {

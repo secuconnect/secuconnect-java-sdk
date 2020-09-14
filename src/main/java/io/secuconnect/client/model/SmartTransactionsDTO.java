@@ -65,7 +65,7 @@ public class SmartTransactionsDTO {
   private Integer receiptNumber = null;
 
   @SerializedName("device_source")
-  private String deviceSource = null;
+  private ProductInstanceUID deviceSource = null;
 
   @SerializedName("trans_id")
   private Integer transId = null;
@@ -374,20 +374,20 @@ public class SmartTransactionsDTO {
     this.receiptNumber = receiptNumber;
   }
 
-  public SmartTransactionsDTO deviceSource(String deviceSource) {
+  public SmartTransactionsDTO deviceSource(ProductInstanceUID deviceSource) {
     this.deviceSource = deviceSource;
     return this;
   }
 
    /**
-   * Device source
+   * Get deviceSource
    * @return deviceSource
   **/
-  public String getDeviceSource() {
+  public ProductInstanceUID getDeviceSource() {
     return deviceSource;
   }
 
-  public void setDeviceSource(String deviceSource) {
+  public void setDeviceSource(ProductInstanceUID deviceSource) {
     this.deviceSource = deviceSource;
   }
 

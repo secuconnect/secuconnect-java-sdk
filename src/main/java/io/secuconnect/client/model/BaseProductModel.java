@@ -19,7 +19,7 @@ public class BaseProductModel {
   }
 
    /**
-   * Object of the model
+   * Object type
    * @return object
   **/
   public String getObject() {
@@ -36,7 +36,7 @@ public class BaseProductModel {
   }
 
    /**
-   * Id of the model
+   * Object ID
    * @return id
   **/
   public String getId() {

@@ -49,7 +49,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * Old id of general merchant
+   * ID in secupay Frontend
    * @return idOld
   **/
   public String getIdOld() {
@@ -66,7 +66,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * Type of general merchant
+   * Object type
    * @return type
   **/
   public String getType() {
@@ -201,7 +201,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * store name
+   * Store name
    * @return storeName
   **/
   public String getStoreName() {

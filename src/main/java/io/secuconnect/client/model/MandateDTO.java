@@ -4,22 +4,39 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * GeneralMerchantsUrls
+ * MandateDTO
  */
-public class GeneralMerchantsUrls {
+public class MandateDTO {
+  @SerializedName("customer_id")
+  private String customerId = null;
+
   @SerializedName("type")
   private String type = null;
 
-  @SerializedName("url")
-  private String url = null;
+  public MandateDTO customerId(String customerId) {
+    this.customerId = customerId;
+    return this;
+  }
 
-  public GeneralMerchantsUrls type(String type) {
+   /**
+   * Customer id
+   * @return customerId
+  **/
+  public String getCustomerId() {
+    return customerId;
+  }
+
+  public void setCustomerId(String customerId) {
+    this.customerId = customerId;
+  }
+
+  public MandateDTO type(String type) {
     this.type = type;
     return this;
   }
 
    /**
-   * Type of URLs
+   * Mandate type
    * @return type
   **/
   public String getType() {
@@ -30,23 +47,6 @@ public class GeneralMerchantsUrls {
     this.type = type;
   }
 
-  public GeneralMerchantsUrls url(String url) {
-    this.url = url;
-    return this;
-  }
-
-   /**
-   * URL
-   * @return url
-  **/
-  public String getUrl() {
-    return url;
-  }
-
-  public void setUrl(String url) {
-    this.url = url;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -55,23 +55,23 @@ public class GeneralMerchantsUrls {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GeneralMerchantsUrls generalMerchantsUrls = (GeneralMerchantsUrls) o;
-    return Objects.equals(this.type, generalMerchantsUrls.type) &&
-        Objects.equals(this.url, generalMerchantsUrls.url);
+    MandateDTO mandateDTO = (MandateDTO) o;
+    return Objects.equals(this.customerId, mandateDTO.customerId) &&
+        Objects.equals(this.type, mandateDTO.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, url);
+    return Objects.hash(customerId, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GeneralMerchantsUrls {\n");
+    sb.append("class MandateDTO {\n");
     
+    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }

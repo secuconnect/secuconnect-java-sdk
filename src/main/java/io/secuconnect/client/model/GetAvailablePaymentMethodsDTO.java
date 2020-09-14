@@ -19,7 +19,7 @@ public class GetAvailablePaymentMethodsDTO {
   }
 
    /**
-   * Currency-Code
+   * Currency code
    * @return currency
   **/
   public String getCurrency() {
@@ -36,7 +36,7 @@ public class GetAvailablePaymentMethodsDTO {
   }
 
    /**
-   * Demo
+   * Demo mode. Such transactions are not actually processed.
    * @return isDemo
   **/
   public Boolean getIsDemo() {

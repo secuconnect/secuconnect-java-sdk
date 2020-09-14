@@ -72,7 +72,7 @@ public class GeneralMerchantsDTO {
   }
 
    /**
-   * companyname
+   * Company name
    * @return companyname
   **/
   public String getCompanyname() {
@@ -89,7 +89,7 @@ public class GeneralMerchantsDTO {
   }
 
    /**
-   * forename
+   * First name
    * @return forename
   **/
   public String getForename() {
@@ -106,7 +106,7 @@ public class GeneralMerchantsDTO {
   }
 
    /**
-   * surname
+   * Last name
    * @return surname
   **/
   public String getSurname() {
@@ -140,7 +140,7 @@ public class GeneralMerchantsDTO {
   }
 
    /**
-   * Merchant homepage url or shop url
+   * Merchant homepage or shop URL
    * @return homepage
   **/
   public String getHomepage() {
@@ -233,7 +233,7 @@ public class GeneralMerchantsDTO {
   }
 
    /**
-   * Legal details
+   * Legal details, like terms of use, privacy policy, or imprint
    * @return legalDetails
   **/
   public List<GeneralMerchantsLegalDetails> getLegalDetails() {
@@ -258,7 +258,7 @@ public class GeneralMerchantsDTO {
   }
 
    /**
-   * Urls
+   * URLs
    * @return urls
   **/
   public List<GeneralMerchantsUrls> getUrls() {

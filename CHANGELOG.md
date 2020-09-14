@@ -19,6 +19,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [2.3.0] - 2020-09-14
+
+### Added
+
+- `Api.PaymentContainersApi.mandate()`
+- `ApiPaymentContainersApi..uploadMandate()`
+- `Model.MandateDTO`
+- `Model.MandateProductModel`
+- `Model.SmartTransactionsPrepare` element `device_source`
+- `Model.UploadMandateDTO`
+- `Model.UploadMandateProductModel`
+
+### Fixed
+
+- `Model.SmartTransactionsDTO` element `device_source` is now a instance of `ProductInstanceUID` instead of `string`
+
+
 ## [2.2.0] - 2020-09-07
 
 ### Security
@@ -274,3 +291,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [2.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.9.0...2.0.0
 [2.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.0.0...2.1.0
 [2.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...2.2.0
+[2.3.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.2.0...2.3.0

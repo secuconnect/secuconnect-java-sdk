@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Payload of exceptions returned by API
+ * Payload of exceptions returned by the API
  */
 public class ProductExceptionPayload {
   @SerializedName("status")
@@ -31,7 +31,7 @@ public class ProductExceptionPayload {
   }
 
    /**
-   * Request status (always equals to &#x27;error&#x27;)
+   * Request status (always &#x27;error&#x27;)
    * @return status
   **/
   public String getStatus() {

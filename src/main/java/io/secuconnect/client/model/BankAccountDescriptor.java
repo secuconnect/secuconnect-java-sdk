@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Bank account data like owner, iban, bic and bank name
+ * Bank details for money transfers
  */
 public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   @SerializedName("iban")
@@ -28,7 +28,7 @@ public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPriv
   }
 
    /**
-   * IBAN
+   * International Bank Account Number (IBAN)
    * @return iban
   **/
   public String getIban() {
@@ -45,7 +45,7 @@ public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPriv
   }
 
    /**
-   * BIC
+   * Bank Identifier Code (BIC), or formerly SWIFT code
    * @return bic
   **/
   public String getBic() {
@@ -62,7 +62,7 @@ public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPriv
   }
 
    /**
-   * Owner
+   * Account owner name
    * @return owner
   **/
   public String getOwner() {
@@ -96,7 +96,7 @@ public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPriv
   }
 
    /**
-   * Purpose for the bank statement
+   * Purpose to use
    * @return purpose
   **/
   public String getPurpose() {

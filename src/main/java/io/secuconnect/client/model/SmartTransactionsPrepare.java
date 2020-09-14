@@ -24,6 +24,9 @@ public class SmartTransactionsPrepare {
   @SerializedName("email")
   private String email = null;
 
+  @SerializedName("device_source")
+  private ProductInstanceUID deviceSource = null;
+
   @SerializedName("mode")
   private String mode = null;
 
@@ -118,6 +121,23 @@ public class SmartTransactionsPrepare {
     this.email = email;
   }
 
+  public SmartTransactionsPrepare deviceSource(ProductInstanceUID deviceSource) {
+    this.deviceSource = deviceSource;
+    return this;
+  }
+
+   /**
+   * Get deviceSource
+   * @return deviceSource
+  **/
+  public ProductInstanceUID getDeviceSource() {
+    return deviceSource;
+  }
+
+  public void setDeviceSource(ProductInstanceUID deviceSource) {
+    this.deviceSource = deviceSource;
+  }
+
   public SmartTransactionsPrepare mode(String mode) {
     this.mode = mode;
     return this;
@@ -183,6 +203,7 @@ public class SmartTransactionsPrepare {
         Objects.equals(this.method, smartTransactionsPrepare.method) &&
         Objects.equals(this.callbackUrls, smartTransactionsPrepare.callbackUrls) &&
         Objects.equals(this.email, smartTransactionsPrepare.email) &&
+        Objects.equals(this.deviceSource, smartTransactionsPrepare.deviceSource) &&
         Objects.equals(this.mode, smartTransactionsPrepare.mode) &&
         Objects.equals(this.isPaypalBasic, smartTransactionsPrepare.isPaypalBasic) &&
         Objects.equals(this.isDemo, smartTransactionsPrepare.isDemo);
@@ -190,7 +211,7 @@ public class SmartTransactionsPrepare {
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer, container, method, callbackUrls, email, mode, isPaypalBasic, isDemo);
+    return Objects.hash(customer, container, method, callbackUrls, email, deviceSource, mode, isPaypalBasic, isDemo);
   }
 
   @Override
@@ -203,6 +224,7 @@ public class SmartTransactionsPrepare {
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    callbackUrls: ").append(toIndentedString(callbackUrls)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    deviceSource: ").append(toIndentedString(deviceSource)).append("\n");
     sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    isPaypalBasic: ").append(toIndentedString(isPaypalBasic)).append("\n");
     sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");

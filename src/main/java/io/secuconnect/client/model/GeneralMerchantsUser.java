@@ -31,7 +31,7 @@ public class GeneralMerchantsUser {
   }
 
    /**
-   * Object of general merchant user
+   * Object of General Merchant user
    * @return object
   **/
   public String getObject() {
@@ -48,7 +48,7 @@ public class GeneralMerchantsUser {
   }
 
    /**
-   * Id of general merchant user
+   * ID of General Merchant user
    * @return id
   **/
   public String getId() {
@@ -65,7 +65,7 @@ public class GeneralMerchantsUser {
   }
 
    /**
-   * Name of general merchant user
+   * Name of General Merchant user
    * @return name
   **/
   public String getName() {
@@ -82,7 +82,7 @@ public class GeneralMerchantsUser {
   }
 
    /**
-   * Company name of general merchant user
+   * Company name of General Merchant user
    * @return companyname
   **/
   public String getCompanyname() {
@@ -107,7 +107,7 @@ public class GeneralMerchantsUser {
   }
 
    /**
-   * Address of general merchant user
+   * Address of General Merchant user
    * @return address
   **/
   public List<GeoAddress> getAddress() {

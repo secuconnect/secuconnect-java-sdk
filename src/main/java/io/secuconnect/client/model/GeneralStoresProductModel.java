@@ -103,7 +103,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Old id of general store
+   * ID in secupay Frontend
    * @return idOld
   **/
   public String getIdOld() {
@@ -137,7 +137,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Store Name
+   * Store name
    * @return storeName
   **/
   public String getStoreName() {
@@ -154,7 +154,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Facebook id
+   * Facebook ID
    * @return facebookId
   **/
   public String getFacebookId() {
@@ -247,7 +247,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * General store formatted address
+   * Formatted address
    * @return addressFormatted
   **/
   public String getAddressFormatted() {
@@ -264,7 +264,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * General store formatted phone number
+   * Formatted phone number
    * @return phoneNumberFormatted
   **/
   public String getPhoneNumberFormatted() {
@@ -298,7 +298,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * General store name
+   * Store name
    * @return name
   **/
   public String getName() {
@@ -315,7 +315,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * General store raw name
+   * Raw store name
    * @return nameRaw
   **/
   public String getNameRaw() {
@@ -332,7 +332,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * General store main photo
+   * Main photo
    * @return photoMain
   **/
   public String getPhotoMain() {
@@ -357,7 +357,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * General store photos
+   * All photos
    * @return photo
   **/
   public List<String> getPhoto() {
@@ -374,7 +374,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * General store main category
+   * Main category
    * @return categoryMain
   **/
   public String getCategoryMain() {
@@ -399,7 +399,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * General store category
+   * All categories
    * @return category
   **/
   public List<String> getCategory() {
@@ -416,7 +416,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Url to general store google plus
+   * Google+ URL of the store
    * @return urlGoogleplus
   **/
   public String getUrlGoogleplus() {
@@ -433,7 +433,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Url to general store website
+   * Store website URL (e. g. a webpage of yours with the details of this store)
    * @return urlWebsite
   **/
   public String getUrlWebsite() {
@@ -458,7 +458,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Open hours in every day
+   * Opening hours per weekday
    * @return openHours
   **/
   public List<OpenHours> getOpenHours() {
@@ -475,7 +475,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Open now
+   * Whether the store is just open
    * @return openNow
   **/
   public Boolean getOpenNow() {
@@ -492,7 +492,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Open time
+   * Opening time
    * @return openTime
   **/
   public String getOpenTime() {
@@ -509,7 +509,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Utc offset
+   * UTC offset
    * @return utcOffset
   **/
   public String getUtcOffset() {
@@ -576,7 +576,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Has beacon
+   * Whether the store has a WiFi beacon
    * @return hasBeacon
   **/
   public Boolean getHasBeacon() {
@@ -593,7 +593,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Is Acceptance Point
+   * Whether the store is a secucard acceptance point
    * @return acceptancePoint
   **/
   public Boolean getAcceptancePoint() {
