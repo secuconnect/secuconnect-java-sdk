@@ -13,6 +13,7 @@ import com.secuconnect.client.model.SmartTransactionsCheckoutLinks;
 import com.secuconnect.client.model.SmartTransactionsIdent;
 import com.secuconnect.client.model.SmartTransactionsMerchant;
 import com.secuconnect.client.model.SmartTransactionsReceipt;
+import com.secuconnect.client.model.SmartTransactionsCommunication;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -101,6 +102,9 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("delivery_options")
   private SmartTransactionsBaseDeliveryOptionsModel deliveryOptions = null;
+
+  @SerializedName("communications")
+  private SmartTransactionsCommunication communications = null;
 
   @SerializedName("product")
   private String product = null;
@@ -615,6 +619,18 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
+   * Get communications
+   * @return communications
+  **/
+  public SmartTransactionsCommunication getCommunications() {
+    return communications;
+  }
+
+  public void setCommunications(SmartTransactionsCommunication communications) {
+    this.communications = communications;
+  }
+
+   /**
    * Product
    * @return product
   **/
@@ -789,6 +805,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.cashier, smartTransactionsProductModel.cashier) &&
         Objects.equals(this.market, smartTransactionsProductModel.market) &&
         Objects.equals(this.deliveryOptions, smartTransactionsProductModel.deliveryOptions) &&
+        Objects.equals(this.communications, smartTransactionsProductModel.communications) &&
         Objects.equals(this.product, smartTransactionsProductModel.product) &&
         Objects.equals(this.transId, smartTransactionsProductModel.transId) &&
         Objects.equals(this.paymentMethod, smartTransactionsProductModel.paymentMethod) &&
@@ -802,7 +819,11 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, iframeUrl, super.hashCode());
+    return Objects.hash(status, merchant, contract, providerContract, customer, shippingAddress, container, checkin,
+    merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt,
+    receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market,
+    deliveryOptions, communications, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo,
+    checkoutLinks, iframeUrl, super.hashCode());
   }
 
   @Override
@@ -837,6 +858,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     sb.append("    cashier: ").append(toIndentedString(cashier)).append("\n");
     sb.append("    market: ").append(toIndentedString(market)).append("\n");
     sb.append("    deliveryOptions: ").append(toIndentedString(deliveryOptions)).append("\n");
+    sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
