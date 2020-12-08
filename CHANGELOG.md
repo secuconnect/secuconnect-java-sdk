@@ -18,6 +18,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+## [2.4.0] - 2020-12-09
+
+### Security
+
+- Update dependencies to the latest versions.
+
+### Added
+
+- `Api.PaymentTransactionsApi.getPaymentTransactionsOldFormat()`
+- `Model.SmartTransactionsDTO` element `communications`
+
+### Fixed
+
+- `Model.GeneralMerchantsProductModel` element `idOld` is an instance of `Integer` instead of `String`
+- `Model.GeneralMerchantsProductModel` element `legal_details` is a List of `GeneralMerchantsLegalDetails`
+- `Model.GeneralMerchantsProductModel` element `urls` is a List of `GeneralMerchantsUrls`
+
 
 ## [2.3.0] - 2020-09-14
 
@@ -33,7 +50,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-- `Model.SmartTransactionsDTO` element `device_source` is now a instance of `ProductInstanceUID` instead of `string`
+- `Model.SmartTransactionsDTO` element `device_source` is an instance of `ProductInstanceUID` instead of `String`
 
 
 ## [2.2.0] - 2020-09-07
@@ -292,3 +309,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [2.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.0.0...2.1.0
 [2.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...2.2.0
 [2.3.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.2.0...2.3.0
+[2.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.3.0...2.4.0

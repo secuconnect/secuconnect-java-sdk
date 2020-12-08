@@ -52,7 +52,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Line type
+   * Line type {&#x27;article&#x27;, &#x27;sub_transaction&#x27;, &#x27;stakeholder_payment&#x27;, &#x27;shipping&#x27;}
    * @return itemType
   **/
   public String getItemType() {
@@ -154,7 +154,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Get tax
+   * Tax rate in percent (integer values only)
    * @return tax
   **/
   public String getTax() {

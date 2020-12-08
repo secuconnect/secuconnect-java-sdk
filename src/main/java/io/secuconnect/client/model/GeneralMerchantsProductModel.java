@@ -17,7 +17,7 @@ import java.util.Objects;
  */
 public class GeneralMerchantsProductModel extends BaseProductModel {
   @SerializedName("id_old")
-  private String idOld = null;
+  private Integer idOld = null;
 
   @SerializedName("type")
   private String type = null;
@@ -35,29 +35,20 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   private List<InvitedBy> invitedBy = null;
 
   @SerializedName("legal_details")
-  private GeneralMerchantsLegalDetails legalDetails = null;
+  private List<GeneralMerchantsLegalDetails> legalDetails = null;
 
   @SerializedName("urls")
-  private GeneralMerchantsUrls urls = null;
+  private List<GeneralMerchantsUrls> urls = null;
 
   @SerializedName("store_name")
   private String storeName = null;
-
-  public GeneralMerchantsProductModel idOld(String idOld) {
-    this.idOld = idOld;
-    return this;
-  }
 
    /**
    * ID in secupay Frontend
    * @return idOld
   **/
-  public String getIdOld() {
+  public Integer getIdOld() {
     return idOld;
-  }
-
-  public void setIdOld(String idOld) {
-    this.idOld = idOld;
   }
 
   public GeneralMerchantsProductModel type(String type) {
@@ -66,7 +57,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * Object type
+   * User type ID - unverified shop (1); internet shop (11); kaufmännischer Netzbetrieb (KNB, 45); secucard merchant (46); App Center user (63), checkout provider (64)
    * @return type
   **/
   public String getType() {
@@ -161,37 +152,53 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
     this.invitedBy = invitedBy;
   }
 
-  public GeneralMerchantsProductModel legalDetails(GeneralMerchantsLegalDetails legalDetails) {
+  public GeneralMerchantsProductModel legalDetails(List<GeneralMerchantsLegalDetails> legalDetails) {
     this.legalDetails = legalDetails;
     return this;
   }
 
+  public GeneralMerchantsProductModel addLegalDetailsItem(GeneralMerchantsLegalDetails legalDetailsItem) {
+    if (this.legalDetails == null) {
+      this.legalDetails = new ArrayList<GeneralMerchantsLegalDetails>();
+    }
+    this.legalDetails.add(legalDetailsItem);
+    return this;
+  }
+
    /**
-   * Get legalDetails
+   * Legal details like terms of use, privacy policy, or imprint
    * @return legalDetails
   **/
-  public GeneralMerchantsLegalDetails getLegalDetails() {
+  public List<GeneralMerchantsLegalDetails> getLegalDetails() {
     return legalDetails;
   }
 
-  public void setLegalDetails(GeneralMerchantsLegalDetails legalDetails) {
+  public void setLegalDetails(List<GeneralMerchantsLegalDetails> legalDetails) {
     this.legalDetails = legalDetails;
   }
 
-  public GeneralMerchantsProductModel urls(GeneralMerchantsUrls urls) {
+  public GeneralMerchantsProductModel urls(List<GeneralMerchantsUrls> urls) {
     this.urls = urls;
     return this;
   }
 
+  public GeneralMerchantsProductModel addUrlsItem(GeneralMerchantsUrls urlsItem) {
+    if (this.urls == null) {
+      this.urls = new ArrayList<GeneralMerchantsUrls>();
+    }
+    this.urls.add(urlsItem);
+    return this;
+  }
+
    /**
-   * Get urls
+   * URLs
    * @return urls
   **/
-  public GeneralMerchantsUrls getUrls() {
+  public List<GeneralMerchantsUrls> getUrls() {
     return urls;
   }
 
-  public void setUrls(GeneralMerchantsUrls urls) {
+  public void setUrls(List<GeneralMerchantsUrls> urls) {
     this.urls = urls;
   }
 

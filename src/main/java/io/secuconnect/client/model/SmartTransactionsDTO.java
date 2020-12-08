@@ -9,6 +9,7 @@ import io.secuconnect.client.model.SmartTransactionsBasket;
 import io.secuconnect.client.model.SmartTransactionsBasketInfo;
 import io.secuconnect.client.model.SmartTransactionsCheckin;
 import io.secuconnect.client.model.SmartTransactionsCheckoutLinks;
+import io.secuconnect.client.model.SmartTransactionsCommunication;
 import io.secuconnect.client.model.SmartTransactionsIdent;
 import io.secuconnect.client.model.SmartTransactionsReceipt;
 import java.util.ArrayList;
@@ -102,6 +103,9 @@ public class SmartTransactionsDTO {
 
   @SerializedName("delivery_options")
   private OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
+
+  @SerializedName("communications")
+  private SmartTransactionsCommunication communications = null;
 
   public SmartTransactionsDTO merchant(String merchant) {
     this.merchant = merchant;
@@ -595,6 +599,23 @@ public class SmartTransactionsDTO {
     this.deliveryOptions = deliveryOptions;
   }
 
+  public SmartTransactionsDTO communications(SmartTransactionsCommunication communications) {
+    this.communications = communications;
+    return this;
+  }
+
+   /**
+   * Get communications
+   * @return communications
+  **/
+  public SmartTransactionsCommunication getCommunications() {
+    return communications;
+  }
+
+  public void setCommunications(SmartTransactionsCommunication communications) {
+    this.communications = communications;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -631,12 +652,13 @@ public class SmartTransactionsDTO {
         Objects.equals(this.isDemo, smartTransactionsDTO.isDemo) &&
         Objects.equals(this.intent, smartTransactionsDTO.intent) &&
         Objects.equals(this.checkoutLinks, smartTransactionsDTO.checkoutLinks) &&
-        Objects.equals(this.deliveryOptions, smartTransactionsDTO.deliveryOptions);
+        Objects.equals(this.deliveryOptions, smartTransactionsDTO.deliveryOptions) &&
+        Objects.equals(this.communications, smartTransactionsDTO.communications);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, providerContract, status, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, receipt, receiptNumber, deviceSource, transId, contract, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, intent, checkoutLinks, deliveryOptions);
+    return Objects.hash(merchant, providerContract, status, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, receipt, receiptNumber, deviceSource, transId, contract, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, intent, checkoutLinks, deliveryOptions, communications);
   }
 
   @Override
@@ -672,6 +694,7 @@ public class SmartTransactionsDTO {
     sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
     sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
     sb.append("    deliveryOptions: ").append(toIndentedString(deliveryOptions)).append("\n");
+    sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
     sb.append("}");
     return sb.toString();
   }
