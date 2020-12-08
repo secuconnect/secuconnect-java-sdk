@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - `Api.PaymentTransactionsApi.getPaymentTransactionsOldFormat()`
 - `Model.SmartTransactionsDTO` element `communications`
+- `Model.SmartTransactionsProductModel` element `communications`
 
 ### Fixed
 
