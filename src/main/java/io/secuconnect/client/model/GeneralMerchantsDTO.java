@@ -55,7 +55,7 @@ public class GeneralMerchantsDTO {
   }
 
    /**
-   * Salutation
+   * Salutation {&#x27;Frau&#x27;, &#x27;Herr&#x27;, &#x27;Firma&#x27;, &#x27;Divers&#x27;}
    * @return salutation
   **/
   public String getSalutation() {

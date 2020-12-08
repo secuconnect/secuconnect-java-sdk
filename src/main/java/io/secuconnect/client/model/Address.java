@@ -68,7 +68,7 @@ public class Address {
   }
 
    /**
-   * House number
+   * House number incl. supplement
    * @return streetNumber
   **/
   public String getStreetNumber() {
@@ -119,7 +119,7 @@ public class Address {
   }
 
    /**
-   * Two-letter country code
+   * Get country
    * @return country
   **/
   public String getCountry() {

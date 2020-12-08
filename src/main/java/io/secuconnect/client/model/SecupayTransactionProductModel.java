@@ -122,7 +122,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {
@@ -139,7 +139,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * ISO 4217 code of currency, eg EUR for Euro.
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {

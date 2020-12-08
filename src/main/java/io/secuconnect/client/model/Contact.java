@@ -266,7 +266,7 @@ public class Contact {
   }
 
    /**
-   * URL to website
+   * URL to company website
    * @return urlWebsite
   **/
   public String getUrlWebsite() {
@@ -300,7 +300,7 @@ public class Contact {
   }
 
    /**
-   * Nationality
+   * Get nationality
    * @return nationality
   **/
   public String getNationality() {

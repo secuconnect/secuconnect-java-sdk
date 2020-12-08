@@ -51,7 +51,7 @@ public class SmartTransactionsBaseProduct {
   }
 
    /**
-   * Tax
+   * Get tax
    * @return tax
   **/
   public Integer getTax() {
@@ -68,7 +68,7 @@ public class SmartTransactionsBaseProduct {
   }
 
    /**
-   * price of one bonus product
+   * Get priceOne
    * @return priceOne
   **/
   public Integer getPriceOne() {
@@ -136,7 +136,7 @@ public class SmartTransactionsBaseProduct {
   }
 
    /**
-   * international article number
+   * Get ean
    * @return ean
   **/
   public String getEan() {

@@ -69,7 +69,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {
@@ -86,7 +86,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * ISO 4217 code of currency, eg EUR for Euro.
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {

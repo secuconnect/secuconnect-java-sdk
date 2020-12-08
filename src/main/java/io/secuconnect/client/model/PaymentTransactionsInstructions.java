@@ -43,7 +43,7 @@ public class PaymentTransactionsInstructions {
   }
 
    /**
-   * Amount
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {
@@ -60,7 +60,7 @@ public class PaymentTransactionsInstructions {
   }
 
    /**
-   * Currency
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {

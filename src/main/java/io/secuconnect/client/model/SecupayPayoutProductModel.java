@@ -82,7 +82,7 @@ public class SecupayPayoutProductModel extends BaseProductModel {
   }
 
    /**
-   * Total amount of transaction lit&#x27;s items
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {
@@ -99,7 +99,7 @@ public class SecupayPayoutProductModel extends BaseProductModel {
   }
 
    /**
-   * ISO 4217 code of currency, eg EUR for Euro.
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {

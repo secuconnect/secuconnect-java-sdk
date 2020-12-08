@@ -2,12 +2,14 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.CreatedField;
 import io.secuconnect.client.model.GeneralMerchantsProductModel;
 import io.secuconnect.client.model.GeneralStoresProductModel;
 import io.secuconnect.client.model.ParentObj;
 import io.secuconnect.client.model.PaymentTransactionsProductModelCustomer;
 import io.secuconnect.client.model.PaymentTransactionsProductModelDetails;
 import io.secuconnect.client.model.ProductInstanceUID;
+import io.secuconnect.client.model.UpdatedField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +18,12 @@ import java.util.Objects;
  * The Payment Transaction manages the payment process, from authorization till the payment is really executed.
  */
 public class PaymentTransactionsProductModel extends BaseProductModel {
+  @SerializedName("created")
+  private String created = null;
+
+  @SerializedName("updated")
+  private String updated = null;
+
   @SerializedName("platform")
   private ProductInstanceUID platform = null;
 
@@ -51,12 +59,6 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("currency")
   private String currency = null;
-
-  @SerializedName("created")
-  private String created = null;
-
-  @SerializedName("updated")
-  private String updated = null;
 
   @SerializedName("status")
   private Integer status = null;
@@ -99,6 +101,40 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("accrual")
   private Boolean accrual = null;
+
+  public PaymentTransactionsProductModel created(String created) {
+    this.created = created;
+    return this;
+  }
+
+   /**
+   * Get created
+   * @return created
+  **/
+  public String getCreated() {
+    return created;
+  }
+
+  public void setCreated(String created) {
+    this.created = created;
+  }
+
+  public PaymentTransactionsProductModel updated(String updated) {
+    this.updated = updated;
+    return this;
+  }
+
+   /**
+   * Get updated
+   * @return updated
+  **/
+  public String getUpdated() {
+    return updated;
+  }
+
+  public void setUpdated(String updated) {
+    this.updated = updated;
+  }
 
   public PaymentTransactionsProductModel platform(ProductInstanceUID platform) {
     this.platform = platform;
@@ -284,7 +320,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Total amount to payment in the minor currency unit (e. g. Euro Cents)
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {
@@ -301,7 +337,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * ISO 4217 three-letter currency (e. g. EUR for Euro)
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {
@@ -310,40 +346,6 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   public void setCurrency(String currency) {
     this.currency = currency;
-  }
-
-  public PaymentTransactionsProductModel created(String created) {
-    this.created = created;
-    return this;
-  }
-
-   /**
-   * Created at date
-   * @return created
-  **/
-  public String getCreated() {
-    return created;
-  }
-
-  public void setCreated(String created) {
-    this.created = created;
-  }
-
-  public PaymentTransactionsProductModel updated(String updated) {
-    this.updated = updated;
-    return this;
-  }
-
-   /**
-   * Updated at date
-   * @return updated
-  **/
-  public String getUpdated() {
-    return updated;
-  }
-
-  public void setUpdated(String updated) {
-    this.updated = updated;
   }
 
   public PaymentTransactionsProductModel status(Integer status) {
@@ -593,7 +595,9 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
       return false;
     }
     PaymentTransactionsProductModel paymentTransactionsProductModel = (PaymentTransactionsProductModel) o;
-    return Objects.equals(this.platform, paymentTransactionsProductModel.platform) &&
+    return Objects.equals(this.created, paymentTransactionsProductModel.created) &&
+        Objects.equals(this.updated, paymentTransactionsProductModel.updated) &&
+        Objects.equals(this.platform, paymentTransactionsProductModel.platform) &&
         Objects.equals(this.merchant, paymentTransactionsProductModel.merchant) &&
         Objects.equals(this.store, paymentTransactionsProductModel.store) &&
         Objects.equals(this.transId, paymentTransactionsProductModel.transId) &&
@@ -605,8 +609,6 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.contractId, paymentTransactionsProductModel.contractId) &&
         Objects.equals(this.amount, paymentTransactionsProductModel.amount) &&
         Objects.equals(this.currency, paymentTransactionsProductModel.currency) &&
-        Objects.equals(this.created, paymentTransactionsProductModel.created) &&
-        Objects.equals(this.updated, paymentTransactionsProductModel.updated) &&
         Objects.equals(this.status, paymentTransactionsProductModel.status) &&
         Objects.equals(this.statusText, paymentTransactionsProductModel.statusText) &&
         Objects.equals(this.incomingPaymentDate, paymentTransactionsProductModel.incomingPaymentDate) &&
@@ -626,7 +628,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(platform, merchant, store, transId, parents, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, created, updated, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, accountOwner, accrual, super.hashCode());
+    return Objects.hash(created, updated, platform, merchant, store, transId, parents, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, accountOwner, accrual, super.hashCode());
   }
 
   @Override
@@ -634,6 +636,8 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentTransactionsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
@@ -646,8 +650,6 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    statusText: ").append(toIndentedString(statusText)).append("\n");
     sb.append("    incomingPaymentDate: ").append(toIndentedString(incomingPaymentDate)).append("\n");

@@ -22,7 +22,7 @@ public class ParentModel {
   }
 
    /**
-   * Parent object
+   * Get object
    * @return object
   **/
   public String getObject() {
@@ -39,7 +39,7 @@ public class ParentModel {
   }
 
    /**
-   * Parent object ID
+   * Get id
    * @return id
   **/
   public String getId() {
@@ -56,7 +56,7 @@ public class ParentModel {
   }
 
    /**
-   * Parent object type
+   * Parent object subtype number
    * @return type
   **/
   public String getType() {

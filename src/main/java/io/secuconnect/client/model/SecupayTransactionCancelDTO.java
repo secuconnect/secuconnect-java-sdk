@@ -39,7 +39,7 @@ public class SecupayTransactionCancelDTO {
   }
 
    /**
-   * partial or full refund amount, \&quot;0\&quot; means full refund
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {

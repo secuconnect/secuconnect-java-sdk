@@ -37,7 +37,7 @@ public class PaymentTransactionsProductModelDetails {
   }
 
    /**
-   * Total amount of payment in cents (or the smallest cash unit of the relevant currency)
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {

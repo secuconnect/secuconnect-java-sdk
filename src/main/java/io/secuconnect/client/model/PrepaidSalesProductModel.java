@@ -2,6 +2,7 @@ package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.CreatedField;
 import io.secuconnect.client.model.ItemGroup;
 import io.secuconnect.client.model.PrepaidSalesItem;
 import io.secuconnect.client.model.PrepaidSalesSmartDevice;
@@ -13,6 +14,9 @@ import java.util.Objects;
  * PrepaidSalesProductModel
  */
 public class PrepaidSalesProductModel extends BaseProductModel {
+  @SerializedName("created")
+  private String created = null;
+
   @SerializedName("status")
   private String status = null;
 
@@ -36,9 +40,6 @@ public class PrepaidSalesProductModel extends BaseProductModel {
 
   @SerializedName("contract")
   private ProductInstanceUID contract = null;
-
-  @SerializedName("created")
-  private String created = null;
 
   @SerializedName("demo")
   private Boolean demo = null;
@@ -87,6 +88,23 @@ public class PrepaidSalesProductModel extends BaseProductModel {
 
   @SerializedName("vtc_tid")
   private String vtcTid = null;
+
+  public PrepaidSalesProductModel created(String created) {
+    this.created = created;
+    return this;
+  }
+
+   /**
+   * Get created
+   * @return created
+  **/
+  public String getCreated() {
+    return created;
+  }
+
+  public void setCreated(String created) {
+    this.created = created;
+  }
 
   public PrepaidSalesProductModel status(String status) {
     this.status = status;
@@ -224,23 +242,6 @@ public class PrepaidSalesProductModel extends BaseProductModel {
     this.contract = contract;
   }
 
-  public PrepaidSalesProductModel created(String created) {
-    this.created = created;
-    return this;
-  }
-
-   /**
-   * Prepaid sale creation date
-   * @return created
-  **/
-  public String getCreated() {
-    return created;
-  }
-
-  public void setCreated(String created) {
-    this.created = created;
-  }
-
   public PrepaidSalesProductModel demo(Boolean demo) {
     this.demo = demo;
     return this;
@@ -281,7 +282,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Amount
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {
@@ -298,7 +299,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Currency
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {
@@ -522,7 +523,8 @@ public class PrepaidSalesProductModel extends BaseProductModel {
       return false;
     }
     PrepaidSalesProductModel prepaidSalesProductModel = (PrepaidSalesProductModel) o;
-    return Objects.equals(this.status, prepaidSalesProductModel.status) &&
+    return Objects.equals(this.created, prepaidSalesProductModel.created) &&
+        Objects.equals(this.status, prepaidSalesProductModel.status) &&
         Objects.equals(this.stock, prepaidSalesProductModel.stock) &&
         Objects.equals(this.item, prepaidSalesProductModel.item) &&
         Objects.equals(this.itemgroup, prepaidSalesProductModel.itemgroup) &&
@@ -530,7 +532,6 @@ public class PrepaidSalesProductModel extends BaseProductModel {
         Objects.equals(this.merchant, prepaidSalesProductModel.merchant) &&
         Objects.equals(this.store, prepaidSalesProductModel.store) &&
         Objects.equals(this.contract, prepaidSalesProductModel.contract) &&
-        Objects.equals(this.created, prepaidSalesProductModel.created) &&
         Objects.equals(this.demo, prepaidSalesProductModel.demo) &&
         Objects.equals(this.description, prepaidSalesProductModel.description) &&
         Objects.equals(this.amount, prepaidSalesProductModel.amount) &&
@@ -552,7 +553,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, stock, item, itemgroup, smartDevice, merchant, store, contract, created, demo, description, amount, currency, commission, commissionCurrency, code, serial, cardnumber, expireDate, providerDeliveryNumber, receiptHeader, receiptCustomer, receiptZvt, receiptDealer, vtcTid, super.hashCode());
+    return Objects.hash(created, status, stock, item, itemgroup, smartDevice, merchant, store, contract, demo, description, amount, currency, commission, commissionCurrency, code, serial, cardnumber, expireDate, providerDeliveryNumber, receiptHeader, receiptCustomer, receiptZvt, receiptDealer, vtcTid, super.hashCode());
   }
 
   @Override
@@ -560,6 +561,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class PrepaidSalesProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    stock: ").append(toIndentedString(stock)).append("\n");
     sb.append("    item: ").append(toIndentedString(item)).append("\n");
@@ -568,7 +570,6 @@ public class PrepaidSalesProductModel extends BaseProductModel {
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    demo: ").append(toIndentedString(demo)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");

@@ -19,7 +19,7 @@ public class GetAvailablePaymentMethodsDTO {
   }
 
    /**
-   * Currency code
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {
