@@ -22,7 +22,7 @@ public class InvitedBy {
   }
 
    /**
-   * Object of invited by
+   * Get object
    * @return object
   **/
   public String getObject() {
@@ -39,7 +39,7 @@ public class InvitedBy {
   }
 
    /**
-   * Id of invited by
+   * Get id
    * @return id
   **/
   public String getId() {

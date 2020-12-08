@@ -65,7 +65,7 @@ public class PrepaidItemsProductModel extends BaseProductModel {
   }
 
    /**
-   * Currency
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {

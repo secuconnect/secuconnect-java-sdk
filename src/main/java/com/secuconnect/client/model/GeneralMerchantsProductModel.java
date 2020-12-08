@@ -49,7 +49,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * Old id of general merchant
+   * ID in secupay Frontend
    * @return idOld
   **/
   public String getIdOld() {
@@ -66,7 +66,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * Type of general merchant
+   * User type ID - unverified shop (1); internet shop (11); kaufmännischer Netzbetrieb (KNB, 45); secucard merchant (46); App Center user (63), checkout provider (64)
    * @return type
   **/
   public String getType() {
@@ -167,7 +167,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * Get legalDetails
+   * Legal details like terms of use, privacy policy, or imprint
    * @return legalDetails
   **/
   public GeneralMerchantsLegalDetails getLegalDetails() {
@@ -184,7 +184,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * Get urls
+   * URLs
    * @return urls
   **/
   public GeneralMerchantsUrls getUrls() {
@@ -201,7 +201,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * store name
+   * Store name
    * @return storeName
   **/
   public String getStoreName() {

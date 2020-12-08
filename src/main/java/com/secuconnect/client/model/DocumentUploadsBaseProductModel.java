@@ -2,6 +2,7 @@ package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.BaseProductModel;
+import com.secuconnect.client.model.CreatedField;
 import java.util.Objects;
 
 /**
@@ -17,7 +18,7 @@ public class DocumentUploadsBaseProductModel extends BaseProductModel {
   }
 
    /**
-   * Created at date
+   * Get created
    * @return created
   **/
   public String getCreated() {

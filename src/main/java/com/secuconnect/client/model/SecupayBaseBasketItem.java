@@ -52,7 +52,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Category of item
+   * Line type {&#x27;article&#x27;, &#x27;sub_transaction&#x27;, &#x27;stakeholder_payment&#x27;, &#x27;shipping&#x27;}
    * @return itemType
   **/
   public String getItemType() {
@@ -69,7 +69,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Article number of item
+   * Your article number, storage key unit (SKU)
    * @return articleNumber
   **/
   public String getArticleNumber() {
@@ -103,7 +103,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Descriptive name of item
+   * Descriptive article name
    * @return name
   **/
   public String getName() {
@@ -137,7 +137,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * EAN, European Article Number
+   * Get ean
    * @return ean
   **/
   public String getEan() {
@@ -154,7 +154,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Applicable tax in percentages
+   * Tax rate in percent (integer values only)
    * @return tax
   **/
   public String getTax() {
@@ -171,7 +171,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Total price
+   * Get total
    * @return total
   **/
   public Integer getTotal() {
@@ -188,7 +188,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Price of single article, if item is of article category
+   * Get price
    * @return price
   **/
   public Integer getPrice() {
@@ -205,7 +205,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Special param for stakeholder payments
+   * API key (only for stakeholder payments)
    * @return apikey
   **/
   public String getApikey() {
@@ -222,7 +222,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Special param for payout payments
+   * Original transaction hash (only for payouts)
    * @return transactionHash
   **/
   public String getTransactionHash() {
@@ -239,7 +239,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Contract id - Special param for stakeholder payments
+   * Contract ID (only for stakeholder payments)
    * @return contractId
   **/
   public String getContractId() {
@@ -256,7 +256,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Reference id - must be unique for the entire basket
+   * Unique line identifier, used to maintain the basket before the transaction is executed
    * @return referenceId
   **/
   public String getReferenceId() {

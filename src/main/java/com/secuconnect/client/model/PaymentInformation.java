@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Payment information
+ * Bank details for withdrawals
  */
 public class PaymentInformation {
   @SerializedName("iban")
@@ -25,7 +25,7 @@ public class PaymentInformation {
   }
 
    /**
-   * IBAN
+   * International Bank Account Number (IBAN)
    * @return iban
   **/
   public String getIban() {
@@ -42,7 +42,7 @@ public class PaymentInformation {
   }
 
    /**
-   * BIC
+   * Bank Identifier Code (BIC), or formerly SWIFT code
    * @return bic
   **/
   public String getBic() {
@@ -59,7 +59,7 @@ public class PaymentInformation {
   }
 
    /**
-   * Owner
+   * Account owner name
    * @return owner
   **/
   public String getOwner() {

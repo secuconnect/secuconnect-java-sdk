@@ -164,7 +164,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * international article number
+   * Get ean
    * @return ean
   **/
   public String getEan() {
@@ -198,7 +198,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * Price one
+   * Get priceOne
    * @return priceOne
   **/
   public Integer getPriceOne() {
@@ -232,7 +232,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * Tax
+   * Get tax
    * @return tax
   **/
   public Integer getTax() {

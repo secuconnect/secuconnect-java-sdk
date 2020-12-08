@@ -2,14 +2,22 @@ package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.BaseProductModel;
+import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.PaymentInformation;
 import com.secuconnect.client.model.ProductInstanceUID;
+import com.secuconnect.client.model.UpdatedField;
 import java.util.Objects;
 
 /**
  * PaymentContractsProductModel
  */
 public class PaymentContractsProductModel extends BaseProductModel {
+  @SerializedName("created")
+  private String created = null;
+
+  @SerializedName("updated")
+  private String updated = null;
+
   @SerializedName("parent")
   private ProductInstanceUID parent = null;
 
@@ -19,11 +27,39 @@ public class PaymentContractsProductModel extends BaseProductModel {
   @SerializedName("demo")
   private Boolean demo = null;
 
-  @SerializedName("created")
-  private String created = null;
+  public PaymentContractsProductModel created(String created) {
+    this.created = created;
+    return this;
+  }
 
-  @SerializedName("updated")
-  private String updated = null;
+   /**
+   * Get created
+   * @return created
+  **/
+  public String getCreated() {
+    return created;
+  }
+
+  public void setCreated(String created) {
+    this.created = created;
+  }
+
+  public PaymentContractsProductModel updated(String updated) {
+    this.updated = updated;
+    return this;
+  }
+
+   /**
+   * Get updated
+   * @return updated
+  **/
+  public String getUpdated() {
+    return updated;
+  }
+
+  public void setUpdated(String updated) {
+    this.updated = updated;
+  }
 
   public PaymentContractsProductModel parent(ProductInstanceUID parent) {
     this.parent = parent;
@@ -76,40 +112,6 @@ public class PaymentContractsProductModel extends BaseProductModel {
     this.demo = demo;
   }
 
-  public PaymentContractsProductModel created(String created) {
-    this.created = created;
-    return this;
-  }
-
-   /**
-   * Created at date
-   * @return created
-  **/
-  public String getCreated() {
-    return created;
-  }
-
-  public void setCreated(String created) {
-    this.created = created;
-  }
-
-  public PaymentContractsProductModel updated(String updated) {
-    this.updated = updated;
-    return this;
-  }
-
-   /**
-   * Updated at date
-   * @return updated
-  **/
-  public String getUpdated() {
-    return updated;
-  }
-
-  public void setUpdated(String updated) {
-    this.updated = updated;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -119,17 +121,17 @@ public class PaymentContractsProductModel extends BaseProductModel {
       return false;
     }
     PaymentContractsProductModel paymentContractsProductModel = (PaymentContractsProductModel) o;
-    return Objects.equals(this.parent, paymentContractsProductModel.parent) &&
+    return Objects.equals(this.created, paymentContractsProductModel.created) &&
+        Objects.equals(this.updated, paymentContractsProductModel.updated) &&
+        Objects.equals(this.parent, paymentContractsProductModel.parent) &&
         Objects.equals(this.payInAccount, paymentContractsProductModel.payInAccount) &&
         Objects.equals(this.demo, paymentContractsProductModel.demo) &&
-        Objects.equals(this.created, paymentContractsProductModel.created) &&
-        Objects.equals(this.updated, paymentContractsProductModel.updated) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parent, payInAccount, demo, created, updated, super.hashCode());
+    return Objects.hash(created, updated, parent, payInAccount, demo, super.hashCode());
   }
 
   @Override
@@ -137,11 +139,11 @@ public class PaymentContractsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentContractsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    payInAccount: ").append(toIndentedString(payInAccount)).append("\n");
     sb.append("    demo: ").append(toIndentedString(demo)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

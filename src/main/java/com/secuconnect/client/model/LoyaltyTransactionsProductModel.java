@@ -2,6 +2,7 @@ package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.BaseProductModel;
+import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.LoyaltyTransactionsDTOCard;
 import com.secuconnect.client.model.LoyaltyTransactionsDTOCardgroup;
 import com.secuconnect.client.model.LoyaltyTransactionsDTOMerchant;
@@ -17,6 +18,9 @@ import java.util.Objects;
  * LoyaltyTransactionsProductModel
  */
 public class LoyaltyTransactionsProductModel extends BaseProductModel {
+  @SerializedName("created")
+  private String created = null;
+
   @SerializedName("merchant")
   private LoyaltyTransactionsDTOMerchant merchant = null;
 
@@ -56,9 +60,6 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   @SerializedName("description")
   private String description = null;
 
-  @SerializedName("created")
-  private String created = null;
-
   @SerializedName("last_changee")
   private String lastChangee = null;
 
@@ -67,6 +68,23 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("is_cancelling")
   private Integer isCancelling = null;
+
+  public LoyaltyTransactionsProductModel created(String created) {
+    this.created = created;
+    return this;
+  }
+
+   /**
+   * Get created
+   * @return created
+  **/
+  public String getCreated() {
+    return created;
+  }
+
+  public void setCreated(String created) {
+    this.created = created;
+  }
 
   public LoyaltyTransactionsProductModel merchant(LoyaltyTransactionsDTOMerchant merchant) {
     this.merchant = merchant;
@@ -243,7 +261,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty Transaction amount
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {
@@ -260,7 +278,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * The currency of the Loyalty Transaction
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {
@@ -303,23 +321,6 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   public void setDescription(String description) {
     this.description = description;
-  }
-
-  public LoyaltyTransactionsProductModel created(String created) {
-    this.created = created;
-    return this;
-  }
-
-   /**
-   * Created at date
-   * @return created
-  **/
-  public String getCreated() {
-    return created;
-  }
-
-  public void setCreated(String created) {
-    this.created = created;
   }
 
   public LoyaltyTransactionsProductModel lastChangee(String lastChangee) {
@@ -390,7 +391,8 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
       return false;
     }
     LoyaltyTransactionsProductModel loyaltyTransactionsProductModel = (LoyaltyTransactionsProductModel) o;
-    return Objects.equals(this.merchant, loyaltyTransactionsProductModel.merchant) &&
+    return Objects.equals(this.created, loyaltyTransactionsProductModel.created) &&
+        Objects.equals(this.merchant, loyaltyTransactionsProductModel.merchant) &&
         Objects.equals(this.cardgroup, loyaltyTransactionsProductModel.cardgroup) &&
         Objects.equals(this.store, loyaltyTransactionsProductModel.store) &&
         Objects.equals(this.merchantcard, loyaltyTransactionsProductModel.merchantcard) &&
@@ -403,7 +405,6 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.currency, loyaltyTransactionsProductModel.currency) &&
         Objects.equals(this.balance, loyaltyTransactionsProductModel.balance) &&
         Objects.equals(this.description, loyaltyTransactionsProductModel.description) &&
-        Objects.equals(this.created, loyaltyTransactionsProductModel.created) &&
         Objects.equals(this.lastChangee, loyaltyTransactionsProductModel.lastChangee) &&
         Objects.equals(this.receipt, loyaltyTransactionsProductModel.receipt) &&
         Objects.equals(this.isCancelling, loyaltyTransactionsProductModel.isCancelling) &&
@@ -412,7 +413,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, cardgroup, store, merchantcard, card, parents, children, tid, status, amount, currency, balance, description, created, lastChangee, receipt, isCancelling, super.hashCode());
+    return Objects.hash(created, merchant, cardgroup, store, merchantcard, card, parents, children, tid, status, amount, currency, balance, description, lastChangee, receipt, isCancelling, super.hashCode());
   }
 
   @Override
@@ -420,6 +421,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoyaltyTransactionsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    cardgroup: ").append(toIndentedString(cardgroup)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
@@ -433,7 +435,6 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    lastChangee: ").append(toIndentedString(lastChangee)).append("\n");
     sb.append("    receipt: ").append(toIndentedString(receipt)).append("\n");
     sb.append("    isCancelling: ").append(toIndentedString(isCancelling)).append("\n");

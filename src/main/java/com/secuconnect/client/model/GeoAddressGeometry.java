@@ -19,7 +19,7 @@ public class GeoAddressGeometry {
   }
 
    /**
-   * latitude
+   * Latitude
    * @return lat
   **/
   public String getLat() {
@@ -36,7 +36,7 @@ public class GeoAddressGeometry {
   }
 
    /**
-   * longitude
+   * Longitude
    * @return lon
   **/
   public String getLon() {

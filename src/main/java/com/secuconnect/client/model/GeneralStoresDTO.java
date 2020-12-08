@@ -95,7 +95,7 @@ public class GeneralStoresDTO {
   }
 
    /**
-   * New facebook id
+   * New facebook ID
    * @return facebookId
   **/
   public String getFacebookId() {
@@ -129,7 +129,7 @@ public class GeneralStoresDTO {
   }
 
    /**
-   * New url to general store website
+   * New URL to general store website
    * @return urlWebsite
   **/
   public String getUrlWebsite() {
@@ -196,7 +196,7 @@ public class GeneralStoresDTO {
   }
 
    /**
-   * Open hours in every day
+   * Opening hours per weekday
    * @return openHours
   **/
   public List<OpenHours> getOpenHours() {

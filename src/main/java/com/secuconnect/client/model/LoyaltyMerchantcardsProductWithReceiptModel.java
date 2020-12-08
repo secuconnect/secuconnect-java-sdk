@@ -102,7 +102,7 @@ public class LoyaltyMerchantcardsProductWithReceiptModel extends LoyaltyMerchant
   }
 
    /**
-   * Amount
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {

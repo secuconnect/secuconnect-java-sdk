@@ -56,7 +56,7 @@ public class SmartTransactionsBasketInfo {
   }
 
    /**
-   * Currency
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {

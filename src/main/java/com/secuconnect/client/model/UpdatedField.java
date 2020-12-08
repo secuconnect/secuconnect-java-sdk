@@ -4,27 +4,27 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Product instance id
+ * UpdatedField
  */
-public class ProductInstanceID {
-  @SerializedName("id")
-  private String id = null;
+public class UpdatedField {
+  @SerializedName("updated")
+  private String updated = null;
 
-  public ProductInstanceID id(String id) {
-    this.id = id;
+  public UpdatedField updated(String updated) {
+    this.updated = updated;
     return this;
   }
 
    /**
-   * Object ID
-   * @return id
+   * Get updated
+   * @return updated
   **/
-  public String getId() {
-    return id;
+  public String getUpdated() {
+    return updated;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public void setUpdated(String updated) {
+    this.updated = updated;
   }
 
   @Override
@@ -35,20 +35,20 @@ public class ProductInstanceID {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProductInstanceID productInstanceID = (ProductInstanceID) o;
-    return Objects.equals(this.id, productInstanceID.id);
+    UpdatedField updatedField = (UpdatedField) o;
+    return Objects.equals(this.updated, updatedField.updated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(updated);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProductInstanceID {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("class UpdatedField {\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

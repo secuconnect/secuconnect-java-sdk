@@ -3,6 +3,7 @@ package com.secuconnect.client.model;
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.Contact;
+import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.LoyaltyCustomersPaymentContainerModel;
 import com.secuconnect.client.model.ProductInstanceUID;
 import java.util.ArrayList;
@@ -13,6 +14,9 @@ import java.util.Objects;
  * LoyaltyCustomersProductModel
  */
 public class LoyaltyCustomersProductModel extends BaseProductModel {
+  @SerializedName("created")
+  private String created = null;
+
   @SerializedName("merchant")
   private ProductInstanceUID merchant = null;
 
@@ -34,8 +38,22 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
   @SerializedName("note")
   private String note = null;
 
-  @SerializedName("created")
-  private String created = null;
+  public LoyaltyCustomersProductModel created(String created) {
+    this.created = created;
+    return this;
+  }
+
+   /**
+   * Get created
+   * @return created
+  **/
+  public String getCreated() {
+    return created;
+  }
+
+  public void setCreated(String created) {
+    this.created = created;
+  }
 
   public LoyaltyCustomersProductModel merchant(ProductInstanceUID merchant) {
     this.merchant = merchant;
@@ -164,23 +182,6 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
     this.note = note;
   }
 
-  public LoyaltyCustomersProductModel created(String created) {
-    this.created = created;
-    return this;
-  }
-
-   /**
-   * Creation date
-   * @return created
-  **/
-  public String getCreated() {
-    return created;
-  }
-
-  public void setCreated(String created) {
-    this.created = created;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -190,20 +191,20 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
       return false;
     }
     LoyaltyCustomersProductModel loyaltyCustomersProductModel = (LoyaltyCustomersProductModel) o;
-    return Objects.equals(this.merchant, loyaltyCustomersProductModel.merchant) &&
+    return Objects.equals(this.created, loyaltyCustomersProductModel.created) &&
+        Objects.equals(this.merchant, loyaltyCustomersProductModel.merchant) &&
         Objects.equals(this.contact, loyaltyCustomersProductModel.contact) &&
         Objects.equals(this.merchantContact, loyaltyCustomersProductModel.merchantContact) &&
         Objects.equals(this.accountContact, loyaltyCustomersProductModel.accountContact) &&
         Objects.equals(this.paymentContainer, loyaltyCustomersProductModel.paymentContainer) &&
         Objects.equals(this.customernumber, loyaltyCustomersProductModel.customernumber) &&
         Objects.equals(this.note, loyaltyCustomersProductModel.note) &&
-        Objects.equals(this.created, loyaltyCustomersProductModel.created) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, contact, merchantContact, accountContact, paymentContainer, customernumber, note, created, super.hashCode());
+    return Objects.hash(created, merchant, contact, merchantContact, accountContact, paymentContainer, customernumber, note, super.hashCode());
   }
 
   @Override
@@ -211,6 +212,7 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoyaltyCustomersProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
     sb.append("    merchantContact: ").append(toIndentedString(merchantContact)).append("\n");
@@ -218,7 +220,6 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
     sb.append("    paymentContainer: ").append(toIndentedString(paymentContainer)).append("\n");
     sb.append("    customernumber: ").append(toIndentedString(customernumber)).append("\n");
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("}");
     return sb.toString();
   }

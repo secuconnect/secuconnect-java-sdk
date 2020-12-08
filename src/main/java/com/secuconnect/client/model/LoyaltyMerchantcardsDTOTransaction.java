@@ -74,7 +74,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
   }
 
    /**
-   * Amount
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {

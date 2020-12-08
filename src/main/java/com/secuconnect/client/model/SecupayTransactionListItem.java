@@ -136,7 +136,7 @@ public class SecupayTransactionListItem {
   }
 
    /**
-   * Total price
+   * Get total
    * @return total
   **/
   public Integer getTotal() {

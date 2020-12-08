@@ -22,7 +22,7 @@ public class AssignedBy {
   }
 
    /**
-   * Object of assigned by
+   * Get object
    * @return object
   **/
   public String getObject() {
@@ -39,7 +39,7 @@ public class AssignedBy {
   }
 
    /**
-   * Id of assigned by
+   * Get id
    * @return id
   **/
   public String getId() {

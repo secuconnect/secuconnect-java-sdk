@@ -2,6 +2,7 @@ package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.BaseProductModel;
+import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.LoyaltyCardsDTOAccount;
 import java.util.Objects;
 
@@ -9,14 +10,31 @@ import java.util.Objects;
  * LoyaltyCardsProductModel
  */
 public class LoyaltyCardsProductModel extends BaseProductModel {
+  @SerializedName("created")
+  private String created = null;
+
   @SerializedName("account")
   private LoyaltyCardsDTOAccount account = null;
 
   @SerializedName("cardnumber")
   private String cardnumber = null;
 
-  @SerializedName("created")
-  private String created = null;
+  public LoyaltyCardsProductModel created(String created) {
+    this.created = created;
+    return this;
+  }
+
+   /**
+   * Get created
+   * @return created
+  **/
+  public String getCreated() {
+    return created;
+  }
+
+  public void setCreated(String created) {
+    this.created = created;
+  }
 
   public LoyaltyCardsProductModel account(LoyaltyCardsDTOAccount account) {
     this.account = account;
@@ -52,23 +70,6 @@ public class LoyaltyCardsProductModel extends BaseProductModel {
     this.cardnumber = cardnumber;
   }
 
-  public LoyaltyCardsProductModel created(String created) {
-    this.created = created;
-    return this;
-  }
-
-   /**
-   * Creation date
-   * @return created
-  **/
-  public String getCreated() {
-    return created;
-  }
-
-  public void setCreated(String created) {
-    this.created = created;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -78,15 +79,15 @@ public class LoyaltyCardsProductModel extends BaseProductModel {
       return false;
     }
     LoyaltyCardsProductModel loyaltyCardsProductModel = (LoyaltyCardsProductModel) o;
-    return Objects.equals(this.account, loyaltyCardsProductModel.account) &&
+    return Objects.equals(this.created, loyaltyCardsProductModel.created) &&
+        Objects.equals(this.account, loyaltyCardsProductModel.account) &&
         Objects.equals(this.cardnumber, loyaltyCardsProductModel.cardnumber) &&
-        Objects.equals(this.created, loyaltyCardsProductModel.created) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, cardnumber, created, super.hashCode());
+    return Objects.hash(created, account, cardnumber, super.hashCode());
   }
 
   @Override
@@ -94,9 +95,9 @@ public class LoyaltyCardsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoyaltyCardsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    cardnumber: ").append(toIndentedString(cardnumber)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,7 +19,7 @@ public class PrepaidZvtDTO {
   }
 
    /**
-   * amount
+   * Get amount
    * @return amount
   **/
   public Integer getAmount() {

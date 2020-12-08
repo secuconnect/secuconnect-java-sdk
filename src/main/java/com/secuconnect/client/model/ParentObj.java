@@ -28,7 +28,7 @@ public class ParentObj {
   }
 
    /**
-   * Object of parent
+   * Parent object type
    * @return object
   **/
   public String getObject() {
@@ -45,7 +45,7 @@ public class ParentObj {
   }
 
    /**
-   * Id of parent
+   * Parent object ID
    * @return id
   **/
   public String getId() {

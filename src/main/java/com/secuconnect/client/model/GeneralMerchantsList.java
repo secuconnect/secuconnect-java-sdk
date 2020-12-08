@@ -22,7 +22,7 @@ public class GeneralMerchantsList {
   }
 
    /**
-   * Number of existing general merchants
+   * Number of existing General Merchants
    * @return count
   **/
   public Integer getCount() {
