@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
 import java.util.Objects;
 
 /**
@@ -8,22 +9,22 @@ import java.util.Objects;
  */
 public class SmartTransactionsSetDeliveryModel {
   @SerializedName("delivery_options")
-  private SmartTransactionsSetDeliveryModelDeliveryOptions deliveryOptions = null;
+  private OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
 
-  public SmartTransactionsSetDeliveryModel deliveryOptions(SmartTransactionsSetDeliveryModelDeliveryOptions deliveryOptions) {
+  public SmartTransactionsSetDeliveryModel deliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
     this.deliveryOptions = deliveryOptions;
     return this;
   }
 
    /**
-   * SmartTransactionsSetDeliveryModel
+   * Get deliveryOptions
    * @return deliveryOptions
   **/
-  public SmartTransactionsSetDeliveryModelDeliveryOptions getDeliveryOptions() {
+  public OneOfSmartTransactionsDeliveryOptionsModel getDeliveryOptions() {
     return deliveryOptions;
   }
 
-  public void setDeliveryOptions(SmartTransactionsSetDeliveryModelDeliveryOptions deliveryOptions) {
+  public void setDeliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
     this.deliveryOptions = deliveryOptions;
   }
 

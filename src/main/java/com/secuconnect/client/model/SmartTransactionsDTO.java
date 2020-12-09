@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
 import com.secuconnect.client.model.PaymentCustomersProductModel;
 import com.secuconnect.client.model.ProductInstanceID;
 import com.secuconnect.client.model.ProductInstanceUID;
@@ -8,6 +9,7 @@ import com.secuconnect.client.model.SmartTransactionsBasket;
 import com.secuconnect.client.model.SmartTransactionsBasketInfo;
 import com.secuconnect.client.model.SmartTransactionsCheckin;
 import com.secuconnect.client.model.SmartTransactionsCheckoutLinks;
+import com.secuconnect.client.model.SmartTransactionsCommunication;
 import com.secuconnect.client.model.SmartTransactionsIdent;
 import com.secuconnect.client.model.SmartTransactionsReceipt;
 import java.util.ArrayList;
@@ -64,7 +66,7 @@ public class SmartTransactionsDTO {
   private Integer receiptNumber = null;
 
   @SerializedName("device_source")
-  private String deviceSource = null;
+  private ProductInstanceUID deviceSource = null;
 
   @SerializedName("trans_id")
   private Integer transId = null;
@@ -93,8 +95,17 @@ public class SmartTransactionsDTO {
   @SerializedName("is_demo")
   private Boolean isDemo = null;
 
+  @SerializedName("intent")
+  private String intent = null;
+
   @SerializedName("checkout_links")
   private SmartTransactionsCheckoutLinks checkoutLinks = null;
+
+  @SerializedName("delivery_options")
+  private OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
+
+  @SerializedName("communications")
+  private SmartTransactionsCommunication communications = null;
 
   public SmartTransactionsDTO merchant(String merchant) {
     this.merchant = merchant;
@@ -367,20 +378,20 @@ public class SmartTransactionsDTO {
     this.receiptNumber = receiptNumber;
   }
 
-  public SmartTransactionsDTO deviceSource(String deviceSource) {
+  public SmartTransactionsDTO deviceSource(ProductInstanceUID deviceSource) {
     this.deviceSource = deviceSource;
     return this;
   }
 
    /**
-   * Device source
+   * Get deviceSource
    * @return deviceSource
   **/
-  public String getDeviceSource() {
+  public ProductInstanceUID getDeviceSource() {
     return deviceSource;
   }
 
-  public void setDeviceSource(String deviceSource) {
+  public void setDeviceSource(ProductInstanceUID deviceSource) {
     this.deviceSource = deviceSource;
   }
 
@@ -537,6 +548,23 @@ public class SmartTransactionsDTO {
     this.isDemo = isDemo;
   }
 
+  public SmartTransactionsDTO intent(String intent) {
+    this.intent = intent;
+    return this;
+  }
+
+   /**
+   * intent of transaction
+   * @return intent
+  **/
+  public String getIntent() {
+    return intent;
+  }
+
+  public void setIntent(String intent) {
+    this.intent = intent;
+  }
+
   public SmartTransactionsDTO checkoutLinks(SmartTransactionsCheckoutLinks checkoutLinks) {
     this.checkoutLinks = checkoutLinks;
     return this;
@@ -552,6 +580,40 @@ public class SmartTransactionsDTO {
 
   public void setCheckoutLinks(SmartTransactionsCheckoutLinks checkoutLinks) {
     this.checkoutLinks = checkoutLinks;
+  }
+
+  public SmartTransactionsDTO deliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
+    this.deliveryOptions = deliveryOptions;
+    return this;
+  }
+
+   /**
+   * Get deliveryOptions
+   * @return deliveryOptions
+  **/
+  public OneOfSmartTransactionsDeliveryOptionsModel getDeliveryOptions() {
+    return deliveryOptions;
+  }
+
+  public void setDeliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
+    this.deliveryOptions = deliveryOptions;
+  }
+
+  public SmartTransactionsDTO communications(SmartTransactionsCommunication communications) {
+    this.communications = communications;
+    return this;
+  }
+
+   /**
+   * Get communications
+   * @return communications
+  **/
+  public SmartTransactionsCommunication getCommunications() {
+    return communications;
+  }
+
+  public void setCommunications(SmartTransactionsCommunication communications) {
+    this.communications = communications;
   }
 
   @Override
@@ -588,12 +650,15 @@ public class SmartTransactionsDTO {
         Objects.equals(this.checkin, smartTransactionsDTO.checkin) &&
         Objects.equals(this.paymentMethod, smartTransactionsDTO.paymentMethod) &&
         Objects.equals(this.isDemo, smartTransactionsDTO.isDemo) &&
-        Objects.equals(this.checkoutLinks, smartTransactionsDTO.checkoutLinks);
+        Objects.equals(this.intent, smartTransactionsDTO.intent) &&
+        Objects.equals(this.checkoutLinks, smartTransactionsDTO.checkoutLinks) &&
+        Objects.equals(this.deliveryOptions, smartTransactionsDTO.deliveryOptions) &&
+        Objects.equals(this.communications, smartTransactionsDTO.communications);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, providerContract, status, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, receipt, receiptNumber, deviceSource, transId, contract, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, checkoutLinks);
+    return Objects.hash(merchant, providerContract, status, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, receipt, receiptNumber, deviceSource, transId, contract, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, intent, checkoutLinks, deliveryOptions, communications);
   }
 
   @Override
@@ -625,7 +690,10 @@ public class SmartTransactionsDTO {
     sb.append("    checkin: ").append(toIndentedString(checkin)).append("\n");
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
     sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");
+    sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
     sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
+    sb.append("    deliveryOptions: ").append(toIndentedString(deliveryOptions)).append("\n");
+    sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
     sb.append("}");
     return sb.toString();
   }

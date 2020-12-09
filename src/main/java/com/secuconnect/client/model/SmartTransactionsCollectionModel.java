@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * SmartTransactionsCollectionModel
  */
-public class SmartTransactionsCollectionModel implements SmartTransactionsBaseDeliveryOptionsModelType, SmartTransactionsSetDeliveryModelDeliveryOptions {
+public class SmartTransactionsCollectionModel implements OneOfSmartTransactionsDeliveryOptionsModel {
   @SerializedName("type")
   private String type = null;
 
@@ -19,6 +19,9 @@ public class SmartTransactionsCollectionModel implements SmartTransactionsBaseDe
 
   @SerializedName("delivered_at")
   private String deliveredAt = null;
+
+  @SerializedName("code")
+  private String code = null;
 
   public SmartTransactionsCollectionModel type(String type) {
     this.type = type;
@@ -88,6 +91,23 @@ public class SmartTransactionsCollectionModel implements SmartTransactionsBaseDe
     this.deliveredAt = deliveredAt;
   }
 
+  public SmartTransactionsCollectionModel code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * confirmation code to pickup the collection
+   * @return code
+  **/
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -100,12 +120,13 @@ public class SmartTransactionsCollectionModel implements SmartTransactionsBaseDe
     return Objects.equals(this.type, smartTransactionsCollectionModel.type) &&
         Objects.equals(this.scheduledSlot, smartTransactionsCollectionModel.scheduledSlot) &&
         Objects.equals(this.storeId, smartTransactionsCollectionModel.storeId) &&
-        Objects.equals(this.deliveredAt, smartTransactionsCollectionModel.deliveredAt);
+        Objects.equals(this.deliveredAt, smartTransactionsCollectionModel.deliveredAt) &&
+        Objects.equals(this.code, smartTransactionsCollectionModel.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, scheduledSlot, storeId, deliveredAt);
+    return Objects.hash(type, scheduledSlot, storeId, deliveredAt, code);
   }
 
   @Override
@@ -116,6 +137,7 @@ public class SmartTransactionsCollectionModel implements SmartTransactionsBaseDe
     sb.append("    scheduledSlot: ").append(toIndentedString(scheduledSlot)).append("\n");
     sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
     sb.append("    deliveredAt: ").append(toIndentedString(deliveredAt)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();
   }

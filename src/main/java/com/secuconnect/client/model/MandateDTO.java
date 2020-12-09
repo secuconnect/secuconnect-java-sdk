@@ -4,26 +4,46 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsBaseDeliveryOptionsModel
+ * MandateDTO
  */
-public class SmartTransactionsBaseDeliveryOptionsModel {
-  @SerializedName("type")
-  private SmartTransactionsBaseDeliveryOptionsModelType type = null;
+public class MandateDTO {
+  @SerializedName("customer_id")
+  private String customerId = null;
 
-  public SmartTransactionsBaseDeliveryOptionsModel type(SmartTransactionsBaseDeliveryOptionsModelType type) {
+  @SerializedName("type")
+  private String type = null;
+
+  public MandateDTO customerId(String customerId) {
+    this.customerId = customerId;
+    return this;
+  }
+
+   /**
+   * Customer id
+   * @return customerId
+  **/
+  public String getCustomerId() {
+    return customerId;
+  }
+
+  public void setCustomerId(String customerId) {
+    this.customerId = customerId;
+  }
+
+  public MandateDTO type(String type) {
     this.type = type;
     return this;
   }
 
    /**
-   * SmartTransactionsBaseDeliveryOptionsModel
+   * Mandate type
    * @return type
   **/
-  public SmartTransactionsBaseDeliveryOptionsModelType getType() {
+  public String getType() {
     return type;
   }
 
-  public void setType(SmartTransactionsBaseDeliveryOptionsModelType type) {
+  public void setType(String type) {
     this.type = type;
   }
 
@@ -35,19 +55,21 @@ public class SmartTransactionsBaseDeliveryOptionsModel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SmartTransactionsBaseDeliveryOptionsModel smartTransactionsBaseDeliveryOptionsModel = (SmartTransactionsBaseDeliveryOptionsModel) o;
-    return Objects.equals(this.type, smartTransactionsBaseDeliveryOptionsModel.type);
+    MandateDTO mandateDTO = (MandateDTO) o;
+    return Objects.equals(this.customerId, mandateDTO.customerId) &&
+        Objects.equals(this.type, mandateDTO.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type);
+    return Objects.hash(customerId, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SmartTransactionsBaseDeliveryOptionsModel {\n");
+    sb.append("class MandateDTO {\n");
+    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();

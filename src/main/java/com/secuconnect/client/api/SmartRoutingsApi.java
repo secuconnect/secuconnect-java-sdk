@@ -457,11 +457,11 @@ public class SmartRoutingsApi {
      * DELETE Smart/Routings/{smartRoutingId}
      * Remove specific smart roting
      * @param smartRoutingId Smart routing id (required)
-     * @return List&lt;SmartRoutingsProductModel&gt;
+     * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<SmartRoutingsProductModel> removeRouting(String smartRoutingId) throws ApiException {
-        ApiResponse<List<SmartRoutingsProductModel>> resp = removeRoutingWithHttpInfo(smartRoutingId);
+    public SmartRoutingsProductModel removeRouting(String smartRoutingId) throws ApiException {
+        ApiResponse<SmartRoutingsProductModel> resp = removeRoutingWithHttpInfo(smartRoutingId);
         return resp.getData();
     }
 
@@ -469,12 +469,12 @@ public class SmartRoutingsApi {
      * DELETE Smart/Routings/{smartRoutingId}
      * Remove specific smart roting
      * @param smartRoutingId Smart routing id (required)
-     * @return ApiResponse&lt;List&lt;SmartRoutingsProductModel&gt;&gt;
+     * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<SmartRoutingsProductModel>> removeRoutingWithHttpInfo(String smartRoutingId) throws ApiException {
+    public ApiResponse<SmartRoutingsProductModel> removeRoutingWithHttpInfo(String smartRoutingId) throws ApiException {
         Call call = removeRoutingValidateBeforeCall(smartRoutingId);
-        Type localVarReturnType = new TypeToken<List<SmartRoutingsProductModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -486,9 +486,9 @@ public class SmartRoutingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call removeRoutingAsync(String smartRoutingId, final ApiCallback<List<SmartRoutingsProductModel>> callback) throws ApiException {
+    public Call removeRoutingAsync(String smartRoutingId, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
         Call call = removeRoutingValidateBeforeCall(smartRoutingId);
-        Type localVarReturnType = new TypeToken<List<SmartRoutingsProductModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

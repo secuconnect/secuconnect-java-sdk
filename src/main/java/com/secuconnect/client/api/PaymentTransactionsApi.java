@@ -401,6 +401,92 @@ public class PaymentTransactionsApi {
     }
 
     /**
+     * Build call for getPaymentTransactionsOldFormat
+     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getPaymentTransactionsOldFormatCall(String paymentTransactionId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/OldFormat"
+            .replaceAll("\\{" + "paymentTransactionId" + "\\}", apiClient.escapeString(paymentTransactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getPaymentTransactionsOldFormatValidateBeforeCall(String paymentTransactionId) throws ApiException {
+        // verify the required parameter 'paymentTransactionId' is set
+        if (paymentTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling getPaymentTransactionsOldFormat(Async)");
+        }
+
+        return getPaymentTransactionsOldFormatCall(paymentTransactionId);
+    }
+
+    /**
+     * GET Payment/Transactions/{paymentTransactionId}/OldFormat
+     * Get old format for specific payment transactions
+     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @return SecupayTransactionProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SecupayTransactionProductModel getPaymentTransactionsOldFormat(String paymentTransactionId) throws ApiException {
+        ApiResponse<SecupayTransactionProductModel> resp = getPaymentTransactionsOldFormatWithHttpInfo(paymentTransactionId);
+        return resp.getData();
+    }
+
+    /**
+     * GET Payment/Transactions/{paymentTransactionId}/OldFormat
+     * Get old format for specific payment transactions
+     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SecupayTransactionProductModel> getPaymentTransactionsOldFormatWithHttpInfo(String paymentTransactionId) throws ApiException {
+        Call call = getPaymentTransactionsOldFormatValidateBeforeCall(paymentTransactionId);
+        Type localVarReturnType = new TypeToken<SecupayTransactionProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET Payment/Transactions/{paymentTransactionId}/OldFormat (asynchronously)
+     * Get old format for specific payment transactions
+     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getPaymentTransactionsOldFormatAsync(String paymentTransactionId, final ApiCallback<SecupayTransactionProductModel> callback) throws ApiException {
+        Call call = getPaymentTransactionsOldFormatValidateBeforeCall(paymentTransactionId);
+        Type localVarReturnType = new TypeToken<SecupayTransactionProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
      * Build call for getShippingUrl
      * @param paymentTransactionId Payment transaction id (required)
      * @return Call to execute

@@ -19,6 +19,39 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.1.0] - 2020-12-09
+
+### Security
+
+- Update dependencies to the latest versions.
+
+### Added
+
+- `Api.PaymentContainersApi.mandate()`
+- `Api.PaymentContainersApi.uploadMandate()`
+- `Model.MandateDTO`
+- `Model.MandateProductModel`
+- `Model.SmartTransactionsPrepare` element `device_source`
+- `Model.SmartTransactionsShippingModel` element `type`
+- `Model.SmartTransactionsCollectionModel` element `code`
+- `Model.UploadMandateDTO`
+- `Model.UploadMandateProductModel`
+- `Api.PaymentTransactionsApi.getPaymentTransactionsOldFormat()`
+- `Model.SmartTransactionsDTO` element `communications`
+- `Model.SmartTransactionsProductModel` element `communications`
+
+### Fixed
+
+- `Api.SmartRoutingsApi` `removeRouting` does not return a List, it's only returns one item.
+- `Model.SmartTransactionsDTO` element `device_source` is an instance of `ProductInstanceUID` instead of `String`
+- `Model.GeneralMerchantsProductModel` element `id_old` is an instance of `Integer` instead of `String`
+- `Model.GeneralMerchantsProductModel` element `legal_details` is a List of `GeneralMerchantsLegalDetails`
+- `Model.GeneralMerchantsProductModel` element `urls` is a List of `GeneralMerchantsUrls`
+- `Model.SmartTransactionsCollectionModel`
+- `Model.SmartTransactionsShippingModel`
+- `Model.SmartTransactionsSetDeliveryModel` element `delivery_options`
+
+
 ## [3.0.0] - 2020-08-20
 
 ### Security
@@ -74,6 +107,102 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.LoyaltyDTOMerchant`
 - `Model.SmartTransactionsShipmentDetails`
 - `Model.SmartDevicesDTOPrepaidTid`
+
+
+## [2.4.0] - 2020-12-09
+
+### Security
+
+- Update dependencies to the latest versions.
+
+### Added
+
+- `Api.PaymentTransactionsApi.getPaymentTransactionsOldFormat()`
+- `Model.SmartTransactionsDTO` element `communications`
+- `Model.SmartTransactionsProductModel` element `communications`
+
+### Fixed
+
+- `Model.GeneralMerchantsProductModel` element `id_old` is an instance of `Integer` instead of `String`
+- `Model.GeneralMerchantsProductModel` element `legal_details` is a List of `GeneralMerchantsLegalDetails`
+- `Model.GeneralMerchantsProductModel` element `urls` is a List of `GeneralMerchantsUrls`
+
+
+## [2.3.0] - 2020-09-14
+
+### Added
+
+- `Api.PaymentContainersApi.mandate()`
+- `Api.PaymentContainersApi.uploadMandate()`
+- `Model.MandateDTO`
+- `Model.MandateProductModel`
+- `Model.SmartTransactionsPrepare` element `device_source`
+- `Model.UploadMandateDTO`
+- `Model.UploadMandateProductModel`
+
+### Fixed
+
+- `Model.SmartTransactionsDTO` element `device_source` is an instance of `ProductInstanceUID` instead of `String`
+
+
+## [2.2.0] - 2020-09-07
+
+### Security
+- Update dependencies to the latest versions.
+
+### Added
+- `Api.LoyaltyCardgroupsApi.getCardgroupsByMerchantId()`
+- `Api.PaymentTransactionsApi.addTransaction()`
+- `Api.SmartTransactionsApi.setDelivery()`
+- `Model.GeneralStoresProductModel` element `acceptance_point`
+- `Model.OneOfSmartTransactionsDeliveryOptionsModel`
+- `Model.PaymentContractsProductModel` element `pay_in_account`
+- `Model.SecupayTransactionProductDTO` element `payment_methods`
+- `Model.SecupayTransactionProductModel` element `payment_id`
+- `Model.SmartDevicesDTO` element `device` and `tid`
+- `Model.SmartDevicesProductModel` element `tid` and `refresh`
+- `Model.SmartTransactionsCollectionModel`
+- `Model.SmartTransactionsDTO` element `delivery_options`
+- `Model.SmartTransactionsProductModel` element `delivery_options` and `intend`
+- `Model.SmartTransactionsSetDeliveryModel`
+- `Model.SmartTransactionsShippingModel`
+- `Model.SmartTransactionsTimeSlot`
+
+### Fixed
+
+- `Api.SmartRoutingsApi` `removeRouting` does not return a List, it's only returns one item.
+
+### Removed
+- `Api.LoyaltySalesApi`
+- `Api.LoyaltyStoregroupsApi`
+- `Api.SmartDevicesApi.createPrepaidTid()`
+- `Api.SmartDevicesApi.createVirtualDevice()`
+- `Api.SmartDevicesApi.getSecubaseConfig()`
+- `Model.GeneralMerchantsCheckoutOptions`
+- `Model.GeneralMerchantsCheckoutOptionsCollection`
+- `Model.GeneralMerchantsCheckoutOptionsCollectionSmartDevices`
+- `Model.GeneralMerchantsDTO` element `checkout_options`
+- `Model.GeneralMerchantsProductModel` element `checkout_options`
+- `Model.LoyaltyDTOMerchant`
+- `Model.LoyaltyDTOStore`
+- `Model.LoyaltyStoregroupsDTO`
+- `Model.LoyaltyStoregroupsDTOStoresAddressComponents`
+- `Model.LoyaltyStoregroupsList`
+- `Model.LoyaltyStoregroupsProductModel`
+- `Model.SmartDevicesDTO` element `terminal`
+- `Model.SmartDevicesDTOSecubaseConfig`
+- `Model.SmartDevicesSecubaseConfig`
+- `Model.SmartDevicesSecubaseConfigLogging`
+- `Model.SmartDevicesSecubaseConfigLoggingFileNet`
+- `Model.SmartTransactionsBasket` element `texts`
+- `Model.SmartTransactionsBasketText`
+- `Model.SmartTransactionsPickupOptions`
+- `Model.SmartTransactionsDTO` elements `order_option`, `pickup_options`
+- `Model.SmartTransactionsProductModel` elements `order_option`, `pickup_options` and `shipment_details`
+- `Model.GeneralMerchantsCheckoutOptionsShipping`
+- `Model.SmartTransactionsShipmentDetails`
+- `Model.SmartDevicesDTOPrepaidTid`
+- `Model.Store` element `name_raw`
 
 
 ## [2.1.0] - 2020-05-12

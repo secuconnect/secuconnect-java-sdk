@@ -6,7 +6,10 @@ import java.util.Objects;
 /**
  * SmartTransactionsShippingModel
  */
-public class SmartTransactionsShippingModel implements SmartTransactionsBaseDeliveryOptionsModelType, SmartTransactionsSetDeliveryModelDeliveryOptions {
+public class SmartTransactionsShippingModel implements OneOfSmartTransactionsDeliveryOptionsModel {
+  @SerializedName("type")
+  private String type = null;
+
   @SerializedName("shipped_at")
   private String shippedAt = null;
 
@@ -18,6 +21,23 @@ public class SmartTransactionsShippingModel implements SmartTransactionsBaseDeli
 
   @SerializedName("invoice_number")
   private String invoiceNumber = null;
+
+  public SmartTransactionsShippingModel type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Type of delivery option
+   * @return type
+  **/
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
 
   public SmartTransactionsShippingModel shippedAt(String shippedAt) {
     this.shippedAt = shippedAt;
@@ -96,7 +116,8 @@ public class SmartTransactionsShippingModel implements SmartTransactionsBaseDeli
       return false;
     }
     SmartTransactionsShippingModel smartTransactionsShippingModel = (SmartTransactionsShippingModel) o;
-    return Objects.equals(this.shippedAt, smartTransactionsShippingModel.shippedAt) &&
+    return Objects.equals(this.type, smartTransactionsShippingModel.type) &&
+        Objects.equals(this.shippedAt, smartTransactionsShippingModel.shippedAt) &&
         Objects.equals(this.shippedBy, smartTransactionsShippingModel.shippedBy) &&
         Objects.equals(this.trackingCode, smartTransactionsShippingModel.trackingCode) &&
         Objects.equals(this.invoiceNumber, smartTransactionsShippingModel.invoiceNumber);
@@ -104,13 +125,14 @@ public class SmartTransactionsShippingModel implements SmartTransactionsBaseDeli
 
   @Override
   public int hashCode() {
-    return Objects.hash(shippedAt, shippedBy, trackingCode, invoiceNumber);
+    return Objects.hash(type, shippedAt, shippedBy, trackingCode, invoiceNumber);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartTransactionsShippingModel {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    shippedAt: ").append(toIndentedString(shippedAt)).append("\n");
     sb.append("    shippedBy: ").append(toIndentedString(shippedBy)).append("\n");
     sb.append("    trackingCode: ").append(toIndentedString(trackingCode)).append("\n");
