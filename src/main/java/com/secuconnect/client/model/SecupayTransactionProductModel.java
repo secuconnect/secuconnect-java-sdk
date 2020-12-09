@@ -1,111 +1,185 @@
-package com.secuconnect.client.model;
+package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.secuconnect.client.model.BaseProductModel;
-import com.secuconnect.client.model.PaymentContainerMandate;
-import com.secuconnect.client.model.PaymentContainersProductModel;
-import com.secuconnect.client.model.PaymentCustomersProductModel;
-import com.secuconnect.client.model.PaymentInformation;
-import com.secuconnect.client.model.SecupayBasketItem;
-import com.secuconnect.client.model.SecupayRedirectUrl;
-import com.secuconnect.client.model.SecupaySubTransactionProductModel;
-import com.secuconnect.client.model.SecupayTransactionProductDTOSubscription;
-import com.secuconnect.client.model.SecupayTransactionProductModelUsedPaymentInstrument;
+import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.CreatedField;
+import io.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
+import io.secuconnect.client.model.PaymentCustomersProductModel;
+import io.secuconnect.client.model.PaymentTransactionsProductModel;
+import io.secuconnect.client.model.ProductInstanceUID;
+import io.secuconnect.client.model.SmartTransactionsBasket;
+import io.secuconnect.client.model.SmartTransactionsBasketInfo;
+import io.secuconnect.client.model.SmartTransactionsCheckin;
+import io.secuconnect.client.model.SmartTransactionsCheckoutLinks;
+import io.secuconnect.client.model.SmartTransactionsCommunication;
+import io.secuconnect.client.model.SmartTransactionsIdent;
+import io.secuconnect.client.model.SmartTransactionsMerchant;
+import io.secuconnect.client.model.SmartTransactionsPaymentLinks;
+import io.secuconnect.client.model.SmartTransactionsReceipt;
+import io.secuconnect.client.model.UpdatedField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * SecupayTransactionProductModel
+ * SmartTransactionsProductModel
  */
-public class SecupayTransactionProductModel extends BaseProductModel {
-  @SerializedName("trans_id")
-  private Integer transId = null;
+public class SmartTransactionsProductModel extends BaseProductModel {
+  @SerializedName("created")
+  private String created = null;
+
+  @SerializedName("updated")
+  private String updated = null;
 
   @SerializedName("status")
   private String status = null;
 
-  @SerializedName("amount")
-  private Integer amount = null;
+  @SerializedName("merchant")
+  private SmartTransactionsMerchant merchant = null;
 
-  @SerializedName("currency")
-  private String currency = null;
+  @SerializedName("contract")
+  private ProductInstanceUID contract = null;
 
-  @SerializedName("purpose")
-  private String purpose = null;
-
-  @SerializedName("order_id")
-  private String orderId = null;
-
-  @SerializedName("payment_id")
-  private String paymentId = null;
-
-  @SerializedName("basket")
-  private List<SecupayBasketItem> basket = null;
-
-  @SerializedName("transaction_status")
-  private String transactionStatus = null;
-
-  @SerializedName("accrual")
-  private Boolean accrual = null;
-
-  @SerializedName("payment_action")
-  private String paymentAction = null;
-
-  @SerializedName("transfer_purpose")
-  private String transferPurpose = null;
-
-  @SerializedName("transfer_account")
-  private PaymentInformation transferAccount = null;
+  @SerializedName("provider_contract")
+  private ProductInstanceUID providerContract = null;
 
   @SerializedName("customer")
   private PaymentCustomersProductModel customer = null;
 
-  @SerializedName("used_payment_instrument")
-  private SecupayTransactionProductModelUsedPaymentInstrument usedPaymentInstrument = null;
+  @SerializedName("shipping_address")
+  private PaymentCustomersProductModel shippingAddress = null;
 
-  @SerializedName("redirect_url")
-  private SecupayRedirectUrl redirectUrl = null;
+  @SerializedName("container")
+  private ProductInstanceUID container = null;
 
-  @SerializedName("subscription")
-  private SecupayTransactionProductDTOSubscription subscription = null;
+  @SerializedName("checkin")
+  private SmartTransactionsCheckin checkin = null;
+
+  @SerializedName("merchantRef")
+  private String merchantRef = null;
+
+  @SerializedName("transactionRef")
+  private String transactionRef = null;
+
+  @SerializedName("store")
+  private ProductInstanceUID store = null;
+
+  @SerializedName("device_source")
+  private ProductInstanceUID deviceSource = null;
+
+  @SerializedName("device_destination")
+  private ProductInstanceUID deviceDestination = null;
+
+  @SerializedName("receipt_number")
+  private Integer receiptNumber = null;
+
+  @SerializedName("receipt")
+  private List<SmartTransactionsReceipt> receipt = null;
+
+  @SerializedName("receipt_merchant")
+  private List<SmartTransactionsReceipt> receiptMerchant = null;
+
+  @SerializedName("receipt_merchant_print")
+  private Boolean receiptMerchantPrint = null;
+
+  @SerializedName("basket_info")
+  private SmartTransactionsBasketInfo basketInfo = null;
+
+  @SerializedName("basket")
+  private SmartTransactionsBasket basket = null;
+
+  @SerializedName("idents")
+  private List<SmartTransactionsIdent> idents = null;
+
+  @SerializedName("tax_rate")
+  private Integer taxRate = null;
+
+  @SerializedName("tax_amount")
+  private Integer taxAmount = null;
+
+  @SerializedName("cashier")
+  private String cashier = null;
+
+  @SerializedName("market")
+  private String market = null;
+
+  @SerializedName("delivery_options")
+  private OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
+
+  @SerializedName("product")
+  private String product = null;
+
+  @SerializedName("trans_id")
+  private Integer transId = null;
+
+  @SerializedName("payment_method")
+  private String paymentMethod = null;
+
+  @SerializedName("transactions")
+  private List<PaymentTransactionsProductModel> transactions = null;
+
+  @SerializedName("last_visited_page")
+  private String lastVisitedPage = null;
+
+  @SerializedName("is_demo")
+  private Boolean isDemo = null;
+
+  @SerializedName("checkout_links")
+  private SmartTransactionsCheckoutLinks checkoutLinks = null;
+
+  @SerializedName("intent")
+  private String intent = null;
 
   @SerializedName("iframe_url")
   private String iframeUrl = null;
 
-  @SerializedName("container")
-  private PaymentContainersProductModel container = null;
+  @SerializedName("communications")
+  private SmartTransactionsCommunication communications = null;
 
-  @SerializedName("sub_transactions")
-  private List<SecupaySubTransactionProductModel> subTransactions = null;
+  @SerializedName("payment_links")
+  private SmartTransactionsPaymentLinks paymentLinks = null;
 
-  @SerializedName("mandate")
-  private PaymentContainerMandate mandate = null;
-
-  public SecupayTransactionProductModel transId(Integer transId) {
-    this.transId = transId;
+  public SmartTransactionsProductModel created(String created) {
+    this.created = created;
     return this;
   }
 
    /**
-   * Transaction identifier
-   * @return transId
+   * Get created
+   * @return created
   **/
-  public Integer getTransId() {
-    return transId;
+  public String getCreated() {
+    return created;
   }
 
-  public void setTransId(Integer transId) {
-    this.transId = transId;
+  public void setCreated(String created) {
+    this.created = created;
   }
 
-  public SecupayTransactionProductModel status(String status) {
+  public SmartTransactionsProductModel updated(String updated) {
+    this.updated = updated;
+    return this;
+  }
+
+   /**
+   * Get updated
+   * @return updated
+  **/
+  public String getUpdated() {
+    return updated;
+  }
+
+  public void setUpdated(String updated) {
+    this.updated = updated;
+  }
+
+  public SmartTransactionsProductModel status(String status) {
     this.status = status;
     return this;
   }
 
    /**
-   * Transaction status
+   * Status of smart transaction
    * @return status
   **/
   public String getStatus() {
@@ -116,202 +190,58 @@ public class SecupayTransactionProductModel extends BaseProductModel {
     this.status = status;
   }
 
-  public SecupayTransactionProductModel amount(Integer amount) {
-    this.amount = amount;
+  public SmartTransactionsProductModel merchant(SmartTransactionsMerchant merchant) {
+    this.merchant = merchant;
     return this;
   }
 
    /**
-   * Get amount
-   * @return amount
+   * Get merchant
+   * @return merchant
   **/
-  public Integer getAmount() {
-    return amount;
+  public SmartTransactionsMerchant getMerchant() {
+    return merchant;
   }
 
-  public void setAmount(Integer amount) {
-    this.amount = amount;
+  public void setMerchant(SmartTransactionsMerchant merchant) {
+    this.merchant = merchant;
   }
 
-  public SecupayTransactionProductModel currency(String currency) {
-    this.currency = currency;
+  public SmartTransactionsProductModel contract(ProductInstanceUID contract) {
+    this.contract = contract;
     return this;
   }
 
    /**
-   * Get currency
-   * @return currency
+   * Get contract
+   * @return contract
   **/
-  public String getCurrency() {
-    return currency;
+  public ProductInstanceUID getContract() {
+    return contract;
   }
 
-  public void setCurrency(String currency) {
-    this.currency = currency;
+  public void setContract(ProductInstanceUID contract) {
+    this.contract = contract;
   }
 
-  public SecupayTransactionProductModel purpose(String purpose) {
-    this.purpose = purpose;
+  public SmartTransactionsProductModel providerContract(ProductInstanceUID providerContract) {
+    this.providerContract = providerContract;
     return this;
   }
 
    /**
-   * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
-   * @return purpose
+   * Get providerContract
+   * @return providerContract
   **/
-  public String getPurpose() {
-    return purpose;
+  public ProductInstanceUID getProviderContract() {
+    return providerContract;
   }
 
-  public void setPurpose(String purpose) {
-    this.purpose = purpose;
+  public void setProviderContract(ProductInstanceUID providerContract) {
+    this.providerContract = providerContract;
   }
 
-  public SecupayTransactionProductModel orderId(String orderId) {
-    this.orderId = orderId;
-    return this;
-  }
-
-   /**
-   * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
-   * @return orderId
-  **/
-  public String getOrderId() {
-    return orderId;
-  }
-
-  public void setOrderId(String orderId) {
-    this.orderId = orderId;
-  }
-
-  public SecupayTransactionProductModel paymentId(String paymentId) {
-    this.paymentId = paymentId;
-    return this;
-  }
-
-   /**
-   * Payment ID
-   * @return paymentId
-  **/
-  public String getPaymentId() {
-    return paymentId;
-  }
-
-  public void setPaymentId(String paymentId) {
-    this.paymentId = paymentId;
-  }
-
-  public SecupayTransactionProductModel basket(List<SecupayBasketItem> basket) {
-    this.basket = basket;
-    return this;
-  }
-
-  public SecupayTransactionProductModel addBasketItem(SecupayBasketItem basketItem) {
-    if (this.basket == null) {
-      this.basket = new ArrayList<>();
-    }
-    this.basket.add(basketItem);
-    return this;
-  }
-
-   /**
-   * A list of items that are being purchased.
-   * @return basket
-  **/
-  public List<SecupayBasketItem> getBasket() {
-    return basket;
-  }
-
-  public void setBasket(List<SecupayBasketItem> basket) {
-    this.basket = basket;
-  }
-
-  public SecupayTransactionProductModel transactionStatus(String transactionStatus) {
-    this.transactionStatus = transactionStatus;
-    return this;
-  }
-
-   /**
-   * Transaction status (number)
-   * @return transactionStatus
-  **/
-  public String getTransactionStatus() {
-    return transactionStatus;
-  }
-
-  public void setTransactionStatus(String transactionStatus) {
-    this.transactionStatus = transactionStatus;
-  }
-
-  public SecupayTransactionProductModel accrual(Boolean accrual) {
-    this.accrual = accrual;
-    return this;
-  }
-
-   /**
-   * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
-   * @return accrual
-  **/
-  public Boolean getAccrual() {
-    return accrual;
-  }
-
-  public void setAccrual(Boolean accrual) {
-    this.accrual = accrual;
-  }
-
-  public SecupayTransactionProductModel paymentAction(String paymentAction) {
-    this.paymentAction = paymentAction;
-    return this;
-  }
-
-   /**
-   * Specifies whether a pre-authorization (\&quot;authorization\&quot;) or instant payment ( \&quot;sale\&quot;) is to be performed. Standard value here is \&quot;sale\&quot;. The collection of the pre-authorized payment is made with the \&quot;capture\&quot; command.
-   * @return paymentAction
-  **/
-  public String getPaymentAction() {
-    return paymentAction;
-  }
-
-  public void setPaymentAction(String paymentAction) {
-    this.paymentAction = paymentAction;
-  }
-
-  public SecupayTransactionProductModel transferPurpose(String transferPurpose) {
-    this.transferPurpose = transferPurpose;
-    return this;
-  }
-
-   /**
-   * The purpose the payer needs to use for his transfer
-   * @return transferPurpose
-  **/
-  public String getTransferPurpose() {
-    return transferPurpose;
-  }
-
-  public void setTransferPurpose(String transferPurpose) {
-    this.transferPurpose = transferPurpose;
-  }
-
-  public SecupayTransactionProductModel transferAccount(PaymentInformation transferAccount) {
-    this.transferAccount = transferAccount;
-    return this;
-  }
-
-   /**
-   * Get transferAccount
-   * @return transferAccount
-  **/
-  public PaymentInformation getTransferAccount() {
-    return transferAccount;
-  }
-
-  public void setTransferAccount(PaymentInformation transferAccount) {
-    this.transferAccount = transferAccount;
-  }
-
-  public SecupayTransactionProductModel customer(PaymentCustomersProductModel customer) {
+  public SmartTransactionsProductModel customer(PaymentCustomersProductModel customer) {
     this.customer = customer;
     return this;
   }
@@ -328,64 +258,521 @@ public class SecupayTransactionProductModel extends BaseProductModel {
     this.customer = customer;
   }
 
-  public SecupayTransactionProductModel usedPaymentInstrument(SecupayTransactionProductModelUsedPaymentInstrument usedPaymentInstrument) {
-    this.usedPaymentInstrument = usedPaymentInstrument;
+  public SmartTransactionsProductModel shippingAddress(PaymentCustomersProductModel shippingAddress) {
+    this.shippingAddress = shippingAddress;
     return this;
   }
 
    /**
-   * Get usedPaymentInstrument
-   * @return usedPaymentInstrument
+   * Get shippingAddress
+   * @return shippingAddress
   **/
-  public SecupayTransactionProductModelUsedPaymentInstrument getUsedPaymentInstrument() {
-    return usedPaymentInstrument;
+  public PaymentCustomersProductModel getShippingAddress() {
+    return shippingAddress;
   }
 
-  public void setUsedPaymentInstrument(SecupayTransactionProductModelUsedPaymentInstrument usedPaymentInstrument) {
-    this.usedPaymentInstrument = usedPaymentInstrument;
+  public void setShippingAddress(PaymentCustomersProductModel shippingAddress) {
+    this.shippingAddress = shippingAddress;
   }
 
-  public SecupayTransactionProductModel redirectUrl(SecupayRedirectUrl redirectUrl) {
-    this.redirectUrl = redirectUrl;
+  public SmartTransactionsProductModel container(ProductInstanceUID container) {
+    this.container = container;
     return this;
   }
 
    /**
-   * Get redirectUrl
-   * @return redirectUrl
+   * Get container
+   * @return container
   **/
-  public SecupayRedirectUrl getRedirectUrl() {
-    return redirectUrl;
+  public ProductInstanceUID getContainer() {
+    return container;
   }
 
-  public void setRedirectUrl(SecupayRedirectUrl redirectUrl) {
-    this.redirectUrl = redirectUrl;
+  public void setContainer(ProductInstanceUID container) {
+    this.container = container;
   }
 
-  public SecupayTransactionProductModel subscription(SecupayTransactionProductDTOSubscription subscription) {
-    this.subscription = subscription;
+  public SmartTransactionsProductModel checkin(SmartTransactionsCheckin checkin) {
+    this.checkin = checkin;
     return this;
   }
 
    /**
-   * Get subscription
-   * @return subscription
+   * Get checkin
+   * @return checkin
   **/
-  public SecupayTransactionProductDTOSubscription getSubscription() {
-    return subscription;
+  public SmartTransactionsCheckin getCheckin() {
+    return checkin;
   }
 
-  public void setSubscription(SecupayTransactionProductDTOSubscription subscription) {
-    this.subscription = subscription;
+  public void setCheckin(SmartTransactionsCheckin checkin) {
+    this.checkin = checkin;
   }
 
-  public SecupayTransactionProductModel iframeUrl(String iframeUrl) {
+  public SmartTransactionsProductModel merchantRef(String merchantRef) {
+    this.merchantRef = merchantRef;
+    return this;
+  }
+
+   /**
+   * Merchant reference
+   * @return merchantRef
+  **/
+  public String getMerchantRef() {
+    return merchantRef;
+  }
+
+  public void setMerchantRef(String merchantRef) {
+    this.merchantRef = merchantRef;
+  }
+
+  public SmartTransactionsProductModel transactionRef(String transactionRef) {
+    this.transactionRef = transactionRef;
+    return this;
+  }
+
+   /**
+   * Transaction reference
+   * @return transactionRef
+  **/
+  public String getTransactionRef() {
+    return transactionRef;
+  }
+
+  public void setTransactionRef(String transactionRef) {
+    this.transactionRef = transactionRef;
+  }
+
+  public SmartTransactionsProductModel store(ProductInstanceUID store) {
+    this.store = store;
+    return this;
+  }
+
+   /**
+   * Get store
+   * @return store
+  **/
+  public ProductInstanceUID getStore() {
+    return store;
+  }
+
+  public void setStore(ProductInstanceUID store) {
+    this.store = store;
+  }
+
+  public SmartTransactionsProductModel deviceSource(ProductInstanceUID deviceSource) {
+    this.deviceSource = deviceSource;
+    return this;
+  }
+
+   /**
+   * Get deviceSource
+   * @return deviceSource
+  **/
+  public ProductInstanceUID getDeviceSource() {
+    return deviceSource;
+  }
+
+  public void setDeviceSource(ProductInstanceUID deviceSource) {
+    this.deviceSource = deviceSource;
+  }
+
+  public SmartTransactionsProductModel deviceDestination(ProductInstanceUID deviceDestination) {
+    this.deviceDestination = deviceDestination;
+    return this;
+  }
+
+   /**
+   * Get deviceDestination
+   * @return deviceDestination
+  **/
+  public ProductInstanceUID getDeviceDestination() {
+    return deviceDestination;
+  }
+
+  public void setDeviceDestination(ProductInstanceUID deviceDestination) {
+    this.deviceDestination = deviceDestination;
+  }
+
+  public SmartTransactionsProductModel receiptNumber(Integer receiptNumber) {
+    this.receiptNumber = receiptNumber;
+    return this;
+  }
+
+   /**
+   * Receipt number
+   * @return receiptNumber
+  **/
+  public Integer getReceiptNumber() {
+    return receiptNumber;
+  }
+
+  public void setReceiptNumber(Integer receiptNumber) {
+    this.receiptNumber = receiptNumber;
+  }
+
+  public SmartTransactionsProductModel receipt(List<SmartTransactionsReceipt> receipt) {
+    this.receipt = receipt;
+    return this;
+  }
+
+  public SmartTransactionsProductModel addReceiptItem(SmartTransactionsReceipt receiptItem) {
+    if (this.receipt == null) {
+      this.receipt = new ArrayList<SmartTransactionsReceipt>();
+    }
+    this.receipt.add(receiptItem);
+    return this;
+  }
+
+   /**
+   * Receipt
+   * @return receipt
+  **/
+  public List<SmartTransactionsReceipt> getReceipt() {
+    return receipt;
+  }
+
+  public void setReceipt(List<SmartTransactionsReceipt> receipt) {
+    this.receipt = receipt;
+  }
+
+  public SmartTransactionsProductModel receiptMerchant(List<SmartTransactionsReceipt> receiptMerchant) {
+    this.receiptMerchant = receiptMerchant;
+    return this;
+  }
+
+  public SmartTransactionsProductModel addReceiptMerchantItem(SmartTransactionsReceipt receiptMerchantItem) {
+    if (this.receiptMerchant == null) {
+      this.receiptMerchant = new ArrayList<SmartTransactionsReceipt>();
+    }
+    this.receiptMerchant.add(receiptMerchantItem);
+    return this;
+  }
+
+   /**
+   * Receipt merchant
+   * @return receiptMerchant
+  **/
+  public List<SmartTransactionsReceipt> getReceiptMerchant() {
+    return receiptMerchant;
+  }
+
+  public void setReceiptMerchant(List<SmartTransactionsReceipt> receiptMerchant) {
+    this.receiptMerchant = receiptMerchant;
+  }
+
+  public SmartTransactionsProductModel receiptMerchantPrint(Boolean receiptMerchantPrint) {
+    this.receiptMerchantPrint = receiptMerchantPrint;
+    return this;
+  }
+
+   /**
+   * Receipt merchant print
+   * @return receiptMerchantPrint
+  **/
+  public Boolean getReceiptMerchantPrint() {
+    return receiptMerchantPrint;
+  }
+
+  public void setReceiptMerchantPrint(Boolean receiptMerchantPrint) {
+    this.receiptMerchantPrint = receiptMerchantPrint;
+  }
+
+  public SmartTransactionsProductModel basketInfo(SmartTransactionsBasketInfo basketInfo) {
+    this.basketInfo = basketInfo;
+    return this;
+  }
+
+   /**
+   * Get basketInfo
+   * @return basketInfo
+  **/
+  public SmartTransactionsBasketInfo getBasketInfo() {
+    return basketInfo;
+  }
+
+  public void setBasketInfo(SmartTransactionsBasketInfo basketInfo) {
+    this.basketInfo = basketInfo;
+  }
+
+  public SmartTransactionsProductModel basket(SmartTransactionsBasket basket) {
+    this.basket = basket;
+    return this;
+  }
+
+   /**
+   * Get basket
+   * @return basket
+  **/
+  public SmartTransactionsBasket getBasket() {
+    return basket;
+  }
+
+  public void setBasket(SmartTransactionsBasket basket) {
+    this.basket = basket;
+  }
+
+  public SmartTransactionsProductModel idents(List<SmartTransactionsIdent> idents) {
+    this.idents = idents;
+    return this;
+  }
+
+  public SmartTransactionsProductModel addIdentsItem(SmartTransactionsIdent identsItem) {
+    if (this.idents == null) {
+      this.idents = new ArrayList<SmartTransactionsIdent>();
+    }
+    this.idents.add(identsItem);
+    return this;
+  }
+
+   /**
+   * Idents
+   * @return idents
+  **/
+  public List<SmartTransactionsIdent> getIdents() {
+    return idents;
+  }
+
+  public void setIdents(List<SmartTransactionsIdent> idents) {
+    this.idents = idents;
+  }
+
+  public SmartTransactionsProductModel taxRate(Integer taxRate) {
+    this.taxRate = taxRate;
+    return this;
+  }
+
+   /**
+   * Tax rate
+   * @return taxRate
+  **/
+  public Integer getTaxRate() {
+    return taxRate;
+  }
+
+  public void setTaxRate(Integer taxRate) {
+    this.taxRate = taxRate;
+  }
+
+  public SmartTransactionsProductModel taxAmount(Integer taxAmount) {
+    this.taxAmount = taxAmount;
+    return this;
+  }
+
+   /**
+   * Tax amount
+   * @return taxAmount
+  **/
+  public Integer getTaxAmount() {
+    return taxAmount;
+  }
+
+  public void setTaxAmount(Integer taxAmount) {
+    this.taxAmount = taxAmount;
+  }
+
+  public SmartTransactionsProductModel cashier(String cashier) {
+    this.cashier = cashier;
+    return this;
+  }
+
+   /**
+   * Cashier
+   * @return cashier
+  **/
+  public String getCashier() {
+    return cashier;
+  }
+
+  public void setCashier(String cashier) {
+    this.cashier = cashier;
+  }
+
+  public SmartTransactionsProductModel market(String market) {
+    this.market = market;
+    return this;
+  }
+
+   /**
+   * Market
+   * @return market
+  **/
+  public String getMarket() {
+    return market;
+  }
+
+  public void setMarket(String market) {
+    this.market = market;
+  }
+
+  public SmartTransactionsProductModel deliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
+    this.deliveryOptions = deliveryOptions;
+    return this;
+  }
+
+   /**
+   * Get deliveryOptions
+   * @return deliveryOptions
+  **/
+  public OneOfSmartTransactionsDeliveryOptionsModel getDeliveryOptions() {
+    return deliveryOptions;
+  }
+
+  public void setDeliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
+    this.deliveryOptions = deliveryOptions;
+  }
+
+  public SmartTransactionsProductModel product(String product) {
+    this.product = product;
+    return this;
+  }
+
+   /**
+   * Product
+   * @return product
+  **/
+  public String getProduct() {
+    return product;
+  }
+
+  public void setProduct(String product) {
+    this.product = product;
+  }
+
+  public SmartTransactionsProductModel transId(Integer transId) {
+    this.transId = transId;
+    return this;
+  }
+
+   /**
+   * Transaction id
+   * @return transId
+  **/
+  public Integer getTransId() {
+    return transId;
+  }
+
+  public void setTransId(Integer transId) {
+    this.transId = transId;
+  }
+
+  public SmartTransactionsProductModel paymentMethod(String paymentMethod) {
+    this.paymentMethod = paymentMethod;
+    return this;
+  }
+
+   /**
+   * Payment method
+   * @return paymentMethod
+  **/
+  public String getPaymentMethod() {
+    return paymentMethod;
+  }
+
+  public void setPaymentMethod(String paymentMethod) {
+    this.paymentMethod = paymentMethod;
+  }
+
+  public SmartTransactionsProductModel transactions(List<PaymentTransactionsProductModel> transactions) {
+    this.transactions = transactions;
+    return this;
+  }
+
+  public SmartTransactionsProductModel addTransactionsItem(PaymentTransactionsProductModel transactionsItem) {
+    if (this.transactions == null) {
+      this.transactions = new ArrayList<PaymentTransactionsProductModel>();
+    }
+    this.transactions.add(transactionsItem);
+    return this;
+  }
+
+   /**
+   * Payment Transactions
+   * @return transactions
+  **/
+  public List<PaymentTransactionsProductModel> getTransactions() {
+    return transactions;
+  }
+
+  public void setTransactions(List<PaymentTransactionsProductModel> transactions) {
+    this.transactions = transactions;
+  }
+
+  public SmartTransactionsProductModel lastVisitedPage(String lastVisitedPage) {
+    this.lastVisitedPage = lastVisitedPage;
+    return this;
+  }
+
+   /**
+   * Last visited page
+   * @return lastVisitedPage
+  **/
+  public String getLastVisitedPage() {
+    return lastVisitedPage;
+  }
+
+  public void setLastVisitedPage(String lastVisitedPage) {
+    this.lastVisitedPage = lastVisitedPage;
+  }
+
+  public SmartTransactionsProductModel isDemo(Boolean isDemo) {
+    this.isDemo = isDemo;
+    return this;
+  }
+
+   /**
+   * Demo payment
+   * @return isDemo
+  **/
+  public Boolean getIsDemo() {
+    return isDemo;
+  }
+
+  public void setIsDemo(Boolean isDemo) {
+    this.isDemo = isDemo;
+  }
+
+  public SmartTransactionsProductModel checkoutLinks(SmartTransactionsCheckoutLinks checkoutLinks) {
+    this.checkoutLinks = checkoutLinks;
+    return this;
+  }
+
+   /**
+   * Get checkoutLinks
+   * @return checkoutLinks
+  **/
+  public SmartTransactionsCheckoutLinks getCheckoutLinks() {
+    return checkoutLinks;
+  }
+
+  public void setCheckoutLinks(SmartTransactionsCheckoutLinks checkoutLinks) {
+    this.checkoutLinks = checkoutLinks;
+  }
+
+  public SmartTransactionsProductModel intent(String intent) {
+    this.intent = intent;
+    return this;
+  }
+
+   /**
+   * intent of transaction
+   * @return intent
+  **/
+  public String getIntent() {
+    return intent;
+  }
+
+  public void setIntent(String intent) {
+    this.intent = intent;
+  }
+
+  public SmartTransactionsProductModel iframeUrl(String iframeUrl) {
     this.iframeUrl = iframeUrl;
     return this;
   }
 
    /**
-   * The url of the payment checkout iframe
+   * IFrame URL
    * @return iframeUrl
   **/
   public String getIframeUrl() {
@@ -396,63 +783,38 @@ public class SecupayTransactionProductModel extends BaseProductModel {
     this.iframeUrl = iframeUrl;
   }
 
-  public SecupayTransactionProductModel container(PaymentContainersProductModel container) {
-    this.container = container;
+  public SmartTransactionsProductModel communications(SmartTransactionsCommunication communications) {
+    this.communications = communications;
     return this;
   }
 
    /**
-   * Get container
-   * @return container
+   * Get communications
+   * @return communications
   **/
-  public PaymentContainersProductModel getContainer() {
-    return container;
+  public SmartTransactionsCommunication getCommunications() {
+    return communications;
   }
 
-  public void setContainer(PaymentContainersProductModel container) {
-    this.container = container;
+  public void setCommunications(SmartTransactionsCommunication communications) {
+    this.communications = communications;
   }
 
-  public SecupayTransactionProductModel subTransactions(List<SecupaySubTransactionProductModel> subTransactions) {
-    this.subTransactions = subTransactions;
-    return this;
-  }
-
-  public SecupayTransactionProductModel addSubTransactionsItem(SecupaySubTransactionProductModel subTransactionsItem) {
-    if (this.subTransactions == null) {
-      this.subTransactions = new ArrayList<>();
-    }
-    this.subTransactions.add(subTransactionsItem);
+  public SmartTransactionsProductModel paymentLinks(SmartTransactionsPaymentLinks paymentLinks) {
+    this.paymentLinks = paymentLinks;
     return this;
   }
 
    /**
-   * A list of sub transactions (for mixed basket)
-   * @return subTransactions
+   * Get paymentLinks
+   * @return paymentLinks
   **/
-  public List<SecupaySubTransactionProductModel> getSubTransactions() {
-    return subTransactions;
+  public SmartTransactionsPaymentLinks getPaymentLinks() {
+    return paymentLinks;
   }
 
-  public void setSubTransactions(List<SecupaySubTransactionProductModel> subTransactions) {
-    this.subTransactions = subTransactions;
-  }
-
-  public SecupayTransactionProductModel mandate(PaymentContainerMandate mandate) {
-    this.mandate = mandate;
-    return this;
-  }
-
-   /**
-   * Get mandate
-   * @return mandate
-  **/
-  public PaymentContainerMandate getMandate() {
-    return mandate;
-  }
-
-  public void setMandate(PaymentContainerMandate mandate) {
-    this.mandate = mandate;
+  public void setPaymentLinks(SmartTransactionsPaymentLinks paymentLinks) {
+    this.paymentLinks = paymentLinks;
   }
 
   @Override
@@ -463,62 +825,96 @@ public class SecupayTransactionProductModel extends BaseProductModel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SecupayTransactionProductModel secupayTransactionProductModel = (SecupayTransactionProductModel) o;
-    return Objects.equals(this.transId, secupayTransactionProductModel.transId) &&
-        Objects.equals(this.status, secupayTransactionProductModel.status) &&
-        Objects.equals(this.amount, secupayTransactionProductModel.amount) &&
-        Objects.equals(this.currency, secupayTransactionProductModel.currency) &&
-        Objects.equals(this.purpose, secupayTransactionProductModel.purpose) &&
-        Objects.equals(this.orderId, secupayTransactionProductModel.orderId) &&
-        Objects.equals(this.paymentId, secupayTransactionProductModel.paymentId) &&
-        Objects.equals(this.basket, secupayTransactionProductModel.basket) &&
-        Objects.equals(this.transactionStatus, secupayTransactionProductModel.transactionStatus) &&
-        Objects.equals(this.accrual, secupayTransactionProductModel.accrual) &&
-        Objects.equals(this.paymentAction, secupayTransactionProductModel.paymentAction) &&
-        Objects.equals(this.transferPurpose, secupayTransactionProductModel.transferPurpose) &&
-        Objects.equals(this.transferAccount, secupayTransactionProductModel.transferAccount) &&
-        Objects.equals(this.customer, secupayTransactionProductModel.customer) &&
-        Objects.equals(this.usedPaymentInstrument, secupayTransactionProductModel.usedPaymentInstrument) &&
-        Objects.equals(this.redirectUrl, secupayTransactionProductModel.redirectUrl) &&
-        Objects.equals(this.subscription, secupayTransactionProductModel.subscription) &&
-        Objects.equals(this.iframeUrl, secupayTransactionProductModel.iframeUrl) &&
-        Objects.equals(this.container, secupayTransactionProductModel.container) &&
-        Objects.equals(this.subTransactions, secupayTransactionProductModel.subTransactions) &&
-        Objects.equals(this.mandate, secupayTransactionProductModel.mandate) &&
+    SmartTransactionsProductModel smartTransactionsProductModel = (SmartTransactionsProductModel) o;
+    return Objects.equals(this.created, smartTransactionsProductModel.created) &&
+        Objects.equals(this.updated, smartTransactionsProductModel.updated) &&
+        Objects.equals(this.status, smartTransactionsProductModel.status) &&
+        Objects.equals(this.merchant, smartTransactionsProductModel.merchant) &&
+        Objects.equals(this.contract, smartTransactionsProductModel.contract) &&
+        Objects.equals(this.providerContract, smartTransactionsProductModel.providerContract) &&
+        Objects.equals(this.customer, smartTransactionsProductModel.customer) &&
+        Objects.equals(this.shippingAddress, smartTransactionsProductModel.shippingAddress) &&
+        Objects.equals(this.container, smartTransactionsProductModel.container) &&
+        Objects.equals(this.checkin, smartTransactionsProductModel.checkin) &&
+        Objects.equals(this.merchantRef, smartTransactionsProductModel.merchantRef) &&
+        Objects.equals(this.transactionRef, smartTransactionsProductModel.transactionRef) &&
+        Objects.equals(this.store, smartTransactionsProductModel.store) &&
+        Objects.equals(this.deviceSource, smartTransactionsProductModel.deviceSource) &&
+        Objects.equals(this.deviceDestination, smartTransactionsProductModel.deviceDestination) &&
+        Objects.equals(this.receiptNumber, smartTransactionsProductModel.receiptNumber) &&
+        Objects.equals(this.receipt, smartTransactionsProductModel.receipt) &&
+        Objects.equals(this.receiptMerchant, smartTransactionsProductModel.receiptMerchant) &&
+        Objects.equals(this.receiptMerchantPrint, smartTransactionsProductModel.receiptMerchantPrint) &&
+        Objects.equals(this.basketInfo, smartTransactionsProductModel.basketInfo) &&
+        Objects.equals(this.basket, smartTransactionsProductModel.basket) &&
+        Objects.equals(this.idents, smartTransactionsProductModel.idents) &&
+        Objects.equals(this.taxRate, smartTransactionsProductModel.taxRate) &&
+        Objects.equals(this.taxAmount, smartTransactionsProductModel.taxAmount) &&
+        Objects.equals(this.cashier, smartTransactionsProductModel.cashier) &&
+        Objects.equals(this.market, smartTransactionsProductModel.market) &&
+        Objects.equals(this.deliveryOptions, smartTransactionsProductModel.deliveryOptions) &&
+        Objects.equals(this.product, smartTransactionsProductModel.product) &&
+        Objects.equals(this.transId, smartTransactionsProductModel.transId) &&
+        Objects.equals(this.paymentMethod, smartTransactionsProductModel.paymentMethod) &&
+        Objects.equals(this.transactions, smartTransactionsProductModel.transactions) &&
+        Objects.equals(this.lastVisitedPage, smartTransactionsProductModel.lastVisitedPage) &&
+        Objects.equals(this.isDemo, smartTransactionsProductModel.isDemo) &&
+        Objects.equals(this.checkoutLinks, smartTransactionsProductModel.checkoutLinks) &&
+        Objects.equals(this.intent, smartTransactionsProductModel.intent) &&
+        Objects.equals(this.iframeUrl, smartTransactionsProductModel.iframeUrl) &&
+        Objects.equals(this.communications, smartTransactionsProductModel.communications) &&
+        Objects.equals(this.paymentLinks, smartTransactionsProductModel.paymentLinks) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transId, status, amount, currency, purpose, orderId, paymentId, basket, transactionStatus, accrual, paymentAction, transferPurpose, transferAccount, customer, usedPaymentInstrument, redirectUrl, subscription, iframeUrl, container, subTransactions, mandate, super.hashCode());
+    return Objects.hash(created, updated, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, communications, paymentLinks, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SecupayTransactionProductModel {\n");
+    sb.append("class SmartTransactionsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
-    sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
-    sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
-    sb.append("    basket: ").append(toIndentedString(basket)).append("\n");
-    sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
-    sb.append("    accrual: ").append(toIndentedString(accrual)).append("\n");
-    sb.append("    paymentAction: ").append(toIndentedString(paymentAction)).append("\n");
-    sb.append("    transferPurpose: ").append(toIndentedString(transferPurpose)).append("\n");
-    sb.append("    transferAccount: ").append(toIndentedString(transferAccount)).append("\n");
+    sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
+    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
+    sb.append("    providerContract: ").append(toIndentedString(providerContract)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    usedPaymentInstrument: ").append(toIndentedString(usedPaymentInstrument)).append("\n");
-    sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
-    sb.append("    subscription: ").append(toIndentedString(subscription)).append("\n");
-    sb.append("    iframeUrl: ").append(toIndentedString(iframeUrl)).append("\n");
+    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
     sb.append("    container: ").append(toIndentedString(container)).append("\n");
-    sb.append("    subTransactions: ").append(toIndentedString(subTransactions)).append("\n");
-    sb.append("    mandate: ").append(toIndentedString(mandate)).append("\n");
+    sb.append("    checkin: ").append(toIndentedString(checkin)).append("\n");
+    sb.append("    merchantRef: ").append(toIndentedString(merchantRef)).append("\n");
+    sb.append("    transactionRef: ").append(toIndentedString(transactionRef)).append("\n");
+    sb.append("    store: ").append(toIndentedString(store)).append("\n");
+    sb.append("    deviceSource: ").append(toIndentedString(deviceSource)).append("\n");
+    sb.append("    deviceDestination: ").append(toIndentedString(deviceDestination)).append("\n");
+    sb.append("    receiptNumber: ").append(toIndentedString(receiptNumber)).append("\n");
+    sb.append("    receipt: ").append(toIndentedString(receipt)).append("\n");
+    sb.append("    receiptMerchant: ").append(toIndentedString(receiptMerchant)).append("\n");
+    sb.append("    receiptMerchantPrint: ").append(toIndentedString(receiptMerchantPrint)).append("\n");
+    sb.append("    basketInfo: ").append(toIndentedString(basketInfo)).append("\n");
+    sb.append("    basket: ").append(toIndentedString(basket)).append("\n");
+    sb.append("    idents: ").append(toIndentedString(idents)).append("\n");
+    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    sb.append("    cashier: ").append(toIndentedString(cashier)).append("\n");
+    sb.append("    market: ").append(toIndentedString(market)).append("\n");
+    sb.append("    deliveryOptions: ").append(toIndentedString(deliveryOptions)).append("\n");
+    sb.append("    product: ").append(toIndentedString(product)).append("\n");
+    sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
+    sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
+    sb.append("    transactions: ").append(toIndentedString(transactions)).append("\n");
+    sb.append("    lastVisitedPage: ").append(toIndentedString(lastVisitedPage)).append("\n");
+    sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");
+    sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
+    sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
+    sb.append("    iframeUrl: ").append(toIndentedString(iframeUrl)).append("\n");
+    sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
+    sb.append("    paymentLinks: ").append(toIndentedString(paymentLinks)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -533,4 +929,3 @@ public class SecupayTransactionProductModel extends BaseProductModel {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
