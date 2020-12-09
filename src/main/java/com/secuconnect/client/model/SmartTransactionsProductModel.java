@@ -1,19 +1,22 @@
-package com.secuconnect.client.model;
+package io.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.secuconnect.client.model.BaseProductModel;
-import com.secuconnect.client.model.PaymentCustomersProductModel;
-import com.secuconnect.client.model.PaymentTransactionsProductModel;
-import com.secuconnect.client.model.ProductInstanceUID;
-import com.secuconnect.client.model.SmartTransactionsBaseDeliveryOptionsModel;
-import com.secuconnect.client.model.SmartTransactionsBasket;
-import com.secuconnect.client.model.SmartTransactionsBasketInfo;
-import com.secuconnect.client.model.SmartTransactionsCheckin;
-import com.secuconnect.client.model.SmartTransactionsCheckoutLinks;
-import com.secuconnect.client.model.SmartTransactionsIdent;
-import com.secuconnect.client.model.SmartTransactionsMerchant;
-import com.secuconnect.client.model.SmartTransactionsReceipt;
-import com.secuconnect.client.model.SmartTransactionsCommunication;
+import io.secuconnect.client.model.BaseProductModel;
+import io.secuconnect.client.model.CreatedField;
+import io.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
+import io.secuconnect.client.model.PaymentCustomersProductModel;
+import io.secuconnect.client.model.PaymentTransactionsProductModel;
+import io.secuconnect.client.model.ProductInstanceUID;
+import io.secuconnect.client.model.SmartTransactionsBasket;
+import io.secuconnect.client.model.SmartTransactionsBasketInfo;
+import io.secuconnect.client.model.SmartTransactionsCheckin;
+import io.secuconnect.client.model.SmartTransactionsCheckoutLinks;
+import io.secuconnect.client.model.SmartTransactionsCommunication;
+import io.secuconnect.client.model.SmartTransactionsIdent;
+import io.secuconnect.client.model.SmartTransactionsMerchant;
+import io.secuconnect.client.model.SmartTransactionsPaymentLinks;
+import io.secuconnect.client.model.SmartTransactionsReceipt;
+import io.secuconnect.client.model.UpdatedField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -22,6 +25,12 @@ import java.util.Objects;
  * SmartTransactionsProductModel
  */
 public class SmartTransactionsProductModel extends BaseProductModel {
+  @SerializedName("created")
+  private String created = null;
+
+  @SerializedName("updated")
+  private String updated = null;
+
   @SerializedName("status")
   private String status = null;
 
@@ -61,12 +70,6 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   @SerializedName("device_destination")
   private ProductInstanceUID deviceDestination = null;
 
-  @SerializedName("created")
-  private String created = null;
-
-  @SerializedName("updated")
-  private String updated = null;
-
   @SerializedName("receipt_number")
   private Integer receiptNumber = null;
 
@@ -101,10 +104,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   private String market = null;
 
   @SerializedName("delivery_options")
-  private SmartTransactionsBaseDeliveryOptionsModel deliveryOptions = null;
-
-  @SerializedName("communications")
-  private SmartTransactionsCommunication communications = null;
+  private OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
 
   @SerializedName("product")
   private String product = null;
@@ -127,8 +127,51 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   @SerializedName("checkout_links")
   private SmartTransactionsCheckoutLinks checkoutLinks = null;
 
+  @SerializedName("intent")
+  private String intent = null;
+
   @SerializedName("iframe_url")
   private String iframeUrl = null;
+
+  @SerializedName("communications")
+  private SmartTransactionsCommunication communications = null;
+
+  @SerializedName("payment_links")
+  private SmartTransactionsPaymentLinks paymentLinks = null;
+
+  public SmartTransactionsProductModel created(String created) {
+    this.created = created;
+    return this;
+  }
+
+   /**
+   * Get created
+   * @return created
+  **/
+  public String getCreated() {
+    return created;
+  }
+
+  public void setCreated(String created) {
+    this.created = created;
+  }
+
+  public SmartTransactionsProductModel updated(String updated) {
+    this.updated = updated;
+    return this;
+  }
+
+   /**
+   * Get updated
+   * @return updated
+  **/
+  public String getUpdated() {
+    return updated;
+  }
+
+  public void setUpdated(String updated) {
+    this.updated = updated;
+  }
 
   public SmartTransactionsProductModel status(String status) {
     this.status = status;
@@ -351,40 +394,6 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.deviceDestination = deviceDestination;
   }
 
-  public SmartTransactionsProductModel created(String created) {
-    this.created = created;
-    return this;
-  }
-
-   /**
-   * Created at date
-   * @return created
-  **/
-  public String getCreated() {
-    return created;
-  }
-
-  public void setCreated(String created) {
-    this.created = created;
-  }
-
-  public SmartTransactionsProductModel updated(String updated) {
-    this.updated = updated;
-    return this;
-  }
-
-   /**
-   * Updated at date
-   * @return updated
-  **/
-  public String getUpdated() {
-    return updated;
-  }
-
-  public void setUpdated(String updated) {
-    this.updated = updated;
-  }
-
   public SmartTransactionsProductModel receiptNumber(Integer receiptNumber) {
     this.receiptNumber = receiptNumber;
     return this;
@@ -409,7 +418,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   public SmartTransactionsProductModel addReceiptItem(SmartTransactionsReceipt receiptItem) {
     if (this.receipt == null) {
-      this.receipt = new ArrayList<>();
+      this.receipt = new ArrayList<SmartTransactionsReceipt>();
     }
     this.receipt.add(receiptItem);
     return this;
@@ -434,7 +443,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   public SmartTransactionsProductModel addReceiptMerchantItem(SmartTransactionsReceipt receiptMerchantItem) {
     if (this.receiptMerchant == null) {
-      this.receiptMerchant = new ArrayList<>();
+      this.receiptMerchant = new ArrayList<SmartTransactionsReceipt>();
     }
     this.receiptMerchant.add(receiptMerchantItem);
     return this;
@@ -510,7 +519,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   public SmartTransactionsProductModel addIdentsItem(SmartTransactionsIdent identsItem) {
     if (this.idents == null) {
-      this.idents = new ArrayList<>();
+      this.idents = new ArrayList<SmartTransactionsIdent>();
     }
     this.idents.add(identsItem);
     return this;
@@ -596,7 +605,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.market = market;
   }
 
-  public SmartTransactionsProductModel deliveryOptions(SmartTransactionsBaseDeliveryOptionsModel deliveryOptions) {
+  public SmartTransactionsProductModel deliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
     this.deliveryOptions = deliveryOptions;
     return this;
   }
@@ -605,29 +614,17 @@ public class SmartTransactionsProductModel extends BaseProductModel {
    * Get deliveryOptions
    * @return deliveryOptions
   **/
-  public SmartTransactionsBaseDeliveryOptionsModel getDeliveryOptions() {
+  public OneOfSmartTransactionsDeliveryOptionsModel getDeliveryOptions() {
     return deliveryOptions;
   }
 
-  public void setDeliveryOptions(SmartTransactionsBaseDeliveryOptionsModel deliveryOptions) {
+  public void setDeliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
     this.deliveryOptions = deliveryOptions;
   }
 
   public SmartTransactionsProductModel product(String product) {
     this.product = product;
     return this;
-  }
-
-   /**
-   * Get communications
-   * @return communications
-  **/
-  public SmartTransactionsCommunication getCommunications() {
-    return communications;
-  }
-
-  public void setCommunications(SmartTransactionsCommunication communications) {
-    this.communications = communications;
   }
 
    /**
@@ -683,7 +680,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   public SmartTransactionsProductModel addTransactionsItem(PaymentTransactionsProductModel transactionsItem) {
     if (this.transactions == null) {
-      this.transactions = new ArrayList<>();
+      this.transactions = new ArrayList<PaymentTransactionsProductModel>();
     }
     this.transactions.add(transactionsItem);
     return this;
@@ -752,6 +749,23 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.checkoutLinks = checkoutLinks;
   }
 
+  public SmartTransactionsProductModel intent(String intent) {
+    this.intent = intent;
+    return this;
+  }
+
+   /**
+   * intent of transaction
+   * @return intent
+  **/
+  public String getIntent() {
+    return intent;
+  }
+
+  public void setIntent(String intent) {
+    this.intent = intent;
+  }
+
   public SmartTransactionsProductModel iframeUrl(String iframeUrl) {
     this.iframeUrl = iframeUrl;
     return this;
@@ -769,6 +783,40 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.iframeUrl = iframeUrl;
   }
 
+  public SmartTransactionsProductModel communications(SmartTransactionsCommunication communications) {
+    this.communications = communications;
+    return this;
+  }
+
+   /**
+   * Get communications
+   * @return communications
+  **/
+  public SmartTransactionsCommunication getCommunications() {
+    return communications;
+  }
+
+  public void setCommunications(SmartTransactionsCommunication communications) {
+    this.communications = communications;
+  }
+
+  public SmartTransactionsProductModel paymentLinks(SmartTransactionsPaymentLinks paymentLinks) {
+    this.paymentLinks = paymentLinks;
+    return this;
+  }
+
+   /**
+   * Get paymentLinks
+   * @return paymentLinks
+  **/
+  public SmartTransactionsPaymentLinks getPaymentLinks() {
+    return paymentLinks;
+  }
+
+  public void setPaymentLinks(SmartTransactionsPaymentLinks paymentLinks) {
+    this.paymentLinks = paymentLinks;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -778,7 +826,9 @@ public class SmartTransactionsProductModel extends BaseProductModel {
       return false;
     }
     SmartTransactionsProductModel smartTransactionsProductModel = (SmartTransactionsProductModel) o;
-    return Objects.equals(this.status, smartTransactionsProductModel.status) &&
+    return Objects.equals(this.created, smartTransactionsProductModel.created) &&
+        Objects.equals(this.updated, smartTransactionsProductModel.updated) &&
+        Objects.equals(this.status, smartTransactionsProductModel.status) &&
         Objects.equals(this.merchant, smartTransactionsProductModel.merchant) &&
         Objects.equals(this.contract, smartTransactionsProductModel.contract) &&
         Objects.equals(this.providerContract, smartTransactionsProductModel.providerContract) &&
@@ -791,8 +841,6 @@ public class SmartTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.store, smartTransactionsProductModel.store) &&
         Objects.equals(this.deviceSource, smartTransactionsProductModel.deviceSource) &&
         Objects.equals(this.deviceDestination, smartTransactionsProductModel.deviceDestination) &&
-        Objects.equals(this.created, smartTransactionsProductModel.created) &&
-        Objects.equals(this.updated, smartTransactionsProductModel.updated) &&
         Objects.equals(this.receiptNumber, smartTransactionsProductModel.receiptNumber) &&
         Objects.equals(this.receipt, smartTransactionsProductModel.receipt) &&
         Objects.equals(this.receiptMerchant, smartTransactionsProductModel.receiptMerchant) &&
@@ -805,7 +853,6 @@ public class SmartTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.cashier, smartTransactionsProductModel.cashier) &&
         Objects.equals(this.market, smartTransactionsProductModel.market) &&
         Objects.equals(this.deliveryOptions, smartTransactionsProductModel.deliveryOptions) &&
-        Objects.equals(this.communications, smartTransactionsProductModel.communications) &&
         Objects.equals(this.product, smartTransactionsProductModel.product) &&
         Objects.equals(this.transId, smartTransactionsProductModel.transId) &&
         Objects.equals(this.paymentMethod, smartTransactionsProductModel.paymentMethod) &&
@@ -813,17 +860,16 @@ public class SmartTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.lastVisitedPage, smartTransactionsProductModel.lastVisitedPage) &&
         Objects.equals(this.isDemo, smartTransactionsProductModel.isDemo) &&
         Objects.equals(this.checkoutLinks, smartTransactionsProductModel.checkoutLinks) &&
+        Objects.equals(this.intent, smartTransactionsProductModel.intent) &&
         Objects.equals(this.iframeUrl, smartTransactionsProductModel.iframeUrl) &&
+        Objects.equals(this.communications, smartTransactionsProductModel.communications) &&
+        Objects.equals(this.paymentLinks, smartTransactionsProductModel.paymentLinks) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, merchant, contract, providerContract, customer, shippingAddress, container, checkin,
-    merchantRef, transactionRef, store, deviceSource, deviceDestination, created, updated, receiptNumber, receipt,
-    receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market,
-    deliveryOptions, communications, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo,
-    checkoutLinks, iframeUrl, super.hashCode());
+    return Objects.hash(created, updated, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, communications, paymentLinks, super.hashCode());
   }
 
   @Override
@@ -831,6 +877,8 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartTransactionsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
@@ -844,8 +892,6 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    deviceSource: ").append(toIndentedString(deviceSource)).append("\n");
     sb.append("    deviceDestination: ").append(toIndentedString(deviceDestination)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    receiptNumber: ").append(toIndentedString(receiptNumber)).append("\n");
     sb.append("    receipt: ").append(toIndentedString(receipt)).append("\n");
     sb.append("    receiptMerchant: ").append(toIndentedString(receiptMerchant)).append("\n");
@@ -858,7 +904,6 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     sb.append("    cashier: ").append(toIndentedString(cashier)).append("\n");
     sb.append("    market: ").append(toIndentedString(market)).append("\n");
     sb.append("    deliveryOptions: ").append(toIndentedString(deliveryOptions)).append("\n");
-    sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
@@ -866,7 +911,10 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     sb.append("    lastVisitedPage: ").append(toIndentedString(lastVisitedPage)).append("\n");
     sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");
     sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
+    sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
     sb.append("    iframeUrl: ").append(toIndentedString(iframeUrl)).append("\n");
+    sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
+    sb.append("    paymentLinks: ").append(toIndentedString(paymentLinks)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -881,4 +929,3 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
