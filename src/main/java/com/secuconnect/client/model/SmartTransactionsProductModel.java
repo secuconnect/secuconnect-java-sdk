@@ -7,6 +7,7 @@ import com.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
 import com.secuconnect.client.model.PaymentCustomersProductModel;
 import com.secuconnect.client.model.PaymentTransactionsProductModel;
 import com.secuconnect.client.model.ProductInstanceUID;
+import com.secuconnect.client.model.SmartTransactionsApplicationContext;
 import com.secuconnect.client.model.SmartTransactionsBasket;
 import com.secuconnect.client.model.SmartTransactionsBasketInfo;
 import com.secuconnect.client.model.SmartTransactionsCheckin;
@@ -14,6 +15,8 @@ import com.secuconnect.client.model.SmartTransactionsCheckoutLinks;
 import com.secuconnect.client.model.SmartTransactionsCommunication;
 import com.secuconnect.client.model.SmartTransactionsIdent;
 import com.secuconnect.client.model.SmartTransactionsMerchant;
+import com.secuconnect.client.model.SmartTransactionsPaymentLinks;
+import com.secuconnect.client.model.SmartTransactionsPrepaidSalesDetails;
 import com.secuconnect.client.model.SmartTransactionsReceipt;
 import com.secuconnect.client.model.UpdatedField;
 import java.util.ArrayList;
@@ -132,8 +135,17 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   @SerializedName("iframe_url")
   private String iframeUrl = null;
 
+  @SerializedName("prepaid_sales")
+  private SmartTransactionsPrepaidSalesDetails prepaidSales = null;
+
   @SerializedName("communications")
   private SmartTransactionsCommunication communications = null;
+
+  @SerializedName("payment_links")
+  private SmartTransactionsPaymentLinks paymentLinks = null;
+
+  @SerializedName("application_context")
+  private SmartTransactionsApplicationContext applicationContext = null;
 
   public SmartTransactionsProductModel created(String created) {
     this.created = created;
@@ -539,7 +551,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Tax rate
+   * Get taxRate
    * @return taxRate
   **/
   public Integer getTaxRate() {
@@ -556,7 +568,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Tax amount
+   * Get taxAmount
    * @return taxAmount
   **/
   public Integer getTaxAmount() {
@@ -779,6 +791,23 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.iframeUrl = iframeUrl;
   }
 
+  public SmartTransactionsProductModel prepaidSales(SmartTransactionsPrepaidSalesDetails prepaidSales) {
+    this.prepaidSales = prepaidSales;
+    return this;
+  }
+
+   /**
+   * Get prepaidSales
+   * @return prepaidSales
+  **/
+  public SmartTransactionsPrepaidSalesDetails getPrepaidSales() {
+    return prepaidSales;
+  }
+
+  public void setPrepaidSales(SmartTransactionsPrepaidSalesDetails prepaidSales) {
+    this.prepaidSales = prepaidSales;
+  }
+
   public SmartTransactionsProductModel communications(SmartTransactionsCommunication communications) {
     this.communications = communications;
     return this;
@@ -794,6 +823,40 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   public void setCommunications(SmartTransactionsCommunication communications) {
     this.communications = communications;
+  }
+
+  public SmartTransactionsProductModel paymentLinks(SmartTransactionsPaymentLinks paymentLinks) {
+    this.paymentLinks = paymentLinks;
+    return this;
+  }
+
+   /**
+   * Get paymentLinks
+   * @return paymentLinks
+  **/
+  public SmartTransactionsPaymentLinks getPaymentLinks() {
+    return paymentLinks;
+  }
+
+  public void setPaymentLinks(SmartTransactionsPaymentLinks paymentLinks) {
+    this.paymentLinks = paymentLinks;
+  }
+
+  public SmartTransactionsProductModel applicationContext(SmartTransactionsApplicationContext applicationContext) {
+    this.applicationContext = applicationContext;
+    return this;
+  }
+
+   /**
+   * Get applicationContext
+   * @return applicationContext
+  **/
+  public SmartTransactionsApplicationContext getApplicationContext() {
+    return applicationContext;
+  }
+
+  public void setApplicationContext(SmartTransactionsApplicationContext applicationContext) {
+    this.applicationContext = applicationContext;
   }
 
   @Override
@@ -841,13 +904,16 @@ public class SmartTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.checkoutLinks, smartTransactionsProductModel.checkoutLinks) &&
         Objects.equals(this.intent, smartTransactionsProductModel.intent) &&
         Objects.equals(this.iframeUrl, smartTransactionsProductModel.iframeUrl) &&
+        Objects.equals(this.prepaidSales, smartTransactionsProductModel.prepaidSales) &&
         Objects.equals(this.communications, smartTransactionsProductModel.communications) &&
+        Objects.equals(this.paymentLinks, smartTransactionsProductModel.paymentLinks) &&
+        Objects.equals(this.applicationContext, smartTransactionsProductModel.applicationContext) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, communications, super.hashCode());
+    return Objects.hash(created, updated, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, prepaidSales, communications, paymentLinks, applicationContext, super.hashCode());
   }
 
   @Override
@@ -891,7 +957,10 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
     sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
     sb.append("    iframeUrl: ").append(toIndentedString(iframeUrl)).append("\n");
+    sb.append("    prepaidSales: ").append(toIndentedString(prepaidSales)).append("\n");
     sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
+    sb.append("    paymentLinks: ").append(toIndentedString(paymentLinks)).append("\n");
+    sb.append("    applicationContext: ").append(toIndentedString(applicationContext)).append("\n");
     sb.append("}");
     return sb.toString();
   }

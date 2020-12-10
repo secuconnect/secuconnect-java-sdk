@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
-## [3.1.0] - 2020-12-09
+## [3.1.0] - 2020-12-11
 
 ### Security
 
@@ -37,12 +37,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.UploadMandateDTO`
 - `Model.UploadMandateProductModel`
 - `Api.PaymentTransactionsApi.getPaymentTransactionsOldFormat()`
+- `Model.SmartTransactionsDTO` element `application_context`
 - `Model.SmartTransactionsDTO` element `communications`
+- `Model.SmartTransactionsProductModel` element `application_context`
 - `Model.SmartTransactionsProductModel` element `communications`
+- `Model.SmartTransactionsProductModel` element `payment_links`
+- `Model.SmartTransactionsProductModel` element `prepaid_sales`
+- `Model.PaymentContractsDTORequestId` element `payout_purpose`
 
 ### Fixed
 
-- `Api.SmartRoutingsApi` `removeRouting` does not return a List, it's only returns one item.
+- `Api.SmartRoutingsApi.removeRouting()` does not return a List, it's only returns one item.
 - `Model.SmartTransactionsDTO` element `device_source` is an instance of `ProductInstanceUID` instead of `String`
 - `Model.GeneralMerchantsProductModel` element `id_old` is an instance of `Integer` instead of `String`
 - `Model.GeneralMerchantsProductModel` element `legal_details` is a List of `GeneralMerchantsLegalDetails`
@@ -50,6 +55,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.SmartTransactionsCollectionModel`
 - `Model.SmartTransactionsShippingModel`
 - `Model.SmartTransactionsSetDeliveryModel` element `delivery_options`
+
+### Removed
+
+- `Model.SmartTransactionsDTO` element `status`, `receipt` and `receipt_number`
+- `Model.SmartTransactionsCheckoutLinks` element `url_success`, `url_failure`, `url_abort` and `url_error` (moved to `application_context.return_urls`)
 
 
 ## [3.0.0] - 2020-08-20
@@ -109,7 +119,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.SmartDevicesDTOPrepaidTid`
 
 
-## [2.4.0] - 2020-12-09
+## [2.4.0] - 2020-12-11
 
 ### Security
 
@@ -118,14 +128,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - `Api.PaymentTransactionsApi.getPaymentTransactionsOldFormat()`
+- `Model.SmartTransactionsDTO` element `application_context`
 - `Model.SmartTransactionsDTO` element `communications`
+- `Model.SmartTransactionsProductModel` element `application_context`
 - `Model.SmartTransactionsProductModel` element `communications`
+- `Model.SmartTransactionsProductModel` element `payment_links`
+- `Model.SmartTransactionsProductModel` element `prepaid_sales`
+- `Model.PaymentContractsDTORequestId` element `payout_purpose`
 
 ### Fixed
 
 - `Model.GeneralMerchantsProductModel` element `id_old` is an instance of `Integer` instead of `String`
 - `Model.GeneralMerchantsProductModel` element `legal_details` is a List of `GeneralMerchantsLegalDetails`
 - `Model.GeneralMerchantsProductModel` element `urls` is a List of `GeneralMerchantsUrls`
+
+### Removed
+
+- `Model.SmartTransactionsDTO` element `status`, `receipt` and `receipt_number`
+- `Model.SmartTransactionsCheckoutLinks` element `url_success`, `url_failure`, `url_abort` and `url_error` (moved to `application_context.return_urls`)
 
 
 ## [2.3.0] - 2020-09-14
