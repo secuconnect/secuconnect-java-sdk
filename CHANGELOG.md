@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
-## [3.1.0] - 2020-12-11
+## [3.1.0] - 2020-12-29
 
 ### Security
 
@@ -58,6 +58,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+- `Model.SmartTransactionsBaseDeliveryOptionsModel`
+- `Model.SmartTransactionsBaseDeliveryOptionsModelType`
 - `Model.SmartTransactionsDTO` element `status`, `receipt` and `receipt_number`
 - `Model.SmartTransactionsCheckoutLinks` element `url_success`, `url_failure`, `url_abort` and `url_error` (moved to `application_context.return_urls`)
 
@@ -119,7 +121,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.SmartDevicesDTOPrepaidTid`
 
 
-## [2.4.0] - 2020-12-11
+## [2.4.0] - 2020-12-29
 
 ### Security
 
@@ -141,9 +143,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.GeneralMerchantsProductModel` element `id_old` is an instance of `Integer` instead of `String`
 - `Model.GeneralMerchantsProductModel` element `legal_details` is a List of `GeneralMerchantsLegalDetails`
 - `Model.GeneralMerchantsProductModel` element `urls` is a List of `GeneralMerchantsUrls`
+- `Model.SmartTransactionsCollectionModel`
+- `Model.SmartTransactionsShippingModel`
+- `Model.SmartTransactionsSetDeliveryModel` element `delivery_options`
 
 ### Removed
 
+- `Model.SmartTransactionsBaseDeliveryOptionsModel`
+- `Model.SmartTransactionsBaseDeliveryOptionsModelType`
 - `Model.SmartTransactionsDTO` element `status`, `receipt` and `receipt_number`
 - `Model.SmartTransactionsCheckoutLinks` element `url_success`, `url_failure`, `url_abort` and `url_error` (moved to `application_context.return_urls`)
 
@@ -419,4 +426,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [1.9.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.1...1.9.0
 [2.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.9.0...2.0.0
 [2.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.0.0...2.1.0
+[2.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...2.2.0
+[2.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.2.0...2.3.0
+[2.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.3.0...2.4.0
 [3.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...3.0.0
+[3.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.0.0...3.1.0
