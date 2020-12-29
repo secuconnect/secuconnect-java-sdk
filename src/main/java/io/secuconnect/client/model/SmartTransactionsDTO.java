@@ -5,13 +5,13 @@ import io.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
 import io.secuconnect.client.model.PaymentCustomersProductModel;
 import io.secuconnect.client.model.ProductInstanceID;
 import io.secuconnect.client.model.ProductInstanceUID;
+import io.secuconnect.client.model.SmartTransactionsApplicationContext;
 import io.secuconnect.client.model.SmartTransactionsBasket;
 import io.secuconnect.client.model.SmartTransactionsBasketInfo;
 import io.secuconnect.client.model.SmartTransactionsCheckin;
 import io.secuconnect.client.model.SmartTransactionsCheckoutLinks;
 import io.secuconnect.client.model.SmartTransactionsCommunication;
 import io.secuconnect.client.model.SmartTransactionsIdent;
-import io.secuconnect.client.model.SmartTransactionsReceipt;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -25,9 +25,6 @@ public class SmartTransactionsDTO {
 
   @SerializedName("provider_contract")
   private ProductInstanceUID providerContract = null;
-
-  @SerializedName("status")
-  private String status = null;
 
   @SerializedName("transactionRef")
   private String transactionRef = null;
@@ -58,12 +55,6 @@ public class SmartTransactionsDTO {
 
   @SerializedName("product")
   private String product = null;
-
-  @SerializedName("receipt")
-  private List<SmartTransactionsReceipt> receipt = null;
-
-  @SerializedName("receipt_number")
-  private Integer receiptNumber = null;
 
   @SerializedName("device_source")
   private ProductInstanceUID deviceSource = null;
@@ -107,6 +98,9 @@ public class SmartTransactionsDTO {
   @SerializedName("communications")
   private SmartTransactionsCommunication communications = null;
 
+  @SerializedName("application_context")
+  private SmartTransactionsApplicationContext applicationContext = null;
+
   public SmartTransactionsDTO merchant(String merchant) {
     this.merchant = merchant;
     return this;
@@ -141,30 +135,13 @@ public class SmartTransactionsDTO {
     this.providerContract = providerContract;
   }
 
-  public SmartTransactionsDTO status(String status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * Status
-   * @return status
-  **/
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
   public SmartTransactionsDTO transactionRef(String transactionRef) {
     this.transactionRef = transactionRef;
     return this;
   }
 
    /**
-   * Transaction ref
+   * Transaction reference
    * @return transactionRef
   **/
   public String getTransactionRef() {
@@ -181,7 +158,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Merchant ref
+   * Merchant reference
    * @return merchantRef
   **/
   public String getMerchantRef() {
@@ -257,7 +234,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Tax amount
+   * Get taxAmount
    * @return taxAmount
   **/
   public Integer getTaxAmount() {
@@ -274,7 +251,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Tax rate
+   * Get taxRate
    * @return taxRate
   **/
   public Integer getTaxRate() {
@@ -334,48 +311,6 @@ public class SmartTransactionsDTO {
 
   public void setProduct(String product) {
     this.product = product;
-  }
-
-  public SmartTransactionsDTO receipt(List<SmartTransactionsReceipt> receipt) {
-    this.receipt = receipt;
-    return this;
-  }
-
-  public SmartTransactionsDTO addReceiptItem(SmartTransactionsReceipt receiptItem) {
-    if (this.receipt == null) {
-      this.receipt = new ArrayList<SmartTransactionsReceipt>();
-    }
-    this.receipt.add(receiptItem);
-    return this;
-  }
-
-   /**
-   * Receipt
-   * @return receipt
-  **/
-  public List<SmartTransactionsReceipt> getReceipt() {
-    return receipt;
-  }
-
-  public void setReceipt(List<SmartTransactionsReceipt> receipt) {
-    this.receipt = receipt;
-  }
-
-  public SmartTransactionsDTO receiptNumber(Integer receiptNumber) {
-    this.receiptNumber = receiptNumber;
-    return this;
-  }
-
-   /**
-   * Receipt number
-   * @return receiptNumber
-  **/
-  public Integer getReceiptNumber() {
-    return receiptNumber;
-  }
-
-  public void setReceiptNumber(Integer receiptNumber) {
-    this.receiptNumber = receiptNumber;
   }
 
   public SmartTransactionsDTO deviceSource(ProductInstanceUID deviceSource) {
@@ -616,6 +551,23 @@ public class SmartTransactionsDTO {
     this.communications = communications;
   }
 
+  public SmartTransactionsDTO applicationContext(SmartTransactionsApplicationContext applicationContext) {
+    this.applicationContext = applicationContext;
+    return this;
+  }
+
+   /**
+   * Get applicationContext
+   * @return applicationContext
+  **/
+  public SmartTransactionsApplicationContext getApplicationContext() {
+    return applicationContext;
+  }
+
+  public void setApplicationContext(SmartTransactionsApplicationContext applicationContext) {
+    this.applicationContext = applicationContext;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -627,7 +579,6 @@ public class SmartTransactionsDTO {
     SmartTransactionsDTO smartTransactionsDTO = (SmartTransactionsDTO) o;
     return Objects.equals(this.merchant, smartTransactionsDTO.merchant) &&
         Objects.equals(this.providerContract, smartTransactionsDTO.providerContract) &&
-        Objects.equals(this.status, smartTransactionsDTO.status) &&
         Objects.equals(this.transactionRef, smartTransactionsDTO.transactionRef) &&
         Objects.equals(this.merchantRef, smartTransactionsDTO.merchantRef) &&
         Objects.equals(this.basket, smartTransactionsDTO.basket) &&
@@ -638,8 +589,6 @@ public class SmartTransactionsDTO {
         Objects.equals(this.market, smartTransactionsDTO.market) &&
         Objects.equals(this.cashier, smartTransactionsDTO.cashier) &&
         Objects.equals(this.product, smartTransactionsDTO.product) &&
-        Objects.equals(this.receipt, smartTransactionsDTO.receipt) &&
-        Objects.equals(this.receiptNumber, smartTransactionsDTO.receiptNumber) &&
         Objects.equals(this.deviceSource, smartTransactionsDTO.deviceSource) &&
         Objects.equals(this.transId, smartTransactionsDTO.transId) &&
         Objects.equals(this.contract, smartTransactionsDTO.contract) &&
@@ -653,12 +602,13 @@ public class SmartTransactionsDTO {
         Objects.equals(this.intent, smartTransactionsDTO.intent) &&
         Objects.equals(this.checkoutLinks, smartTransactionsDTO.checkoutLinks) &&
         Objects.equals(this.deliveryOptions, smartTransactionsDTO.deliveryOptions) &&
-        Objects.equals(this.communications, smartTransactionsDTO.communications);
+        Objects.equals(this.communications, smartTransactionsDTO.communications) &&
+        Objects.equals(this.applicationContext, smartTransactionsDTO.applicationContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, providerContract, status, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, receipt, receiptNumber, deviceSource, transId, contract, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, intent, checkoutLinks, deliveryOptions, communications);
+    return Objects.hash(merchant, providerContract, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, deviceSource, transId, contract, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, intent, checkoutLinks, deliveryOptions, communications, applicationContext);
   }
 
   @Override
@@ -668,7 +618,6 @@ public class SmartTransactionsDTO {
     
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    providerContract: ").append(toIndentedString(providerContract)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    transactionRef: ").append(toIndentedString(transactionRef)).append("\n");
     sb.append("    merchantRef: ").append(toIndentedString(merchantRef)).append("\n");
     sb.append("    basket: ").append(toIndentedString(basket)).append("\n");
@@ -679,8 +628,6 @@ public class SmartTransactionsDTO {
     sb.append("    market: ").append(toIndentedString(market)).append("\n");
     sb.append("    cashier: ").append(toIndentedString(cashier)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
-    sb.append("    receipt: ").append(toIndentedString(receipt)).append("\n");
-    sb.append("    receiptNumber: ").append(toIndentedString(receiptNumber)).append("\n");
     sb.append("    deviceSource: ").append(toIndentedString(deviceSource)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
@@ -695,6 +642,7 @@ public class SmartTransactionsDTO {
     sb.append("    checkoutLinks: ").append(toIndentedString(checkoutLinks)).append("\n");
     sb.append("    deliveryOptions: ").append(toIndentedString(deliveryOptions)).append("\n");
     sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
+    sb.append("    applicationContext: ").append(toIndentedString(applicationContext)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -31,6 +31,9 @@ public class PaymentContractsDTORequestId {
   @SerializedName("store_name")
   private String storeName = null;
 
+  @SerializedName("payout_purpose")
+  private String payoutPurpose = null;
+
   public PaymentContractsDTORequestId contact(Contact contact) {
     this.contact = contact;
     return this;
@@ -150,6 +153,23 @@ public class PaymentContractsDTORequestId {
     this.storeName = storeName;
   }
 
+  public PaymentContractsDTORequestId payoutPurpose(String payoutPurpose) {
+    this.payoutPurpose = payoutPurpose;
+    return this;
+  }
+
+   /**
+   * Payout purpose
+   * @return payoutPurpose
+  **/
+  public String getPayoutPurpose() {
+    return payoutPurpose;
+  }
+
+  public void setPayoutPurpose(String payoutPurpose) {
+    this.payoutPurpose = payoutPurpose;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -165,12 +185,13 @@ public class PaymentContractsDTORequestId {
         Objects.equals(this.iframeOpts, paymentContractsDTORequestId.iframeOpts) &&
         Objects.equals(this.payinAccount, paymentContractsDTORequestId.payinAccount) &&
         Objects.equals(this.createFirstStore, paymentContractsDTORequestId.createFirstStore) &&
-        Objects.equals(this.storeName, paymentContractsDTORequestId.storeName);
+        Objects.equals(this.storeName, paymentContractsDTORequestId.storeName) &&
+        Objects.equals(this.payoutPurpose, paymentContractsDTORequestId.payoutPurpose);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contact, project, payoutAccount, iframeOpts, payinAccount, createFirstStore, storeName);
+    return Objects.hash(contact, project, payoutAccount, iframeOpts, payinAccount, createFirstStore, storeName, payoutPurpose);
   }
 
   @Override
@@ -185,6 +206,7 @@ public class PaymentContractsDTORequestId {
     sb.append("    payinAccount: ").append(toIndentedString(payinAccount)).append("\n");
     sb.append("    createFirstStore: ").append(toIndentedString(createFirstStore)).append("\n");
     sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
+    sb.append("    payoutPurpose: ").append(toIndentedString(payoutPurpose)).append("\n");
     sb.append("}");
     return sb.toString();
   }
