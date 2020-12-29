@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.PaymentContractsProductModel;
 import com.secuconnect.client.model.SecupayBasketItem;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,25 +12,25 @@ import java.util.Objects;
  */
 public class SecupayTransactionUpdateBasketDTO {
   @SerializedName("contract")
-  private Object contract = null;
+  private PaymentContractsProductModel contract = null;
 
   @SerializedName("basket")
   private List<SecupayBasketItem> basket = null;
 
-  public SecupayTransactionUpdateBasketDTO contract(Object contract) {
+  public SecupayTransactionUpdateBasketDTO contract(PaymentContractsProductModel contract) {
     this.contract = contract;
     return this;
   }
 
    /**
-   * The payment contract object
+   * Get contract
    * @return contract
   **/
-  public Object getContract() {
+  public PaymentContractsProductModel getContract() {
     return contract;
   }
 
-  public void setContract(Object contract) {
+  public void setContract(PaymentContractsProductModel contract) {
     this.contract = contract;
   }
 

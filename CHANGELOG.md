@@ -19,6 +19,35 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.2.0] - 2021-MM-DD
+
+### Security
+
+### Deprecated
+
+### Added
+
+- `Api.GeneralMerchantsApi.getPublicData()`
+- `Model.GeneralMerchantsPublicDataCompany`
+- `Model.GeneralMerchantsPublicDataModel`
+- `Model.SecupayTransactionCaptureDTO` element `shipping_information`
+
+### Changed
+    
+- `Api.GeneralContractsApi.getAvailablePaymentMethods()` returns now a list of `String` instead of `StringList`
+
+### Fixed
+
+- `Model.GeoAddress` element `address_components` is a List of `AddressComponents`
+- `Model.PaymentCancelResult` element `result` is now an instance of `PaymentCancelResultDetails` instead of `Object`
+- `Model.SecupayTransactionCancelDTO` element `contract` is now an instance of `PaymentContractsProductModel` instead of `Object`
+- `Model.SecupayTransactionCaptureDTO` element `contract` is now an instance of `PaymentContractsProductModel` instead of `Object`
+- `Model.SecupayTransactionUpdateBasketDTO` element `contract` is now an instance of `PaymentContractsProductModel` instead of `Object`
+
+### Removed
+
+
+
 ## [3.1.0] - 2020-12-29
 
 ### Security
@@ -431,3 +460,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [2.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.3.0...2.4.0
 [3.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...3.0.0
 [3.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.0.0...3.1.0
+[3.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.1.0...3.2.0

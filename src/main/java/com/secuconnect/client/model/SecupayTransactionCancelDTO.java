@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.PaymentContractsProductModel;
 import java.util.Objects;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Objects;
  */
 public class SecupayTransactionCancelDTO {
   @SerializedName("contract")
-  private Object contract = null;
+  private PaymentContractsProductModel contract = null;
 
   @SerializedName("amount")
   private Integer amount = null;
@@ -16,20 +17,20 @@ public class SecupayTransactionCancelDTO {
   @SerializedName("reduce_stakeholder_payment")
   private Boolean reduceStakeholderPayment = false;
 
-  public SecupayTransactionCancelDTO contract(Object contract) {
+  public SecupayTransactionCancelDTO contract(PaymentContractsProductModel contract) {
     this.contract = contract;
     return this;
   }
 
    /**
-   * The payment contract object
+   * Get contract
    * @return contract
   **/
-  public Object getContract() {
+  public PaymentContractsProductModel getContract() {
     return contract;
   }
 
-  public void setContract(Object contract) {
+  public void setContract(PaymentContractsProductModel contract) {
     this.contract = contract;
   }
 

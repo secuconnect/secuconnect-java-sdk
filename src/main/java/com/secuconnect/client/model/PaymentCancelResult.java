@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.PaymentCancelResultDetails;
 import java.util.Objects;
 
 /**
@@ -14,7 +15,7 @@ public class PaymentCancelResult {
   private Boolean demo = false;
 
   @SerializedName("result")
-  private Object result = null;
+  private PaymentCancelResultDetails result = null;
 
   public PaymentCancelResult newTransId(Integer newTransId) {
     this.newTransId = newTransId;
@@ -50,20 +51,20 @@ public class PaymentCancelResult {
     this.demo = demo;
   }
 
-  public PaymentCancelResult result(Object result) {
+  public PaymentCancelResult result(PaymentCancelResultDetails result) {
     this.result = result;
     return this;
   }
 
    /**
-   * Refund information
+   * Get result
    * @return result
   **/
-  public Object getResult() {
+  public PaymentCancelResultDetails getResult() {
     return result;
   }
 
-  public void setResult(Object result) {
+  public void setResult(PaymentCancelResultDetails result) {
     this.result = result;
   }
 

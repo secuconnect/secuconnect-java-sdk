@@ -3,6 +3,8 @@ package com.secuconnect.client.model;
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.AddressComponents;
 import com.secuconnect.client.model.GeoAddressGeometry;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -13,7 +15,7 @@ public class GeoAddress {
   private String type = null;
 
   @SerializedName("address_components")
-  private AddressComponents addressComponents = null;
+  private List<AddressComponents> addressComponents = null;
 
   @SerializedName("address_formatted")
   private String addressFormatted = null;
@@ -38,20 +40,28 @@ public class GeoAddress {
     this.type = type;
   }
 
-  public GeoAddress addressComponents(AddressComponents addressComponents) {
+  public GeoAddress addressComponents(List<AddressComponents> addressComponents) {
     this.addressComponents = addressComponents;
     return this;
   }
 
+  public GeoAddress addAddressComponentsItem(AddressComponents addressComponentsItem) {
+    if (this.addressComponents == null) {
+      this.addressComponents = new ArrayList<>();
+    }
+    this.addressComponents.add(addressComponentsItem);
+    return this;
+  }
+
    /**
-   * Get addressComponents
+   * Address components
    * @return addressComponents
   **/
-  public AddressComponents getAddressComponents() {
+  public List<AddressComponents> getAddressComponents() {
     return addressComponents;
   }
 
-  public void setAddressComponents(AddressComponents addressComponents) {
+  public void setAddressComponents(List<AddressComponents> addressComponents) {
     this.addressComponents = addressComponents;
   }
 
