@@ -14,7 +14,6 @@ import io.secuconnect.client.model.GeneralContractsList;
 import io.secuconnect.client.model.GeneralContractsProductModel;
 import io.secuconnect.client.model.GetAvailablePaymentMethodsDTO;
 import io.secuconnect.client.model.ProductExceptionPayload;
-import io.secuconnect.client.model.StringList;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -248,11 +247,11 @@ public class GeneralContractsApi {
      * Get available payment methods for given contract
      * @param generalContractId Contract identifier (required)
      * @param body options
-     * @return StringList
+     * @return List&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public StringList getAvailablePaymentMethods(String generalContractId, GetAvailablePaymentMethodsDTO body) throws ApiException {
-        ApiResponse<StringList> resp = getAvailablePaymentMethodsWithHttpInfo(generalContractId, body);
+    public List<String> getAvailablePaymentMethods(String generalContractId, GetAvailablePaymentMethodsDTO body) throws ApiException {
+        ApiResponse<List<String>> resp = getAvailablePaymentMethodsWithHttpInfo(generalContractId, body);
         return resp.getData();
     }
 
@@ -261,12 +260,12 @@ public class GeneralContractsApi {
      * Get available payment methods for given contract
      * @param generalContractId Contract identifier (required)
      * @param body options
-     * @return ApiResponse&lt;StringList&gt;
+     * @return ApiResponse&lt;List&lt;String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<StringList> getAvailablePaymentMethodsWithHttpInfo(String generalContractId, GetAvailablePaymentMethodsDTO body) throws ApiException {
+    public ApiResponse<List<String>> getAvailablePaymentMethodsWithHttpInfo(String generalContractId, GetAvailablePaymentMethodsDTO body) throws ApiException {
         com.squareup.okhttp.Call call = getAvailablePaymentMethodsValidateBeforeCall(generalContractId, body, null, null);
-        Type localVarReturnType = new TypeToken<StringList>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -279,7 +278,7 @@ public class GeneralContractsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAvailablePaymentMethodsAsync(String generalContractId, GetAvailablePaymentMethodsDTO body, final ApiCallback<StringList> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAvailablePaymentMethodsAsync(String generalContractId, GetAvailablePaymentMethodsDTO body, final ApiCallback<List<String>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -301,7 +300,7 @@ public class GeneralContractsApi {
         }
 
         com.squareup.okhttp.Call call = getAvailablePaymentMethodsValidateBeforeCall(generalContractId, body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<StringList>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

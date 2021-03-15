@@ -37,6 +37,12 @@ public class SecupayBaseBasketItem {
   @SerializedName("apikey")
   private String apikey = null;
 
+  @SerializedName("plan_id")
+  private String planId = null;
+
+  @SerializedName("start_at")
+  private String startAt = null;
+
   @SerializedName("transaction_hash")
   private String transactionHash = null;
 
@@ -52,7 +58,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Line type {&#x27;article&#x27;, &#x27;sub_transaction&#x27;, &#x27;stakeholder_payment&#x27;, &#x27;shipping&#x27;}
+   * Line type {&#x27;article&#x27;, &#x27;sub_transaction&#x27;, &#x27;stakeholder_payment&#x27;, &#x27;shipping&#x27;, &#x27;subscription&#x27;}
    * @return itemType
   **/
   public String getItemType() {
@@ -216,6 +222,40 @@ public class SecupayBaseBasketItem {
     this.apikey = apikey;
   }
 
+  public SecupayBaseBasketItem planId(String planId) {
+    this.planId = planId;
+    return this;
+  }
+
+   /**
+   * Subscription plan id
+   * @return planId
+  **/
+  public String getPlanId() {
+    return planId;
+  }
+
+  public void setPlanId(String planId) {
+    this.planId = planId;
+  }
+
+  public SecupayBaseBasketItem startAt(String startAt) {
+    this.startAt = startAt;
+    return this;
+  }
+
+   /**
+   * Subscription start at date
+   * @return startAt
+  **/
+  public String getStartAt() {
+    return startAt;
+  }
+
+  public void setStartAt(String startAt) {
+    this.startAt = startAt;
+  }
+
   public SecupayBaseBasketItem transactionHash(String transactionHash) {
     this.transactionHash = transactionHash;
     return this;
@@ -286,6 +326,8 @@ public class SecupayBaseBasketItem {
         Objects.equals(this.total, secupayBaseBasketItem.total) &&
         Objects.equals(this.price, secupayBaseBasketItem.price) &&
         Objects.equals(this.apikey, secupayBaseBasketItem.apikey) &&
+        Objects.equals(this.planId, secupayBaseBasketItem.planId) &&
+        Objects.equals(this.startAt, secupayBaseBasketItem.startAt) &&
         Objects.equals(this.transactionHash, secupayBaseBasketItem.transactionHash) &&
         Objects.equals(this.contractId, secupayBaseBasketItem.contractId) &&
         Objects.equals(this.referenceId, secupayBaseBasketItem.referenceId);
@@ -293,7 +335,7 @@ public class SecupayBaseBasketItem {
 
   @Override
   public int hashCode() {
-    return Objects.hash(itemType, articleNumber, quantity, name, model, ean, tax, total, price, apikey, transactionHash, contractId, referenceId);
+    return Objects.hash(itemType, articleNumber, quantity, name, model, ean, tax, total, price, apikey, planId, startAt, transactionHash, contractId, referenceId);
   }
 
   @Override
@@ -311,6 +353,8 @@ public class SecupayBaseBasketItem {
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    apikey: ").append(toIndentedString(apikey)).append("\n");
+    sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
+    sb.append("    startAt: ").append(toIndentedString(startAt)).append("\n");
     sb.append("    transactionHash: ").append(toIndentedString(transactionHash)).append("\n");
     sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");

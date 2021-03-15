@@ -18,7 +18,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
-
 ## [3.1.0] - 2020-12-29
 
 ### Security
@@ -119,6 +118,36 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.LoyaltyDTOMerchant`
 - `Model.SmartTransactionsShipmentDetails`
 - `Model.SmartDevicesDTOPrepaidTid`
+
+
+## [2.5.0] - 2021-03-15
+
+### Added
+- `Api.PaymentPlansApi`
+- `Api.PaymentSubscriptionsApi`
+- `Model.BillingCyclesItem`
+- `Model.PaymentPlanInterval`
+- `Model.PaymentPlansDTO`
+- `Model.PaymentPlansList`
+- `Model.PaymentPlansProductModel`
+- `Model.PaymentSubscriptionsList`
+- `Model.PaymentSubscriptionsProductModel`
+- `Model.PaymentSubscriptionsProductModelBillingCycles`
+- `Model.SmartTransactionsContainer`
+- `Model.SecupayBaseBasketItem` element `plan_id` and `start_at`
+- `Model.SecupayTransactionCaptureDTO` element `shipping_information`
+- `Model.SmartTransactionsApplicationContext` element `checkout_template`
+
+### Changed
+- `Api.GeneralContractsApi` method `getAvailablePaymentMethods` returns `List<String>`
+- `Model.PaymentCancelResult` element `result` is an instance of `PaymentCancelResultDetails`
+- `Model.SecupayTransactionUpdateBasketDTO` element `contract` is an instance of `PaymentContractsProductModel`
+- `Model.SecupayTransactionCancelDTO` element `contract` is an instance of `PaymentContractsProductModel`
+- `Model.SecupayTransactionCaptureDTO` element `contract` is an instance of `PaymentContractsProductModel`
+- `Model.SmartTransactionsProductModel` element `container` is an instance of `SmartTransactionsContainer`
+
+### Fixed
+- `Model.GeoAddress` element `address_components` is a List of `AddressComponents`
 
 
 ## [2.4.0] - 2020-12-29
@@ -429,5 +458,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [2.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...2.2.0
 [2.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.2.0...2.3.0
 [2.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.3.0...2.4.0
+[2.5.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.4.0...2.5.0
 [3.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...3.0.0
 [3.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.0.0...3.1.0
