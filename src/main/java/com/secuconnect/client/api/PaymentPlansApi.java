@@ -34,13 +34,13 @@ public class PaymentPlansApi {
     }
 
     /**
-     * Build call for patchPlans
+     * Build call for paymentPlansApiInterfacePatchPlans
      * @param paymentPlanId Payment plan id (required)
      * @param body Payment plans properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call patchPlansCall(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
+    public Call paymentPlansApiInterfacePatchPlansCall(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -71,13 +71,13 @@ public class PaymentPlansApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call patchPlansValidateBeforeCall(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
+    private Call paymentPlansApiInterfacePatchPlansValidateBeforeCall(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
         // verify the required parameter 'paymentPlanId' is set
         if (paymentPlanId == null) {
-            throw new ApiException("Missing the required parameter 'paymentPlanId' when calling patchPlans(Async)");
+            throw new ApiException("Missing the required parameter 'paymentPlanId' when calling paymentPlansApiInterfacePatchPlans(Async)");
         }
 
-        return patchPlansCall(paymentPlanId, body);
+        return paymentPlansApiInterfacePatchPlansCall(paymentPlanId, body);
     }
 
     /**
@@ -88,8 +88,8 @@ public class PaymentPlansApi {
      * @return PaymentPlansProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaymentPlansProductModel patchPlans(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
-        ApiResponse<PaymentPlansProductModel> resp = patchPlansWithHttpInfo(paymentPlanId, body);
+    public PaymentPlansProductModel paymentPlansApiInterfacePatchPlans(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
+        ApiResponse<PaymentPlansProductModel> resp = paymentPlansApiInterfacePatchPlansWithHttpInfo(paymentPlanId, body);
         return resp.getData();
     }
 
@@ -101,8 +101,8 @@ public class PaymentPlansApi {
      * @return ApiResponse&lt;PaymentPlansProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaymentPlansProductModel> patchPlansWithHttpInfo(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
-        Call call = patchPlansValidateBeforeCall(paymentPlanId, body);
+    public ApiResponse<PaymentPlansProductModel> paymentPlansApiInterfacePatchPlansWithHttpInfo(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
+        Call call = paymentPlansApiInterfacePatchPlansValidateBeforeCall(paymentPlanId, body);
         Type localVarReturnType = new TypeToken<PaymentPlansProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -116,8 +116,98 @@ public class PaymentPlansApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call patchPlansAsync(String paymentPlanId, PaymentPlansDTO body, final ApiCallback<PaymentPlansProductModel> callback) throws ApiException {
-        Call call = patchPlansValidateBeforeCall(paymentPlanId, body);
+    public Call paymentPlansApiInterfacePatchPlansAsync(String paymentPlanId, PaymentPlansDTO body, final ApiCallback<PaymentPlansProductModel> callback) throws ApiException {
+        Call call = paymentPlansApiInterfacePatchPlansValidateBeforeCall(paymentPlanId, body);
+        Type localVarReturnType = new TypeToken<PaymentPlansProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for paymentPlansApiInterfaceUpdatePlans
+     * @param paymentPlanId Payment plan id (required)
+     * @param body Payment plans properties
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call paymentPlansApiInterfaceUpdatePlansCall(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Plans/{paymentPlanId}"
+            .replaceAll("\\{" + "paymentPlanId" + "\\}", apiClient.escapeString(paymentPlanId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call paymentPlansApiInterfaceUpdatePlansValidateBeforeCall(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
+        // verify the required parameter 'paymentPlanId' is set
+        if (paymentPlanId == null) {
+            throw new ApiException("Missing the required parameter 'paymentPlanId' when calling paymentPlansApiInterfaceUpdatePlans(Async)");
+        }
+
+        return paymentPlansApiInterfaceUpdatePlansCall(paymentPlanId, body);
+    }
+
+    /**
+     * PUT Payment/Plans/{paymentPlanId}
+     * Get payment plan by id
+     * @param paymentPlanId Payment plan id (required)
+     * @param body Payment plans properties
+     * @return PaymentPlansProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentPlansProductModel paymentPlansApiInterfaceUpdatePlans(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
+        ApiResponse<PaymentPlansProductModel> resp = paymentPlansApiInterfaceUpdatePlansWithHttpInfo(paymentPlanId, body);
+        return resp.getData();
+    }
+
+    /**
+     * PUT Payment/Plans/{paymentPlanId}
+     * Get payment plan by id
+     * @param paymentPlanId Payment plan id (required)
+     * @param body Payment plans properties
+     * @return ApiResponse&lt;PaymentPlansProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentPlansProductModel> paymentPlansApiInterfaceUpdatePlansWithHttpInfo(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
+        Call call = paymentPlansApiInterfaceUpdatePlansValidateBeforeCall(paymentPlanId, body);
+        Type localVarReturnType = new TypeToken<PaymentPlansProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * PUT Payment/Plans/{paymentPlanId} (asynchronously)
+     * Get payment plan by id
+     * @param paymentPlanId Payment plan id (required)
+     * @param body Payment plans properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call paymentPlansApiInterfaceUpdatePlansAsync(String paymentPlanId, PaymentPlansDTO body, final ApiCallback<PaymentPlansProductModel> callback) throws ApiException {
+        Call call = paymentPlansApiInterfaceUpdatePlansValidateBeforeCall(paymentPlanId, body);
         Type localVarReturnType = new TypeToken<PaymentPlansProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -392,96 +482,6 @@ public class PaymentPlansApi {
      */
     public Call paymentPlansPostAsync(PaymentPlansDTO body, final ApiCallback<PaymentPlansProductModel> callback) throws ApiException {
         Call call = paymentPlansPostValidateBeforeCall(body);
-        Type localVarReturnType = new TypeToken<PaymentPlansProductModel>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-
-    /**
-     * Build call for updatePlans
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public Call updatePlansCall(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
-        Object localVarPostBody = body;
-
-        // create path and map variables
-        String localVarPath = "/Payment/Plans/{paymentPlanId}"
-            .replaceAll("\\{" + "paymentPlanId" + "\\}", apiClient.escapeString(paymentPlanId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private Call updatePlansValidateBeforeCall(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
-        // verify the required parameter 'paymentPlanId' is set
-        if (paymentPlanId == null) {
-            throw new ApiException("Missing the required parameter 'paymentPlanId' when calling updatePlans(Async)");
-        }
-
-        return updatePlansCall(paymentPlanId, body);
-    }
-
-    /**
-     * PUT Payment/Plans/{paymentPlanId}
-     * Get payment plan by id
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
-     * @return PaymentPlansProductModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PaymentPlansProductModel updatePlans(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
-        ApiResponse<PaymentPlansProductModel> resp = updatePlansWithHttpInfo(paymentPlanId, body);
-        return resp.getData();
-    }
-
-    /**
-     * PUT Payment/Plans/{paymentPlanId}
-     * Get payment plan by id
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
-     * @return ApiResponse&lt;PaymentPlansProductModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PaymentPlansProductModel> updatePlansWithHttpInfo(String paymentPlanId, PaymentPlansDTO body) throws ApiException {
-        Call call = updatePlansValidateBeforeCall(paymentPlanId, body);
-        Type localVarReturnType = new TypeToken<PaymentPlansProductModel>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * PUT Payment/Plans/{paymentPlanId} (asynchronously)
-     * Get payment plan by id
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public Call updatePlansAsync(String paymentPlanId, PaymentPlansDTO body, final ApiCallback<PaymentPlansProductModel> callback) throws ApiException {
-        Call call = updatePlansValidateBeforeCall(paymentPlanId, body);
         Type localVarReturnType = new TypeToken<PaymentPlansProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

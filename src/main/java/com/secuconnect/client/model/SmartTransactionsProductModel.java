@@ -13,6 +13,7 @@ import com.secuconnect.client.model.SmartTransactionsBasketInfo;
 import com.secuconnect.client.model.SmartTransactionsCheckin;
 import com.secuconnect.client.model.SmartTransactionsCheckoutLinks;
 import com.secuconnect.client.model.SmartTransactionsCommunication;
+import com.secuconnect.client.model.SmartTransactionsContainer;
 import com.secuconnect.client.model.SmartTransactionsIdent;
 import com.secuconnect.client.model.SmartTransactionsMerchant;
 import com.secuconnect.client.model.SmartTransactionsPaymentLinks;
@@ -52,7 +53,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   private PaymentCustomersProductModel shippingAddress = null;
 
   @SerializedName("container")
-  private ProductInstanceUID container = null;
+  private SmartTransactionsContainer container = null;
 
   @SerializedName("checkin")
   private SmartTransactionsCheckin checkin = null;
@@ -283,7 +284,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.shippingAddress = shippingAddress;
   }
 
-  public SmartTransactionsProductModel container(ProductInstanceUID container) {
+  public SmartTransactionsProductModel container(SmartTransactionsContainer container) {
     this.container = container;
     return this;
   }
@@ -292,11 +293,11 @@ public class SmartTransactionsProductModel extends BaseProductModel {
    * Get container
    * @return container
   **/
-  public ProductInstanceUID getContainer() {
+  public SmartTransactionsContainer getContainer() {
     return container;
   }
 
-  public void setContainer(ProductInstanceUID container) {
+  public void setContainer(SmartTransactionsContainer container) {
     this.container = container;
   }
 

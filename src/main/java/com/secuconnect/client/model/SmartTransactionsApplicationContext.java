@@ -19,6 +19,9 @@ public class SmartTransactionsApplicationContext {
   @SerializedName("iframe_opts")
   private SmartTransactionsApplicationContextIframeOpts iframeOpts = null;
 
+  @SerializedName("checkout_template")
+  private String checkoutTemplate = null;
+
   public SmartTransactionsApplicationContext locks(SmartTransactionsApplicationContextLocks locks) {
     this.locks = locks;
     return this;
@@ -70,6 +73,23 @@ public class SmartTransactionsApplicationContext {
     this.iframeOpts = iframeOpts;
   }
 
+  public SmartTransactionsApplicationContext checkoutTemplate(String checkoutTemplate) {
+    this.checkoutTemplate = checkoutTemplate;
+    return this;
+  }
+
+   /**
+   * Smart Checkout Template ID
+   * @return checkoutTemplate
+  **/
+  public String getCheckoutTemplate() {
+    return checkoutTemplate;
+  }
+
+  public void setCheckoutTemplate(String checkoutTemplate) {
+    this.checkoutTemplate = checkoutTemplate;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -81,12 +101,13 @@ public class SmartTransactionsApplicationContext {
     SmartTransactionsApplicationContext smartTransactionsApplicationContext = (SmartTransactionsApplicationContext) o;
     return Objects.equals(this.locks, smartTransactionsApplicationContext.locks) &&
         Objects.equals(this.returnUrls, smartTransactionsApplicationContext.returnUrls) &&
-        Objects.equals(this.iframeOpts, smartTransactionsApplicationContext.iframeOpts);
+        Objects.equals(this.iframeOpts, smartTransactionsApplicationContext.iframeOpts) &&
+        Objects.equals(this.checkoutTemplate, smartTransactionsApplicationContext.checkoutTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locks, returnUrls, iframeOpts);
+    return Objects.hash(locks, returnUrls, iframeOpts, checkoutTemplate);
   }
 
   @Override
@@ -96,6 +117,7 @@ public class SmartTransactionsApplicationContext {
     sb.append("    locks: ").append(toIndentedString(locks)).append("\n");
     sb.append("    returnUrls: ").append(toIndentedString(returnUrls)).append("\n");
     sb.append("    iframeOpts: ").append(toIndentedString(iframeOpts)).append("\n");
+    sb.append("    checkoutTemplate: ").append(toIndentedString(checkoutTemplate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
