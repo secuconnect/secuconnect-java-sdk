@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
-## [3.2.0] - 2021-MM-DD
+## [3.2.0] - 2021-03-15
 
 ### Added
 - `Api.PaymentPlansApi`
