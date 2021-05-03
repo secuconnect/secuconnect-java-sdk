@@ -39,6 +39,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.SmartTemplatesComponentModel`
 - `Model.SmartTemplatesElementModel`
 - `Model.SmartTemplatesList`
+- `Model.SmartTemplatesProductModel`
 - `Model.SmartTransactionsDTO` element `payment_context`
 - `Model.SmartTransactionsPaymentLinks` element `paypal` and `sofort`
 - `Model.SmartTransactionsProductModel` element `payment_instructions` and `payment_context`
