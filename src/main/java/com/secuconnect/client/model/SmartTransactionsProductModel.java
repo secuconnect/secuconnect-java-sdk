@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
+import com.secuconnect.client.model.PaymentContext;
 import com.secuconnect.client.model.PaymentCustomersProductModel;
+import com.secuconnect.client.model.PaymentInstructions;
 import com.secuconnect.client.model.PaymentTransactionsProductModel;
 import com.secuconnect.client.model.ProductInstanceUID;
 import com.secuconnect.client.model.SmartTransactionsApplicationContext;
@@ -147,6 +149,12 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("application_context")
   private SmartTransactionsApplicationContext applicationContext = null;
+
+  @SerializedName("payment_instructions")
+  private PaymentInstructions paymentInstructions = null;
+
+  @SerializedName("payment_context")
+  private PaymentContext paymentContext = null;
 
   public SmartTransactionsProductModel created(String created) {
     this.created = created;
@@ -860,6 +868,40 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.applicationContext = applicationContext;
   }
 
+  public SmartTransactionsProductModel paymentInstructions(PaymentInstructions paymentInstructions) {
+    this.paymentInstructions = paymentInstructions;
+    return this;
+  }
+
+   /**
+   * Get paymentInstructions
+   * @return paymentInstructions
+  **/
+  public PaymentInstructions getPaymentInstructions() {
+    return paymentInstructions;
+  }
+
+  public void setPaymentInstructions(PaymentInstructions paymentInstructions) {
+    this.paymentInstructions = paymentInstructions;
+  }
+
+  public SmartTransactionsProductModel paymentContext(PaymentContext paymentContext) {
+    this.paymentContext = paymentContext;
+    return this;
+  }
+
+   /**
+   * Get paymentContext
+   * @return paymentContext
+  **/
+  public PaymentContext getPaymentContext() {
+    return paymentContext;
+  }
+
+  public void setPaymentContext(PaymentContext paymentContext) {
+    this.paymentContext = paymentContext;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -909,12 +951,14 @@ public class SmartTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.communications, smartTransactionsProductModel.communications) &&
         Objects.equals(this.paymentLinks, smartTransactionsProductModel.paymentLinks) &&
         Objects.equals(this.applicationContext, smartTransactionsProductModel.applicationContext) &&
+        Objects.equals(this.paymentInstructions, smartTransactionsProductModel.paymentInstructions) &&
+        Objects.equals(this.paymentContext, smartTransactionsProductModel.paymentContext) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, prepaidSales, communications, paymentLinks, applicationContext, super.hashCode());
+    return Objects.hash(created, updated, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, prepaidSales, communications, paymentLinks, applicationContext, paymentInstructions, paymentContext, super.hashCode());
   }
 
   @Override
@@ -962,6 +1006,8 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
     sb.append("    paymentLinks: ").append(toIndentedString(paymentLinks)).append("\n");
     sb.append("    applicationContext: ").append(toIndentedString(applicationContext)).append("\n");
+    sb.append("    paymentInstructions: ").append(toIndentedString(paymentInstructions)).append("\n");
+    sb.append("    paymentContext: ").append(toIndentedString(paymentContext)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2,6 +2,7 @@ package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
+import com.secuconnect.client.model.PaymentContext;
 import com.secuconnect.client.model.PaymentCustomersProductModel;
 import com.secuconnect.client.model.ProductInstanceID;
 import com.secuconnect.client.model.ProductInstanceUID;
@@ -100,6 +101,9 @@ public class SmartTransactionsDTO {
 
   @SerializedName("application_context")
   private SmartTransactionsApplicationContext applicationContext = null;
+
+  @SerializedName("payment_context")
+  private PaymentContext paymentContext = null;
 
   public SmartTransactionsDTO merchant(String merchant) {
     this.merchant = merchant;
@@ -568,6 +572,23 @@ public class SmartTransactionsDTO {
     this.applicationContext = applicationContext;
   }
 
+  public SmartTransactionsDTO paymentContext(PaymentContext paymentContext) {
+    this.paymentContext = paymentContext;
+    return this;
+  }
+
+   /**
+   * Get paymentContext
+   * @return paymentContext
+  **/
+  public PaymentContext getPaymentContext() {
+    return paymentContext;
+  }
+
+  public void setPaymentContext(PaymentContext paymentContext) {
+    this.paymentContext = paymentContext;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -603,12 +624,13 @@ public class SmartTransactionsDTO {
         Objects.equals(this.checkoutLinks, smartTransactionsDTO.checkoutLinks) &&
         Objects.equals(this.deliveryOptions, smartTransactionsDTO.deliveryOptions) &&
         Objects.equals(this.communications, smartTransactionsDTO.communications) &&
-        Objects.equals(this.applicationContext, smartTransactionsDTO.applicationContext);
+        Objects.equals(this.applicationContext, smartTransactionsDTO.applicationContext) &&
+        Objects.equals(this.paymentContext, smartTransactionsDTO.paymentContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, providerContract, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, deviceSource, transId, contract, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, intent, checkoutLinks, deliveryOptions, communications, applicationContext);
+    return Objects.hash(merchant, providerContract, transactionRef, merchantRef, basket, basketInfo, idents, taxAmount, taxRate, market, cashier, product, deviceSource, transId, contract, lastVisitedPage, customer, shippingAddress, container, checkin, paymentMethod, isDemo, intent, checkoutLinks, deliveryOptions, communications, applicationContext, paymentContext);
   }
 
   @Override
@@ -642,6 +664,7 @@ public class SmartTransactionsDTO {
     sb.append("    deliveryOptions: ").append(toIndentedString(deliveryOptions)).append("\n");
     sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
     sb.append("    applicationContext: ").append(toIndentedString(applicationContext)).append("\n");
+    sb.append("    paymentContext: ").append(toIndentedString(paymentContext)).append("\n");
     sb.append("}");
     return sb.toString();
   }

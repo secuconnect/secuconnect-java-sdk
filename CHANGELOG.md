@@ -18,10 +18,40 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+## [3.3.0] - 2021-05-03
+
+### Security
+
+- Update dependencies to the latest versions.
+
+### Added
+
+- `Api.GeneralMerchantsApi.getPublicData()`
+- `Api.SmartTemplatesApi`
+- `Model.BackgroundImageOption`
+- `Model.GeneralContractsProductModel` element `payment_link_options`
+- `Model.GeneralMerchantsPublicDataCompany`
+- `Model.GeneralMerchantsPublicDataModel`
+- `Model.PaymentContext`
+- `Model.PaymentInstructions`
+- `Model.PaymentLinkOptions`
+- `Model.SmartTemplatesAccordionItemModel`
+- `Model.SmartTemplatesComponentModel`
+- `Model.SmartTemplatesElementModel`
+- `Model.SmartTemplatesList`
+- `Model.SmartTransactionsDTO` element `payment_context`
+- `Model.SmartTransactionsPaymentLinks` element `paypal` and `sofort`
+- `Model.SmartTransactionsProductModel` element `payment_instructions` and `payment_context`
+
+### Fixed
+
+- `JSON.createGson()` to convert `OneOfSmartTransactionsDeliveryOptionsModel` and `PaymentInstructions` correctly
+
 
 ## [3.2.0] - 2021-03-15
 
 ### Added
+
 - `Api.PaymentPlansApi`
 - `Api.PaymentSubscriptionsApi`
 - `Model.BillingCyclesItem`
@@ -38,6 +68,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.SmartTransactionsApplicationContext` element `checkout_template`
 
 ### Changed
+
 - `Api.GeneralContractsApi` method `getAvailablePaymentMethods` returns `List<String>`
 - `Model.PaymentCancelResult` element `result` is an instance of `PaymentCancelResultDetails`
 - `Model.SecupayTransactionUpdateBasketDTO` element `contract` is an instance of `PaymentContractsProductModel`
@@ -46,6 +77,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.SmartTransactionsProductModel` element `container` is an instance of `SmartTransactionsContainer`
 
 ### Fixed
+
 - `Model.GeoAddress` element `address_components` is a List of `AddressComponents`
 
 
@@ -493,3 +525,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [3.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...3.0.0
 [3.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.0.0...3.1.0
 [3.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.1.0...3.2.0
+[3.3.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.2.0...3.3.0

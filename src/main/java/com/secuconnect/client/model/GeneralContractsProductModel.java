@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.BankAccountDescriptor;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.ParentModel;
+import com.secuconnect.client.model.PaymentLinkOptions;
 import com.secuconnect.client.model.ProductInstanceUID;
 import java.util.Objects;
 
@@ -19,6 +20,9 @@ public class GeneralContractsProductModel extends BaseProductModel {
 
   @SerializedName("pay_in_advance_account")
   private BankAccountDescriptor payInAdvanceAccount = null;
+
+  @SerializedName("payment_link_options")
+  private PaymentLinkOptions paymentLinkOptions = null;
 
   public GeneralContractsProductModel parent(ParentModel parent) {
     this.parent = parent;
@@ -71,6 +75,23 @@ public class GeneralContractsProductModel extends BaseProductModel {
     this.payInAdvanceAccount = payInAdvanceAccount;
   }
 
+  public GeneralContractsProductModel paymentLinkOptions(PaymentLinkOptions paymentLinkOptions) {
+    this.paymentLinkOptions = paymentLinkOptions;
+    return this;
+  }
+
+   /**
+   * Get paymentLinkOptions
+   * @return paymentLinkOptions
+  **/
+  public PaymentLinkOptions getPaymentLinkOptions() {
+    return paymentLinkOptions;
+  }
+
+  public void setPaymentLinkOptions(PaymentLinkOptions paymentLinkOptions) {
+    this.paymentLinkOptions = paymentLinkOptions;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -83,12 +104,13 @@ public class GeneralContractsProductModel extends BaseProductModel {
     return Objects.equals(this.parent, generalContractsProductModel.parent) &&
         Objects.equals(this.merchant, generalContractsProductModel.merchant) &&
         Objects.equals(this.payInAdvanceAccount, generalContractsProductModel.payInAdvanceAccount) &&
+        Objects.equals(this.paymentLinkOptions, generalContractsProductModel.paymentLinkOptions) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parent, merchant, payInAdvanceAccount, super.hashCode());
+    return Objects.hash(parent, merchant, payInAdvanceAccount, paymentLinkOptions, super.hashCode());
   }
 
   @Override
@@ -99,6 +121,7 @@ public class GeneralContractsProductModel extends BaseProductModel {
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    payInAdvanceAccount: ").append(toIndentedString(payInAdvanceAccount)).append("\n");
+    sb.append("    paymentLinkOptions: ").append(toIndentedString(paymentLinkOptions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

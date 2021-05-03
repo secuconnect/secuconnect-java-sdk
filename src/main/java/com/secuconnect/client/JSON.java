@@ -42,7 +42,9 @@ public class JSON {
         .registerTypeSelector(OneOfPaymentContainersDTOModelPrivate.class, new TypeSelector<OneOfPaymentContainersDTOModelPrivate>() {
             @Override
             public Class<? extends OneOfPaymentContainersDTOModelPrivate> getClassForElement(JsonElement readElement) {
-                if (readElement.getAsJsonObject().has("pan")) {
+                if (readElement.getAsJsonObject().has("girocode_url")) {
+                    return PaymentInstructions.class;
+                } else if (readElement.getAsJsonObject().has("pan")) {
                     return CreditCardDescriptor.class;
                 }
                 return BankAccountDescriptor.class;
@@ -59,7 +61,7 @@ public class JSON {
                     }
                 }
 
-                return null;
+                return SmartTransactionsShippingModel.class;
             }
         })
         ;

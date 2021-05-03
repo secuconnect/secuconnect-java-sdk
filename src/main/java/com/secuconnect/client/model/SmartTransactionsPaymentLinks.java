@@ -19,6 +19,12 @@ public class SmartTransactionsPaymentLinks {
   @SerializedName("invoice")
   private String invoice = null;
 
+  @SerializedName("paypal")
+  private String paypal = null;
+
+  @SerializedName("sofort")
+  private String sofort = null;
+
   @SerializedName("general")
   private String general = null;
 
@@ -28,7 +34,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * prepaid link
+   * process with pay in advance
    * @return prepaid
   **/
   public String getPrepaid() {
@@ -45,7 +51,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * debit link
+   * process with SEAP direct debit
    * @return debit
   **/
   public String getDebit() {
@@ -62,7 +68,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * creditcard link
+   * process with credit card
    * @return creditcard
   **/
   public String getCreditcard() {
@@ -79,7 +85,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * invoice link
+   * process with pay on invoice
    * @return invoice
   **/
   public String getInvoice() {
@@ -90,13 +96,47 @@ public class SmartTransactionsPaymentLinks {
     this.invoice = invoice;
   }
 
+  public SmartTransactionsPaymentLinks paypal(String paypal) {
+    this.paypal = paypal;
+    return this;
+  }
+
+   /**
+   * process with PayPal
+   * @return paypal
+  **/
+  public String getPaypal() {
+    return paypal;
+  }
+
+  public void setPaypal(String paypal) {
+    this.paypal = paypal;
+  }
+
+  public SmartTransactionsPaymentLinks sofort(String sofort) {
+    this.sofort = sofort;
+    return this;
+  }
+
+   /**
+   * process with Sofort
+   * @return sofort
+  **/
+  public String getSofort() {
+    return sofort;
+  }
+
+  public void setSofort(String sofort) {
+    this.sofort = sofort;
+  }
+
   public SmartTransactionsPaymentLinks general(String general) {
     this.general = general;
     return this;
   }
 
    /**
-   * general link
+   * process with selecting a payment method
    * @return general
   **/
   public String getGeneral() {
@@ -120,12 +160,14 @@ public class SmartTransactionsPaymentLinks {
         Objects.equals(this.debit, smartTransactionsPaymentLinks.debit) &&
         Objects.equals(this.creditcard, smartTransactionsPaymentLinks.creditcard) &&
         Objects.equals(this.invoice, smartTransactionsPaymentLinks.invoice) &&
+        Objects.equals(this.paypal, smartTransactionsPaymentLinks.paypal) &&
+        Objects.equals(this.sofort, smartTransactionsPaymentLinks.sofort) &&
         Objects.equals(this.general, smartTransactionsPaymentLinks.general);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(prepaid, debit, creditcard, invoice, general);
+    return Objects.hash(prepaid, debit, creditcard, invoice, paypal, sofort, general);
   }
 
   @Override
@@ -136,6 +178,8 @@ public class SmartTransactionsPaymentLinks {
     sb.append("    debit: ").append(toIndentedString(debit)).append("\n");
     sb.append("    creditcard: ").append(toIndentedString(creditcard)).append("\n");
     sb.append("    invoice: ").append(toIndentedString(invoice)).append("\n");
+    sb.append("    paypal: ").append(toIndentedString(paypal)).append("\n");
+    sb.append("    sofort: ").append(toIndentedString(sofort)).append("\n");
     sb.append("    general: ").append(toIndentedString(general)).append("\n");
     sb.append("}");
     return sb.toString();
