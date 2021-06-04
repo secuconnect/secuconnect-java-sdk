@@ -12,6 +12,9 @@ import java.util.Objects;
  * GeneralContractsProductModel
  */
 public class GeneralContractsProductModel extends BaseProductModel {
+  @SerializedName("id_old")
+  private Integer idOld = null;
+
   @SerializedName("parent")
   private ParentModel parent = null;
 
@@ -23,6 +26,14 @@ public class GeneralContractsProductModel extends BaseProductModel {
 
   @SerializedName("payment_link_options")
   private PaymentLinkOptions paymentLinkOptions = null;
+
+   /**
+   * ID in secupay Frontend
+   * @return idOld
+  **/
+  public Integer getIdOld() {
+    return idOld;
+  }
 
   public GeneralContractsProductModel parent(ParentModel parent) {
     this.parent = parent;
@@ -101,7 +112,8 @@ public class GeneralContractsProductModel extends BaseProductModel {
       return false;
     }
     GeneralContractsProductModel generalContractsProductModel = (GeneralContractsProductModel) o;
-    return Objects.equals(this.parent, generalContractsProductModel.parent) &&
+    return Objects.equals(this.idOld, generalContractsProductModel.idOld) &&
+        Objects.equals(this.parent, generalContractsProductModel.parent) &&
         Objects.equals(this.merchant, generalContractsProductModel.merchant) &&
         Objects.equals(this.payInAdvanceAccount, generalContractsProductModel.payInAdvanceAccount) &&
         Objects.equals(this.paymentLinkOptions, generalContractsProductModel.paymentLinkOptions) &&
@@ -110,7 +122,7 @@ public class GeneralContractsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(parent, merchant, payInAdvanceAccount, paymentLinkOptions, super.hashCode());
+    return Objects.hash(idOld, parent, merchant, payInAdvanceAccount, paymentLinkOptions, super.hashCode());
   }
 
   @Override
@@ -118,6 +130,7 @@ public class GeneralContractsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class GeneralContractsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    idOld: ").append(toIndentedString(idOld)).append("\n");
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    payInAdvanceAccount: ").append(toIndentedString(payInAdvanceAccount)).append("\n");

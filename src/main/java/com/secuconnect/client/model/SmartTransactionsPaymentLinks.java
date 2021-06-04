@@ -51,7 +51,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * process with SEAP direct debit
+   * process with SEPA direct debit
    * @return debit
   **/
   public String getDebit() {

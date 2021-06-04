@@ -18,6 +18,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+
+## [3.4.0] - 2021-06-04
+
+### Security
+
+- Update dependencies to the latest versions.
+
+### Added
+
+- `Api.GeneralContractsApi.revokeAccrualCall()`
+- `Api.PaymentContractsApi.revokeAccrualCall()`
+- `Model.GeneralContractsProductModel` element `id_old`
+
+
 ## [3.3.0] - 2021-05-03
 
 ### Security
@@ -527,3 +541,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [3.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.0.0...3.1.0
 [3.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.1.0...3.2.0
 [3.3.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.2.0...3.3.0
+[3.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.3.0...3.4.0

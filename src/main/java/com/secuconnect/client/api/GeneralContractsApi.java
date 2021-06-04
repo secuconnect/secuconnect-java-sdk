@@ -315,4 +315,86 @@ public class GeneralContractsApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+
+    /**
+     * Build call for revokeAccrual
+     * @param generalContractId Contract identifier (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call revokeAccrualCall(String generalContractId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/General/Contracts/{generalContractId}/revokeAccrual"
+            .replaceAll("\\{" + "generalContractId" + "\\}", apiClient.escapeString(generalContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call revokeAccrualValidateBeforeCall(String generalContractId) throws ApiException {
+        // verify the required parameter 'generalContractId' is set
+        if (generalContractId == null) {
+            throw new ApiException("Missing the required parameter 'generalContractId' when calling revokeAccrual(Async)");
+        }
+
+        return revokeAccrualCall(generalContractId);
+    }
+
+    /**
+     * POST General/Contracts/{generalContractId}/revokeAccrual
+     * Revoke accrual flag for all transactions of given contract
+     * @param generalContractId Contract identifier (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void revokeAccrual(String generalContractId) throws ApiException {
+        revokeAccrualWithHttpInfo(generalContractId);
+    }
+
+    /**
+     * POST General/Contracts/{generalContractId}/revokeAccrual
+     * Revoke accrual flag for all transactions of given contract
+     * @param generalContractId Contract identifier (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> revokeAccrualWithHttpInfo(String generalContractId) throws ApiException {
+        Call call = revokeAccrualValidateBeforeCall(generalContractId);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * POST General/Contracts/{generalContractId}/revokeAccrual (asynchronously)
+     * Revoke accrual flag for all transactions of given contract
+     * @param generalContractId Contract identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call revokeAccrualAsync(String generalContractId, final ApiCallback<Void> callback) throws ApiException {
+        Call call = revokeAccrualValidateBeforeCall(generalContractId);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
 }
