@@ -27,6 +27,9 @@ public class PaymentContractsProductModel extends BaseProductModel {
   @SerializedName("demo")
   private Boolean demo = null;
 
+  @SerializedName("approved")
+  private Boolean approved = null;
+
   public PaymentContractsProductModel created(String created) {
     this.created = created;
     return this;
@@ -112,6 +115,23 @@ public class PaymentContractsProductModel extends BaseProductModel {
     this.demo = demo;
   }
 
+  public PaymentContractsProductModel approved(Boolean approved) {
+    this.approved = approved;
+    return this;
+  }
+
+   /**
+   * Indicates if the payout lock was removed
+   * @return approved
+  **/
+  public Boolean getApproved() {
+    return approved;
+  }
+
+  public void setApproved(Boolean approved) {
+    this.approved = approved;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -126,12 +146,13 @@ public class PaymentContractsProductModel extends BaseProductModel {
         Objects.equals(this.parent, paymentContractsProductModel.parent) &&
         Objects.equals(this.payInAccount, paymentContractsProductModel.payInAccount) &&
         Objects.equals(this.demo, paymentContractsProductModel.demo) &&
+        Objects.equals(this.approved, paymentContractsProductModel.approved) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, parent, payInAccount, demo, super.hashCode());
+    return Objects.hash(created, updated, parent, payInAccount, demo, approved, super.hashCode());
   }
 
   @Override
@@ -144,6 +165,7 @@ public class PaymentContractsProductModel extends BaseProductModel {
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    payInAccount: ").append(toIndentedString(payInAccount)).append("\n");
     sb.append("    demo: ").append(toIndentedString(demo)).append("\n");
+    sb.append("    approved: ").append(toIndentedString(approved)).append("\n");
     sb.append("}");
     return sb.toString();
   }
