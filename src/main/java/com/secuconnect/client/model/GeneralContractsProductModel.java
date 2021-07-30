@@ -27,6 +27,9 @@ public class GeneralContractsProductModel extends BaseProductModel {
   @SerializedName("payment_link_options")
   private PaymentLinkOptions paymentLinkOptions = null;
 
+  @SerializedName("approved")
+  private Boolean approved = null;
+
    /**
    * ID in secupay Frontend
    * @return idOld
@@ -103,6 +106,23 @@ public class GeneralContractsProductModel extends BaseProductModel {
     this.paymentLinkOptions = paymentLinkOptions;
   }
 
+  public GeneralContractsProductModel approved(Boolean approved) {
+    this.approved = approved;
+    return this;
+  }
+
+   /**
+   * Indicates if the payout lock was removed
+   * @return approved
+  **/
+  public Boolean getApproved() {
+    return approved;
+  }
+
+  public void setApproved(Boolean approved) {
+    this.approved = approved;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -117,12 +137,13 @@ public class GeneralContractsProductModel extends BaseProductModel {
         Objects.equals(this.merchant, generalContractsProductModel.merchant) &&
         Objects.equals(this.payInAdvanceAccount, generalContractsProductModel.payInAdvanceAccount) &&
         Objects.equals(this.paymentLinkOptions, generalContractsProductModel.paymentLinkOptions) &&
+        Objects.equals(this.approved, generalContractsProductModel.approved) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(idOld, parent, merchant, payInAdvanceAccount, paymentLinkOptions, super.hashCode());
+    return Objects.hash(idOld, parent, merchant, payInAdvanceAccount, paymentLinkOptions, approved, super.hashCode());
   }
 
   @Override
@@ -135,6 +156,7 @@ public class GeneralContractsProductModel extends BaseProductModel {
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    payInAdvanceAccount: ").append(toIndentedString(payInAdvanceAccount)).append("\n");
     sb.append("    paymentLinkOptions: ").append(toIndentedString(paymentLinkOptions)).append("\n");
+    sb.append("    approved: ").append(toIndentedString(approved)).append("\n");
     sb.append("}");
     return sb.toString();
   }

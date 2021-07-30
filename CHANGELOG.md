@@ -19,6 +19,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.4.1] - 2021-07-12
+
+### Added
+- `Model.GeneralContractsProductModel` element `approved`
+- `Model.PaymentContractsProductModel` element `approved`
+
+
 ## [3.4.0] - 2021-06-04
 
 ### Security
@@ -542,3 +549,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [3.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.1.0...3.2.0
 [3.3.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.2.0...3.3.0
 [3.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.3.0...3.4.0
+[3.4.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.4.0...3.4.1
