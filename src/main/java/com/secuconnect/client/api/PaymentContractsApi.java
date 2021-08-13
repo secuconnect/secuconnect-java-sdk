@@ -2,6 +2,7 @@ package com.secuconnect.client.api;
 
 import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
+import com.secuconnect.client.model.BankAccountDescriptor;
 import com.secuconnect.client.model.PaymentContractsDTO;
 import com.secuconnect.client.model.PaymentContractsDTOClone;
 import com.secuconnect.client.model.PaymentContractsDTORequestId;
@@ -9,6 +10,7 @@ import com.secuconnect.client.model.PaymentContractsList;
 import com.secuconnect.client.model.PaymentContractsProductModel;
 import com.secuconnect.client.model.PaymentContractsRequestIdResult;
 import com.secuconnect.client.model.ProductExceptionPayload;
+import com.secuconnect.client.model.ResultBoolean;
 import com.secuconnect.client.model.StringList;
 import okhttp3.Call;
 
@@ -132,8 +134,8 @@ public class PaymentContractsApi {
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.   Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.    Example: &#x60;customer.name:Meier&#x60;    A condition may contain:   * &#x60;?&#x60; as wildcard for one character;   * &#x60;*&#x60; as wildcard for any number of characters.    You can also use value ranges in the form &#x60;[min TO max]&#x60;.    Example: &#x60;customer.age:[30 TO 40]&#x60;    You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.    Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.     Options for order:   * &#x60;asc&#x60; ascending;   * &#x60;dsc&#x60; descending.
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -188,8 +190,8 @@ public class PaymentContractsApi {
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.   Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.    Example: &#x60;customer.name:Meier&#x60;    A condition may contain:   * &#x60;?&#x60; as wildcard for one character;   * &#x60;*&#x60; as wildcard for any number of characters.    You can also use value ranges in the form &#x60;[min TO max]&#x60;.    Example: &#x60;customer.age:[30 TO 40]&#x60;    You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.    Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.     Options for order:   * &#x60;asc&#x60; ascending;   * &#x60;dsc&#x60; descending.
      * @return PaymentContractsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -204,8 +206,8 @@ public class PaymentContractsApi {
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.   Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.    Example: &#x60;customer.name:Meier&#x60;    A condition may contain:   * &#x60;?&#x60; as wildcard for one character;   * &#x60;*&#x60; as wildcard for any number of characters.    You can also use value ranges in the form &#x60;[min TO max]&#x60;.    Example: &#x60;customer.age:[30 TO 40]&#x60;    You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.    Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.     Options for order:   * &#x60;asc&#x60; ascending;   * &#x60;dsc&#x60; descending.
      * @return ApiResponse&lt;PaymentContractsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -221,8 +223,8 @@ public class PaymentContractsApi {
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.   Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.    Example: &#x60;customer.name:Meier&#x60;    A condition may contain:   * &#x60;?&#x60; as wildcard for one character;   * &#x60;*&#x60; as wildcard for any number of characters.    You can also use value ranges in the form &#x60;[min TO max]&#x60;.    Example: &#x60;customer.age:[30 TO 40]&#x60;    You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.    Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.     Options for order:   * &#x60;asc&#x60; ascending;   * &#x60;dsc&#x60; descending.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -832,6 +834,96 @@ public class PaymentContractsApi {
     public Call revokeAccrualAsync(String paymentContractId, final ApiCallback<Void> callback) throws ApiException {
         Call call = revokeAccrualValidateBeforeCall(paymentContractId);
         apiClient.executeAsync(call, callback);
+        return call;
+    }
+
+    /**
+     * Build call for updateBankAccount
+     * @param paymentContractId Contract identifier (required)
+     * @param body options
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call updateBankAccountCall(String paymentContractId, BankAccountDescriptor body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Contracts/{paymentContractId}/updateBankAccount"
+            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call updateBankAccountValidateBeforeCall(String paymentContractId, BankAccountDescriptor body) throws ApiException {
+        // verify the required parameter 'paymentContractId' is set
+        if (paymentContractId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContractId' when calling updateBankAccount(Async)");
+        }
+
+        return updateBankAccountCall(paymentContractId, body);
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/updateBankAccount
+     * Change the payout bank account of a contract
+     * @param paymentContractId Contract identifier (required)
+     * @param body options
+     * @return ResultBoolean
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ResultBoolean updateBankAccount(String paymentContractId, BankAccountDescriptor body) throws ApiException {
+        ApiResponse<ResultBoolean> resp = updateBankAccountWithHttpInfo(paymentContractId, body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/updateBankAccount
+     * Change the payout bank account of a contract
+     * @param paymentContractId Contract identifier (required)
+     * @param body options
+     * @return ApiResponse&lt;ResultBoolean&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ResultBoolean> updateBankAccountWithHttpInfo(String paymentContractId, BankAccountDescriptor body) throws ApiException {
+        Call call = updateBankAccountValidateBeforeCall(paymentContractId, body);
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Contracts/{paymentContractId}/updateBankAccount (asynchronously)
+     * Change the payout bank account of a contract
+     * @param paymentContractId Contract identifier (required)
+     * @param body options
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call updateBankAccountAsync(String paymentContractId, BankAccountDescriptor body, final ApiCallback<ResultBoolean> callback) throws ApiException {
+        Call call = updateBankAccountValidateBeforeCall(paymentContractId, body);
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }

@@ -18,6 +18,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+## [3.4.2] - 2021-08-13
+
+### Added
+- `Api.GeneralContractsApi.updateBankAccount()`
+- `Api.PaymentContractsApi.updateBankAccount()`
 
 ## [3.4.1] - 2021-07-12
 
