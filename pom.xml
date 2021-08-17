@@ -325,7 +325,7 @@
     <gson-fire-version>1.8.5</gson-fire-version>
     <jodatime-version>2.10.10</jodatime-version>
     <jaxb-api-version>2.3.1</jaxb-api-version>
-    <activemq-stomp-version>5.16.2</activemq-stomp-version>
+    <activemq-stomp-version>5.16.3</activemq-stomp-version>
     <maven-plugin-version>1.0.0</maven-plugin-version>
     <junit-version>4.13.2</junit-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
