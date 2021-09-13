@@ -47,7 +47,7 @@ public class PaymentTransactionsList {
   }
 
    /**
-   * Get data
+   * List of PaymentTransactions
    * @return data
   **/
   public List<PaymentTransactionsProductModel> getData() {

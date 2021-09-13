@@ -3,7 +3,6 @@ package com.secuconnect.client.api;
 import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
 import com.secuconnect.client.model.BankAccountDescriptor;
-import com.secuconnect.client.model.PaymentContractsDTO;
 import com.secuconnect.client.model.PaymentContractsDTOClone;
 import com.secuconnect.client.model.PaymentContractsDTORequestId;
 import com.secuconnect.client.model.PaymentContractsList;
@@ -134,8 +133,8 @@ public class PaymentContractsApi {
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.    Example: &#x60;customer.name:Meier&#x60;    A condition may contain:   * &#x60;?&#x60; as wildcard for one character;   * &#x60;*&#x60; as wildcard for any number of characters.    You can also use value ranges in the form &#x60;[min TO max]&#x60;.    Example: &#x60;customer.age:[30 TO 40]&#x60;    You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.    Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.     Options for order:   * &#x60;asc&#x60; ascending;   * &#x60;dsc&#x60; descending.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -190,8 +189,8 @@ public class PaymentContractsApi {
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.    Example: &#x60;customer.name:Meier&#x60;    A condition may contain:   * &#x60;?&#x60; as wildcard for one character;   * &#x60;*&#x60; as wildcard for any number of characters.    You can also use value ranges in the form &#x60;[min TO max]&#x60;.    Example: &#x60;customer.age:[30 TO 40]&#x60;    You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.    Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.     Options for order:   * &#x60;asc&#x60; ascending;   * &#x60;dsc&#x60; descending.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
      * @return PaymentContractsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -206,8 +205,8 @@ public class PaymentContractsApi {
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.    Example: &#x60;customer.name:Meier&#x60;    A condition may contain:   * &#x60;?&#x60; as wildcard for one character;   * &#x60;*&#x60; as wildcard for any number of characters.    You can also use value ranges in the form &#x60;[min TO max]&#x60;.    Example: &#x60;customer.age:[30 TO 40]&#x60;    You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.    Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.     Options for order:   * &#x60;asc&#x60; ascending;   * &#x60;dsc&#x60; descending.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
      * @return ApiResponse&lt;PaymentContractsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -223,8 +222,8 @@ public class PaymentContractsApi {
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
-     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.    Example: &#x60;customer.name:Meier&#x60;    A condition may contain:   * &#x60;?&#x60; as wildcard for one character;   * &#x60;*&#x60; as wildcard for any number of characters.    You can also use value ranges in the form &#x60;[min TO max]&#x60;.    Example: &#x60;customer.age:[30 TO 40]&#x60;    You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.    Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.     Options for order:   * &#x60;asc&#x60; ascending;   * &#x60;dsc&#x60; descending.
+     * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -323,92 +322,6 @@ public class PaymentContractsApi {
     }
 
     /**
-     * Build call for paymentContractsIdDelete
-     * @param paymentContractId Payment contract id (required)
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public Call paymentContractsIdDeleteCall(String paymentContractId) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/Payment/Contracts/{paymentContractId}"
-            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private Call paymentContractsIdDeleteValidateBeforeCall(String paymentContractId) throws ApiException {
-        // verify the required parameter 'paymentContractId' is set
-        if (paymentContractId == null) {
-            throw new ApiException("Missing the required parameter 'paymentContractId' when calling paymentContractsIdDelete(Async)");
-        }
-
-        return paymentContractsIdDeleteCall(paymentContractId);
-    }
-
-    /**
-     * DELETE Payment/Contracts/{paymentContractId}
-     * Delete payment contract
-     * @param paymentContractId Payment contract id (required)
-     * @return List&lt;PaymentContractsProductModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public List<PaymentContractsProductModel> paymentContractsIdDelete(String paymentContractId) throws ApiException {
-        ApiResponse<List<PaymentContractsProductModel>> resp = paymentContractsIdDeleteWithHttpInfo(paymentContractId);
-        return resp.getData();
-    }
-
-    /**
-     * DELETE Payment/Contracts/{paymentContractId}
-     * Delete payment contract
-     * @param paymentContractId Payment contract id (required)
-     * @return ApiResponse&lt;List&lt;PaymentContractsProductModel&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<List<PaymentContractsProductModel>> paymentContractsIdDeleteWithHttpInfo(String paymentContractId) throws ApiException {
-        Call call = paymentContractsIdDeleteValidateBeforeCall(paymentContractId);
-        Type localVarReturnType = new TypeToken<List<PaymentContractsProductModel>>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * DELETE Payment/Contracts/{paymentContractId} (asynchronously)
-     * Delete payment contract
-     * @param paymentContractId Payment contract id (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public Call paymentContractsIdDeleteAsync(String paymentContractId, final ApiCallback<List<PaymentContractsProductModel>> callback) throws ApiException {
-        Call call = paymentContractsIdDeleteValidateBeforeCall(paymentContractId);
-        Type localVarReturnType = new TypeToken<List<PaymentContractsProductModel>>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-
-    /**
      * Build call for paymentContractsIdPaymentMethodsGet
      * @param paymentContractId Contract identifier (required)
      * @return Call to execute
@@ -490,177 +403,6 @@ public class PaymentContractsApi {
     public Call paymentContractsIdPaymentMethodsGetAsync(String paymentContractId, final ApiCallback<StringList> callback) throws ApiException {
         Call call = paymentContractsIdPaymentMethodsGetValidateBeforeCall(paymentContractId);
         Type localVarReturnType = new TypeToken<StringList>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-
-    /**
-     * Build call for paymentContractsIdPut
-     * @param paymentContractId Payment contract id (required)
-     * @param body Payment contracts properties
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public Call paymentContractsIdPutCall(String paymentContractId, PaymentContractsDTO body) throws ApiException {
-        Object localVarPostBody = body;
-
-        // create path and map variables
-        String localVarPath = "/Payment/Contracts/{paymentContractId}"
-            .replaceAll("\\{" + "paymentContractId" + "\\}", apiClient.escapeString(paymentContractId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private Call paymentContractsIdPutValidateBeforeCall(String paymentContractId, PaymentContractsDTO body) throws ApiException {
-        // verify the required parameter 'paymentContractId' is set
-        if (paymentContractId == null) {
-            throw new ApiException("Missing the required parameter 'paymentContractId' when calling paymentContractsIdPut(Async)");
-        }
-
-        return paymentContractsIdPutCall(paymentContractId, body);
-    }
-
-    /**
-     * PUT Payment/Contracts/{paymentContractId}
-     * Update payment contract
-     * @param paymentContractId Payment contract id (required)
-     * @param body Payment contracts properties
-     * @return PaymentContractsProductModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PaymentContractsProductModel paymentContractsIdPut(String paymentContractId, PaymentContractsDTO body) throws ApiException {
-        ApiResponse<PaymentContractsProductModel> resp = paymentContractsIdPutWithHttpInfo(paymentContractId, body);
-        return resp.getData();
-    }
-
-    /**
-     * PUT Payment/Contracts/{paymentContractId}
-     * Update payment contract
-     * @param paymentContractId Payment contract id (required)
-     * @param body Payment contracts properties
-     * @return ApiResponse&lt;PaymentContractsProductModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PaymentContractsProductModel> paymentContractsIdPutWithHttpInfo(String paymentContractId, PaymentContractsDTO body) throws ApiException {
-        Call call = paymentContractsIdPutValidateBeforeCall(paymentContractId, body);
-        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * PUT Payment/Contracts/{paymentContractId} (asynchronously)
-     * Update payment contract
-     * @param paymentContractId Payment contract id (required)
-     * @param body Payment contracts properties
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public Call paymentContractsIdPutAsync(String paymentContractId, PaymentContractsDTO body, final ApiCallback<PaymentContractsProductModel> callback) throws ApiException {
-        Call call = paymentContractsIdPutValidateBeforeCall(paymentContractId, body);
-        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-
-    /**
-     * Build call for paymentContractsPost
-     * @param body Payment contracts properties
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public Call paymentContractsPostCall(PaymentContractsDTO body) throws ApiException {
-        Object localVarPostBody = body;
-
-        // create path and map variables
-        String localVarPath = "/Payment/Contracts";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private Call paymentContractsPostValidateBeforeCall(PaymentContractsDTO body) throws ApiException {
-
-        return paymentContractsPostCall(body);
-    }
-
-    /**
-     * POST Payment/Contracts
-     * Add new contract
-     * @param body Payment contracts properties
-     * @return PaymentContractsProductModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PaymentContractsProductModel paymentContractsPost(PaymentContractsDTO body) throws ApiException {
-        ApiResponse<PaymentContractsProductModel> resp = paymentContractsPostWithHttpInfo(body);
-        return resp.getData();
-    }
-
-    /**
-     * POST Payment/Contracts
-     * Add new contract
-     * @param body Payment contracts properties
-     * @return ApiResponse&lt;PaymentContractsProductModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PaymentContractsProductModel> paymentContractsPostWithHttpInfo(PaymentContractsDTO body) throws ApiException {
-        Call call = paymentContractsPostValidateBeforeCall(body);
-        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * POST Payment/Contracts (asynchronously)
-     * Add new contract
-     * @param body Payment contracts properties
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public Call paymentContractsPostAsync(PaymentContractsDTO body, final ApiCallback<PaymentContractsProductModel> callback) throws ApiException {
-        Call call = paymentContractsPostValidateBeforeCall(body);
-        Type localVarReturnType = new TypeToken<PaymentContractsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

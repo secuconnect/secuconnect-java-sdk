@@ -29,7 +29,7 @@ public class LoyaltyCustomersPaymentContainerModel {
   }
 
    /**
-   * LoyaltyCustomersPaymentContainerModel
+   * Get object
    * @return object
   **/
   public String getObject() {
@@ -46,7 +46,7 @@ public class LoyaltyCustomersPaymentContainerModel {
   }
 
    /**
-   * LoyaltyCustomersPaymentContainerModel
+   * Get id
    * @return id
   **/
   public String getId() {
@@ -63,7 +63,7 @@ public class LoyaltyCustomersPaymentContainerModel {
   }
 
    /**
-   * LoyaltyCustomersPaymentContainerModel
+   * Get type
    * @return type
   **/
   public String getType() {

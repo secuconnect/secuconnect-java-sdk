@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * PaymentTransactionsProductModel
+ * PaymentTransactionsProductModelCustomer
  */
 public class PaymentTransactionsProductModelCustomer {
   @SerializedName("companyname")

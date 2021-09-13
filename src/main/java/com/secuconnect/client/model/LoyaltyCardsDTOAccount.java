@@ -19,7 +19,7 @@ public class LoyaltyCardsDTOAccount {
   }
 
    /**
-   * LoyaltyCardsDTOAccount
+   * Get object
    * @return object
   **/
   public String getObject() {
@@ -36,7 +36,7 @@ public class LoyaltyCardsDTOAccount {
   }
 
    /**
-   * LoyaltyCardsDTOAccount
+   * Get id
    * @return id
   **/
   public String getId() {

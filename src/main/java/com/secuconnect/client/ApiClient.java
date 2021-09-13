@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 import static java.util.Arrays.asList;
 
 public class ApiClient {
-    private static final String USER_AGENT = "secuconnect-java-sdk/3.4.2";
+    private static final String USER_AGENT = "secuconnect-java-sdk/3.5.0";
 
     private final Map<String, String> defaultHeaderMap = new HashMap<>();
     private Environment env = Environment.getGlobalEnv();

@@ -47,7 +47,7 @@ public class SmartTransactionsPreTransactionModel {
   }
 
    /**
-   * SmartTransactionsPreTransactionModel
+   * Get bonusProducts
    * @return bonusProducts
   **/
   public List<SmartTransactionsBonusProducts> getBonusProducts() {

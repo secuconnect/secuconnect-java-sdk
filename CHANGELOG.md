@@ -18,13 +18,40 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+
+## [3.5.0] - 2021-09-13
+[3.5.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.4.2...3.5.0
+
+### Security
+- Update dependencies to the latest versions.
+
+### Changed
+- `Api.PaymentPlansApi.paymentPlansApiInterfacePatchPlans()` was renamed to `paymentPlansPatch()`
+- `Api.PaymentPlansApi.paymentPlansApiInterfaceUpdatePlans()` was renamed to `paymentPlansPut()`
+
+### Removed
+- `Api.GeneralStoresApi.assignGoogleKey()`
+- `Api.LoyaltyCustomersApi.checkForDuplicates()`
+- `Api.LoyaltyCustomersApi.removeCustomer()`
+- `Api.LoyaltyMerchantcardsApi.addMerchantCard()`
+- `Api.LoyaltyMerchantcardsApi.removeMerchantCard()`
+- `Api.PaymentContractsApi.paymentContractsIdDelete()`
+- `Api.PaymentContractsApi.paymentContractsIdPut()`
+- `Api.PaymentContractsApi.paymentContractsPost()`
+- `Model.CustomersWithoutMerchantcardAndDuplicatedCustomers`
+- `Model.LoyaltyCustomersRemoved`
+- `Model.PaymentContractsDTO`
+
+
 ## [3.4.2] - 2021-08-13
+[3.4.2]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.4.1...3.4.2
 
 ### Added
 - `Api.GeneralContractsApi.updateBankAccount()`
 - `Api.PaymentContractsApi.updateBankAccount()`
 
 ## [3.4.1] - 2021-07-12
+[3.4.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.4.0...3.4.1
 
 ### Added
 - `Model.GeneralContractsProductModel` element `approved`
@@ -32,6 +59,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [3.4.0] - 2021-06-04
+[3.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.3.0...3.4.0
 
 ### Security
 
@@ -45,6 +73,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [3.3.0] - 2021-05-03
+[3.3.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.2.0...3.3.0
 
 ### Security
 
@@ -76,6 +105,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [3.2.0] - 2021-03-15
+[3.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.1.0...3.2.0
 
 ### Added
 
@@ -109,6 +139,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [3.1.0] - 2020-12-29
+[3.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.0.0...3.1.0
 
 ### Security
 
@@ -154,6 +185,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [3.0.0] - 2020-08-20
+[3.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...3.0.0
 
 ### Security
 - Update all dependencies to the latest versions.
@@ -211,6 +243,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [2.5.0] - 2021-03-15
+[2.5.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.4.0...2.5.0
 
 ### Added
 - `Api.PaymentPlansApi`
@@ -241,6 +274,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [2.4.0] - 2020-12-29
+[2.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.3.0...2.4.0
 
 ### Security
 
@@ -275,6 +309,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [2.3.0] - 2020-09-14
+[2.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.2.0...2.3.0
 
 ### Added
 
@@ -292,6 +327,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [2.2.0] - 2020-09-07
+[2.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...2.2.0
 
 ### Security
 - Update dependencies to the latest versions.
@@ -352,6 +388,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [2.1.0] - 2020-05-12
+[2.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.0.0...2.1.0
 
 ### Added
 
@@ -373,6 +410,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [2.0.0] - 2020-03-30
+[2.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.9.0...2.0.0
 
 ### Security
 - Dependency updates
@@ -410,12 +448,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [1.9.0] - 2020-03-05
+[1.9.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.1...1.9.0
 
 ### Security
 - Dependency updates
 
 
 ## [1.8.1] - 2019-12-23
+[1.8.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.0...1.8.1
 
 ### Fixed
 - PaymentTransactionsProductModel was invalid
@@ -423,6 +463,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [1.8.0] - 2019-12-20
+[1.8.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.7.0...1.8.0
 
 ### Fixed
 - Smart.Transaction action to prepare a transaction
@@ -439,6 +480,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [1.7.0] - 2019-11-29
+[1.7.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.2...1.7.0
 
 ### Added
 
@@ -446,6 +488,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [1.6.2] - 2019-11-08
+[1.6.2]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.1...1.6.2
 
 ### Fixed
 
@@ -453,6 +496,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [1.6.1] - 2019-11-04
+[1.6.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.0...1.6.1
 
 ### Fixed
 
@@ -460,6 +504,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [1.6.0] - 2019-11-04
+[1.6.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.5.0...1.6.0
 
 ### Security
 
@@ -472,6 +517,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [1.5.0] - 2019-08-16
+[1.5.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.4.0...1.5.0
 
 ### Deprecated
 
@@ -523,36 +569,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [1.4.0] - 2019-06-11
+[1.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.3.1...1.4.0
 
 ### Changed
 
 - removed dependency "javax.annotation-api"
 - removed dependency "hazelcast"
 - removed dependency "cache-api"
-
-
-
-
-[1.3.1]:https://github.com/secuconnect/secuconnect-java-sdk/releases/tag/v0.1.0
-[1.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.3.1...1.4.0
-[1.5.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.4.0...1.5.0
-[1.6.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.5.0...1.6.0
-[1.6.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.0...1.6.1
-[1.6.2]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.1...1.6.2
-[1.7.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.6.2...1.7.0
-[1.8.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.7.0...1.8.0
-[1.8.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.0...1.8.1
-[1.9.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.8.1...1.9.0
-[2.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/1.9.0...2.0.0
-[2.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.0.0...2.1.0
-[2.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...2.2.0
-[2.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.2.0...2.3.0
-[2.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.3.0...2.4.0
-[2.5.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.4.0...2.5.0
-[3.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/2.1.0...3.0.0
-[3.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.0.0...3.1.0
-[3.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.1.0...3.2.0
-[3.3.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.2.0...3.3.0
-[3.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.3.0...3.4.0
-[3.4.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.4.0...3.4.1
-[3.4.2]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.4.1...3.4.2

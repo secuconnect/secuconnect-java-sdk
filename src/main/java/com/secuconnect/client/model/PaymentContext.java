@@ -49,7 +49,7 @@ public class PaymentContext {
   }
 
    /**
-   * PaymentContext
+   * Get paymentMethods
    * @return paymentMethods
   **/
   public List<String> getPaymentMethods() {

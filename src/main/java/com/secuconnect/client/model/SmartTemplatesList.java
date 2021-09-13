@@ -47,7 +47,7 @@ public class SmartTemplatesList {
   }
 
    /**
-   * SmartTemplatesList
+   * List of SmartTemplates
    * @return data
   **/
   public List<SmartTemplatesProductModel> getData() {
