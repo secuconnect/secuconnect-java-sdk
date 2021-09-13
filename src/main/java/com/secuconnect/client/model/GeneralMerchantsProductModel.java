@@ -57,7 +57,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * User type ID - unverified shop (1); internet  shop (11); kaufmännischer Netzbetrieb (KNB, 45); secucard merchant (46);  App Center user (63), checkout provider (64)
+   * User type ID - unverified shop (1); internet shop (11); kaufmännischer Netzbetrieb (KNB, 45); secucard merchant (46); App Center user (63), checkout provider (64)
    * @return type
   **/
   public String getType() {

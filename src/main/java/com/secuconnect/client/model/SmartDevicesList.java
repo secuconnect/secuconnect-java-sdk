@@ -47,7 +47,7 @@ public class SmartDevicesList {
   }
 
    /**
-   * SmartDevicesList
+   * List of SmartDevices
    * @return data
   **/
   public List<SmartDevicesProductModel> getData() {

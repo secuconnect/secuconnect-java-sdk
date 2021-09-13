@@ -47,7 +47,7 @@ public class PrepaidItemsList {
   }
 
    /**
-   * Get data
+   * List of PrepaidItems
    * @return data
   **/
   public List<PrepaidItemsProductModel> getData() {

@@ -47,7 +47,7 @@ public class GeneralContractsList {
   }
 
    /**
-   * GeneralContractsList
+   * List of GeneralContracts
    * @return data
   **/
   public List<GeneralContractsProductModel> getData() {

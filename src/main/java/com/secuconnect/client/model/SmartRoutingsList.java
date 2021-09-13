@@ -47,7 +47,7 @@ public class SmartRoutingsList {
   }
 
    /**
-   * Get data
+   * List of SmartRoutings
    * @return data
   **/
   public List<SmartRoutingsProductModel> getData() {

@@ -47,7 +47,7 @@ public class LoyaltyCardsList {
   }
 
    /**
-   * Get data
+   * List of LoyaltyCards
    * @return data
   **/
   public List<LoyaltyCardsProductModel> getData() {

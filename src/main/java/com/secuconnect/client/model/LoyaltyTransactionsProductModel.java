@@ -185,7 +185,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * LoyaltyTransactionsProductModel
+   * Get parents
    * @return parents
   **/
   public List<LoyaltyTransactionsDTORelatedTransactions> getParents() {
@@ -210,7 +210,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * LoyaltyTransactionsProductModel
+   * Get children
    * @return children
   **/
   public List<LoyaltyTransactionsDTORelatedTransactions> getChildren() {

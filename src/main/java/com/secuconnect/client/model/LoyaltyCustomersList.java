@@ -47,7 +47,7 @@ public class LoyaltyCustomersList {
   }
 
    /**
-   * LoyaltyCustomersList
+   * List of LoyaltyCustomers
    * @return data
   **/
   public List<LoyaltyCustomersProductModel> getData() {

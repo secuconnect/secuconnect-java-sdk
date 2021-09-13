@@ -47,7 +47,7 @@ public class SmartTransactionsList {
   }
 
    /**
-   * SmartTransactionsList
+   * List of SmartTransactions
    * @return data
   **/
   public List<SmartTransactionsProductModel> getData() {
