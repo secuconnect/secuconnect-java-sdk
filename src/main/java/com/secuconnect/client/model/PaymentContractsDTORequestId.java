@@ -34,6 +34,12 @@ public class PaymentContractsDTORequestId {
   @SerializedName("payout_purpose")
   private String payoutPurpose = null;
 
+  @SerializedName("identrequest")
+  private String identrequest = null;
+
+  @SerializedName("signed_contract")
+  private String signedContract = null;
+
   public PaymentContractsDTORequestId contact(Contact contact) {
     this.contact = contact;
     return this;
@@ -170,6 +176,40 @@ public class PaymentContractsDTORequestId {
     this.payoutPurpose = payoutPurpose;
   }
 
+  public PaymentContractsDTORequestId identrequest(String identrequest) {
+    this.identrequest = identrequest;
+    return this;
+  }
+
+   /**
+   * Object ID of Services Identrequest
+   * @return identrequest
+  **/
+  public String getIdentrequest() {
+    return identrequest;
+  }
+
+  public void setIdentrequest(String identrequest) {
+    this.identrequest = identrequest;
+  }
+
+  public PaymentContractsDTORequestId signedContract(String signedContract) {
+    this.signedContract = signedContract;
+    return this;
+  }
+
+   /**
+   * The document ID of of uploaded signed contract; s. Document service
+   * @return signedContract
+  **/
+  public String getSignedContract() {
+    return signedContract;
+  }
+
+  public void setSignedContract(String signedContract) {
+    this.signedContract = signedContract;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -186,12 +226,14 @@ public class PaymentContractsDTORequestId {
         Objects.equals(this.payinAccount, paymentContractsDTORequestId.payinAccount) &&
         Objects.equals(this.createFirstStore, paymentContractsDTORequestId.createFirstStore) &&
         Objects.equals(this.storeName, paymentContractsDTORequestId.storeName) &&
-        Objects.equals(this.payoutPurpose, paymentContractsDTORequestId.payoutPurpose);
+        Objects.equals(this.payoutPurpose, paymentContractsDTORequestId.payoutPurpose) &&
+        Objects.equals(this.identrequest, paymentContractsDTORequestId.identrequest) &&
+        Objects.equals(this.signedContract, paymentContractsDTORequestId.signedContract);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contact, project, payoutAccount, iframeOpts, payinAccount, createFirstStore, storeName, payoutPurpose);
+    return Objects.hash(contact, project, payoutAccount, iframeOpts, payinAccount, createFirstStore, storeName, payoutPurpose, identrequest, signedContract);
   }
 
   @Override
@@ -206,6 +248,8 @@ public class PaymentContractsDTORequestId {
     sb.append("    createFirstStore: ").append(toIndentedString(createFirstStore)).append("\n");
     sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
     sb.append("    payoutPurpose: ").append(toIndentedString(payoutPurpose)).append("\n");
+    sb.append("    identrequest: ").append(toIndentedString(identrequest)).append("\n");
+    sb.append("    signedContract: ").append(toIndentedString(signedContract)).append("\n");
     sb.append("}");
     return sb.toString();
   }

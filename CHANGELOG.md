@@ -41,6 +41,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.UserAddressData`
 - `Model.UserData`
 - `Model.ValueField`
+- `Model.PaymentContractsDTORequestId` element `identrequest`
+- `Model.PaymentContractsDTORequestId` element `signed_contract`
 
 ## [3.5.0] - 2021-09-13
 [3.5.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.4.2...3.5.0
