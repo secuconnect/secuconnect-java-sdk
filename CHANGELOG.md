@@ -18,6 +18,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+## [3.6.0] - 2021-09-30
+[3.6.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.5.0...3.6.0
+
+### Added
+- `Api.ServicesIdentrequestsApi`
+- `Api.ServicesIdentresultsApi`
+- `Model.ContactData`
+- `Model.IdentDocument`
+- `Model.IdentDocumentData`
+- `Model.IdentificationCustomData`
+- `Model.IdentificationProcess`
+- `Model.IdentrequestPerson`
+- `Model.IdentrequestPersonDTO`
+- `Model.IdentrequestRedirectUrls`
+- `Model.IdentresultPerson`
+- `Model.ServicesIdentrequestsList`
+- `Model.ServicesIdentrequestsProductDTO`
+- `Model.ServicesIdentrequestsProductModel`
+- `Model.ServicesIdentresultsList`
+- `Model.ServicesIdentresultsProductModel`
+- `Model.UserAddressData`
+- `Model.UserData`
+- `Model.ValueField`
+- `Model.PaymentContractsDTORequestId` element `identrequest`
+- `Model.PaymentContractsDTORequestId` element `signed_contract`
 
 ## [3.5.0] - 2021-09-13
 [3.5.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.4.2...3.5.0
