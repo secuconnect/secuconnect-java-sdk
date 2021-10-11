@@ -64,6 +64,7 @@ public class PaymentSecupayDebitsApiTest {
     private static SecupayTransactionProductDTO prepareDebitsData() {
         SecupayTransactionProductDTO debitsData = new SecupayTransactionProductDTO();
         debitsData.setAmount(6200);
+        debitsData.setDemo(true);
         debitsData.setCurrency("EUR");
         debitsData.setPurpose("for what text");
         debitsData.setOrderId("ZZZZZZ");
