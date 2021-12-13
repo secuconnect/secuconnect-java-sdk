@@ -18,6 +18,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+## [3.7.0] - 2021-12-13
+[3.7.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.6.0...3.7.0
+
+### Security
+- Update dependencies to the latest versions.
+
+
 ## [3.6.0] - 2021-09-30
 [3.6.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.5.0...3.6.0
 
@@ -43,6 +50,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.ValueField`
 - `Model.PaymentContractsDTORequestId` element `identrequest`
 - `Model.PaymentContractsDTORequestId` element `signed_contract`
+
 
 ## [3.5.0] - 2021-09-13
 [3.5.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.4.2...3.5.0
@@ -74,6 +82,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - `Api.GeneralContractsApi.updateBankAccount()`
 - `Api.PaymentContractsApi.updateBankAccount()`
+
 
 ## [3.4.1] - 2021-07-12
 [3.4.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.4.0...3.4.1

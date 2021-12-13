@@ -21,6 +21,7 @@ import static org.junit.Assert.*;
  */
 public class PaymentContractsApiTest {
     private static final String PAYMENT_CONTRACTS = "payment.contracts";
+    private static final String GENERAL_CONTRACTS = "general.contracts";
     private static PaymentContractsApi contractsApi;
     private static PaymentContractsDTOClone paymentContractsDTOClone;
     private static PaymentContractsDTORequestId paymentContractsDTORequestId;
@@ -70,7 +71,7 @@ public class PaymentContractsApiTest {
         assertEquals(PAYMENT_CONTRACTS, paymentContract.getObject());
         assertNotNull(paymentContract.getId());
         assertNotNull(paymentContract.getParent());
-        assertEquals(PAYMENT_CONTRACTS, paymentContract.getParent().getObject());
+        assertEquals(GENERAL_CONTRACTS, paymentContract.getParent().getObject());
         assertNotNull(paymentContract.getParent().getId());
         assertNotNull(paymentContract.getCreated());
     }
@@ -90,7 +91,7 @@ public class PaymentContractsApiTest {
         }
 
         assertNotNull(requestIdResult);
-        assertEquals(PAYMENT_CONTRACTS, requestIdResult.getContract().getObject());
+        assertEquals(GENERAL_CONTRACTS, requestIdResult.getContract().getObject());
         assertNotNull(requestIdResult.getContract().getId());
         assertNotNull(requestIdResult.getApikey());
         assertNull(requestIdResult.getPayinAccount());
