@@ -18,6 +18,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+## [3.7.1] - 2021-12-13
+[3.7.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.7.0...3.7.1
+
+### Added
+- Using the Apache Maven registry from GitHub.
+
 ## [3.7.0] - 2021-12-13
 [3.7.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.6.0...3.7.0
 

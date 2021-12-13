@@ -5,7 +5,7 @@
   <artifactId>secuconnect-java-sdk</artifactId>
   <packaging>jar</packaging>
   <name>secuconnect-java-sdk</name>
-  <version>3.7.0</version>
+  <version>3.7.1</version>
   <url>https://github.com/secuconnect/secuconnect-java-sdk</url>
   <description>Secuconnect Java</description>
   <scm>
@@ -36,9 +36,9 @@
 
   <distributionManagement>
     <repository>
-      <id>internal.repo</id>
-      <name>Temporary Staging Repository</name>
-      <url>file://${project.build.directory}/mvn-repo</url>
+      <id>github</id>
+      <name>GitHub secuconnect Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/secuconnect/secuconnect-java-sdk</url>
     </repository>
   </distributionManagement>
 
@@ -139,9 +139,20 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
         <version>2.8.2</version>
-        <configuration>
-          <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
-        </configuration>
+        <executions>
+          <execution>
+            <id>github</id>
+          </execution>
+          <execution>
+            <id>internal.repo</id>
+            <configuration>
+              <id>internal.repo</id>
+              <name>Temporary Staging Repository</name>
+              <url>file://${project.build.directory}/mvn-repo</url>
+              <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <!-- https://mvnrepository.com/artifact/com.github.github/site-maven-plugin -->
