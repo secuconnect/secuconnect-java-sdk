@@ -18,6 +18,9 @@ public class PaymentContext {
   @SerializedName("merchant_initiated")
   private Boolean merchantInitiated = false;
 
+  @SerializedName("creditcard_schemes")
+  private List<String> creditcardSchemes = null;
+
   public PaymentContext autoCapture(Boolean autoCapture) {
     this.autoCapture = autoCapture;
     return this;
@@ -77,6 +80,31 @@ public class PaymentContext {
     this.merchantInitiated = merchantInitiated;
   }
 
+  public PaymentContext creditcardSchemes(List<String> creditcardSchemes) {
+    this.creditcardSchemes = creditcardSchemes;
+    return this;
+  }
+
+  public PaymentContext addCreditcardSchemesItem(String creditcardSchemesItem) {
+    if (this.creditcardSchemes == null) {
+      this.creditcardSchemes = new ArrayList<>();
+    }
+    this.creditcardSchemes.add(creditcardSchemesItem);
+    return this;
+  }
+
+   /**
+   * The supported credit card schemes with given contract
+   * @return creditcardSchemes
+  **/
+  public List<String> getCreditcardSchemes() {
+    return creditcardSchemes;
+  }
+
+  public void setCreditcardSchemes(List<String> creditcardSchemes) {
+    this.creditcardSchemes = creditcardSchemes;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -88,12 +116,13 @@ public class PaymentContext {
     PaymentContext paymentContext = (PaymentContext) o;
     return Objects.equals(this.autoCapture, paymentContext.autoCapture) &&
         Objects.equals(this.paymentMethods, paymentContext.paymentMethods) &&
-        Objects.equals(this.merchantInitiated, paymentContext.merchantInitiated);
+        Objects.equals(this.merchantInitiated, paymentContext.merchantInitiated) &&
+        Objects.equals(this.creditcardSchemes, paymentContext.creditcardSchemes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(autoCapture, paymentMethods, merchantInitiated);
+    return Objects.hash(autoCapture, paymentMethods, merchantInitiated, creditcardSchemes);
   }
 
   @Override
@@ -103,6 +132,7 @@ public class PaymentContext {
     sb.append("    autoCapture: ").append(toIndentedString(autoCapture)).append("\n");
     sb.append("    paymentMethods: ").append(toIndentedString(paymentMethods)).append("\n");
     sb.append("    merchantInitiated: ").append(toIndentedString(merchantInitiated)).append("\n");
+    sb.append("    creditcardSchemes: ").append(toIndentedString(creditcardSchemes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

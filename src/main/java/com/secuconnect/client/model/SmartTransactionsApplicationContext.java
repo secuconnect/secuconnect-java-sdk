@@ -22,6 +22,9 @@ public class SmartTransactionsApplicationContext {
   @SerializedName("checkout_template")
   private String checkoutTemplate = null;
 
+  @SerializedName("language")
+  private String language = null;
+
   public SmartTransactionsApplicationContext locks(SmartTransactionsApplicationContextLocks locks) {
     this.locks = locks;
     return this;
@@ -90,6 +93,23 @@ public class SmartTransactionsApplicationContext {
     this.checkoutTemplate = checkoutTemplate;
   }
 
+  public SmartTransactionsApplicationContext language(String language) {
+    this.language = language;
+    return this;
+  }
+
+   /**
+   * The language Smart Checkout is starting with
+   * @return language
+  **/
+  public String getLanguage() {
+    return language;
+  }
+
+  public void setLanguage(String language) {
+    this.language = language;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -102,12 +122,13 @@ public class SmartTransactionsApplicationContext {
     return Objects.equals(this.locks, smartTransactionsApplicationContext.locks) &&
         Objects.equals(this.returnUrls, smartTransactionsApplicationContext.returnUrls) &&
         Objects.equals(this.iframeOpts, smartTransactionsApplicationContext.iframeOpts) &&
-        Objects.equals(this.checkoutTemplate, smartTransactionsApplicationContext.checkoutTemplate);
+        Objects.equals(this.checkoutTemplate, smartTransactionsApplicationContext.checkoutTemplate) &&
+        Objects.equals(this.language, smartTransactionsApplicationContext.language);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locks, returnUrls, iframeOpts, checkoutTemplate);
+    return Objects.hash(locks, returnUrls, iframeOpts, checkoutTemplate, language);
   }
 
   @Override
@@ -118,6 +139,7 @@ public class SmartTransactionsApplicationContext {
     sb.append("    returnUrls: ").append(toIndentedString(returnUrls)).append("\n");
     sb.append("    iframeOpts: ").append(toIndentedString(iframeOpts)).append("\n");
     sb.append("    checkoutTemplate: ").append(toIndentedString(checkoutTemplate)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("}");
     return sb.toString();
   }
