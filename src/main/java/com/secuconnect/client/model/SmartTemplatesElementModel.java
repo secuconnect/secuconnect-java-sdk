@@ -2,6 +2,7 @@ package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.SmartTemplatesAccordionItemModel;
+import com.secuconnect.client.model.SmartTemplatesFormElementModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +25,9 @@ public class SmartTemplatesElementModel {
 
   @SerializedName("accordion_elements")
   private List<SmartTemplatesAccordionItemModel> accordionElements = null;
+
+  @SerializedName("form_elements")
+  private List<SmartTemplatesFormElementModel> formElements = null;
 
   public SmartTemplatesElementModel id(Integer id) {
     this.id = id;
@@ -118,6 +122,31 @@ public class SmartTemplatesElementModel {
     this.accordionElements = accordionElements;
   }
 
+  public SmartTemplatesElementModel formElements(List<SmartTemplatesFormElementModel> formElements) {
+    this.formElements = formElements;
+    return this;
+  }
+
+  public SmartTemplatesElementModel addFormElementsItem(SmartTemplatesFormElementModel formElementsItem) {
+    if (this.formElements == null) {
+      this.formElements = new ArrayList<>();
+    }
+    this.formElements.add(formElementsItem);
+    return this;
+  }
+
+   /**
+   * The Form items to be shown in dynamic form element
+   * @return formElements
+  **/
+  public List<SmartTemplatesFormElementModel> getFormElements() {
+    return formElements;
+  }
+
+  public void setFormElements(List<SmartTemplatesFormElementModel> formElements) {
+    this.formElements = formElements;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -131,12 +160,13 @@ public class SmartTemplatesElementModel {
         Objects.equals(this.type, smartTemplatesElementModel.type) &&
         Objects.equals(this.config, smartTemplatesElementModel.config) &&
         Objects.equals(this.condition, smartTemplatesElementModel.condition) &&
-        Objects.equals(this.accordionElements, smartTemplatesElementModel.accordionElements);
+        Objects.equals(this.accordionElements, smartTemplatesElementModel.accordionElements) &&
+        Objects.equals(this.formElements, smartTemplatesElementModel.formElements);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, config, condition, accordionElements);
+    return Objects.hash(id, type, config, condition, accordionElements, formElements);
   }
 
   @Override
@@ -148,6 +178,7 @@ public class SmartTemplatesElementModel {
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
     sb.append("    accordionElements: ").append(toIndentedString(accordionElements)).append("\n");
+    sb.append("    formElements: ").append(toIndentedString(formElements)).append("\n");
     sb.append("}");
     return sb.toString();
   }

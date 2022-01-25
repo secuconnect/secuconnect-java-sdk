@@ -19,13 +19,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
-## [3.8.0] - NOT YET RELEASED
+## [3.8.0] - 2022-01-25
 [3.8.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.7.1...3.8.0
 
+### Security
+- Update dependencies to the latest versions.
+
 ### Added
-- `Api.PaymentTransactionsApi.getPaymentTransactionsCrowdFundingData()`
+- `Api.PaymentTransactionsApi.getCrowdFundingData()`
+- `Api.PaymentTransactionsApi.updateShippingInformation()`
+- `Api.PublicWebsiteApi.availableCountries()`
+- `Model.AvailableCountry`
+- `Model.CrowdFundingDataDetails`
+- `Model.CrowdFundingDataOpenAmount`
+- `Model.CrowdFundingDataOpenAmountInsideCancelPeriod`
+- `Model.CrowdFundingDataOpenAmountOutsideCancellationPeriod`
 - `Model.PaymentContext` element `creditcard_schemes`
+- `Model.PaymentCrowdFundingData`
+- `Model.PaymentMethodBreakdown`
+- `Model.SecupayTransactionSetShippingInformationDTO` element `shipped_at` and `order_id`
+- `Model.SmartTemplatesElementModel` element `form_elements`
+- `Model.SmartTemplatesFormElementModel`
 - `Model.SmartTransactionsApplicationContext` element `language`
+
+### Fixed
+- Some broken tests
 
 
 ## [3.7.1] - 2021-12-13

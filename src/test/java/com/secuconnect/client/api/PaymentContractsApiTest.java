@@ -68,7 +68,7 @@ public class PaymentContractsApiTest {
         }
 
         assertNotNull(paymentContract);
-        assertEquals(PAYMENT_CONTRACTS, paymentContract.getObject());
+        assertEquals(GENERAL_CONTRACTS, paymentContract.getObject());
         assertNotNull(paymentContract.getId());
         assertNotNull(paymentContract.getParent());
         assertEquals(GENERAL_CONTRACTS, paymentContract.getParent().getObject());
@@ -94,6 +94,6 @@ public class PaymentContractsApiTest {
         assertEquals(GENERAL_CONTRACTS, requestIdResult.getContract().getObject());
         assertNotNull(requestIdResult.getContract().getId());
         assertNotNull(requestIdResult.getApikey());
-        assertNull(requestIdResult.getPayinAccount());
+        assertNotNull(requestIdResult.getPayinAccount());
     }
 }

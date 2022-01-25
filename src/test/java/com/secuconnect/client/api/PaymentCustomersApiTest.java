@@ -36,7 +36,7 @@ public class PaymentCustomersApiTest {
      * @ if the Api call fails
      */
     @Test
-    public void paymentContainersPostBankAccountTest() {
+    public void paymentCustomersPostTest() {
         try {
             Contact contactDTO = new Contact();
             contactDTO.setBirthplace("City2");

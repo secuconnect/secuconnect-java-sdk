@@ -8,6 +8,7 @@ import com.secuconnect.client.model.PaymentTransactionsList;
 import com.secuconnect.client.model.PaymentTransactionsProductModel;
 import com.secuconnect.client.model.PaymentTransactionsShippingUrl;
 import com.secuconnect.client.model.ProductExceptionPayload;
+import com.secuconnect.client.model.ResultBoolean;
 import com.secuconnect.client.model.SecupayTransactionProductDTO;
 import com.secuconnect.client.model.SecupayTransactionProductModel;
 import okhttp3.Call;
@@ -316,6 +317,92 @@ public class PaymentTransactionsApi {
     }
 
     /**
+     * Build call for getCrowdFundingData
+     * @param generalMerchantId Merchant ID (MRC_...) (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getCrowdFundingDataCall(String generalMerchantId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/me/CrowdFundingData/{generalMerchantId}"
+            .replaceAll("\\{" + "generalMerchantId" + "\\}", apiClient.escapeString(generalMerchantId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getCrowdFundingDataValidateBeforeCall(String generalMerchantId) throws ApiException {
+        // verify the required parameter 'generalMerchantId' is set
+        if (generalMerchantId == null) {
+            throw new ApiException("Missing the required parameter 'generalMerchantId' when calling getCrowdFundingData(Async)");
+        }
+
+        return getCrowdFundingDataCall(generalMerchantId);
+    }
+
+    /**
+     * GET Payment/Transactions/me/CrowdFundingData/{generalMerchantId}
+     * Get the transaction amounts, count and payout data per product
+     * @param generalMerchantId Merchant ID (MRC_...) (required)
+     * @return PaymentCrowdFundingData
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentCrowdFundingData getCrowdFundingData(String generalMerchantId) throws ApiException {
+        ApiResponse<PaymentCrowdFundingData> resp = getCrowdFundingDataWithHttpInfo(generalMerchantId);
+        return resp.getData();
+    }
+
+    /**
+     * GET Payment/Transactions/me/CrowdFundingData/{generalMerchantId}
+     * Get the transaction amounts, count and payout data per product
+     * @param generalMerchantId Merchant ID (MRC_...) (required)
+     * @return ApiResponse&lt;PaymentCrowdFundingData&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentCrowdFundingData> getCrowdFundingDataWithHttpInfo(String generalMerchantId) throws ApiException {
+        Call call = getCrowdFundingDataValidateBeforeCall(generalMerchantId);
+        Type localVarReturnType = new TypeToken<PaymentCrowdFundingData>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET Payment/Transactions/me/CrowdFundingData/{generalMerchantId} (asynchronously)
+     * Get the transaction amounts, count and payout data per product
+     * @param generalMerchantId Merchant ID (MRC_...) (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getCrowdFundingDataAsync(String generalMerchantId, final ApiCallback<PaymentCrowdFundingData> callback) throws ApiException {
+        Call call = getCrowdFundingDataValidateBeforeCall(generalMerchantId);
+        Type localVarReturnType = new TypeToken<PaymentCrowdFundingData>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
      * Build call for getOne
      * @param paymentTransactionId Payment transaction id (required)
      * @return Call to execute
@@ -397,92 +484,6 @@ public class PaymentTransactionsApi {
     public Call getOneAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsProductModel> callback) throws ApiException {
         Call call = getOneValidateBeforeCall(paymentTransactionId);
         Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-
-    /**
-     * Build call for getPaymentTransactionsCrowdFundingData
-     * @param generalMerchantId Merchant ID (MRC_...) (required)
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public Call getPaymentTransactionsCrowdFundingDataCall(String generalMerchantId) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/Payment/Transactions/me/CrowdFundingData/{generalMerchantId}"
-            .replaceAll("\\{" + "generalMerchantId" + "\\}", apiClient.escapeString(generalMerchantId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private Call getPaymentTransactionsCrowdFundingDataValidateBeforeCall(String generalMerchantId) throws ApiException {
-        // verify the required parameter 'generalMerchantId' is set
-        if (generalMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'generalMerchantId' when calling getPaymentTransactionsCrowdFundingData(Async)");
-        }
-
-        return getPaymentTransactionsCrowdFundingDataCall(generalMerchantId);
-    }
-
-    /**
-     * GET Payment/Transactions/me/CrowdFundingData/{generalMerchantId}
-     * Get the transaction amounts, count and payout data per product
-     * @param generalMerchantId Merchant ID (MRC_...) (required)
-     * @return PaymentCrowdFundingData
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PaymentCrowdFundingData getPaymentTransactionsCrowdFundingData(String generalMerchantId) throws ApiException {
-        ApiResponse<PaymentCrowdFundingData> resp = getPaymentTransactionsCrowdFundingDataWithHttpInfo(generalMerchantId);
-        return resp.getData();
-    }
-
-    /**
-     * GET Payment/Transactions/me/CrowdFundingData/{generalMerchantId}
-     * Get the transaction amounts, count and payout data per product
-     * @param generalMerchantId Merchant ID (MRC_...) (required)
-     * @return ApiResponse&lt;PaymentCrowdFundingData&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PaymentCrowdFundingData> getPaymentTransactionsCrowdFundingDataWithHttpInfo(String generalMerchantId) throws ApiException {
-        Call call = getPaymentTransactionsCrowdFundingDataValidateBeforeCall(generalMerchantId);
-        Type localVarReturnType = new TypeToken<PaymentCrowdFundingData>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * GET Payment/Transactions/me/CrowdFundingData/{generalMerchantId} (asynchronously)
-     * Get the transaction amounts, count and payout data per product
-     * @param generalMerchantId Merchant ID (MRC_...) (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public Call getPaymentTransactionsCrowdFundingDataAsync(String generalMerchantId, final ApiCallback<PaymentCrowdFundingData> callback) throws ApiException {
-        Call call = getPaymentTransactionsCrowdFundingDataValidateBeforeCall(generalMerchantId);
-        Type localVarReturnType = new TypeToken<PaymentCrowdFundingData>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -741,6 +742,92 @@ public class PaymentTransactionsApi {
     public Call revokeAccrualAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsProductModel> callback) throws ApiException {
         Call call = revokeAccrualValidateBeforeCall(paymentTransactionId);
         Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for updateShippingInformation
+     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call updateShippingInformationCall(String paymentTransactionId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/ShippingInformation"
+            .replaceAll("\\{" + "paymentTransactionId" + "\\}", apiClient.escapeString(paymentTransactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call updateShippingInformationValidateBeforeCall(String paymentTransactionId) throws ApiException {
+        // verify the required parameter 'paymentTransactionId' is set
+        if (paymentTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling updateShippingInformation(Async)");
+        }
+
+        return updateShippingInformationCall(paymentTransactionId);
+    }
+
+    /**
+     * PUT Payment/Transactions/{paymentTransactionId}/ShippingInformation
+     * Update the shipping information for a transaction
+     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @return ResultBoolean
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ResultBoolean updateShippingInformation(String paymentTransactionId) throws ApiException {
+        ApiResponse<ResultBoolean> resp = updateShippingInformationWithHttpInfo(paymentTransactionId);
+        return resp.getData();
+    }
+
+    /**
+     * PUT Payment/Transactions/{paymentTransactionId}/ShippingInformation
+     * Update the shipping information for a transaction
+     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @return ApiResponse&lt;ResultBoolean&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ResultBoolean> updateShippingInformationWithHttpInfo(String paymentTransactionId) throws ApiException {
+        Call call = updateShippingInformationValidateBeforeCall(paymentTransactionId);
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * PUT Payment/Transactions/{paymentTransactionId}/ShippingInformation (asynchronously)
+     * Update the shipping information for a transaction
+     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call updateShippingInformationAsync(String paymentTransactionId, final ApiCallback<ResultBoolean> callback) throws ApiException {
+        Call call = updateShippingInformationValidateBeforeCall(paymentTransactionId);
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

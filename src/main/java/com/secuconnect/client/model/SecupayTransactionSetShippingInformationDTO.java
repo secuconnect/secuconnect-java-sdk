@@ -16,6 +16,12 @@ public class SecupayTransactionSetShippingInformationDTO {
   @SerializedName("invoice_number")
   private String invoiceNumber = null;
 
+  @SerializedName("shipped_at")
+  private String shippedAt = null;
+
+  @SerializedName("order_id")
+  private String orderId = null;
+
   public SecupayTransactionSetShippingInformationDTO carrier(String carrier) {
     this.carrier = carrier;
     return this;
@@ -67,6 +73,40 @@ public class SecupayTransactionSetShippingInformationDTO {
     this.invoiceNumber = invoiceNumber;
   }
 
+  public SecupayTransactionSetShippingInformationDTO shippedAt(String shippedAt) {
+    this.shippedAt = shippedAt;
+    return this;
+  }
+
+   /**
+   * Timestamp of the shipping date
+   * @return shippedAt
+  **/
+  public String getShippedAt() {
+    return shippedAt;
+  }
+
+  public void setShippedAt(String shippedAt) {
+    this.shippedAt = shippedAt;
+  }
+
+  public SecupayTransactionSetShippingInformationDTO orderId(String orderId) {
+    this.orderId = orderId;
+    return this;
+  }
+
+   /**
+   * Order-ID
+   * @return orderId
+  **/
+  public String getOrderId() {
+    return orderId;
+  }
+
+  public void setOrderId(String orderId) {
+    this.orderId = orderId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -78,12 +118,14 @@ public class SecupayTransactionSetShippingInformationDTO {
     SecupayTransactionSetShippingInformationDTO secupayTransactionSetShippingInformationDTO = (SecupayTransactionSetShippingInformationDTO) o;
     return Objects.equals(this.carrier, secupayTransactionSetShippingInformationDTO.carrier) &&
         Objects.equals(this.trackingId, secupayTransactionSetShippingInformationDTO.trackingId) &&
-        Objects.equals(this.invoiceNumber, secupayTransactionSetShippingInformationDTO.invoiceNumber);
+        Objects.equals(this.invoiceNumber, secupayTransactionSetShippingInformationDTO.invoiceNumber) &&
+        Objects.equals(this.shippedAt, secupayTransactionSetShippingInformationDTO.shippedAt) &&
+        Objects.equals(this.orderId, secupayTransactionSetShippingInformationDTO.orderId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(carrier, trackingId, invoiceNumber);
+    return Objects.hash(carrier, trackingId, invoiceNumber, shippedAt, orderId);
   }
 
   @Override
@@ -93,6 +135,8 @@ public class SecupayTransactionSetShippingInformationDTO {
     sb.append("    carrier: ").append(toIndentedString(carrier)).append("\n");
     sb.append("    trackingId: ").append(toIndentedString(trackingId)).append("\n");
     sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
+    sb.append("    shippedAt: ").append(toIndentedString(shippedAt)).append("\n");
+    sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
