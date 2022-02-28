@@ -19,6 +19,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.9.0] - 2022-02-28
+[3.9.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.8.0...3.9.0
+
+### Security
+- Update dependencies to the latest versions.
+
+### Added
+- `Api.PaymentTransactionsApi.increaseAmount()`
+- `Model.PaymentTransactionsIncreaseAmountDTO`
+- `Model.SmartTransactionsProductModel` element `subscription`
+- `Model.SmartTransactionsBasketProduct` element `plan_id`
+- `Model.SmartTransactionsBasketProduct` element `start_at`
+- `Model.SmartTransactionsApplicationContextReturnUrls` element `url_push`
+
+
 ## [3.8.0] - 2022-01-25
 [3.8.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.7.1...3.8.0
 

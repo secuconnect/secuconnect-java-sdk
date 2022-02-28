@@ -4,6 +4,7 @@ import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
 import com.secuconnect.client.model.PaymentCrowdFundingData;
 import com.secuconnect.client.model.PaymentTransactionCancelDTO;
+import com.secuconnect.client.model.PaymentTransactionsIncreaseAmountDTO;
 import com.secuconnect.client.model.PaymentTransactionsList;
 import com.secuconnect.client.model.PaymentTransactionsProductModel;
 import com.secuconnect.client.model.PaymentTransactionsShippingUrl;
@@ -656,6 +657,96 @@ public class PaymentTransactionsApi {
     public Call getShippingUrlAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsShippingUrl> callback) throws ApiException {
         Call call = getShippingUrlValidateBeforeCall(paymentTransactionId);
         Type localVarReturnType = new TypeToken<PaymentTransactionsShippingUrl>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for increaseAmount
+     * @param paymentTransactionId Payment ID (PCI_...) (required)
+     * @param body increase amount input params
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call increaseAmountCall(String paymentTransactionId, PaymentTransactionsIncreaseAmountDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/IncreaseAmount"
+            .replaceAll("\\{" + "paymentTransactionId" + "\\}", apiClient.escapeString(paymentTransactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call increaseAmountValidateBeforeCall(String paymentTransactionId, PaymentTransactionsIncreaseAmountDTO body) throws ApiException {
+        // verify the required parameter 'paymentTransactionId' is set
+        if (paymentTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling increaseAmount(Async)");
+        }
+
+        return increaseAmountCall(paymentTransactionId, body);
+    }
+
+    /**
+     * POST Payment/Transactions/{paymentTransactionId}/IncreaseAmount
+     * Increase the amount of a prepaid transaction which is not yet completed
+     * @param paymentTransactionId Payment ID (PCI_...) (required)
+     * @param body increase amount input params
+     * @return PaymentTransactionsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentTransactionsProductModel increaseAmount(String paymentTransactionId, PaymentTransactionsIncreaseAmountDTO body) throws ApiException {
+        ApiResponse<PaymentTransactionsProductModel> resp = increaseAmountWithHttpInfo(paymentTransactionId, body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Transactions/{paymentTransactionId}/IncreaseAmount
+     * Increase the amount of a prepaid transaction which is not yet completed
+     * @param paymentTransactionId Payment ID (PCI_...) (required)
+     * @param body increase amount input params
+     * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentTransactionsProductModel> increaseAmountWithHttpInfo(String paymentTransactionId, PaymentTransactionsIncreaseAmountDTO body) throws ApiException {
+        Call call = increaseAmountValidateBeforeCall(paymentTransactionId, body);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Transactions/{paymentTransactionId}/IncreaseAmount (asynchronously)
+     * Increase the amount of a prepaid transaction which is not yet completed
+     * @param paymentTransactionId Payment ID (PCI_...) (required)
+     * @param body increase amount input params
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call increaseAmountAsync(String paymentTransactionId, PaymentTransactionsIncreaseAmountDTO body, final ApiCallback<PaymentTransactionsProductModel> callback) throws ApiException {
+        Call call = increaseAmountValidateBeforeCall(paymentTransactionId, body);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

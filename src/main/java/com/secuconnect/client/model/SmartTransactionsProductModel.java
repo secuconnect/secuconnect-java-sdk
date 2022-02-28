@@ -156,6 +156,9 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   @SerializedName("payment_context")
   private PaymentContext paymentContext = null;
 
+  @SerializedName("subscription")
+  private ProductInstanceUID subscription = null;
+
   public SmartTransactionsProductModel created(String created) {
     this.created = created;
     return this;
@@ -902,6 +905,23 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.paymentContext = paymentContext;
   }
 
+  public SmartTransactionsProductModel subscription(ProductInstanceUID subscription) {
+    this.subscription = subscription;
+    return this;
+  }
+
+   /**
+   * Get subscription
+   * @return subscription
+  **/
+  public ProductInstanceUID getSubscription() {
+    return subscription;
+  }
+
+  public void setSubscription(ProductInstanceUID subscription) {
+    this.subscription = subscription;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -953,12 +973,13 @@ public class SmartTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.applicationContext, smartTransactionsProductModel.applicationContext) &&
         Objects.equals(this.paymentInstructions, smartTransactionsProductModel.paymentInstructions) &&
         Objects.equals(this.paymentContext, smartTransactionsProductModel.paymentContext) &&
+        Objects.equals(this.subscription, smartTransactionsProductModel.subscription) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, prepaidSales, communications, paymentLinks, applicationContext, paymentInstructions, paymentContext, super.hashCode());
+    return Objects.hash(created, updated, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, prepaidSales, communications, paymentLinks, applicationContext, paymentInstructions, paymentContext, subscription, super.hashCode());
   }
 
   @Override
@@ -1008,6 +1029,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     sb.append("    applicationContext: ").append(toIndentedString(applicationContext)).append("\n");
     sb.append("    paymentInstructions: ").append(toIndentedString(paymentInstructions)).append("\n");
     sb.append("    paymentContext: ").append(toIndentedString(paymentContext)).append("\n");
+    sb.append("    subscription: ").append(toIndentedString(subscription)).append("\n");
     sb.append("}");
     return sb.toString();
   }

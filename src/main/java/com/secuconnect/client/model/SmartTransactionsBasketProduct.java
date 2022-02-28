@@ -56,6 +56,12 @@ public class SmartTransactionsBasketProduct {
   @SerializedName("sub_basket")
   private List<SmartTransactionsSubBasketProduct> subBasket = null;
 
+  @SerializedName("plan_id")
+  private String planId = null;
+
+  @SerializedName("start_at")
+  private String startAt = null;
+
   public SmartTransactionsBasketProduct id(Integer id) {
     this.id = id;
     return this;
@@ -327,6 +333,40 @@ public class SmartTransactionsBasketProduct {
     this.subBasket = subBasket;
   }
 
+  public SmartTransactionsBasketProduct planId(String planId) {
+    this.planId = planId;
+    return this;
+  }
+
+   /**
+   * subscription item plan_id
+   * @return planId
+  **/
+  public String getPlanId() {
+    return planId;
+  }
+
+  public void setPlanId(String planId) {
+    this.planId = planId;
+  }
+
+  public SmartTransactionsBasketProduct startAt(String startAt) {
+    this.startAt = startAt;
+    return this;
+  }
+
+   /**
+   * timestamp when the subscription should start
+   * @return startAt
+  **/
+  public String getStartAt() {
+    return startAt;
+  }
+
+  public void setStartAt(String startAt) {
+    this.startAt = startAt;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -350,12 +390,14 @@ public class SmartTransactionsBasketProduct {
         Objects.equals(this.referenceId, smartTransactionsBasketProduct.referenceId) &&
         Objects.equals(this.contractId, smartTransactionsBasketProduct.contractId) &&
         Objects.equals(this.group, smartTransactionsBasketProduct.group) &&
-        Objects.equals(this.subBasket, smartTransactionsBasketProduct.subBasket);
+        Objects.equals(this.subBasket, smartTransactionsBasketProduct.subBasket) &&
+        Objects.equals(this.planId, smartTransactionsBasketProduct.planId) &&
+        Objects.equals(this.startAt, smartTransactionsBasketProduct.startAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parent, itemType, desc, articleNumber, serialNumber, ean, quantity, priceOne, sum, tax, referenceId, contractId, group, subBasket);
+    return Objects.hash(id, parent, itemType, desc, articleNumber, serialNumber, ean, quantity, priceOne, sum, tax, referenceId, contractId, group, subBasket, planId, startAt);
   }
 
   @Override
@@ -377,6 +419,8 @@ public class SmartTransactionsBasketProduct {
     sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    subBasket: ").append(toIndentedString(subBasket)).append("\n");
+    sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
+    sb.append("    startAt: ").append(toIndentedString(startAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

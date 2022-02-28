@@ -16,6 +16,9 @@ public class SmartTransactionsApplicationContextReturnUrls {
   @SerializedName("url_error")
   private String urlError = null;
 
+  @SerializedName("url_push")
+  private String urlPush = null;
+
   public SmartTransactionsApplicationContextReturnUrls urlSuccess(String urlSuccess) {
     this.urlSuccess = urlSuccess;
     return this;
@@ -67,6 +70,23 @@ public class SmartTransactionsApplicationContextReturnUrls {
     this.urlError = urlError;
   }
 
+  public SmartTransactionsApplicationContextReturnUrls urlPush(String urlPush) {
+    this.urlPush = urlPush;
+    return this;
+  }
+
+   /**
+   * Push URL
+   * @return urlPush
+  **/
+  public String getUrlPush() {
+    return urlPush;
+  }
+
+  public void setUrlPush(String urlPush) {
+    this.urlPush = urlPush;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -78,12 +98,13 @@ public class SmartTransactionsApplicationContextReturnUrls {
     SmartTransactionsApplicationContextReturnUrls smartTransactionsApplicationContextReturnUrls = (SmartTransactionsApplicationContextReturnUrls) o;
     return Objects.equals(this.urlSuccess, smartTransactionsApplicationContextReturnUrls.urlSuccess) &&
         Objects.equals(this.urlAbort, smartTransactionsApplicationContextReturnUrls.urlAbort) &&
-        Objects.equals(this.urlError, smartTransactionsApplicationContextReturnUrls.urlError);
+        Objects.equals(this.urlError, smartTransactionsApplicationContextReturnUrls.urlError) &&
+        Objects.equals(this.urlPush, smartTransactionsApplicationContextReturnUrls.urlPush);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(urlSuccess, urlAbort, urlError);
+    return Objects.hash(urlSuccess, urlAbort, urlError, urlPush);
   }
 
   @Override
@@ -93,6 +114,7 @@ public class SmartTransactionsApplicationContextReturnUrls {
     sb.append("    urlSuccess: ").append(toIndentedString(urlSuccess)).append("\n");
     sb.append("    urlAbort: ").append(toIndentedString(urlAbort)).append("\n");
     sb.append("    urlError: ").append(toIndentedString(urlError)).append("\n");
+    sb.append("    urlPush: ").append(toIndentedString(urlPush)).append("\n");
     sb.append("}");
     return sb.toString();
   }
