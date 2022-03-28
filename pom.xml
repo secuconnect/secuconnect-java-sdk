@@ -318,7 +318,7 @@
       <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-stomp -->
       <groupId>org.apache.activemq</groupId>
       <artifactId>activemq-stomp</artifactId>
-      <version>5.16.4</version>
+      <version>5.17.0</version>
     </dependency>
     <dependency>
       <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
