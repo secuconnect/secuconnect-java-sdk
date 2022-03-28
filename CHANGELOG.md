@@ -18,6 +18,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+## [3.9.1] - 2022-03-28
+[3.9.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.9.0...3.9.1
+
+### Fixed
+- Api.PaymentTransactionsApi.updateShippingInformation() missing body parameter
+
 
 ## [3.9.0] - 2022-02-28
 [3.9.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.8.0...3.9.0

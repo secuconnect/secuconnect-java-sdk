@@ -12,6 +12,7 @@ import com.secuconnect.client.model.ProductExceptionPayload;
 import com.secuconnect.client.model.ResultBoolean;
 import com.secuconnect.client.model.SecupayTransactionProductDTO;
 import com.secuconnect.client.model.SecupayTransactionProductModel;
+import com.secuconnect.client.model.SecupayTransactionSetShippingInformationDTO;
 import okhttp3.Call;
 
 import java.lang.reflect.Type;
@@ -840,11 +841,12 @@ public class PaymentTransactionsApi {
     /**
      * Build call for updateShippingInformation
      * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @param body Update shipping information input properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call updateShippingInformationCall(String paymentTransactionId) throws ApiException {
-        Object localVarPostBody = null;
+    public Call updateShippingInformationCall(String paymentTransactionId, SecupayTransactionSetShippingInformationDTO body) throws ApiException {
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/Payment/Transactions/{paymentTransactionId}/ShippingInformation"
@@ -864,7 +866,7 @@ public class PaymentTransactionsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -874,24 +876,25 @@ public class PaymentTransactionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call updateShippingInformationValidateBeforeCall(String paymentTransactionId) throws ApiException {
+    private Call updateShippingInformationValidateBeforeCall(String paymentTransactionId, SecupayTransactionSetShippingInformationDTO body) throws ApiException {
         // verify the required parameter 'paymentTransactionId' is set
         if (paymentTransactionId == null) {
             throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling updateShippingInformation(Async)");
         }
 
-        return updateShippingInformationCall(paymentTransactionId);
+        return updateShippingInformationCall(paymentTransactionId, body);
     }
 
     /**
      * PUT Payment/Transactions/{paymentTransactionId}/ShippingInformation
      * Update the shipping information for a transaction
      * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @param body Update shipping information input properties
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResultBoolean updateShippingInformation(String paymentTransactionId) throws ApiException {
-        ApiResponse<ResultBoolean> resp = updateShippingInformationWithHttpInfo(paymentTransactionId);
+    public ResultBoolean updateShippingInformation(String paymentTransactionId, SecupayTransactionSetShippingInformationDTO body) throws ApiException {
+        ApiResponse<ResultBoolean> resp = updateShippingInformationWithHttpInfo(paymentTransactionId, body);
         return resp.getData();
     }
 
@@ -899,11 +902,12 @@ public class PaymentTransactionsApi {
      * PUT Payment/Transactions/{paymentTransactionId}/ShippingInformation
      * Update the shipping information for a transaction
      * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @param body Update shipping information input properties
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResultBoolean> updateShippingInformationWithHttpInfo(String paymentTransactionId) throws ApiException {
-        Call call = updateShippingInformationValidateBeforeCall(paymentTransactionId);
+    public ApiResponse<ResultBoolean> updateShippingInformationWithHttpInfo(String paymentTransactionId, SecupayTransactionSetShippingInformationDTO body) throws ApiException {
+        Call call = updateShippingInformationValidateBeforeCall(paymentTransactionId, body);
         Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -912,12 +916,13 @@ public class PaymentTransactionsApi {
      * PUT Payment/Transactions/{paymentTransactionId}/ShippingInformation (asynchronously)
      * Update the shipping information for a transaction
      * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @param body Update shipping information input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call updateShippingInformationAsync(String paymentTransactionId, final ApiCallback<ResultBoolean> callback) throws ApiException {
-        Call call = updateShippingInformationValidateBeforeCall(paymentTransactionId);
+    public Call updateShippingInformationAsync(String paymentTransactionId, SecupayTransactionSetShippingInformationDTO body, final ApiCallback<ResultBoolean> callback) throws ApiException {
+        Call call = updateShippingInformationValidateBeforeCall(paymentTransactionId, body);
         Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
