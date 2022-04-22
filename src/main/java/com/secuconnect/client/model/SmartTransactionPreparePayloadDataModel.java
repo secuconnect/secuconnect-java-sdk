@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.SmartTransactionPaymentContainerDTO;
+import com.secuconnect.client.model.SmartTransactionPaymentCustomerDTO;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,11 +17,11 @@ public class SmartTransactionPreparePayloadDataModel {
   @SerializedName("email")
   private String email = null;
 
-  @SerializedName("mode")
-  private String mode = null;
+  @SerializedName("customer")
+  private SmartTransactionPaymentCustomerDTO customer = null;
 
-  @SerializedName("is_paypal_basic")
-  private Boolean isPaypalBasic = null;
+  @SerializedName("container")
+  private SmartTransactionPaymentContainerDTO container = null;
 
   public SmartTransactionPreparePayloadDataModel callbackUrls(List<String> callbackUrls) {
     this.callbackUrls = callbackUrls;
@@ -63,38 +65,38 @@ public class SmartTransactionPreparePayloadDataModel {
     this.email = email;
   }
 
-  public SmartTransactionPreparePayloadDataModel mode(String mode) {
-    this.mode = mode;
+  public SmartTransactionPreparePayloadDataModel customer(SmartTransactionPaymentCustomerDTO customer) {
+    this.customer = customer;
     return this;
   }
 
    /**
-   * Mode
-   * @return mode
+   * Get customer
+   * @return customer
   **/
-  public String getMode() {
-    return mode;
+  public SmartTransactionPaymentCustomerDTO getCustomer() {
+    return customer;
   }
 
-  public void setMode(String mode) {
-    this.mode = mode;
+  public void setCustomer(SmartTransactionPaymentCustomerDTO customer) {
+    this.customer = customer;
   }
 
-  public SmartTransactionPreparePayloadDataModel isPaypalBasic(Boolean isPaypalBasic) {
-    this.isPaypalBasic = isPaypalBasic;
+  public SmartTransactionPreparePayloadDataModel container(SmartTransactionPaymentContainerDTO container) {
+    this.container = container;
     return this;
   }
 
    /**
-   * Information whether a smart transaction is PayPal basic or not
-   * @return isPaypalBasic
+   * Get container
+   * @return container
   **/
-  public Boolean getIsPaypalBasic() {
-    return isPaypalBasic;
+  public SmartTransactionPaymentContainerDTO getContainer() {
+    return container;
   }
 
-  public void setIsPaypalBasic(Boolean isPaypalBasic) {
-    this.isPaypalBasic = isPaypalBasic;
+  public void setContainer(SmartTransactionPaymentContainerDTO container) {
+    this.container = container;
   }
 
   @Override
@@ -108,13 +110,13 @@ public class SmartTransactionPreparePayloadDataModel {
     SmartTransactionPreparePayloadDataModel smartTransactionPreparePayloadDataModel = (SmartTransactionPreparePayloadDataModel) o;
     return Objects.equals(this.callbackUrls, smartTransactionPreparePayloadDataModel.callbackUrls) &&
         Objects.equals(this.email, smartTransactionPreparePayloadDataModel.email) &&
-        Objects.equals(this.mode, smartTransactionPreparePayloadDataModel.mode) &&
-        Objects.equals(this.isPaypalBasic, smartTransactionPreparePayloadDataModel.isPaypalBasic);
+        Objects.equals(this.customer, smartTransactionPreparePayloadDataModel.customer) &&
+        Objects.equals(this.container, smartTransactionPreparePayloadDataModel.container);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackUrls, email, mode, isPaypalBasic);
+    return Objects.hash(callbackUrls, email, customer, container);
   }
 
   @Override
@@ -123,8 +125,8 @@ public class SmartTransactionPreparePayloadDataModel {
     sb.append("class SmartTransactionPreparePayloadDataModel {\n");
     sb.append("    callbackUrls: ").append(toIndentedString(callbackUrls)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-    sb.append("    isPaypalBasic: ").append(toIndentedString(isPaypalBasic)).append("\n");
+    sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
+    sb.append("    container: ").append(toIndentedString(container)).append("\n");
     sb.append("}");
     return sb.toString();
   }
