@@ -154,6 +154,7 @@
           <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
           <branch>refs/heads/mvn-repo</branch>
           <includes><include>**/*</include></includes>
+          <merge>true</merge>
           <repositoryName>secuconnect-java-sdk</repositoryName>
           <repositoryOwner>secuconnect</repositoryOwner>
         </configuration>

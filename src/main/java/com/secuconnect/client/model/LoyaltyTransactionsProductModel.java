@@ -60,8 +60,8 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   @SerializedName("description")
   private String description = null;
 
-  @SerializedName("last_changee")
-  private String lastChangee = null;
+  @SerializedName("last_change")
+  private String lastChange = null;
 
   @SerializedName("receipt")
   private List<ReceiptTypeValue> receipt = null;
@@ -323,21 +323,21 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
     this.description = description;
   }
 
-  public LoyaltyTransactionsProductModel lastChangee(String lastChangee) {
-    this.lastChangee = lastChangee;
+  public LoyaltyTransactionsProductModel lastChange(String lastChange) {
+    this.lastChange = lastChange;
     return this;
   }
 
    /**
    * Last change oif this transaction, most like a status change
-   * @return lastChangee
+   * @return lastChange
   **/
-  public String getLastChangee() {
-    return lastChangee;
+  public String getLastChange() {
+    return lastChange;
   }
 
-  public void setLastChangee(String lastChangee) {
-    this.lastChangee = lastChangee;
+  public void setLastChange(String lastChange) {
+    this.lastChange = lastChange;
   }
 
   public LoyaltyTransactionsProductModel receipt(List<ReceiptTypeValue> receipt) {
@@ -405,7 +405,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.currency, loyaltyTransactionsProductModel.currency) &&
         Objects.equals(this.balance, loyaltyTransactionsProductModel.balance) &&
         Objects.equals(this.description, loyaltyTransactionsProductModel.description) &&
-        Objects.equals(this.lastChangee, loyaltyTransactionsProductModel.lastChangee) &&
+        Objects.equals(this.lastChange, loyaltyTransactionsProductModel.lastChange) &&
         Objects.equals(this.receipt, loyaltyTransactionsProductModel.receipt) &&
         Objects.equals(this.isCancelling, loyaltyTransactionsProductModel.isCancelling) &&
         super.equals(o);
@@ -413,7 +413,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, merchant, cardgroup, store, merchantcard, card, parents, children, tid, status, amount, currency, balance, description, lastChangee, receipt, isCancelling, super.hashCode());
+    return Objects.hash(created, merchant, cardgroup, store, merchantcard, card, parents, children, tid, status, amount, currency, balance, description, lastChange, receipt, isCancelling, super.hashCode());
   }
 
   @Override
@@ -435,7 +435,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    lastChangee: ").append(toIndentedString(lastChangee)).append("\n");
+    sb.append("    lastChange: ").append(toIndentedString(lastChange)).append("\n");
     sb.append("    receipt: ").append(toIndentedString(receipt)).append("\n");
     sb.append("    isCancelling: ").append(toIndentedString(isCancelling)).append("\n");
     sb.append("}");

@@ -18,25 +18,40 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
-## [3.10.0] - 2022-04-21
+
+## [3.10.0] - 2022-06-17
 [3.10.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.9.1...3.10.0
 
-### Removed
-- `Model.SmartTransactionPreparePayloadDataModel` element `mode`
-- `Model.SmartTransactionPreparePayloadDataModel` element `is_paypal_basic`
+
+### Added
+- `Model.ApplePayDescriptor`
+- `Model.GooglePayDescriptor`
+- `Model.LoyaltyMerchantcardsDTOCustomer`
+- `Model.LoyaltyMerchantcardsDTOCreateMerchantcards` element `customer`
+- `Model.PayPalDescriptor`
+- `Model.SmartTransactionPaymentContainerDTO`
+- `Model.SmartTransactionPaymentCustomerDTO`
 
 ### Changed
 - `Model.LoyaltyMerchantcardsDTOCardsAmount` renamed to `Model.LoyaltyMerchantcardsDTOCreateMerchantcards`
 - `Model.SmartTransactionsDTO` element `customer` from `Model.PaymentCustomersProductModel` to `Model.SmartTransactionPaymentCustomerDTO`
 - `Model.SmartTransactionsDTO` element `container` from `Model.ProductInstanceUID` to `Model.SmartTransactionPaymentContainerDTO`
+- `Model.SmartTransactionsDTO` element `shipping_address` from `Model.PaymentCustomersProductModel` to `Model.SmartTransactionPaymentCustomerDTO`
+- `Model.SmartTransactionsPrepare` element `customer` from `Model.ProductInstanceUID` to `Model.SmartTransactionPaymentCustomerDTO`
+- `Model.SmartTransactionsPrepare` element `container` from `Model.ProductInstanceUID` to `Model.SmartTransactionPaymentContainerDTO`
 
-### Added
-- `Model.SmartTransactionPaymentContainerDTO`
-- `Model.SmartTransactionPaymentCustomerDTO`
-- `Model.LoyaltyMerchantcardsDTOCustomer`
-- `Model.LoyaltyMerchantcardsDTOCreateMerchantcards` element `customer`
-- `Model.SmartTransactionPreparePayloadDataModel` element `customer`
-- `Model.SmartTransactionPreparePayloadDataModel` element `container`
+### Fixed
+- `Model.LoyaltyTransactionsProductModel` element `last_changee` renamed to `last_change`
+- typos in descriptions
+
+### Removed
+- `Model.GeneralMerchantsDTO`
+- `Model.LoyaltyCustomersContactDTO`
+- `Model.PaymentTransactionsCancelList`
+- `Model.ResultAlwaysTrue`
+- `Model.ResultTrueOrFalse`
+- `Model.SmartTransactionsPrepare` element `method`, `device_source`, `mode`, `is_paypal_basic` and `is_demo`
+- `Model.SmartTransactionPreparePayloadDataModel`
 
 
 ## [3.9.1] - 2022-03-28

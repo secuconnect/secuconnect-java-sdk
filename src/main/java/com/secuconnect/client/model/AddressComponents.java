@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Address component like street, postal code, or ountry
+ * Address component like street, postal code, or country
  */
 public class AddressComponents {
   @SerializedName("long_name")

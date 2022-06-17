@@ -616,7 +616,7 @@ public class PaymentSecupayInvoicesApi {
      * Build call for setShippingInformationByPaymentId
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information propertie
+     * @param body Shipping information properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -670,7 +670,7 @@ public class PaymentSecupayInvoicesApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information propertie
+     * @param body Shipping information properties
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -684,7 +684,7 @@ public class PaymentSecupayInvoicesApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information propertie
+     * @param body Shipping information properties
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -699,7 +699,7 @@ public class PaymentSecupayInvoicesApi {
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
-     * @param body Shipping information propertie
+     * @param body Shipping information properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

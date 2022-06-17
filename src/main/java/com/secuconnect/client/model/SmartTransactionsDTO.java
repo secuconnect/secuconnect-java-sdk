@@ -3,7 +3,6 @@ package com.secuconnect.client.model;
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.OneOfSmartTransactionsDeliveryOptionsModel;
 import com.secuconnect.client.model.PaymentContext;
-import com.secuconnect.client.model.PaymentCustomersProductModel;
 import com.secuconnect.client.model.ProductInstanceID;
 import com.secuconnect.client.model.ProductInstanceUID;
 import com.secuconnect.client.model.SmartTransactionPaymentContainerDTO;
@@ -75,7 +74,7 @@ public class SmartTransactionsDTO {
   private SmartTransactionPaymentCustomerDTO customer = null;
 
   @SerializedName("shipping_address")
-  private PaymentCustomersProductModel shippingAddress = null;
+  private SmartTransactionPaymentCustomerDTO shippingAddress = null;
 
   @SerializedName("container")
   private SmartTransactionPaymentContainerDTO container = null;
@@ -404,7 +403,7 @@ public class SmartTransactionsDTO {
     this.customer = customer;
   }
 
-  public SmartTransactionsDTO shippingAddress(PaymentCustomersProductModel shippingAddress) {
+  public SmartTransactionsDTO shippingAddress(SmartTransactionPaymentCustomerDTO shippingAddress) {
     this.shippingAddress = shippingAddress;
     return this;
   }
@@ -413,11 +412,11 @@ public class SmartTransactionsDTO {
    * Get shippingAddress
    * @return shippingAddress
   **/
-  public PaymentCustomersProductModel getShippingAddress() {
+  public SmartTransactionPaymentCustomerDTO getShippingAddress() {
     return shippingAddress;
   }
 
-  public void setShippingAddress(PaymentCustomersProductModel shippingAddress) {
+  public void setShippingAddress(SmartTransactionPaymentCustomerDTO shippingAddress) {
     this.shippingAddress = shippingAddress;
   }
 

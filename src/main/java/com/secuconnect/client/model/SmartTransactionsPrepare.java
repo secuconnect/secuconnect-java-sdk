@@ -1,7 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.secuconnect.client.model.ProductInstanceUID;
+import com.secuconnect.client.model.SmartTransactionPaymentContainerDTO;
+import com.secuconnect.client.model.SmartTransactionPaymentCustomerDTO;
 import com.secuconnect.client.model.SmartTransactionsPrepareCallbackUrls;
 import java.util.Objects;
 
@@ -10,13 +11,10 @@ import java.util.Objects;
  */
 public class SmartTransactionsPrepare {
   @SerializedName("customer")
-  private ProductInstanceUID customer = null;
+  private SmartTransactionPaymentCustomerDTO customer = null;
 
   @SerializedName("container")
-  private ProductInstanceUID container = null;
-
-  @SerializedName("method")
-  private String method = null;
+  private SmartTransactionPaymentContainerDTO container = null;
 
   @SerializedName("callback_urls")
   private SmartTransactionsPrepareCallbackUrls callbackUrls = null;
@@ -24,19 +22,7 @@ public class SmartTransactionsPrepare {
   @SerializedName("email")
   private String email = null;
 
-  @SerializedName("device_source")
-  private ProductInstanceUID deviceSource = null;
-
-  @SerializedName("mode")
-  private String mode = null;
-
-  @SerializedName("is_paypal_basic")
-  private Boolean isPaypalBasic = null;
-
-  @SerializedName("is_demo")
-  private Boolean isDemo = null;
-
-  public SmartTransactionsPrepare customer(ProductInstanceUID customer) {
+  public SmartTransactionsPrepare customer(SmartTransactionPaymentCustomerDTO customer) {
     this.customer = customer;
     return this;
   }
@@ -45,15 +31,15 @@ public class SmartTransactionsPrepare {
    * Get customer
    * @return customer
   **/
-  public ProductInstanceUID getCustomer() {
+  public SmartTransactionPaymentCustomerDTO getCustomer() {
     return customer;
   }
 
-  public void setCustomer(ProductInstanceUID customer) {
+  public void setCustomer(SmartTransactionPaymentCustomerDTO customer) {
     this.customer = customer;
   }
 
-  public SmartTransactionsPrepare container(ProductInstanceUID container) {
+  public SmartTransactionsPrepare container(SmartTransactionPaymentContainerDTO container) {
     this.container = container;
     return this;
   }
@@ -62,29 +48,12 @@ public class SmartTransactionsPrepare {
    * Get container
    * @return container
   **/
-  public ProductInstanceUID getContainer() {
+  public SmartTransactionPaymentContainerDTO getContainer() {
     return container;
   }
 
-  public void setContainer(ProductInstanceUID container) {
+  public void setContainer(SmartTransactionPaymentContainerDTO container) {
     this.container = container;
-  }
-
-  public SmartTransactionsPrepare method(String method) {
-    this.method = method;
-    return this;
-  }
-
-   /**
-   * Method
-   * @return method
-  **/
-  public String getMethod() {
-    return method;
-  }
-
-  public void setMethod(String method) {
-    this.method = method;
   }
 
   public SmartTransactionsPrepare callbackUrls(SmartTransactionsPrepareCallbackUrls callbackUrls) {
@@ -121,74 +90,6 @@ public class SmartTransactionsPrepare {
     this.email = email;
   }
 
-  public SmartTransactionsPrepare deviceSource(ProductInstanceUID deviceSource) {
-    this.deviceSource = deviceSource;
-    return this;
-  }
-
-   /**
-   * Get deviceSource
-   * @return deviceSource
-  **/
-  public ProductInstanceUID getDeviceSource() {
-    return deviceSource;
-  }
-
-  public void setDeviceSource(ProductInstanceUID deviceSource) {
-    this.deviceSource = deviceSource;
-  }
-
-  public SmartTransactionsPrepare mode(String mode) {
-    this.mode = mode;
-    return this;
-  }
-
-   /**
-   * Mode
-   * @return mode
-  **/
-  public String getMode() {
-    return mode;
-  }
-
-  public void setMode(String mode) {
-    this.mode = mode;
-  }
-
-  public SmartTransactionsPrepare isPaypalBasic(Boolean isPaypalBasic) {
-    this.isPaypalBasic = isPaypalBasic;
-    return this;
-  }
-
-   /**
-   * Is paypal basic or not
-   * @return isPaypalBasic
-  **/
-  public Boolean getIsPaypalBasic() {
-    return isPaypalBasic;
-  }
-
-  public void setIsPaypalBasic(Boolean isPaypalBasic) {
-    this.isPaypalBasic = isPaypalBasic;
-  }
-
-  public SmartTransactionsPrepare isDemo(Boolean isDemo) {
-    this.isDemo = isDemo;
-    return this;
-  }
-
-   /**
-   * Is demo or not
-   * @return isDemo
-  **/
-  public Boolean getIsDemo() {
-    return isDemo;
-  }
-
-  public void setIsDemo(Boolean isDemo) {
-    this.isDemo = isDemo;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -200,18 +101,13 @@ public class SmartTransactionsPrepare {
     SmartTransactionsPrepare smartTransactionsPrepare = (SmartTransactionsPrepare) o;
     return Objects.equals(this.customer, smartTransactionsPrepare.customer) &&
         Objects.equals(this.container, smartTransactionsPrepare.container) &&
-        Objects.equals(this.method, smartTransactionsPrepare.method) &&
         Objects.equals(this.callbackUrls, smartTransactionsPrepare.callbackUrls) &&
-        Objects.equals(this.email, smartTransactionsPrepare.email) &&
-        Objects.equals(this.deviceSource, smartTransactionsPrepare.deviceSource) &&
-        Objects.equals(this.mode, smartTransactionsPrepare.mode) &&
-        Objects.equals(this.isPaypalBasic, smartTransactionsPrepare.isPaypalBasic) &&
-        Objects.equals(this.isDemo, smartTransactionsPrepare.isDemo);
+        Objects.equals(this.email, smartTransactionsPrepare.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer, container, method, callbackUrls, email, deviceSource, mode, isPaypalBasic, isDemo);
+    return Objects.hash(customer, container, callbackUrls, email);
   }
 
   @Override
@@ -220,13 +116,8 @@ public class SmartTransactionsPrepare {
     sb.append("class SmartTransactionsPrepare {\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    container: ").append(toIndentedString(container)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    callbackUrls: ").append(toIndentedString(callbackUrls)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    deviceSource: ").append(toIndentedString(deviceSource)).append("\n");
-    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-    sb.append("    isPaypalBasic: ").append(toIndentedString(isPaypalBasic)).append("\n");
-    sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

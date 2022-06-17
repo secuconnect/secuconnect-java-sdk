@@ -79,7 +79,7 @@ public class PaymentContractsDTOIFrameOpts {
   }
 
    /**
-   * Logo base64-enconded
+   * Logo base64-encoded
    * @return logoBase64
   **/
   public String getLogoBase64() {

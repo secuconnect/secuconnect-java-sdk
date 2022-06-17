@@ -136,7 +136,7 @@ public class Address {
   }
 
    /**
-   * Additional address line, like c/o, or an appartment number
+   * Additional address line, like c/o, or an apartment number
    * @return additionalAddressData
   **/
   public String getAdditionalAddressData() {
