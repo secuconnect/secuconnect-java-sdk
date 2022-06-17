@@ -18,11 +18,32 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+## [3.10.0] - 2022-04-21
+[3.10.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.9.1...3.10.0
+
+### Removed
+- `Model.SmartTransactionPreparePayloadDataModel` element `mode`
+- `Model.SmartTransactionPreparePayloadDataModel` element `is_paypal_basic`
+
+### Changed
+- `Model.LoyaltyMerchantcardsDTOCardsAmount` renamed to `Model.LoyaltyMerchantcardsDTOCreateMerchantcards`
+- `Model.SmartTransactionsDTO` element `customer` from `Model.PaymentCustomersProductModel` to `Model.SmartTransactionPaymentCustomerDTO`
+- `Model.SmartTransactionsDTO` element `container` from `Model.ProductInstanceUID` to `Model.SmartTransactionPaymentContainerDTO`
+
+### Added
+- `Model.SmartTransactionPaymentContainerDTO`
+- `Model.SmartTransactionPaymentCustomerDTO`
+- `Model.LoyaltyMerchantcardsDTOCustomer`
+- `Model.LoyaltyMerchantcardsDTOCreateMerchantcards` element `customer`
+- `Model.SmartTransactionPreparePayloadDataModel` element `customer`
+- `Model.SmartTransactionPreparePayloadDataModel` element `container`
+
+
 ## [3.9.1] - 2022-03-28
 [3.9.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.9.0...3.9.1
 
 ### Fixed
-- Api.PaymentTransactionsApi.updateShippingInformation() missing body parameter
+- `Api.PaymentTransactionsApi.updateShippingInformation()` missing body parameter
 
 
 ## [3.9.0] - 2022-02-28

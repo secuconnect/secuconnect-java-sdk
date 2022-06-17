@@ -6,8 +6,8 @@ import com.secuconnect.client.model.LoyaltyCustomersDTO;
 import com.secuconnect.client.model.LoyaltyMerchantcardsCardBalanceReceipt;
 import com.secuconnect.client.model.LoyaltyMerchantcardsDTO;
 import com.secuconnect.client.model.LoyaltyMerchantcardsDTOCardBalanceReceipt;
-import com.secuconnect.client.model.LoyaltyMerchantcardsDTOCardsAmount;
 import com.secuconnect.client.model.LoyaltyMerchantcardsDTOCheckPasscode;
+import com.secuconnect.client.model.LoyaltyMerchantcardsDTOCreateMerchantcards;
 import com.secuconnect.client.model.LoyaltyMerchantcardsDTOCsc;
 import com.secuconnect.client.model.LoyaltyMerchantcardsDTOLock;
 import com.secuconnect.client.model.LoyaltyMerchantcardsDTONewPasscode;
@@ -322,11 +322,11 @@ public class LoyaltyMerchantcardsApi {
      * Build call for createMerchantcards
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount
+     * @param body Cards amount and customer properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call createMerchantcardsCall(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCardsAmount body) throws ApiException {
+    public Call createMerchantcardsCall(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -358,7 +358,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call createMerchantcardsValidateBeforeCall(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCardsAmount body) throws ApiException {
+    private Call createMerchantcardsValidateBeforeCall(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body) throws ApiException {
         // verify the required parameter 'generalMerchantId' is set
         if (generalMerchantId == null) {
             throw new ApiException("Missing the required parameter 'generalMerchantId' when calling createMerchantcards(Async)");
@@ -376,11 +376,11 @@ public class LoyaltyMerchantcardsApi {
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount
+     * @param body Cards amount and customer properties
      * @return List&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<LoyaltyMerchantcardsProductModel> createMerchantcards(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCardsAmount body) throws ApiException {
+    public List<LoyaltyMerchantcardsProductModel> createMerchantcards(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body) throws ApiException {
         ApiResponse<List<LoyaltyMerchantcardsProductModel>> resp = createMerchantcardsWithHttpInfo(generalMerchantId, loyaltyCardgroupId, body);
         return resp.getData();
     }
@@ -390,11 +390,11 @@ public class LoyaltyMerchantcardsApi {
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount
+     * @param body Cards amount and customer properties
      * @return ApiResponse&lt;List&lt;LoyaltyMerchantcardsProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<LoyaltyMerchantcardsProductModel>> createMerchantcardsWithHttpInfo(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCardsAmount body) throws ApiException {
+    public ApiResponse<List<LoyaltyMerchantcardsProductModel>> createMerchantcardsWithHttpInfo(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body) throws ApiException {
         Call call = createMerchantcardsValidateBeforeCall(generalMerchantId, loyaltyCardgroupId, body);
         Type localVarReturnType = new TypeToken<List<LoyaltyMerchantcardsProductModel>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -405,12 +405,12 @@ public class LoyaltyMerchantcardsApi {
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount
+     * @param body Cards amount and customer properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call createMerchantcardsAsync(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCardsAmount body, final ApiCallback<List<LoyaltyMerchantcardsProductModel>> callback) throws ApiException {
+    public Call createMerchantcardsAsync(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body, final ApiCallback<List<LoyaltyMerchantcardsProductModel>> callback) throws ApiException {
         Call call = createMerchantcardsValidateBeforeCall(generalMerchantId, loyaltyCardgroupId, body);
         Type localVarReturnType = new TypeToken<List<LoyaltyMerchantcardsProductModel>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);

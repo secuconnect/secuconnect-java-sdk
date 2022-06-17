@@ -6,6 +6,8 @@ import com.secuconnect.client.model.PaymentContext;
 import com.secuconnect.client.model.PaymentCustomersProductModel;
 import com.secuconnect.client.model.ProductInstanceID;
 import com.secuconnect.client.model.ProductInstanceUID;
+import com.secuconnect.client.model.SmartTransactionPaymentContainerDTO;
+import com.secuconnect.client.model.SmartTransactionPaymentCustomerDTO;
 import com.secuconnect.client.model.SmartTransactionsApplicationContext;
 import com.secuconnect.client.model.SmartTransactionsBasket;
 import com.secuconnect.client.model.SmartTransactionsBasketInfo;
@@ -70,13 +72,13 @@ public class SmartTransactionsDTO {
   private String lastVisitedPage = null;
 
   @SerializedName("customer")
-  private PaymentCustomersProductModel customer = null;
+  private SmartTransactionPaymentCustomerDTO customer = null;
 
   @SerializedName("shipping_address")
   private PaymentCustomersProductModel shippingAddress = null;
 
   @SerializedName("container")
-  private ProductInstanceUID container = null;
+  private SmartTransactionPaymentContainerDTO container = null;
 
   @SerializedName("checkin")
   private SmartTransactionsCheckin checkin = null;
@@ -385,7 +387,7 @@ public class SmartTransactionsDTO {
     this.lastVisitedPage = lastVisitedPage;
   }
 
-  public SmartTransactionsDTO customer(PaymentCustomersProductModel customer) {
+  public SmartTransactionsDTO customer(SmartTransactionPaymentCustomerDTO customer) {
     this.customer = customer;
     return this;
   }
@@ -394,11 +396,11 @@ public class SmartTransactionsDTO {
    * Get customer
    * @return customer
   **/
-  public PaymentCustomersProductModel getCustomer() {
+  public SmartTransactionPaymentCustomerDTO getCustomer() {
     return customer;
   }
 
-  public void setCustomer(PaymentCustomersProductModel customer) {
+  public void setCustomer(SmartTransactionPaymentCustomerDTO customer) {
     this.customer = customer;
   }
 
@@ -419,7 +421,7 @@ public class SmartTransactionsDTO {
     this.shippingAddress = shippingAddress;
   }
 
-  public SmartTransactionsDTO container(ProductInstanceUID container) {
+  public SmartTransactionsDTO container(SmartTransactionPaymentContainerDTO container) {
     this.container = container;
     return this;
   }
@@ -428,11 +430,11 @@ public class SmartTransactionsDTO {
    * Get container
    * @return container
   **/
-  public ProductInstanceUID getContainer() {
+  public SmartTransactionPaymentContainerDTO getContainer() {
     return container;
   }
 
-  public void setContainer(ProductInstanceUID container) {
+  public void setContainer(SmartTransactionPaymentContainerDTO container) {
     this.container = container;
   }
 
