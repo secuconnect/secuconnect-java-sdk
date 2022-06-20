@@ -22,12 +22,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [3.10.0] - 2022-06-20
 [3.10.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.9.1...3.10.0
 
+### Security
+- Update dependencies to the latest versions.
+
+### Deprecated
+- `Model.LoyaltyMerchantcardsDTOCreateMerchantcards` element `assign` and `contract` 
+
 
 ### Added
 - `Model.ApplePayDescriptor`
 - `Model.GooglePayDescriptor`
 - `Model.LoyaltyMerchantcardsDTOCustomer`
 - `Model.LoyaltyMerchantcardsDTOCreateMerchantcards` element `customer`
+- `Model.PaymentContainersProductModel` element `merchant`
 - `Model.PayPalDescriptor`
 - `Model.SmartTransactionPaymentContainerDTO`
 - `Model.SmartTransactionPaymentCustomerDTO`
@@ -50,7 +57,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.PaymentTransactionsCancelList`
 - `Model.ResultAlwaysTrue`
 - `Model.ResultTrueOrFalse`
-- `Model.SmartTransactionsPrepare` element `method`, `device_source`, `mode`, `is_paypal_basic` and `is_demo`
+- `Model.SmartTransactionsPrepare` element `device_source`, `is_demo`, `is_paypal_basic`, `mode` and `method` 
 - `Model.SmartTransactionPreparePayloadDataModel`
 
 

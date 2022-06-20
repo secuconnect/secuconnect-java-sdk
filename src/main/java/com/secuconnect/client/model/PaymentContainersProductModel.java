@@ -3,6 +3,7 @@ package com.secuconnect.client.model;
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
+import com.secuconnect.client.model.GeneralMerchantsProductModel;
 import com.secuconnect.client.model.OneOfPaymentContainersDTOModelPrivate;
 import com.secuconnect.client.model.PaymentContainerMandate;
 import com.secuconnect.client.model.PaymentContractsProductModel;
@@ -20,6 +21,9 @@ public class PaymentContainersProductModel extends BaseProductModel {
 
   @SerializedName("updated")
   private String updated = null;
+
+  @SerializedName("merchant")
+  private GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("contract")
   private PaymentContractsProductModel contract = null;
@@ -74,6 +78,23 @@ public class PaymentContainersProductModel extends BaseProductModel {
 
   public void setUpdated(String updated) {
     this.updated = updated;
+  }
+
+  public PaymentContainersProductModel merchant(GeneralMerchantsProductModel merchant) {
+    this.merchant = merchant;
+    return this;
+  }
+
+   /**
+   * Get merchant
+   * @return merchant
+  **/
+  public GeneralMerchantsProductModel getMerchant() {
+    return merchant;
+  }
+
+  public void setMerchant(GeneralMerchantsProductModel merchant) {
+    this.merchant = merchant;
   }
 
   public PaymentContainersProductModel contract(PaymentContractsProductModel contract) {
@@ -206,6 +227,7 @@ public class PaymentContainersProductModel extends BaseProductModel {
     PaymentContainersProductModel paymentContainersProductModel = (PaymentContainersProductModel) o;
     return Objects.equals(this.created, paymentContainersProductModel.created) &&
         Objects.equals(this.updated, paymentContainersProductModel.updated) &&
+        Objects.equals(this.merchant, paymentContainersProductModel.merchant) &&
         Objects.equals(this.contract, paymentContainersProductModel.contract) &&
         Objects.equals(this.customer, paymentContainersProductModel.customer) &&
         Objects.equals(this.assign, paymentContainersProductModel.assign) &&
@@ -218,7 +240,7 @@ public class PaymentContainersProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, contract, customer, assign, type, _public, _private, mandate, super.hashCode());
+    return Objects.hash(created, updated, merchant, contract, customer, assign, type, _public, _private, mandate, super.hashCode());
   }
 
   @Override
@@ -228,6 +250,7 @@ public class PaymentContainersProductModel extends BaseProductModel {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+    sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    assign: ").append(toIndentedString(assign)).append("\n");
