@@ -95,7 +95,7 @@ public class CommonObjectsProvider {
         address.setStreetNumber("7");
         address.setPostalCode("01324");
         address.setCity("Dresden");
-        address.setCountry("Germany");
+        address.setCountry("DE");
 
         Contact contact = new Contact();
         contact.setSalutation("Mr.");
@@ -106,7 +106,7 @@ public class CommonObjectsProvider {
         contact.setDob("1987-06-16");
         contact.setUrlWebsite("https://en.wikipedia.org/wiki/Stark_Industries");
         contact.setBirthplace("New York");
-        contact.setNationality("german");
+        contact.setNationality("US");
         contact.setAddress(address);
         contact.setEmail("testing@secupay.ag");
         contact.setPhone("0049-173-456789");

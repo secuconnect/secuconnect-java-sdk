@@ -73,7 +73,7 @@ public class PaymentCustomersApiTest {
             Contact contact = customer.getContact();
             assertEquals(contact.getBirthplace(), contactDTO.getBirthplace());
             assertEquals(contact.getCompanyname(), contactDTO.getCompanyname());
-            assertEquals(contact.getDob(), contactDTO.getDob() + "T00:00:00+01:00");
+            assertEquals(contact.getDob(), contactDTO.getDob() + "T00:00:00+00:00");
             assertEquals(contact.getEmail(), contactDTO.getEmail());
             assertEquals(contact.getForename(), contactDTO.getForename());
             assertEquals(contact.getGender(), contactDTO.getGender());
