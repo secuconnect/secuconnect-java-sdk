@@ -401,6 +401,92 @@ public class GeneralContractsApi {
     }
 
     /**
+     * Build call for terminate
+     * @param generalContractId Contract identifier (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call terminateCall(String generalContractId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/General/Contracts/{generalContractId}/terminate"
+            .replaceAll("\\{" + "generalContractId" + "\\}", apiClient.escapeString(generalContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call terminateValidateBeforeCall(String generalContractId) throws ApiException {
+        // verify the required parameter 'generalContractId' is set
+        if (generalContractId == null) {
+            throw new ApiException("Missing the required parameter 'generalContractId' when calling terminate(Async)");
+        }
+
+        return terminateCall(generalContractId);
+    }
+
+    /**
+     * POST General/Contracts/{generalContractId}/terminate
+     * Terminates given contract
+     * @param generalContractId Contract identifier (required)
+     * @return ResultBoolean
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ResultBoolean terminate(String generalContractId) throws ApiException {
+        ApiResponse<ResultBoolean> resp = terminateWithHttpInfo(generalContractId);
+        return resp.getData();
+    }
+
+    /**
+     * POST General/Contracts/{generalContractId}/terminate
+     * Terminates given contract
+     * @param generalContractId Contract identifier (required)
+     * @return ApiResponse&lt;ResultBoolean&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ResultBoolean> terminateWithHttpInfo(String generalContractId) throws ApiException {
+        Call call = terminateValidateBeforeCall(generalContractId);
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST General/Contracts/{generalContractId}/terminate (asynchronously)
+     * Terminates given contract
+     * @param generalContractId Contract identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call terminateAsync(String generalContractId, final ApiCallback<ResultBoolean> callback) throws ApiException {
+        Call call = terminateValidateBeforeCall(generalContractId);
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
      * Build call for updateBankAccount
      * @param generalContractId Contract identifier (required)
      * @param body options
