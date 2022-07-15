@@ -13,14 +13,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class PrepaidContractsProductApi {
+public class PrepaidContractsApi {
     private ApiClient apiClient;
 
-    public PrepaidContractsProductApi() {
+    public PrepaidContractsApi() {
         this(Environment.getGlobalEnv().getApiClient());
     }
 
-    public PrepaidContractsProductApi(ApiClient apiClient) {
+    public PrepaidContractsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 

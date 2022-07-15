@@ -8,6 +8,9 @@ import java.util.Objects;
  * Contact
  */
 public class Contact {
+  @SerializedName("name")
+  private String name = null;
+
   @SerializedName("forename")
   private String forename = null;
 
@@ -55,6 +58,23 @@ public class Contact {
 
   @SerializedName("address")
   private Address address = null;
+
+  public Contact name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * First and last name
+   * @return name
+  **/
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 
   public Contact forename(String forename) {
     this.forename = forename;
@@ -337,7 +357,8 @@ public class Contact {
       return false;
     }
     Contact contact = (Contact) o;
-    return Objects.equals(this.forename, contact.forename) &&
+    return Objects.equals(this.name, contact.name) &&
+        Objects.equals(this.forename, contact.forename) &&
         Objects.equals(this.surname, contact.surname) &&
         Objects.equals(this.companyname, contact.companyname) &&
         Objects.equals(this.salutation, contact.salutation) &&
@@ -357,13 +378,14 @@ public class Contact {
 
   @Override
   public int hashCode() {
-    return Objects.hash(forename, surname, companyname, salutation, gender, title, email, phone, mobile, fax, dob, picture, urlWebsite, birthplace, nationality, address);
+    return Objects.hash(name, forename, surname, companyname, salutation, gender, title, email, phone, mobile, fax, dob, picture, urlWebsite, birthplace, nationality, address);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Contact {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    forename: ").append(toIndentedString(forename)).append("\n");
     sb.append("    surname: ").append(toIndentedString(surname)).append("\n");
     sb.append("    companyname: ").append(toIndentedString(companyname)).append("\n");

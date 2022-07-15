@@ -25,6 +25,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - `Api.GeneralContractsApi.terminate()`
 - `Model.PaymentContext` element `accrual`
+- `Model.Contact` element `name`
+- `Model.LoyaltyCustomersDTO` element `consent_for_communication`
+- `Model.MRC_Object`
+- `Model.PCO_Object`
+- `Model.PIG_Object`
+- `Model.PrepaidItemsBaseProductModel`
+- `Model.PrepaidItemsProductModel` element `enabled`
+
+### Changed
+- renamed class `PrepaidContractsProductApi` to `PrepaidContractsApi` to unify the namings
+- renamed class `PrepaidSalesProductApi` to `PrepaidSalesApi` to unify the namings
+- renamed class `ServicesUploadidentsProductApi` to `ServicesUploadidentsApi` to unify the namings
+- `Model.PrepaidItemsProductModel` extends `PrepaidItemsBaseProductModel`
 
 
 ## [3.10.1] - 2022-06-21
