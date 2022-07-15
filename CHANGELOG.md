@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## [3.11.0] - 2022-07-15
-[3.10.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.10.1...3.11.0
+[3.11.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.10.1...3.11.0
 
 ### Added
 - `Api.GeneralContractsApi.terminate()`
