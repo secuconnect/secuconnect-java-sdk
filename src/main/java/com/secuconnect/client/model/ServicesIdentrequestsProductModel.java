@@ -11,6 +11,7 @@ import com.secuconnect.client.model.IdentrequestPerson;
 import com.secuconnect.client.model.IdentrequestRedirectUrls;
 import com.secuconnect.client.model.ProductInstanceUID;
 import com.secuconnect.client.model.UpdatedField;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +52,9 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     public String toString() {
       return String.valueOf(value);
     }
-    public static ProviderEnum fromValue(String input) {
+    public static ProviderEnum fromValue(String text) {
       for (ProviderEnum b : ProviderEnum.values()) {
-        if (b.value.equals(input)) {
+        if (String.valueOf(b.value).equals(text)) {
           return b;
         }
       }
@@ -62,13 +63,13 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     public static class Adapter extends TypeAdapter<ProviderEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final ProviderEnum enumeration) throws IOException {
-        jsonWriter.value(String.valueOf(enumeration.getValue()));
+        jsonWriter.value(enumeration.getValue());
       }
 
       @Override
       public ProviderEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return ProviderEnum.fromValue((String)(value));
+        return ProviderEnum.fromValue(String.valueOf(value));
       }
     }
   }  @SerializedName("provider")
@@ -94,9 +95,9 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     public String toString() {
       return String.valueOf(value);
     }
-    public static TypeEnum fromValue(String input) {
+    public static TypeEnum fromValue(String text) {
       for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(input)) {
+        if (String.valueOf(b.value).equals(text)) {
           return b;
         }
       }
@@ -105,13 +106,13 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     public static class Adapter extends TypeAdapter<TypeEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(String.valueOf(enumeration.getValue()));
+        jsonWriter.value(enumeration.getValue());
       }
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return TypeEnum.fromValue((String)(value));
+        return TypeEnum.fromValue(String.valueOf(value));
       }
     }
   }  @SerializedName("type")

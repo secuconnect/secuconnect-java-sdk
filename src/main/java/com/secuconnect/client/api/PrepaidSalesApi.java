@@ -2,9 +2,9 @@ package com.secuconnect.client.api;
 
 import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
+import com.secuconnect.client.model.PrepaidSalesProductDTO;
+import com.secuconnect.client.model.PrepaidSalesProductModel;
 import com.secuconnect.client.model.ProductExceptionPayload;
-import com.secuconnect.client.model.UploadidentsProductDTO;
-import com.secuconnect.client.model.UploadidentsProductModel;
 import okhttp3.Call;
 
 import java.lang.reflect.Type;
@@ -13,14 +13,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ServicesUploadidentsProductApi {
+public class PrepaidSalesApi {
     private ApiClient apiClient;
 
-    public ServicesUploadidentsProductApi() {
+    public PrepaidSalesApi() {
         this(Environment.getGlobalEnv().getApiClient());
     }
 
-    public ServicesUploadidentsProductApi(ApiClient apiClient) {
+    public PrepaidSalesApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -33,16 +33,16 @@ public class ServicesUploadidentsProductApi {
     }
 
     /**
-     * Build call for addUploadidents
-     * @param body Upload idents input properties
+     * Build call for addSale
+     * @param body Prepaid transaction input properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call addUploadidentsCall(UploadidentsProductDTO body) throws ApiException {
+    public Call addSaleCall(PrepaidSalesProductDTO body) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/Services/Uploadidents";
+        String localVarPath = "/Prepaid/Sales";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -68,47 +68,47 @@ public class ServicesUploadidentsProductApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call addUploadidentsValidateBeforeCall(UploadidentsProductDTO body) throws ApiException {
+    private Call addSaleValidateBeforeCall(PrepaidSalesProductDTO body) throws ApiException {
 
-        return addUploadidentsCall(body);
+        return addSaleCall(body);
     }
 
     /**
-     * POST Services/Uploadidents
-     * Create new upload ident
-     * @param body Upload idents input properties
-     * @return UploadidentsProductModel
+     * POST Prepaid/Sales
+     * Create new prepaid transaction
+     * @param body Prepaid transaction input properties
+     * @return PrepaidSalesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public UploadidentsProductModel addUploadidents(UploadidentsProductDTO body) throws ApiException {
-        ApiResponse<UploadidentsProductModel> resp = addUploadidentsWithHttpInfo(body);
+    public PrepaidSalesProductModel addSale(PrepaidSalesProductDTO body) throws ApiException {
+        ApiResponse<PrepaidSalesProductModel> resp = addSaleWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
-     * POST Services/Uploadidents
-     * Create new upload ident
-     * @param body Upload idents input properties
-     * @return ApiResponse&lt;UploadidentsProductModel&gt;
+     * POST Prepaid/Sales
+     * Create new prepaid transaction
+     * @param body Prepaid transaction input properties
+     * @return ApiResponse&lt;PrepaidSalesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<UploadidentsProductModel> addUploadidentsWithHttpInfo(UploadidentsProductDTO body) throws ApiException {
-        Call call = addUploadidentsValidateBeforeCall(body);
-        Type localVarReturnType = new TypeToken<UploadidentsProductModel>(){}.getType();
+    public ApiResponse<PrepaidSalesProductModel> addSaleWithHttpInfo(PrepaidSalesProductDTO body) throws ApiException {
+        Call call = addSaleValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<PrepaidSalesProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * POST Services/Uploadidents (asynchronously)
-     * Create new upload ident
-     * @param body Upload idents input properties
+     * POST Prepaid/Sales (asynchronously)
+     * Create new prepaid transaction
+     * @param body Prepaid transaction input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call addUploadidentsAsync(UploadidentsProductDTO body, final ApiCallback<UploadidentsProductModel> callback) throws ApiException {
-        Call call = addUploadidentsValidateBeforeCall(body);
-        Type localVarReturnType = new TypeToken<UploadidentsProductModel>(){}.getType();
+    public Call addSaleAsync(PrepaidSalesProductDTO body, final ApiCallback<PrepaidSalesProductModel> callback) throws ApiException {
+        Call call = addSaleValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<PrepaidSalesProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

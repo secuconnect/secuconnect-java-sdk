@@ -19,6 +19,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.11.0] - 2022-07-15
+[3.11.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.10.1...3.11.0
+
+### Added
+- `Api.GeneralContractsApi.terminate()`
+- `Model.PaymentContext` element `accrual`
+- `Model.Contact` element `name`
+- `Model.LoyaltyCustomersDTO` element `consent_for_communication`
+- `Model.MRC_Object`
+- `Model.PCO_Object`
+- `Model.PIG_Object`
+- `Model.PrepaidItemsBaseProductModel`
+- `Model.PrepaidItemsProductModel` element `enabled`
+
+### Changed
+- renamed class `PrepaidContractsProductApi` to `PrepaidContractsApi` to unify the namings
+- renamed class `PrepaidSalesProductApi` to `PrepaidSalesApi` to unify the namings
+- renamed class `ServicesUploadidentsProductApi` to `ServicesUploadidentsApi` to unify the namings
+- `Model.PrepaidItemsProductModel` extends `PrepaidItemsBaseProductModel`
+
+
 ## [3.10.1] - 2022-06-21
 [3.10.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.10.0...3.10.1
 

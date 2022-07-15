@@ -26,6 +26,9 @@ public class LoyaltyCustomersDTO {
   @SerializedName("note")
   private String note = null;
 
+  @SerializedName("consent_for_communication")
+  private String consentForCommunication = null;
+
   @SerializedName("additional_data")
   private Object additionalData = null;
 
@@ -131,13 +134,30 @@ public class LoyaltyCustomersDTO {
     this.note = note;
   }
 
+  public LoyaltyCustomersDTO consentForCommunication(String consentForCommunication) {
+    this.consentForCommunication = consentForCommunication;
+    return this;
+  }
+
+   /**
+   * Consent for communication setting
+   * @return consentForCommunication
+  **/
+  public String getConsentForCommunication() {
+    return consentForCommunication;
+  }
+
+  public void setConsentForCommunication(String consentForCommunication) {
+    this.consentForCommunication = consentForCommunication;
+  }
+
   public LoyaltyCustomersDTO additionalData(Object additionalData) {
     this.additionalData = additionalData;
     return this;
   }
 
    /**
-   * Consent for communication
+   * additional data properties
    * @return additionalData
   **/
   public Object getAdditionalData() {
@@ -163,12 +183,13 @@ public class LoyaltyCustomersDTO {
         Objects.equals(this.daysUntilBirthday, loyaltyCustomersDTO.daysUntilBirthday) &&
         Objects.equals(this.customernumber, loyaltyCustomersDTO.customernumber) &&
         Objects.equals(this.note, loyaltyCustomersDTO.note) &&
+        Objects.equals(this.consentForCommunication, loyaltyCustomersDTO.consentForCommunication) &&
         Objects.equals(this.additionalData, loyaltyCustomersDTO.additionalData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, merchantContact, age, daysUntilBirthday, customernumber, note, additionalData);
+    return Objects.hash(merchant, merchantContact, age, daysUntilBirthday, customernumber, note, consentForCommunication, additionalData);
   }
 
   @Override
@@ -181,6 +202,7 @@ public class LoyaltyCustomersDTO {
     sb.append("    daysUntilBirthday: ").append(toIndentedString(daysUntilBirthday)).append("\n");
     sb.append("    customernumber: ").append(toIndentedString(customernumber)).append("\n");
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
+    sb.append("    consentForCommunication: ").append(toIndentedString(consentForCommunication)).append("\n");
     sb.append("    additionalData: ").append(toIndentedString(additionalData)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -1,26 +1,15 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.ItemGroup;
+import com.secuconnect.client.model.PrepaidItemsBaseProductModel;
+import java.util.List;
 import java.util.Objects;
 
 /**
  * PrepaidItemsProductModel
  */
-public class PrepaidItemsProductModel extends BaseProductModel {
-  @SerializedName("retail_price")
-  private Integer retailPrice = null;
-
-  @SerializedName("currency")
-  private String currency = null;
-
-  @SerializedName("description")
-  private String description = null;
-
-  @SerializedName("logo")
-  private String logo = null;
-
+public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
   @SerializedName("commission")
   private Integer commission = null;
 
@@ -39,76 +28,8 @@ public class PrepaidItemsProductModel extends BaseProductModel {
   @SerializedName("taxable")
   private Boolean taxable = null;
 
-  @SerializedName("type")
-  private String type = null;
-
-  public PrepaidItemsProductModel retailPrice(Integer retailPrice) {
-    this.retailPrice = retailPrice;
-    return this;
-  }
-
-   /**
-   * Retail price
-   * @return retailPrice
-  **/
-  public Integer getRetailPrice() {
-    return retailPrice;
-  }
-
-  public void setRetailPrice(Integer retailPrice) {
-    this.retailPrice = retailPrice;
-  }
-
-  public PrepaidItemsProductModel currency(String currency) {
-    this.currency = currency;
-    return this;
-  }
-
-   /**
-   * Get currency
-   * @return currency
-  **/
-  public String getCurrency() {
-    return currency;
-  }
-
-  public void setCurrency(String currency) {
-    this.currency = currency;
-  }
-
-  public PrepaidItemsProductModel description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Description
-   * @return description
-  **/
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public PrepaidItemsProductModel logo(String logo) {
-    this.logo = logo;
-    return this;
-  }
-
-   /**
-   * Logo
-   * @return logo
-  **/
-  public String getLogo() {
-    return logo;
-  }
-
-  public void setLogo(String logo) {
-    this.logo = logo;
-  }
+  @SerializedName("enabled")
+  private Boolean enabled = null;
 
   public PrepaidItemsProductModel commission(Integer commission) {
     this.commission = commission;
@@ -212,21 +133,21 @@ public class PrepaidItemsProductModel extends BaseProductModel {
     this.taxable = taxable;
   }
 
-  public PrepaidItemsProductModel type(String type) {
-    this.type = type;
+  public PrepaidItemsProductModel enabled(Boolean enabled) {
+    this.enabled = enabled;
     return this;
   }
 
    /**
-   * Type
-   * @return type
+   * enabled
+   * @return enabled
   **/
-  public String getType() {
-    return type;
+  public Boolean getEnabled() {
+    return enabled;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setEnabled(Boolean enabled) {
+    this.enabled = enabled;
   }
 
   @Override
@@ -238,23 +159,19 @@ public class PrepaidItemsProductModel extends BaseProductModel {
       return false;
     }
     PrepaidItemsProductModel prepaidItemsProductModel = (PrepaidItemsProductModel) o;
-    return Objects.equals(this.retailPrice, prepaidItemsProductModel.retailPrice) &&
-        Objects.equals(this.currency, prepaidItemsProductModel.currency) &&
-        Objects.equals(this.description, prepaidItemsProductModel.description) &&
-        Objects.equals(this.logo, prepaidItemsProductModel.logo) &&
-        Objects.equals(this.commission, prepaidItemsProductModel.commission) &&
+    return Objects.equals(this.commission, prepaidItemsProductModel.commission) &&
         Objects.equals(this.vtcId, prepaidItemsProductModel.vtcId) &&
         Objects.equals(this.itemgroup, prepaidItemsProductModel.itemgroup) &&
         Objects.equals(this.stockLimitMax, prepaidItemsProductModel.stockLimitMax) &&
         Objects.equals(this.stockLimitMin, prepaidItemsProductModel.stockLimitMin) &&
         Objects.equals(this.taxable, prepaidItemsProductModel.taxable) &&
-        Objects.equals(this.type, prepaidItemsProductModel.type) &&
+        Objects.equals(this.enabled, prepaidItemsProductModel.enabled) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(retailPrice, currency, description, logo, commission, vtcId, itemgroup, stockLimitMax, stockLimitMin, taxable, type, super.hashCode());
+    return Objects.hash(commission, vtcId, itemgroup, stockLimitMax, stockLimitMin, taxable, enabled, super.hashCode());
   }
 
   @Override
@@ -262,17 +179,13 @@ public class PrepaidItemsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class PrepaidItemsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    retailPrice: ").append(toIndentedString(retailPrice)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    logo: ").append(toIndentedString(logo)).append("\n");
     sb.append("    commission: ").append(toIndentedString(commission)).append("\n");
     sb.append("    vtcId: ").append(toIndentedString(vtcId)).append("\n");
     sb.append("    itemgroup: ").append(toIndentedString(itemgroup)).append("\n");
     sb.append("    stockLimitMax: ").append(toIndentedString(stockLimitMax)).append("\n");
     sb.append("    stockLimitMin: ").append(toIndentedString(stockLimitMin)).append("\n");
     sb.append("    taxable: ").append(toIndentedString(taxable)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
