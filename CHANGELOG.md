@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
-## [3.11.0] - 2022-07-14
+## [3.11.0] - 2022-07-15
 [3.10.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.10.1...3.11.0
 
 ### Added
