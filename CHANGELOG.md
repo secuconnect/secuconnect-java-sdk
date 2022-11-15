@@ -18,6 +18,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+## [3.12.0] - 2022-09-30
+[3.12.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.11.0...3.12.0
+
+### Added
+- `Model.SmartTemplatesElementModel` element `order`
+- `Model.SmartTemplatesComponentModel` element `order`
+- `Model.SmartTemplatesElementModel` element `name`
+- `Model.SmartTemplatesElementModel` element `property`
+- `Model.SmartTemplatesElementModel` element `elements`
+- `Model.PaymentInstructions` element `interest`
+- `Model.PaymentInstructions` element `total_value`
+- `Model.PaymentInstructions` element `number_of_installments`
+- `Model.PaymentInstructions` element `installment`
+- `Model.PaymentInstructions` element `last_installment`
+
+
+### Removed
+- `Model.SmartTemplatesElementModel` element `id`
+- `Model.SmartTemplatesElementModel` element `accordion_elements`
+- `Model.SmartTemplatesElementModel` element `form_elements`
+- `Model.SmartTemplatesComponentModel` element `id`
+- `Model.SmartTemplatesAccordionModel`
+- `Model.SmartTemplatesFormModel`
 
 ## [3.11.0] - 2022-07-15
 [3.11.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.10.1...3.11.0

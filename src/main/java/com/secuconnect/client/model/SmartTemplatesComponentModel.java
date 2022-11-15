@@ -10,8 +10,8 @@ import java.util.Objects;
  * SmartTemplatesComponentModel
  */
 public class SmartTemplatesComponentModel {
-  @SerializedName("id")
-  private Integer id = null;
+  @SerializedName("order")
+  private Integer order = null;
 
   @SerializedName("name")
   private String name = null;
@@ -25,21 +25,21 @@ public class SmartTemplatesComponentModel {
   @SerializedName("elements")
   private List<SmartTemplatesElementModel> elements = null;
 
-  public SmartTemplatesComponentModel id(Integer id) {
-    this.id = id;
+  public SmartTemplatesComponentModel order(Integer order) {
+    this.order = order;
     return this;
   }
 
    /**
-   * Id of component item of the page
-   * @return id
+   * The order in which the pages are getting parsed for matching conditions, the first matching will be taken
+   * @return order
   **/
-  public Integer getId() {
-    return id;
+  public Integer getOrder() {
+    return order;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
+  public void setOrder(Integer order) {
+    this.order = order;
   }
 
   public SmartTemplatesComponentModel name(String name) {
@@ -127,7 +127,7 @@ public class SmartTemplatesComponentModel {
       return false;
     }
     SmartTemplatesComponentModel smartTemplatesComponentModel = (SmartTemplatesComponentModel) o;
-    return Objects.equals(this.id, smartTemplatesComponentModel.id) &&
+    return Objects.equals(this.order, smartTemplatesComponentModel.order) &&
         Objects.equals(this.name, smartTemplatesComponentModel.name) &&
         Objects.equals(this.config, smartTemplatesComponentModel.config) &&
         Objects.equals(this.condition, smartTemplatesComponentModel.condition) &&
@@ -136,14 +136,14 @@ public class SmartTemplatesComponentModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, config, condition, elements);
+    return Objects.hash(order, name, config, condition, elements);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartTemplatesComponentModel {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    condition: ").append(toIndentedString(condition)).append("\n");

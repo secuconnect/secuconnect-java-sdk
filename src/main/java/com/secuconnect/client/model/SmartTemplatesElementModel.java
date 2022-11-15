@@ -1,8 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.secuconnect.client.model.SmartTemplatesAccordionItemModel;
-import com.secuconnect.client.model.SmartTemplatesFormElementModel;
+import com.secuconnect.client.model.SmartTemplatesElementModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,8 +10,8 @@ import java.util.Objects;
  * SmartTemplatesElementModel
  */
 public class SmartTemplatesElementModel {
-  @SerializedName("id")
-  private Integer id = null;
+  @SerializedName("order")
+  private Integer order = null;
 
   @SerializedName("type")
   private String type = null;
@@ -23,27 +22,30 @@ public class SmartTemplatesElementModel {
   @SerializedName("condition")
   private Object condition = null;
 
-  @SerializedName("accordion_elements")
-  private List<SmartTemplatesAccordionItemModel> accordionElements = null;
+  @SerializedName("name")
+  private String name = null;
 
-  @SerializedName("form_elements")
-  private List<SmartTemplatesFormElementModel> formElements = null;
+  @SerializedName("property")
+  private String property = null;
 
-  public SmartTemplatesElementModel id(Integer id) {
-    this.id = id;
+  @SerializedName("elements")
+  private List<SmartTemplatesElementModel> elements = null;
+
+  public SmartTemplatesElementModel order(Integer order) {
+    this.order = order;
     return this;
   }
 
    /**
-   * Id of element item of the component
-   * @return id
+   * The order in which the elements are getting parsed for matching conditions, the first matching will be taken
+   * @return order
   **/
-  public Integer getId() {
-    return id;
+  public Integer getOrder() {
+    return order;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
+  public void setOrder(Integer order) {
+    this.order = order;
   }
 
   public SmartTemplatesElementModel type(String type) {
@@ -97,54 +99,63 @@ public class SmartTemplatesElementModel {
     this.condition = condition;
   }
 
-  public SmartTemplatesElementModel accordionElements(List<SmartTemplatesAccordionItemModel> accordionElements) {
-    this.accordionElements = accordionElements;
-    return this;
-  }
-
-  public SmartTemplatesElementModel addAccordionElementsItem(SmartTemplatesAccordionItemModel accordionElementsItem) {
-    if (this.accordionElements == null) {
-      this.accordionElements = new ArrayList<>();
-    }
-    this.accordionElements.add(accordionElementsItem);
+  public SmartTemplatesElementModel name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * The accordion items to be shown in accordion element
-   * @return accordionElements
+   * Name of the element
+   * @return name
   **/
-  public List<SmartTemplatesAccordionItemModel> getAccordionElements() {
-    return accordionElements;
+  public String getName() {
+    return name;
   }
 
-  public void setAccordionElements(List<SmartTemplatesAccordionItemModel> accordionElements) {
-    this.accordionElements = accordionElements;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public SmartTemplatesElementModel formElements(List<SmartTemplatesFormElementModel> formElements) {
-    this.formElements = formElements;
-    return this;
-  }
-
-  public SmartTemplatesElementModel addFormElementsItem(SmartTemplatesFormElementModel formElementsItem) {
-    if (this.formElements == null) {
-      this.formElements = new ArrayList<>();
-    }
-    this.formElements.add(formElementsItem);
+  public SmartTemplatesElementModel property(String property) {
+    this.property = property;
     return this;
   }
 
    /**
-   * The Form items to be shown in dynamic form element
-   * @return formElements
+   * Special property for &#x27;loop&#x27; elements to configure on which data to loop on
+   * @return property
   **/
-  public List<SmartTemplatesFormElementModel> getFormElements() {
-    return formElements;
+  public String getProperty() {
+    return property;
   }
 
-  public void setFormElements(List<SmartTemplatesFormElementModel> formElements) {
-    this.formElements = formElements;
+  public void setProperty(String property) {
+    this.property = property;
+  }
+
+  public SmartTemplatesElementModel elements(List<SmartTemplatesElementModel> elements) {
+    this.elements = elements;
+    return this;
+  }
+
+  public SmartTemplatesElementModel addElementsItem(SmartTemplatesElementModel elementsItem) {
+    if (this.elements == null) {
+      this.elements = new ArrayList<>();
+    }
+    this.elements.add(elementsItem);
+    return this;
+  }
+
+   /**
+   * The child elements to be shown inside an the current element
+   * @return elements
+  **/
+  public List<SmartTemplatesElementModel> getElements() {
+    return elements;
+  }
+
+  public void setElements(List<SmartTemplatesElementModel> elements) {
+    this.elements = elements;
   }
 
   @Override
@@ -156,29 +167,31 @@ public class SmartTemplatesElementModel {
       return false;
     }
     SmartTemplatesElementModel smartTemplatesElementModel = (SmartTemplatesElementModel) o;
-    return Objects.equals(this.id, smartTemplatesElementModel.id) &&
+    return Objects.equals(this.order, smartTemplatesElementModel.order) &&
         Objects.equals(this.type, smartTemplatesElementModel.type) &&
         Objects.equals(this.config, smartTemplatesElementModel.config) &&
         Objects.equals(this.condition, smartTemplatesElementModel.condition) &&
-        Objects.equals(this.accordionElements, smartTemplatesElementModel.accordionElements) &&
-        Objects.equals(this.formElements, smartTemplatesElementModel.formElements);
+        Objects.equals(this.name, smartTemplatesElementModel.name) &&
+        Objects.equals(this.property, smartTemplatesElementModel.property) &&
+        Objects.equals(this.elements, smartTemplatesElementModel.elements);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, config, condition, accordionElements, formElements);
+    return Objects.hash(order, type, config, condition, name, property, elements);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartTemplatesElementModel {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
-    sb.append("    accordionElements: ").append(toIndentedString(accordionElements)).append("\n");
-    sb.append("    formElements: ").append(toIndentedString(formElements)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    property: ").append(toIndentedString(property)).append("\n");
+    sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("}");
     return sb.toString();
   }
