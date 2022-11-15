@@ -1,8 +1,13 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.SmartDeviceProductsCollect;
+import com.secuconnect.client.model.SmartDeviceProductsEasycredit;
 import com.secuconnect.client.model.SmartDeviceProductsEnabled;
+import com.secuconnect.client.model.SmartDeviceProductsEnabledWithTid;
+import com.secuconnect.client.model.SmartDeviceProductsLoyalty;
 import com.secuconnect.client.model.SmartDeviceProductsPrepaid;
+import com.secuconnect.client.model.SmartDeviceProductsVtm;
 import java.util.Objects;
 
 /**
@@ -10,27 +15,36 @@ import java.util.Objects;
  */
 public class SmartDevicesProducts {
   @SerializedName("loyalty")
-  private SmartDeviceProductsEnabled loyalty = null;
+  private SmartDeviceProductsLoyalty loyalty = null;
 
   @SerializedName("smart")
-  private SmartDeviceProductsEnabled smart = null;
+  private SmartDeviceProductsEnabledWithTid smart = null;
 
   @SerializedName("cashreg")
-  private SmartDeviceProductsEnabled cashreg = null;
+  private SmartDeviceProductsEnabledWithTid cashreg = null;
 
   @SerializedName("collect")
-  private SmartDeviceProductsEnabled collect = null;
-
-  @SerializedName("showcase")
-  private SmartDeviceProductsEnabled showcase = null;
+  private SmartDeviceProductsCollect collect = null;
 
   @SerializedName("vtm")
-  private SmartDeviceProductsEnabled vtm = null;
+  private SmartDeviceProductsVtm vtm = null;
 
   @SerializedName("prepaid")
   private SmartDeviceProductsPrepaid prepaid = null;
 
-  public SmartDevicesProducts loyalty(SmartDeviceProductsEnabled loyalty) {
+  @SerializedName("support")
+  private SmartDeviceProductsEnabled support = null;
+
+  @SerializedName("bonroll")
+  private SmartDeviceProductsEnabledWithTid bonroll = null;
+
+  @SerializedName("bvb")
+  private SmartDeviceProductsEnabled bvb = null;
+
+  @SerializedName("easycredit")
+  private SmartDeviceProductsEasycredit easycredit = null;
+
+  public SmartDevicesProducts loyalty(SmartDeviceProductsLoyalty loyalty) {
     this.loyalty = loyalty;
     return this;
   }
@@ -39,15 +53,15 @@ public class SmartDevicesProducts {
    * Get loyalty
    * @return loyalty
   **/
-  public SmartDeviceProductsEnabled getLoyalty() {
+  public SmartDeviceProductsLoyalty getLoyalty() {
     return loyalty;
   }
 
-  public void setLoyalty(SmartDeviceProductsEnabled loyalty) {
+  public void setLoyalty(SmartDeviceProductsLoyalty loyalty) {
     this.loyalty = loyalty;
   }
 
-  public SmartDevicesProducts smart(SmartDeviceProductsEnabled smart) {
+  public SmartDevicesProducts smart(SmartDeviceProductsEnabledWithTid smart) {
     this.smart = smart;
     return this;
   }
@@ -56,15 +70,15 @@ public class SmartDevicesProducts {
    * Get smart
    * @return smart
   **/
-  public SmartDeviceProductsEnabled getSmart() {
+  public SmartDeviceProductsEnabledWithTid getSmart() {
     return smart;
   }
 
-  public void setSmart(SmartDeviceProductsEnabled smart) {
+  public void setSmart(SmartDeviceProductsEnabledWithTid smart) {
     this.smart = smart;
   }
 
-  public SmartDevicesProducts cashreg(SmartDeviceProductsEnabled cashreg) {
+  public SmartDevicesProducts cashreg(SmartDeviceProductsEnabledWithTid cashreg) {
     this.cashreg = cashreg;
     return this;
   }
@@ -73,15 +87,15 @@ public class SmartDevicesProducts {
    * Get cashreg
    * @return cashreg
   **/
-  public SmartDeviceProductsEnabled getCashreg() {
+  public SmartDeviceProductsEnabledWithTid getCashreg() {
     return cashreg;
   }
 
-  public void setCashreg(SmartDeviceProductsEnabled cashreg) {
+  public void setCashreg(SmartDeviceProductsEnabledWithTid cashreg) {
     this.cashreg = cashreg;
   }
 
-  public SmartDevicesProducts collect(SmartDeviceProductsEnabled collect) {
+  public SmartDevicesProducts collect(SmartDeviceProductsCollect collect) {
     this.collect = collect;
     return this;
   }
@@ -90,32 +104,15 @@ public class SmartDevicesProducts {
    * Get collect
    * @return collect
   **/
-  public SmartDeviceProductsEnabled getCollect() {
+  public SmartDeviceProductsCollect getCollect() {
     return collect;
   }
 
-  public void setCollect(SmartDeviceProductsEnabled collect) {
+  public void setCollect(SmartDeviceProductsCollect collect) {
     this.collect = collect;
   }
 
-  public SmartDevicesProducts showcase(SmartDeviceProductsEnabled showcase) {
-    this.showcase = showcase;
-    return this;
-  }
-
-   /**
-   * Get showcase
-   * @return showcase
-  **/
-  public SmartDeviceProductsEnabled getShowcase() {
-    return showcase;
-  }
-
-  public void setShowcase(SmartDeviceProductsEnabled showcase) {
-    this.showcase = showcase;
-  }
-
-  public SmartDevicesProducts vtm(SmartDeviceProductsEnabled vtm) {
+  public SmartDevicesProducts vtm(SmartDeviceProductsVtm vtm) {
     this.vtm = vtm;
     return this;
   }
@@ -124,11 +121,11 @@ public class SmartDevicesProducts {
    * Get vtm
    * @return vtm
   **/
-  public SmartDeviceProductsEnabled getVtm() {
+  public SmartDeviceProductsVtm getVtm() {
     return vtm;
   }
 
-  public void setVtm(SmartDeviceProductsEnabled vtm) {
+  public void setVtm(SmartDeviceProductsVtm vtm) {
     this.vtm = vtm;
   }
 
@@ -149,6 +146,74 @@ public class SmartDevicesProducts {
     this.prepaid = prepaid;
   }
 
+  public SmartDevicesProducts support(SmartDeviceProductsEnabled support) {
+    this.support = support;
+    return this;
+  }
+
+   /**
+   * Get support
+   * @return support
+  **/
+  public SmartDeviceProductsEnabled getSupport() {
+    return support;
+  }
+
+  public void setSupport(SmartDeviceProductsEnabled support) {
+    this.support = support;
+  }
+
+  public SmartDevicesProducts bonroll(SmartDeviceProductsEnabledWithTid bonroll) {
+    this.bonroll = bonroll;
+    return this;
+  }
+
+   /**
+   * Get bonroll
+   * @return bonroll
+  **/
+  public SmartDeviceProductsEnabledWithTid getBonroll() {
+    return bonroll;
+  }
+
+  public void setBonroll(SmartDeviceProductsEnabledWithTid bonroll) {
+    this.bonroll = bonroll;
+  }
+
+  public SmartDevicesProducts bvb(SmartDeviceProductsEnabled bvb) {
+    this.bvb = bvb;
+    return this;
+  }
+
+   /**
+   * Get bvb
+   * @return bvb
+  **/
+  public SmartDeviceProductsEnabled getBvb() {
+    return bvb;
+  }
+
+  public void setBvb(SmartDeviceProductsEnabled bvb) {
+    this.bvb = bvb;
+  }
+
+  public SmartDevicesProducts easycredit(SmartDeviceProductsEasycredit easycredit) {
+    this.easycredit = easycredit;
+    return this;
+  }
+
+   /**
+   * Get easycredit
+   * @return easycredit
+  **/
+  public SmartDeviceProductsEasycredit getEasycredit() {
+    return easycredit;
+  }
+
+  public void setEasycredit(SmartDeviceProductsEasycredit easycredit) {
+    this.easycredit = easycredit;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -162,14 +227,17 @@ public class SmartDevicesProducts {
         Objects.equals(this.smart, smartDevicesProducts.smart) &&
         Objects.equals(this.cashreg, smartDevicesProducts.cashreg) &&
         Objects.equals(this.collect, smartDevicesProducts.collect) &&
-        Objects.equals(this.showcase, smartDevicesProducts.showcase) &&
         Objects.equals(this.vtm, smartDevicesProducts.vtm) &&
-        Objects.equals(this.prepaid, smartDevicesProducts.prepaid);
+        Objects.equals(this.prepaid, smartDevicesProducts.prepaid) &&
+        Objects.equals(this.support, smartDevicesProducts.support) &&
+        Objects.equals(this.bonroll, smartDevicesProducts.bonroll) &&
+        Objects.equals(this.bvb, smartDevicesProducts.bvb) &&
+        Objects.equals(this.easycredit, smartDevicesProducts.easycredit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(loyalty, smart, cashreg, collect, showcase, vtm, prepaid);
+    return Objects.hash(loyalty, smart, cashreg, collect, vtm, prepaid, support, bonroll, bvb, easycredit);
   }
 
   @Override
@@ -180,9 +248,12 @@ public class SmartDevicesProducts {
     sb.append("    smart: ").append(toIndentedString(smart)).append("\n");
     sb.append("    cashreg: ").append(toIndentedString(cashreg)).append("\n");
     sb.append("    collect: ").append(toIndentedString(collect)).append("\n");
-    sb.append("    showcase: ").append(toIndentedString(showcase)).append("\n");
     sb.append("    vtm: ").append(toIndentedString(vtm)).append("\n");
     sb.append("    prepaid: ").append(toIndentedString(prepaid)).append("\n");
+    sb.append("    support: ").append(toIndentedString(support)).append("\n");
+    sb.append("    bonroll: ").append(toIndentedString(bonroll)).append("\n");
+    sb.append("    bvb: ").append(toIndentedString(bvb)).append("\n");
+    sb.append("    easycredit: ").append(toIndentedString(easycredit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

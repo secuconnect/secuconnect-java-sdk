@@ -39,6 +39,12 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   @SerializedName("parents")
   private List<ParentObj> parents = null;
 
+  @SerializedName("related_transactions")
+  private List<ParentObj> relatedTransactions = null;
+
+  @SerializedName("subscription")
+  private ProductInstanceUID subscription = null;
+
   @SerializedName("product_id")
   private Integer productId = null;
 
@@ -59,6 +65,9 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("currency")
   private String currency = null;
+
+  @SerializedName("completion_date")
+  private String completionDate = null;
 
   @SerializedName("status")
   private Integer status = null;
@@ -96,11 +105,23 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   @SerializedName("reference_id")
   private String referenceId = null;
 
+  @SerializedName("incoming_payment_purpose")
+  private String incomingPaymentPurpose = null;
+
+  @SerializedName("incoming_payment_iban")
+  private String incomingPaymentIban = null;
+
+  @SerializedName("incoming_payment_bic")
+  private String incomingPaymentBic = null;
+
   @SerializedName("account_owner")
   private String accountOwner = null;
 
   @SerializedName("accrual")
   private Boolean accrual = null;
+
+  @SerializedName("order_id")
+  private String orderId = null;
 
   public PaymentTransactionsProductModel created(String created) {
     this.created = created;
@@ -193,7 +214,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Transaction ID in secupay Frontend
+   * Transaction ID
    * @return transId
   **/
   public Integer getTransId() {
@@ -227,6 +248,48 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   public void setParents(List<ParentObj> parents) {
     this.parents = parents;
+  }
+
+  public PaymentTransactionsProductModel relatedTransactions(List<ParentObj> relatedTransactions) {
+    this.relatedTransactions = relatedTransactions;
+    return this;
+  }
+
+  public PaymentTransactionsProductModel addRelatedTransactionsItem(ParentObj relatedTransactionsItem) {
+    if (this.relatedTransactions == null) {
+      this.relatedTransactions = new ArrayList<>();
+    }
+    this.relatedTransactions.add(relatedTransactionsItem);
+    return this;
+  }
+
+   /**
+   * Related transactions
+   * @return relatedTransactions
+  **/
+  public List<ParentObj> getRelatedTransactions() {
+    return relatedTransactions;
+  }
+
+  public void setRelatedTransactions(List<ParentObj> relatedTransactions) {
+    this.relatedTransactions = relatedTransactions;
+  }
+
+  public PaymentTransactionsProductModel subscription(ProductInstanceUID subscription) {
+    this.subscription = subscription;
+    return this;
+  }
+
+   /**
+   * Get subscription
+   * @return subscription
+  **/
+  public ProductInstanceUID getSubscription() {
+    return subscription;
+  }
+
+  public void setSubscription(ProductInstanceUID subscription) {
+    this.subscription = subscription;
   }
 
   public PaymentTransactionsProductModel productId(Integer productId) {
@@ -346,6 +409,23 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   public void setCurrency(String currency) {
     this.currency = currency;
+  }
+
+  public PaymentTransactionsProductModel completionDate(String completionDate) {
+    this.completionDate = completionDate;
+    return this;
+  }
+
+   /**
+   * Get completionDate
+   * @return completionDate
+  **/
+  public String getCompletionDate() {
+    return completionDate;
+  }
+
+  public void setCompletionDate(String completionDate) {
+    this.completionDate = completionDate;
   }
 
   public PaymentTransactionsProductModel status(Integer status) {
@@ -552,6 +632,57 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     this.referenceId = referenceId;
   }
 
+  public PaymentTransactionsProductModel incomingPaymentPurpose(String incomingPaymentPurpose) {
+    this.incomingPaymentPurpose = incomingPaymentPurpose;
+    return this;
+  }
+
+   /**
+   * Purpose from the received payment
+   * @return incomingPaymentPurpose
+  **/
+  public String getIncomingPaymentPurpose() {
+    return incomingPaymentPurpose;
+  }
+
+  public void setIncomingPaymentPurpose(String incomingPaymentPurpose) {
+    this.incomingPaymentPurpose = incomingPaymentPurpose;
+  }
+
+  public PaymentTransactionsProductModel incomingPaymentIban(String incomingPaymentIban) {
+    this.incomingPaymentIban = incomingPaymentIban;
+    return this;
+  }
+
+   /**
+   * IBAN from the received payment
+   * @return incomingPaymentIban
+  **/
+  public String getIncomingPaymentIban() {
+    return incomingPaymentIban;
+  }
+
+  public void setIncomingPaymentIban(String incomingPaymentIban) {
+    this.incomingPaymentIban = incomingPaymentIban;
+  }
+
+  public PaymentTransactionsProductModel incomingPaymentBic(String incomingPaymentBic) {
+    this.incomingPaymentBic = incomingPaymentBic;
+    return this;
+  }
+
+   /**
+   * BIC from the received payment
+   * @return incomingPaymentBic
+  **/
+  public String getIncomingPaymentBic() {
+    return incomingPaymentBic;
+  }
+
+  public void setIncomingPaymentBic(String incomingPaymentBic) {
+    this.incomingPaymentBic = incomingPaymentBic;
+  }
+
   public PaymentTransactionsProductModel accountOwner(String accountOwner) {
     this.accountOwner = accountOwner;
     return this;
@@ -586,6 +717,23 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     this.accrual = accrual;
   }
 
+  public PaymentTransactionsProductModel orderId(String orderId) {
+    this.orderId = orderId;
+    return this;
+  }
+
+   /**
+   * Order ID
+   * @return orderId
+  **/
+  public String getOrderId() {
+    return orderId;
+  }
+
+  public void setOrderId(String orderId) {
+    this.orderId = orderId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -602,6 +750,8 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.store, paymentTransactionsProductModel.store) &&
         Objects.equals(this.transId, paymentTransactionsProductModel.transId) &&
         Objects.equals(this.parents, paymentTransactionsProductModel.parents) &&
+        Objects.equals(this.relatedTransactions, paymentTransactionsProductModel.relatedTransactions) &&
+        Objects.equals(this.subscription, paymentTransactionsProductModel.subscription) &&
         Objects.equals(this.productId, paymentTransactionsProductModel.productId) &&
         Objects.equals(this.product, paymentTransactionsProductModel.product) &&
         Objects.equals(this.productRaw, paymentTransactionsProductModel.productRaw) &&
@@ -609,6 +759,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.contractId, paymentTransactionsProductModel.contractId) &&
         Objects.equals(this.amount, paymentTransactionsProductModel.amount) &&
         Objects.equals(this.currency, paymentTransactionsProductModel.currency) &&
+        Objects.equals(this.completionDate, paymentTransactionsProductModel.completionDate) &&
         Objects.equals(this.status, paymentTransactionsProductModel.status) &&
         Objects.equals(this.statusText, paymentTransactionsProductModel.statusText) &&
         Objects.equals(this.incomingPaymentDate, paymentTransactionsProductModel.incomingPaymentDate) &&
@@ -621,14 +772,18 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.invoiceNumber, paymentTransactionsProductModel.invoiceNumber) &&
         Objects.equals(this.transactionHash, paymentTransactionsProductModel.transactionHash) &&
         Objects.equals(this.referenceId, paymentTransactionsProductModel.referenceId) &&
+        Objects.equals(this.incomingPaymentPurpose, paymentTransactionsProductModel.incomingPaymentPurpose) &&
+        Objects.equals(this.incomingPaymentIban, paymentTransactionsProductModel.incomingPaymentIban) &&
+        Objects.equals(this.incomingPaymentBic, paymentTransactionsProductModel.incomingPaymentBic) &&
         Objects.equals(this.accountOwner, paymentTransactionsProductModel.accountOwner) &&
         Objects.equals(this.accrual, paymentTransactionsProductModel.accrual) &&
+        Objects.equals(this.orderId, paymentTransactionsProductModel.orderId) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, platform, merchant, store, transId, parents, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, accountOwner, accrual, super.hashCode());
+    return Objects.hash(created, updated, platform, merchant, store, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, super.hashCode());
   }
 
   @Override
@@ -643,6 +798,8 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    parents: ").append(toIndentedString(parents)).append("\n");
+    sb.append("    relatedTransactions: ").append(toIndentedString(relatedTransactions)).append("\n");
+    sb.append("    subscription: ").append(toIndentedString(subscription)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    productRaw: ").append(toIndentedString(productRaw)).append("\n");
@@ -650,6 +807,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    completionDate: ").append(toIndentedString(completionDate)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    statusText: ").append(toIndentedString(statusText)).append("\n");
     sb.append("    incomingPaymentDate: ").append(toIndentedString(incomingPaymentDate)).append("\n");
@@ -662,8 +820,12 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
     sb.append("    transactionHash: ").append(toIndentedString(transactionHash)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    sb.append("    incomingPaymentPurpose: ").append(toIndentedString(incomingPaymentPurpose)).append("\n");
+    sb.append("    incomingPaymentIban: ").append(toIndentedString(incomingPaymentIban)).append("\n");
+    sb.append("    incomingPaymentBic: ").append(toIndentedString(incomingPaymentBic)).append("\n");
     sb.append("    accountOwner: ").append(toIndentedString(accountOwner)).append("\n");
     sb.append("    accrual: ").append(toIndentedString(accrual)).append("\n");
+    sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

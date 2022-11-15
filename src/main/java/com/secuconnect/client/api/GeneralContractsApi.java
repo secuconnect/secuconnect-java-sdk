@@ -233,6 +233,105 @@ public class GeneralContractsApi {
     }
 
     /**
+     * Build call for getAvailablePaymentMethodsForTransaction
+     * @param generalContractId Contract identifier (required)
+     * @param smartTransactionId Smart Transaction identifier (required)
+     * @param body options
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getAvailablePaymentMethodsForTransactionCall(String generalContractId, String smartTransactionId, GetAvailablePaymentMethodsDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/General/Contracts/{generalContractId}/getAvailablePaymentMethods/{smartTransactionId}"
+            .replaceAll("\\{" + "generalContractId" + "\\}", apiClient.escapeString(generalContractId.toString()))
+            .replaceAll("\\{" + "smartTransactionId" + "\\}", apiClient.escapeString(smartTransactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getAvailablePaymentMethodsForTransactionValidateBeforeCall(String generalContractId, String smartTransactionId, GetAvailablePaymentMethodsDTO body) throws ApiException {
+        // verify the required parameter 'generalContractId' is set
+        if (generalContractId == null) {
+            throw new ApiException("Missing the required parameter 'generalContractId' when calling getAvailablePaymentMethodsForTransaction(Async)");
+        }
+        // verify the required parameter 'smartTransactionId' is set
+        if (smartTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling getAvailablePaymentMethodsForTransaction(Async)");
+        }
+
+        return getAvailablePaymentMethodsForTransactionCall(generalContractId, smartTransactionId, body);
+    }
+
+    /**
+     * POST General/Contracts/{generalContractId}/getAvailablePaymentMethods/{smartTransactionId}
+     * Get available payment methods for given contract
+     * @param generalContractId Contract identifier (required)
+     * @param smartTransactionId Smart Transaction identifier (required)
+     * @param body options
+     * @return List&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<String> getAvailablePaymentMethodsForTransaction(String generalContractId, String smartTransactionId, GetAvailablePaymentMethodsDTO body) throws ApiException {
+        ApiResponse<List<String>> resp = getAvailablePaymentMethodsForTransactionWithHttpInfo(generalContractId, smartTransactionId, body);
+        return resp.getData();
+    }
+
+    /**
+     * POST General/Contracts/{generalContractId}/getAvailablePaymentMethods/{smartTransactionId}
+     * Get available payment methods for given contract
+     * @param generalContractId Contract identifier (required)
+     * @param smartTransactionId Smart Transaction identifier (required)
+     * @param body options
+     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<String>> getAvailablePaymentMethodsForTransactionWithHttpInfo(String generalContractId, String smartTransactionId, GetAvailablePaymentMethodsDTO body) throws ApiException {
+        Call call = getAvailablePaymentMethodsForTransactionValidateBeforeCall(generalContractId, smartTransactionId, body);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST General/Contracts/{generalContractId}/getAvailablePaymentMethods/{smartTransactionId} (asynchronously)
+     * Get available payment methods for given contract
+     * @param generalContractId Contract identifier (required)
+     * @param smartTransactionId Smart Transaction identifier (required)
+     * @param body options
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getAvailablePaymentMethodsForTransactionAsync(String generalContractId, String smartTransactionId, GetAvailablePaymentMethodsDTO body, final ApiCallback<List<String>> callback) throws ApiException {
+        Call call = getAvailablePaymentMethodsForTransactionValidateBeforeCall(generalContractId, smartTransactionId, body);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
      * Build call for getOne
      * @param generalContractId General contract id (required)
      * @return Call to execute

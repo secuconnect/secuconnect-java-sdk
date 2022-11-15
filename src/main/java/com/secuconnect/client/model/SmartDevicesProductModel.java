@@ -7,6 +7,7 @@ import com.secuconnect.client.model.ProductInstanceUID;
 import com.secuconnect.client.model.SmartDevicesDevice;
 import com.secuconnect.client.model.SmartDevicesProducts;
 import com.secuconnect.client.model.Store;
+import com.secuconnect.client.model.UpdatedField;
 import java.util.Objects;
 
 /**
@@ -15,6 +16,9 @@ import java.util.Objects;
 public class SmartDevicesProductModel extends BaseProductModel {
   @SerializedName("created")
   private String created = null;
+
+  @SerializedName("updated")
+  private String updated = null;
 
   @SerializedName("merchant")
   private ProductInstanceUID merchant = null;
@@ -64,6 +68,9 @@ public class SmartDevicesProductModel extends BaseProductModel {
   @SerializedName("refresh")
   private Integer refresh = null;
 
+  @SerializedName("connection_type")
+  private String connectionType = null;
+
   @SerializedName("terminal_type")
   private String terminalType = null;
 
@@ -85,6 +92,23 @@ public class SmartDevicesProductModel extends BaseProductModel {
 
   public void setCreated(String created) {
     this.created = created;
+  }
+
+  public SmartDevicesProductModel updated(String updated) {
+    this.updated = updated;
+    return this;
+  }
+
+   /**
+   * Get updated
+   * @return updated
+  **/
+  public String getUpdated() {
+    return updated;
+  }
+
+  public void setUpdated(String updated) {
+    this.updated = updated;
   }
 
   public SmartDevicesProductModel merchant(ProductInstanceUID merchant) {
@@ -359,6 +383,23 @@ public class SmartDevicesProductModel extends BaseProductModel {
     this.refresh = refresh;
   }
 
+  public SmartDevicesProductModel connectionType(String connectionType) {
+    this.connectionType = connectionType;
+    return this;
+  }
+
+   /**
+   * Connection type
+   * @return connectionType
+  **/
+  public String getConnectionType() {
+    return connectionType;
+  }
+
+  public void setConnectionType(String connectionType) {
+    this.connectionType = connectionType;
+  }
+
   public SmartDevicesProductModel terminalType(String terminalType) {
     this.terminalType = terminalType;
     return this;
@@ -403,6 +444,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
     }
     SmartDevicesProductModel smartDevicesProductModel = (SmartDevicesProductModel) o;
     return Objects.equals(this.created, smartDevicesProductModel.created) &&
+        Objects.equals(this.updated, smartDevicesProductModel.updated) &&
         Objects.equals(this.merchant, smartDevicesProductModel.merchant) &&
         Objects.equals(this.store, smartDevicesProductModel.store) &&
         Objects.equals(this.contract, smartDevicesProductModel.contract) &&
@@ -419,6 +461,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
         Objects.equals(this.idleScreenTerminal, smartDevicesProductModel.idleScreenTerminal) &&
         Objects.equals(this.online, smartDevicesProductModel.online) &&
         Objects.equals(this.refresh, smartDevicesProductModel.refresh) &&
+        Objects.equals(this.connectionType, smartDevicesProductModel.connectionType) &&
         Objects.equals(this.terminalType, smartDevicesProductModel.terminalType) &&
         Objects.equals(this.baseVersion, smartDevicesProductModel.baseVersion) &&
         super.equals(o);
@@ -426,7 +469,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, merchant, store, contract, vendor, vendorUid, type, device, routing, userPin, products, description, tid, idleScreenRegister, idleScreenTerminal, online, refresh, terminalType, baseVersion, super.hashCode());
+    return Objects.hash(created, updated, merchant, store, contract, vendor, vendorUid, type, device, routing, userPin, products, description, tid, idleScreenRegister, idleScreenTerminal, online, refresh, connectionType, terminalType, baseVersion, super.hashCode());
   }
 
   @Override
@@ -435,6 +478,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
     sb.append("class SmartDevicesProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
@@ -451,6 +495,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
     sb.append("    idleScreenTerminal: ").append(toIndentedString(idleScreenTerminal)).append("\n");
     sb.append("    online: ").append(toIndentedString(online)).append("\n");
     sb.append("    refresh: ").append(toIndentedString(refresh)).append("\n");
+    sb.append("    connectionType: ").append(toIndentedString(connectionType)).append("\n");
     sb.append("    terminalType: ").append(toIndentedString(terminalType)).append("\n");
     sb.append("    baseVersion: ").append(toIndentedString(baseVersion)).append("\n");
     sb.append("}");

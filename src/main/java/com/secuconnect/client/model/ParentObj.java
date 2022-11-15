@@ -19,8 +19,11 @@ public class ParentObj {
   @SerializedName("ref_type_id")
   private Integer refTypeId = null;
 
-  @SerializedName("relation_type")
-  private String relationType = null;
+  @SerializedName("ref_type_raw")
+  private String refTypeRaw = null;
+
+  @SerializedName("hierarchy")
+  private String hierarchy = null;
 
   public ParentObj object(String object) {
     this.object = object;
@@ -90,21 +93,38 @@ public class ParentObj {
     this.refTypeId = refTypeId;
   }
 
-  public ParentObj relationType(String relationType) {
-    this.relationType = relationType;
+  public ParentObj refTypeRaw(String refTypeRaw) {
+    this.refTypeRaw = refTypeRaw;
     return this;
   }
 
    /**
-   * Relation type
-   * @return relationType
+   * Ref type name (DE)
+   * @return refTypeRaw
   **/
-  public String getRelationType() {
-    return relationType;
+  public String getRefTypeRaw() {
+    return refTypeRaw;
   }
 
-  public void setRelationType(String relationType) {
-    this.relationType = relationType;
+  public void setRefTypeRaw(String refTypeRaw) {
+    this.refTypeRaw = refTypeRaw;
+  }
+
+  public ParentObj hierarchy(String hierarchy) {
+    this.hierarchy = hierarchy;
+    return this;
+  }
+
+   /**
+   * Relation direction type (&#x27;child&#x27; or &#x27;parent&#x27;)
+   * @return hierarchy
+  **/
+  public String getHierarchy() {
+    return hierarchy;
+  }
+
+  public void setHierarchy(String hierarchy) {
+    this.hierarchy = hierarchy;
   }
 
   @Override
@@ -120,12 +140,13 @@ public class ParentObj {
         Objects.equals(this.id, parentObj.id) &&
         Objects.equals(this.transId, parentObj.transId) &&
         Objects.equals(this.refTypeId, parentObj.refTypeId) &&
-        Objects.equals(this.relationType, parentObj.relationType);
+        Objects.equals(this.refTypeRaw, parentObj.refTypeRaw) &&
+        Objects.equals(this.hierarchy, parentObj.hierarchy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, transId, refTypeId, relationType);
+    return Objects.hash(object, id, transId, refTypeId, refTypeRaw, hierarchy);
   }
 
   @Override
@@ -136,7 +157,8 @@ public class ParentObj {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    refTypeId: ").append(toIndentedString(refTypeId)).append("\n");
-    sb.append("    relationType: ").append(toIndentedString(relationType)).append("\n");
+    sb.append("    refTypeRaw: ").append(toIndentedString(refTypeRaw)).append("\n");
+    sb.append("    hierarchy: ").append(toIndentedString(hierarchy)).append("\n");
     sb.append("}");
     return sb.toString();
   }
