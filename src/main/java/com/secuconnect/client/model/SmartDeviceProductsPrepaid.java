@@ -1,57 +1,29 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.SmartDeviceProductsEnabledWithTid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
  * SmartDeviceProductsPrepaid
  */
-public class SmartDeviceProductsPrepaid {
-  @SerializedName("enabled")
-  private Boolean enabled = null;
-
-  @SerializedName("simulate_force")
-  private Boolean simulateForce = null;
-
+public class SmartDeviceProductsPrepaid extends SmartDeviceProductsEnabledWithTid {
   @SerializedName("demo_force")
   private Boolean demoForce = null;
 
   @SerializedName("vtc_tid")
   private String vtcTid = null;
 
-  public SmartDeviceProductsPrepaid enabled(Boolean enabled) {
-    this.enabled = enabled;
-    return this;
-  }
+  @SerializedName("endofday")
+  private Boolean endofday = null;
 
-   /**
-   * Enabled
-   * @return enabled
-  **/
-  public Boolean getEnabled() {
-    return enabled;
-  }
+  @SerializedName("password")
+  private List<String> password = null;
 
-  public void setEnabled(Boolean enabled) {
-    this.enabled = enabled;
-  }
-
-  public SmartDeviceProductsPrepaid simulateForce(Boolean simulateForce) {
-    this.simulateForce = simulateForce;
-    return this;
-  }
-
-   /**
-   * Simulate force
-   * @return simulateForce
-  **/
-  public Boolean getSimulateForce() {
-    return simulateForce;
-  }
-
-  public void setSimulateForce(Boolean simulateForce) {
-    this.simulateForce = simulateForce;
-  }
+  @SerializedName("simulate")
+  private Boolean simulate = null;
 
   public SmartDeviceProductsPrepaid demoForce(Boolean demoForce) {
     this.demoForce = demoForce;
@@ -87,6 +59,65 @@ public class SmartDeviceProductsPrepaid {
     this.vtcTid = vtcTid;
   }
 
+  public SmartDeviceProductsPrepaid endofday(Boolean endofday) {
+    this.endofday = endofday;
+    return this;
+  }
+
+   /**
+   * EndOfDay
+   * @return endofday
+  **/
+  public Boolean getEndofday() {
+    return endofday;
+  }
+
+  public void setEndofday(Boolean endofday) {
+    this.endofday = endofday;
+  }
+
+  public SmartDeviceProductsPrepaid password(List<String> password) {
+    this.password = password;
+    return this;
+  }
+
+  public SmartDeviceProductsPrepaid addPasswordItem(String passwordItem) {
+    if (this.password == null) {
+      this.password = new ArrayList<>();
+    }
+    this.password.add(passwordItem);
+    return this;
+  }
+
+   /**
+   * List of passwords which are allowed to run the terminal app
+   * @return password
+  **/
+  public List<String> getPassword() {
+    return password;
+  }
+
+  public void setPassword(List<String> password) {
+    this.password = password;
+  }
+
+  public SmartDeviceProductsPrepaid simulate(Boolean simulate) {
+    this.simulate = simulate;
+    return this;
+  }
+
+   /**
+   * Simulate
+   * @return simulate
+  **/
+  public Boolean getSimulate() {
+    return simulate;
+  }
+
+  public void setSimulate(Boolean simulate) {
+    this.simulate = simulate;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -96,25 +127,29 @@ public class SmartDeviceProductsPrepaid {
       return false;
     }
     SmartDeviceProductsPrepaid smartDeviceProductsPrepaid = (SmartDeviceProductsPrepaid) o;
-    return Objects.equals(this.enabled, smartDeviceProductsPrepaid.enabled) &&
-        Objects.equals(this.simulateForce, smartDeviceProductsPrepaid.simulateForce) &&
-        Objects.equals(this.demoForce, smartDeviceProductsPrepaid.demoForce) &&
-        Objects.equals(this.vtcTid, smartDeviceProductsPrepaid.vtcTid);
+    return Objects.equals(this.demoForce, smartDeviceProductsPrepaid.demoForce) &&
+        Objects.equals(this.vtcTid, smartDeviceProductsPrepaid.vtcTid) &&
+        Objects.equals(this.endofday, smartDeviceProductsPrepaid.endofday) &&
+        Objects.equals(this.password, smartDeviceProductsPrepaid.password) &&
+        Objects.equals(this.simulate, smartDeviceProductsPrepaid.simulate) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, simulateForce, demoForce, vtcTid);
+    return Objects.hash(demoForce, vtcTid, endofday, password, simulate, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartDeviceProductsPrepaid {\n");
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    simulateForce: ").append(toIndentedString(simulateForce)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    demoForce: ").append(toIndentedString(demoForce)).append("\n");
     sb.append("    vtcTid: ").append(toIndentedString(vtcTid)).append("\n");
+    sb.append("    endofday: ").append(toIndentedString(endofday)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    simulate: ").append(toIndentedString(simulate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

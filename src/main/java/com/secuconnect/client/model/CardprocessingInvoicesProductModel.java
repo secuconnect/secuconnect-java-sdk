@@ -1,0 +1,337 @@
+package com.secuconnect.client.model;
+
+import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.BaseProductModel;
+import com.secuconnect.client.model.CreatedField;
+import com.secuconnect.client.model.GeneralMerchantsProductModel;
+import com.secuconnect.client.model.GeneralStoresProductModel;
+import com.secuconnect.client.model.UpdatedField;
+import java.util.Objects;
+
+/**
+ * CardprocessingInvoicesProductModel
+ */
+public class CardprocessingInvoicesProductModel extends BaseProductModel {
+  @SerializedName("created")
+  private String created = null;
+
+  @SerializedName("updated")
+  private String updated = null;
+
+  @SerializedName("merchant")
+  private GeneralMerchantsProductModel merchant = null;
+
+  @SerializedName("store")
+  private GeneralStoresProductModel store = null;
+
+  @SerializedName("store_name")
+  private String storeName = null;
+
+  @SerializedName("id_old")
+  private Integer idOld = null;
+
+  @SerializedName("tid")
+  private String tid = null;
+
+  @SerializedName("invoice_number")
+  private String invoiceNumber = null;
+
+  @SerializedName("net_amount")
+  private Integer netAmount = null;
+
+  @SerializedName("tax_amount")
+  private Integer taxAmount = null;
+
+  @SerializedName("amount")
+  private Integer amount = null;
+
+  @SerializedName("document_url")
+  private String documentUrl = null;
+
+  @SerializedName("type")
+  private String type = null;
+
+  public CardprocessingInvoicesProductModel created(String created) {
+    this.created = created;
+    return this;
+  }
+
+   /**
+   * Get created
+   * @return created
+  **/
+  public String getCreated() {
+    return created;
+  }
+
+  public void setCreated(String created) {
+    this.created = created;
+  }
+
+  public CardprocessingInvoicesProductModel updated(String updated) {
+    this.updated = updated;
+    return this;
+  }
+
+   /**
+   * Get updated
+   * @return updated
+  **/
+  public String getUpdated() {
+    return updated;
+  }
+
+  public void setUpdated(String updated) {
+    this.updated = updated;
+  }
+
+  public CardprocessingInvoicesProductModel merchant(GeneralMerchantsProductModel merchant) {
+    this.merchant = merchant;
+    return this;
+  }
+
+   /**
+   * Get merchant
+   * @return merchant
+  **/
+  public GeneralMerchantsProductModel getMerchant() {
+    return merchant;
+  }
+
+  public void setMerchant(GeneralMerchantsProductModel merchant) {
+    this.merchant = merchant;
+  }
+
+  public CardprocessingInvoicesProductModel store(GeneralStoresProductModel store) {
+    this.store = store;
+    return this;
+  }
+
+   /**
+   * Get store
+   * @return store
+  **/
+  public GeneralStoresProductModel getStore() {
+    return store;
+  }
+
+  public void setStore(GeneralStoresProductModel store) {
+    this.store = store;
+  }
+
+  public CardprocessingInvoicesProductModel storeName(String storeName) {
+    this.storeName = storeName;
+    return this;
+  }
+
+   /**
+   * Store name
+   * @return storeName
+  **/
+  public String getStoreName() {
+    return storeName;
+  }
+
+  public void setStoreName(String storeName) {
+    this.storeName = storeName;
+  }
+
+  public CardprocessingInvoicesProductModel idOld(Integer idOld) {
+    this.idOld = idOld;
+    return this;
+  }
+
+   /**
+   * Invoice ID
+   * @return idOld
+  **/
+  public Integer getIdOld() {
+    return idOld;
+  }
+
+  public void setIdOld(Integer idOld) {
+    this.idOld = idOld;
+  }
+
+  public CardprocessingInvoicesProductModel tid(String tid) {
+    this.tid = tid;
+    return this;
+  }
+
+   /**
+   * TID
+   * @return tid
+  **/
+  public String getTid() {
+    return tid;
+  }
+
+  public void setTid(String tid) {
+    this.tid = tid;
+  }
+
+  public CardprocessingInvoicesProductModel invoiceNumber(String invoiceNumber) {
+    this.invoiceNumber = invoiceNumber;
+    return this;
+  }
+
+   /**
+   * Invoice Number
+   * @return invoiceNumber
+  **/
+  public String getInvoiceNumber() {
+    return invoiceNumber;
+  }
+
+  public void setInvoiceNumber(String invoiceNumber) {
+    this.invoiceNumber = invoiceNumber;
+  }
+
+  public CardprocessingInvoicesProductModel netAmount(Integer netAmount) {
+    this.netAmount = netAmount;
+    return this;
+  }
+
+   /**
+   * Get netAmount
+   * @return netAmount
+  **/
+  public Integer getNetAmount() {
+    return netAmount;
+  }
+
+  public void setNetAmount(Integer netAmount) {
+    this.netAmount = netAmount;
+  }
+
+  public CardprocessingInvoicesProductModel taxAmount(Integer taxAmount) {
+    this.taxAmount = taxAmount;
+    return this;
+  }
+
+   /**
+   * Get taxAmount
+   * @return taxAmount
+  **/
+  public Integer getTaxAmount() {
+    return taxAmount;
+  }
+
+  public void setTaxAmount(Integer taxAmount) {
+    this.taxAmount = taxAmount;
+  }
+
+  public CardprocessingInvoicesProductModel amount(Integer amount) {
+    this.amount = amount;
+    return this;
+  }
+
+   /**
+   * Get amount
+   * @return amount
+  **/
+  public Integer getAmount() {
+    return amount;
+  }
+
+  public void setAmount(Integer amount) {
+    this.amount = amount;
+  }
+
+  public CardprocessingInvoicesProductModel documentUrl(String documentUrl) {
+    this.documentUrl = documentUrl;
+    return this;
+  }
+
+   /**
+   * The url of the invoice document (PDF)
+   * @return documentUrl
+  **/
+  public String getDocumentUrl() {
+    return documentUrl;
+  }
+
+  public void setDocumentUrl(String documentUrl) {
+    this.documentUrl = documentUrl;
+  }
+
+  public CardprocessingInvoicesProductModel type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Type
+   * @return type
+  **/
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    CardprocessingInvoicesProductModel cardprocessingInvoicesProductModel = (CardprocessingInvoicesProductModel) o;
+    return Objects.equals(this.created, cardprocessingInvoicesProductModel.created) &&
+        Objects.equals(this.updated, cardprocessingInvoicesProductModel.updated) &&
+        Objects.equals(this.merchant, cardprocessingInvoicesProductModel.merchant) &&
+        Objects.equals(this.store, cardprocessingInvoicesProductModel.store) &&
+        Objects.equals(this.storeName, cardprocessingInvoicesProductModel.storeName) &&
+        Objects.equals(this.idOld, cardprocessingInvoicesProductModel.idOld) &&
+        Objects.equals(this.tid, cardprocessingInvoicesProductModel.tid) &&
+        Objects.equals(this.invoiceNumber, cardprocessingInvoicesProductModel.invoiceNumber) &&
+        Objects.equals(this.netAmount, cardprocessingInvoicesProductModel.netAmount) &&
+        Objects.equals(this.taxAmount, cardprocessingInvoicesProductModel.taxAmount) &&
+        Objects.equals(this.amount, cardprocessingInvoicesProductModel.amount) &&
+        Objects.equals(this.documentUrl, cardprocessingInvoicesProductModel.documentUrl) &&
+        Objects.equals(this.type, cardprocessingInvoicesProductModel.type) &&
+        super.equals(o);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(created, updated, merchant, store, storeName, idOld, tid, invoiceNumber, netAmount, taxAmount, amount, documentUrl, type, super.hashCode());
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CardprocessingInvoicesProductModel {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+    sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
+    sb.append("    store: ").append(toIndentedString(store)).append("\n");
+    sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
+    sb.append("    idOld: ").append(toIndentedString(idOld)).append("\n");
+    sb.append("    tid: ").append(toIndentedString(tid)).append("\n");
+    sb.append("    invoiceNumber: ").append(toIndentedString(invoiceNumber)).append("\n");
+    sb.append("    netAmount: ").append(toIndentedString(netAmount)).append("\n");
+    sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    documentUrl: ").append(toIndentedString(documentUrl)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

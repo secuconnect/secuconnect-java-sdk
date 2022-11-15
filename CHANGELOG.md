@@ -18,6 +18,48 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+## [3.13.0] - 2022-11-15
+[3.13.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.12.0...3.13.0
+
+### Added
+- `Api.CardprocessingInvoicesApi`
+- `Api.CardprocessingTransactionsApi`
+- `Api.PaymentInvoicesApi`
+- `Api.PaymentPayoutsApi`
+- `Model.ACC_Object`
+- `Model.CardprocessingInvoicesList`
+- `Model.CardprocessingInvoicesProductModel`
+- `Model.CardprocessingTransactionsList`
+- `Model.CardprocessingTransactionsProductModel`
+- `Model.DocumentLink`
+- `Model.PaymentInvoicesList`
+- `Model.PaymentInvoicesProductModel`
+- `Model.PaymentPayoutsList`
+- `Model.PaymentPayoutsProductModel`
+- `Model.SmartDeviceProductsCollect`
+- `Model.SmartDeviceProductsEasycredit`
+- `Model.SmartDeviceProductsEnabledWithTid`
+- `Model.SmartDeviceProductsLoyalty`
+- `Model.SmartDeviceProductsVtm`
+- `Model.SmartDeviceProductsWebterminalConfig`
+- `Model.SmartDeviceProductsWebterminalConfigAllowedActions`
+
+### Changed
+- `Api.GeneralContractsApi`
+- `Model.IdentificationProcess`
+- `Model.ParentObj`
+- `Model.PaymentTransactionsProductModel`
+- `Model.SecupayPayoutProductModel`
+- `Model.ServicesIdentrequestsProductDTO`
+- `Model.ServicesIdentrequestsProductModel`
+- `Model.SmartDeviceProductsPrepaid`
+- `Model.SmartDevicesProductModel`
+- `Model.SmartDevicesProducts`
+
+### Removed
+- .swagger-codegen/VERSION
+
+
 ## [3.12.0] - 2022-09-30
 [3.12.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.11.0...3.12.0
 

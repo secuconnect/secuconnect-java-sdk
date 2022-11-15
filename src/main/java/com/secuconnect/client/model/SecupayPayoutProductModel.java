@@ -15,6 +15,9 @@ public class SecupayPayoutProductModel extends BaseProductModel {
   @SerializedName("trans_id")
   private Integer transId = null;
 
+  @SerializedName("payment_id")
+  private String paymentId = null;
+
   @SerializedName("status")
   private String status = null;
 
@@ -57,6 +60,23 @@ public class SecupayPayoutProductModel extends BaseProductModel {
 
   public void setTransId(Integer transId) {
     this.transId = transId;
+  }
+
+  public SecupayPayoutProductModel paymentId(String paymentId) {
+    this.paymentId = paymentId;
+    return this;
+  }
+
+   /**
+   * Payment ID
+   * @return paymentId
+  **/
+  public String getPaymentId() {
+    return paymentId;
+  }
+
+  public void setPaymentId(String paymentId) {
+    this.paymentId = paymentId;
   }
 
   public SecupayPayoutProductModel status(String status) {
@@ -230,6 +250,7 @@ public class SecupayPayoutProductModel extends BaseProductModel {
     }
     SecupayPayoutProductModel secupayPayoutProductModel = (SecupayPayoutProductModel) o;
     return Objects.equals(this.transId, secupayPayoutProductModel.transId) &&
+        Objects.equals(this.paymentId, secupayPayoutProductModel.paymentId) &&
         Objects.equals(this.status, secupayPayoutProductModel.status) &&
         Objects.equals(this.amount, secupayPayoutProductModel.amount) &&
         Objects.equals(this.currency, secupayPayoutProductModel.currency) &&
@@ -244,7 +265,7 @@ public class SecupayPayoutProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(transId, status, amount, currency, purpose, orderId, transactionStatus, transactionList, transferPurpose, transferAccount, super.hashCode());
+    return Objects.hash(transId, paymentId, status, amount, currency, purpose, orderId, transactionStatus, transactionList, transferPurpose, transferAccount, super.hashCode());
   }
 
   @Override
@@ -253,6 +274,7 @@ public class SecupayPayoutProductModel extends BaseProductModel {
     sb.append("class SecupayPayoutProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
+    sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");

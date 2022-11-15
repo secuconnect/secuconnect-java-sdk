@@ -10,8 +10,8 @@ public class IdentificationProcess {
   @SerializedName("status")
   private String status = null;
 
-  @SerializedName("identificatontime")
-  private String identificatontime = null;
+  @SerializedName("identificationtime")
+  private String identificationtime = null;
 
   @SerializedName("transactionnumber")
   private String transactionnumber = null;
@@ -33,21 +33,21 @@ public class IdentificationProcess {
     this.status = status;
   }
 
-  public IdentificationProcess identificatontime(String identificatontime) {
-    this.identificatontime = identificatontime;
+  public IdentificationProcess identificationtime(String identificationtime) {
+    this.identificationtime = identificationtime;
     return this;
   }
 
    /**
-   * Get identificatontime
-   * @return identificatontime
+   * Get identificationtime
+   * @return identificationtime
   **/
-  public String getIdentificatontime() {
-    return identificatontime;
+  public String getIdentificationtime() {
+    return identificationtime;
   }
 
-  public void setIdentificatontime(String identificatontime) {
-    this.identificatontime = identificatontime;
+  public void setIdentificationtime(String identificationtime) {
+    this.identificationtime = identificationtime;
   }
 
   public IdentificationProcess transactionnumber(String transactionnumber) {
@@ -77,13 +77,13 @@ public class IdentificationProcess {
     }
     IdentificationProcess identificationProcess = (IdentificationProcess) o;
     return Objects.equals(this.status, identificationProcess.status) &&
-        Objects.equals(this.identificatontime, identificationProcess.identificatontime) &&
+        Objects.equals(this.identificationtime, identificationProcess.identificationtime) &&
         Objects.equals(this.transactionnumber, identificationProcess.transactionnumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, identificatontime, transactionnumber);
+    return Objects.hash(status, identificationtime, transactionnumber);
   }
 
   @Override
@@ -91,7 +91,7 @@ public class IdentificationProcess {
     StringBuilder sb = new StringBuilder();
     sb.append("class IdentificationProcess {\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    identificatontime: ").append(toIndentedString(identificatontime)).append("\n");
+    sb.append("    identificationtime: ").append(toIndentedString(identificationtime)).append("\n");
     sb.append("    transactionnumber: ").append(toIndentedString(transactionnumber)).append("\n");
     sb.append("}");
     return sb.toString();
