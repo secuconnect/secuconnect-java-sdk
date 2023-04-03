@@ -2,6 +2,8 @@ package com.secuconnect.client.api;
 
 import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
+import com.secuconnect.client.model.Aggregate;
+import java.math.BigDecimal;
 import com.secuconnect.client.model.PaymentPlansDTO;
 import com.secuconnect.client.model.PaymentPlansList;
 import com.secuconnect.client.model.PaymentPlansProductModel;

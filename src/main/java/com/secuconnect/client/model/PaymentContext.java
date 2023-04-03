@@ -48,7 +48,7 @@ public class PaymentContext {
 
   public PaymentContext addPaymentMethodsItem(String paymentMethodsItem) {
     if (this.paymentMethods == null) {
-      this.paymentMethods = new ArrayList<>();
+      this.paymentMethods = new ArrayList<String>();
     }
     this.paymentMethods.add(paymentMethodsItem);
     return this;
@@ -90,7 +90,7 @@ public class PaymentContext {
 
   public PaymentContext addCreditcardSchemesItem(String creditcardSchemesItem) {
     if (this.creditcardSchemes == null) {
-      this.creditcardSchemes = new ArrayList<>();
+      this.creditcardSchemes = new ArrayList<String>();
     }
     this.creditcardSchemes.add(creditcardSchemesItem);
     return this;

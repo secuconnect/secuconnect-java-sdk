@@ -2,6 +2,8 @@ package com.secuconnect.client.api;
 
 import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
+import com.secuconnect.client.model.Aggregate;
+import java.math.BigDecimal;
 import com.secuconnect.client.model.ProductExceptionPayload;
 import com.secuconnect.client.model.SmartTransactionsDTO;
 import com.secuconnect.client.model.SmartTransactionsList;
@@ -34,6 +36,92 @@ public class SmartTransactionsApi {
 
     public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
+    }
+
+    /**
+     * Build call for abortTransaction
+     * @param smartTransactionId Smart transaction id (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call abortTransactionCall(String smartTransactionId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Smart/Transactions/{smartTransactionId}/abort"
+            .replaceAll("\\{" + "smartTransactionId" + "\\}", apiClient.escapeString(smartTransactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call abortTransactionValidateBeforeCall(String smartTransactionId) throws ApiException {
+        // verify the required parameter 'smartTransactionId' is set
+        if (smartTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling abortTransaction(Async)");
+        }
+
+        return abortTransactionCall(smartTransactionId);
+    }
+
+    /**
+     * POST Smart/Transactions/{smartTransactionId}/abort
+     * Method to abort an unpaid smart transaction
+     * @param smartTransactionId Smart transaction id (required)
+     * @return SmartTransactionsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SmartTransactionsProductModel abortTransaction(String smartTransactionId) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = abortTransactionWithHttpInfo(smartTransactionId);
+        return resp.getData();
+    }
+
+    /**
+     * POST Smart/Transactions/{smartTransactionId}/abort
+     * Method to abort an unpaid smart transaction
+     * @param smartTransactionId Smart transaction id (required)
+     * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SmartTransactionsProductModel> abortTransactionWithHttpInfo(String smartTransactionId) throws ApiException {
+        Call call = abortTransactionValidateBeforeCall(smartTransactionId);
+        Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Smart/Transactions/{smartTransactionId}/abort (asynchronously)
+     * Method to abort an unpaid smart transaction
+     * @param smartTransactionId Smart transaction id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call abortTransactionAsync(String smartTransactionId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+        Call call = abortTransactionValidateBeforeCall(smartTransactionId);
+        Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
     }
 
     /**
@@ -165,7 +253,7 @@ public class SmartTransactionsApi {
 
     /**
      * POST Smart/Transactions/{smartTransactionId}/cancel
-     * Method to cancel the transaction with given idn
+     * Method to cancel a loyalty transaction
      * @param smartTransactionId Smart transaction id (required)
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -177,7 +265,7 @@ public class SmartTransactionsApi {
 
     /**
      * POST Smart/Transactions/{smartTransactionId}/cancel
-     * Method to cancel the transaction with given idn
+     * Method to cancel a loyalty transaction
      * @param smartTransactionId Smart transaction id (required)
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -190,7 +278,7 @@ public class SmartTransactionsApi {
 
     /**
      * POST Smart/Transactions/{smartTransactionId}/cancel (asynchronously)
-     * Method to cancel the transaction with given idn
+     * Method to cancel a loyalty transaction
      * @param smartTransactionId Smart transaction id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1023,6 +1111,92 @@ public class SmartTransactionsApi {
      */
     public Call startTransactionAsync(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
         Call call = startTransactionValidateBeforeCall(smartTransactionId, paymentMethod, body);
+        Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for updatePaymentContainer
+     * @param subscriptionId Subscription id (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call updatePaymentContainerCall(String subscriptionId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Smart/Transactions/{subscriptionId}/updatePaymentContainer"
+            .replaceAll("\\{" + "subscriptionId" + "\\}", apiClient.escapeString(subscriptionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call updatePaymentContainerValidateBeforeCall(String subscriptionId) throws ApiException {
+        // verify the required parameter 'subscriptionId' is set
+        if (subscriptionId == null) {
+            throw new ApiException("Missing the required parameter 'subscriptionId' when calling updatePaymentContainer(Async)");
+        }
+
+        return updatePaymentContainerCall(subscriptionId);
+    }
+
+    /**
+     * POST Smart/Transactions/{smartTransactionId}/updatePaymentContainer
+     * Method to update the payment container for an existing subscription.
+     * @param subscriptionId Subscription id (required)
+     * @return SmartTransactionsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SmartTransactionsProductModel updatePaymentContainer(String subscriptionId) throws ApiException {
+        ApiResponse<SmartTransactionsProductModel> resp = updatePaymentContainerWithHttpInfo(subscriptionId);
+        return resp.getData();
+    }
+
+    /**
+     * POST Smart/Transactions/{smartTransactionId}/updatePaymentContainer
+     * Method to update the payment container for an existing subscription.
+     * @param subscriptionId Subscription id (required)
+     * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SmartTransactionsProductModel> updatePaymentContainerWithHttpInfo(String subscriptionId) throws ApiException {
+        Call call = updatePaymentContainerValidateBeforeCall(subscriptionId);
+        Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Smart/Transactions/{smartTransactionId}/updatePaymentContainer (asynchronously)
+     * Method to update the payment container for an existing subscription.
+     * @param subscriptionId Subscription id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call updatePaymentContainerAsync(String subscriptionId, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+        Call call = updatePaymentContainerValidateBeforeCall(subscriptionId);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

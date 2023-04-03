@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.BillingCyclesItem;
 import com.secuconnect.client.model.CreatedField;
@@ -14,6 +16,24 @@ import java.util.Objects;
  * PaymentPlansProductModel
  */
 public class PaymentPlansProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("created")
   private String created = null;
 
@@ -30,7 +50,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
   private String paypalPlanId = null;
 
   @SerializedName("status")
-  private String status = null;
+  private String status = "active";
 
   @SerializedName("payment_methods")
   private List<String> paymentMethods = null;
@@ -40,6 +60,111 @@ public class PaymentPlansProductModel extends BaseProductModel {
 
   @SerializedName("billing_cycles")
   private List<BillingCyclesItem> billingCycles = null;
+
+  @SerializedName("product_type")
+  private String productType = null;
+
+  public PaymentPlansProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public PaymentPlansProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public PaymentPlansProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public PaymentPlansProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public PaymentPlansProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public PaymentPlansProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
   public PaymentPlansProductModel created(String created) {
     this.created = created;
@@ -98,7 +223,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
   }
 
    /**
-   * ISO currency code
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {
@@ -150,7 +275,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
 
   public PaymentPlansProductModel addPaymentMethodsItem(String paymentMethodsItem) {
     if (this.paymentMethods == null) {
-      this.paymentMethods = new ArrayList<>();
+      this.paymentMethods = new ArrayList<String>();
     }
     this.paymentMethods.add(paymentMethodsItem);
     return this;
@@ -192,7 +317,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
 
   public PaymentPlansProductModel addBillingCyclesItem(BillingCyclesItem billingCyclesItem) {
     if (this.billingCycles == null) {
-      this.billingCycles = new ArrayList<>();
+      this.billingCycles = new ArrayList<BillingCyclesItem>();
     }
     this.billingCycles.add(billingCyclesItem);
     return this;
@@ -210,6 +335,23 @@ public class PaymentPlansProductModel extends BaseProductModel {
     this.billingCycles = billingCycles;
   }
 
+  public PaymentPlansProductModel productType(String productType) {
+    this.productType = productType;
+    return this;
+  }
+
+   /**
+   * Product type
+   * @return productType
+  **/
+  public String getProductType() {
+    return productType;
+  }
+
+  public void setProductType(String productType) {
+    this.productType = productType;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -219,7 +361,13 @@ public class PaymentPlansProductModel extends BaseProductModel {
       return false;
     }
     PaymentPlansProductModel paymentPlansProductModel = (PaymentPlansProductModel) o;
-    return Objects.equals(this.created, paymentPlansProductModel.created) &&
+    return Objects.equals(this.l, paymentPlansProductModel.l) &&
+        Objects.equals(this.k, paymentPlansProductModel.k) &&
+        Objects.equals(this.ks, paymentPlansProductModel.ks) &&
+        Objects.equals(this.c, paymentPlansProductModel.c) &&
+        Objects.equals(this.s, paymentPlansProductModel.s) &&
+        Objects.equals(this.t, paymentPlansProductModel.t) &&
+        Objects.equals(this.created, paymentPlansProductModel.created) &&
         Objects.equals(this.updated, paymentPlansProductModel.updated) &&
         Objects.equals(this.description, paymentPlansProductModel.description) &&
         Objects.equals(this.currency, paymentPlansProductModel.currency) &&
@@ -228,12 +376,13 @@ public class PaymentPlansProductModel extends BaseProductModel {
         Objects.equals(this.paymentMethods, paymentPlansProductModel.paymentMethods) &&
         Objects.equals(this.merchant, paymentPlansProductModel.merchant) &&
         Objects.equals(this.billingCycles, paymentPlansProductModel.billingCycles) &&
+        Objects.equals(this.productType, paymentPlansProductModel.productType) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, description, currency, paypalPlanId, status, paymentMethods, merchant, billingCycles, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, description, currency, paypalPlanId, status, paymentMethods, merchant, billingCycles, productType, super.hashCode());
   }
 
   @Override
@@ -241,6 +390,12 @@ public class PaymentPlansProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentPlansProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -250,6 +405,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
     sb.append("    paymentMethods: ").append(toIndentedString(paymentMethods)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    billingCycles: ").append(toIndentedString(billingCycles)).append("\n");
+    sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

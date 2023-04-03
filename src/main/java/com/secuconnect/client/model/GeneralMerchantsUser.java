@@ -100,7 +100,7 @@ public class GeneralMerchantsUser {
 
   public GeneralMerchantsUser addAddressItem(GeoAddress addressItem) {
     if (this.address == null) {
-      this.address = new ArrayList<>();
+      this.address = new ArrayList<GeoAddress>();
     }
     this.address.add(addressItem);
     return this;

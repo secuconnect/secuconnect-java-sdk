@@ -20,6 +20,9 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   @SerializedName("status")
   private String status = null;
 
+  @SerializedName("type")
+  private String type = null;
+
   @SerializedName("stock")
   private ProductInstanceUID stock = null;
 
@@ -89,6 +92,12 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   @SerializedName("vtc_tid")
   private String vtcTid = null;
 
+  @SerializedName("vtc_id")
+  private String vtcId = null;
+
+  @SerializedName("password")
+  private String password = null;
+
   public PrepaidSalesProductModel created(String created) {
     this.created = created;
     return this;
@@ -121,6 +130,23 @@ public class PrepaidSalesProductModel extends BaseProductModel {
 
   public void setStatus(String status) {
     this.status = status;
+  }
+
+  public PrepaidSalesProductModel type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Type
+   * @return type
+  **/
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 
   public PrepaidSalesProductModel stock(ProductInstanceUID stock) {
@@ -514,6 +540,40 @@ public class PrepaidSalesProductModel extends BaseProductModel {
     this.vtcTid = vtcTid;
   }
 
+  public PrepaidSalesProductModel vtcId(String vtcId) {
+    this.vtcId = vtcId;
+    return this;
+  }
+
+   /**
+   * Vtc id
+   * @return vtcId
+  **/
+  public String getVtcId() {
+    return vtcId;
+  }
+
+  public void setVtcId(String vtcId) {
+    this.vtcId = vtcId;
+  }
+
+  public PrepaidSalesProductModel password(String password) {
+    this.password = password;
+    return this;
+  }
+
+   /**
+   * Password
+   * @return password
+  **/
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -525,6 +585,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
     PrepaidSalesProductModel prepaidSalesProductModel = (PrepaidSalesProductModel) o;
     return Objects.equals(this.created, prepaidSalesProductModel.created) &&
         Objects.equals(this.status, prepaidSalesProductModel.status) &&
+        Objects.equals(this.type, prepaidSalesProductModel.type) &&
         Objects.equals(this.stock, prepaidSalesProductModel.stock) &&
         Objects.equals(this.item, prepaidSalesProductModel.item) &&
         Objects.equals(this.itemgroup, prepaidSalesProductModel.itemgroup) &&
@@ -548,12 +609,14 @@ public class PrepaidSalesProductModel extends BaseProductModel {
         Objects.equals(this.receiptZvt, prepaidSalesProductModel.receiptZvt) &&
         Objects.equals(this.receiptDealer, prepaidSalesProductModel.receiptDealer) &&
         Objects.equals(this.vtcTid, prepaidSalesProductModel.vtcTid) &&
+        Objects.equals(this.vtcId, prepaidSalesProductModel.vtcId) &&
+        Objects.equals(this.password, prepaidSalesProductModel.password) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, status, stock, item, itemgroup, smartDevice, merchant, store, contract, demo, description, amount, currency, commission, commissionCurrency, code, serial, cardnumber, expireDate, providerDeliveryNumber, receiptHeader, receiptCustomer, receiptZvt, receiptDealer, vtcTid, super.hashCode());
+    return Objects.hash(created, status, type, stock, item, itemgroup, smartDevice, merchant, store, contract, demo, description, amount, currency, commission, commissionCurrency, code, serial, cardnumber, expireDate, providerDeliveryNumber, receiptHeader, receiptCustomer, receiptZvt, receiptDealer, vtcTid, vtcId, password, super.hashCode());
   }
 
   @Override
@@ -563,6 +626,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    stock: ").append(toIndentedString(stock)).append("\n");
     sb.append("    item: ").append(toIndentedString(item)).append("\n");
     sb.append("    itemgroup: ").append(toIndentedString(itemgroup)).append("\n");
@@ -586,6 +650,8 @@ public class PrepaidSalesProductModel extends BaseProductModel {
     sb.append("    receiptZvt: ").append(toIndentedString(receiptZvt)).append("\n");
     sb.append("    receiptDealer: ").append(toIndentedString(receiptDealer)).append("\n");
     sb.append("    vtcTid: ").append(toIndentedString(vtcTid)).append("\n");
+    sb.append("    vtcId: ").append(toIndentedString(vtcId)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("}");
     return sb.toString();
   }

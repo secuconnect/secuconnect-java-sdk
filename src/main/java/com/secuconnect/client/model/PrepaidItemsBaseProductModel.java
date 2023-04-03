@@ -126,7 +126,7 @@ public class PrepaidItemsBaseProductModel extends BaseProductModel {
 
   public PrepaidItemsBaseProductModel addVtcConfigItem(String vtcConfigItem) {
     if (this.vtcConfig == null) {
-      this.vtcConfig = new ArrayList<>();
+      this.vtcConfig = new ArrayList<String>();
     }
     this.vtcConfig.add(vtcConfigItem);
     return this;

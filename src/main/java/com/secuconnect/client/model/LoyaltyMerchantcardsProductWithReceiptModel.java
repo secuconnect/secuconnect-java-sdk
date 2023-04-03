@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.LoyaltyCardgroupsProductModel;
 import com.secuconnect.client.model.LoyaltyCardsProductModel;
 import com.secuconnect.client.model.LoyaltyCustomersProductModel;
@@ -36,7 +37,7 @@ public class LoyaltyMerchantcardsProductWithReceiptModel extends LoyaltyMerchant
 
   public LoyaltyMerchantcardsProductWithReceiptModel addReceiptHeaderItem(ReceiptType receiptHeaderItem) {
     if (this.receiptHeader == null) {
-      this.receiptHeader = new ArrayList<>();
+      this.receiptHeader = new ArrayList<ReceiptType>();
     }
     this.receiptHeader.add(receiptHeaderItem);
     return this;
@@ -61,7 +62,7 @@ public class LoyaltyMerchantcardsProductWithReceiptModel extends LoyaltyMerchant
 
   public LoyaltyMerchantcardsProductWithReceiptModel addReceiptItem(ReceiptTypeValue receiptItem) {
     if (this.receipt == null) {
-      this.receipt = new ArrayList<>();
+      this.receipt = new ArrayList<ReceiptTypeValue>();
     }
     this.receipt.add(receiptItem);
     return this;

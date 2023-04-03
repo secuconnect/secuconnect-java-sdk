@@ -59,7 +59,7 @@ public class AddressComponents {
 
   public AddressComponents addTypesItem(String typesItem) {
     if (this.types == null) {
-      this.types = new ArrayList<>();
+      this.types = new ArrayList<String>();
     }
     this.types.add(typesItem);
     return this;

@@ -14,6 +14,9 @@ public class SecupayTransactionCancelDTO {
   @SerializedName("amount")
   private Integer amount = null;
 
+  @SerializedName("reduce_amount_by")
+  private Integer reduceAmountBy = null;
+
   @SerializedName("reduce_stakeholder_payment")
   private Boolean reduceStakeholderPayment = false;
 
@@ -40,7 +43,7 @@ public class SecupayTransactionCancelDTO {
   }
 
    /**
-   * Get amount
+   * Amount in minor currency unit (e. g. Euro Cent)
    * @return amount
   **/
   public Integer getAmount() {
@@ -49,6 +52,23 @@ public class SecupayTransactionCancelDTO {
 
   public void setAmount(Integer amount) {
     this.amount = amount;
+  }
+
+  public SecupayTransactionCancelDTO reduceAmountBy(Integer reduceAmountBy) {
+    this.reduceAmountBy = reduceAmountBy;
+    return this;
+  }
+
+   /**
+   * Get reduceAmountBy
+   * @return reduceAmountBy
+  **/
+  public Integer getReduceAmountBy() {
+    return reduceAmountBy;
+  }
+
+  public void setReduceAmountBy(Integer reduceAmountBy) {
+    this.reduceAmountBy = reduceAmountBy;
   }
 
   public SecupayTransactionCancelDTO reduceStakeholderPayment(Boolean reduceStakeholderPayment) {
@@ -79,12 +99,13 @@ public class SecupayTransactionCancelDTO {
     SecupayTransactionCancelDTO secupayTransactionCancelDTO = (SecupayTransactionCancelDTO) o;
     return Objects.equals(this.contract, secupayTransactionCancelDTO.contract) &&
         Objects.equals(this.amount, secupayTransactionCancelDTO.amount) &&
+        Objects.equals(this.reduceAmountBy, secupayTransactionCancelDTO.reduceAmountBy) &&
         Objects.equals(this.reduceStakeholderPayment, secupayTransactionCancelDTO.reduceStakeholderPayment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contract, amount, reduceStakeholderPayment);
+    return Objects.hash(contract, amount, reduceAmountBy, reduceStakeholderPayment);
   }
 
   @Override
@@ -93,6 +114,7 @@ public class SecupayTransactionCancelDTO {
     sb.append("class SecupayTransactionCancelDTO {\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    reduceAmountBy: ").append(toIndentedString(reduceAmountBy)).append("\n");
     sb.append("    reduceStakeholderPayment: ").append(toIndentedString(reduceStakeholderPayment)).append("\n");
     sb.append("}");
     return sb.toString();

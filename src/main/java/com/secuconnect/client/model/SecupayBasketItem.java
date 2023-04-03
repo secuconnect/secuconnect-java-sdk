@@ -21,7 +21,7 @@ public class SecupayBasketItem extends SecupayBaseBasketItem {
 
   public SecupayBasketItem addSubBasketItem(SecupayBasketItem subBasketItem) {
     if (this.subBasket == null) {
-      this.subBasket = new ArrayList<>();
+      this.subBasket = new ArrayList<SecupayBasketItem>();
     }
     this.subBasket.add(subBasketItem);
     return this;

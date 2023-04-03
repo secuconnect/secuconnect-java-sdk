@@ -47,7 +47,7 @@ public class GeoAddress {
 
   public GeoAddress addAddressComponentsItem(AddressComponents addressComponentsItem) {
     if (this.addressComponents == null) {
-      this.addressComponents = new ArrayList<>();
+      this.addressComponents = new ArrayList<AddressComponents>();
     }
     this.addressComponents.add(addressComponentsItem);
     return this;

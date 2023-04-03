@@ -215,7 +215,7 @@ public class SmartTransactionsDTO {
 
   public SmartTransactionsDTO addIdentsItem(SmartTransactionsIdent identsItem) {
     if (this.idents == null) {
-      this.idents = new ArrayList<>();
+      this.idents = new ArrayList<SmartTransactionsIdent>();
     }
     this.idents.add(identsItem);
     return this;

@@ -97,7 +97,7 @@ public class BillingCyclesItem {
   }
 
    /**
-   * Price
+   * Get price
    * @return price
   **/
   public Integer getPrice() {

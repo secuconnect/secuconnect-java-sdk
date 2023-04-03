@@ -100,7 +100,7 @@ public class SmartTemplatesComponentModel {
 
   public SmartTemplatesComponentModel addElementsItem(SmartTemplatesElementModel elementsItem) {
     if (this.elements == null) {
-      this.elements = new ArrayList<>();
+      this.elements = new ArrayList<SmartTemplatesElementModel>();
     }
     this.elements.add(elementsItem);
     return this;

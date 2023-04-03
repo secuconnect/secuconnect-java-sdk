@@ -2,6 +2,8 @@ package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.AddressComponents;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.AssignedBy;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.GeoAddressGeometry;
@@ -16,6 +18,24 @@ import java.util.Objects;
  * GeneralStoresProductModel
  */
 public class GeneralStoresProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("id_old")
   private String idOld = null;
 
@@ -96,6 +116,108 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   @SerializedName("acceptance_point")
   private Boolean acceptancePoint = null;
+
+  public GeneralStoresProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public GeneralStoresProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public GeneralStoresProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public GeneralStoresProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public GeneralStoresProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public GeneralStoresProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
   public GeneralStoresProductModel idOld(String idOld) {
     this.idOld = idOld;
@@ -223,7 +345,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   public GeneralStoresProductModel addAddressComponentsItem(AddressComponents addressComponentsItem) {
     if (this.addressComponents == null) {
-      this.addressComponents = new ArrayList<>();
+      this.addressComponents = new ArrayList<AddressComponents>();
     }
     this.addressComponents.add(addressComponentsItem);
     return this;
@@ -350,7 +472,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   public GeneralStoresProductModel addPhotoItem(String photoItem) {
     if (this.photo == null) {
-      this.photo = new ArrayList<>();
+      this.photo = new ArrayList<String>();
     }
     this.photo.add(photoItem);
     return this;
@@ -392,7 +514,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   public GeneralStoresProductModel addCategoryItem(String categoryItem) {
     if (this.category == null) {
-      this.category = new ArrayList<>();
+      this.category = new ArrayList<String>();
     }
     this.category.add(categoryItem);
     return this;
@@ -451,7 +573,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   public GeneralStoresProductModel addOpenHoursItem(OpenHours openHoursItem) {
     if (this.openHours == null) {
-      this.openHours = new ArrayList<>();
+      this.openHours = new ArrayList<OpenHours>();
     }
     this.openHours.add(openHoursItem);
     return this;
@@ -527,7 +649,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   public GeneralStoresProductModel addAssignedByItem(AssignedBy assignedByItem) {
     if (this.assignedBy == null) {
-      this.assignedBy = new ArrayList<>();
+      this.assignedBy = new ArrayList<AssignedBy>();
     }
     this.assignedBy.add(assignedByItem);
     return this;
@@ -552,7 +674,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   public GeneralStoresProductModel addInvitedByItem(InvitedBy invitedByItem) {
     if (this.invitedBy == null) {
-      this.invitedBy = new ArrayList<>();
+      this.invitedBy = new ArrayList<InvitedBy>();
     }
     this.invitedBy.add(invitedByItem);
     return this;
@@ -613,7 +735,13 @@ public class GeneralStoresProductModel extends BaseProductModel {
       return false;
     }
     GeneralStoresProductModel generalStoresProductModel = (GeneralStoresProductModel) o;
-    return Objects.equals(this.idOld, generalStoresProductModel.idOld) &&
+    return Objects.equals(this.l, generalStoresProductModel.l) &&
+        Objects.equals(this.k, generalStoresProductModel.k) &&
+        Objects.equals(this.ks, generalStoresProductModel.ks) &&
+        Objects.equals(this.c, generalStoresProductModel.c) &&
+        Objects.equals(this.s, generalStoresProductModel.s) &&
+        Objects.equals(this.t, generalStoresProductModel.t) &&
+        Objects.equals(this.idOld, generalStoresProductModel.idOld) &&
         Objects.equals(this.merchant, generalStoresProductModel.merchant) &&
         Objects.equals(this.storeName, generalStoresProductModel.storeName) &&
         Objects.equals(this.facebookId, generalStoresProductModel.facebookId) &&
@@ -645,7 +773,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idOld, merchant, storeName, facebookId, source, key, hash, addressComponents, addressFormatted, phoneNumberFormatted, geometry, name, nameRaw, photoMain, photo, categoryMain, category, urlGoogleplus, urlWebsite, openHours, openNow, openTime, utcOffset, assignedBy, invitedBy, hasBeacon, acceptancePoint, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, idOld, merchant, storeName, facebookId, source, key, hash, addressComponents, addressFormatted, phoneNumberFormatted, geometry, name, nameRaw, photoMain, photo, categoryMain, category, urlGoogleplus, urlWebsite, openHours, openNow, openTime, utcOffset, assignedBy, invitedBy, hasBeacon, acceptancePoint, super.hashCode());
   }
 
   @Override
@@ -653,6 +781,12 @@ public class GeneralStoresProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class GeneralStoresProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    idOld: ").append(toIndentedString(idOld)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");

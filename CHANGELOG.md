@@ -19,6 +19,108 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.14.0] - 2023-04-03
+[3.14.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.13.0...3.14.0
+
+### Added
+- `Api.PaymentSecupayPayoutApi.paymentSecupaypayoutWithoutCustomerPost()`
+- `Api.PaymentTransactionsApi.checkStatus()`
+- `Api.PrepaidReportsApi`
+- `Api.PrepaidSalesApi.getAll() and getOne()`
+- `Api.SmartTransactionsApi.abortTransaction() and updatePaymentContainer()`
+- `Model.Aggregate`
+- `Model.AggregationResult`
+- `Model.AggregationTimeResult`
+- `Model.ApplePayDescriptorHeader`
+- `Model.PaymentContainersDTO` element `merchant_id`
+- `Model.PaymentContractsDTOClone` element `contract_id`
+- `Model.PaymentContractsDTORequestId` element `contract_id`, `payment_data`, `url_push` and`additional_data`
+- `Model.PaymentContractsDTORequestIdAdditionalData`
+- `Model.PaymentContractsDTORequestIdAdditionalDataCreateCard`
+- `Model.PaymentPlansDTO` element `merchant_id`
+- `Model.PaymentPlansProductModel` element `product_type`
+- `Model.PaymentSubscriptionsProductModel` element `demo`
+- `Model.PaymentTransactionCancelDTO` element `reduce_amount_by`
+- `Model.PaymentTransactionsCheckStatus`
+- `Model.PrepaidReportsList`
+- `Model.PrepaidReportsProductModel`
+- `Model.PrepaidSalesList`
+- `Model.PrepaidSalesProductModel` element `type`, `vtc_id` and `password`
+- `Model.SecupayPayoutListItem`
+- `Model.SecupayPayoutWithoutCustomerDTO`
+- `Model.SecupayTransactionCancelDTO` element `reduce_amount_by`
+- `Model.SmartTransactionPaymentContainerDTO` element `merchant_id`
+
+#### element `scroll_id`, `result`, `meta`, `type`, `sum`, `lookup` and aggregation result elements (`l`, `k`, `ks`, `c`, `s`, `t`) added
+- `Model.CardprocessingInvoicesList`
+- `Model.CardprocessingInvoicesProductModel`
+- `Model.CardprocessingTransactionsList`
+- `Model.CardprocessingTransactionsProductModel`
+- `Model.GeneralContractsList`
+- `Model.GeneralContractsProductModel`
+- `Model.GeneralMerchantsList`
+- `Model.GeneralMerchantsProductModel`
+- `Model.GeneralStoresList`
+- `Model.GeneralStoresProductModel`
+- `Model.LoyaltyCardgroupsList`
+- `Model.LoyaltyCardgroupsProductModel`
+- `Model.LoyaltyCardsList`
+- `Model.LoyaltyCardsProductModel`
+- `Model.LoyaltyCustomersList`
+- `Model.LoyaltyCustomersProductModel`
+- `Model.LoyaltyMerchantcardsList`
+- `Model.LoyaltyMerchantcardsProductModel`
+- `Model.LoyaltyTransactionsList`
+- `Model.LoyaltyTransactionsProductModel`
+- `Model.PaymentContainersList`
+- `Model.PaymentContainersProductModel`
+- `Model.PaymentContractsList`
+- `Model.PaymentContractsProductModel`
+- `Model.PaymentCustomersList`
+- `Model.PaymentCustomersProductModel`
+- `Model.PaymentInvoicesList`
+- `Model.PaymentInvoicesProductModel`
+- `Model.PaymentPayoutsList`
+- `Model.PaymentPayoutsProductModel`
+- `Model.PaymentPlansList`
+- `Model.PaymentPlansProductModel`
+- `Model.PaymentSubscriptionsList`
+- `Model.PaymentSubscriptionsProductModel`
+- `Model.PaymentTransactionsList`
+- `Model.PaymentTransactionsProductModel`
+- `Model.PrepaidItemsList`
+- `Model.PrepaidItemsProductModel`
+- `Model.ServicesIdentrequestsList`
+- `Model.ServicesIdentrequestsProductModel`
+- `Model.ServicesIdentresultsList`
+- `Model.ServicesIdentresultsProductModel`
+- `Model.SmartDevicesList`
+- `Model.SmartDevicesProductModel`
+- `Model.SmartRoutingsList`
+- `Model.SmartRoutingsProductModel`
+- `Model.SmartTemplatesList`
+- `Model.SmartTemplatesProductModel`
+- `Model.SmartTransactionsList`
+- `Model.SmartTransactionsProductModel`
+
+### Changed
+- `Model.ApplePayDescriptor` element `header` from `object` to `ApplePayDescriptorHeader`
+- `Model.PaymentPlansDTO` and `Model.PaymentPlansProductModel` default value of `status` is now `"active"` instead of `null`
+- `Model.ServicesIdentrequestsProductDTO`
+- `Model.ServicesIdentrequestsProductModel`
+
+### Fixed
+- `Model.PaymentTransactionsProductModelDetails` renamed element `status_text_simple` to `status_simple_text`
+
+### Removed
+- `Api.PaymentContainersApi.paymentContainersIdAssignSecondaryIdDelete() and paymentContainersIdAssignSecondaryIdPost()`
+- `Model.PaymentContainersProductModel` element `assign`
+- `Model.ACC_Object`
+- `Model.MRC_Object`
+- `Model.PCO_Object`
+- `Model.PIG_Object`
+
+
 ## [3.13.0] - 2022-11-15
 [3.13.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.12.0...3.13.0
 
@@ -64,7 +166,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.ParentObj` element `relation_type`
 - `Model.SmartDeviceProductsPrepaid` element `simulate_force`
 - `Model.SmartDevicesProducts` element `showcase`
-- .swagger-codegen/VERSION
+- `.swagger-codegen/VERSION`
 
 
 ## [3.12.0] - 2022-09-30

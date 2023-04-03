@@ -183,7 +183,7 @@ public class SecupayPayoutDTO {
 
   public SecupayPayoutDTO addTransactionListItem(SecupayTransactionListItem transactionListItem) {
     if (this.transactionList == null) {
-      this.transactionList = new ArrayList<>();
+      this.transactionList = new ArrayList<SecupayTransactionListItem>();
     }
     this.transactionList.add(transactionListItem);
     return this;

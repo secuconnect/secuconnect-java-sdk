@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.IdentrequestPerson;
@@ -20,6 +22,24 @@ import com.google.gson.stream.JsonWriter;
  * ServicesIdentrequestsProductModel
  */
 public class ServicesIdentrequestsProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("created")
   private String created = null;
 
@@ -51,9 +71,9 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     public String toString() {
       return String.valueOf(value);
     }
-    public static ProviderEnum fromValue(String text) {
+    public static ProviderEnum fromValue(String input) {
       for (ProviderEnum b : ProviderEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
@@ -62,13 +82,13 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     public static class Adapter extends TypeAdapter<ProviderEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final ProviderEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public ProviderEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return ProviderEnum.fromValue(String.valueOf(value));
+        return ProviderEnum.fromValue((String)(value));
       }
     }
   }  @SerializedName("provider")
@@ -94,9 +114,9 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     public String toString() {
       return String.valueOf(value);
     }
-    public static TypeEnum fromValue(String text) {
+    public static TypeEnum fromValue(String input) {
       for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
@@ -105,13 +125,13 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     public static class Adapter extends TypeAdapter<TypeEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return TypeEnum.fromValue(String.valueOf(value));
+        return TypeEnum.fromValue((String)(value));
       }
     }
   }  @SerializedName("type")
@@ -137,6 +157,108 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
 
   @SerializedName("treated")
   private Boolean treated = null;
+
+  public ServicesIdentrequestsProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public ServicesIdentrequestsProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public ServicesIdentrequestsProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public ServicesIdentrequestsProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public ServicesIdentrequestsProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public ServicesIdentrequestsProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
   public ServicesIdentrequestsProductModel created(String created) {
     this.created = created;
@@ -264,7 +386,7 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
 
   public ServicesIdentrequestsProductModel addPersonItem(IdentrequestPerson personItem) {
     if (this.person == null) {
-      this.person = new ArrayList<>();
+      this.person = new ArrayList<IdentrequestPerson>();
     }
     this.person.add(personItem);
     return this;
@@ -350,7 +472,13 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
       return false;
     }
     ServicesIdentrequestsProductModel servicesIdentrequestsProductModel = (ServicesIdentrequestsProductModel) o;
-    return Objects.equals(this.created, servicesIdentrequestsProductModel.created) &&
+    return Objects.equals(this.l, servicesIdentrequestsProductModel.l) &&
+        Objects.equals(this.k, servicesIdentrequestsProductModel.k) &&
+        Objects.equals(this.ks, servicesIdentrequestsProductModel.ks) &&
+        Objects.equals(this.c, servicesIdentrequestsProductModel.c) &&
+        Objects.equals(this.s, servicesIdentrequestsProductModel.s) &&
+        Objects.equals(this.t, servicesIdentrequestsProductModel.t) &&
+        Objects.equals(this.created, servicesIdentrequestsProductModel.created) &&
         Objects.equals(this.updated, servicesIdentrequestsProductModel.updated) &&
         Objects.equals(this.contract, servicesIdentrequestsProductModel.contract) &&
         Objects.equals(this.provider, servicesIdentrequestsProductModel.provider) &&
@@ -367,7 +495,7 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, contract, provider, type, status, demo, person, ownerTransactionId, redirectUrl, graduationDate, treated, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, contract, provider, type, status, demo, person, ownerTransactionId, redirectUrl, graduationDate, treated, super.hashCode());
   }
 
   @Override
@@ -375,6 +503,12 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class ServicesIdentrequestsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");

@@ -40,7 +40,7 @@ public class SmartTransactionsPreTransactionModel {
 
   public SmartTransactionsPreTransactionModel addBonusProductsItem(SmartTransactionsBonusProducts bonusProductsItem) {
     if (this.bonusProducts == null) {
-      this.bonusProducts = new ArrayList<>();
+      this.bonusProducts = new ArrayList<SmartTransactionsBonusProducts>();
     }
     this.bonusProducts.add(bonusProductsItem);
     return this;

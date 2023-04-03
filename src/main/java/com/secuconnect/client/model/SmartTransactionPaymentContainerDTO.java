@@ -11,6 +11,9 @@ import java.util.Objects;
  * SmartTransactionPaymentContainerDTO
  */
 public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
+  @SerializedName("merchant_id")
+  private String merchantId = null;
+
   @SerializedName("customer")
   private PaymentContainersDTOCustomer customer = null;
 
@@ -22,6 +25,23 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
 
   @SerializedName("private")
   private OneOfPaymentContainersDTOModelPrivate _private = null;
+
+  public SmartTransactionPaymentContainerDTO merchantId(String merchantId) {
+    this.merchantId = merchantId;
+    return this;
+  }
+
+   /**
+   * General Merchant ID
+   * @return merchantId
+  **/
+  public String getMerchantId() {
+    return merchantId;
+  }
+
+  public void setMerchantId(String merchantId) {
+    this.merchantId = merchantId;
+  }
 
   public SmartTransactionPaymentContainerDTO customer(PaymentContainersDTOCustomer customer) {
     this.customer = customer;
@@ -46,7 +66,7 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
   }
 
    /**
-   * Payment-Customer-ID
+   * Payment Customer ID
    * @return customerId
   **/
   public String getCustomerId() {
@@ -100,7 +120,8 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
       return false;
     }
     SmartTransactionPaymentContainerDTO smartTransactionPaymentContainerDTO = (SmartTransactionPaymentContainerDTO) o;
-    return Objects.equals(this.customer, smartTransactionPaymentContainerDTO.customer) &&
+    return Objects.equals(this.merchantId, smartTransactionPaymentContainerDTO.merchantId) &&
+        Objects.equals(this.customer, smartTransactionPaymentContainerDTO.customer) &&
         Objects.equals(this.customerId, smartTransactionPaymentContainerDTO.customerId) &&
         Objects.equals(this.type, smartTransactionPaymentContainerDTO.type) &&
         Objects.equals(this._private, smartTransactionPaymentContainerDTO._private) &&
@@ -109,7 +130,7 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer, customerId, type, _private, super.hashCode());
+    return Objects.hash(merchantId, customer, customerId, type, _private, super.hashCode());
   }
 
   @Override
@@ -117,6 +138,7 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartTransactionPaymentContainerDTO {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

@@ -22,8 +22,8 @@ public class PaymentTransactionsProductModelDetails {
   @SerializedName("status_simple")
   private Integer statusSimple = null;
 
-  @SerializedName("status_text_simple")
-  private String statusTextSimple = null;
+  @SerializedName("status_simple_text")
+  private String statusSimpleText = null;
 
   @SerializedName("description")
   private String description = null;
@@ -116,21 +116,21 @@ public class PaymentTransactionsProductModelDetails {
     this.statusSimple = statusSimple;
   }
 
-  public PaymentTransactionsProductModelDetails statusTextSimple(String statusTextSimple) {
-    this.statusTextSimple = statusTextSimple;
+  public PaymentTransactionsProductModelDetails statusSimpleText(String statusSimpleText) {
+    this.statusSimpleText = statusSimpleText;
     return this;
   }
 
    /**
    * Transaction simple-status description
-   * @return statusTextSimple
+   * @return statusSimpleText
   **/
-  public String getStatusTextSimple() {
-    return statusTextSimple;
+  public String getStatusSimpleText() {
+    return statusSimpleText;
   }
 
-  public void setStatusTextSimple(String statusTextSimple) {
-    this.statusTextSimple = statusTextSimple;
+  public void setStatusSimpleText(String statusSimpleText) {
+    this.statusSimpleText = statusSimpleText;
   }
 
   public PaymentTransactionsProductModelDetails description(String description) {
@@ -181,14 +181,14 @@ public class PaymentTransactionsProductModelDetails {
         Objects.equals(this.status, paymentTransactionsProductModelDetails.status) &&
         Objects.equals(this.statusText, paymentTransactionsProductModelDetails.statusText) &&
         Objects.equals(this.statusSimple, paymentTransactionsProductModelDetails.statusSimple) &&
-        Objects.equals(this.statusTextSimple, paymentTransactionsProductModelDetails.statusTextSimple) &&
+        Objects.equals(this.statusSimpleText, paymentTransactionsProductModelDetails.statusSimpleText) &&
         Objects.equals(this.description, paymentTransactionsProductModelDetails.description) &&
         Objects.equals(this.descriptionRaw, paymentTransactionsProductModelDetails.descriptionRaw);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, cleared, status, statusText, statusSimple, statusTextSimple, description, descriptionRaw);
+    return Objects.hash(amount, cleared, status, statusText, statusSimple, statusSimpleText, description, descriptionRaw);
   }
 
   @Override
@@ -200,7 +200,7 @@ public class PaymentTransactionsProductModelDetails {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    statusText: ").append(toIndentedString(statusText)).append("\n");
     sb.append("    statusSimple: ").append(toIndentedString(statusSimple)).append("\n");
-    sb.append("    statusTextSimple: ").append(toIndentedString(statusTextSimple)).append("\n");
+    sb.append("    statusSimpleText: ").append(toIndentedString(statusSimpleText)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    descriptionRaw: ").append(toIndentedString(descriptionRaw)).append("\n");
     sb.append("}");

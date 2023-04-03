@@ -23,7 +23,7 @@ public class PaymentSubscriptionsProductModelBillingCycles {
 
   public PaymentSubscriptionsProductModelBillingCycles addCycleExecutionsItem(BillingCyclesItem cycleExecutionsItem) {
     if (this.cycleExecutions == null) {
-      this.cycleExecutions = new ArrayList<>();
+      this.cycleExecutions = new ArrayList<BillingCyclesItem>();
     }
     this.cycleExecutions.add(cycleExecutionsItem);
     return this;

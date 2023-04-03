@@ -111,7 +111,7 @@ public class IdentresultPerson {
 
   public IdentresultPerson addAttachmentsItem(IdentDocument attachmentsItem) {
     if (this.attachments == null) {
-      this.attachments = new ArrayList<>();
+      this.attachments = new ArrayList<IdentDocument>();
     }
     this.attachments.add(attachmentsItem);
     return this;

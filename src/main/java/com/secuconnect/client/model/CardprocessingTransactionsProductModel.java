@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.GeneralMerchantsProductModel;
@@ -63,6 +64,24 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
   @SerializedName("ref_report_type")
   private Integer refReportType = null;
 
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   public CardprocessingTransactionsProductModel created(String created) {
     this.created = created;
     return this;
@@ -121,7 +140,7 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
 
   public CardprocessingTransactionsProductModel addRelatedTransactionsItem(ParentObj relatedTransactionsItem) {
     if (this.relatedTransactions == null) {
-      this.relatedTransactions = new ArrayList<>();
+      this.relatedTransactions = new ArrayList<ParentObj>();
     }
     this.relatedTransactions.add(relatedTransactionsItem);
     return this;
@@ -343,6 +362,108 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
     this.refReportType = refReportType;
   }
 
+  public CardprocessingTransactionsProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public CardprocessingTransactionsProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public CardprocessingTransactionsProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public CardprocessingTransactionsProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public CardprocessingTransactionsProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public CardprocessingTransactionsProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -368,12 +489,18 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.product, cardprocessingTransactionsProductModel.product) &&
         Objects.equals(this.refReportId, cardprocessingTransactionsProductModel.refReportId) &&
         Objects.equals(this.refReportType, cardprocessingTransactionsProductModel.refReportType) &&
+        Objects.equals(this.l, cardprocessingTransactionsProductModel.l) &&
+        Objects.equals(this.k, cardprocessingTransactionsProductModel.k) &&
+        Objects.equals(this.ks, cardprocessingTransactionsProductModel.ks) &&
+        Objects.equals(this.c, cardprocessingTransactionsProductModel.c) &&
+        Objects.equals(this.s, cardprocessingTransactionsProductModel.s) &&
+        Objects.equals(this.t, cardprocessingTransactionsProductModel.t) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, merchant, relatedTransactions, store, storeName, transId, tid, endOfDayDate, endOfDayId, amount, trace, receiptNumber, product, refReportId, refReportType, super.hashCode());
+    return Objects.hash(created, updated, merchant, relatedTransactions, store, storeName, transId, tid, endOfDayDate, endOfDayId, amount, trace, receiptNumber, product, refReportId, refReportType, l, k, ks, c, s, t, super.hashCode());
   }
 
   @Override
@@ -397,6 +524,12 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    refReportId: ").append(toIndentedString(refReportId)).append("\n");
     sb.append("    refReportType: ").append(toIndentedString(refReportType)).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("}");
     return sb.toString();
   }

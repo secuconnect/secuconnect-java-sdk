@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.GeneralMerchantsProductModel;
 import java.util.Objects;
@@ -9,6 +11,24 @@ import java.util.Objects;
  * PaymentInvoicesProductModel
  */
 public class PaymentInvoicesProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("store_name")
   private String storeName = null;
 
@@ -32,6 +52,108 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
 
   @SerializedName("document_url")
   private String documentUrl = null;
+
+  public PaymentInvoicesProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public PaymentInvoicesProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public PaymentInvoicesProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public PaymentInvoicesProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public PaymentInvoicesProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public PaymentInvoicesProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
   public PaymentInvoicesProductModel storeName(String storeName) {
     this.storeName = storeName;
@@ -178,7 +300,13 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
       return false;
     }
     PaymentInvoicesProductModel paymentInvoicesProductModel = (PaymentInvoicesProductModel) o;
-    return Objects.equals(this.storeName, paymentInvoicesProductModel.storeName) &&
+    return Objects.equals(this.l, paymentInvoicesProductModel.l) &&
+        Objects.equals(this.k, paymentInvoicesProductModel.k) &&
+        Objects.equals(this.ks, paymentInvoicesProductModel.ks) &&
+        Objects.equals(this.c, paymentInvoicesProductModel.c) &&
+        Objects.equals(this.s, paymentInvoicesProductModel.s) &&
+        Objects.equals(this.t, paymentInvoicesProductModel.t) &&
+        Objects.equals(this.storeName, paymentInvoicesProductModel.storeName) &&
         Objects.equals(this.merchant, paymentInvoicesProductModel.merchant) &&
         Objects.equals(this.invoiceId, paymentInvoicesProductModel.invoiceId) &&
         Objects.equals(this.date, paymentInvoicesProductModel.date) &&
@@ -191,7 +319,7 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(storeName, merchant, invoiceId, date, amount, taxAmount, totalAmount, documentUrl, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, storeName, merchant, invoiceId, date, amount, taxAmount, totalAmount, documentUrl, super.hashCode());
   }
 
   @Override
@@ -199,6 +327,12 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentInvoicesProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    invoiceId: ").append(toIndentedString(invoiceId)).append("\n");

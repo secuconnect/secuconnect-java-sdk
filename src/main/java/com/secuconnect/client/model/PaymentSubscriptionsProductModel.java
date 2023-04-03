@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.PaymentSubscriptionsProductModelBillingCycles;
@@ -11,6 +13,24 @@ import java.util.Objects;
  * PaymentSubscriptionsProductModel
  */
 public class PaymentSubscriptionsProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("created")
   private String created = null;
 
@@ -46,6 +66,111 @@ public class PaymentSubscriptionsProductModel extends BaseProductModel {
 
   @SerializedName("billing_cycles")
   private PaymentSubscriptionsProductModelBillingCycles billingCycles = null;
+
+  @SerializedName("demo")
+  private Boolean demo = null;
+
+  public PaymentSubscriptionsProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public PaymentSubscriptionsProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public PaymentSubscriptionsProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public PaymentSubscriptionsProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public PaymentSubscriptionsProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public PaymentSubscriptionsProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
   public PaymentSubscriptionsProductModel created(String created) {
     this.created = created;
@@ -251,6 +376,23 @@ public class PaymentSubscriptionsProductModel extends BaseProductModel {
     this.billingCycles = billingCycles;
   }
 
+  public PaymentSubscriptionsProductModel demo(Boolean demo) {
+    this.demo = demo;
+    return this;
+  }
+
+   /**
+   * Demo
+   * @return demo
+  **/
+  public Boolean getDemo() {
+    return demo;
+  }
+
+  public void setDemo(Boolean demo) {
+    this.demo = demo;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -260,7 +402,13 @@ public class PaymentSubscriptionsProductModel extends BaseProductModel {
       return false;
     }
     PaymentSubscriptionsProductModel paymentSubscriptionsProductModel = (PaymentSubscriptionsProductModel) o;
-    return Objects.equals(this.created, paymentSubscriptionsProductModel.created) &&
+    return Objects.equals(this.l, paymentSubscriptionsProductModel.l) &&
+        Objects.equals(this.k, paymentSubscriptionsProductModel.k) &&
+        Objects.equals(this.ks, paymentSubscriptionsProductModel.ks) &&
+        Objects.equals(this.c, paymentSubscriptionsProductModel.c) &&
+        Objects.equals(this.s, paymentSubscriptionsProductModel.s) &&
+        Objects.equals(this.t, paymentSubscriptionsProductModel.t) &&
+        Objects.equals(this.created, paymentSubscriptionsProductModel.created) &&
         Objects.equals(this.updated, paymentSubscriptionsProductModel.updated) &&
         Objects.equals(this.smartTransaction, paymentSubscriptionsProductModel.smartTransaction) &&
         Objects.equals(this.merchant, paymentSubscriptionsProductModel.merchant) &&
@@ -272,12 +420,13 @@ public class PaymentSubscriptionsProductModel extends BaseProductModel {
         Objects.equals(this.status, paymentSubscriptionsProductModel.status) &&
         Objects.equals(this.paypalSubscriptionId, paymentSubscriptionsProductModel.paypalSubscriptionId) &&
         Objects.equals(this.billingCycles, paymentSubscriptionsProductModel.billingCycles) &&
+        Objects.equals(this.demo, paymentSubscriptionsProductModel.demo) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, smartTransaction, merchant, contract, customer, container, plan, startAt, status, paypalSubscriptionId, billingCycles, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, smartTransaction, merchant, contract, customer, container, plan, startAt, status, paypalSubscriptionId, billingCycles, demo, super.hashCode());
   }
 
   @Override
@@ -285,6 +434,12 @@ public class PaymentSubscriptionsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentSubscriptionsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    smartTransaction: ").append(toIndentedString(smartTransaction)).append("\n");
@@ -297,6 +452,7 @@ public class PaymentSubscriptionsProductModel extends BaseProductModel {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    paypalSubscriptionId: ").append(toIndentedString(paypalSubscriptionId)).append("\n");
     sb.append("    billingCycles: ").append(toIndentedString(billingCycles)).append("\n");
+    sb.append("    demo: ").append(toIndentedString(demo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

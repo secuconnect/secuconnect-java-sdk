@@ -61,7 +61,7 @@ public class SmartTransactionsApplicationContextIframeOpts {
 
   public SmartTransactionsApplicationContextIframeOpts addPaymentHintItem(SmartTransactionsReceipt paymentHintItem) {
     if (this.paymentHint == null) {
-      this.paymentHint = new ArrayList<>();
+      this.paymentHint = new ArrayList<SmartTransactionsReceipt>();
     }
     this.paymentHint.add(paymentHintItem);
     return this;
