@@ -121,7 +121,7 @@ public class SecupayTransactionProductDTO {
 
   public SecupayTransactionProductDTO addPaymentMethodsItem(String paymentMethodsItem) {
     if (this.paymentMethods == null) {
-      this.paymentMethods = new ArrayList<>();
+      this.paymentMethods = new ArrayList<String>();
     }
     this.paymentMethods.add(paymentMethodsItem);
     return this;
@@ -163,7 +163,7 @@ public class SecupayTransactionProductDTO {
 
   public SecupayTransactionProductDTO addBasketItem(SecupayBasketItem basketItem) {
     if (this.basket == null) {
-      this.basket = new ArrayList<>();
+      this.basket = new ArrayList<SecupayBasketItem>();
     }
     this.basket.add(basketItem);
     return this;

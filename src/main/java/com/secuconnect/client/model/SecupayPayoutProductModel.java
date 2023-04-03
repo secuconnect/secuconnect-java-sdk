@@ -188,7 +188,7 @@ public class SecupayPayoutProductModel extends BaseProductModel {
 
   public SecupayPayoutProductModel addTransactionListItem(SecupayTransactionListItem transactionListItem) {
     if (this.transactionList == null) {
-      this.transactionList = new ArrayList<>();
+      this.transactionList = new ArrayList<SecupayTransactionListItem>();
     }
     this.transactionList.add(transactionListItem);
     return this;

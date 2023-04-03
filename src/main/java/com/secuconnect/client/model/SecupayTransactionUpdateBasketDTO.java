@@ -41,7 +41,7 @@ public class SecupayTransactionUpdateBasketDTO {
 
   public SecupayTransactionUpdateBasketDTO addBasketItem(SecupayBasketItem basketItem) {
     if (this.basket == null) {
-      this.basket = new ArrayList<>();
+      this.basket = new ArrayList<SecupayBasketItem>();
     }
     this.basket.add(basketItem);
     return this;

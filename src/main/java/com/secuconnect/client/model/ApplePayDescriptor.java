@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.ApplePayDescriptorHeader;
 import java.util.Objects;
 
 /**
@@ -17,7 +18,7 @@ public class ApplePayDescriptor implements OneOfPaymentContainersDTOModelPrivate
   private String data = null;
 
   @SerializedName("header")
-  private Object header = null;
+  private ApplePayDescriptorHeader header = null;
 
   public ApplePayDescriptor signature(String signature) {
     this.signature = signature;
@@ -70,20 +71,20 @@ public class ApplePayDescriptor implements OneOfPaymentContainersDTOModelPrivate
     this.data = data;
   }
 
-  public ApplePayDescriptor header(Object header) {
+  public ApplePayDescriptor header(ApplePayDescriptorHeader header) {
     this.header = header;
     return this;
   }
 
    /**
-   * Additional version-dependent information you use to decrypt and verify the payment
+   * Get header
    * @return header
   **/
-  public Object getHeader() {
+  public ApplePayDescriptorHeader getHeader() {
     return header;
   }
 
-  public void setHeader(Object header) {
+  public void setHeader(ApplePayDescriptorHeader header) {
     this.header = header;
   }
 

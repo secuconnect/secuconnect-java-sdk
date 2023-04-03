@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.PaymentInformation;
@@ -12,6 +14,24 @@ import java.util.Objects;
  * PaymentContractsProductModel
  */
 public class PaymentContractsProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("created")
   private String created = null;
 
@@ -29,6 +49,108 @@ public class PaymentContractsProductModel extends BaseProductModel {
 
   @SerializedName("approved")
   private Boolean approved = null;
+
+  public PaymentContractsProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public PaymentContractsProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public PaymentContractsProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public PaymentContractsProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public PaymentContractsProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public PaymentContractsProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
   public PaymentContractsProductModel created(String created) {
     this.created = created;
@@ -141,7 +263,13 @@ public class PaymentContractsProductModel extends BaseProductModel {
       return false;
     }
     PaymentContractsProductModel paymentContractsProductModel = (PaymentContractsProductModel) o;
-    return Objects.equals(this.created, paymentContractsProductModel.created) &&
+    return Objects.equals(this.l, paymentContractsProductModel.l) &&
+        Objects.equals(this.k, paymentContractsProductModel.k) &&
+        Objects.equals(this.ks, paymentContractsProductModel.ks) &&
+        Objects.equals(this.c, paymentContractsProductModel.c) &&
+        Objects.equals(this.s, paymentContractsProductModel.s) &&
+        Objects.equals(this.t, paymentContractsProductModel.t) &&
+        Objects.equals(this.created, paymentContractsProductModel.created) &&
         Objects.equals(this.updated, paymentContractsProductModel.updated) &&
         Objects.equals(this.parent, paymentContractsProductModel.parent) &&
         Objects.equals(this.payInAccount, paymentContractsProductModel.payInAccount) &&
@@ -152,7 +280,7 @@ public class PaymentContractsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, parent, payInAccount, demo, approved, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, parent, payInAccount, demo, approved, super.hashCode());
   }
 
   @Override
@@ -160,6 +288,12 @@ public class PaymentContractsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentContractsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");

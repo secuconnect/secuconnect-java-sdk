@@ -116,7 +116,7 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
 
   public LoyaltyMerchantcardsCardBalanceReceipt addReceiptHeaderItem(ReceiptType receiptHeaderItem) {
     if (this.receiptHeader == null) {
-      this.receiptHeader = new ArrayList<>();
+      this.receiptHeader = new ArrayList<ReceiptType>();
     }
     this.receiptHeader.add(receiptHeaderItem);
     return this;
@@ -141,7 +141,7 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
 
   public LoyaltyMerchantcardsCardBalanceReceipt addReceiptItem(ReceiptTypeValue receiptItem) {
     if (this.receipt == null) {
-      this.receipt = new ArrayList<>();
+      this.receipt = new ArrayList<ReceiptTypeValue>();
     }
     this.receipt.add(receiptItem);
     return this;

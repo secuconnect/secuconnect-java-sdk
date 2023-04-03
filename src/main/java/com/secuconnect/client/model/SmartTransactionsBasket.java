@@ -23,7 +23,7 @@ public class SmartTransactionsBasket {
 
   public SmartTransactionsBasket addProductsItem(SmartTransactionsBasketProduct productsItem) {
     if (this.products == null) {
-      this.products = new ArrayList<>();
+      this.products = new ArrayList<SmartTransactionsBasketProduct>();
     }
     this.products.add(productsItem);
     return this;

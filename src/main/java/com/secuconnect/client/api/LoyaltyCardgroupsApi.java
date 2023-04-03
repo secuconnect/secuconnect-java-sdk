@@ -2,6 +2,8 @@ package com.secuconnect.client.api;
 
 import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
+import com.secuconnect.client.model.Aggregate;
+import java.math.BigDecimal;
 import com.secuconnect.client.model.LoyaltyCardgroupsDTO;
 import com.secuconnect.client.model.LoyaltyCardgroupsDTOCheckPasscodeEnabled;
 import com.secuconnect.client.model.LoyaltyCardgroupsList;

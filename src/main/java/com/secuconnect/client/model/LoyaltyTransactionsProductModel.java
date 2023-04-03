@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.LoyaltyTransactionsDTOCard;
@@ -18,6 +20,24 @@ import java.util.Objects;
  * LoyaltyTransactionsProductModel
  */
 public class LoyaltyTransactionsProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("created")
   private String created = null;
 
@@ -68,6 +88,108 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("is_cancelling")
   private Integer isCancelling = null;
+
+  public LoyaltyTransactionsProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public LoyaltyTransactionsProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public LoyaltyTransactionsProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public LoyaltyTransactionsProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public LoyaltyTransactionsProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public LoyaltyTransactionsProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
   public LoyaltyTransactionsProductModel created(String created) {
     this.created = created;
@@ -178,7 +300,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   public LoyaltyTransactionsProductModel addParentsItem(LoyaltyTransactionsDTORelatedTransactions parentsItem) {
     if (this.parents == null) {
-      this.parents = new ArrayList<>();
+      this.parents = new ArrayList<LoyaltyTransactionsDTORelatedTransactions>();
     }
     this.parents.add(parentsItem);
     return this;
@@ -203,7 +325,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   public LoyaltyTransactionsProductModel addChildrenItem(LoyaltyTransactionsDTORelatedTransactions childrenItem) {
     if (this.children == null) {
-      this.children = new ArrayList<>();
+      this.children = new ArrayList<LoyaltyTransactionsDTORelatedTransactions>();
     }
     this.children.add(childrenItem);
     return this;
@@ -347,7 +469,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   public LoyaltyTransactionsProductModel addReceiptItem(ReceiptTypeValue receiptItem) {
     if (this.receipt == null) {
-      this.receipt = new ArrayList<>();
+      this.receipt = new ArrayList<ReceiptTypeValue>();
     }
     this.receipt.add(receiptItem);
     return this;
@@ -391,7 +513,13 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
       return false;
     }
     LoyaltyTransactionsProductModel loyaltyTransactionsProductModel = (LoyaltyTransactionsProductModel) o;
-    return Objects.equals(this.created, loyaltyTransactionsProductModel.created) &&
+    return Objects.equals(this.l, loyaltyTransactionsProductModel.l) &&
+        Objects.equals(this.k, loyaltyTransactionsProductModel.k) &&
+        Objects.equals(this.ks, loyaltyTransactionsProductModel.ks) &&
+        Objects.equals(this.c, loyaltyTransactionsProductModel.c) &&
+        Objects.equals(this.s, loyaltyTransactionsProductModel.s) &&
+        Objects.equals(this.t, loyaltyTransactionsProductModel.t) &&
+        Objects.equals(this.created, loyaltyTransactionsProductModel.created) &&
         Objects.equals(this.merchant, loyaltyTransactionsProductModel.merchant) &&
         Objects.equals(this.cardgroup, loyaltyTransactionsProductModel.cardgroup) &&
         Objects.equals(this.store, loyaltyTransactionsProductModel.store) &&
@@ -413,7 +541,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, merchant, cardgroup, store, merchantcard, card, parents, children, tid, status, amount, currency, balance, description, lastChange, receipt, isCancelling, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, merchant, cardgroup, store, merchantcard, card, parents, children, tid, status, amount, currency, balance, description, lastChange, receipt, isCancelling, super.hashCode());
   }
 
   @Override
@@ -421,6 +549,12 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoyaltyTransactionsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    cardgroup: ").append(toIndentedString(cardgroup)).append("\n");

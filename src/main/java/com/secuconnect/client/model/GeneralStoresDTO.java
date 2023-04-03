@@ -164,7 +164,7 @@ public class GeneralStoresDTO {
 
   public GeneralStoresDTO addPhotoItem(String photoItem) {
     if (this.photo == null) {
-      this.photo = new ArrayList<>();
+      this.photo = new ArrayList<String>();
     }
     this.photo.add(photoItem);
     return this;
@@ -189,7 +189,7 @@ public class GeneralStoresDTO {
 
   public GeneralStoresDTO addOpenHoursItem(OpenHours openHoursItem) {
     if (this.openHours == null) {
-      this.openHours = new ArrayList<>();
+      this.openHours = new ArrayList<OpenHours>();
     }
     this.openHours.add(openHoursItem);
     return this;

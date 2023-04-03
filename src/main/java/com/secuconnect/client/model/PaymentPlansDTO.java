@@ -21,13 +21,16 @@ public class PaymentPlansDTO {
   private String paypalPlanId = null;
 
   @SerializedName("status")
-  private String status = null;
+  private String status = "active";
 
   @SerializedName("payment_methods")
   private List<String> paymentMethods = null;
 
   @SerializedName("merchant")
   private GeneralMerchantsProductModel merchant = null;
+
+  @SerializedName("merchant_id")
+  private String merchantId = null;
 
   @SerializedName("billing_cycles")
   private List<BillingCyclesItem> billingCycles = null;
@@ -55,7 +58,7 @@ public class PaymentPlansDTO {
   }
 
    /**
-   * ISO currency code
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {
@@ -107,7 +110,7 @@ public class PaymentPlansDTO {
 
   public PaymentPlansDTO addPaymentMethodsItem(String paymentMethodsItem) {
     if (this.paymentMethods == null) {
-      this.paymentMethods = new ArrayList<>();
+      this.paymentMethods = new ArrayList<String>();
     }
     this.paymentMethods.add(paymentMethodsItem);
     return this;
@@ -142,6 +145,23 @@ public class PaymentPlansDTO {
     this.merchant = merchant;
   }
 
+  public PaymentPlansDTO merchantId(String merchantId) {
+    this.merchantId = merchantId;
+    return this;
+  }
+
+   /**
+   * General Merchant ID
+   * @return merchantId
+  **/
+  public String getMerchantId() {
+    return merchantId;
+  }
+
+  public void setMerchantId(String merchantId) {
+    this.merchantId = merchantId;
+  }
+
   public PaymentPlansDTO billingCycles(List<BillingCyclesItem> billingCycles) {
     this.billingCycles = billingCycles;
     return this;
@@ -149,7 +169,7 @@ public class PaymentPlansDTO {
 
   public PaymentPlansDTO addBillingCyclesItem(BillingCyclesItem billingCyclesItem) {
     if (this.billingCycles == null) {
-      this.billingCycles = new ArrayList<>();
+      this.billingCycles = new ArrayList<BillingCyclesItem>();
     }
     this.billingCycles.add(billingCyclesItem);
     return this;
@@ -182,12 +202,13 @@ public class PaymentPlansDTO {
         Objects.equals(this.status, paymentPlansDTO.status) &&
         Objects.equals(this.paymentMethods, paymentPlansDTO.paymentMethods) &&
         Objects.equals(this.merchant, paymentPlansDTO.merchant) &&
+        Objects.equals(this.merchantId, paymentPlansDTO.merchantId) &&
         Objects.equals(this.billingCycles, paymentPlansDTO.billingCycles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, currency, paypalPlanId, status, paymentMethods, merchant, billingCycles);
+    return Objects.hash(description, currency, paypalPlanId, status, paymentMethods, merchant, merchantId, billingCycles);
   }
 
   @Override
@@ -200,6 +221,7 @@ public class PaymentPlansDTO {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    paymentMethods: ").append(toIndentedString(paymentMethods)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
+    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
     sb.append("    billingCycles: ").append(toIndentedString(billingCycles)).append("\n");
     sb.append("}");
     return sb.toString();

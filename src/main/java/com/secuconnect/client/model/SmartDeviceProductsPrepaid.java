@@ -83,7 +83,7 @@ public class SmartDeviceProductsPrepaid extends SmartDeviceProductsEnabledWithTi
 
   public SmartDeviceProductsPrepaid addPasswordItem(String passwordItem) {
     if (this.password == null) {
-      this.password = new ArrayList<>();
+      this.password = new ArrayList<String>();
     }
     this.password.add(passwordItem);
     return this;

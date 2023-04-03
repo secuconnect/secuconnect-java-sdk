@@ -119,7 +119,7 @@ public class UploadidentsProductDTO {
 
   public UploadidentsProductDTO addDocumentIdsItem(String documentIdsItem) {
     if (this.documentIds == null) {
-      this.documentIds = new ArrayList<>();
+      this.documentIds = new ArrayList<String>();
     }
     this.documentIds.add(documentIdsItem);
     return this;

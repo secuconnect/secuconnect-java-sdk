@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.ProductInstanceUID;
@@ -14,6 +16,24 @@ import java.util.Objects;
  * SmartDevicesProductModel
  */
 public class SmartDevicesProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("created")
   private String created = null;
 
@@ -76,6 +96,108 @@ public class SmartDevicesProductModel extends BaseProductModel {
 
   @SerializedName("base_version")
   private String baseVersion = null;
+
+  public SmartDevicesProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public SmartDevicesProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public SmartDevicesProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public SmartDevicesProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public SmartDevicesProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public SmartDevicesProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
   public SmartDevicesProductModel created(String created) {
     this.created = created;
@@ -443,7 +565,13 @@ public class SmartDevicesProductModel extends BaseProductModel {
       return false;
     }
     SmartDevicesProductModel smartDevicesProductModel = (SmartDevicesProductModel) o;
-    return Objects.equals(this.created, smartDevicesProductModel.created) &&
+    return Objects.equals(this.l, smartDevicesProductModel.l) &&
+        Objects.equals(this.k, smartDevicesProductModel.k) &&
+        Objects.equals(this.ks, smartDevicesProductModel.ks) &&
+        Objects.equals(this.c, smartDevicesProductModel.c) &&
+        Objects.equals(this.s, smartDevicesProductModel.s) &&
+        Objects.equals(this.t, smartDevicesProductModel.t) &&
+        Objects.equals(this.created, smartDevicesProductModel.created) &&
         Objects.equals(this.updated, smartDevicesProductModel.updated) &&
         Objects.equals(this.merchant, smartDevicesProductModel.merchant) &&
         Objects.equals(this.store, smartDevicesProductModel.store) &&
@@ -469,7 +597,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, merchant, store, contract, vendor, vendorUid, type, device, routing, userPin, products, description, tid, idleScreenRegister, idleScreenTerminal, online, refresh, connectionType, terminalType, baseVersion, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, merchant, store, contract, vendor, vendorUid, type, device, routing, userPin, products, description, tid, idleScreenRegister, idleScreenTerminal, online, refresh, connectionType, terminalType, baseVersion, super.hashCode());
   }
 
   @Override
@@ -477,6 +605,12 @@ public class SmartDevicesProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartDevicesProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");

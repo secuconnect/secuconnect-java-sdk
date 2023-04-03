@@ -29,7 +29,7 @@ public class GeneralMerchantsPublicDataModel extends BaseProductModel {
 
   public GeneralMerchantsPublicDataModel addLegalDetailsItem(GeneralMerchantsLegalDetails legalDetailsItem) {
     if (this.legalDetails == null) {
-      this.legalDetails = new ArrayList<>();
+      this.legalDetails = new ArrayList<GeneralMerchantsLegalDetails>();
     }
     this.legalDetails.add(legalDetailsItem);
     return this;
@@ -71,7 +71,7 @@ public class GeneralMerchantsPublicDataModel extends BaseProductModel {
 
   public GeneralMerchantsPublicDataModel addMerchantUrlsItem(GeneralMerchantsUrls merchantUrlsItem) {
     if (this.merchantUrls == null) {
-      this.merchantUrls = new ArrayList<>();
+      this.merchantUrls = new ArrayList<GeneralMerchantsUrls>();
     }
     this.merchantUrls.add(merchantUrlsItem);
     return this;

@@ -9,6 +9,9 @@ import java.util.Objects;
  * PaymentContainersDTO
  */
 public class PaymentContainersDTO {
+  @SerializedName("merchant_id")
+  private String merchantId = null;
+
   @SerializedName("customer")
   private PaymentContainersDTOCustomer customer = null;
 
@@ -20,6 +23,23 @@ public class PaymentContainersDTO {
 
   @SerializedName("private")
   private OneOfPaymentContainersDTOModelPrivate _private = null;
+
+  public PaymentContainersDTO merchantId(String merchantId) {
+    this.merchantId = merchantId;
+    return this;
+  }
+
+   /**
+   * General Merchant ID
+   * @return merchantId
+  **/
+  public String getMerchantId() {
+    return merchantId;
+  }
+
+  public void setMerchantId(String merchantId) {
+    this.merchantId = merchantId;
+  }
 
   public PaymentContainersDTO customer(PaymentContainersDTOCustomer customer) {
     this.customer = customer;
@@ -44,7 +64,7 @@ public class PaymentContainersDTO {
   }
 
    /**
-   * Payment-Customer-ID
+   * Payment Customer ID
    * @return customerId
   **/
   public String getCustomerId() {
@@ -98,7 +118,8 @@ public class PaymentContainersDTO {
       return false;
     }
     PaymentContainersDTO paymentContainersDTO = (PaymentContainersDTO) o;
-    return Objects.equals(this.customer, paymentContainersDTO.customer) &&
+    return Objects.equals(this.merchantId, paymentContainersDTO.merchantId) &&
+        Objects.equals(this.customer, paymentContainersDTO.customer) &&
         Objects.equals(this.customerId, paymentContainersDTO.customerId) &&
         Objects.equals(this.type, paymentContainersDTO.type) &&
         Objects.equals(this._private, paymentContainersDTO._private);
@@ -106,13 +127,14 @@ public class PaymentContainersDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer, customerId, type, _private);
+    return Objects.hash(merchantId, customer, customerId, type, _private);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentContainersDTO {\n");
+    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

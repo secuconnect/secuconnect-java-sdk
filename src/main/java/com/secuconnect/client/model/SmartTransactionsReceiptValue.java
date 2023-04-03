@@ -65,7 +65,7 @@ public class SmartTransactionsReceiptValue {
 
   public SmartTransactionsReceiptValue addDecorationItem(String decorationItem) {
     if (this.decoration == null) {
-      this.decoration = new ArrayList<>();
+      this.decoration = new ArrayList<String>();
     }
     this.decoration.add(decorationItem);
     return this;

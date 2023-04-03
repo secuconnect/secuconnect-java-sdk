@@ -290,7 +290,7 @@ public class SmartTransactionsBasketProduct {
 
   public SmartTransactionsBasketProduct addGroupItem(SmartTransactionsBasketProductGroup groupItem) {
     if (this.group == null) {
-      this.group = new ArrayList<>();
+      this.group = new ArrayList<SmartTransactionsBasketProductGroup>();
     }
     this.group.add(groupItem);
     return this;
@@ -315,7 +315,7 @@ public class SmartTransactionsBasketProduct {
 
   public SmartTransactionsBasketProduct addSubBasketItem(SmartTransactionsSubBasketProduct subBasketItem) {
     if (this.subBasket == null) {
-      this.subBasket = new ArrayList<>();
+      this.subBasket = new ArrayList<SmartTransactionsSubBasketProduct>();
     }
     this.subBasket.add(subBasketItem);
     return this;

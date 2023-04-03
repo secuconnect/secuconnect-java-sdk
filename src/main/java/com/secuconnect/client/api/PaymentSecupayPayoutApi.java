@@ -5,6 +5,7 @@ import com.secuconnect.client.*;
 import com.secuconnect.client.model.ProductExceptionPayload;
 import com.secuconnect.client.model.SecupayPayoutDTO;
 import com.secuconnect.client.model.SecupayPayoutProductModel;
+import com.secuconnect.client.model.SecupayPayoutWithoutCustomerDTO;
 import okhttp3.Call;
 
 import java.lang.reflect.Type;
@@ -194,6 +195,87 @@ public class PaymentSecupayPayoutApi {
      */
     public Call paymentSecupaypayoutPostAsync(SecupayPayoutDTO body, final ApiCallback<SecupayPayoutProductModel> callback) throws ApiException {
         Call call = paymentSecupaypayoutPostValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<SecupayPayoutProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for paymentSecupaypayoutWithoutCustomerPost
+     * @param body Payout payment transaction input properties
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call paymentSecupaypayoutWithoutCustomerPostCall(SecupayPayoutWithoutCustomerDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Secupaypayout/me/PayoutWithoutCustomer";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call paymentSecupaypayoutWithoutCustomerPostValidateBeforeCall(SecupayPayoutWithoutCustomerDTO body) throws ApiException {
+
+        return paymentSecupaypayoutWithoutCustomerPostCall(body);
+    }
+
+    /**
+     * POST Payment/Secupaypayout
+     * Start a payout transaction
+     * @param body Payout payment transaction input properties
+     * @return SecupayPayoutProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SecupayPayoutProductModel paymentSecupaypayoutWithoutCustomerPost(SecupayPayoutWithoutCustomerDTO body) throws ApiException {
+        ApiResponse<SecupayPayoutProductModel> resp = paymentSecupaypayoutWithoutCustomerPostWithHttpInfo(body);
+        return resp.getData();
+    }
+
+    /**
+     * POST Payment/Secupaypayout
+     * Start a payout transaction
+     * @param body Payout payment transaction input properties
+     * @return ApiResponse&lt;SecupayPayoutProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SecupayPayoutProductModel> paymentSecupaypayoutWithoutCustomerPostWithHttpInfo(SecupayPayoutWithoutCustomerDTO body) throws ApiException {
+        Call call = paymentSecupaypayoutWithoutCustomerPostValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<SecupayPayoutProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * POST Payment/Secupaypayout (asynchronously)
+     * Start a payout transaction
+     * @param body Payout payment transaction input properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call paymentSecupaypayoutWithoutCustomerPostAsync(SecupayPayoutWithoutCustomerDTO body, final ApiCallback<SecupayPayoutProductModel> callback) throws ApiException {
+        Call call = paymentSecupaypayoutWithoutCustomerPostValidateBeforeCall(body);
         Type localVarReturnType = new TypeToken<SecupayPayoutProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

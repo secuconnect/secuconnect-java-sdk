@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.AssignedBy;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.GeneralMerchantsLegalDetails;
@@ -16,6 +18,24 @@ import java.util.Objects;
  * GeneralMerchantsProductModel
  */
 public class GeneralMerchantsProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("id_old")
   private Integer idOld = null;
 
@@ -42,6 +62,108 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
 
   @SerializedName("store_name")
   private String storeName = null;
+
+  public GeneralMerchantsProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public GeneralMerchantsProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public GeneralMerchantsProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public GeneralMerchantsProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public GeneralMerchantsProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public GeneralMerchantsProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
    /**
    * ID in secupay Frontend
@@ -109,7 +231,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
 
   public GeneralMerchantsProductModel addAssignedByItem(AssignedBy assignedByItem) {
     if (this.assignedBy == null) {
-      this.assignedBy = new ArrayList<>();
+      this.assignedBy = new ArrayList<AssignedBy>();
     }
     this.assignedBy.add(assignedByItem);
     return this;
@@ -134,7 +256,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
 
   public GeneralMerchantsProductModel addInvitedByItem(InvitedBy invitedByItem) {
     if (this.invitedBy == null) {
-      this.invitedBy = new ArrayList<>();
+      this.invitedBy = new ArrayList<InvitedBy>();
     }
     this.invitedBy.add(invitedByItem);
     return this;
@@ -159,7 +281,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
 
   public GeneralMerchantsProductModel addLegalDetailsItem(GeneralMerchantsLegalDetails legalDetailsItem) {
     if (this.legalDetails == null) {
-      this.legalDetails = new ArrayList<>();
+      this.legalDetails = new ArrayList<GeneralMerchantsLegalDetails>();
     }
     this.legalDetails.add(legalDetailsItem);
     return this;
@@ -184,7 +306,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
 
   public GeneralMerchantsProductModel addUrlsItem(GeneralMerchantsUrls urlsItem) {
     if (this.urls == null) {
-      this.urls = new ArrayList<>();
+      this.urls = new ArrayList<GeneralMerchantsUrls>();
     }
     this.urls.add(urlsItem);
     return this;
@@ -228,7 +350,13 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
       return false;
     }
     GeneralMerchantsProductModel generalMerchantsProductModel = (GeneralMerchantsProductModel) o;
-    return Objects.equals(this.idOld, generalMerchantsProductModel.idOld) &&
+    return Objects.equals(this.l, generalMerchantsProductModel.l) &&
+        Objects.equals(this.k, generalMerchantsProductModel.k) &&
+        Objects.equals(this.ks, generalMerchantsProductModel.ks) &&
+        Objects.equals(this.c, generalMerchantsProductModel.c) &&
+        Objects.equals(this.s, generalMerchantsProductModel.s) &&
+        Objects.equals(this.t, generalMerchantsProductModel.t) &&
+        Objects.equals(this.idOld, generalMerchantsProductModel.idOld) &&
         Objects.equals(this.type, generalMerchantsProductModel.type) &&
         Objects.equals(this.user, generalMerchantsProductModel.user) &&
         Objects.equals(this.parent, generalMerchantsProductModel.parent) &&
@@ -242,7 +370,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(idOld, type, user, parent, assignedBy, invitedBy, legalDetails, urls, storeName, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, idOld, type, user, parent, assignedBy, invitedBy, legalDetails, urls, storeName, super.hashCode());
   }
 
   @Override
@@ -250,6 +378,12 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class GeneralMerchantsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    idOld: ").append(toIndentedString(idOld)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

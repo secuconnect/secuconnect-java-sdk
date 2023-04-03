@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.IdentresultPerson;
@@ -13,6 +15,24 @@ import java.util.Objects;
  * ServicesIdentresultsProductModel
  */
 public class ServicesIdentresultsProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("created")
   private String created = null;
 
@@ -30,6 +50,108 @@ public class ServicesIdentresultsProductModel extends BaseProductModel {
 
   @SerializedName("person")
   private List<IdentresultPerson> person = null;
+
+  public ServicesIdentresultsProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public ServicesIdentresultsProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public ServicesIdentresultsProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public ServicesIdentresultsProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public ServicesIdentresultsProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public ServicesIdentresultsProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
   public ServicesIdentresultsProductModel created(String created) {
     this.created = created;
@@ -123,7 +245,7 @@ public class ServicesIdentresultsProductModel extends BaseProductModel {
 
   public ServicesIdentresultsProductModel addPersonItem(IdentresultPerson personItem) {
     if (this.person == null) {
-      this.person = new ArrayList<>();
+      this.person = new ArrayList<IdentresultPerson>();
     }
     this.person.add(personItem);
     return this;
@@ -150,7 +272,13 @@ public class ServicesIdentresultsProductModel extends BaseProductModel {
       return false;
     }
     ServicesIdentresultsProductModel servicesIdentresultsProductModel = (ServicesIdentresultsProductModel) o;
-    return Objects.equals(this.created, servicesIdentresultsProductModel.created) &&
+    return Objects.equals(this.l, servicesIdentresultsProductModel.l) &&
+        Objects.equals(this.k, servicesIdentresultsProductModel.k) &&
+        Objects.equals(this.ks, servicesIdentresultsProductModel.ks) &&
+        Objects.equals(this.c, servicesIdentresultsProductModel.c) &&
+        Objects.equals(this.s, servicesIdentresultsProductModel.s) &&
+        Objects.equals(this.t, servicesIdentresultsProductModel.t) &&
+        Objects.equals(this.created, servicesIdentresultsProductModel.created) &&
         Objects.equals(this.request, servicesIdentresultsProductModel.request) &&
         Objects.equals(this.contract, servicesIdentresultsProductModel.contract) &&
         Objects.equals(this.status, servicesIdentresultsProductModel.status) &&
@@ -161,7 +289,7 @@ public class ServicesIdentresultsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, request, contract, status, demo, person, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, request, contract, status, demo, person, super.hashCode());
   }
 
   @Override
@@ -169,6 +297,12 @@ public class ServicesIdentresultsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class ServicesIdentresultsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    request: ").append(toIndentedString(request)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");

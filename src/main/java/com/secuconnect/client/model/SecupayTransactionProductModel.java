@@ -208,7 +208,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
 
   public SecupayTransactionProductModel addBasketItem(SecupayBasketItem basketItem) {
     if (this.basket == null) {
-      this.basket = new ArrayList<>();
+      this.basket = new ArrayList<SecupayBasketItem>();
     }
     this.basket.add(basketItem);
     return this;
@@ -420,7 +420,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
 
   public SecupayTransactionProductModel addSubTransactionsItem(SecupaySubTransactionProductModel subTransactionsItem) {
     if (this.subTransactions == null) {
-      this.subTransactions = new ArrayList<>();
+      this.subTransactions = new ArrayList<SecupaySubTransactionProductModel>();
     }
     this.subTransactions.add(subTransactionsItem);
     return this;

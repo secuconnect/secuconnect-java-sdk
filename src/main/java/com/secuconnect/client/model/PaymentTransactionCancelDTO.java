@@ -13,6 +13,9 @@ public class PaymentTransactionCancelDTO {
   @SerializedName("amount")
   private Integer amount = null;
 
+  @SerializedName("reduce_amount_by")
+  private Integer reduceAmountBy = null;
+
   @SerializedName("reduce_stakeholder_payment")
   private Boolean reduceStakeholderPayment = false;
 
@@ -42,7 +45,7 @@ public class PaymentTransactionCancelDTO {
   }
 
    /**
-   * Get amount
+   * Amount in minor currency unit (e. g. Euro Cent)
    * @return amount
   **/
   public Integer getAmount() {
@@ -51,6 +54,23 @@ public class PaymentTransactionCancelDTO {
 
   public void setAmount(Integer amount) {
     this.amount = amount;
+  }
+
+  public PaymentTransactionCancelDTO reduceAmountBy(Integer reduceAmountBy) {
+    this.reduceAmountBy = reduceAmountBy;
+    return this;
+  }
+
+   /**
+   * Get reduceAmountBy
+   * @return reduceAmountBy
+  **/
+  public Integer getReduceAmountBy() {
+    return reduceAmountBy;
+  }
+
+  public void setReduceAmountBy(Integer reduceAmountBy) {
+    this.reduceAmountBy = reduceAmountBy;
   }
 
   public PaymentTransactionCancelDTO reduceStakeholderPayment(Boolean reduceStakeholderPayment) {
@@ -98,13 +118,14 @@ public class PaymentTransactionCancelDTO {
     PaymentTransactionCancelDTO paymentTransactionCancelDTO = (PaymentTransactionCancelDTO) o;
     return Objects.equals(this.reason, paymentTransactionCancelDTO.reason) &&
         Objects.equals(this.amount, paymentTransactionCancelDTO.amount) &&
+        Objects.equals(this.reduceAmountBy, paymentTransactionCancelDTO.reduceAmountBy) &&
         Objects.equals(this.reduceStakeholderPayment, paymentTransactionCancelDTO.reduceStakeholderPayment) &&
         Objects.equals(this.containerId, paymentTransactionCancelDTO.containerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reason, amount, reduceStakeholderPayment, containerId);
+    return Objects.hash(reason, amount, reduceAmountBy, reduceStakeholderPayment, containerId);
   }
 
   @Override
@@ -113,6 +134,7 @@ public class PaymentTransactionCancelDTO {
     sb.append("class PaymentTransactionCancelDTO {\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    reduceAmountBy: ").append(toIndentedString(reduceAmountBy)).append("\n");
     sb.append("    reduceStakeholderPayment: ").append(toIndentedString(reduceStakeholderPayment)).append("\n");
     sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
     sb.append("}");

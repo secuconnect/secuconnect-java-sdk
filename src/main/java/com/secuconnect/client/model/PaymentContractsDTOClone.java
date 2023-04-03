@@ -8,6 +8,9 @@ import java.util.Objects;
  * PaymentContractsDTOClone
  */
 public class PaymentContractsDTOClone {
+  @SerializedName("contract_id")
+  private String contractId = null;
+
   @SerializedName("project")
   private String project = null;
 
@@ -19,6 +22,23 @@ public class PaymentContractsDTOClone {
 
   @SerializedName("url_push")
   private String urlPush = null;
+
+  public PaymentContractsDTOClone contractId(String contractId) {
+    this.contractId = contractId;
+    return this;
+  }
+
+   /**
+   * Parent General Contract ID
+   * @return contractId
+  **/
+  public String getContractId() {
+    return contractId;
+  }
+
+  public void setContractId(String contractId) {
+    this.contractId = contractId;
+  }
 
   public PaymentContractsDTOClone project(String project) {
     this.project = project;
@@ -97,7 +117,8 @@ public class PaymentContractsDTOClone {
       return false;
     }
     PaymentContractsDTOClone paymentContractsDTOClone = (PaymentContractsDTOClone) o;
-    return Objects.equals(this.project, paymentContractsDTOClone.project) &&
+    return Objects.equals(this.contractId, paymentContractsDTOClone.contractId) &&
+        Objects.equals(this.project, paymentContractsDTOClone.project) &&
         Objects.equals(this.paymentData, paymentContractsDTOClone.paymentData) &&
         Objects.equals(this.payinAccount, paymentContractsDTOClone.payinAccount) &&
         Objects.equals(this.urlPush, paymentContractsDTOClone.urlPush);
@@ -105,13 +126,14 @@ public class PaymentContractsDTOClone {
 
   @Override
   public int hashCode() {
-    return Objects.hash(project, paymentData, payinAccount, urlPush);
+    return Objects.hash(contractId, project, paymentData, payinAccount, urlPush);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentContractsDTOClone {\n");
+    sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    paymentData: ").append(toIndentedString(paymentData)).append("\n");
     sb.append("    payinAccount: ").append(toIndentedString(payinAccount)).append("\n");

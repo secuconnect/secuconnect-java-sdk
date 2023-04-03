@@ -1,6 +1,8 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.AggregationResult;
+import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.ProductInstanceUID;
@@ -15,6 +17,24 @@ import java.util.Objects;
  * SmartRoutingsProductModel
  */
 public class SmartRoutingsProductModel extends BaseProductModel {
+  @SerializedName("l")
+  private Integer l = null;
+
+  @SerializedName("k")
+  private Integer k = null;
+
+  @SerializedName("ks")
+  private String ks = null;
+
+  @SerializedName("c")
+  private Integer c = null;
+
+  @SerializedName("s")
+  private Integer s = null;
+
+  @SerializedName("t")
+  private AggregationTimeResult t = null;
+
   @SerializedName("created")
   private String created = null;
 
@@ -32,6 +52,108 @@ public class SmartRoutingsProductModel extends BaseProductModel {
 
   @SerializedName("assign")
   private List<SmartRoutingsAssign> assign = null;
+
+  public SmartRoutingsProductModel l(Integer l) {
+    this.l = l;
+    return this;
+  }
+
+   /**
+   * lookup index
+   * @return l
+  **/
+  public Integer getL() {
+    return l;
+  }
+
+  public void setL(Integer l) {
+    this.l = l;
+  }
+
+  public SmartRoutingsProductModel k(Integer k) {
+    this.k = k;
+    return this;
+  }
+
+   /**
+   * key index
+   * @return k
+  **/
+  public Integer getK() {
+    return k;
+  }
+
+  public void setK(Integer k) {
+    this.k = k;
+  }
+
+  public SmartRoutingsProductModel ks(String ks) {
+    this.ks = ks;
+    return this;
+  }
+
+   /**
+   * key name
+   * @return ks
+  **/
+  public String getKs() {
+    return ks;
+  }
+
+  public void setKs(String ks) {
+    this.ks = ks;
+  }
+
+  public SmartRoutingsProductModel c(Integer c) {
+    this.c = c;
+    return this;
+  }
+
+   /**
+   * count (number of items)
+   * @return c
+  **/
+  public Integer getC() {
+    return c;
+  }
+
+  public void setC(Integer c) {
+    this.c = c;
+  }
+
+  public SmartRoutingsProductModel s(Integer s) {
+    this.s = s;
+    return this;
+  }
+
+   /**
+   * sum
+   * @return s
+  **/
+  public Integer getS() {
+    return s;
+  }
+
+  public void setS(Integer s) {
+    this.s = s;
+  }
+
+  public SmartRoutingsProductModel t(AggregationTimeResult t) {
+    this.t = t;
+    return this;
+  }
+
+   /**
+   * Get t
+   * @return t
+  **/
+  public AggregationTimeResult getT() {
+    return t;
+  }
+
+  public void setT(AggregationTimeResult t) {
+    this.t = t;
+  }
 
   public SmartRoutingsProductModel created(String created) {
     this.created = created;
@@ -125,7 +247,7 @@ public class SmartRoutingsProductModel extends BaseProductModel {
 
   public SmartRoutingsProductModel addAssignItem(SmartRoutingsAssign assignItem) {
     if (this.assign == null) {
-      this.assign = new ArrayList<>();
+      this.assign = new ArrayList<SmartRoutingsAssign>();
     }
     this.assign.add(assignItem);
     return this;
@@ -152,7 +274,13 @@ public class SmartRoutingsProductModel extends BaseProductModel {
       return false;
     }
     SmartRoutingsProductModel smartRoutingsProductModel = (SmartRoutingsProductModel) o;
-    return Objects.equals(this.created, smartRoutingsProductModel.created) &&
+    return Objects.equals(this.l, smartRoutingsProductModel.l) &&
+        Objects.equals(this.k, smartRoutingsProductModel.k) &&
+        Objects.equals(this.ks, smartRoutingsProductModel.ks) &&
+        Objects.equals(this.c, smartRoutingsProductModel.c) &&
+        Objects.equals(this.s, smartRoutingsProductModel.s) &&
+        Objects.equals(this.t, smartRoutingsProductModel.t) &&
+        Objects.equals(this.created, smartRoutingsProductModel.created) &&
         Objects.equals(this.updated, smartRoutingsProductModel.updated) &&
         Objects.equals(this.merchant, smartRoutingsProductModel.merchant) &&
         Objects.equals(this.store, smartRoutingsProductModel.store) &&
@@ -163,7 +291,7 @@ public class SmartRoutingsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(created, updated, merchant, store, description, assign, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, merchant, store, description, assign, super.hashCode());
   }
 
   @Override
@@ -171,6 +299,12 @@ public class SmartRoutingsProductModel extends BaseProductModel {
     StringBuilder sb = new StringBuilder();
     sb.append("class SmartRoutingsProductModel {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    l: ").append(toIndentedString(l)).append("\n");
+    sb.append("    k: ").append(toIndentedString(k)).append("\n");
+    sb.append("    ks: ").append(toIndentedString(ks)).append("\n");
+    sb.append("    c: ").append(toIndentedString(c)).append("\n");
+    sb.append("    s: ").append(toIndentedString(s)).append("\n");
+    sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");

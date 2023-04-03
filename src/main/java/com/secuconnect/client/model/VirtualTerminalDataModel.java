@@ -68,7 +68,7 @@ public class VirtualTerminalDataModel {
 
   public VirtualTerminalDataModel addActionsItem(String actionsItem) {
     if (this.actions == null) {
-      this.actions = new ArrayList<>();
+      this.actions = new ArrayList<String>();
     }
     this.actions.add(actionsItem);
     return this;
