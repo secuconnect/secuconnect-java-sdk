@@ -86,7 +86,7 @@ public class PaymentContainersApiTest {
             CreditCardDescriptor privateInfo = new CreditCardDescriptor();
             privateInfo.setOwner("John Doe");
             privateInfo.setPan("454617XXXXXX7022");
-            privateInfo.setExpirationDate("2023-01-31T00:00:00+00:00");
+            privateInfo.setExpirationDate("2025-01-31T00:00:00+00:00");
             privateInfo.setIssuer("VISA");
             privateInfo.setTransactContainer("z6xFnPCx55prhQ9j1KrML2ql2qTnNfofMHkgaCCJ69hnVo0GyPacZgzEhuo4jyWZIgFZ25/1WewFC941kk8hjISRU2M5kP2QVtGUICo2FAY=");
             privateInfo.setTransactSkeyPubkey("XwxfXlQSh1DBqe0J44Txx5qm7lc3cfXJ9UkUORBdEOggv1L+MAdbHLLidIZZwl01LAAXDRjsElNH6BbNQqhCvFeN5H/+/c6WE3A+ynbrKojZMm99t5iQW/ksMiXjxoVF9nzgZN/2p+mbr7QzQ5tRfMUOROwvI4rLH2t66dCAgXpkbO3jMJhjjspBs3foyFgAfBZ6zhZXj7yMn7MZ0CgxB+R31EODJhmXvNgcNCTFu0o5WxCZPNe6YOucjDSBSztgvXDxc70y3zHrlUPvtCOT4FGSQDYeRrCSYL7ewLv9S5v8CbQxVaakgsIrv5zEZCpXG12hdKv189eDzeuZHrHJRw==");
