@@ -859,6 +859,8 @@ public class ApiClient {
     }
     /**
      * Function to authenticate by OAuthCredentials object.
+     *
+     * @return access token
      */
     public String authenticate() throws ApiException {
         return authenticator.authenticate();
@@ -866,6 +868,8 @@ public class ApiClient {
 
     /**
      * Function to run the authenticate process a second time
+     *
+     * @return access token
      */
     public String reauthenticate() {
         return authenticator.reauthenticate();

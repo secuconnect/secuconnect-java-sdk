@@ -37,6 +37,8 @@ public abstract class OAuthCredentials {
 
     /**
      * Returns the MD5 hash of the defined credentials object
+     *
+     * @return md5 hash
      */
     public abstract String getUniqueKey();
 

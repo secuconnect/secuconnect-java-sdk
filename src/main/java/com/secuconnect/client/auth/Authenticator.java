@@ -32,6 +32,8 @@ public class Authenticator {
 
     /**
      * Function to authenticate by OAuthCredentials object.
+     *
+     * @return access token
      */
     public String authenticate() throws ApiException {
         return startAuthenticationProcess();
@@ -39,6 +41,8 @@ public class Authenticator {
 
     /**
      * Function to run the authenticate process a second time
+     *
+     * @return access token, if it was successful
      */
     public String reauthenticate() {
         try {

@@ -22,6 +22,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [3.14.0] - 2023-04-03
 [3.14.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.13.0...3.14.0
 
+### Security
+- Update dependencies to the latest versions. (Java compatibility: 11+)
+
 ### Added
 - `Api.PaymentSecupayPayoutApi.paymentSecupaypayoutWithoutCustomerPost()`
 - `Api.PaymentTransactionsApi.checkStatus()`
