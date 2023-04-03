@@ -18,55 +18,40 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
+
 ## [3.14.0] - 2023-04-03
 [3.14.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.13.0...3.14.0
 
 ### Added
+- `Api.PaymentSecupayPayoutApi.paymentSecupaypayoutWithoutCustomerPost()`
+- `Api.PaymentTransactionsApi.checkStatus()`
 - `Api.PrepaidReportsApi`
+- `Api.PrepaidSalesApi.getAll() and getOne()`
+- `Api.SmartTransactionsApi.abortTransaction() and updatePaymentContainer()`
 - `Model.Aggregate`
 - `Model.AggregationResult`
 - `Model.AggregationTimeResult`
 - `Model.ApplePayDescriptorHeader`
+- `Model.PaymentContainersDTO` element `merchant_id`
+- `Model.PaymentContractsDTOClone` element `contract_id`
+- `Model.PaymentContractsDTORequestId` element `contract_id`, `payment_data`, `url_push` and`additional_data`
 - `Model.PaymentContractsDTORequestIdAdditionalData`
 - `Model.PaymentContractsDTORequestIdAdditionalDataCreateCard`
+- `Model.PaymentPlansDTO` element `merchant_id`
+- `Model.PaymentPlansProductModel` element `product_type`
+- `Model.PaymentSubscriptionsProductModel` element `demo`
+- `Model.PaymentTransactionCancelDTO` element `reduce_amount_by`
 - `Model.PaymentTransactionsCheckStatus`
 - `Model.PrepaidReportsList`
 - `Model.PrepaidReportsProductModel`
 - `Model.PrepaidSalesList`
+- `Model.PrepaidSalesProductModel` element `type`, `vtc_id` and `password`
 - `Model.SecupayPayoutListItem`
 - `Model.SecupayPayoutWithoutCustomerDTO`
+- `Model.SecupayTransactionCancelDTO` element `reduce_amount_by`
+- `Model.SmartTransactionPaymentContainerDTO` element `merchant_id`
 
-### Changed
-- `Api.CardprocessingInvoicesApi`
-- `Api.CardprocessingTransactionsApi`
-- `Api.GeneralContractsApi`
-- `Api.GeneralMerchantsApi`
-- `Api.GeneralStoresApi`
-- `Api.LoyaltyCardgroupsApi`
-- `Api.LoyaltyCardsApi`
-- `Api.LoyaltyCustomersApi`
-- `Api.LoyaltyMerchantcardsApi`
-- `Api.LoyaltyTransactionsApi`
-- `Api.PaymentContainersApi`
-- `Api.PaymentContractsApi`
-- `Api.PaymentCustomersApi`
-- `Api.PaymentInvoicesApi`
-- `Api.PaymentPayoutsApi`
-- `Api.PaymentPlansApi`
-- `Api.PaymentSecupayPayoutApi`
-- `Api.PaymentSubscriptionsApi`
-- `Api.PaymentTransactionsApi`
-- `Api.PrepaidItemsApi`
-- `Api.PrepaidSalesApi`
-- `Api.ServicesIdentrequestsApi`
-- `Api.ServicesIdentresultsApi`
-- `Api.SmartDevicesApi`
-- `Api.SmartRoutingsApi`
-- `Api.SmartTemplatesApi`
-- `Api.SmartTransactionsApi`
-- `Model.AddressComponents`
-- `Model.ApplePayDescriptor`
-- `Model.BillingCyclesItem`
+#### element `scroll_id`, `result`, `meta`, `type`, `sum`, `lookup` and aggregation result elements (`l`, `k`, `ks`, `c`, `s`, `t`) added
 - `Model.CardprocessingInvoicesList`
 - `Model.CardprocessingInvoicesProductModel`
 - `Model.CardprocessingTransactionsList`
@@ -75,33 +60,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.GeneralContractsProductModel`
 - `Model.GeneralMerchantsList`
 - `Model.GeneralMerchantsProductModel`
-- `Model.GeneralMerchantsPublicDataModel`
-- `Model.GeneralMerchantsUser`
-- `Model.GeneralStoresDTO`
 - `Model.GeneralStoresList`
 - `Model.GeneralStoresProductModel`
-- `Model.GeoAddress`
-- `Model.IdentresultPerson`
 - `Model.LoyaltyCardgroupsList`
 - `Model.LoyaltyCardgroupsProductModel`
 - `Model.LoyaltyCardsList`
 - `Model.LoyaltyCardsProductModel`
 - `Model.LoyaltyCustomersList`
 - `Model.LoyaltyCustomersProductModel`
-- `Model.LoyaltyMerchantcardsCardBalanceReceipt`
 - `Model.LoyaltyMerchantcardsList`
 - `Model.LoyaltyMerchantcardsProductModel`
-- `Model.LoyaltyMerchantcardsProductWithReceiptModel`
 - `Model.LoyaltyTransactionsList`
 - `Model.LoyaltyTransactionsProductModel`
-- `Model.OneOfPaymentContainersDTOModelPrivate`
-- `Model.OneOfSmartTransactionsDeliveryOptionsModel`
-- `Model.PaymentContainersDTO`
 - `Model.PaymentContainersList`
 - `Model.PaymentContainersProductModel`
-- `Model.PaymentContext`
-- `Model.PaymentContractsDTOClone`
-- `Model.PaymentContractsDTORequestId`
 - `Model.PaymentContractsList`
 - `Model.PaymentContractsProductModel`
 - `Model.PaymentCustomersList`
@@ -110,61 +82,43 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.PaymentInvoicesProductModel`
 - `Model.PaymentPayoutsList`
 - `Model.PaymentPayoutsProductModel`
-- `Model.PaymentPlansDTO`
 - `Model.PaymentPlansList`
 - `Model.PaymentPlansProductModel`
 - `Model.PaymentSubscriptionsList`
 - `Model.PaymentSubscriptionsProductModel`
-- `Model.PaymentSubscriptionsProductModelBillingCycles`
-- `Model.PaymentTransactionCancelDTO`
 - `Model.PaymentTransactionsList`
 - `Model.PaymentTransactionsProductModel`
-- `Model.PaymentTransactionsProductModelDetails`
-- `Model.PrepaidItemsBaseProductModel`
 - `Model.PrepaidItemsList`
 - `Model.PrepaidItemsProductModel`
-- `Model.PrepaidSalesProductModel`
-- `Model.ReceiptValue`
-- `Model.SecupayBasketItem`
-- `Model.SecupayPayoutDTO`
-- `Model.SecupayPayoutProductModel`
-- `Model.SecupayTransactionCancelDTO`
-- `Model.SecupayTransactionProductDTO`
-- `Model.SecupayTransactionProductModel`
-- `Model.SecupayTransactionUpdateBasketDTO`
 - `Model.ServicesIdentrequestsList`
-- `Model.ServicesIdentrequestsProductDTO`
 - `Model.ServicesIdentrequestsProductModel`
 - `Model.ServicesIdentresultsList`
 - `Model.ServicesIdentresultsProductModel`
-- `Model.SmartDeviceProductsPrepaid`
 - `Model.SmartDevicesList`
 - `Model.SmartDevicesProductModel`
 - `Model.SmartRoutingsList`
 - `Model.SmartRoutingsProductModel`
-- `Model.SmartTemplatesComponentModel`
-- `Model.SmartTemplatesElementModel`
 - `Model.SmartTemplatesList`
 - `Model.SmartTemplatesProductModel`
-- `Model.SmartTransactionPaymentContainerDTO`
-- `Model.SmartTransactionsApplicationContextIframeOpts`
-- `Model.SmartTransactionsBasket`
-- `Model.SmartTransactionsBasketProduct`
-- `Model.SmartTransactionsDTO`
 - `Model.SmartTransactionsList`
-- `Model.SmartTransactionsPreTransactionModel`
 - `Model.SmartTransactionsProductModel`
-- `Model.SmartTransactionsReceiptValue`
-- `Model.SmartTransactionsSubBasketProduct`
-- `Model.UploadidentsProductDTO`
-- `Model.VirtualTerminalDataModel`
+
+### Changed
+- `Model.ApplePayDescriptor` element `header` from `object` to `ApplePayDescriptorHeader`
+- `Model.PaymentPlansDTO` and `Model.PaymentPlansProductModel` default value of `status` is now `"active"` instead of `null`
+- `Model.ServicesIdentrequestsProductDTO`
+- `Model.ServicesIdentrequestsProductModel`
+
+### Fixed
+- `Model.PaymentTransactionsProductModelDetails` renamed element `status_text_simple` to `status_simple_text`
 
 ### Removed
+- `Api.PaymentContainersApi.paymentContainersIdAssignSecondaryIdDelete() and paymentContainersIdAssignSecondaryIdPost()`
+- `Model.PaymentContainersProductModel` element `assign`
 - `Model.ACC_Object`
 - `Model.MRC_Object`
 - `Model.PCO_Object`
 - `Model.PIG_Object`
-
 
 
 ## [3.13.0] - 2022-11-15
@@ -212,7 +166,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.ParentObj` element `relation_type`
 - `Model.SmartDeviceProductsPrepaid` element `simulate_force`
 - `Model.SmartDevicesProducts` element `showcase`
-- .swagger-codegen/VERSION
+- `.swagger-codegen/VERSION`
 
 
 ## [3.12.0] - 2022-09-30
