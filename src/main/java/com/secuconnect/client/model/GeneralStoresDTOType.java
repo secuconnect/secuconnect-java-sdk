@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class GeneralStoresDTOType {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   public GeneralStoresDTOType type(String type) {
     this.type = type;

@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class CreatedField {
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   public CreatedField created(String created) {
     this.created = created;

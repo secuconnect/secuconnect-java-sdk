@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class DocumentUploadsDTOContent {
   @SerializedName("content")
-  private String content = null;
+  protected String content = null;
 
   public DocumentUploadsDTOContent content(String content) {
     this.content = content;

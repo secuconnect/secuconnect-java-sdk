@@ -8,28 +8,28 @@ import java.util.Objects;
  */
 public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   @SerializedName("owner")
-  private String owner = null;
+  protected String owner = null;
 
   @SerializedName("pan")
-  private String pan = null;
+  protected String pan = null;
 
   @SerializedName("expiration_date")
-  private String expirationDate = null;
+  protected String expirationDate = null;
 
   @SerializedName("issuer")
-  private String issuer = null;
+  protected String issuer = null;
 
   @SerializedName("transact_container")
-  private String transactContainer = null;
+  protected String transactContainer = null;
 
   @SerializedName("transact_skey_pubkey")
-  private String transactSkeyPubkey = null;
+  protected String transactSkeyPubkey = null;
 
   @SerializedName("transact_skey_keyname")
-  private String transactSkeyKeyname = null;
+  protected String transactSkeyKeyname = null;
 
   @SerializedName("transact_hash")
-  private String transactHash = null;
+  protected String transactHash = null;
 
   public CreditCardDescriptor owner(String owner) {
     this.owner = owner;

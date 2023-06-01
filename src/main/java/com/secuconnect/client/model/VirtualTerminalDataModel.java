@@ -10,22 +10,22 @@ import java.util.Objects;
  */
 public class VirtualTerminalDataModel {
   @SerializedName("store")
-  private Object store = null;
+  protected Object store = null;
 
   @SerializedName("tid")
-  private String tid = null;
+  protected String tid = null;
 
   @SerializedName("actions")
-  private List<String> actions = null;
+  protected List<String> actions = null;
 
   @SerializedName("gift_terminal")
-  private Integer giftTerminal = null;
+  protected Integer giftTerminal = null;
 
   @SerializedName("amount_split_enabled")
-  private Integer amountSplitEnabled = null;
+  protected Integer amountSplitEnabled = null;
 
   @SerializedName("disabled")
-  private Integer disabled = null;
+  protected Integer disabled = null;
 
   public VirtualTerminalDataModel store(Object store) {
     this.store = store;

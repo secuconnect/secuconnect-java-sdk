@@ -21,127 +21,127 @@ import java.util.Objects;
  */
 public class PaymentTransactionsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("platform")
-  private ProductInstanceUID platform = null;
+  protected ProductInstanceUID platform = null;
 
   @SerializedName("merchant")
-  private GeneralMerchantsProductModel merchant = null;
+  protected GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("store")
-  private GeneralStoresProductModel store = null;
+  protected GeneralStoresProductModel store = null;
 
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("parents")
-  private List<ParentObj> parents = null;
+  protected List<ParentObj> parents = null;
 
   @SerializedName("related_transactions")
-  private List<ParentObj> relatedTransactions = null;
+  protected List<ParentObj> relatedTransactions = null;
 
   @SerializedName("subscription")
-  private ProductInstanceUID subscription = null;
+  protected ProductInstanceUID subscription = null;
 
   @SerializedName("product_id")
-  private Integer productId = null;
+  protected Integer productId = null;
 
   @SerializedName("product")
-  private String product = null;
+  protected String product = null;
 
   @SerializedName("product_raw")
-  private String productRaw = null;
+  protected String productRaw = null;
 
   @SerializedName("zahlungsmittel_id")
-  private Integer zahlungsmittelId = null;
+  protected Integer zahlungsmittelId = null;
 
   @SerializedName("contract_id")
-  private Integer contractId = null;
+  protected Integer contractId = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("completion_date")
-  private String completionDate = null;
+  protected String completionDate = null;
 
   @SerializedName("status")
-  private Integer status = null;
+  protected Integer status = null;
 
   @SerializedName("status_text")
-  private String statusText = null;
+  protected String statusText = null;
 
   @SerializedName("incoming_payment_date")
-  private String incomingPaymentDate = null;
+  protected String incomingPaymentDate = null;
 
   @SerializedName("details")
-  private PaymentTransactionsProductModelDetails details = null;
+  protected PaymentTransactionsProductModelDetails details = null;
 
   @SerializedName("customer")
-  private PaymentTransactionsProductModelCustomer customer = null;
+  protected PaymentTransactionsProductModelCustomer customer = null;
 
   @SerializedName("tid")
-  private String tid = null;
+  protected String tid = null;
 
   @SerializedName("payment_data")
-  private String paymentData = null;
+  protected String paymentData = null;
 
   @SerializedName("store_name")
-  private String storeName = null;
+  protected String storeName = null;
 
   @SerializedName("payout_date")
-  private String payoutDate = null;
+  protected String payoutDate = null;
 
   @SerializedName("invoice_number")
-  private String invoiceNumber = null;
+  protected String invoiceNumber = null;
 
   @SerializedName("transaction_hash")
-  private String transactionHash = null;
+  protected String transactionHash = null;
 
   @SerializedName("reference_id")
-  private String referenceId = null;
+  protected String referenceId = null;
 
   @SerializedName("incoming_payment_purpose")
-  private String incomingPaymentPurpose = null;
+  protected String incomingPaymentPurpose = null;
 
   @SerializedName("incoming_payment_iban")
-  private String incomingPaymentIban = null;
+  protected String incomingPaymentIban = null;
 
   @SerializedName("incoming_payment_bic")
-  private String incomingPaymentBic = null;
+  protected String incomingPaymentBic = null;
 
   @SerializedName("account_owner")
-  private String accountOwner = null;
+  protected String accountOwner = null;
 
   @SerializedName("accrual")
-  private Boolean accrual = null;
+  protected Boolean accrual = null;
 
   @SerializedName("order_id")
-  private String orderId = null;
+  protected String orderId = null;
 
   public PaymentTransactionsProductModel l(Integer l) {
     this.l = l;

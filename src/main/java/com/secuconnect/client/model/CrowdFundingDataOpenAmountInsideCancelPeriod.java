@@ -8,22 +8,22 @@ import java.util.Objects;
  */
 public class CrowdFundingDataOpenAmountInsideCancelPeriod {
   @SerializedName("total")
-  private Integer total = null;
+  protected Integer total = null;
 
   @SerializedName("debit")
-  private Integer debit = null;
+  protected Integer debit = null;
 
   @SerializedName("credit_card")
-  private Integer creditCard = null;
+  protected Integer creditCard = null;
 
   @SerializedName("prepay")
-  private Integer prepay = null;
+  protected Integer prepay = null;
 
   @SerializedName("sofort")
-  private Integer sofort = null;
+  protected Integer sofort = null;
 
   @SerializedName("twint")
-  private Integer twint = null;
+  protected Integer twint = null;
 
   public CrowdFundingDataOpenAmountInsideCancelPeriod total(Integer total) {
     this.total = total;

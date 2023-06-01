@@ -16,52 +16,52 @@ import java.util.Objects;
  */
 public class SecupayTransactionProductDTO {
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("purpose")
-  private String purpose = null;
+  protected String purpose = null;
 
   @SerializedName("payment_methods")
-  private List<String> paymentMethods = null;
+  protected List<String> paymentMethods = null;
 
   @SerializedName("order_id")
-  private String orderId = null;
+  protected String orderId = null;
 
   @SerializedName("basket")
-  private List<SecupayBasketItem> basket = null;
+  protected List<SecupayBasketItem> basket = null;
 
   @SerializedName("accrual")
-  private Boolean accrual = null;
+  protected Boolean accrual = null;
 
   @SerializedName("payment_action")
-  private String paymentAction = null;
+  protected String paymentAction = null;
 
   @SerializedName("customer")
-  private PaymentCustomersProductModel customer = null;
+  protected PaymentCustomersProductModel customer = null;
 
   @SerializedName("redirect_url")
-  private SecupayRedirectUrl redirectUrl = null;
+  protected SecupayRedirectUrl redirectUrl = null;
 
   @SerializedName("contract")
-  private String contract = null;
+  protected String contract = null;
 
   @SerializedName("container")
-  private String container = null;
+  protected String container = null;
 
   @SerializedName("opt_data")
-  private SecupayTransactionProductDTOOptData optData = null;
+  protected SecupayTransactionProductDTOOptData optData = null;
 
   @SerializedName("subscription")
-  private SecupayTransactionProductDTOSubscription subscription = null;
+  protected SecupayTransactionProductDTOSubscription subscription = null;
 
   @SerializedName("demo")
-  private Boolean demo = null;
+  protected Boolean demo = null;
 
   @SerializedName("experience")
-  private SecupayTransactionProductDTOExperience experience = null;
+  protected SecupayTransactionProductDTOExperience experience = null;
 
   public SecupayTransactionProductDTO amount(Integer amount) {
     this.amount = amount;

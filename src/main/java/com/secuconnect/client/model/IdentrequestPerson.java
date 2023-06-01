@@ -9,16 +9,16 @@ import java.util.Objects;
  */
 public class IdentrequestPerson extends IdentrequestPersonDTO {
   @SerializedName("transaction_id")
-  private String transactionId = null;
+  protected String transactionId = null;
 
   @SerializedName("redirect_url")
-  private String redirectUrl = null;
+  protected String redirectUrl = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
-  @SerializedName("provider")
-  private String provider = null;
+  @SerializedName("provider_id")
+  protected String providerId = null;
 
   public IdentrequestPerson transactionId(String transactionId) {
     this.transactionId = transactionId;
@@ -71,21 +71,21 @@ public class IdentrequestPerson extends IdentrequestPersonDTO {
     this.status = status;
   }
 
-  public IdentrequestPerson provider(String provider) {
-    this.provider = provider;
+  public IdentrequestPerson providerId(String providerId) {
+    this.providerId = providerId;
     return this;
   }
 
    /**
    * The generated ID of the provider for this identrequest - can be null on creation
-   * @return provider
+   * @return providerId
   **/
-  public String getProvider() {
-    return provider;
+  public String getProviderId() {
+    return providerId;
   }
 
-  public void setProvider(String provider) {
-    this.provider = provider;
+  public void setProviderId(String providerId) {
+    this.providerId = providerId;
   }
 
   @Override
@@ -100,13 +100,13 @@ public class IdentrequestPerson extends IdentrequestPersonDTO {
     return Objects.equals(this.transactionId, identrequestPerson.transactionId) &&
         Objects.equals(this.redirectUrl, identrequestPerson.redirectUrl) &&
         Objects.equals(this.status, identrequestPerson.status) &&
-        Objects.equals(this.provider, identrequestPerson.provider) &&
+        Objects.equals(this.providerId, identrequestPerson.providerId) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transactionId, redirectUrl, status, provider, super.hashCode());
+    return Objects.hash(transactionId, redirectUrl, status, providerId, super.hashCode());
   }
 
   @Override
@@ -117,7 +117,7 @@ public class IdentrequestPerson extends IdentrequestPersonDTO {
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class UploadMandateDTO {
   @SerializedName("document_id")
-  private String documentId = null;
+  protected String documentId = null;
 
   public UploadMandateDTO documentId(String documentId) {
     this.documentId = documentId;

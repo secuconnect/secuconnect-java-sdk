@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class SmartRoutingPriority {
   @SerializedName("priority")
-  private Integer priority = null;
+  protected Integer priority = null;
 
   public SmartRoutingPriority priority(Integer priority) {
     this.priority = priority;

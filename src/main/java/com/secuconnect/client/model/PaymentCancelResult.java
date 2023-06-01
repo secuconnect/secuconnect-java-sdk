@@ -9,13 +9,13 @@ import java.util.Objects;
  */
 public class PaymentCancelResult {
   @SerializedName("new_trans_id")
-  private Integer newTransId = null;
+  protected Integer newTransId = null;
 
   @SerializedName("demo")
-  private Boolean demo = false;
+  protected Boolean demo = false;
 
   @SerializedName("result")
-  private PaymentCancelResultDetails result = null;
+  protected PaymentCancelResultDetails result = null;
 
   public PaymentCancelResult newTransId(Integer newTransId) {
     this.newTransId = newTransId;

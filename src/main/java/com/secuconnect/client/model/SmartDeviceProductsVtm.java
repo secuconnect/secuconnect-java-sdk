@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class SmartDeviceProductsVtm extends SmartDeviceProductsEnabled {
   @SerializedName("demo_force")
-  private Boolean demoForce = null;
+  protected Boolean demoForce = null;
 
   public SmartDeviceProductsVtm demoForce(Boolean demoForce) {
     this.demoForce = demoForce;

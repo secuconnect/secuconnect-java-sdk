@@ -10,10 +10,10 @@ import java.util.Objects;
  */
 public class SecupayTransactionCaptureDTO {
   @SerializedName("contract")
-  private PaymentContractsProductModel contract = null;
+  protected PaymentContractsProductModel contract = null;
 
   @SerializedName("shipping_information")
-  private SecupayTransactionSetShippingInformationDTO shippingInformation = null;
+  protected SecupayTransactionSetShippingInformationDTO shippingInformation = null;
 
   public SecupayTransactionCaptureDTO contract(PaymentContractsProductModel contract) {
     this.contract = contract;

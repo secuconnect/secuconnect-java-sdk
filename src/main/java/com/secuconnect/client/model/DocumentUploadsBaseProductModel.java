@@ -10,7 +10,7 @@ import java.util.Objects;
  */
 public class DocumentUploadsBaseProductModel extends BaseProductModel {
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   public DocumentUploadsBaseProductModel created(String created) {
     this.created = created;

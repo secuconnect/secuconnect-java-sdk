@@ -19,16 +19,16 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsProductWithReceiptModel extends LoyaltyMerchantcardsProductModel {
   @SerializedName("receipt_header")
-  private List<ReceiptType> receiptHeader = null;
+  protected List<ReceiptType> receiptHeader = null;
 
   @SerializedName("receipt")
-  private List<ReceiptTypeValue> receipt = null;
+  protected List<ReceiptTypeValue> receipt = null;
 
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   public LoyaltyMerchantcardsProductWithReceiptModel receiptHeader(List<ReceiptType> receiptHeader) {
     this.receiptHeader = receiptHeader;

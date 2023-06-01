@@ -11,31 +11,31 @@ import java.util.Objects;
  */
 public class SmartTransactionsApplicationContextIframeOpts {
   @SerializedName("payment_hint_title")
-  private String paymentHintTitle = null;
+  protected String paymentHintTitle = null;
 
   @SerializedName("payment_hint")
-  private List<SmartTransactionsReceipt> paymentHint = null;
+  protected List<SmartTransactionsReceipt> paymentHint = null;
 
   @SerializedName("project_title")
-  private String projectTitle = null;
+  protected String projectTitle = null;
 
   @SerializedName("submit_button_title")
-  private String submitButtonTitle = null;
+  protected String submitButtonTitle = null;
 
   @SerializedName("cancel_button_title")
-  private String cancelButtonTitle = null;
+  protected String cancelButtonTitle = null;
 
   @SerializedName("language")
-  private String language = "de_DE";
+  protected String language = "de_DE";
 
   @SerializedName("basket_title")
-  private String basketTitle = null;
+  protected String basketTitle = null;
 
   @SerializedName("hide_disclaimer")
-  private Boolean hideDisclaimer = false;
+  protected Boolean hideDisclaimer = false;
 
   @SerializedName("has_accepted_disclaimer")
-  private Boolean hasAcceptedDisclaimer = false;
+  protected Boolean hasAcceptedDisclaimer = false;
 
   public SmartTransactionsApplicationContextIframeOpts paymentHintTitle(String paymentHintTitle) {
     this.paymentHintTitle = paymentHintTitle;

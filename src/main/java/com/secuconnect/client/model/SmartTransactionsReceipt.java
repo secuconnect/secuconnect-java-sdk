@@ -9,10 +9,10 @@ import java.util.Objects;
  */
 public class SmartTransactionsReceipt {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("value")
-  private SmartTransactionsReceiptValue value = null;
+  protected SmartTransactionsReceiptValue value = null;
 
   public SmartTransactionsReceipt type(String type) {
     this.type = type;

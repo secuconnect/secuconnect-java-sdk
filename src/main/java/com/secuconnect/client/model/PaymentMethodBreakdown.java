@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class PaymentMethodBreakdown {
   @SerializedName("count")
-  private Integer count = null;
+  protected Integer count = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   public PaymentMethodBreakdown count(Integer count) {
     this.count = count;

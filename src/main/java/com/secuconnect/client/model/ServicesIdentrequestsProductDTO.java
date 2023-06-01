@@ -6,147 +6,60 @@ import com.secuconnect.client.model.IdentrequestRedirectUrls;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.io.IOException;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 
 /**
  * ServicesIdentrequestsProductDTO
  */
 public class ServicesIdentrequestsProductDTO {
-  /**
-   * Third party identification provider
-   */
-  @JsonAdapter(ProviderEnum.Adapter.class)
-  public enum ProviderEnum {
-    POST_IDENT("post_ident"),
-    BANK_IDENT("bank_ident"),
-    WEBID("webid");
+  @SerializedName("provider")
+  protected String provider = null;
 
-    private String value;
-
-    ProviderEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static ProviderEnum fromValue(String input) {
-      for (ProviderEnum b : ProviderEnum.values()) {
-        if (b.value.equals(input)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<ProviderEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ProviderEnum enumeration) throws IOException {
-        jsonWriter.value(String.valueOf(enumeration.getValue()));
-      }
-
-      @Override
-      public ProviderEnum read(final JsonReader jsonReader) throws IOException {
-        Object value = jsonReader.nextString();
-        return ProviderEnum.fromValue((String)(value));
-      }
-    }
-  }  @SerializedName("provider")
-  private ProviderEnum provider = null;
-
-  /**
-   * Type
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    PERSON("person");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static TypeEnum fromValue(String input) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(input)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(String.valueOf(enumeration.getValue()));
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        Object value = jsonReader.nextString();
-        return TypeEnum.fromValue((String)(value));
-      }
-    }
-  }  @SerializedName("type")
-  private TypeEnum type = null;
+  @SerializedName("type")
+  protected String type = null;
 
   @SerializedName("demo")
-  private Boolean demo = null;
+  protected Boolean demo = null;
 
   @SerializedName("person")
-  private List<IdentrequestPersonDTO> person = null;
+  protected List<IdentrequestPersonDTO> person = null;
 
   @SerializedName("owner_transaction_id")
-  private String ownerTransactionId = null;
+  protected String ownerTransactionId = null;
 
-  @SerializedName("redirect_url")
-  private IdentrequestRedirectUrls redirectUrl = null;
+  @SerializedName("redirect_urls")
+  protected IdentrequestRedirectUrls redirectUrls = null;
 
-  public ServicesIdentrequestsProductDTO provider(ProviderEnum provider) {
+  public ServicesIdentrequestsProductDTO provider(String provider) {
     this.provider = provider;
     return this;
   }
 
    /**
-   * Third party identification provider
+   * Get provider
    * @return provider
   **/
-  public ProviderEnum getProvider() {
+  public String getProvider() {
     return provider;
   }
 
-  public void setProvider(ProviderEnum provider) {
+  public void setProvider(String provider) {
     this.provider = provider;
   }
 
-  public ServicesIdentrequestsProductDTO type(TypeEnum type) {
+  public ServicesIdentrequestsProductDTO type(String type) {
     this.type = type;
     return this;
   }
 
    /**
-   * Type
+   * Get type
    * @return type
   **/
-  public TypeEnum getType() {
+  public String getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(String type) {
     this.type = type;
   }
 
@@ -209,21 +122,21 @@ public class ServicesIdentrequestsProductDTO {
     this.ownerTransactionId = ownerTransactionId;
   }
 
-  public ServicesIdentrequestsProductDTO redirectUrl(IdentrequestRedirectUrls redirectUrl) {
-    this.redirectUrl = redirectUrl;
+  public ServicesIdentrequestsProductDTO redirectUrls(IdentrequestRedirectUrls redirectUrls) {
+    this.redirectUrls = redirectUrls;
     return this;
   }
 
    /**
-   * Get redirectUrl
-   * @return redirectUrl
+   * Get redirectUrls
+   * @return redirectUrls
   **/
-  public IdentrequestRedirectUrls getRedirectUrl() {
-    return redirectUrl;
+  public IdentrequestRedirectUrls getRedirectUrls() {
+    return redirectUrls;
   }
 
-  public void setRedirectUrl(IdentrequestRedirectUrls redirectUrl) {
-    this.redirectUrl = redirectUrl;
+  public void setRedirectUrls(IdentrequestRedirectUrls redirectUrls) {
+    this.redirectUrls = redirectUrls;
   }
 
   @Override
@@ -240,12 +153,12 @@ public class ServicesIdentrequestsProductDTO {
         Objects.equals(this.demo, servicesIdentrequestsProductDTO.demo) &&
         Objects.equals(this.person, servicesIdentrequestsProductDTO.person) &&
         Objects.equals(this.ownerTransactionId, servicesIdentrequestsProductDTO.ownerTransactionId) &&
-        Objects.equals(this.redirectUrl, servicesIdentrequestsProductDTO.redirectUrl);
+        Objects.equals(this.redirectUrls, servicesIdentrequestsProductDTO.redirectUrls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, type, demo, person, ownerTransactionId, redirectUrl);
+    return Objects.hash(provider, type, demo, person, ownerTransactionId, redirectUrls);
   }
 
   @Override
@@ -257,7 +170,7 @@ public class ServicesIdentrequestsProductDTO {
     sb.append("    demo: ").append(toIndentedString(demo)).append("\n");
     sb.append("    person: ").append(toIndentedString(person)).append("\n");
     sb.append("    ownerTransactionId: ").append(toIndentedString(ownerTransactionId)).append("\n");
-    sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
+    sb.append("    redirectUrls: ").append(toIndentedString(redirectUrls)).append("\n");
     sb.append("}");
     return sb.toString();
   }

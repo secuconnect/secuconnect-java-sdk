@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class InvitedBy {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("invited")
-  private String invited = null;
+  protected String invited = null;
 
   public InvitedBy object(String object) {
     this.object = object;
@@ -56,7 +56,7 @@ public class InvitedBy {
   }
 
    /**
-   * Invited
+   * Invited E-Mail address
    * @return invited
   **/
   public String getInvited() {

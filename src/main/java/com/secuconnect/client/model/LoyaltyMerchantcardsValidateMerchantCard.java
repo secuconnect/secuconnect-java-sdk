@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsValidateMerchantCard {
   @SerializedName("isValid")
-  private Boolean isValid = null;
+  protected Boolean isValid = null;
 
   @SerializedName("hasPasscode")
-  private Boolean hasPasscode = null;
+  protected Boolean hasPasscode = null;
 
   @SerializedName("isLocked")
-  private Boolean isLocked = null;
+  protected Boolean isLocked = null;
 
   public LoyaltyMerchantcardsValidateMerchantCard isValid(Boolean isValid) {
     this.isValid = isValid;

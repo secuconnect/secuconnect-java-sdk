@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class SmartTransactionsPrepareCallbackUrls {
   @SerializedName("success_url")
-  private String successUrl = null;
+  protected String successUrl = null;
 
   @SerializedName("failure_url")
-  private String failureUrl = null;
+  protected String failureUrl = null;
 
   public SmartTransactionsPrepareCallbackUrls successUrl(String successUrl) {
     this.successUrl = successUrl;

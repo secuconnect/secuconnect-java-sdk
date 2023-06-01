@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class IdentrequestRedirectUrls {
   @SerializedName("url_success")
-  private String urlSuccess = null;
+  protected String urlSuccess = null;
 
   @SerializedName("url_failure")
-  private String urlFailure = null;
+  protected String urlFailure = null;
 
   public IdentrequestRedirectUrls urlSuccess(String urlSuccess) {
     this.urlSuccess = urlSuccess;

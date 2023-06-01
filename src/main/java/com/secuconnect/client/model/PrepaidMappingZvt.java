@@ -9,10 +9,10 @@ import java.util.Objects;
  */
 public class PrepaidMappingZvt {
   @SerializedName("item")
-  private PrepaidMappingZvtItem item = null;
+  protected PrepaidMappingZvtItem item = null;
 
   @SerializedName("vtc_id")
-  private String vtcId = null;
+  protected String vtcId = null;
 
   public PrepaidMappingZvt item(PrepaidMappingZvtItem item) {
     this.item = item;

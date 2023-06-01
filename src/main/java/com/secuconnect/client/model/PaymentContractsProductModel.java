@@ -15,40 +15,40 @@ import java.util.Objects;
  */
 public class PaymentContractsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("parent")
-  private ProductInstanceUID parent = null;
+  protected ProductInstanceUID parent = null;
 
   @SerializedName("pay_in_account")
-  private PaymentInformation payInAccount = null;
+  protected PaymentInformation payInAccount = null;
 
   @SerializedName("demo")
-  private Boolean demo = null;
+  protected Boolean demo = null;
 
   @SerializedName("approved")
-  private Boolean approved = null;
+  protected Boolean approved = null;
 
   public PaymentContractsProductModel l(Integer l) {
     this.l = l;

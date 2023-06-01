@@ -9,13 +9,13 @@ import java.util.Objects;
  */
 public class DocumentUploadsProductModel extends DocumentUploadsBaseProductModel {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("size")
-  private Integer size = null;
+  protected Integer size = null;
 
   public DocumentUploadsProductModel type(String type) {
     this.type = type;

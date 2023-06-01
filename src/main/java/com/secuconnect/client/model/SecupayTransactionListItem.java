@@ -8,25 +8,25 @@ import java.util.Objects;
  */
 public class SecupayTransactionListItem {
   @SerializedName("item_type")
-  private String itemType = "transaction_payout";
+  protected String itemType = "transaction_payout";
 
   @SerializedName("reference_id")
-  private String referenceId = null;
+  protected String referenceId = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("transaction_hash")
-  private String transactionHash = null;
+  protected String transactionHash = null;
 
   @SerializedName("transaction_id")
-  private String transactionId = null;
+  protected String transactionId = null;
 
   @SerializedName("container_id")
-  private String containerId = null;
+  protected String containerId = null;
 
   @SerializedName("total")
-  private Integer total = null;
+  protected Integer total = null;
 
   public SecupayTransactionListItem itemType(String itemType) {
     this.itemType = itemType;

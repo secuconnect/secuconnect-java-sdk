@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class SmartDevicesDevice {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("serial_number")
-  private String serialNumber = null;
+  protected String serialNumber = null;
 
   public SmartDevicesDevice object(String object) {
     this.object = object;

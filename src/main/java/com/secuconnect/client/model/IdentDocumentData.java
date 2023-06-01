@@ -9,22 +9,22 @@ import java.util.Objects;
  */
 public class IdentDocumentData {
   @SerializedName("country")
-  private ValueField country = null;
+  protected ValueField country = null;
 
   @SerializedName("dateissued")
-  private ValueField dateissued = null;
+  protected ValueField dateissued = null;
 
   @SerializedName("issuedby")
-  private ValueField issuedby = null;
+  protected ValueField issuedby = null;
 
   @SerializedName("number")
-  private ValueField number = null;
+  protected ValueField number = null;
 
   @SerializedName("type")
-  private ValueField type = null;
+  protected ValueField type = null;
 
   @SerializedName("validuntil")
-  private ValueField validuntil = null;
+  protected ValueField validuntil = null;
 
   public IdentDocumentData country(ValueField country) {
     this.country = country;

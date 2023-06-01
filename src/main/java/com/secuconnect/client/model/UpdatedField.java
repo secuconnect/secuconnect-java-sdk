@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class UpdatedField {
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   public UpdatedField updated(String updated) {
     this.updated = updated;

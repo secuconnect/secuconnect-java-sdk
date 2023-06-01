@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class SecupayPayoutDTOOptData {
   @SerializedName("language")
-  private String language = null;
+  protected String language = null;
 
   public SecupayPayoutDTOOptData language(String language) {
     this.language = language;

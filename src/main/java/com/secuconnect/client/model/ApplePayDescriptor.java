@@ -9,16 +9,16 @@ import java.util.Objects;
  */
 public class ApplePayDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   @SerializedName("signature")
-  private String signature = null;
+  protected String signature = null;
 
   @SerializedName("version")
-  private String version = "EC_v1";
+  protected String version = "EC_v1";
 
   @SerializedName("data")
-  private String data = null;
+  protected String data = null;
 
   @SerializedName("header")
-  private ApplePayDescriptorHeader header = null;
+  protected ApplePayDescriptorHeader header = null;
 
   public ApplePayDescriptor signature(String signature) {
     this.signature = signature;

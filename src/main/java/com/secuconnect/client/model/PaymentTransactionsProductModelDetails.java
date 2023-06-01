@@ -8,28 +8,28 @@ import java.util.Objects;
  */
 public class PaymentTransactionsProductModelDetails {
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("cleared")
-  private String cleared = null;
+  protected String cleared = null;
 
   @SerializedName("status")
-  private Integer status = null;
+  protected Integer status = null;
 
   @SerializedName("status_text")
-  private String statusText = null;
+  protected String statusText = null;
 
   @SerializedName("status_simple")
-  private Integer statusSimple = null;
+  protected Integer statusSimple = null;
 
   @SerializedName("status_simple_text")
-  private String statusSimpleText = null;
+  protected String statusSimpleText = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("description_raw")
-  private String descriptionRaw = null;
+  protected String descriptionRaw = null;
 
   public PaymentTransactionsProductModelDetails amount(Integer amount) {
     this.amount = amount;

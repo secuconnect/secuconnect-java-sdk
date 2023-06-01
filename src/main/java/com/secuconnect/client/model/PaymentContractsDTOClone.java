@@ -9,19 +9,19 @@ import java.util.Objects;
  */
 public class PaymentContractsDTOClone {
   @SerializedName("contract_id")
-  private String contractId = null;
+  protected String contractId = null;
 
   @SerializedName("project")
-  private String project = null;
+  protected String project = null;
 
   @SerializedName("payment_data")
-  private PaymentInformation paymentData = null;
+  protected PaymentInformation paymentData = null;
 
   @SerializedName("payin_account")
-  private Boolean payinAccount = false;
+  protected Boolean payinAccount = false;
 
   @SerializedName("url_push")
-  private String urlPush = null;
+  protected String urlPush = null;
 
   public PaymentContractsDTOClone contractId(String contractId) {
     this.contractId = contractId;

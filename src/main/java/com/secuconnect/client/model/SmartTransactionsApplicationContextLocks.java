@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class SmartTransactionsApplicationContextLocks {
   @SerializedName("customer")
-  private Boolean customer = null;
+  protected Boolean customer = null;
 
   @SerializedName("shipping_address")
-  private Boolean shippingAddress = null;
+  protected Boolean shippingAddress = null;
 
   public SmartTransactionsApplicationContextLocks customer(Boolean customer) {
     this.customer = customer;

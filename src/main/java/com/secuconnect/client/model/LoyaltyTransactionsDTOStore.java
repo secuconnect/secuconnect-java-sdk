@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class LoyaltyTransactionsDTOStore {
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   public LoyaltyTransactionsDTOStore id(String id) {
     this.id = id;

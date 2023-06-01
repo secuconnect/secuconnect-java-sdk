@@ -8,16 +8,16 @@ import java.util.Objects;
  */
 public class SmartTransactionsApplicationContextReturnUrls {
   @SerializedName("url_success")
-  private String urlSuccess = null;
+  protected String urlSuccess = null;
 
   @SerializedName("url_abort")
-  private String urlAbort = null;
+  protected String urlAbort = null;
 
   @SerializedName("url_error")
-  private String urlError = null;
+  protected String urlError = null;
 
   @SerializedName("url_push")
-  private String urlPush = null;
+  protected String urlPush = null;
 
   public SmartTransactionsApplicationContextReturnUrls urlSuccess(String urlSuccess) {
     this.urlSuccess = urlSuccess;

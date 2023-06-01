@@ -23,88 +23,88 @@ import java.util.Objects;
  */
 public class SmartTransactionsDTO {
   @SerializedName("merchant")
-  private String merchant = null;
+  protected String merchant = null;
 
   @SerializedName("provider_contract")
-  private ProductInstanceUID providerContract = null;
+  protected ProductInstanceUID providerContract = null;
 
   @SerializedName("transactionRef")
-  private String transactionRef = null;
+  protected String transactionRef = null;
 
   @SerializedName("merchantRef")
-  private String merchantRef = null;
+  protected String merchantRef = null;
 
   @SerializedName("basket")
-  private SmartTransactionsBasket basket = null;
+  protected SmartTransactionsBasket basket = null;
 
   @SerializedName("basket_info")
-  private SmartTransactionsBasketInfo basketInfo = null;
+  protected SmartTransactionsBasketInfo basketInfo = null;
 
   @SerializedName("idents")
-  private List<SmartTransactionsIdent> idents = null;
+  protected List<SmartTransactionsIdent> idents = null;
 
   @SerializedName("tax_amount")
-  private Integer taxAmount = null;
+  protected Integer taxAmount = null;
 
   @SerializedName("tax_rate")
-  private Integer taxRate = null;
+  protected Integer taxRate = null;
 
   @SerializedName("market")
-  private String market = null;
+  protected String market = null;
 
   @SerializedName("cashier")
-  private String cashier = null;
+  protected String cashier = null;
 
   @SerializedName("product")
-  private String product = null;
+  protected String product = null;
 
   @SerializedName("device_source")
-  private ProductInstanceUID deviceSource = null;
+  protected ProductInstanceUID deviceSource = null;
 
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("contract")
-  private ProductInstanceID contract = null;
+  protected ProductInstanceID contract = null;
 
   @SerializedName("last_visited_page")
-  private String lastVisitedPage = null;
+  protected String lastVisitedPage = null;
 
   @SerializedName("customer")
-  private SmartTransactionPaymentCustomerDTO customer = null;
+  protected SmartTransactionPaymentCustomerDTO customer = null;
 
   @SerializedName("shipping_address")
-  private SmartTransactionPaymentCustomerDTO shippingAddress = null;
+  protected SmartTransactionPaymentCustomerDTO shippingAddress = null;
 
   @SerializedName("container")
-  private SmartTransactionPaymentContainerDTO container = null;
+  protected SmartTransactionPaymentContainerDTO container = null;
 
   @SerializedName("checkin")
-  private SmartTransactionsCheckin checkin = null;
+  protected SmartTransactionsCheckin checkin = null;
 
   @SerializedName("payment_method")
-  private String paymentMethod = null;
+  protected String paymentMethod = null;
 
   @SerializedName("is_demo")
-  private Boolean isDemo = null;
+  protected Boolean isDemo = null;
 
   @SerializedName("intent")
-  private String intent = null;
+  protected String intent = null;
 
   @SerializedName("checkout_links")
-  private SmartTransactionsCheckoutLinks checkoutLinks = null;
+  protected SmartTransactionsCheckoutLinks checkoutLinks = null;
 
   @SerializedName("delivery_options")
-  private OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
+  protected OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
 
   @SerializedName("communications")
-  private SmartTransactionsCommunication communications = null;
+  protected SmartTransactionsCommunication communications = null;
 
   @SerializedName("application_context")
-  private SmartTransactionsApplicationContext applicationContext = null;
+  protected SmartTransactionsApplicationContext applicationContext = null;
 
   @SerializedName("payment_context")
-  private PaymentContext paymentContext = null;
+  protected PaymentContext paymentContext = null;
 
   public SmartTransactionsDTO merchant(String merchant) {
     this.merchant = merchant;

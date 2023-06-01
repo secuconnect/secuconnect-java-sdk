@@ -17,52 +17,52 @@ import java.util.Objects;
  */
 public class PaymentPlansProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("paypal_plan_id")
-  private String paypalPlanId = null;
+  protected String paypalPlanId = null;
 
   @SerializedName("status")
-  private String status = "active";
+  protected String status = "active";
 
   @SerializedName("payment_methods")
-  private List<String> paymentMethods = null;
+  protected List<String> paymentMethods = null;
 
   @SerializedName("merchant")
-  private GeneralMerchantsProductModel merchant = null;
+  protected GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("billing_cycles")
-  private List<BillingCyclesItem> billingCycles = null;
+  protected List<BillingCyclesItem> billingCycles = null;
 
   @SerializedName("product_type")
-  private String productType = null;
+  protected String productType = null;
 
   public PaymentPlansProductModel l(Integer l) {
     this.l = l;

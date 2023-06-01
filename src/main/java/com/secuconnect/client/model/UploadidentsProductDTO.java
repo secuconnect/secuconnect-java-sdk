@@ -10,22 +10,22 @@ import java.util.Objects;
  */
 public class UploadidentsProductDTO {
   @SerializedName("merchant_id")
-  private String merchantId = null;
+  protected String merchantId = null;
 
   @SerializedName("payment_id")
-  private String paymentId = null;
+  protected String paymentId = null;
 
   @SerializedName("contract_id")
-  private String contractId = null;
+  protected String contractId = null;
 
   @SerializedName("apikey")
-  private String apikey = null;
+  protected String apikey = null;
 
   @SerializedName("service_issue_id")
-  private Integer serviceIssueId = null;
+  protected Integer serviceIssueId = null;
 
   @SerializedName("document_ids")
-  private List<String> documentIds = null;
+  protected List<String> documentIds = null;
 
   public UploadidentsProductDTO merchantId(String merchantId) {
     this.merchantId = merchantId;

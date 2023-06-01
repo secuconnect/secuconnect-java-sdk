@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsDTO {
   @SerializedName("merchant")
-  private String merchant = null;
+  protected String merchant = null;
 
   @SerializedName("card")
-  private String card = null;
+  protected String card = null;
 
   @SerializedName("payment_container")
-  private String paymentContainer = null;
+  protected String paymentContainer = null;
 
   @SerializedName("created_by_merchant")
-  private Boolean createdByMerchant = null;
+  protected Boolean createdByMerchant = null;
 
   @SerializedName("used_by_merchant")
-  private Boolean usedByMerchant = null;
+  protected Boolean usedByMerchant = null;
 
   public LoyaltyMerchantcardsDTO merchant(String merchant) {
     this.merchant = merchant;

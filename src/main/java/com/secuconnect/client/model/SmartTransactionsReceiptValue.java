@@ -10,19 +10,19 @@ import java.util.Objects;
  */
 public class SmartTransactionsReceiptValue {
   @SerializedName("caption")
-  private String caption = null;
+  protected String caption = null;
 
   @SerializedName("text")
-  private String text = null;
+  protected String text = null;
 
   @SerializedName("decoration")
-  private List<String> decoration = null;
+  protected List<String> decoration = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("value")
-  private String value = null;
+  protected String value = null;
 
   public SmartTransactionsReceiptValue caption(String caption) {
     this.caption = caption;

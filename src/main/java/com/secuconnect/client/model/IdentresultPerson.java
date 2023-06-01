@@ -16,25 +16,25 @@ import java.util.Objects;
  */
 public class IdentresultPerson {
   @SerializedName("identificationprocess")
-  private IdentificationProcess identificationprocess = null;
+  protected IdentificationProcess identificationprocess = null;
 
   @SerializedName("customdata")
-  private IdentificationCustomData customdata = null;
+  protected IdentificationCustomData customdata = null;
 
   @SerializedName("contactdata")
-  private ContactData contactdata = null;
+  protected ContactData contactdata = null;
 
   @SerializedName("userdata")
-  private UserData userdata = null;
+  protected UserData userdata = null;
 
   @SerializedName("attachments")
-  private List<IdentDocument> attachments = null;
+  protected List<IdentDocument> attachments = null;
 
   @SerializedName("identificationdocument")
-  private IdentDocumentData identificationdocument = null;
+  protected IdentDocumentData identificationdocument = null;
 
   @SerializedName("video")
-  private String video = null;
+  protected String video = null;
 
   public IdentresultPerson identificationprocess(IdentificationProcess identificationprocess) {
     this.identificationprocess = identificationprocess;

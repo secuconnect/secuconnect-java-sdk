@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class SmartTransactionsMerchant {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("companyname")
-  private String companyname = null;
+  protected String companyname = null;
 
   public SmartTransactionsMerchant object(String object) {
     this.object = object;

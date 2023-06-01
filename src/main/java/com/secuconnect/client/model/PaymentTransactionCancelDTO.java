@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class PaymentTransactionCancelDTO {
   @SerializedName("reason")
-  private String reason = null;
+  protected String reason = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("reduce_amount_by")
-  private Integer reduceAmountBy = null;
+  protected Integer reduceAmountBy = null;
 
   @SerializedName("reduce_stakeholder_payment")
-  private Boolean reduceStakeholderPayment = false;
+  protected Boolean reduceStakeholderPayment = false;
 
   @SerializedName("container_id")
-  private String containerId = null;
+  protected String containerId = null;
 
   public PaymentTransactionCancelDTO reason(String reason) {
     this.reason = reason;

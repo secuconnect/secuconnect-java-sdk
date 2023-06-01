@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class GeoAddressGeometry {
   @SerializedName("lat")
-  private String lat = null;
+  protected String lat = null;
 
   @SerializedName("lon")
-  private String lon = null;
+  protected String lon = null;
 
   public GeoAddressGeometry lat(String lat) {
     this.lat = lat;

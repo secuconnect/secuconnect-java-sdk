@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class PaymentTransactionsShippingUrl {
   @SerializedName("url")
-  private String url = null;
+  protected String url = null;
 
   public PaymentTransactionsShippingUrl url(String url) {
     this.url = url;

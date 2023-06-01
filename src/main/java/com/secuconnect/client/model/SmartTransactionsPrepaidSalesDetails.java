@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class SmartTransactionsPrepaidSalesDetails {
   @SerializedName("id")
-  private Integer id = null;
+  protected Integer id = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("error_details")
-  private String errorDetails = null;
+  protected String errorDetails = null;
 
   public SmartTransactionsPrepaidSalesDetails id(Integer id) {
     this.id = id;

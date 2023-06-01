@@ -9,28 +9,28 @@ import java.util.Objects;
  */
 public class CrowdFundingDataDetails {
   @SerializedName("currency")
-  private String currency = "EUR";
+  protected String currency = "EUR";
 
   @SerializedName("total_amount")
-  private Integer totalAmount = null;
+  protected Integer totalAmount = null;
 
   @SerializedName("total_count")
-  private Integer totalCount = null;
+  protected Integer totalCount = null;
 
   @SerializedName("debit")
-  private PaymentMethodBreakdown debit = null;
+  protected PaymentMethodBreakdown debit = null;
 
   @SerializedName("credit_card")
-  private PaymentMethodBreakdown creditCard = null;
+  protected PaymentMethodBreakdown creditCard = null;
 
   @SerializedName("prepay")
-  private PaymentMethodBreakdown prepay = null;
+  protected PaymentMethodBreakdown prepay = null;
 
   @SerializedName("sofort")
-  private PaymentMethodBreakdown sofort = null;
+  protected PaymentMethodBreakdown sofort = null;
 
   @SerializedName("twint")
-  private PaymentMethodBreakdown twint = null;
+  protected PaymentMethodBreakdown twint = null;
 
   public CrowdFundingDataDetails currency(String currency) {
     this.currency = currency;

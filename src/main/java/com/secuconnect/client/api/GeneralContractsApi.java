@@ -7,8 +7,10 @@ import com.secuconnect.client.model.BankAccountDescriptor;
 import java.math.BigDecimal;
 import com.secuconnect.client.model.GeneralContractsList;
 import com.secuconnect.client.model.GeneralContractsProductModel;
+import com.secuconnect.client.model.GeneralContractsTransferBalanceModel;
 import com.secuconnect.client.model.GetAvailablePaymentMethodsDTO;
 import com.secuconnect.client.model.ProductExceptionPayload;
+import com.secuconnect.client.model.ProductInstanceID;
 import com.secuconnect.client.model.ResultBoolean;
 import okhttp3.Call;
 
@@ -41,9 +43,9 @@ public class GeneralContractsApi {
      * Build call for getAll
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
+     * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
      * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;desc&#x60; descending.
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -97,9 +99,9 @@ public class GeneralContractsApi {
      * Get a list of general contracts
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
+     * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
      * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;desc&#x60; descending.
      * @return GeneralContractsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -113,9 +115,9 @@ public class GeneralContractsApi {
      * Get a list of general contracts
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
+     * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
      * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;desc&#x60; descending.
      * @return ApiResponse&lt;GeneralContractsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -130,9 +132,9 @@ public class GeneralContractsApi {
      * Get a list of general contracts
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
-     * @param fields List of fields to include in the result. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
+     * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
      * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
-     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;dsc&#x60; descending.
+     * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;desc&#x60; descending.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -415,6 +417,92 @@ public class GeneralContractsApi {
     public Call getOneAsync(String generalContractId, final ApiCallback<GeneralContractsProductModel> callback) throws ApiException {
         Call call = getOneValidateBeforeCall(generalContractId);
         Type localVarReturnType = new TypeToken<GeneralContractsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getTransferBalance
+     * @param generalContractId Contract identifier (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getTransferBalanceCall(ProductInstanceID generalContractId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/General/Contracts/{generalContractId}/transferBalance"
+            .replaceAll("\\{" + "generalContractId" + "\\}", apiClient.escapeString(generalContractId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getTransferBalanceValidateBeforeCall(ProductInstanceID generalContractId) throws ApiException {
+        // verify the required parameter 'generalContractId' is set
+        if (generalContractId == null) {
+            throw new ApiException("Missing the required parameter 'generalContractId' when calling getTransferBalance(Async)");
+        }
+
+        return getTransferBalanceCall(generalContractId);
+    }
+
+    /**
+     * GET General/Contracts/{generalContractId}/transferBalance
+     * Get balance for each currency of a contract
+     * @param generalContractId Contract identifier (required)
+     * @return GeneralContractsTransferBalanceModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public GeneralContractsTransferBalanceModel getTransferBalance(ProductInstanceID generalContractId) throws ApiException {
+        ApiResponse<GeneralContractsTransferBalanceModel> resp = getTransferBalanceWithHttpInfo(generalContractId);
+        return resp.getData();
+    }
+
+    /**
+     * GET General/Contracts/{generalContractId}/transferBalance
+     * Get balance for each currency of a contract
+     * @param generalContractId Contract identifier (required)
+     * @return ApiResponse&lt;GeneralContractsTransferBalanceModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<GeneralContractsTransferBalanceModel> getTransferBalanceWithHttpInfo(ProductInstanceID generalContractId) throws ApiException {
+        Call call = getTransferBalanceValidateBeforeCall(generalContractId);
+        Type localVarReturnType = new TypeToken<GeneralContractsTransferBalanceModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET General/Contracts/{generalContractId}/transferBalance (asynchronously)
+     * Get balance for each currency of a contract
+     * @param generalContractId Contract identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getTransferBalanceAsync(ProductInstanceID generalContractId, final ApiCallback<GeneralContractsTransferBalanceModel> callback) throws ApiException {
+        Call call = getTransferBalanceValidateBeforeCall(generalContractId);
+        Type localVarReturnType = new TypeToken<GeneralContractsTransferBalanceModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -9,22 +9,22 @@ import java.util.Objects;
  */
 public class PaymentInstructions extends BankAccountDescriptor {
   @SerializedName("girocode_url")
-  private String girocodeUrl = null;
+  protected String girocodeUrl = null;
 
   @SerializedName("interest")
-  private Integer interest = null;
+  protected Integer interest = null;
 
   @SerializedName("total_value")
-  private Integer totalValue = null;
+  protected Integer totalValue = null;
 
   @SerializedName("number_of_installments")
-  private Integer numberOfInstallments = null;
+  protected Integer numberOfInstallments = null;
 
   @SerializedName("installment")
-  private Integer installment = null;
+  protected Integer installment = null;
 
   @SerializedName("last_installment")
-  private Integer lastInstallment = null;
+  protected Integer lastInstallment = null;
 
   public PaymentInstructions girocodeUrl(String girocodeUrl) {
     this.girocodeUrl = girocodeUrl;

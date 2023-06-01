@@ -11,22 +11,22 @@ import java.util.Objects;
  */
 public class SecupayPayoutWithoutCustomerDTO {
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("contract_id")
-  private String contractId = null;
+  protected String contractId = null;
 
   @SerializedName("Payout_list")
-  private List<SecupayPayoutListItem> payoutList = null;
+  protected List<SecupayPayoutListItem> payoutList = null;
 
   @SerializedName("purpose")
-  private String purpose = null;
+  protected String purpose = null;
 
   @SerializedName("execution_date")
-  private String executionDate = null;
+  protected String executionDate = null;
 
   public SecupayPayoutWithoutCustomerDTO amount(Integer amount) {
     this.amount = amount;

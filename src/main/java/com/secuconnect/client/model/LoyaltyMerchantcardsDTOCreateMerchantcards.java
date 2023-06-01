@@ -9,10 +9,10 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsDTOCreateMerchantcards {
   @SerializedName("cards_amount")
-  private Integer cardsAmount = null;
+  protected Integer cardsAmount = null;
 
   @SerializedName("customer")
-  private LoyaltyMerchantcardsDTOCustomer customer = null;
+  protected LoyaltyMerchantcardsDTOCustomer customer = null;
 
   public LoyaltyMerchantcardsDTOCreateMerchantcards cardsAmount(Integer cardsAmount) {
     this.cardsAmount = cardsAmount;

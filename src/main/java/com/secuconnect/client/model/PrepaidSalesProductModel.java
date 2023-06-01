@@ -15,88 +15,88 @@ import java.util.Objects;
  */
 public class PrepaidSalesProductModel extends BaseProductModel {
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("stock")
-  private ProductInstanceUID stock = null;
+  protected ProductInstanceUID stock = null;
 
   @SerializedName("item")
-  private PrepaidSalesItem item = null;
+  protected PrepaidSalesItem item = null;
 
   @SerializedName("itemgroup")
-  private ItemGroup itemgroup = null;
+  protected ItemGroup itemgroup = null;
 
   @SerializedName("smart_device")
-  private PrepaidSalesSmartDevice smartDevice = null;
+  protected PrepaidSalesSmartDevice smartDevice = null;
 
   @SerializedName("merchant")
-  private ProductInstanceUID merchant = null;
+  protected ProductInstanceUID merchant = null;
 
   @SerializedName("store")
-  private Store store = null;
+  protected Store store = null;
 
   @SerializedName("contract")
-  private ProductInstanceUID contract = null;
+  protected ProductInstanceUID contract = null;
 
   @SerializedName("demo")
-  private Boolean demo = null;
+  protected Boolean demo = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("commission")
-  private Integer commission = null;
+  protected Integer commission = null;
 
   @SerializedName("commission_currency")
-  private String commissionCurrency = null;
+  protected String commissionCurrency = null;
 
   @SerializedName("code")
-  private String code = null;
+  protected String code = null;
 
   @SerializedName("serial")
-  private String serial = null;
+  protected String serial = null;
 
   @SerializedName("cardnumber")
-  private String cardnumber = null;
+  protected String cardnumber = null;
 
   @SerializedName("expire_date")
-  private String expireDate = null;
+  protected String expireDate = null;
 
   @SerializedName("provider_delivery_number")
-  private String providerDeliveryNumber = null;
+  protected String providerDeliveryNumber = null;
 
   @SerializedName("receipt_header")
-  private String receiptHeader = null;
+  protected String receiptHeader = null;
 
   @SerializedName("receipt_customer")
-  private String receiptCustomer = null;
+  protected String receiptCustomer = null;
 
   @SerializedName("receipt_zvt")
-  private String receiptZvt = null;
+  protected String receiptZvt = null;
 
   @SerializedName("receipt_dealer")
-  private String receiptDealer = null;
+  protected String receiptDealer = null;
 
   @SerializedName("vtc_tid")
-  private String vtcTid = null;
+  protected String vtcTid = null;
 
   @SerializedName("vtc_id")
-  private String vtcId = null;
+  protected String vtcId = null;
 
   @SerializedName("password")
-  private String password = null;
+  protected String password = null;
 
   public PrepaidSalesProductModel created(String created) {
     this.created = created;

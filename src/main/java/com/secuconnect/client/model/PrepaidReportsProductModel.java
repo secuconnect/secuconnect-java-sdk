@@ -16,55 +16,55 @@ import java.util.Objects;
  */
 public class PrepaidReportsProductModel extends ProductInstanceUID {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("merchant")
-  private ProductInstanceUID merchant = null;
+  protected ProductInstanceUID merchant = null;
 
   @SerializedName("store")
-  private ProductInstanceUID store = null;
+  protected ProductInstanceUID store = null;
 
   @SerializedName("device")
-  private ProductInstanceUID device = null;
+  protected ProductInstanceUID device = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("vtc_tid")
-  private Integer vtcTid = null;
+  protected Integer vtcTid = null;
 
   @SerializedName("report_from")
-  private String reportFrom = null;
+  protected String reportFrom = null;
 
   @SerializedName("report_to")
-  private String reportTo = null;
+  protected String reportTo = null;
 
   @SerializedName("receipt")
-  private List<ReceiptTypeValue> receipt = null;
+  protected List<ReceiptTypeValue> receipt = null;
 
   @SerializedName("receipt_header")
-  private List<ReceiptTypeValue> receiptHeader = null;
+  protected List<ReceiptTypeValue> receiptHeader = null;
 
   public PrepaidReportsProductModel l(Integer l) {
     this.l = l;

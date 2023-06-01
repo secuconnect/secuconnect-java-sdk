@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class SecupayTransactionSetShippingInformationDTO {
   @SerializedName("carrier")
-  private String carrier = null;
+  protected String carrier = null;
 
   @SerializedName("tracking_id")
-  private String trackingId = null;
+  protected String trackingId = null;
 
   @SerializedName("invoice_number")
-  private String invoiceNumber = null;
+  protected String invoiceNumber = null;
 
   @SerializedName("shipped_at")
-  private String shippedAt = null;
+  protected String shippedAt = null;
 
   @SerializedName("order_id")
-  private String orderId = null;
+  protected String orderId = null;
 
   public SecupayTransactionSetShippingInformationDTO carrier(String carrier) {
     this.carrier = carrier;

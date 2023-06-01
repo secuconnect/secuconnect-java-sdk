@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   @SerializedName("iban")
-  private String iban = null;
+  protected String iban = null;
 
   @SerializedName("bic")
-  private String bic = null;
+  protected String bic = null;
 
   @SerializedName("owner")
-  private String owner = null;
+  protected String owner = null;
 
   @SerializedName("bankname")
-  private String bankname = null;
+  protected String bankname = null;
 
   @SerializedName("purpose")
-  private String purpose = null;
+  protected String purpose = null;
 
   public BankAccountDescriptor iban(String iban) {
     this.iban = iban;

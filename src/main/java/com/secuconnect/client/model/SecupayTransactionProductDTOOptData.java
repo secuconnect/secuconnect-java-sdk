@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class SecupayTransactionProductDTOOptData {
   @SerializedName("has_accepted_disclaimer")
-  private String hasAcceptedDisclaimer = null;
+  protected String hasAcceptedDisclaimer = null;
 
   @SerializedName("language")
-  private String language = null;
+  protected String language = null;
 
   public SecupayTransactionProductDTOOptData hasAcceptedDisclaimer(String hasAcceptedDisclaimer) {
     this.hasAcceptedDisclaimer = hasAcceptedDisclaimer;

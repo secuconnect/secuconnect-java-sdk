@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class SecupayTransactionExternalInvoicePdfDocument {
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("mime_type")
-  private String mimeType = null;
+  protected String mimeType = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("size")
-  private Integer size = null;
+  protected Integer size = null;
 
   @SerializedName("url")
-  private String url = null;
+  protected String url = null;
 
   public SecupayTransactionExternalInvoicePdfDocument id(String id) {
     this.id = id;

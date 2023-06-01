@@ -33,151 +33,151 @@ import java.util.Objects;
  */
 public class SmartTransactionsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("merchant")
-  private SmartTransactionsMerchant merchant = null;
+  protected SmartTransactionsMerchant merchant = null;
 
   @SerializedName("contract")
-  private ProductInstanceUID contract = null;
+  protected ProductInstanceUID contract = null;
 
   @SerializedName("provider_contract")
-  private ProductInstanceUID providerContract = null;
+  protected ProductInstanceUID providerContract = null;
 
   @SerializedName("customer")
-  private PaymentCustomersProductModel customer = null;
+  protected PaymentCustomersProductModel customer = null;
 
   @SerializedName("shipping_address")
-  private PaymentCustomersProductModel shippingAddress = null;
+  protected PaymentCustomersProductModel shippingAddress = null;
 
   @SerializedName("container")
-  private SmartTransactionsContainer container = null;
+  protected SmartTransactionsContainer container = null;
 
   @SerializedName("checkin")
-  private SmartTransactionsCheckin checkin = null;
+  protected SmartTransactionsCheckin checkin = null;
 
   @SerializedName("merchantRef")
-  private String merchantRef = null;
+  protected String merchantRef = null;
 
   @SerializedName("transactionRef")
-  private String transactionRef = null;
+  protected String transactionRef = null;
 
   @SerializedName("store")
-  private ProductInstanceUID store = null;
+  protected ProductInstanceUID store = null;
 
   @SerializedName("device_source")
-  private ProductInstanceUID deviceSource = null;
+  protected ProductInstanceUID deviceSource = null;
 
   @SerializedName("device_destination")
-  private ProductInstanceUID deviceDestination = null;
+  protected ProductInstanceUID deviceDestination = null;
 
   @SerializedName("receipt_number")
-  private Integer receiptNumber = null;
+  protected Integer receiptNumber = null;
 
   @SerializedName("receipt")
-  private List<SmartTransactionsReceipt> receipt = null;
+  protected List<SmartTransactionsReceipt> receipt = null;
 
   @SerializedName("receipt_merchant")
-  private List<SmartTransactionsReceipt> receiptMerchant = null;
+  protected List<SmartTransactionsReceipt> receiptMerchant = null;
 
   @SerializedName("receipt_merchant_print")
-  private Boolean receiptMerchantPrint = null;
+  protected Boolean receiptMerchantPrint = null;
 
   @SerializedName("basket_info")
-  private SmartTransactionsBasketInfo basketInfo = null;
+  protected SmartTransactionsBasketInfo basketInfo = null;
 
   @SerializedName("basket")
-  private SmartTransactionsBasket basket = null;
+  protected SmartTransactionsBasket basket = null;
 
   @SerializedName("idents")
-  private List<SmartTransactionsIdent> idents = null;
+  protected List<SmartTransactionsIdent> idents = null;
 
   @SerializedName("tax_rate")
-  private Integer taxRate = null;
+  protected Integer taxRate = null;
 
   @SerializedName("tax_amount")
-  private Integer taxAmount = null;
+  protected Integer taxAmount = null;
 
   @SerializedName("cashier")
-  private String cashier = null;
+  protected String cashier = null;
 
   @SerializedName("market")
-  private String market = null;
+  protected String market = null;
 
   @SerializedName("delivery_options")
-  private OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
+  protected OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
 
   @SerializedName("product")
-  private String product = null;
+  protected String product = null;
 
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("payment_method")
-  private String paymentMethod = null;
+  protected String paymentMethod = null;
 
   @SerializedName("transactions")
-  private List<PaymentTransactionsProductModel> transactions = null;
+  protected List<PaymentTransactionsProductModel> transactions = null;
 
   @SerializedName("last_visited_page")
-  private String lastVisitedPage = null;
+  protected String lastVisitedPage = null;
 
   @SerializedName("is_demo")
-  private Boolean isDemo = null;
+  protected Boolean isDemo = null;
 
   @SerializedName("checkout_links")
-  private SmartTransactionsCheckoutLinks checkoutLinks = null;
+  protected SmartTransactionsCheckoutLinks checkoutLinks = null;
 
   @SerializedName("intent")
-  private String intent = null;
+  protected String intent = null;
 
   @SerializedName("iframe_url")
-  private String iframeUrl = null;
+  protected String iframeUrl = null;
 
   @SerializedName("prepaid_sales")
-  private SmartTransactionsPrepaidSalesDetails prepaidSales = null;
+  protected SmartTransactionsPrepaidSalesDetails prepaidSales = null;
 
   @SerializedName("communications")
-  private SmartTransactionsCommunication communications = null;
+  protected SmartTransactionsCommunication communications = null;
 
   @SerializedName("payment_links")
-  private SmartTransactionsPaymentLinks paymentLinks = null;
+  protected SmartTransactionsPaymentLinks paymentLinks = null;
 
   @SerializedName("application_context")
-  private SmartTransactionsApplicationContext applicationContext = null;
+  protected SmartTransactionsApplicationContext applicationContext = null;
 
   @SerializedName("payment_instructions")
-  private PaymentInstructions paymentInstructions = null;
+  protected PaymentInstructions paymentInstructions = null;
 
   @SerializedName("payment_context")
-  private PaymentContext paymentContext = null;
+  protected PaymentContext paymentContext = null;
 
   @SerializedName("subscription")
-  private ProductInstanceUID subscription = null;
+  protected ProductInstanceUID subscription = null;
 
   public SmartTransactionsProductModel l(Integer l) {
     this.l = l;

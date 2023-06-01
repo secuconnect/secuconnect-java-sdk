@@ -9,10 +9,10 @@ import java.util.Objects;
  */
 public class OpenHours {
   @SerializedName("open")
-  private DayTime open = null;
+  protected DayTime open = null;
 
   @SerializedName("close")
-  private DayTime close = null;
+  protected DayTime close = null;
 
   public OpenHours open(DayTime open) {
     this.open = open;

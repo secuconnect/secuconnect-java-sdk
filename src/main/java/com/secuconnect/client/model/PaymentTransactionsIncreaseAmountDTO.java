@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class PaymentTransactionsIncreaseAmountDTO {
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   public PaymentTransactionsIncreaseAmountDTO amount(Integer amount) {
     this.amount = amount;

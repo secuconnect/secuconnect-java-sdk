@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class SecupaySubTransactionProductModel {
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("reference_id")
-  private String referenceId = null;
+  protected String referenceId = null;
 
   public SecupaySubTransactionProductModel id(String id) {
     this.id = id;

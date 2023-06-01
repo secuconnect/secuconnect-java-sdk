@@ -12,55 +12,55 @@ import java.util.Objects;
  */
 public class SmartTransactionsBasketProduct {
   @SerializedName("id")
-  private Integer id = null;
+  protected Integer id = null;
 
   @SerializedName("parent")
-  private Integer parent = null;
+  protected Integer parent = null;
 
   @SerializedName("item_type")
-  private String itemType = null;
+  protected String itemType = null;
 
   @SerializedName("desc")
-  private String desc = null;
+  protected String desc = null;
 
   @SerializedName("articleNumber")
-  private String articleNumber = null;
+  protected String articleNumber = null;
 
   @SerializedName("serialNumber")
-  private String serialNumber = null;
+  protected String serialNumber = null;
 
   @SerializedName("ean")
-  private String ean = null;
+  protected String ean = null;
 
   @SerializedName("quantity")
-  private Integer quantity = null;
+  protected Integer quantity = null;
 
   @SerializedName("priceOne")
-  private Integer priceOne = null;
+  protected Integer priceOne = null;
 
   @SerializedName("sum")
-  private Integer sum = null;
+  protected Integer sum = null;
 
   @SerializedName("tax")
-  private Integer tax = null;
+  protected Integer tax = null;
 
   @SerializedName("reference_id")
-  private String referenceId = null;
+  protected String referenceId = null;
 
   @SerializedName("contract_id")
-  private String contractId = null;
+  protected String contractId = null;
 
   @SerializedName("group")
-  private List<SmartTransactionsBasketProductGroup> group = null;
+  protected List<SmartTransactionsBasketProductGroup> group = null;
 
   @SerializedName("sub_basket")
-  private List<SmartTransactionsSubBasketProduct> subBasket = null;
+  protected List<SmartTransactionsSubBasketProduct> subBasket = null;
 
   @SerializedName("plan_id")
-  private String planId = null;
+  protected String planId = null;
 
   @SerializedName("start_at")
-  private String startAt = null;
+  protected String startAt = null;
 
   public SmartTransactionsBasketProduct id(Integer id) {
     this.id = id;

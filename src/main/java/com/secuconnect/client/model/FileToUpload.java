@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class FileToUpload {
   @SerializedName("file")
-  private File file = null;
+  protected File file = null;
 
   public FileToUpload file(File file) {
     this.file = file;

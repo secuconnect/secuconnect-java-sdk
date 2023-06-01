@@ -8,49 +8,49 @@ import java.util.Objects;
  */
 public class SecupayBaseBasketItem {
   @SerializedName("item_type")
-  private String itemType = "article";
+  protected String itemType = "article";
 
   @SerializedName("article_number")
-  private String articleNumber = null;
+  protected String articleNumber = null;
 
   @SerializedName("quantity")
-  private Integer quantity = null;
+  protected Integer quantity = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("model")
-  private String model = null;
+  protected String model = null;
 
   @SerializedName("ean")
-  private String ean = null;
+  protected String ean = null;
 
   @SerializedName("tax")
-  private String tax = null;
+  protected String tax = null;
 
   @SerializedName("total")
-  private Integer total = null;
+  protected Integer total = null;
 
   @SerializedName("price")
-  private Integer price = null;
+  protected Integer price = null;
 
   @SerializedName("apikey")
-  private String apikey = null;
+  protected String apikey = null;
 
   @SerializedName("plan_id")
-  private String planId = null;
+  protected String planId = null;
 
   @SerializedName("start_at")
-  private String startAt = null;
+  protected String startAt = null;
 
   @SerializedName("transaction_hash")
-  private String transactionHash = null;
+  protected String transactionHash = null;
 
   @SerializedName("contract_id")
-  private String contractId = null;
+  protected String contractId = null;
 
   @SerializedName("reference_id")
-  private String referenceId = null;
+  protected String referenceId = null;
 
   public SecupayBaseBasketItem itemType(String itemType) {
     this.itemType = itemType;

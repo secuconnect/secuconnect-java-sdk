@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class PrepaidZvtDTO {
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("product_id")
-  private Integer productId = null;
+  protected Integer productId = null;
 
   public PrepaidZvtDTO amount(Integer amount) {
     this.amount = amount;

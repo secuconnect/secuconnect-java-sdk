@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class GetAvailablePaymentMethodsDTO {
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("is_demo")
-  private Boolean isDemo = null;
+  protected Boolean isDemo = null;
 
   public GetAvailablePaymentMethodsDTO currency(String currency) {
     this.currency = currency;

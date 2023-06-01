@@ -13,37 +13,37 @@ import java.util.Objects;
  */
 public class SecupayPayoutProductModel extends BaseProductModel {
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("payment_id")
-  private String paymentId = null;
+  protected String paymentId = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("purpose")
-  private String purpose = null;
+  protected String purpose = null;
 
   @SerializedName("order_id")
-  private String orderId = null;
+  protected String orderId = null;
 
   @SerializedName("transaction_status")
-  private String transactionStatus = null;
+  protected String transactionStatus = null;
 
   @SerializedName("transaction_list")
-  private List<SecupayTransactionListItem> transactionList = null;
+  protected List<SecupayTransactionListItem> transactionList = null;
 
   @SerializedName("transfer_purpose")
-  private String transferPurpose = null;
+  protected String transferPurpose = null;
 
   @SerializedName("transfer_account")
-  private PaymentInformation transferAccount = null;
+  protected PaymentInformation transferAccount = null;
 
   public SecupayPayoutProductModel transId(Integer transId) {
     this.transId = transId;

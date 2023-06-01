@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class SmartTransactionsCommunication {
   @SerializedName("action_type")
-  private String actionType = null;
+  protected String actionType = null;
 
   @SerializedName("template_id")
-  private String templateId = null;
+  protected String templateId = null;
 
   public SmartTransactionsCommunication actionType(String actionType) {
     this.actionType = actionType;

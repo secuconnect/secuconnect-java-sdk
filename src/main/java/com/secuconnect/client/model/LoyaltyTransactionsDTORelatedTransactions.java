@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class LoyaltyTransactionsDTORelatedTransactions {
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("ref_type_id")
-  private Integer refTypeId = null;
+  protected Integer refTypeId = null;
 
   public LoyaltyTransactionsDTORelatedTransactions id(String id) {
     this.id = id;

@@ -9,10 +9,10 @@ import java.util.Objects;
  */
 public class SmartDeviceProductsWebterminalConfig {
   @SerializedName("allowed_actions")
-  private SmartDeviceProductsWebterminalConfigAllowedActions allowedActions = null;
+  protected SmartDeviceProductsWebterminalConfigAllowedActions allowedActions = null;
 
   @SerializedName("transactions_grid_enabled")
-  private Boolean transactionsGridEnabled = null;
+  protected Boolean transactionsGridEnabled = null;
 
   public SmartDeviceProductsWebterminalConfig allowedActions(SmartDeviceProductsWebterminalConfigAllowedActions allowedActions) {
     this.allowedActions = allowedActions;

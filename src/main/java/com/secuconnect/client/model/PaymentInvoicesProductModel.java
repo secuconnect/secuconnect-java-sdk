@@ -12,46 +12,46 @@ import java.util.Objects;
  */
 public class PaymentInvoicesProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("store_name")
-  private String storeName = null;
+  protected String storeName = null;
 
   @SerializedName("merchant")
-  private GeneralMerchantsProductModel merchant = null;
+  protected GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("invoice_id")
-  private String invoiceId = null;
+  protected String invoiceId = null;
 
   @SerializedName("date")
-  private String date = null;
+  protected String date = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("tax_amount")
-  private Integer taxAmount = null;
+  protected Integer taxAmount = null;
 
   @SerializedName("total_amount")
-  private Integer totalAmount = null;
+  protected Integer totalAmount = null;
 
   @SerializedName("document_url")
-  private String documentUrl = null;
+  protected String documentUrl = null;
 
   public PaymentInvoicesProductModel l(Integer l) {
     this.l = l;

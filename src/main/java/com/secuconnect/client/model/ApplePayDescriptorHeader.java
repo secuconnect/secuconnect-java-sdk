@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class ApplePayDescriptorHeader {
   @SerializedName("ephemeralPublicKey")
-  private String ephemeralPublicKey = null;
+  protected String ephemeralPublicKey = null;
 
   @SerializedName("publicKeyHash")
-  private String publicKeyHash = null;
+  protected String publicKeyHash = null;
 
   @SerializedName("transactionId")
-  private String transactionId = null;
+  protected String transactionId = null;
 
   public ApplePayDescriptorHeader ephemeralPublicKey(String ephemeralPublicKey) {
     this.ephemeralPublicKey = ephemeralPublicKey;

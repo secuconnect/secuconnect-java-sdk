@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class PaymentCustomersDTO {
   @SerializedName("contact")
-  private Contact contact = null;
+  protected Contact contact = null;
 
   public PaymentCustomersDTO contact(Contact contact) {
     this.contact = contact;

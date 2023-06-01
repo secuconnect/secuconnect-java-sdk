@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class UploadidentsProductModel {
   @SerializedName("service_issue_id")
-  private Integer serviceIssueId = null;
+  protected Integer serviceIssueId = null;
 
   public UploadidentsProductModel serviceIssueId(Integer serviceIssueId) {
     this.serviceIssueId = serviceIssueId;

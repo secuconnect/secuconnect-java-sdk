@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class MandateProductModel {
   @SerializedName("mandate_url")
-  private String mandateUrl = null;
+  protected String mandateUrl = null;
 
   public MandateProductModel mandateUrl(String mandateUrl) {
     this.mandateUrl = mandateUrl;

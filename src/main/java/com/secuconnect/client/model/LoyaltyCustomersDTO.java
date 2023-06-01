@@ -9,28 +9,28 @@ import java.util.Objects;
  */
 public class LoyaltyCustomersDTO {
   @SerializedName("merchant")
-  private String merchant = null;
+  protected String merchant = null;
 
   @SerializedName("merchant_contact")
-  private Contact merchantContact = null;
+  protected Contact merchantContact = null;
 
   @SerializedName("age")
-  private Integer age = null;
+  protected Integer age = null;
 
   @SerializedName("days_until_birthday")
-  private Integer daysUntilBirthday = null;
+  protected Integer daysUntilBirthday = null;
 
   @SerializedName("customernumber")
-  private String customernumber = null;
+  protected String customernumber = null;
 
   @SerializedName("note")
-  private String note = null;
+  protected String note = null;
 
   @SerializedName("consent_for_communication")
-  private String consentForCommunication = null;
+  protected String consentForCommunication = null;
 
   @SerializedName("additional_data")
-  private Object additionalData = null;
+  protected Object additionalData = null;
 
   public LoyaltyCustomersDTO merchant(String merchant) {
     this.merchant = merchant;

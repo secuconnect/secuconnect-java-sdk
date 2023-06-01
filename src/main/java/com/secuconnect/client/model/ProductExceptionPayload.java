@@ -8,22 +8,22 @@ import java.util.Objects;
  */
 public class ProductExceptionPayload {
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("error")
-  private String error = null;
+  protected String error = null;
 
   @SerializedName("error_details")
-  private String errorDetails = null;
+  protected String errorDetails = null;
 
   @SerializedName("error_user")
-  private String errorUser = null;
+  protected String errorUser = null;
 
   @SerializedName("code")
-  private String code = null;
+  protected String code = null;
 
   @SerializedName("supportId")
-  private String supportId = null;
+  protected String supportId = null;
 
   public ProductExceptionPayload status(String status) {
     this.status = status;

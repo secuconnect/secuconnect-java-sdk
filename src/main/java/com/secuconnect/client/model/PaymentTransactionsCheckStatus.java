@@ -8,22 +8,22 @@ import java.util.Objects;
  */
 public class PaymentTransactionsCheckStatus {
   @SerializedName("status")
-  private Integer status = null;
+  protected Integer status = null;
 
   @SerializedName("status_text")
-  private String statusText = null;
+  protected String statusText = null;
 
   @SerializedName("status_simple")
-  private Integer statusSimple = null;
+  protected Integer statusSimple = null;
 
   @SerializedName("status_simple_text")
-  private String statusSimpleText = null;
+  protected String statusSimpleText = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   public PaymentTransactionsCheckStatus status(Integer status) {
     this.status = status;

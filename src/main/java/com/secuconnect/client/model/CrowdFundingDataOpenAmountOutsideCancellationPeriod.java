@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class CrowdFundingDataOpenAmountOutsideCancellationPeriod {
   @SerializedName("total")
-  private Integer total = null;
+  protected Integer total = null;
 
   public CrowdFundingDataOpenAmountOutsideCancellationPeriod total(Integer total) {
     this.total = total;

@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsDTOLock {
   @SerializedName("lock_status")
-  private String lockStatus = null;
+  protected String lockStatus = null;
 
   @SerializedName("reason")
-  private String reason = null;
+  protected String reason = null;
 
   @SerializedName("note")
-  private String note = null;
+  protected String note = null;
 
   public LoyaltyMerchantcardsDTOLock lockStatus(String lockStatus) {
     this.lockStatus = lockStatus;

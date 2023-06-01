@@ -9,28 +9,28 @@ import java.util.Objects;
  */
 public class SmartTransactionsIdent {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("prefix")
-  private String prefix = null;
+  protected String prefix = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("value")
-  private String value = null;
+  protected String value = null;
 
   @SerializedName("valid")
-  private Boolean valid = null;
+  protected Boolean valid = null;
 
   @SerializedName("merchantcard")
-  private LoyaltyMerchantcardsProductModel merchantcard = null;
+  protected LoyaltyMerchantcardsProductModel merchantcard = null;
 
   public SmartTransactionsIdent object(String object) {
     this.object = object;

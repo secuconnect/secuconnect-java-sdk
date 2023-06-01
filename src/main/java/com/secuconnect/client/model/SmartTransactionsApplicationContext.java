@@ -11,19 +11,19 @@ import java.util.Objects;
  */
 public class SmartTransactionsApplicationContext {
   @SerializedName("locks")
-  private SmartTransactionsApplicationContextLocks locks = null;
+  protected SmartTransactionsApplicationContextLocks locks = null;
 
   @SerializedName("return_urls")
-  private SmartTransactionsApplicationContextReturnUrls returnUrls = null;
+  protected SmartTransactionsApplicationContextReturnUrls returnUrls = null;
 
   @SerializedName("iframe_opts")
-  private SmartTransactionsApplicationContextIframeOpts iframeOpts = null;
+  protected SmartTransactionsApplicationContextIframeOpts iframeOpts = null;
 
   @SerializedName("checkout_template")
-  private String checkoutTemplate = null;
+  protected String checkoutTemplate = null;
 
   @SerializedName("language")
-  private String language = null;
+  protected String language = null;
 
   public SmartTransactionsApplicationContext locks(SmartTransactionsApplicationContextLocks locks) {
     this.locks = locks;

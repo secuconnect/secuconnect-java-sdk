@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class GeneralMerchantsUrls {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("url")
-  private String url = null;
+  protected String url = null;
 
   public GeneralMerchantsUrls type(String type) {
     this.type = type;

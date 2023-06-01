@@ -15,34 +15,34 @@ import java.util.Objects;
  */
 public class SmartDevicesProducts {
   @SerializedName("loyalty")
-  private SmartDeviceProductsLoyalty loyalty = null;
+  protected SmartDeviceProductsLoyalty loyalty = null;
 
   @SerializedName("smart")
-  private SmartDeviceProductsEnabledWithTid smart = null;
+  protected SmartDeviceProductsEnabledWithTid smart = null;
 
   @SerializedName("cashreg")
-  private SmartDeviceProductsEnabledWithTid cashreg = null;
+  protected SmartDeviceProductsEnabledWithTid cashreg = null;
 
   @SerializedName("collect")
-  private SmartDeviceProductsCollect collect = null;
+  protected SmartDeviceProductsCollect collect = null;
 
   @SerializedName("vtm")
-  private SmartDeviceProductsVtm vtm = null;
+  protected SmartDeviceProductsVtm vtm = null;
 
   @SerializedName("prepaid")
-  private SmartDeviceProductsPrepaid prepaid = null;
+  protected SmartDeviceProductsPrepaid prepaid = null;
 
   @SerializedName("support")
-  private SmartDeviceProductsEnabled support = null;
+  protected SmartDeviceProductsEnabled support = null;
 
   @SerializedName("bonroll")
-  private SmartDeviceProductsEnabledWithTid bonroll = null;
+  protected SmartDeviceProductsEnabledWithTid bonroll = null;
 
   @SerializedName("bvb")
-  private SmartDeviceProductsEnabled bvb = null;
+  protected SmartDeviceProductsEnabled bvb = null;
 
   @SerializedName("easycredit")
-  private SmartDeviceProductsEasycredit easycredit = null;
+  protected SmartDeviceProductsEasycredit easycredit = null;
 
   public SmartDevicesProducts loyalty(SmartDeviceProductsLoyalty loyalty) {
     this.loyalty = loyalty;

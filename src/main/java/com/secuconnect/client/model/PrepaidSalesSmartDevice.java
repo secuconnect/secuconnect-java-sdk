@@ -8,16 +8,16 @@ import java.util.Objects;
  */
 public class PrepaidSalesSmartDevice {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("vendor_uid")
-  private String vendorUid = null;
+  protected String vendorUid = null;
 
   public PrepaidSalesSmartDevice object(String object) {
     this.object = object;

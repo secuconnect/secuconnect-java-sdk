@@ -11,25 +11,25 @@ import java.util.Objects;
  */
 public class SmartTemplatesElementModel {
   @SerializedName("order")
-  private Integer order = null;
+  protected Integer order = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("config")
-  private Object config = null;
+  protected Object config = null;
 
   @SerializedName("condition")
-  private Object condition = null;
+  protected Object condition = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("property")
-  private String property = null;
+  protected String property = null;
 
   @SerializedName("elements")
-  private List<SmartTemplatesElementModel> elements = null;
+  protected List<SmartTemplatesElementModel> elements = null;
 
   public SmartTemplatesElementModel order(Integer order) {
     this.order = order;

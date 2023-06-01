@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 public class SmartTransactionPaymentCustomerDTO extends ProductInstanceUID {
   @SerializedName("contact")
-  private Contact contact = null;
+  protected Contact contact = null;
 
   public SmartTransactionPaymentCustomerDTO contact(Contact contact) {
     this.contact = contact;

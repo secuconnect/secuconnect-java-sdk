@@ -9,16 +9,16 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsDTOPaymentContainer {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("payment_information")
-  private PaymentInformation paymentInformation = null;
+  protected PaymentInformation paymentInformation = null;
 
   public LoyaltyMerchantcardsDTOPaymentContainer object(String object) {
     this.object = object;

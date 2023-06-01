@@ -9,10 +9,10 @@ import java.util.Objects;
  */
 public class SecupayTransactionProductModelUsedPaymentInstrument {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("data")
-  private OneOfPaymentContainersDTOModelPrivate data = null;
+  protected OneOfPaymentContainersDTOModelPrivate data = null;
 
   public SecupayTransactionProductModelUsedPaymentInstrument type(String type) {
     this.type = type;

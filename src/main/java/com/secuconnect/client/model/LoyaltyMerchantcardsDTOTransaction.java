@@ -8,31 +8,31 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsDTOTransaction {
   @SerializedName("action")
-  private String action = null;
+  protected String action = null;
 
   @SerializedName("terminal_id")
-  private String terminalId = null;
+  protected String terminalId = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("tid")
-  private String tid = null;
+  protected String tid = null;
 
   @SerializedName("store")
-  private String store = null;
+  protected String store = null;
 
   @SerializedName("cardnumber")
-  private Integer cardnumber = null;
+  protected Integer cardnumber = null;
 
   @SerializedName("bonus_amount")
-  private Integer bonusAmount = null;
+  protected Integer bonusAmount = null;
 
   @SerializedName("amount_split_allowed")
-  private String amountSplitAllowed = null;
+  protected String amountSplitAllowed = null;
 
   @SerializedName("merchant_id")
-  private String merchantId = null;
+  protected String merchantId = null;
 
   public LoyaltyMerchantcardsDTOTransaction action(String action) {
     this.action = action;

@@ -8,16 +8,16 @@ import java.util.Objects;
  */
 public class SecupayRedirectUrl {
   @SerializedName("iframe_url")
-  private String iframeUrl = null;
+  protected String iframeUrl = null;
 
   @SerializedName("url_success")
-  private String urlSuccess = null;
+  protected String urlSuccess = null;
 
   @SerializedName("url_failure")
-  private String urlFailure = null;
+  protected String urlFailure = null;
 
   @SerializedName("url_push")
-  private String urlPush = null;
+  protected String urlPush = null;
 
   public SecupayRedirectUrl iframeUrl(String iframeUrl) {
     this.iframeUrl = iframeUrl;

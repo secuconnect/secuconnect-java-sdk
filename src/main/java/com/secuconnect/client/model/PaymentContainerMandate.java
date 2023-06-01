@@ -8,25 +8,25 @@ import java.util.Objects;
  */
 public class PaymentContainerMandate {
   @SerializedName("sepa_mandate_id")
-  private String sepaMandateId = null;
+  protected String sepaMandateId = null;
 
   @SerializedName("iban")
-  private String iban = null;
+  protected String iban = null;
 
   @SerializedName("bic")
-  private String bic = null;
+  protected String bic = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("identification")
-  private String identification = null;
+  protected String identification = null;
 
   @SerializedName("creditor_id")
-  private String creditorId = null;
+  protected String creditorId = null;
 
   public PaymentContainerMandate sepaMandateId(String sepaMandateId) {
     this.sepaMandateId = sepaMandateId;

@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class SmartDeviceProductsEasycredit extends SmartDeviceProductsEnabledWithTid {
   @SerializedName("vu")
-  private String vu = null;
+  protected String vu = null;
 
   public SmartDeviceProductsEasycredit vu(String vu) {
     this.vu = vu;

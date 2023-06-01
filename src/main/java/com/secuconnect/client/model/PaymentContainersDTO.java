@@ -10,19 +10,19 @@ import java.util.Objects;
  */
 public class PaymentContainersDTO {
   @SerializedName("merchant_id")
-  private String merchantId = null;
+  protected String merchantId = null;
 
   @SerializedName("customer")
-  private PaymentContainersDTOCustomer customer = null;
+  protected PaymentContainersDTOCustomer customer = null;
 
   @SerializedName("customer_id")
-  private String customerId = null;
+  protected String customerId = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("private")
-  private OneOfPaymentContainersDTOModelPrivate _private = null;
+  protected OneOfPaymentContainersDTOModelPrivate _private = null;
 
   public PaymentContainersDTO merchantId(String merchantId) {
     this.merchantId = merchantId;

@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class ResultBoolean {
   @SerializedName("result")
-  private Boolean result = null;
+  protected Boolean result = null;
 
   public ResultBoolean result(Boolean result) {
     this.result = result;
