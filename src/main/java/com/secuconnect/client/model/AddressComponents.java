@@ -10,13 +10,13 @@ import java.util.Objects;
  */
 public class AddressComponents {
   @SerializedName("long_name")
-  private String longName = null;
+  protected String longName = null;
 
   @SerializedName("short_name")
-  private String shortName = null;
+  protected String shortName = null;
 
   @SerializedName("types")
-  private List<String> types = null;
+  protected List<String> types = null;
 
   public AddressComponents longName(String longName) {
     this.longName = longName;

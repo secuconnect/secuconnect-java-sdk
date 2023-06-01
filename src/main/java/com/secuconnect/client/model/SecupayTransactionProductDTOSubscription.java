@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class SecupayTransactionProductDTOSubscription {
   @SerializedName("purpose")
-  private String purpose = null;
+  protected String purpose = null;
 
   @SerializedName("id")
-  private Integer id = null;
+  protected Integer id = null;
 
   public SecupayTransactionProductDTOSubscription purpose(String purpose) {
     this.purpose = purpose;

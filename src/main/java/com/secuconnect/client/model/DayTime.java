@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class DayTime {
   @SerializedName("day")
-  private Integer day = null;
+  protected Integer day = null;
 
   @SerializedName("time")
-  private String time = null;
+  protected String time = null;
 
   public DayTime day(Integer day) {
     this.day = day;

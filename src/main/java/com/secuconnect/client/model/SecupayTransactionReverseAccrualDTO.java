@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class SecupayTransactionReverseAccrualDTO {
   @SerializedName("accrual")
-  private Boolean accrual = false;
+  protected Boolean accrual = false;
 
   public SecupayTransactionReverseAccrualDTO accrual(Boolean accrual) {
     this.accrual = accrual;

@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class MandateDTO {
   @SerializedName("customer_id")
-  private String customerId = null;
+  protected String customerId = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   public MandateDTO customerId(String customerId) {
     this.customerId = customerId;

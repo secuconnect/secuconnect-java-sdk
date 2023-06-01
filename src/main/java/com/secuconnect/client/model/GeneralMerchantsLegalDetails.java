@@ -8,16 +8,16 @@ import java.util.Objects;
  */
 public class GeneralMerchantsLegalDetails {
   @SerializedName("url")
-  private String url = null;
+  protected String url = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("content_type")
-  private String contentType = null;
+  protected String contentType = null;
 
   @SerializedName("language")
-  private String language = null;
+  protected String language = null;
 
   public GeneralMerchantsLegalDetails url(String url) {
     this.url = url;

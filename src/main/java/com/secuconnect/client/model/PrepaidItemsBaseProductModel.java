@@ -11,28 +11,28 @@ import java.util.Objects;
  */
 public class PrepaidItemsBaseProductModel extends BaseProductModel {
   @SerializedName("retail_price")
-  private Integer retailPrice = null;
+  protected Integer retailPrice = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("displaytext")
-  private String displaytext = null;
+  protected String displaytext = null;
 
   @SerializedName("logo")
-  private String logo = null;
+  protected String logo = null;
 
   @SerializedName("vtc_config")
-  private List<String> vtcConfig = null;
+  protected List<String> vtcConfig = null;
 
   @SerializedName("vtc_id")
-  private String vtcId = null;
+  protected String vtcId = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   public PrepaidItemsBaseProductModel retailPrice(Integer retailPrice) {
     this.retailPrice = retailPrice;

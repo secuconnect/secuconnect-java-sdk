@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class SmartTransactionsContainer extends ProductInstanceUID {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   public SmartTransactionsContainer type(String type) {
     this.type = type;

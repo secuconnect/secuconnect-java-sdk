@@ -8,25 +8,25 @@ import java.util.Objects;
  */
 public class SmartTransactionsPaymentLinks {
   @SerializedName("prepaid")
-  private String prepaid = null;
+  protected String prepaid = null;
 
   @SerializedName("debit")
-  private String debit = null;
+  protected String debit = null;
 
   @SerializedName("creditcard")
-  private String creditcard = null;
+  protected String creditcard = null;
 
   @SerializedName("invoice")
-  private String invoice = null;
+  protected String invoice = null;
 
   @SerializedName("paypal")
-  private String paypal = null;
+  protected String paypal = null;
 
   @SerializedName("sofort")
-  private String sofort = null;
+  protected String sofort = null;
 
   @SerializedName("general")
-  private String general = null;
+  protected String general = null;
 
   public SmartTransactionsPaymentLinks prepaid(String prepaid) {
     this.prepaid = prepaid;

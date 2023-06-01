@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class SmartTransactionsTimeSlot {
   @SerializedName("start_date")
-  private String startDate = null;
+  protected String startDate = null;
 
   @SerializedName("end_date")
-  private String endDate = null;
+  protected String endDate = null;
 
   public SmartTransactionsTimeSlot startDate(String startDate) {
     this.startDate = startDate;

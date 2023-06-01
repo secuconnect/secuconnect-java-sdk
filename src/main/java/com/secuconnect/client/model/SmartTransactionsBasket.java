@@ -11,10 +11,10 @@ import java.util.Objects;
  */
 public class SmartTransactionsBasket {
   @SerializedName("products")
-  private List<SmartTransactionsBasketProduct> products = null;
+  protected List<SmartTransactionsBasketProduct> products = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   public SmartTransactionsBasket products(List<SmartTransactionsBasketProduct> products) {
     this.products = products;

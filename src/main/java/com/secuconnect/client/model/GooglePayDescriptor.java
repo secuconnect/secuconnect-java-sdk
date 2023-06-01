@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class GooglePayDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   @SerializedName("signature")
-  private String signature = null;
+  protected String signature = null;
 
   @SerializedName("protocolVersion")
-  private String protocolVersion = "ECv1";
+  protected String protocolVersion = "ECv1";
 
   @SerializedName("signedMessage")
-  private String signedMessage = null;
+  protected String signedMessage = null;
 
   public GooglePayDescriptor signature(String signature) {
     this.signature = signature;

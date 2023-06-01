@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class PaymentCancelResultDetails {
   @SerializedName("new_trans_id")
-  private Integer newTransId = null;
+  protected Integer newTransId = null;
 
   @SerializedName("remaining_amount")
-  private Integer remainingAmount = null;
+  protected Integer remainingAmount = null;
 
   @SerializedName("refund_waiting_for_payment")
-  private Boolean refundWaitingForPayment = false;
+  protected Boolean refundWaitingForPayment = false;
 
   public PaymentCancelResultDetails newTransId(Integer newTransId) {
     this.newTransId = newTransId;

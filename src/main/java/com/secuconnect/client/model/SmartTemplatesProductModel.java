@@ -16,46 +16,46 @@ import java.util.Objects;
  */
 public class SmartTemplatesProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("default_language")
-  private String defaultLanguage = null;
+  protected String defaultLanguage = null;
 
   @SerializedName("header")
-  private List<SmartTemplatesComponentModel> header = null;
+  protected List<SmartTemplatesComponentModel> header = null;
 
   @SerializedName("footer")
-  private List<SmartTemplatesComponentModel> footer = null;
+  protected List<SmartTemplatesComponentModel> footer = null;
 
   @SerializedName("pages")
-  private List<SmartTemplatesComponentModel> pages = null;
+  protected List<SmartTemplatesComponentModel> pages = null;
 
   public SmartTemplatesProductModel l(Integer l) {
     this.l = l;

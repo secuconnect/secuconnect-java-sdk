@@ -9,10 +9,10 @@ import java.util.Objects;
  */
 public class GeneralMerchantsPublicDataCompany {
   @SerializedName("companyname")
-  private String companyname = null;
+  protected String companyname = null;
 
   @SerializedName("address")
-  private GeoAddress address = null;
+  protected GeoAddress address = null;
 
   public GeneralMerchantsPublicDataCompany companyname(String companyname) {
     this.companyname = companyname;

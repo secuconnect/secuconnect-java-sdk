@@ -11,19 +11,19 @@ import java.util.Objects;
  */
 public class SmartTemplatesComponentModel {
   @SerializedName("order")
-  private Integer order = null;
+  protected Integer order = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("config")
-  private Object config = null;
+  protected Object config = null;
 
   @SerializedName("condition")
-  private Object condition = null;
+  protected Object condition = null;
 
   @SerializedName("elements")
-  private List<SmartTemplatesElementModel> elements = null;
+  protected List<SmartTemplatesElementModel> elements = null;
 
   public SmartTemplatesComponentModel order(Integer order) {
     this.order = order;

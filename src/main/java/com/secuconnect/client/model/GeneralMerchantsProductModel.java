@@ -19,49 +19,55 @@ import java.util.Objects;
  */
 public class GeneralMerchantsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("id_old")
-  private Integer idOld = null;
+  protected Integer idOld = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("user")
-  private GeneralMerchantsUser user = null;
+  protected GeneralMerchantsUser user = null;
 
   @SerializedName("parent")
-  private ParentModel parent = null;
+  protected ParentModel parent = null;
 
   @SerializedName("assigned_by")
-  private List<AssignedBy> assignedBy = null;
+  protected List<AssignedBy> assignedBy = null;
 
   @SerializedName("invited_by")
-  private List<InvitedBy> invitedBy = null;
+  protected List<InvitedBy> invitedBy = null;
 
   @SerializedName("legal_details")
-  private List<GeneralMerchantsLegalDetails> legalDetails = null;
+  protected List<GeneralMerchantsLegalDetails> legalDetails = null;
 
   @SerializedName("urls")
-  private List<GeneralMerchantsUrls> urls = null;
+  protected List<GeneralMerchantsUrls> urls = null;
 
   @SerializedName("store_name")
-  private String storeName = null;
+  protected String storeName = null;
+
+  @SerializedName("acceptance_points")
+  protected List<BaseProductModel> acceptancePoints = null;
+
+  @SerializedName("two_fa")
+  protected String twoFa = null;
 
   public GeneralMerchantsProductModel l(Integer l) {
     this.l = l;
@@ -341,6 +347,48 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
     this.storeName = storeName;
   }
 
+  public GeneralMerchantsProductModel acceptancePoints(List<BaseProductModel> acceptancePoints) {
+    this.acceptancePoints = acceptancePoints;
+    return this;
+  }
+
+  public GeneralMerchantsProductModel addAcceptancePointsItem(BaseProductModel acceptancePointsItem) {
+    if (this.acceptancePoints == null) {
+      this.acceptancePoints = new ArrayList<BaseProductModel>();
+    }
+    this.acceptancePoints.add(acceptancePointsItem);
+    return this;
+  }
+
+   /**
+   * Acceptance Points (partners)
+   * @return acceptancePoints
+  **/
+  public List<BaseProductModel> getAcceptancePoints() {
+    return acceptancePoints;
+  }
+
+  public void setAcceptancePoints(List<BaseProductModel> acceptancePoints) {
+    this.acceptancePoints = acceptancePoints;
+  }
+
+  public GeneralMerchantsProductModel twoFa(String twoFa) {
+    this.twoFa = twoFa;
+    return this;
+  }
+
+   /**
+   * two-factor authentication type
+   * @return twoFa
+  **/
+  public String getTwoFa() {
+    return twoFa;
+  }
+
+  public void setTwoFa(String twoFa) {
+    this.twoFa = twoFa;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -365,12 +413,14 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
         Objects.equals(this.legalDetails, generalMerchantsProductModel.legalDetails) &&
         Objects.equals(this.urls, generalMerchantsProductModel.urls) &&
         Objects.equals(this.storeName, generalMerchantsProductModel.storeName) &&
+        Objects.equals(this.acceptancePoints, generalMerchantsProductModel.acceptancePoints) &&
+        Objects.equals(this.twoFa, generalMerchantsProductModel.twoFa) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, idOld, type, user, parent, assignedBy, invitedBy, legalDetails, urls, storeName, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, idOld, type, user, parent, assignedBy, invitedBy, legalDetails, urls, storeName, acceptancePoints, twoFa, super.hashCode());
   }
 
   @Override
@@ -393,6 +443,8 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
     sb.append("    legalDetails: ").append(toIndentedString(legalDetails)).append("\n");
     sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
+    sb.append("    acceptancePoints: ").append(toIndentedString(acceptancePoints)).append("\n");
+    sb.append("    twoFa: ").append(toIndentedString(twoFa)).append("\n");
     sb.append("}");
     return sb.toString();
   }

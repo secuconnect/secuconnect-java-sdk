@@ -12,16 +12,16 @@ import java.util.Objects;
  */
 public class GeoAddress {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("address_components")
-  private List<AddressComponents> addressComponents = null;
+  protected List<AddressComponents> addressComponents = null;
 
   @SerializedName("address_formatted")
-  private String addressFormatted = null;
+  protected String addressFormatted = null;
 
   @SerializedName("geometry")
-  private GeoAddressGeometry geometry = null;
+  protected GeoAddressGeometry geometry = null;
 
   public GeoAddress type(String type) {
     this.type = type;

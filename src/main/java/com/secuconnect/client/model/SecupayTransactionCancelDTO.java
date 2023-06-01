@@ -9,16 +9,16 @@ import java.util.Objects;
  */
 public class SecupayTransactionCancelDTO {
   @SerializedName("contract")
-  private PaymentContractsProductModel contract = null;
+  protected PaymentContractsProductModel contract = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("reduce_amount_by")
-  private Integer reduceAmountBy = null;
+  protected Integer reduceAmountBy = null;
 
   @SerializedName("reduce_stakeholder_payment")
-  private Boolean reduceStakeholderPayment = false;
+  protected Boolean reduceStakeholderPayment = false;
 
   public SecupayTransactionCancelDTO contract(PaymentContractsProductModel contract) {
     this.contract = contract;

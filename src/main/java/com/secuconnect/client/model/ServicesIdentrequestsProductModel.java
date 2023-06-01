@@ -7,156 +7,74 @@ import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.IdentrequestPerson;
 import com.secuconnect.client.model.IdentrequestRedirectUrls;
-import com.secuconnect.client.model.ProductInstanceUID;
 import com.secuconnect.client.model.UpdatedField;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.io.IOException;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 
 /**
  * ServicesIdentrequestsProductModel
  */
 public class ServicesIdentrequestsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("contract")
-  private ProductInstanceUID contract = null;
+  protected BaseProductModel contract = null;
 
-  /**
-   * Third party identification provider
-   */
-  @JsonAdapter(ProviderEnum.Adapter.class)
-  public enum ProviderEnum {
-    POST_IDENT("post_ident"),
-    BANK_IDENT("bank_ident"),
-    WEBID("webid");
+  @SerializedName("identcase")
+  protected BaseProductModel identcase = null;
 
-    private String value;
+  @SerializedName("assignment")
+  protected List<BaseProductModel> assignment = null;
 
-    ProviderEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
+  @SerializedName("provider")
+  protected String provider = null;
 
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static ProviderEnum fromValue(String input) {
-      for (ProviderEnum b : ProviderEnum.values()) {
-        if (b.value.equals(input)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<ProviderEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ProviderEnum enumeration) throws IOException {
-        jsonWriter.value(String.valueOf(enumeration.getValue()));
-      }
-
-      @Override
-      public ProviderEnum read(final JsonReader jsonReader) throws IOException {
-        Object value = jsonReader.nextString();
-        return ProviderEnum.fromValue((String)(value));
-      }
-    }
-  }  @SerializedName("provider")
-  private ProviderEnum provider = null;
-
-  /**
-   * Type
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    PERSON("person");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static TypeEnum fromValue(String input) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(input)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(String.valueOf(enumeration.getValue()));
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        Object value = jsonReader.nextString();
-        return TypeEnum.fromValue((String)(value));
-      }
-    }
-  }  @SerializedName("type")
-  private TypeEnum type = null;
+  @SerializedName("type")
+  protected String type = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("demo")
-  private Boolean demo = null;
+  protected Boolean demo = null;
 
   @SerializedName("person")
-  private List<IdentrequestPerson> person = null;
+  protected List<IdentrequestPerson> person = null;
 
   @SerializedName("owner_transaction_id")
-  private String ownerTransactionId = null;
+  protected String ownerTransactionId = null;
 
-  @SerializedName("redirect_url")
-  private IdentrequestRedirectUrls redirectUrl = null;
+  @SerializedName("redirect_urls")
+  protected IdentrequestRedirectUrls redirectUrls = null;
 
   @SerializedName("graduation_date")
-  private String graduationDate = null;
+  protected String graduationDate = null;
 
   @SerializedName("treated")
-  private Boolean treated = null;
+  protected Boolean treated = null;
 
   public ServicesIdentrequestsProductModel l(Integer l) {
     this.l = l;
@@ -294,7 +212,7 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     this.updated = updated;
   }
 
-  public ServicesIdentrequestsProductModel contract(ProductInstanceUID contract) {
+  public ServicesIdentrequestsProductModel contract(BaseProductModel contract) {
     this.contract = contract;
     return this;
   }
@@ -303,45 +221,87 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
    * Get contract
    * @return contract
   **/
-  public ProductInstanceUID getContract() {
+  public BaseProductModel getContract() {
     return contract;
   }
 
-  public void setContract(ProductInstanceUID contract) {
+  public void setContract(BaseProductModel contract) {
     this.contract = contract;
   }
 
-  public ServicesIdentrequestsProductModel provider(ProviderEnum provider) {
+  public ServicesIdentrequestsProductModel identcase(BaseProductModel identcase) {
+    this.identcase = identcase;
+    return this;
+  }
+
+   /**
+   * Get identcase
+   * @return identcase
+  **/
+  public BaseProductModel getIdentcase() {
+    return identcase;
+  }
+
+  public void setIdentcase(BaseProductModel identcase) {
+    this.identcase = identcase;
+  }
+
+  public ServicesIdentrequestsProductModel assignment(List<BaseProductModel> assignment) {
+    this.assignment = assignment;
+    return this;
+  }
+
+  public ServicesIdentrequestsProductModel addAssignmentItem(BaseProductModel assignmentItem) {
+    if (this.assignment == null) {
+      this.assignment = new ArrayList<BaseProductModel>();
+    }
+    this.assignment.add(assignmentItem);
+    return this;
+  }
+
+   /**
+   * Get assignment
+   * @return assignment
+  **/
+  public List<BaseProductModel> getAssignment() {
+    return assignment;
+  }
+
+  public void setAssignment(List<BaseProductModel> assignment) {
+    this.assignment = assignment;
+  }
+
+  public ServicesIdentrequestsProductModel provider(String provider) {
     this.provider = provider;
     return this;
   }
 
    /**
-   * Third party identification provider
+   * Get provider
    * @return provider
   **/
-  public ProviderEnum getProvider() {
+  public String getProvider() {
     return provider;
   }
 
-  public void setProvider(ProviderEnum provider) {
+  public void setProvider(String provider) {
     this.provider = provider;
   }
 
-  public ServicesIdentrequestsProductModel type(TypeEnum type) {
+  public ServicesIdentrequestsProductModel type(String type) {
     this.type = type;
     return this;
   }
 
    /**
-   * Type
+   * Get type
    * @return type
   **/
-  public TypeEnum getType() {
+  public String getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(String type) {
     this.type = type;
   }
 
@@ -421,21 +381,21 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     this.ownerTransactionId = ownerTransactionId;
   }
 
-  public ServicesIdentrequestsProductModel redirectUrl(IdentrequestRedirectUrls redirectUrl) {
-    this.redirectUrl = redirectUrl;
+  public ServicesIdentrequestsProductModel redirectUrls(IdentrequestRedirectUrls redirectUrls) {
+    this.redirectUrls = redirectUrls;
     return this;
   }
 
    /**
-   * Get redirectUrl
-   * @return redirectUrl
+   * Get redirectUrls
+   * @return redirectUrls
   **/
-  public IdentrequestRedirectUrls getRedirectUrl() {
-    return redirectUrl;
+  public IdentrequestRedirectUrls getRedirectUrls() {
+    return redirectUrls;
   }
 
-  public void setRedirectUrl(IdentrequestRedirectUrls redirectUrl) {
-    this.redirectUrl = redirectUrl;
+  public void setRedirectUrls(IdentrequestRedirectUrls redirectUrls) {
+    this.redirectUrls = redirectUrls;
   }
 
   public ServicesIdentrequestsProductModel graduationDate(String graduationDate) {
@@ -481,13 +441,15 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
         Objects.equals(this.created, servicesIdentrequestsProductModel.created) &&
         Objects.equals(this.updated, servicesIdentrequestsProductModel.updated) &&
         Objects.equals(this.contract, servicesIdentrequestsProductModel.contract) &&
+        Objects.equals(this.identcase, servicesIdentrequestsProductModel.identcase) &&
+        Objects.equals(this.assignment, servicesIdentrequestsProductModel.assignment) &&
         Objects.equals(this.provider, servicesIdentrequestsProductModel.provider) &&
         Objects.equals(this.type, servicesIdentrequestsProductModel.type) &&
         Objects.equals(this.status, servicesIdentrequestsProductModel.status) &&
         Objects.equals(this.demo, servicesIdentrequestsProductModel.demo) &&
         Objects.equals(this.person, servicesIdentrequestsProductModel.person) &&
         Objects.equals(this.ownerTransactionId, servicesIdentrequestsProductModel.ownerTransactionId) &&
-        Objects.equals(this.redirectUrl, servicesIdentrequestsProductModel.redirectUrl) &&
+        Objects.equals(this.redirectUrls, servicesIdentrequestsProductModel.redirectUrls) &&
         Objects.equals(this.graduationDate, servicesIdentrequestsProductModel.graduationDate) &&
         Objects.equals(this.treated, servicesIdentrequestsProductModel.treated) &&
         super.equals(o);
@@ -495,7 +457,7 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, updated, contract, provider, type, status, demo, person, ownerTransactionId, redirectUrl, graduationDate, treated, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, contract, identcase, assignment, provider, type, status, demo, person, ownerTransactionId, redirectUrls, graduationDate, treated, super.hashCode());
   }
 
   @Override
@@ -512,13 +474,15 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
+    sb.append("    identcase: ").append(toIndentedString(identcase)).append("\n");
+    sb.append("    assignment: ").append(toIndentedString(assignment)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    demo: ").append(toIndentedString(demo)).append("\n");
     sb.append("    person: ").append(toIndentedString(person)).append("\n");
     sb.append("    ownerTransactionId: ").append(toIndentedString(ownerTransactionId)).append("\n");
-    sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
+    sb.append("    redirectUrls: ").append(toIndentedString(redirectUrls)).append("\n");
     sb.append("    graduationDate: ").append(toIndentedString(graduationDate)).append("\n");
     sb.append("    treated: ").append(toIndentedString(treated)).append("\n");
     sb.append("}");

@@ -12,46 +12,46 @@ import java.util.Objects;
  */
 public class PaymentContractsDTORequestId {
   @SerializedName("contract_id")
-  private String contractId = null;
+  protected String contractId = null;
 
   @SerializedName("contact")
-  private Contact contact = null;
+  protected Contact contact = null;
 
   @SerializedName("project")
-  private String project = null;
+  protected String project = null;
 
   @SerializedName("payout_account")
-  private PaymentInformation payoutAccount = null;
+  protected PaymentInformation payoutAccount = null;
 
   @SerializedName("payment_data")
-  private PaymentInformation paymentData = null;
+  protected PaymentInformation paymentData = null;
 
   @SerializedName("iframe_opts")
-  private PaymentContractsDTOIFrameOpts iframeOpts = null;
+  protected PaymentContractsDTOIFrameOpts iframeOpts = null;
 
   @SerializedName("url_push")
-  private String urlPush = null;
+  protected String urlPush = null;
 
   @SerializedName("payin_account")
-  private Boolean payinAccount = false;
+  protected Boolean payinAccount = false;
 
   @SerializedName("create_first_store")
-  private Boolean createFirstStore = false;
+  protected Boolean createFirstStore = false;
 
   @SerializedName("store_name")
-  private String storeName = null;
+  protected String storeName = null;
 
   @SerializedName("payout_purpose")
-  private String payoutPurpose = null;
+  protected String payoutPurpose = null;
 
   @SerializedName("identrequest")
-  private String identrequest = null;
+  protected String identrequest = null;
 
   @SerializedName("signed_contract")
-  private String signedContract = null;
+  protected String signedContract = null;
 
   @SerializedName("additional_data")
-  private PaymentContractsDTORequestIdAdditionalData additionalData = null;
+  protected PaymentContractsDTORequestIdAdditionalData additionalData = null;
 
   public PaymentContractsDTORequestId contractId(String contractId) {
     this.contractId = contractId;

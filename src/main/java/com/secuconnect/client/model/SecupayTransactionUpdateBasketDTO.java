@@ -12,10 +12,10 @@ import java.util.Objects;
  */
 public class SecupayTransactionUpdateBasketDTO {
   @SerializedName("contract")
-  private PaymentContractsProductModel contract = null;
+  protected PaymentContractsProductModel contract = null;
 
   @SerializedName("basket")
-  private List<SecupayBasketItem> basket = null;
+  protected List<SecupayBasketItem> basket = null;
 
   public SecupayTransactionUpdateBasketDTO contract(PaymentContractsProductModel contract) {
     this.contract = contract;

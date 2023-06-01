@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class SecupayTransactionExternalInvoicePdf {
   @SerializedName("document")
-  private SecupayTransactionExternalInvoicePdfDocument document = null;
+  protected SecupayTransactionExternalInvoicePdfDocument document = null;
 
   public SecupayTransactionExternalInvoicePdf document(SecupayTransactionExternalInvoicePdfDocument document) {
     this.document = document;

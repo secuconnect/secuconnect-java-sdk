@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class SmartTransactionsCheckoutLinks {
   @SerializedName("url_checkout")
-  private String urlCheckout = null;
+  protected String urlCheckout = null;
 
   public SmartTransactionsCheckoutLinks urlCheckout(String urlCheckout) {
     this.urlCheckout = urlCheckout;

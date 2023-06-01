@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class CardPin {
   @SerializedName("pin")
-  private Integer pin = null;
+  protected Integer pin = null;
 
   public CardPin pin(Integer pin) {
     this.pin = pin;

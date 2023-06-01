@@ -54,13 +54,13 @@ public class PaymentContractsDTORequestIdAdditionalDataCreateCard {
       }
     }
   }  @SerializedName("card_scheme")
-  private CardSchemeEnum cardScheme = null;
+  protected CardSchemeEnum cardScheme = null;
 
   @SerializedName("app_language")
-  private String appLanguage = null;
+  protected String appLanguage = null;
 
   @SerializedName("passport_id")
-  private String passportId = null;
+  protected String passportId = null;
 
   public PaymentContractsDTORequestIdAdditionalDataCreateCard cardScheme(CardSchemeEnum cardScheme) {
     this.cardScheme = cardScheme;

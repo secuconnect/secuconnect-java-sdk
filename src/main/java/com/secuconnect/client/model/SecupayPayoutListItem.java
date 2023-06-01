@@ -9,22 +9,22 @@ import java.util.Objects;
  */
 public class SecupayPayoutListItem {
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("purpose")
-  private String purpose = null;
+  protected String purpose = null;
 
   @SerializedName("reference")
-  private String reference = null;
+  protected String reference = null;
 
   @SerializedName("recipient")
-  private String recipient = null;
+  protected String recipient = null;
 
   @SerializedName("bank_account")
-  private BankAccountDescriptor bankAccount = null;
+  protected BankAccountDescriptor bankAccount = null;
 
   @SerializedName("origin_transaction")
-  private Integer originTransaction = null;
+  protected Integer originTransaction = null;
 
   public SecupayPayoutListItem amount(Integer amount) {
     this.amount = amount;

@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class SmartRoutingsDTO {
   @SerializedName("store")
-  private String store = null;
+  protected String store = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   public SmartRoutingsDTO store(String store) {
     this.store = store;

@@ -10,7 +10,7 @@ import java.util.Objects;
  */
 public class SmartDeviceProductsLoyalty extends SmartDeviceProductsEnabledWithTid {
   @SerializedName("webterminal_config")
-  private SmartDeviceProductsWebterminalConfig webterminalConfig = null;
+  protected SmartDeviceProductsWebterminalConfig webterminalConfig = null;
 
   public SmartDeviceProductsLoyalty webterminalConfig(SmartDeviceProductsWebterminalConfig webterminalConfig) {
     this.webterminalConfig = webterminalConfig;

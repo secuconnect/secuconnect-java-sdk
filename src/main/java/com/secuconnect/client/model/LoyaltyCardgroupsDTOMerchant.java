@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class LoyaltyCardgroupsDTOMerchant {
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   public LoyaltyCardgroupsDTOMerchant id(String id) {
     this.id = id;

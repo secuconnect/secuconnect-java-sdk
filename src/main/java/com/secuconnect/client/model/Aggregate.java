@@ -8,22 +8,22 @@ import java.util.Objects;
  */
 public class Aggregate {
   @SerializedName("timestamp_prop")
-  private String timestampProp = null;
+  protected String timestampProp = null;
 
   @SerializedName("interval")
-  private String interval = "week";
+  protected String interval = "week";
 
   @SerializedName("min")
-  private Integer min = null;
+  protected Integer min = null;
 
   @SerializedName("max")
-  private Integer max = null;
+  protected Integer max = null;
 
   @SerializedName("group_by_prop")
-  private String groupByProp = null;
+  protected String groupByProp = null;
 
   @SerializedName("sum_by_prop")
-  private String sumByProp = null;
+  protected String sumByProp = null;
 
   public Aggregate timestampProp(String timestampProp) {
     this.timestampProp = timestampProp;

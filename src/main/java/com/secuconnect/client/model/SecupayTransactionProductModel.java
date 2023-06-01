@@ -20,67 +20,67 @@ import java.util.Objects;
  */
 public class SecupayTransactionProductModel extends BaseProductModel {
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("purpose")
-  private String purpose = null;
+  protected String purpose = null;
 
   @SerializedName("order_id")
-  private String orderId = null;
+  protected String orderId = null;
 
   @SerializedName("payment_id")
-  private String paymentId = null;
+  protected String paymentId = null;
 
   @SerializedName("basket")
-  private List<SecupayBasketItem> basket = null;
+  protected List<SecupayBasketItem> basket = null;
 
   @SerializedName("transaction_status")
-  private String transactionStatus = null;
+  protected String transactionStatus = null;
 
   @SerializedName("accrual")
-  private Boolean accrual = null;
+  protected Boolean accrual = null;
 
   @SerializedName("payment_action")
-  private String paymentAction = null;
+  protected String paymentAction = null;
 
   @SerializedName("transfer_purpose")
-  private String transferPurpose = null;
+  protected String transferPurpose = null;
 
   @SerializedName("transfer_account")
-  private PaymentInformation transferAccount = null;
+  protected PaymentInformation transferAccount = null;
 
   @SerializedName("customer")
-  private PaymentCustomersProductModel customer = null;
+  protected PaymentCustomersProductModel customer = null;
 
   @SerializedName("used_payment_instrument")
-  private SecupayTransactionProductModelUsedPaymentInstrument usedPaymentInstrument = null;
+  protected SecupayTransactionProductModelUsedPaymentInstrument usedPaymentInstrument = null;
 
   @SerializedName("redirect_url")
-  private SecupayRedirectUrl redirectUrl = null;
+  protected SecupayRedirectUrl redirectUrl = null;
 
   @SerializedName("subscription")
-  private SecupayTransactionProductDTOSubscription subscription = null;
+  protected SecupayTransactionProductDTOSubscription subscription = null;
 
   @SerializedName("iframe_url")
-  private String iframeUrl = null;
+  protected String iframeUrl = null;
 
   @SerializedName("container")
-  private PaymentContainersProductModel container = null;
+  protected PaymentContainersProductModel container = null;
 
   @SerializedName("sub_transactions")
-  private List<SecupaySubTransactionProductModel> subTransactions = null;
+  protected List<SecupaySubTransactionProductModel> subTransactions = null;
 
   @SerializedName("mandate")
-  private PaymentContainerMandate mandate = null;
+  protected PaymentContainerMandate mandate = null;
 
   public SecupayTransactionProductModel transId(Integer transId) {
     this.transId = transId;

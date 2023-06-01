@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class ReceiptType {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   public ReceiptType type(String type) {
     this.type = type;

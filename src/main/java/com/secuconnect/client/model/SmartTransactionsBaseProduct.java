@@ -8,25 +8,25 @@ import java.util.Objects;
  */
 public class SmartTransactionsBaseProduct {
   @SerializedName("id")
-  private Integer id = null;
+  protected Integer id = null;
 
   @SerializedName("tax")
-  private Integer tax = null;
+  protected Integer tax = null;
 
   @SerializedName("priceOne")
-  private Integer priceOne = null;
+  protected Integer priceOne = null;
 
   @SerializedName("quantity")
-  private Integer quantity = null;
+  protected Integer quantity = null;
 
   @SerializedName("desc")
-  private String desc = null;
+  protected String desc = null;
 
   @SerializedName("articleNumber")
-  private String articleNumber = null;
+  protected String articleNumber = null;
 
   @SerializedName("ean")
-  private String ean = null;
+  protected String ean = null;
 
   public SmartTransactionsBaseProduct id(Integer id) {
     this.id = id;

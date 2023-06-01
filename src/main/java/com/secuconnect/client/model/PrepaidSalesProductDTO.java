@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class PrepaidSalesProductDTO {
   @SerializedName("item")
-  private String item = null;
+  protected String item = null;
 
   public PrepaidSalesProductDTO item(String item) {
     this.item = item;

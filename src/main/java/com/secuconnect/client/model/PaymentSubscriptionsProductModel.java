@@ -14,61 +14,61 @@ import java.util.Objects;
  */
 public class PaymentSubscriptionsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("smart_transaction")
-  private BaseProductModel smartTransaction = null;
+  protected BaseProductModel smartTransaction = null;
 
   @SerializedName("merchant")
-  private BaseProductModel merchant = null;
+  protected BaseProductModel merchant = null;
 
   @SerializedName("contract")
-  private BaseProductModel contract = null;
+  protected BaseProductModel contract = null;
 
   @SerializedName("customer")
-  private BaseProductModel customer = null;
+  protected BaseProductModel customer = null;
 
   @SerializedName("container")
-  private BaseProductModel container = null;
+  protected BaseProductModel container = null;
 
   @SerializedName("plan")
-  private BaseProductModel plan = null;
+  protected BaseProductModel plan = null;
 
   @SerializedName("start_at")
-  private String startAt = null;
+  protected String startAt = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("paypal_subscription_id")
-  private String paypalSubscriptionId = null;
+  protected String paypalSubscriptionId = null;
 
   @SerializedName("billing_cycles")
-  private PaymentSubscriptionsProductModelBillingCycles billingCycles = null;
+  protected PaymentSubscriptionsProductModelBillingCycles billingCycles = null;
 
   @SerializedName("demo")
-  private Boolean demo = null;
+  protected Boolean demo = null;
 
   public PaymentSubscriptionsProductModel l(Integer l) {
     this.l = l;

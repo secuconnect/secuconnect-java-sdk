@@ -16,40 +16,40 @@ import java.util.Objects;
  */
 public class ServicesIdentresultsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("request")
-  private ProductInstanceUID request = null;
+  protected ProductInstanceUID request = null;
 
   @SerializedName("contract")
-  private ProductInstanceUID contract = null;
+  protected ProductInstanceUID contract = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("demo")
-  private Boolean demo = null;
+  protected Boolean demo = null;
 
   @SerializedName("person")
-  private List<IdentresultPerson> person = null;
+  protected List<IdentresultPerson> person = null;
 
   public ServicesIdentresultsProductModel l(Integer l) {
     this.l = l;

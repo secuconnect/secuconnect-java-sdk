@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class DocumentLink {
   @SerializedName("url")
-  private String url = null;
+  protected String url = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   public DocumentLink url(String url) {
     this.url = url;

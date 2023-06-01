@@ -9,40 +9,40 @@ import java.util.Objects;
  */
 public class SmartDevicesDTO {
   @SerializedName("merchant")
-  private String merchant = null;
+  protected String merchant = null;
 
   @SerializedName("store")
-  private String store = null;
+  protected String store = null;
 
   @SerializedName("device")
-  private String device = null;
+  protected String device = null;
 
   @SerializedName("contract")
-  private String contract = null;
+  protected String contract = null;
 
   @SerializedName("vendor")
-  private String vendor = null;
+  protected String vendor = null;
 
   @SerializedName("vendor_uid")
-  private String vendorUid = null;
+  protected String vendorUid = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("tid")
-  private String tid = null;
+  protected String tid = null;
 
   @SerializedName("products")
-  private SmartDevicesProducts products = null;
+  protected SmartDevicesProducts products = null;
 
   @SerializedName("terminal_type")
-  private String terminalType = null;
+  protected String terminalType = null;
 
   @SerializedName("base_version")
-  private String baseVersion = null;
+  protected String baseVersion = null;
 
   public SmartDevicesDTO merchant(String merchant) {
     this.merchant = merchant;

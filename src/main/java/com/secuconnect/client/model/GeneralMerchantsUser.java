@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.GeneralMerchantsUserEmail;
 import com.secuconnect.client.model.GeoAddress;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,54 +11,26 @@ import java.util.Objects;
  * GeneralMerchantsUser
  */
 public class GeneralMerchantsUser {
-  @SerializedName("object")
-  private String object = null;
-
-  @SerializedName("id")
-  private String id = null;
-
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
+
+  @SerializedName("forename")
+  protected String forename = null;
+
+  @SerializedName("surname")
+  protected String surname = null;
 
   @SerializedName("companyname")
-  private String companyname = null;
+  protected String companyname = null;
+
+  @SerializedName("project_name")
+  protected String projectName = null;
 
   @SerializedName("address")
-  private List<GeoAddress> address = null;
+  protected List<GeoAddress> address = null;
 
-  public GeneralMerchantsUser object(String object) {
-    this.object = object;
-    return this;
-  }
-
-   /**
-   * Object of General Merchant user
-   * @return object
-  **/
-  public String getObject() {
-    return object;
-  }
-
-  public void setObject(String object) {
-    this.object = object;
-  }
-
-  public GeneralMerchantsUser id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * ID of General Merchant user
-   * @return id
-  **/
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
+  @SerializedName("email")
+  protected List<GeneralMerchantsUserEmail> email = null;
 
   public GeneralMerchantsUser name(String name) {
     this.name = name;
@@ -65,7 +38,7 @@ public class GeneralMerchantsUser {
   }
 
    /**
-   * Name of General Merchant user
+   * Name
    * @return name
   **/
   public String getName() {
@@ -76,13 +49,47 @@ public class GeneralMerchantsUser {
     this.name = name;
   }
 
+  public GeneralMerchantsUser forename(String forename) {
+    this.forename = forename;
+    return this;
+  }
+
+   /**
+   * forename
+   * @return forename
+  **/
+  public String getForename() {
+    return forename;
+  }
+
+  public void setForename(String forename) {
+    this.forename = forename;
+  }
+
+  public GeneralMerchantsUser surname(String surname) {
+    this.surname = surname;
+    return this;
+  }
+
+   /**
+   * surname
+   * @return surname
+  **/
+  public String getSurname() {
+    return surname;
+  }
+
+  public void setSurname(String surname) {
+    this.surname = surname;
+  }
+
   public GeneralMerchantsUser companyname(String companyname) {
     this.companyname = companyname;
     return this;
   }
 
    /**
-   * Company name of General Merchant user
+   * Company name
    * @return companyname
   **/
   public String getCompanyname() {
@@ -91,6 +98,23 @@ public class GeneralMerchantsUser {
 
   public void setCompanyname(String companyname) {
     this.companyname = companyname;
+  }
+
+  public GeneralMerchantsUser projectName(String projectName) {
+    this.projectName = projectName;
+    return this;
+  }
+
+   /**
+   * Project name
+   * @return projectName
+  **/
+  public String getProjectName() {
+    return projectName;
+  }
+
+  public void setProjectName(String projectName) {
+    this.projectName = projectName;
   }
 
   public GeneralMerchantsUser address(List<GeoAddress> address) {
@@ -118,6 +142,31 @@ public class GeneralMerchantsUser {
     this.address = address;
   }
 
+  public GeneralMerchantsUser email(List<GeneralMerchantsUserEmail> email) {
+    this.email = email;
+    return this;
+  }
+
+  public GeneralMerchantsUser addEmailItem(GeneralMerchantsUserEmail emailItem) {
+    if (this.email == null) {
+      this.email = new ArrayList<GeneralMerchantsUserEmail>();
+    }
+    this.email.add(emailItem);
+    return this;
+  }
+
+   /**
+   * E-Mail addresses
+   * @return email
+  **/
+  public List<GeneralMerchantsUserEmail> getEmail() {
+    return email;
+  }
+
+  public void setEmail(List<GeneralMerchantsUserEmail> email) {
+    this.email = email;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -127,27 +176,31 @@ public class GeneralMerchantsUser {
       return false;
     }
     GeneralMerchantsUser generalMerchantsUser = (GeneralMerchantsUser) o;
-    return Objects.equals(this.object, generalMerchantsUser.object) &&
-        Objects.equals(this.id, generalMerchantsUser.id) &&
-        Objects.equals(this.name, generalMerchantsUser.name) &&
+    return Objects.equals(this.name, generalMerchantsUser.name) &&
+        Objects.equals(this.forename, generalMerchantsUser.forename) &&
+        Objects.equals(this.surname, generalMerchantsUser.surname) &&
         Objects.equals(this.companyname, generalMerchantsUser.companyname) &&
-        Objects.equals(this.address, generalMerchantsUser.address);
+        Objects.equals(this.projectName, generalMerchantsUser.projectName) &&
+        Objects.equals(this.address, generalMerchantsUser.address) &&
+        Objects.equals(this.email, generalMerchantsUser.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, name, companyname, address);
+    return Objects.hash(name, forename, surname, companyname, projectName, address, email);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GeneralMerchantsUser {\n");
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    forename: ").append(toIndentedString(forename)).append("\n");
+    sb.append("    surname: ").append(toIndentedString(surname)).append("\n");
     sb.append("    companyname: ").append(toIndentedString(companyname)).append("\n");
+    sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }

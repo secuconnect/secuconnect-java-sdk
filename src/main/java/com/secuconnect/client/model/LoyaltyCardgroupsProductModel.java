@@ -12,37 +12,37 @@ import java.util.Objects;
  */
 public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("merchant")
-  private LoyaltyCardgroupsDTOMerchant merchant = null;
+  protected LoyaltyCardgroupsDTOMerchant merchant = null;
 
   @SerializedName("display_name")
-  private String displayName = null;
+  protected String displayName = null;
 
   @SerializedName("display_name_raw")
-  private String displayNameRaw = null;
+  protected String displayNameRaw = null;
 
   @SerializedName("stock_warn_limit")
-  private String stockWarnLimit = null;
+  protected String stockWarnLimit = null;
 
   @SerializedName("picture")
-  private String picture = null;
+  protected String picture = null;
 
   public LoyaltyCardgroupsProductModel l(Integer l) {
     this.l = l;

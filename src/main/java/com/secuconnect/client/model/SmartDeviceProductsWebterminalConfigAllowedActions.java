@@ -8,31 +8,31 @@ import java.util.Objects;
  */
 public class SmartDeviceProductsWebterminalConfigAllowedActions {
   @SerializedName("balance_check")
-  private Boolean balanceCheck = null;
+  protected Boolean balanceCheck = null;
 
   @SerializedName("cancel_last")
-  private Boolean cancelLast = null;
+  protected Boolean cancelLast = null;
 
   @SerializedName("cashreport")
-  private Boolean cashreport = null;
+  protected Boolean cashreport = null;
 
   @SerializedName("charge")
-  private Boolean charge = null;
+  protected Boolean charge = null;
 
   @SerializedName("charge_points")
-  private Boolean chargePoints = null;
+  protected Boolean chargePoints = null;
 
   @SerializedName("discharge")
-  private Boolean discharge = null;
+  protected Boolean discharge = null;
 
   @SerializedName("discharge_points")
-  private Boolean dischargePoints = null;
+  protected Boolean dischargePoints = null;
 
   @SerializedName("immediate_bonus")
-  private Boolean immediateBonus = null;
+  protected Boolean immediateBonus = null;
 
   @SerializedName("sale_revenue")
-  private Boolean saleRevenue = null;
+  protected Boolean saleRevenue = null;
 
   public SmartDeviceProductsWebterminalConfigAllowedActions balanceCheck(Boolean balanceCheck) {
     this.balanceCheck = balanceCheck;

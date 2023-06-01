@@ -19,103 +19,103 @@ import java.util.Objects;
  */
 public class GeneralStoresProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("id_old")
-  private String idOld = null;
+  protected String idOld = null;
 
   @SerializedName("merchant")
-  private ProductInstanceUID merchant = null;
+  protected ProductInstanceUID merchant = null;
 
   @SerializedName("store_name")
-  private String storeName = null;
+  protected String storeName = null;
 
   @SerializedName("facebook_id")
-  private String facebookId = null;
+  protected String facebookId = null;
 
   @SerializedName("source")
-  private String source = null;
+  protected String source = null;
 
   @SerializedName("key")
-  private String key = null;
+  protected String key = null;
 
   @SerializedName("hash")
-  private String hash = null;
+  protected String hash = null;
 
   @SerializedName("address_components")
-  private List<AddressComponents> addressComponents = null;
+  protected List<AddressComponents> addressComponents = null;
 
   @SerializedName("address_formatted")
-  private String addressFormatted = null;
+  protected String addressFormatted = null;
 
   @SerializedName("phone_number_formatted")
-  private String phoneNumberFormatted = null;
+  protected String phoneNumberFormatted = null;
 
   @SerializedName("geometry")
-  private GeoAddressGeometry geometry = null;
+  protected GeoAddressGeometry geometry = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("name_raw")
-  private String nameRaw = null;
+  protected String nameRaw = null;
 
   @SerializedName("photo_main")
-  private String photoMain = null;
+  protected String photoMain = null;
 
   @SerializedName("photo")
-  private List<String> photo = null;
+  protected List<String> photo = null;
 
   @SerializedName("category_main")
-  private String categoryMain = null;
+  protected String categoryMain = null;
 
   @SerializedName("category")
-  private List<String> category = null;
+  protected List<String> category = null;
 
   @SerializedName("url_googleplus")
-  private String urlGoogleplus = null;
+  protected String urlGoogleplus = null;
 
   @SerializedName("url_website")
-  private String urlWebsite = null;
+  protected String urlWebsite = null;
 
   @SerializedName("open_hours")
-  private List<OpenHours> openHours = null;
+  protected List<OpenHours> openHours = null;
 
   @SerializedName("open_now")
-  private Boolean openNow = null;
+  protected Boolean openNow = null;
 
   @SerializedName("open_time")
-  private String openTime = null;
+  protected String openTime = null;
 
   @SerializedName("utc_offset")
-  private String utcOffset = null;
+  protected String utcOffset = null;
 
   @SerializedName("assigned_by")
-  private List<AssignedBy> assignedBy = null;
+  protected List<AssignedBy> assignedBy = null;
 
   @SerializedName("invited_by")
-  private List<InvitedBy> invitedBy = null;
+  protected List<InvitedBy> invitedBy = null;
 
   @SerializedName("has_beacon")
-  private Boolean hasBeacon = null;
+  protected Boolean hasBeacon = null;
 
   @SerializedName("acceptance_point")
-  private Boolean acceptancePoint = null;
+  protected Boolean acceptancePoint = null;
 
   public GeneralStoresProductModel l(Integer l) {
     this.l = l;

@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class BaseProductModel {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   public BaseProductModel object(String object) {
     this.object = object;

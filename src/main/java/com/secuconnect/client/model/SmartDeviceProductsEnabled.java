@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class SmartDeviceProductsEnabled {
   @SerializedName("enabled")
-  private Boolean enabled = null;
+  protected Boolean enabled = null;
 
   public SmartDeviceProductsEnabled enabled(Boolean enabled) {
     this.enabled = enabled;

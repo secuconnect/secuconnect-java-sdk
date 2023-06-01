@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class IdentificationCustomData {
   @SerializedName("custom1")
-  private String custom1 = null;
+  protected String custom1 = null;
 
   @SerializedName("custom2")
-  private String custom2 = null;
+  protected String custom2 = null;
 
   @SerializedName("custom3")
-  private String custom3 = null;
+  protected String custom3 = null;
 
   @SerializedName("custom4")
-  private String custom4 = null;
+  protected String custom4 = null;
 
   @SerializedName("custom5")
-  private String custom5 = null;
+  protected String custom5 = null;
 
   public IdentificationCustomData custom1(String custom1) {
     this.custom1 = custom1;

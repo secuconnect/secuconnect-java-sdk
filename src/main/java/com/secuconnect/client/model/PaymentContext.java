@@ -10,19 +10,19 @@ import java.util.Objects;
  */
 public class PaymentContext {
   @SerializedName("auto_capture")
-  private Boolean autoCapture = false;
+  protected Boolean autoCapture = false;
 
   @SerializedName("payment_methods")
-  private List<String> paymentMethods = null;
+  protected List<String> paymentMethods = null;
 
   @SerializedName("merchant_initiated")
-  private Boolean merchantInitiated = false;
+  protected Boolean merchantInitiated = false;
 
   @SerializedName("creditcard_schemes")
-  private List<String> creditcardSchemes = null;
+  protected List<String> creditcardSchemes = null;
 
   @SerializedName("accrual")
-  private Boolean accrual = false;
+  protected Boolean accrual = false;
 
   public PaymentContext autoCapture(Boolean autoCapture) {
     this.autoCapture = autoCapture;

@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class SecupayTransactionProductDTOExperience {
   @SerializedName("positive")
-  private Integer positive = null;
+  protected Integer positive = null;
 
   @SerializedName("negative")
-  private Integer negative = null;
+  protected Integer negative = null;
 
   public SecupayTransactionProductDTOExperience positive(Integer positive) {
     this.positive = positive;

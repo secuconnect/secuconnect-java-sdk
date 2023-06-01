@@ -10,25 +10,25 @@ import java.util.Objects;
  */
 public class UserData {
   @SerializedName("dob")
-  private ValueField dob = null;
+  protected ValueField dob = null;
 
   @SerializedName("birthplace")
-  private ValueField birthplace = null;
+  protected ValueField birthplace = null;
 
   @SerializedName("forename")
-  private ValueField forename = null;
+  protected ValueField forename = null;
 
   @SerializedName("surname")
-  private ValueField surname = null;
+  protected ValueField surname = null;
 
   @SerializedName("nationality")
-  private ValueField nationality = null;
+  protected ValueField nationality = null;
 
   @SerializedName("gender")
-  private ValueField gender = null;
+  protected ValueField gender = null;
 
   @SerializedName("address")
-  private UserAddressData address = null;
+  protected UserAddressData address = null;
 
   public UserData dob(ValueField dob) {
     this.dob = dob;

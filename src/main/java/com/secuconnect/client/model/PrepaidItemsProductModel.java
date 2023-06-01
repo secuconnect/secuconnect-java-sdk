@@ -13,43 +13,40 @@ import java.util.Objects;
  */
 public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("commission")
-  private Integer commission = null;
-
-  @SerializedName("vtc_id")
-  private String vtcId = null;
+  protected Integer commission = null;
 
   @SerializedName("itemgroup")
-  private ItemGroup itemgroup = null;
+  protected ItemGroup itemgroup = null;
 
   @SerializedName("stock_limit_max")
-  private Integer stockLimitMax = null;
+  protected Integer stockLimitMax = null;
 
   @SerializedName("stock_limit_min")
-  private Integer stockLimitMin = null;
+  protected Integer stockLimitMin = null;
 
   @SerializedName("taxable")
-  private Boolean taxable = null;
+  protected Boolean taxable = null;
 
   @SerializedName("enabled")
-  private Boolean enabled = null;
+  protected Boolean enabled = null;
 
   public PrepaidItemsProductModel l(Integer l) {
     this.l = l;
@@ -170,23 +167,6 @@ public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
     this.commission = commission;
   }
 
-  public PrepaidItemsProductModel vtcId(String vtcId) {
-    this.vtcId = vtcId;
-    return this;
-  }
-
-   /**
-   * Vtc id
-   * @return vtcId
-  **/
-  public String getVtcId() {
-    return vtcId;
-  }
-
-  public void setVtcId(String vtcId) {
-    this.vtcId = vtcId;
-  }
-
   public PrepaidItemsProductModel itemgroup(ItemGroup itemgroup) {
     this.itemgroup = itemgroup;
     return this;
@@ -288,7 +268,6 @@ public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
         Objects.equals(this.s, prepaidItemsProductModel.s) &&
         Objects.equals(this.t, prepaidItemsProductModel.t) &&
         Objects.equals(this.commission, prepaidItemsProductModel.commission) &&
-        Objects.equals(this.vtcId, prepaidItemsProductModel.vtcId) &&
         Objects.equals(this.itemgroup, prepaidItemsProductModel.itemgroup) &&
         Objects.equals(this.stockLimitMax, prepaidItemsProductModel.stockLimitMax) &&
         Objects.equals(this.stockLimitMin, prepaidItemsProductModel.stockLimitMin) &&
@@ -299,7 +278,7 @@ public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, commission, vtcId, itemgroup, stockLimitMax, stockLimitMin, taxable, enabled, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, commission, itemgroup, stockLimitMax, stockLimitMin, taxable, enabled, super.hashCode());
   }
 
   @Override
@@ -314,7 +293,6 @@ public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
     sb.append("    s: ").append(toIndentedString(s)).append("\n");
     sb.append("    t: ").append(toIndentedString(t)).append("\n");
     sb.append("    commission: ").append(toIndentedString(commission)).append("\n");
-    sb.append("    vtcId: ").append(toIndentedString(vtcId)).append("\n");
     sb.append("    itemgroup: ").append(toIndentedString(itemgroup)).append("\n");
     sb.append("    stockLimitMax: ").append(toIndentedString(stockLimitMax)).append("\n");
     sb.append("    stockLimitMin: ").append(toIndentedString(stockLimitMin)).append("\n");

@@ -14,13 +14,13 @@ import java.util.Objects;
  */
 public class GeneralMerchantsPublicDataModel extends BaseProductModel {
   @SerializedName("legal_details")
-  private List<GeneralMerchantsLegalDetails> legalDetails = null;
+  protected List<GeneralMerchantsLegalDetails> legalDetails = null;
 
   @SerializedName("company")
-  private GeneralMerchantsPublicDataCompany company = null;
+  protected GeneralMerchantsPublicDataCompany company = null;
 
   @SerializedName("merchant_urls")
-  private List<GeneralMerchantsUrls> merchantUrls = null;
+  protected List<GeneralMerchantsUrls> merchantUrls = null;
 
   public GeneralMerchantsPublicDataModel legalDetails(List<GeneralMerchantsLegalDetails> legalDetails) {
     this.legalDetails = legalDetails;

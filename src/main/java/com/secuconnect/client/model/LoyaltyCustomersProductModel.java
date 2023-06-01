@@ -17,46 +17,46 @@ import java.util.Objects;
  */
 public class LoyaltyCustomersProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("merchant")
-  private ProductInstanceUID merchant = null;
+  protected ProductInstanceUID merchant = null;
 
   @SerializedName("contact")
-  private Contact contact = null;
+  protected Contact contact = null;
 
   @SerializedName("merchant_contact")
-  private Contact merchantContact = null;
+  protected Contact merchantContact = null;
 
   @SerializedName("account_contact")
-  private Contact accountContact = null;
+  protected Contact accountContact = null;
 
   @SerializedName("payment_container")
-  private List<LoyaltyCustomersPaymentContainerModel> paymentContainer = null;
+  protected List<LoyaltyCustomersPaymentContainerModel> paymentContainer = null;
 
   @SerializedName("customernumber")
-  private String customernumber = null;
+  protected String customernumber = null;
 
   @SerializedName("note")
-  private String note = null;
+  protected String note = null;
 
   public LoyaltyCustomersProductModel l(Integer l) {
     this.l = l;

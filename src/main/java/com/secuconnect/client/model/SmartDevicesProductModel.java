@@ -17,85 +17,85 @@ import java.util.Objects;
  */
 public class SmartDevicesProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("merchant")
-  private ProductInstanceUID merchant = null;
+  protected ProductInstanceUID merchant = null;
 
   @SerializedName("store")
-  private Store store = null;
+  protected Store store = null;
 
   @SerializedName("contract")
-  private ProductInstanceUID contract = null;
+  protected ProductInstanceUID contract = null;
 
   @SerializedName("vendor")
-  private String vendor = null;
+  protected String vendor = null;
 
   @SerializedName("vendor_uid")
-  private String vendorUid = null;
+  protected String vendorUid = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("device")
-  private SmartDevicesDevice device = null;
+  protected SmartDevicesDevice device = null;
 
   @SerializedName("routing")
-  private ProductInstanceUID routing = null;
+  protected ProductInstanceUID routing = null;
 
   @SerializedName("user_pin")
-  private String userPin = null;
+  protected String userPin = null;
 
   @SerializedName("products")
-  private SmartDevicesProducts products = null;
+  protected SmartDevicesProducts products = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("tid")
-  private String tid = null;
+  protected String tid = null;
 
   @SerializedName("idle_screen_register")
-  private String idleScreenRegister = null;
+  protected String idleScreenRegister = null;
 
   @SerializedName("idle_screen_terminal")
-  private String idleScreenTerminal = null;
+  protected String idleScreenTerminal = null;
 
   @SerializedName("online")
-  private Boolean online = null;
+  protected Boolean online = null;
 
   @SerializedName("refresh")
-  private Integer refresh = null;
+  protected Integer refresh = null;
 
   @SerializedName("connection_type")
-  private String connectionType = null;
+  protected String connectionType = null;
 
   @SerializedName("terminal_type")
-  private String terminalType = null;
+  protected String terminalType = null;
 
   @SerializedName("base_version")
-  private String baseVersion = null;
+  protected String baseVersion = null;
 
   public SmartDevicesProductModel l(Integer l) {
     this.l = l;

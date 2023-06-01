@@ -1,29 +1,27 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.secuconnect.client.model.Address;
-import com.secuconnect.client.model.Contact;
 import com.secuconnect.client.model.IdentificationCustomData;
 import java.util.Objects;
 
 /**
  * IdentrequestPersonDTO
  */
-public class IdentrequestPersonDTO extends Contact {
+public class IdentrequestPersonDTO {
   @SerializedName("custom1")
-  private String custom1 = null;
+  protected String custom1 = null;
 
   @SerializedName("custom2")
-  private String custom2 = null;
+  protected String custom2 = null;
 
   @SerializedName("custom3")
-  private String custom3 = null;
+  protected String custom3 = null;
 
   @SerializedName("custom4")
-  private String custom4 = null;
+  protected String custom4 = null;
 
   @SerializedName("custom5")
-  private String custom5 = null;
+  protected String custom5 = null;
 
   public IdentrequestPersonDTO custom1(String custom1) {
     this.custom1 = custom1;
@@ -123,20 +121,18 @@ public class IdentrequestPersonDTO extends Contact {
         Objects.equals(this.custom2, identrequestPersonDTO.custom2) &&
         Objects.equals(this.custom3, identrequestPersonDTO.custom3) &&
         Objects.equals(this.custom4, identrequestPersonDTO.custom4) &&
-        Objects.equals(this.custom5, identrequestPersonDTO.custom5) &&
-        super.equals(o);
+        Objects.equals(this.custom5, identrequestPersonDTO.custom5);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(custom1, custom2, custom3, custom4, custom5, super.hashCode());
+    return Objects.hash(custom1, custom2, custom3, custom4, custom5);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IdentrequestPersonDTO {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    custom1: ").append(toIndentedString(custom1)).append("\n");
     sb.append("    custom2: ").append(toIndentedString(custom2)).append("\n");
     sb.append("    custom3: ").append(toIndentedString(custom3)).append("\n");

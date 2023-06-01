@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class SmartRoutingsAssign {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("priority")
-  private Integer priority = null;
+  protected Integer priority = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   public SmartRoutingsAssign object(String object) {
     this.object = object;

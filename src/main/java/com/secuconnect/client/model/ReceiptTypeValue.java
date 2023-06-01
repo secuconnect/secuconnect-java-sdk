@@ -10,7 +10,7 @@ import java.util.Objects;
  */
 public class ReceiptTypeValue extends ReceiptType {
   @SerializedName("value")
-  private ReceiptValue value = null;
+  protected ReceiptValue value = null;
 
   public ReceiptTypeValue value(ReceiptValue value) {
     this.value = value;

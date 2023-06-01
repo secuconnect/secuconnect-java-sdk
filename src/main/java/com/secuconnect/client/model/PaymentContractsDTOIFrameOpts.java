@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class PaymentContractsDTOIFrameOpts {
   @SerializedName("show_basket")
-  private Boolean showBasket = null;
+  protected Boolean showBasket = null;
 
   @SerializedName("basket_title")
-  private String basketTitle = null;
+  protected String basketTitle = null;
 
   @SerializedName("submit_button_title")
-  private String submitButtonTitle = null;
+  protected String submitButtonTitle = null;
 
   @SerializedName("logo_base64")
-  private String logoBase64 = null;
+  protected String logoBase64 = null;
 
   @SerializedName("cession")
-  private String cession = "personal";
+  protected String cession = "personal";
 
   public PaymentContractsDTOIFrameOpts showBasket(Boolean showBasket) {
     this.showBasket = showBasket;

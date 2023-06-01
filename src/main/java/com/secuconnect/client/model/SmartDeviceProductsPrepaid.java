@@ -11,19 +11,19 @@ import java.util.Objects;
  */
 public class SmartDeviceProductsPrepaid extends SmartDeviceProductsEnabledWithTid {
   @SerializedName("demo_force")
-  private Boolean demoForce = null;
+  protected Boolean demoForce = null;
 
   @SerializedName("vtc_tid")
-  private String vtcTid = null;
+  protected String vtcTid = null;
 
   @SerializedName("endofday")
-  private Boolean endofday = null;
+  protected Boolean endofday = null;
 
   @SerializedName("password")
-  private List<String> password = null;
+  protected List<String> password = null;
 
   @SerializedName("simulate")
-  private Boolean simulate = null;
+  protected Boolean simulate = null;
 
   public SmartDeviceProductsPrepaid demoForce(Boolean demoForce) {
     this.demoForce = demoForce;

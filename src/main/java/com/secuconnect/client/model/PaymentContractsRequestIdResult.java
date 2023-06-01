@@ -10,19 +10,19 @@ import java.util.Objects;
  */
 public class PaymentContractsRequestIdResult {
   @SerializedName("contract")
-  private ProductInstanceUID contract = null;
+  protected ProductInstanceUID contract = null;
 
   @SerializedName("merchant")
-  private ProductInstanceUID merchant = null;
+  protected ProductInstanceUID merchant = null;
 
   @SerializedName("store")
-  private ProductInstanceUID store = null;
+  protected ProductInstanceUID store = null;
 
   @SerializedName("apikey")
-  private String apikey = null;
+  protected String apikey = null;
 
   @SerializedName("payin_account")
-  private PaymentInformation payinAccount = null;
+  protected PaymentInformation payinAccount = null;
 
   public PaymentContractsRequestIdResult contract(ProductInstanceUID contract) {
     this.contract = contract;

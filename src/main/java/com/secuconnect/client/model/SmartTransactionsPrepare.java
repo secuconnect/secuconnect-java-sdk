@@ -11,16 +11,16 @@ import java.util.Objects;
  */
 public class SmartTransactionsPrepare {
   @SerializedName("customer")
-  private SmartTransactionPaymentCustomerDTO customer = null;
+  protected SmartTransactionPaymentCustomerDTO customer = null;
 
   @SerializedName("container")
-  private SmartTransactionPaymentContainerDTO container = null;
+  protected SmartTransactionPaymentContainerDTO container = null;
 
   @SerializedName("callback_urls")
-  private SmartTransactionsPrepareCallbackUrls callbackUrls = null;
+  protected SmartTransactionsPrepareCallbackUrls callbackUrls = null;
 
   @SerializedName("email")
-  private String email = null;
+  protected String email = null;
 
   public SmartTransactionsPrepare customer(SmartTransactionPaymentCustomerDTO customer) {
     this.customer = customer;

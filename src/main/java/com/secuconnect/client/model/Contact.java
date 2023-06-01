@@ -9,55 +9,55 @@ import java.util.Objects;
  */
 public class Contact {
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("forename")
-  private String forename = null;
+  protected String forename = null;
 
   @SerializedName("surname")
-  private String surname = null;
+  protected String surname = null;
 
   @SerializedName("companyname")
-  private String companyname = null;
+  protected String companyname = null;
 
   @SerializedName("salutation")
-  private String salutation = null;
+  protected String salutation = null;
 
   @SerializedName("gender")
-  private String gender = null;
+  protected String gender = null;
 
   @SerializedName("title")
-  private String title = null;
+  protected String title = null;
 
   @SerializedName("email")
-  private String email = null;
+  protected String email = null;
 
   @SerializedName("phone")
-  private String phone = null;
+  protected String phone = null;
 
   @SerializedName("mobile")
-  private String mobile = null;
+  protected String mobile = null;
 
   @SerializedName("fax")
-  private String fax = null;
+  protected String fax = null;
 
   @SerializedName("dob")
-  private String dob = null;
+  protected String dob = null;
 
   @SerializedName("picture")
-  private String picture = null;
+  protected String picture = null;
 
   @SerializedName("url_website")
-  private String urlWebsite = null;
+  protected String urlWebsite = null;
 
   @SerializedName("birthplace")
-  private String birthplace = null;
+  protected String birthplace = null;
 
   @SerializedName("nationality")
-  private String nationality = null;
+  protected String nationality = null;
 
   @SerializedName("address")
-  private Address address = null;
+  protected Address address = null;
 
   public Contact name(String name) {
     this.name = name;

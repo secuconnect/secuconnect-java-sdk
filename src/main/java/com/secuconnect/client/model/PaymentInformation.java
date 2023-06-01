@@ -8,16 +8,16 @@ import java.util.Objects;
  */
 public class PaymentInformation {
   @SerializedName("iban")
-  private String iban = null;
+  protected String iban = null;
 
   @SerializedName("bic")
-  private String bic = null;
+  protected String bic = null;
 
   @SerializedName("owner")
-  private String owner = null;
+  protected String owner = null;
 
   @SerializedName("bankname")
-  private String bankname = null;
+  protected String bankname = null;
 
   public PaymentInformation iban(String iban) {
     this.iban = iban;

@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class PaymentLinkOptions {
   @SerializedName("background")
-  private BackgroundImageOption background = null;
+  protected BackgroundImageOption background = null;
 
   public PaymentLinkOptions background(BackgroundImageOption background) {
     this.background = background;

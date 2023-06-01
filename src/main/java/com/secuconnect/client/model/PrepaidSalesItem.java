@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class PrepaidSalesItem {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("logo")
-  private String logo = null;
+  protected String logo = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   public PrepaidSalesItem object(String object) {
     this.object = object;

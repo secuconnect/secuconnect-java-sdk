@@ -15,61 +15,61 @@ import java.util.Objects;
  */
 public class CardprocessingInvoicesProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("merchant")
-  private GeneralMerchantsProductModel merchant = null;
+  protected GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("store")
-  private GeneralStoresProductModel store = null;
+  protected GeneralStoresProductModel store = null;
 
   @SerializedName("store_name")
-  private String storeName = null;
+  protected String storeName = null;
 
   @SerializedName("id_old")
-  private Integer idOld = null;
+  protected Integer idOld = null;
 
   @SerializedName("tid")
-  private String tid = null;
+  protected String tid = null;
 
   @SerializedName("invoice_number")
-  private String invoiceNumber = null;
+  protected String invoiceNumber = null;
 
   @SerializedName("net_amount")
-  private Integer netAmount = null;
+  protected Integer netAmount = null;
 
   @SerializedName("tax_amount")
-  private Integer taxAmount = null;
+  protected Integer taxAmount = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("document_url")
-  private String documentUrl = null;
+  protected String documentUrl = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   public CardprocessingInvoicesProductModel l(Integer l) {
     this.l = l;

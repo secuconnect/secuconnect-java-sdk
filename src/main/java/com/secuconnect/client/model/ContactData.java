@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class ContactData {
   @SerializedName("mobile")
-  private String mobile = null;
+  protected String mobile = null;
 
   @SerializedName("email")
-  private String email = null;
+  protected String email = null;
 
   public ContactData mobile(String mobile) {
     this.mobile = mobile;

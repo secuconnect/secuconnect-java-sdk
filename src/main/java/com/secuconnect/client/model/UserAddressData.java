@@ -9,19 +9,19 @@ import java.util.Objects;
  */
 public class UserAddressData {
   @SerializedName("street")
-  private ValueField street = null;
+  protected ValueField street = null;
 
   @SerializedName("street_number")
-  private ValueField streetNumber = null;
+  protected ValueField streetNumber = null;
 
   @SerializedName("city")
-  private ValueField city = null;
+  protected ValueField city = null;
 
   @SerializedName("postal_code")
-  private ValueField postalCode = null;
+  protected ValueField postalCode = null;
 
   @SerializedName("country")
-  private ValueField country = null;
+  protected ValueField country = null;
 
   public UserAddressData street(ValueField street) {
     this.street = street;

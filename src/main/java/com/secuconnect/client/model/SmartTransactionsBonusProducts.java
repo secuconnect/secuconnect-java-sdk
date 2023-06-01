@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class SmartTransactionsBonusProducts extends SmartTransactionsBaseProduct {
   @SerializedName("serialNumber")
-  private String serialNumber = null;
+  protected String serialNumber = null;
 
   public SmartTransactionsBonusProducts serialNumber(String serialNumber) {
     this.serialNumber = serialNumber;

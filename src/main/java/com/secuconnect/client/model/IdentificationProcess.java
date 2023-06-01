@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class IdentificationProcess {
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("identificationtime")
-  private String identificationtime = null;
+  protected String identificationtime = null;
 
   @SerializedName("transactionnumber")
-  private String transactionnumber = null;
+  protected String transactionnumber = null;
 
   public IdentificationProcess status(String status) {
     this.status = status;

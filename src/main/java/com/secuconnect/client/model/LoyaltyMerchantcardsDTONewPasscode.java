@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsDTONewPasscode extends LoyaltyMerchantcardsDTOValidateMerchantCard {
   @SerializedName("passcode")
-  private Integer passcode = null;
+  protected Integer passcode = null;
 
   public LoyaltyMerchantcardsDTONewPasscode passcode(Integer passcode) {
     this.passcode = passcode;

@@ -10,13 +10,13 @@ import java.util.Objects;
  */
 public class PaymentCrowdFundingData {
   @SerializedName("project")
-  private CrowdFundingDataDetails project = null;
+  protected CrowdFundingDataDetails project = null;
 
   @SerializedName("paid_out")
-  private Integer paidOut = null;
+  protected Integer paidOut = null;
 
   @SerializedName("open")
-  private CrowdFundingDataOpenAmount open = null;
+  protected CrowdFundingDataOpenAmount open = null;
 
   public PaymentCrowdFundingData project(CrowdFundingDataDetails project) {
     this.project = project;

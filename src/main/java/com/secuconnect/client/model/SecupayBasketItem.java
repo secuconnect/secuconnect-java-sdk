@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 public class SecupayBasketItem extends SecupayBaseBasketItem {
   @SerializedName("sub_basket")
-  private List<SecupayBasketItem> subBasket = null;
+  protected List<SecupayBasketItem> subBasket = null;
 
   public SecupayBasketItem subBasket(List<SecupayBasketItem> subBasket) {
     this.subBasket = subBasket;

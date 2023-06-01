@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class GeneralStoresDTOReason {
   @SerializedName("reason")
-  private String reason = null;
+  protected String reason = null;
 
   public GeneralStoresDTOReason reason(String reason) {
     this.reason = reason;

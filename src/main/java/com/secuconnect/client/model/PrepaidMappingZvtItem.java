@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class PrepaidMappingZvtItem {
   @SerializedName("id")
-  private Integer id = null;
+  protected Integer id = null;
 
   public PrepaidMappingZvtItem id(Integer id) {
     this.id = id;

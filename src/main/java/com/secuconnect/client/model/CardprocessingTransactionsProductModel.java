@@ -17,70 +17,70 @@ import java.util.Objects;
  */
 public class CardprocessingTransactionsProductModel extends BaseProductModel {
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("updated")
-  private String updated = null;
+  protected String updated = null;
 
   @SerializedName("merchant")
-  private GeneralMerchantsProductModel merchant = null;
+  protected GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("related_transactions")
-  private List<ParentObj> relatedTransactions = null;
+  protected List<ParentObj> relatedTransactions = null;
 
   @SerializedName("store")
-  private GeneralStoresProductModel store = null;
+  protected GeneralStoresProductModel store = null;
 
   @SerializedName("store_name")
-  private String storeName = null;
+  protected String storeName = null;
 
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("tid")
-  private String tid = null;
+  protected String tid = null;
 
   @SerializedName("end_of_day_date")
-  private String endOfDayDate = null;
+  protected String endOfDayDate = null;
 
   @SerializedName("end_of_day_id")
-  private String endOfDayId = null;
+  protected String endOfDayId = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("trace")
-  private Integer trace = null;
+  protected Integer trace = null;
 
   @SerializedName("receipt_number")
-  private String receiptNumber = null;
+  protected String receiptNumber = null;
 
   @SerializedName("product")
-  private String product = null;
+  protected String product = null;
 
   @SerializedName("ref_report_id")
-  private Integer refReportId = null;
+  protected Integer refReportId = null;
 
   @SerializedName("ref_report_type")
-  private Integer refReportType = null;
+  protected Integer refReportType = null;
 
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   public CardprocessingTransactionsProductModel created(String created) {
     this.created = created;

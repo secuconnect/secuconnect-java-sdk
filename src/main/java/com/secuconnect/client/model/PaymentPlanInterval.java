@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class PaymentPlanInterval {
   @SerializedName("unit")
-  private String unit = null;
+  protected String unit = null;
 
   @SerializedName("count")
-  private Integer count = null;
+  protected Integer count = null;
 
   public PaymentPlanInterval unit(String unit) {
     this.unit = unit;

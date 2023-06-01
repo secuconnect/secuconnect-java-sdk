@@ -11,10 +11,10 @@ import java.util.Objects;
  */
 public class SmartTransactionsPreTransactionModel {
   @SerializedName("missing_sum")
-  private Integer missingSum = null;
+  protected Integer missingSum = null;
 
   @SerializedName("bonus_products")
-  private List<SmartTransactionsBonusProducts> bonusProducts = null;
+  protected List<SmartTransactionsBonusProducts> bonusProducts = null;
 
   public SmartTransactionsPreTransactionModel missingSum(Integer missingSum) {
     this.missingSum = missingSum;

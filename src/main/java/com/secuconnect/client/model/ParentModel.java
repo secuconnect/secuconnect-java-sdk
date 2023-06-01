@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class ParentModel {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   public ParentModel object(String object) {
     this.object = object;

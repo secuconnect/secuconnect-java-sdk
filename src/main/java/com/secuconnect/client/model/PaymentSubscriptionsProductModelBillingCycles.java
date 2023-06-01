@@ -11,10 +11,10 @@ import java.util.Objects;
  */
 public class PaymentSubscriptionsProductModelBillingCycles {
   @SerializedName("cycle_executions")
-  private List<BillingCyclesItem> cycleExecutions = null;
+  protected List<BillingCyclesItem> cycleExecutions = null;
 
   @SerializedName("next_billing_time")
-  private String nextBillingTime = null;
+  protected String nextBillingTime = null;
 
   public PaymentSubscriptionsProductModelBillingCycles cycleExecutions(List<BillingCyclesItem> cycleExecutions) {
     this.cycleExecutions = cycleExecutions;

@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class ProductInstanceID {
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   public ProductInstanceID id(String id) {
     this.id = id;

@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class SmartTransactionsBasketInfo {
   @SerializedName("sum")
-  private Integer sum = null;
+  protected Integer sum = null;
 
   @SerializedName("gratuity")
-  private Integer gratuity = null;
+  protected Integer gratuity = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   public SmartTransactionsBasketInfo sum(Integer sum) {
     this.sum = sum;

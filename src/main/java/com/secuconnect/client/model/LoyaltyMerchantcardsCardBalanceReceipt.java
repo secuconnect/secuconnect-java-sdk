@@ -12,34 +12,34 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsCardBalanceReceipt {
   @SerializedName("valid")
-  private Boolean valid = null;
+  protected Boolean valid = null;
 
   @SerializedName("balance")
-  private Integer balance = null;
+  protected Integer balance = null;
 
   @SerializedName("points")
-  private Integer points = null;
+  protected Integer points = null;
 
   @SerializedName("new_passcode")
-  private Boolean newPasscode = null;
+  protected Boolean newPasscode = null;
 
   @SerializedName("receipt_header")
-  private List<ReceiptType> receiptHeader = null;
+  protected List<ReceiptType> receiptHeader = null;
 
   @SerializedName("receipt")
-  private List<ReceiptTypeValue> receipt = null;
+  protected List<ReceiptTypeValue> receipt = null;
 
   @SerializedName("amount_split_enabled")
-  private Boolean amountSplitEnabled = null;
+  protected Boolean amountSplitEnabled = null;
 
   @SerializedName("limit_allowed")
-  private Boolean limitAllowed = null;
+  protected Boolean limitAllowed = null;
 
   @SerializedName("limit_str")
-  private String limitStr = null;
+  protected String limitStr = null;
 
   @SerializedName("limit")
-  private Integer limit = null;
+  protected Integer limit = null;
 
   public LoyaltyMerchantcardsCardBalanceReceipt valid(Boolean valid) {
     this.valid = valid;

@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class SmartDeviceProductsCollect extends SmartDeviceProductsEnabled {
   @SerializedName("print_collection_receipt")
-  private Boolean printCollectionReceipt = null;
+  protected Boolean printCollectionReceipt = null;
 
   public SmartDeviceProductsCollect printCollectionReceipt(Boolean printCollectionReceipt) {
     this.printCollectionReceipt = printCollectionReceipt;

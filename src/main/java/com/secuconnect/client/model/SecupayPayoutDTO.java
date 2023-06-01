@@ -14,31 +14,31 @@ import java.util.Objects;
  */
 public class SecupayPayoutDTO {
   @SerializedName("redirect_url")
-  private SecupayRedirectUrl redirectUrl = null;
+  protected SecupayRedirectUrl redirectUrl = null;
 
   @SerializedName("contract")
-  private String contract = null;
+  protected String contract = null;
 
   @SerializedName("customer")
-  private PaymentCustomersProductModel customer = null;
+  protected PaymentCustomersProductModel customer = null;
 
   @SerializedName("opt_data")
-  private SecupayPayoutDTOOptData optData = null;
+  protected SecupayPayoutDTOOptData optData = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("purpose")
-  private String purpose = null;
+  protected String purpose = null;
 
   @SerializedName("order_id")
-  private String orderId = null;
+  protected String orderId = null;
 
   @SerializedName("transaction_list")
-  private List<SecupayTransactionListItem> transactionList = null;
+  protected List<SecupayTransactionListItem> transactionList = null;
 
   public SecupayPayoutDTO redirectUrl(SecupayRedirectUrl redirectUrl) {
     this.redirectUrl = redirectUrl;

@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class ValueField {
   @SerializedName("value")
-  private String value = null;
+  protected String value = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   public ValueField value(String value) {
     this.value = value;

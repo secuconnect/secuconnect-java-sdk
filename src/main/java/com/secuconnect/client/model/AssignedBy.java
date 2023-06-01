@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class AssignedBy {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("owner")
-  private Boolean owner = null;
+  protected Boolean owner = null;
 
   public AssignedBy object(String object) {
     this.object = object;

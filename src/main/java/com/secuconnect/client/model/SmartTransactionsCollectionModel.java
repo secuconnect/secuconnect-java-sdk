@@ -9,19 +9,19 @@ import java.util.Objects;
  */
 public class SmartTransactionsCollectionModel implements OneOfSmartTransactionsDeliveryOptionsModel {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("scheduled_slot")
-  private SmartTransactionsTimeSlot scheduledSlot = null;
+  protected SmartTransactionsTimeSlot scheduledSlot = null;
 
   @SerializedName("store_id")
-  private String storeId = null;
+  protected String storeId = null;
 
   @SerializedName("delivered_at")
-  private String deliveredAt = null;
+  protected String deliveredAt = null;
 
   @SerializedName("code")
-  private String code = null;
+  protected String code = null;
 
   public SmartTransactionsCollectionModel type(String type) {
     this.type = type;

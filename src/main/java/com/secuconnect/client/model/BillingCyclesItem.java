@@ -9,19 +9,19 @@ import java.util.Objects;
  */
 public class BillingCyclesItem {
   @SerializedName("sequence")
-  private Integer sequence = null;
+  protected Integer sequence = null;
 
   @SerializedName("interval")
-  private PaymentPlanInterval interval = null;
+  protected PaymentPlanInterval interval = null;
 
   @SerializedName("tenure_type")
-  private String tenureType = null;
+  protected String tenureType = null;
 
   @SerializedName("total_cycles")
-  private Integer totalCycles = null;
+  protected Integer totalCycles = null;
 
   @SerializedName("price")
-  private Integer price = null;
+  protected Integer price = null;
 
   public BillingCyclesItem sequence(Integer sequence) {
     this.sequence = sequence;

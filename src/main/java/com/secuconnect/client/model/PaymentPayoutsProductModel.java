@@ -15,82 +15,82 @@ import java.util.Objects;
  */
 public class PaymentPayoutsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("store_name")
-  private String storeName = null;
+  protected String storeName = null;
 
   @SerializedName("merchant")
-  private GeneralMerchantsProductModel merchant = null;
+  protected GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("date")
-  private String date = null;
+  protected String date = null;
 
   @SerializedName("simple_status_id")
-  private Integer simpleStatusId = null;
+  protected Integer simpleStatusId = null;
 
   @SerializedName("simple_status_description")
-  private String simpleStatusDescription = null;
+  protected String simpleStatusDescription = null;
 
   @SerializedName("receiver")
-  private String receiver = null;
+  protected String receiver = null;
 
   @SerializedName("purpose")
-  private String purpose = null;
+  protected String purpose = null;
 
   @SerializedName("trans_status_id")
-  private Integer transStatusId = null;
+  protected Integer transStatusId = null;
 
   @SerializedName("documents")
-  private List<DocumentLink> documents = null;
+  protected List<DocumentLink> documents = null;
 
   @SerializedName("product_id")
-  private Integer productId = null;
+  protected Integer productId = null;
 
   @SerializedName("refund_amount")
-  private Integer refundAmount = null;
+  protected Integer refundAmount = null;
 
   @SerializedName("stakeholder_amount")
-  private Integer stakeholderAmount = null;
+  protected Integer stakeholderAmount = null;
 
   @SerializedName("claim_amount")
-  private Integer claimAmount = null;
+  protected Integer claimAmount = null;
 
   @SerializedName("invoice_amount")
-  private Integer invoiceAmount = null;
+  protected Integer invoiceAmount = null;
 
   @SerializedName("misc_amount")
-  private Integer miscAmount = null;
+  protected Integer miscAmount = null;
 
   @SerializedName("payout_amount")
-  private Integer payoutAmount = null;
+  protected Integer payoutAmount = null;
 
   @SerializedName("transaction_volume")
-  private Integer transactionVolume = null;
+  protected Integer transactionVolume = null;
 
   public PaymentPayoutsProductModel l(Integer l) {
     this.l = l;

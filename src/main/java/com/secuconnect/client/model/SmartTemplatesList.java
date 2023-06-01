@@ -11,28 +11,28 @@ import java.util.Objects;
  */
 public class SmartTemplatesList {
   @SerializedName("count")
-  private Integer count = null;
+  protected Integer count = null;
 
   @SerializedName("data")
-  private List<SmartTemplatesProductModel> data = null;
+  protected List<SmartTemplatesProductModel> data = null;
 
   @SerializedName("scroll_id")
-  private String scrollId = null;
+  protected String scrollId = null;
 
   @SerializedName("result")
-  private Boolean result = null;
+  protected Boolean result = null;
 
   @SerializedName("meta")
-  private Object meta = null;
+  protected Object meta = null;
 
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("sum")
-  private Boolean sum = null;
+  protected Boolean sum = null;
 
   @SerializedName("lookup")
-  private List<String> lookup = null;
+  protected List<String> lookup = null;
 
   public SmartTemplatesList count(Integer count) {
     this.count = count;

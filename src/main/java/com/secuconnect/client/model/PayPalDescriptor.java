@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class PayPalDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   @SerializedName("email")
-  private String email = null;
+  protected String email = null;
 
   @SerializedName("payer_id")
-  private String payerId = null;
+  protected String payerId = null;
 
   public PayPalDescriptor email(String email) {
     this.email = email;

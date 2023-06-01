@@ -9,19 +9,19 @@ import java.util.Objects;
  */
 public class LoyaltyCardgroupsDTO {
   @SerializedName("display_name")
-  private String displayName = null;
+  protected String displayName = null;
 
   @SerializedName("display_name_raw")
-  private String displayNameRaw = null;
+  protected String displayNameRaw = null;
 
   @SerializedName("stock_warn_limit")
-  private String stockWarnLimit = null;
+  protected String stockWarnLimit = null;
 
   @SerializedName("picture")
-  private String picture = null;
+  protected String picture = null;
 
   @SerializedName("merchant")
-  private LoyaltyCardgroupsDTOMerchant merchant = null;
+  protected LoyaltyCardgroupsDTOMerchant merchant = null;
 
   public LoyaltyCardgroupsDTO displayName(String displayName) {
     this.displayName = displayName;

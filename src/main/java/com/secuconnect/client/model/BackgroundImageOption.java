@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class BackgroundImageOption {
   @SerializedName("enabled")
-  private Boolean enabled = null;
+  protected Boolean enabled = null;
 
   @SerializedName("image_url")
-  private String imageUrl = null;
+  protected String imageUrl = null;
 
   public BackgroundImageOption enabled(Boolean enabled) {
     this.enabled = enabled;

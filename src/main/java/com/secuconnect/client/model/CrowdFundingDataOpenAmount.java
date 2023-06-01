@@ -10,13 +10,13 @@ import java.util.Objects;
  */
 public class CrowdFundingDataOpenAmount {
   @SerializedName("total")
-  private Integer total = null;
+  protected Integer total = null;
 
   @SerializedName("outside_cancellation_period")
-  private CrowdFundingDataOpenAmountOutsideCancellationPeriod outsideCancellationPeriod = null;
+  protected CrowdFundingDataOpenAmountOutsideCancellationPeriod outsideCancellationPeriod = null;
 
   @SerializedName("inside_cancellation_period")
-  private CrowdFundingDataOpenAmountInsideCancelPeriod insideCancellationPeriod = null;
+  protected CrowdFundingDataOpenAmountInsideCancelPeriod insideCancellationPeriod = null;
 
   public CrowdFundingDataOpenAmount total(Integer total) {
     this.total = total;

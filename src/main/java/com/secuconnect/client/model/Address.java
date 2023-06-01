@@ -8,25 +8,25 @@ import java.util.Objects;
  */
 public class Address {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("street")
-  private String street = null;
+  protected String street = null;
 
   @SerializedName("street_number")
-  private String streetNumber = null;
+  protected String streetNumber = null;
 
   @SerializedName("city")
-  private String city = null;
+  protected String city = null;
 
   @SerializedName("postal_code")
-  private String postalCode = null;
+  protected String postalCode = null;
 
   @SerializedName("country")
-  private String country = null;
+  protected String country = null;
 
   @SerializedName("additional_address_data")
-  private String additionalAddressData = null;
+  protected String additionalAddressData = null;
 
   public Address type(String type) {
     this.type = type;

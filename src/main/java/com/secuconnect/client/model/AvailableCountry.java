@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class AvailableCountry {
   @SerializedName("en")
-  private String en = null;
+  protected String en = null;
 
   @SerializedName("iso_code")
-  private String isoCode = null;
+  protected String isoCode = null;
 
   @SerializedName("de")
-  private String de = null;
+  protected String de = null;
 
   public AvailableCountry en(String en) {
     this.en = en;

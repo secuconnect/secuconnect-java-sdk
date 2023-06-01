@@ -21,73 +21,73 @@ import java.util.Objects;
  */
 public class LoyaltyTransactionsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("created")
-  private String created = null;
+  protected String created = null;
 
   @SerializedName("merchant")
-  private LoyaltyTransactionsDTOMerchant merchant = null;
+  protected LoyaltyTransactionsDTOMerchant merchant = null;
 
   @SerializedName("cardgroup")
-  private LoyaltyTransactionsDTOCardgroup cardgroup = null;
+  protected LoyaltyTransactionsDTOCardgroup cardgroup = null;
 
   @SerializedName("store")
-  private LoyaltyTransactionsDTOStore store = null;
+  protected LoyaltyTransactionsDTOStore store = null;
 
   @SerializedName("merchantcard")
-  private LoyaltyTransactionsDTOMerchantcard merchantcard = null;
+  protected LoyaltyTransactionsDTOMerchantcard merchantcard = null;
 
   @SerializedName("card")
-  private LoyaltyTransactionsDTOCard card = null;
+  protected LoyaltyTransactionsDTOCard card = null;
 
   @SerializedName("parents")
-  private List<LoyaltyTransactionsDTORelatedTransactions> parents = null;
+  protected List<LoyaltyTransactionsDTORelatedTransactions> parents = null;
 
   @SerializedName("children")
-  private List<LoyaltyTransactionsDTORelatedTransactions> children = null;
+  protected List<LoyaltyTransactionsDTORelatedTransactions> children = null;
 
   @SerializedName("tid")
-  private String tid = null;
+  protected String tid = null;
 
   @SerializedName("status")
-  private String status = null;
+  protected String status = null;
 
   @SerializedName("amount")
-  private Integer amount = null;
+  protected Integer amount = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("balance")
-  private Integer balance = null;
+  protected Integer balance = null;
 
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("last_change")
-  private String lastChange = null;
+  protected String lastChange = null;
 
   @SerializedName("receipt")
-  private List<ReceiptTypeValue> receipt = null;
+  protected List<ReceiptTypeValue> receipt = null;
 
   @SerializedName("is_cancelling")
-  private Integer isCancelling = null;
+  protected Integer isCancelling = null;
 
   public LoyaltyTransactionsProductModel l(Integer l) {
     this.l = l;

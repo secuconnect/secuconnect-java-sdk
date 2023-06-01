@@ -16,73 +16,73 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   @SerializedName("l")
-  private Integer l = null;
+  protected Integer l = null;
 
   @SerializedName("k")
-  private Integer k = null;
+  protected Integer k = null;
 
   @SerializedName("ks")
-  private String ks = null;
+  protected String ks = null;
 
   @SerializedName("c")
-  private Integer c = null;
+  protected Integer c = null;
 
   @SerializedName("s")
-  private Integer s = null;
+  protected Integer s = null;
 
   @SerializedName("t")
-  private AggregationTimeResult t = null;
+  protected AggregationTimeResult t = null;
 
   @SerializedName("card")
-  private LoyaltyCardsProductModel card = null;
+  protected LoyaltyCardsProductModel card = null;
 
   @SerializedName("merchant")
-  private ProductInstanceUID merchant = null;
+  protected ProductInstanceUID merchant = null;
 
   @SerializedName("created_for_merchant")
-  private ProductInstanceUID createdForMerchant = null;
+  protected ProductInstanceUID createdForMerchant = null;
 
   @SerializedName("created_for_store")
-  private ProductInstanceUID createdForStore = null;
+  protected ProductInstanceUID createdForStore = null;
 
   @SerializedName("customer")
-  private LoyaltyCustomersProductModel customer = null;
+  protected LoyaltyCustomersProductModel customer = null;
 
   @SerializedName("cardgroup")
-  private LoyaltyCardgroupsProductModel cardgroup = null;
+  protected LoyaltyCardgroupsProductModel cardgroup = null;
 
   @SerializedName("payment_container")
-  private LoyaltyMerchantcardsDTOPaymentContainer paymentContainer = null;
+  protected LoyaltyMerchantcardsDTOPaymentContainer paymentContainer = null;
 
   @SerializedName("balance")
-  private Integer balance = null;
+  protected Integer balance = null;
 
   @SerializedName("points")
-  private Integer points = null;
+  protected Integer points = null;
 
   @SerializedName("bonus_balance")
-  private Integer bonusBalance = null;
+  protected Integer bonusBalance = null;
 
   @SerializedName("cash_balance")
-  private Integer cashBalance = null;
+  protected Integer cashBalance = null;
 
   @SerializedName("stock_status")
-  private String stockStatus = null;
+  protected String stockStatus = null;
 
   @SerializedName("lock_status")
-  private String lockStatus = null;
+  protected String lockStatus = null;
 
   @SerializedName("last_usage")
-  private String lastUsage = null;
+  protected String lastUsage = null;
 
   @SerializedName("last_charge")
-  private String lastCharge = null;
+  protected String lastCharge = null;
 
   @SerializedName("is_base_card")
-  private Boolean isBaseCard = null;
+  protected Boolean isBaseCard = null;
 
   @SerializedName("passcode")
-  private Integer passcode = null;
+  protected Integer passcode = null;
 
   public LoyaltyMerchantcardsProductModel l(Integer l) {
     this.l = l;

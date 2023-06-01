@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class SmartTransactionsBasketProductGroup {
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("desc")
-  private String desc = null;
+  protected String desc = null;
 
   @SerializedName("level")
-  private Integer level = null;
+  protected Integer level = null;
 
   public SmartTransactionsBasketProductGroup id(String id) {
     this.id = id;

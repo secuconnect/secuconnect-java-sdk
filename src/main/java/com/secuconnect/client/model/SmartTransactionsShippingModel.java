@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class SmartTransactionsShippingModel implements OneOfSmartTransactionsDeliveryOptionsModel {
   @SerializedName("type")
-  private String type = null;
+  protected String type = null;
 
   @SerializedName("shipped_at")
-  private String shippedAt = null;
+  protected String shippedAt = null;
 
   @SerializedName("shipped_by")
-  private String shippedBy = null;
+  protected String shippedBy = null;
 
   @SerializedName("tracking_code")
-  private String trackingCode = null;
+  protected String trackingCode = null;
 
   @SerializedName("invoice_number")
-  private String invoiceNumber = null;
+  protected String invoiceNumber = null;
 
   public SmartTransactionsShippingModel type(String type) {
     this.type = type;

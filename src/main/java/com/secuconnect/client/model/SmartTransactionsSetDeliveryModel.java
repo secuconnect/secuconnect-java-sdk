@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class SmartTransactionsSetDeliveryModel {
   @SerializedName("delivery_options")
-  private OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
+  protected OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions = null;
 
   public SmartTransactionsSetDeliveryModel deliveryOptions(OneOfSmartTransactionsDeliveryOptionsModel deliveryOptions) {
     this.deliveryOptions = deliveryOptions;

@@ -8,22 +8,22 @@ import java.util.Objects;
  */
 public class ParentObj {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("trans_id")
-  private Integer transId = null;
+  protected Integer transId = null;
 
   @SerializedName("ref_type_id")
-  private Integer refTypeId = null;
+  protected Integer refTypeId = null;
 
   @SerializedName("ref_type_raw")
-  private String refTypeRaw = null;
+  protected String refTypeRaw = null;
 
   @SerializedName("hierarchy")
-  private String hierarchy = null;
+  protected String hierarchy = null;
 
   public ParentObj object(String object) {
     this.object = object;

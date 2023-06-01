@@ -12,31 +12,31 @@ import java.util.Objects;
  */
 public class GeneralStoresDTO {
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   @SerializedName("merchant")
-  private String merchant = null;
+  protected String merchant = null;
 
   @SerializedName("address")
-  private Address address = null;
+  protected Address address = null;
 
   @SerializedName("facebook_id")
-  private String facebookId = null;
+  protected String facebookId = null;
 
   @SerializedName("phone")
-  private String phone = null;
+  protected String phone = null;
 
   @SerializedName("url_website")
-  private String urlWebsite = null;
+  protected String urlWebsite = null;
 
   @SerializedName("photo_main")
-  private String photoMain = null;
+  protected String photoMain = null;
 
   @SerializedName("photo")
-  private List<String> photo = null;
+  protected List<String> photo = null;
 
   @SerializedName("open_hours")
-  private List<OpenHours> openHours = null;
+  protected List<OpenHours> openHours = null;
 
   public GeneralStoresDTO name(String name) {
     this.name = name;

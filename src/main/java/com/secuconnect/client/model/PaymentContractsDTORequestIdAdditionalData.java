@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class PaymentContractsDTORequestIdAdditionalData {
   @SerializedName("create_card")
-  private PaymentContractsDTORequestIdAdditionalDataCreateCard createCard = null;
+  protected PaymentContractsDTORequestIdAdditionalDataCreateCard createCard = null;
 
   public PaymentContractsDTORequestIdAdditionalData createCard(PaymentContractsDTORequestIdAdditionalDataCreateCard createCard) {
     this.createCard = createCard;

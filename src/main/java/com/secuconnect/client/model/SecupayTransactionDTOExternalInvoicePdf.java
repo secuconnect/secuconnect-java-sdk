@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class SecupayTransactionDTOExternalInvoicePdf {
   @SerializedName("update_existing")
-  private Boolean updateExisting = null;
+  protected Boolean updateExisting = null;
 
   public SecupayTransactionDTOExternalInvoicePdf updateExisting(Boolean updateExisting) {
     this.updateExisting = updateExisting;

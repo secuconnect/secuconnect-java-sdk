@@ -9,19 +9,19 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsDTOCustomer {
   @SerializedName("merchant_contact")
-  private Contact merchantContact = null;
+  protected Contact merchantContact = null;
 
   @SerializedName("customernumber")
-  private String customernumber = null;
+  protected String customernumber = null;
 
   @SerializedName("note")
-  private String note = null;
+  protected String note = null;
 
   @SerializedName("consent_for_communication")
-  private String consentForCommunication = null;
+  protected String consentForCommunication = null;
 
   @SerializedName("additional_data")
-  private Object additionalData = null;
+  protected Object additionalData = null;
 
   public LoyaltyMerchantcardsDTOCustomer merchantContact(Contact merchantContact) {
     this.merchantContact = merchantContact;

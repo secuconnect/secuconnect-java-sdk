@@ -12,28 +12,28 @@ import java.util.Objects;
  */
 public class PaymentPlansDTO {
   @SerializedName("description")
-  private String description = null;
+  protected String description = null;
 
   @SerializedName("currency")
-  private String currency = null;
+  protected String currency = null;
 
   @SerializedName("paypal_plan_id")
-  private String paypalPlanId = null;
+  protected String paypalPlanId = null;
 
   @SerializedName("status")
-  private String status = "active";
+  protected String status = "active";
 
   @SerializedName("payment_methods")
-  private List<String> paymentMethods = null;
+  protected List<String> paymentMethods = null;
 
   @SerializedName("merchant")
-  private GeneralMerchantsProductModel merchant = null;
+  protected GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("merchant_id")
-  private String merchantId = null;
+  protected String merchantId = null;
 
   @SerializedName("billing_cycles")
-  private List<BillingCyclesItem> billingCycles = null;
+  protected List<BillingCyclesItem> billingCycles = null;
 
   public PaymentPlansDTO description(String description) {
     this.description = description;

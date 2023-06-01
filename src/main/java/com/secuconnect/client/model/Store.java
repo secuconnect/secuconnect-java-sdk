@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class Store {
   @SerializedName("object")
-  private String object = null;
+  protected String object = null;
 
   @SerializedName("id")
-  private String id = null;
+  protected String id = null;
 
   @SerializedName("name")
-  private String name = null;
+  protected String name = null;
 
   public Store object(String object) {
     this.object = object;

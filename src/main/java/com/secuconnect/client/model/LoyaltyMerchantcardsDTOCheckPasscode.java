@@ -8,10 +8,10 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsDTOCheckPasscode {
   @SerializedName("cardnumber")
-  private Integer cardnumber = null;
+  protected Integer cardnumber = null;
 
   @SerializedName("pin")
-  private Integer pin = null;
+  protected Integer pin = null;
 
   public LoyaltyMerchantcardsDTOCheckPasscode cardnumber(Integer cardnumber) {
     this.cardnumber = cardnumber;

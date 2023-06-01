@@ -8,19 +8,19 @@ import java.util.Objects;
  */
 public class PaymentTransactionsProductModelCustomer {
   @SerializedName("companyname")
-  private String companyname = null;
+  protected String companyname = null;
 
   @SerializedName("salutation")
-  private String salutation = null;
+  protected String salutation = null;
 
   @SerializedName("title")
-  private String title = null;
+  protected String title = null;
 
   @SerializedName("forename")
-  private String forename = null;
+  protected String forename = null;
 
   @SerializedName("surname")
-  private String surname = null;
+  protected String surname = null;
 
   public PaymentTransactionsProductModelCustomer companyname(String companyname) {
     this.companyname = companyname;

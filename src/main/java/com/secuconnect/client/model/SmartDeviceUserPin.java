@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class SmartDeviceUserPin {
   @SerializedName("user_pin")
-  private String userPin = null;
+  protected String userPin = null;
 
   public SmartDeviceUserPin userPin(String userPin) {
     this.userPin = userPin;
