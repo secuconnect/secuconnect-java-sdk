@@ -5,7 +5,7 @@ import com.secuconnect.client.model.BackgroundImageOption;
 import java.util.Objects;
 
 /**
- * PaymentLinkOptions
+ * PaymentLink settings
  */
 public class PaymentLinkOptions {
   @SerializedName("background")

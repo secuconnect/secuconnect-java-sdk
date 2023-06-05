@@ -5,9 +5,11 @@ import com.secuconnect.client.model.AggregationResult;
 import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BankAccountDescriptor;
 import com.secuconnect.client.model.BaseProductModel;
+import com.secuconnect.client.model.CheckoutConfiguration;
+import com.secuconnect.client.model.GeneralMerchantsProductModel;
 import com.secuconnect.client.model.ParentModel;
 import com.secuconnect.client.model.PaymentLinkOptions;
-import com.secuconnect.client.model.ProductInstanceUID;
+import com.secuconnect.client.model.ThirdPartyEnvironment;
 import java.util.Objects;
 
 /**
@@ -39,10 +41,19 @@ public class GeneralContractsProductModel extends BaseProductModel {
   protected ParentModel parent = null;
 
   @SerializedName("merchant")
-  protected ProductInstanceUID merchant = null;
+  protected GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("pay_in_advance_account")
   protected BankAccountDescriptor payInAdvanceAccount = null;
+
+  @SerializedName("paypal_configuration")
+  protected ThirdPartyEnvironment paypalConfiguration = null;
+
+  @SerializedName("easycredit_configuration")
+  protected ThirdPartyEnvironment easycreditConfiguration = null;
+
+  @SerializedName("checkout_configuration")
+  protected CheckoutConfiguration checkoutConfiguration = null;
 
   @SerializedName("payment_link_options")
   protected PaymentLinkOptions paymentLinkOptions = null;
@@ -177,7 +188,7 @@ public class GeneralContractsProductModel extends BaseProductModel {
     this.parent = parent;
   }
 
-  public GeneralContractsProductModel merchant(ProductInstanceUID merchant) {
+  public GeneralContractsProductModel merchant(GeneralMerchantsProductModel merchant) {
     this.merchant = merchant;
     return this;
   }
@@ -186,11 +197,11 @@ public class GeneralContractsProductModel extends BaseProductModel {
    * Get merchant
    * @return merchant
   **/
-  public ProductInstanceUID getMerchant() {
+  public GeneralMerchantsProductModel getMerchant() {
     return merchant;
   }
 
-  public void setMerchant(ProductInstanceUID merchant) {
+  public void setMerchant(GeneralMerchantsProductModel merchant) {
     this.merchant = merchant;
   }
 
@@ -209,6 +220,57 @@ public class GeneralContractsProductModel extends BaseProductModel {
 
   public void setPayInAdvanceAccount(BankAccountDescriptor payInAdvanceAccount) {
     this.payInAdvanceAccount = payInAdvanceAccount;
+  }
+
+  public GeneralContractsProductModel paypalConfiguration(ThirdPartyEnvironment paypalConfiguration) {
+    this.paypalConfiguration = paypalConfiguration;
+    return this;
+  }
+
+   /**
+   * Get paypalConfiguration
+   * @return paypalConfiguration
+  **/
+  public ThirdPartyEnvironment getPaypalConfiguration() {
+    return paypalConfiguration;
+  }
+
+  public void setPaypalConfiguration(ThirdPartyEnvironment paypalConfiguration) {
+    this.paypalConfiguration = paypalConfiguration;
+  }
+
+  public GeneralContractsProductModel easycreditConfiguration(ThirdPartyEnvironment easycreditConfiguration) {
+    this.easycreditConfiguration = easycreditConfiguration;
+    return this;
+  }
+
+   /**
+   * Get easycreditConfiguration
+   * @return easycreditConfiguration
+  **/
+  public ThirdPartyEnvironment getEasycreditConfiguration() {
+    return easycreditConfiguration;
+  }
+
+  public void setEasycreditConfiguration(ThirdPartyEnvironment easycreditConfiguration) {
+    this.easycreditConfiguration = easycreditConfiguration;
+  }
+
+  public GeneralContractsProductModel checkoutConfiguration(CheckoutConfiguration checkoutConfiguration) {
+    this.checkoutConfiguration = checkoutConfiguration;
+    return this;
+  }
+
+   /**
+   * Get checkoutConfiguration
+   * @return checkoutConfiguration
+  **/
+  public CheckoutConfiguration getCheckoutConfiguration() {
+    return checkoutConfiguration;
+  }
+
+  public void setCheckoutConfiguration(CheckoutConfiguration checkoutConfiguration) {
+    this.checkoutConfiguration = checkoutConfiguration;
   }
 
   public GeneralContractsProductModel paymentLinkOptions(PaymentLinkOptions paymentLinkOptions) {
@@ -264,6 +326,9 @@ public class GeneralContractsProductModel extends BaseProductModel {
         Objects.equals(this.parent, generalContractsProductModel.parent) &&
         Objects.equals(this.merchant, generalContractsProductModel.merchant) &&
         Objects.equals(this.payInAdvanceAccount, generalContractsProductModel.payInAdvanceAccount) &&
+        Objects.equals(this.paypalConfiguration, generalContractsProductModel.paypalConfiguration) &&
+        Objects.equals(this.easycreditConfiguration, generalContractsProductModel.easycreditConfiguration) &&
+        Objects.equals(this.checkoutConfiguration, generalContractsProductModel.checkoutConfiguration) &&
         Objects.equals(this.paymentLinkOptions, generalContractsProductModel.paymentLinkOptions) &&
         Objects.equals(this.approved, generalContractsProductModel.approved) &&
         super.equals(o);
@@ -271,7 +336,7 @@ public class GeneralContractsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, idOld, parent, merchant, payInAdvanceAccount, paymentLinkOptions, approved, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, idOld, parent, merchant, payInAdvanceAccount, paypalConfiguration, easycreditConfiguration, checkoutConfiguration, paymentLinkOptions, approved, super.hashCode());
   }
 
   @Override
@@ -289,6 +354,9 @@ public class GeneralContractsProductModel extends BaseProductModel {
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    payInAdvanceAccount: ").append(toIndentedString(payInAdvanceAccount)).append("\n");
+    sb.append("    paypalConfiguration: ").append(toIndentedString(paypalConfiguration)).append("\n");
+    sb.append("    easycreditConfiguration: ").append(toIndentedString(easycreditConfiguration)).append("\n");
+    sb.append("    checkoutConfiguration: ").append(toIndentedString(checkoutConfiguration)).append("\n");
     sb.append("    paymentLinkOptions: ").append(toIndentedString(paymentLinkOptions)).append("\n");
     sb.append("    approved: ").append(toIndentedString(approved)).append("\n");
     sb.append("}");

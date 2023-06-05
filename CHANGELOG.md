@@ -19,6 +19,47 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.16.0] - 2023-06-05
+[3.16.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.15.0...3.16.0
+
+- *new endpoint*: `GeneralContractsApi->addPaymentLinkConfiguration()`
+- *new endpoint*: `GeneralContractsApi->addThirdPartyConfiguration()`
+- *new endpoint*: `GeneralContractsApi->getAvailableCurrencies()`
+- *new endpoint*: `GeneralContractsApi->getIframeOptions()`
+- *new endpoint*: `GeneralContractsApi->getThirdPartyConfiguration()`
+- *new endpoint*: `GeneralContractsApi->patchContract()`
+- *new endpoint*: `GeneralContractsApi->patchThirdPartyConfiguration()`
+- *new endpoint*: `GeneralContractsApi->removeThirdPartyConfiguration()`
+- *new endpoint*: `GeneralContractsApi->updateContract()`
+- *new endpoint*: `GeneralContractsApi->updateThirdPartyConfiguration()`
+- *new endpoint*: `PaymentMandatesApi`
+- *new element*: `paypal_configuration`, `easycredit_configuration` and `checkout_configuration` in `GeneralContractsProductModel`
+- *changed element type*: `merchant` changed from `GeneralMerchantsProductModel` to `ProductInstanceUID`
+
+### Added
+- `Api.PaymentMandatesApi`
+- `Model.AvailableCurrencies`
+- `Model.CheckoutConfiguration`
+- `Model.CheckoutConfigurationNotifications`
+- `Model.GeneralContractsDTO`
+- `Model.IframeOptions`
+- `Model.PaymentMandatesDTO`
+- `Model.PaymentMandatesList`
+- `Model.PaymentMandatesProductModel`
+- `Model.ThirdPartyConfigurationDTO`
+- `Model.ThirdPartyConfigurationProductModel`
+- `Model.ThirdPartyEnvironment`
+- `Model.ThirdPartyEnvironmentDTO`
+- `Model.ThirdPartyEnvironmentSettings`
+- `Model.ThirdPartyEnvironmentSettingsDTO`
+
+### Changed
+- `Api.GeneralContractsApi`
+- `Api.PaymentContractsApi`
+- `Model.GeneralContractsProductModel`
+- `Model.PaymentLinkOptions`
+
+
 ## [3.15.0] - 2023-06-01
 [3.15.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.14.0...3.15.0
 
