@@ -584,7 +584,7 @@ public class PaymentContractsApi {
     /**
      * Build call for updateBankAccount
      * @param paymentContractId Contract identifier (required)
-     * @param body options
+     * @param body 
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -632,7 +632,7 @@ public class PaymentContractsApi {
      * POST Payment/Contracts/{paymentContractId}/updateBankAccount
      * Change the payout bank account of a contract
      * @param paymentContractId Contract identifier (required)
-     * @param body options
+     * @param body 
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -645,7 +645,7 @@ public class PaymentContractsApi {
      * POST Payment/Contracts/{paymentContractId}/updateBankAccount
      * Change the payout bank account of a contract
      * @param paymentContractId Contract identifier (required)
-     * @param body options
+     * @param body 
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -659,7 +659,7 @@ public class PaymentContractsApi {
      * POST Payment/Contracts/{paymentContractId}/updateBankAccount (asynchronously)
      * Change the payout bank account of a contract
      * @param paymentContractId Contract identifier (required)
-     * @param body options
+     * @param body 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
