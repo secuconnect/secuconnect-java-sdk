@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
-## [3.16.0] - 2023-06-05
+## [3.16.0] - 2023-06-06
 [3.16.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.15.0...3.16.0
 
 - *new endpoint*: `GeneralContractsApi->addPaymentLinkConfiguration()`
@@ -35,6 +35,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - *new endpoint*: `PaymentMandatesApi`
 - *new element*: `paypal_configuration`, `easycredit_configuration` and `checkout_configuration` in `GeneralContractsProductModel`
 - *changed element type*: `merchant` changed from `GeneralMerchantsProductModel` to `ProductInstanceUID`
+
+### Security
+- dependency updates
 
 ### Added
 - `Api.PaymentMandatesApi`
