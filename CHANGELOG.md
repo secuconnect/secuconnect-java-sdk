@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - *new endpoint*: `GeneralContractsApi->updateThirdPartyConfiguration()`
 - *new endpoint*: `PaymentMandatesApi`
 - *new element*: `paypal_configuration`, `easycredit_configuration` and `checkout_configuration` in `GeneralContractsProductModel`
-- *changed element type*: `merchant` changed from `GeneralMerchantsProductModel` to `ProductInstanceUID`
+- *changed element type*: `merchant` changed from `ProductInstanceUID` to `GeneralMerchantsProductModel` in `GeneralContractsProductModel`
 
 ### Security
 - dependency updates
