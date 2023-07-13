@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.GooglePayDescriptorIntermediateSigningKey;
 import java.util.Objects;
 
 /**
@@ -10,8 +11,11 @@ public class GooglePayDescriptor implements OneOfPaymentContainersDTOModelPrivat
   @SerializedName("signature")
   protected String signature = null;
 
+  @SerializedName("intermediateSigningKey")
+  protected GooglePayDescriptorIntermediateSigningKey intermediateSigningKey = null;
+
   @SerializedName("protocolVersion")
-  protected String protocolVersion = "ECv1";
+  protected String protocolVersion = "ECv2";
 
   @SerializedName("signedMessage")
   protected String signedMessage = null;
@@ -31,6 +35,23 @@ public class GooglePayDescriptor implements OneOfPaymentContainersDTOModelPrivat
 
   public void setSignature(String signature) {
     this.signature = signature;
+  }
+
+  public GooglePayDescriptor intermediateSigningKey(GooglePayDescriptorIntermediateSigningKey intermediateSigningKey) {
+    this.intermediateSigningKey = intermediateSigningKey;
+    return this;
+  }
+
+   /**
+   * Get intermediateSigningKey
+   * @return intermediateSigningKey
+  **/
+  public GooglePayDescriptorIntermediateSigningKey getIntermediateSigningKey() {
+    return intermediateSigningKey;
+  }
+
+  public void setIntermediateSigningKey(GooglePayDescriptorIntermediateSigningKey intermediateSigningKey) {
+    this.intermediateSigningKey = intermediateSigningKey;
   }
 
   public GooglePayDescriptor protocolVersion(String protocolVersion) {
@@ -77,13 +98,14 @@ public class GooglePayDescriptor implements OneOfPaymentContainersDTOModelPrivat
     }
     GooglePayDescriptor googlePayDescriptor = (GooglePayDescriptor) o;
     return Objects.equals(this.signature, googlePayDescriptor.signature) &&
+        Objects.equals(this.intermediateSigningKey, googlePayDescriptor.intermediateSigningKey) &&
         Objects.equals(this.protocolVersion, googlePayDescriptor.protocolVersion) &&
         Objects.equals(this.signedMessage, googlePayDescriptor.signedMessage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(signature, protocolVersion, signedMessage);
+    return Objects.hash(signature, intermediateSigningKey, protocolVersion, signedMessage);
   }
 
   @Override
@@ -91,6 +113,7 @@ public class GooglePayDescriptor implements OneOfPaymentContainersDTOModelPrivat
     StringBuilder sb = new StringBuilder();
     sb.append("class GooglePayDescriptor {\n");
     sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
+    sb.append("    intermediateSigningKey: ").append(toIndentedString(intermediateSigningKey)).append("\n");
     sb.append("    protocolVersion: ").append(toIndentedString(protocolVersion)).append("\n");
     sb.append("    signedMessage: ").append(toIndentedString(signedMessage)).append("\n");
     sb.append("}");

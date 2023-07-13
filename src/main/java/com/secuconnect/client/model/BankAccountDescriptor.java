@@ -90,21 +90,12 @@ public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPriv
     this.bankname = bankname;
   }
 
-  public BankAccountDescriptor purpose(String purpose) {
-    this.purpose = purpose;
-    return this;
-  }
-
    /**
    * Purpose to use
    * @return purpose
   **/
   public String getPurpose() {
     return purpose;
-  }
-
-  public void setPurpose(String purpose) {
-    this.purpose = purpose;
   }
 
   @Override
