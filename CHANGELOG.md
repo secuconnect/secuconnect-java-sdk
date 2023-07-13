@@ -19,6 +19,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.16.1] - 2023-07-13
+[3.16.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.16.0...3.16.1
+
+### Added
+- `Model.GooglePayDescriptorIntermediateSigningKey`
+
+### Changed
+- `Model.BankAccountDescriptor`
+- `Model.GooglePayDescriptor`
+- `Model.OneOfPaymentContainersDTOModelPrivate`
+
+
 ## [3.16.0] - 2023-06-06
 [3.16.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.15.0...3.16.0
 
