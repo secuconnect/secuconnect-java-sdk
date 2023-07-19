@@ -34,6 +34,9 @@ public class GeneralContractsProductModel extends BaseProductModel {
   @SerializedName("t")
   protected AggregationTimeResult t = null;
 
+  @SerializedName("description")
+  protected String description = null;
+
   @SerializedName("id_old")
   protected Integer idOld = null;
 
@@ -161,6 +164,23 @@ public class GeneralContractsProductModel extends BaseProductModel {
 
   public void setT(AggregationTimeResult t) {
     this.t = t;
+  }
+
+  public GeneralContractsProductModel description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Get description
+   * @return description
+  **/
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
    /**
@@ -322,6 +342,7 @@ public class GeneralContractsProductModel extends BaseProductModel {
         Objects.equals(this.c, generalContractsProductModel.c) &&
         Objects.equals(this.s, generalContractsProductModel.s) &&
         Objects.equals(this.t, generalContractsProductModel.t) &&
+        Objects.equals(this.description, generalContractsProductModel.description) &&
         Objects.equals(this.idOld, generalContractsProductModel.idOld) &&
         Objects.equals(this.parent, generalContractsProductModel.parent) &&
         Objects.equals(this.merchant, generalContractsProductModel.merchant) &&
@@ -336,7 +357,7 @@ public class GeneralContractsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, idOld, parent, merchant, payInAdvanceAccount, paypalConfiguration, easycreditConfiguration, checkoutConfiguration, paymentLinkOptions, approved, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, description, idOld, parent, merchant, payInAdvanceAccount, paypalConfiguration, easycreditConfiguration, checkoutConfiguration, paymentLinkOptions, approved, super.hashCode());
   }
 
   @Override
@@ -350,6 +371,7 @@ public class GeneralContractsProductModel extends BaseProductModel {
     sb.append("    c: ").append(toIndentedString(c)).append("\n");
     sb.append("    s: ").append(toIndentedString(s)).append("\n");
     sb.append("    t: ").append(toIndentedString(t)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    idOld: ").append(toIndentedString(idOld)).append("\n");
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
