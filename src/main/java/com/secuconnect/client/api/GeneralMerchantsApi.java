@@ -6,6 +6,7 @@ import com.secuconnect.client.model.Aggregate;
 import java.math.BigDecimal;
 import com.secuconnect.client.model.GeneralMerchantsList;
 import com.secuconnect.client.model.GeneralMerchantsProductModel;
+import com.secuconnect.client.model.GeneralMerchantsPublicDataDTO;
 import com.secuconnect.client.model.GeneralMerchantsPublicDataModel;
 import com.secuconnect.client.model.ProductExceptionPayload;
 import okhttp3.Call;
@@ -92,7 +93,7 @@ public class GeneralMerchantsApi {
 
     /**
      * GET General/Merchants
-     * Get a list of general merchants
+     * Get a list of General Merchants
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -108,7 +109,7 @@ public class GeneralMerchantsApi {
 
     /**
      * GET General/Merchants
-     * Get a list of general merchants
+     * Get a list of General Merchants
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -125,7 +126,7 @@ public class GeneralMerchantsApi {
 
     /**
      * GET General/Merchants (asynchronously)
-     * Get a list of general merchants
+     * Get a list of General Merchants
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -144,7 +145,7 @@ public class GeneralMerchantsApi {
 
     /**
      * Build call for getOne
-     * @param generalMerchantId General merchant id (required)
+     * @param generalMerchantId General Merchant id (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -190,8 +191,8 @@ public class GeneralMerchantsApi {
 
     /**
      * GET General/Merchants/{generalMerchantId}
-     * Get one general merchant for a specific id
-     * @param generalMerchantId General merchant id (required)
+     * Get one General Merchant for a specific id
+     * @param generalMerchantId General Merchant id (required)
      * @return GeneralMerchantsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -202,8 +203,8 @@ public class GeneralMerchantsApi {
 
     /**
      * GET General/Merchants/{generalMerchantId}
-     * Get one general merchant for a specific id
-     * @param generalMerchantId General merchant id (required)
+     * Get one General Merchant for a specific id
+     * @param generalMerchantId General Merchant id (required)
      * @return ApiResponse&lt;GeneralMerchantsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -215,8 +216,8 @@ public class GeneralMerchantsApi {
 
     /**
      * GET General/Merchants/{generalMerchantId} (asynchronously)
-     * Get one general merchant for a specific id
-     * @param generalMerchantId General merchant id (required)
+     * Get one General Merchant for a specific id
+     * @param generalMerchantId General Merchant id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -319,6 +320,96 @@ public class GeneralMerchantsApi {
     public Call getPublicDataAsync(String generalMerchantId, String generalContractId, final ApiCallback<GeneralMerchantsPublicDataModel> callback) throws ApiException {
         Call call = getPublicDataValidateBeforeCall(generalMerchantId, generalContractId);
         Type localVarReturnType = new TypeToken<GeneralMerchantsPublicDataModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for updatePublicData
+     * @param generalMerchantId Merchant identifier (required)
+     * @param body 
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call updatePublicDataCall(String generalMerchantId, GeneralMerchantsPublicDataDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/General/Merchants/{generalMerchantId}"
+            .replaceAll("\\{" + "generalMerchantId" + "\\}", apiClient.escapeString(generalMerchantId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call updatePublicDataValidateBeforeCall(String generalMerchantId, GeneralMerchantsPublicDataDTO body) throws ApiException {
+        // verify the required parameter 'generalMerchantId' is set
+        if (generalMerchantId == null) {
+            throw new ApiException("Missing the required parameter 'generalMerchantId' when calling updatePublicData(Async)");
+        }
+
+        return updatePublicDataCall(generalMerchantId, body);
+    }
+
+    /**
+     * updatePublicData
+     * Updates an existing General Merchant
+     * @param generalMerchantId Merchant identifier (required)
+     * @param body 
+     * @return GeneralMerchantsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public GeneralMerchantsProductModel updatePublicData(String generalMerchantId, GeneralMerchantsPublicDataDTO body) throws ApiException {
+        ApiResponse<GeneralMerchantsProductModel> resp = updatePublicDataWithHttpInfo(generalMerchantId, body);
+        return resp.getData();
+    }
+
+    /**
+     * updatePublicData
+     * Updates an existing General Merchant
+     * @param generalMerchantId Merchant identifier (required)
+     * @param body 
+     * @return ApiResponse&lt;GeneralMerchantsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<GeneralMerchantsProductModel> updatePublicDataWithHttpInfo(String generalMerchantId, GeneralMerchantsPublicDataDTO body) throws ApiException {
+        Call call = updatePublicDataValidateBeforeCall(generalMerchantId, body);
+        Type localVarReturnType = new TypeToken<GeneralMerchantsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * updatePublicData (asynchronously)
+     * Updates an existing General Merchant
+     * @param generalMerchantId Merchant identifier (required)
+     * @param body 
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call updatePublicDataAsync(String generalMerchantId, GeneralMerchantsPublicDataDTO body, final ApiCallback<GeneralMerchantsProductModel> callback) throws ApiException {
+        Call call = updatePublicDataValidateBeforeCall(generalMerchantId, body);
+        Type localVarReturnType = new TypeToken<GeneralMerchantsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

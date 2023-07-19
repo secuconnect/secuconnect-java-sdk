@@ -19,6 +19,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.17.0] - 2023-07-19
+[3.17.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.16.1...3.17.0
+
+- *new endpoint*: `DocumentUploadsApi->download()`
+- *new endpoint*: `DocumentUploadsApi->getOne()`
+- *new endpoint*: `GeneralMerchantsApi->updatePublicData()`
+
+### Added
+- `Model.DocumentUploadsProductModelWithContent`
+- `Model.GeneralMerchantsPublicDataDTO`
+
+### Changed
+- `Api.DocumentUploadsApi`
+- `Api.GeneralMerchantsApi`
+- `Model.DocumentUploadsDTOContent`
+- `Model.DocumentUploadsProductModel`
+
+
 ## [3.16.1] - 2023-07-13
 [3.16.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.16.0...3.16.1
 
