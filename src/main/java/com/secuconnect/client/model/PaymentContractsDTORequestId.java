@@ -53,6 +53,21 @@ public class PaymentContractsDTORequestId {
   @SerializedName("additional_data")
   protected PaymentContractsDTORequestIdAdditionalData additionalData = null;
 
+  @SerializedName("notes")
+  protected String notes = null;
+
+  @SerializedName("invoice_reference")
+  protected String invoiceReference = null;
+
+  @SerializedName("tid")
+  protected String tid = null;
+
+  @SerializedName("merchant_category")
+  protected Integer merchantCategory = null;
+
+  @SerializedName("account_statement_text")
+  protected String accountStatementText = null;
+
   public PaymentContractsDTORequestId contractId(String contractId) {
     this.contractId = contractId;
     return this;
@@ -291,6 +306,91 @@ public class PaymentContractsDTORequestId {
     this.additionalData = additionalData;
   }
 
+  public PaymentContractsDTORequestId notes(String notes) {
+    this.notes = notes;
+    return this;
+  }
+
+   /**
+   * Adds a note.
+   * @return notes
+  **/
+  public String getNotes() {
+    return notes;
+  }
+
+  public void setNotes(String notes) {
+    this.notes = notes;
+  }
+
+  public PaymentContractsDTORequestId invoiceReference(String invoiceReference) {
+    this.invoiceReference = invoiceReference;
+    return this;
+  }
+
+   /**
+   * Reference-Text from Inputfield
+   * @return invoiceReference
+  **/
+  public String getInvoiceReference() {
+    return invoiceReference;
+  }
+
+  public void setInvoiceReference(String invoiceReference) {
+    this.invoiceReference = invoiceReference;
+  }
+
+  public PaymentContractsDTORequestId tid(String tid) {
+    this.tid = tid;
+    return this;
+  }
+
+   /**
+   * Get tid
+   * @return tid
+  **/
+  public String getTid() {
+    return tid;
+  }
+
+  public void setTid(String tid) {
+    this.tid = tid;
+  }
+
+  public PaymentContractsDTORequestId merchantCategory(Integer merchantCategory) {
+    this.merchantCategory = merchantCategory;
+    return this;
+  }
+
+   /**
+   * Get merchantCategory
+   * @return merchantCategory
+  **/
+  public Integer getMerchantCategory() {
+    return merchantCategory;
+  }
+
+  public void setMerchantCategory(Integer merchantCategory) {
+    this.merchantCategory = merchantCategory;
+  }
+
+  public PaymentContractsDTORequestId accountStatementText(String accountStatementText) {
+    this.accountStatementText = accountStatementText;
+    return this;
+  }
+
+   /**
+   * Get accountStatementText
+   * @return accountStatementText
+  **/
+  public String getAccountStatementText() {
+    return accountStatementText;
+  }
+
+  public void setAccountStatementText(String accountStatementText) {
+    this.accountStatementText = accountStatementText;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -313,12 +413,17 @@ public class PaymentContractsDTORequestId {
         Objects.equals(this.payoutPurpose, paymentContractsDTORequestId.payoutPurpose) &&
         Objects.equals(this.identrequest, paymentContractsDTORequestId.identrequest) &&
         Objects.equals(this.signedContract, paymentContractsDTORequestId.signedContract) &&
-        Objects.equals(this.additionalData, paymentContractsDTORequestId.additionalData);
+        Objects.equals(this.additionalData, paymentContractsDTORequestId.additionalData) &&
+        Objects.equals(this.notes, paymentContractsDTORequestId.notes) &&
+        Objects.equals(this.invoiceReference, paymentContractsDTORequestId.invoiceReference) &&
+        Objects.equals(this.tid, paymentContractsDTORequestId.tid) &&
+        Objects.equals(this.merchantCategory, paymentContractsDTORequestId.merchantCategory) &&
+        Objects.equals(this.accountStatementText, paymentContractsDTORequestId.accountStatementText);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contractId, contact, project, payoutAccount, paymentData, iframeOpts, urlPush, payinAccount, createFirstStore, storeName, payoutPurpose, identrequest, signedContract, additionalData);
+    return Objects.hash(contractId, contact, project, payoutAccount, paymentData, iframeOpts, urlPush, payinAccount, createFirstStore, storeName, payoutPurpose, identrequest, signedContract, additionalData, notes, invoiceReference, tid, merchantCategory, accountStatementText);
   }
 
   @Override
@@ -339,6 +444,11 @@ public class PaymentContractsDTORequestId {
     sb.append("    identrequest: ").append(toIndentedString(identrequest)).append("\n");
     sb.append("    signedContract: ").append(toIndentedString(signedContract)).append("\n");
     sb.append("    additionalData: ").append(toIndentedString(additionalData)).append("\n");
+    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    sb.append("    invoiceReference: ").append(toIndentedString(invoiceReference)).append("\n");
+    sb.append("    tid: ").append(toIndentedString(tid)).append("\n");
+    sb.append("    merchantCategory: ").append(toIndentedString(merchantCategory)).append("\n");
+    sb.append("    accountStatementText: ").append(toIndentedString(accountStatementText)).append("\n");
     sb.append("}");
     return sb.toString();
   }
