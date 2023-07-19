@@ -23,7 +23,7 @@ public class DocumentUploadsProductModel extends DocumentUploadsBaseProductModel
   }
 
    /**
-   * Type
+   * MIME Type
    * @return type
   **/
   public String getType() {
@@ -40,7 +40,7 @@ public class DocumentUploadsProductModel extends DocumentUploadsBaseProductModel
   }
 
    /**
-   * Name
+   * Original filename
    * @return name
   **/
   public String getName() {
@@ -57,7 +57,7 @@ public class DocumentUploadsProductModel extends DocumentUploadsBaseProductModel
   }
 
    /**
-   * Size
+   * Filesize
    * @return size
   **/
   public Integer getSize() {

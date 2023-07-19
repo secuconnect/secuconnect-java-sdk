@@ -1,16 +1,18 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.DocumentUploadsDTOContent;
+import com.secuconnect.client.model.DocumentUploadsProductModel;
 import java.util.Objects;
 
 /**
- * DocumentUploadsDTOContent
+ * extended DocumentUploadsProductModel
  */
-public class DocumentUploadsDTOContent {
+public class DocumentUploadsProductModelWithContent extends DocumentUploadsProductModel {
   @SerializedName("content")
   protected String content = null;
 
-  public DocumentUploadsDTOContent content(String content) {
+  public DocumentUploadsProductModelWithContent content(String content) {
     this.content = content;
     return this;
   }
@@ -35,19 +37,21 @@ public class DocumentUploadsDTOContent {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentUploadsDTOContent documentUploadsDTOContent = (DocumentUploadsDTOContent) o;
-    return Objects.equals(this.content, documentUploadsDTOContent.content);
+    DocumentUploadsProductModelWithContent documentUploadsProductModelWithContent = (DocumentUploadsProductModelWithContent) o;
+    return Objects.equals(this.content, documentUploadsProductModelWithContent.content) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(content);
+    return Objects.hash(content, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentUploadsDTOContent {\n");
+    sb.append("class DocumentUploadsProductModelWithContent {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");
     return sb.toString();

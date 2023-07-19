@@ -5,6 +5,7 @@ import com.secuconnect.client.*;
 import com.secuconnect.client.model.DocumentUploadsBaseProductModel;
 import com.secuconnect.client.model.DocumentUploadsDTOContent;
 import com.secuconnect.client.model.DocumentUploadsProductModel;
+import com.secuconnect.client.model.DocumentUploadsProductModelWithContent;
 import com.secuconnect.client.model.FileToUpload;
 import com.secuconnect.client.model.ProductExceptionPayload;
 import okhttp3.Call;
@@ -79,8 +80,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * POST Document/Uploads
-     * Store uploaded file
+     * Upload File
+     * POST /Document/Uploads
      * @param body Input data format
      * @param multipart 
      * @return DocumentUploadsProductModel
@@ -92,8 +93,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * POST Document/Uploads
-     * Store uploaded file
+     * Upload File
+     * POST /Document/Uploads
      * @param body Input data format
      * @param multipart 
      * @return ApiResponse&lt;DocumentUploadsProductModel&gt;
@@ -106,8 +107,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * POST Document/Uploads (asynchronously)
-     * Store uploaded file
+     * Upload File (asynchronously)
+     * POST /Document/Uploads
      * @param body Input data format
      * @param multipart 
      * @param callback The callback to be executed when the API call finishes
@@ -163,8 +164,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * POST Document/Uploads
-     * Store uploaded file
+     * Upload File content
+     * POST /Document/Uploads
      * @param body Content
      * @return DocumentUploadsBaseProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -175,8 +176,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * POST Document/Uploads
-     * Store uploaded file
+     * Upload File content
+     * POST /Document/Uploads
      * @param body Content
      * @return ApiResponse&lt;DocumentUploadsBaseProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -188,8 +189,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * POST Document/Uploads (asynchronously)
-     * Store uploaded file
+     * Upload File content (asynchronously)
+     * POST /Document/Uploads
      * @param body Content
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -198,6 +199,178 @@ public class DocumentUploadsApi {
     public Call documentUploadsPostAsync(DocumentUploadsDTOContent body, final ApiCallback<DocumentUploadsBaseProductModel> callback) throws ApiException {
         Call call = documentUploadsPostValidateBeforeCall(body);
         Type localVarReturnType = new TypeToken<DocumentUploadsBaseProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for download
+     * @param documentUploadsId Document Uploads ID (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call downloadCall(String documentUploadsId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Document/Uploads/{documentUploadsId}/Download"
+            .replaceAll("\\{" + "documentUploadsId" + "\\}", apiClient.escapeString(documentUploadsId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json", "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call downloadValidateBeforeCall(String documentUploadsId) throws ApiException {
+        // verify the required parameter 'documentUploadsId' is set
+        if (documentUploadsId == null) {
+            throw new ApiException("Missing the required parameter 'documentUploadsId' when calling download(Async)");
+        }
+
+        return downloadCall(documentUploadsId);
+    }
+
+    /**
+     * Download uploaded file
+     * GET /Document/Uploads/{documentUploadsId}/Download
+     * @param documentUploadsId Document Uploads ID (required)
+     * @return String
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public String download(String documentUploadsId) throws ApiException {
+        ApiResponse<String> resp = downloadWithHttpInfo(documentUploadsId);
+        return resp.getData();
+    }
+
+    /**
+     * Download uploaded file
+     * GET /Document/Uploads/{documentUploadsId}/Download
+     * @param documentUploadsId Document Uploads ID (required)
+     * @return ApiResponse&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<String> downloadWithHttpInfo(String documentUploadsId) throws ApiException {
+        Call call = downloadValidateBeforeCall(documentUploadsId);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Download uploaded file (asynchronously)
+     * GET /Document/Uploads/{documentUploadsId}/Download
+     * @param documentUploadsId Document Uploads ID (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call downloadAsync(String documentUploadsId, final ApiCallback<String> callback) throws ApiException {
+        Call call = downloadValidateBeforeCall(documentUploadsId);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getOne
+     * @param documentUploadsId Document Uploads ID (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getOneCall(String documentUploadsId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Document/Uploads/{documentUploadsId}"
+            .replaceAll("\\{" + "documentUploadsId" + "\\}", apiClient.escapeString(documentUploadsId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getOneValidateBeforeCall(String documentUploadsId) throws ApiException {
+        // verify the required parameter 'documentUploadsId' is set
+        if (documentUploadsId == null) {
+            throw new ApiException("Missing the required parameter 'documentUploadsId' when calling getOne(Async)");
+        }
+
+        return getOneCall(documentUploadsId);
+    }
+
+    /**
+     * Get info about the uploaded file
+     * GET /Document/Uploads/{documentUploadsId}
+     * @param documentUploadsId Document Uploads ID (required)
+     * @return DocumentUploadsProductModelWithContent
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public DocumentUploadsProductModelWithContent getOne(String documentUploadsId) throws ApiException {
+        ApiResponse<DocumentUploadsProductModelWithContent> resp = getOneWithHttpInfo(documentUploadsId);
+        return resp.getData();
+    }
+
+    /**
+     * Get info about the uploaded file
+     * GET /Document/Uploads/{documentUploadsId}
+     * @param documentUploadsId Document Uploads ID (required)
+     * @return ApiResponse&lt;DocumentUploadsProductModelWithContent&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<DocumentUploadsProductModelWithContent> getOneWithHttpInfo(String documentUploadsId) throws ApiException {
+        Call call = getOneValidateBeforeCall(documentUploadsId);
+        Type localVarReturnType = new TypeToken<DocumentUploadsProductModelWithContent>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get info about the uploaded file (asynchronously)
+     * GET /Document/Uploads/{documentUploadsId}
+     * @param documentUploadsId Document Uploads ID (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getOneAsync(String documentUploadsId, final ApiCallback<DocumentUploadsProductModelWithContent> callback) throws ApiException {
+        Call call = getOneValidateBeforeCall(documentUploadsId);
+        Type localVarReturnType = new TypeToken<DocumentUploadsProductModelWithContent>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
