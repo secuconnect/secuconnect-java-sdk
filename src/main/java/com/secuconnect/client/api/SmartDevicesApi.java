@@ -321,7 +321,7 @@ public class SmartDevicesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/Smart/Devices/{smartDeviceId}/routing/type/{type}"
+        String localVarPath = "/Smart/Devices/{smartDeviceId}/routing/{type}"
             .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()))
             .replaceAll("\\{" + "type" + "\\}", apiClient.escapeString(type.toString()));
 
@@ -363,7 +363,7 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices/{smartDeviceId}/routing/type/{type}
+     * GET Smart/Devices/{smartDeviceId}/routing/{type}
      * Get requested smart device if it is assigned to a single routing
      * @param smartDeviceId Smart device id (required)
      * @param type Smart Device Type (required)
@@ -376,7 +376,7 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices/{smartDeviceId}/routing/type/{type}
+     * GET Smart/Devices/{smartDeviceId}/routing/{type}
      * Get requested smart device if it is assigned to a single routing
      * @param smartDeviceId Smart device id (required)
      * @param type Smart Device Type (required)
@@ -390,7 +390,7 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices/{smartDeviceId}/routing/type/{type} (asynchronously)
+     * GET Smart/Devices/{smartDeviceId}/routing/{type} (asynchronously)
      * Get requested smart device if it is assigned to a single routing
      * @param smartDeviceId Smart device id (required)
      * @param type Smart Device Type (required)

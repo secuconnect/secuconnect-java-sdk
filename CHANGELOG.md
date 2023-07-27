@@ -19,6 +19,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.19.0] - 2023-07-27
+[3.19.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.18.0...3.19.0
+
+- *fixed endpoint*: `SmartDevicesApi->getRouting()` used a wrong url 
+
+### Changed
+- `Api.SmartDevicesApi`
+
+
 ## [3.18.0] - 2023-07-19
 [3.18.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.17.0...3.18.0
 
