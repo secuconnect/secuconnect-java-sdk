@@ -19,7 +19,7 @@ public class SecupayPayoutWithoutCustomerDTO {
   @SerializedName("contract_id")
   protected String contractId = null;
 
-  @SerializedName("Payout_list")
+  @SerializedName("payout_list")
   protected List<SecupayPayoutListItem> payoutList = null;
 
   @SerializedName("purpose")

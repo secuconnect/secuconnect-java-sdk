@@ -4,6 +4,7 @@ import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
 import com.secuconnect.client.model.Aggregate;
 import java.math.BigDecimal;
+import com.secuconnect.client.model.PrepaidReportsDTO;
 import com.secuconnect.client.model.PrepaidReportsList;
 import com.secuconnect.client.model.PrepaidReportsProductModel;
 import com.secuconnect.client.model.ProductExceptionPayload;
@@ -33,6 +34,87 @@ public class PrepaidReportsApi {
 
     public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
+    }
+
+    /**
+     * Build call for createReport
+     * @param body 
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call createReportCall(PrepaidReportsDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Prepaid/Reports";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call createReportValidateBeforeCall(PrepaidReportsDTO body) throws ApiException {
+
+        return createReportCall(body);
+    }
+
+    /**
+     * Create Prepaid Report
+     * &#x60;POST Prepaid/Reports&#x60;
+     * @param body 
+     * @return PrepaidReportsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PrepaidReportsProductModel createReport(PrepaidReportsDTO body) throws ApiException {
+        ApiResponse<PrepaidReportsProductModel> resp = createReportWithHttpInfo(body);
+        return resp.getData();
+    }
+
+    /**
+     * Create Prepaid Report
+     * &#x60;POST Prepaid/Reports&#x60;
+     * @param body 
+     * @return ApiResponse&lt;PrepaidReportsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PrepaidReportsProductModel> createReportWithHttpInfo(PrepaidReportsDTO body) throws ApiException {
+        Call call = createReportValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<PrepaidReportsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create Prepaid Report (asynchronously)
+     * &#x60;POST Prepaid/Reports&#x60;
+     * @param body 
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call createReportAsync(PrepaidReportsDTO body, final ApiCallback<PrepaidReportsProductModel> callback) throws ApiException {
+        Call call = createReportValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<PrepaidReportsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
     }
 
     /**
