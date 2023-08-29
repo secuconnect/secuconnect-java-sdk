@@ -8,6 +8,7 @@ import com.secuconnect.client.model.PaymentCrowdFundingData;
 import com.secuconnect.client.model.PaymentTransactionCancelDTO;
 import com.secuconnect.client.model.PaymentTransactionsCheckStatus;
 import com.secuconnect.client.model.PaymentTransactionsIncreaseAmountDTO;
+import com.secuconnect.client.model.PaymentTransactionsInstructionsModel;
 import com.secuconnect.client.model.PaymentTransactionsList;
 import com.secuconnect.client.model.PaymentTransactionsProductModel;
 import com.secuconnect.client.model.PaymentTransactionsShippingUrl;
@@ -661,6 +662,178 @@ public class PaymentTransactionsApi {
     public Call getOneAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsProductModel> callback) throws ApiException {
         Call call = getOneValidateBeforeCall(paymentTransactionId);
         Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getPaymentInstructionsForPaymentTransaction
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getPaymentInstructionsForPaymentTransactionCall(String paymentTransactionId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/getPaymentInstructions"
+            .replaceAll("\\{" + "paymentTransactionId" + "\\}", apiClient.escapeString(paymentTransactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getPaymentInstructionsForPaymentTransactionValidateBeforeCall(String paymentTransactionId) throws ApiException {
+        // verify the required parameter 'paymentTransactionId' is set
+        if (paymentTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling getPaymentInstructionsForPaymentTransaction(Async)");
+        }
+
+        return getPaymentInstructionsForPaymentTransactionCall(paymentTransactionId);
+    }
+
+    /**
+     * Get payment instructions for Payment Transaction
+     * &#x60;POST Payment/Transactions/{paymentTransactionId}/getPaymentInstructions&#x60;
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @return PaymentTransactionsInstructionsModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentTransactionsInstructionsModel getPaymentInstructionsForPaymentTransaction(String paymentTransactionId) throws ApiException {
+        ApiResponse<PaymentTransactionsInstructionsModel> resp = getPaymentInstructionsForPaymentTransactionWithHttpInfo(paymentTransactionId);
+        return resp.getData();
+    }
+
+    /**
+     * Get payment instructions for Payment Transaction
+     * &#x60;POST Payment/Transactions/{paymentTransactionId}/getPaymentInstructions&#x60;
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @return ApiResponse&lt;PaymentTransactionsInstructionsModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentTransactionsInstructionsModel> getPaymentInstructionsForPaymentTransactionWithHttpInfo(String paymentTransactionId) throws ApiException {
+        Call call = getPaymentInstructionsForPaymentTransactionValidateBeforeCall(paymentTransactionId);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsInstructionsModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get payment instructions for Payment Transaction (asynchronously)
+     * &#x60;POST Payment/Transactions/{paymentTransactionId}/getPaymentInstructions&#x60;
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getPaymentInstructionsForPaymentTransactionAsync(String paymentTransactionId, final ApiCallback<PaymentTransactionsInstructionsModel> callback) throws ApiException {
+        Call call = getPaymentInstructionsForPaymentTransactionValidateBeforeCall(paymentTransactionId);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsInstructionsModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getPaymentInstructionsForSmartTransaction
+     * @param smartTransactionId Smart Transaction ID (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getPaymentInstructionsForSmartTransactionCall(String smartTransactionId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/me/getPaymentInstructions/{smartTransactionId}"
+            .replaceAll("\\{" + "smartTransactionId" + "\\}", apiClient.escapeString(smartTransactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getPaymentInstructionsForSmartTransactionValidateBeforeCall(String smartTransactionId) throws ApiException {
+        // verify the required parameter 'smartTransactionId' is set
+        if (smartTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'smartTransactionId' when calling getPaymentInstructionsForSmartTransaction(Async)");
+        }
+
+        return getPaymentInstructionsForSmartTransactionCall(smartTransactionId);
+    }
+
+    /**
+     * Get payment instructions for Smart Transaction
+     * &#x60;POST Payment/Transactions/me/getPaymentInstructions/{smartTransactionId}&#x60;
+     * @param smartTransactionId Smart Transaction ID (required)
+     * @return PaymentTransactionsInstructionsModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentTransactionsInstructionsModel getPaymentInstructionsForSmartTransaction(String smartTransactionId) throws ApiException {
+        ApiResponse<PaymentTransactionsInstructionsModel> resp = getPaymentInstructionsForSmartTransactionWithHttpInfo(smartTransactionId);
+        return resp.getData();
+    }
+
+    /**
+     * Get payment instructions for Smart Transaction
+     * &#x60;POST Payment/Transactions/me/getPaymentInstructions/{smartTransactionId}&#x60;
+     * @param smartTransactionId Smart Transaction ID (required)
+     * @return ApiResponse&lt;PaymentTransactionsInstructionsModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentTransactionsInstructionsModel> getPaymentInstructionsForSmartTransactionWithHttpInfo(String smartTransactionId) throws ApiException {
+        Call call = getPaymentInstructionsForSmartTransactionValidateBeforeCall(smartTransactionId);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsInstructionsModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get payment instructions for Smart Transaction (asynchronously)
+     * &#x60;POST Payment/Transactions/me/getPaymentInstructions/{smartTransactionId}&#x60;
+     * @param smartTransactionId Smart Transaction ID (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getPaymentInstructionsForSmartTransactionAsync(String smartTransactionId, final ApiCallback<PaymentTransactionsInstructionsModel> callback) throws ApiException {
+        Call call = getPaymentInstructionsForSmartTransactionValidateBeforeCall(smartTransactionId);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsInstructionsModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

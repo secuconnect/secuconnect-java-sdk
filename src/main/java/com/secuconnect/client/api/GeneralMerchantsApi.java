@@ -8,6 +8,7 @@ import com.secuconnect.client.model.GeneralMerchantsList;
 import com.secuconnect.client.model.GeneralMerchantsProductModel;
 import com.secuconnect.client.model.GeneralMerchantsPublicDataDTO;
 import com.secuconnect.client.model.GeneralMerchantsPublicDataModel;
+import com.secuconnect.client.model.MerchantCategoryDataModel;
 import com.secuconnect.client.model.ProductExceptionPayload;
 import okhttp3.Call;
 
@@ -139,6 +140,83 @@ public class GeneralMerchantsApi {
     public Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<GeneralMerchantsList> callback) throws ApiException {
         Call call = getAllValidateBeforeCall(count, offset, fields, q, sort);
         Type localVarReturnType = new TypeToken<GeneralMerchantsList>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getMerchantCategories
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getMerchantCategoriesCall() throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/General/Merchants/me/getMerchantCategories";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getMerchantCategoriesValidateBeforeCall() throws ApiException {
+
+        return getMerchantCategoriesCall();
+    }
+
+    /**
+     * GET General/Merchants/me/getMerchantCategories/
+     * Get available Merchant Categories
+     * @return List&lt;MerchantCategoryDataModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<MerchantCategoryDataModel> getMerchantCategories() throws ApiException {
+        ApiResponse<List<MerchantCategoryDataModel>> resp = getMerchantCategoriesWithHttpInfo();
+        return resp.getData();
+    }
+
+    /**
+     * GET General/Merchants/me/getMerchantCategories/
+     * Get available Merchant Categories
+     * @return ApiResponse&lt;List&lt;MerchantCategoryDataModel&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<MerchantCategoryDataModel>> getMerchantCategoriesWithHttpInfo() throws ApiException {
+        Call call = getMerchantCategoriesValidateBeforeCall();
+        Type localVarReturnType = new TypeToken<List<MerchantCategoryDataModel>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET General/Merchants/me/getMerchantCategories/ (asynchronously)
+     * Get available Merchant Categories
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getMerchantCategoriesAsync(final ApiCallback<List<MerchantCategoryDataModel>> callback) throws ApiException {
+        Call call = getMerchantCategoriesValidateBeforeCall();
+        Type localVarReturnType = new TypeToken<List<MerchantCategoryDataModel>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

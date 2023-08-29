@@ -6,6 +6,7 @@ import com.secuconnect.client.model.ProductExceptionPayload;
 import com.secuconnect.client.model.SecupayPayoutDTO;
 import com.secuconnect.client.model.SecupayPayoutProductModel;
 import com.secuconnect.client.model.SecupayPayoutWithoutCustomerDTO;
+import com.secuconnect.client.model.SecupayPayoutWithoutCustomerResponse;
 import okhttp3.Call;
 
 import java.lang.reflect.Type;
@@ -245,11 +246,11 @@ public class PaymentSecupayPayoutApi {
      * POST Payment/Secupaypayout
      * Start a payout transaction
      * @param body Payout payment transaction input properties
-     * @return SecupayPayoutProductModel
+     * @return SecupayPayoutWithoutCustomerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SecupayPayoutProductModel paymentSecupaypayoutWithoutCustomerPost(SecupayPayoutWithoutCustomerDTO body) throws ApiException {
-        ApiResponse<SecupayPayoutProductModel> resp = paymentSecupaypayoutWithoutCustomerPostWithHttpInfo(body);
+    public SecupayPayoutWithoutCustomerResponse paymentSecupaypayoutWithoutCustomerPost(SecupayPayoutWithoutCustomerDTO body) throws ApiException {
+        ApiResponse<SecupayPayoutWithoutCustomerResponse> resp = paymentSecupaypayoutWithoutCustomerPostWithHttpInfo(body);
         return resp.getData();
     }
 
@@ -257,12 +258,12 @@ public class PaymentSecupayPayoutApi {
      * POST Payment/Secupaypayout
      * Start a payout transaction
      * @param body Payout payment transaction input properties
-     * @return ApiResponse&lt;SecupayPayoutProductModel&gt;
+     * @return ApiResponse&lt;SecupayPayoutWithoutCustomerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SecupayPayoutProductModel> paymentSecupaypayoutWithoutCustomerPostWithHttpInfo(SecupayPayoutWithoutCustomerDTO body) throws ApiException {
+    public ApiResponse<SecupayPayoutWithoutCustomerResponse> paymentSecupaypayoutWithoutCustomerPostWithHttpInfo(SecupayPayoutWithoutCustomerDTO body) throws ApiException {
         Call call = paymentSecupaypayoutWithoutCustomerPostValidateBeforeCall(body);
-        Type localVarReturnType = new TypeToken<SecupayPayoutProductModel>(){}.getType();
+        Type localVarReturnType = new TypeToken<SecupayPayoutWithoutCustomerResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -274,9 +275,9 @@ public class PaymentSecupayPayoutApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call paymentSecupaypayoutWithoutCustomerPostAsync(SecupayPayoutWithoutCustomerDTO body, final ApiCallback<SecupayPayoutProductModel> callback) throws ApiException {
+    public Call paymentSecupaypayoutWithoutCustomerPostAsync(SecupayPayoutWithoutCustomerDTO body, final ApiCallback<SecupayPayoutWithoutCustomerResponse> callback) throws ApiException {
         Call call = paymentSecupaypayoutWithoutCustomerPostValidateBeforeCall(body);
-        Type localVarReturnType = new TypeToken<SecupayPayoutProductModel>(){}.getType();
+        Type localVarReturnType = new TypeToken<SecupayPayoutWithoutCustomerResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

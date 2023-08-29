@@ -26,6 +26,9 @@ public class SecupayPayoutListItem {
   @SerializedName("origin_transaction")
   protected Integer originTransaction = null;
 
+  @SerializedName("trans_id")
+  protected Integer transId = null;
+
   public SecupayPayoutListItem amount(Integer amount) {
     this.amount = amount;
     return this;
@@ -128,6 +131,14 @@ public class SecupayPayoutListItem {
     this.originTransaction = originTransaction;
   }
 
+   /**
+   * ID of created transaction
+   * @return transId
+  **/
+  public Integer getTransId() {
+    return transId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -142,12 +153,13 @@ public class SecupayPayoutListItem {
         Objects.equals(this.reference, secupayPayoutListItem.reference) &&
         Objects.equals(this.recipient, secupayPayoutListItem.recipient) &&
         Objects.equals(this.bankAccount, secupayPayoutListItem.bankAccount) &&
-        Objects.equals(this.originTransaction, secupayPayoutListItem.originTransaction);
+        Objects.equals(this.originTransaction, secupayPayoutListItem.originTransaction) &&
+        Objects.equals(this.transId, secupayPayoutListItem.transId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, purpose, reference, recipient, bankAccount, originTransaction);
+    return Objects.hash(amount, purpose, reference, recipient, bankAccount, originTransaction, transId);
   }
 
   @Override
@@ -160,6 +172,7 @@ public class SecupayPayoutListItem {
     sb.append("    recipient: ").append(toIndentedString(recipient)).append("\n");
     sb.append("    bankAccount: ").append(toIndentedString(bankAccount)).append("\n");
     sb.append("    originTransaction: ").append(toIndentedString(originTransaction)).append("\n");
+    sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

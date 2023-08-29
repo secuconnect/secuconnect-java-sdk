@@ -19,6 +19,35 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.20.0] - 2023-08-29
+[3.20.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.19.0...3.20.0
+
+- *new element*: `project_name` in `GeneralAccountsAssignModelAssignment`
+- *new endpoint*: `GeneralMerchantsApi->getMerchantCategories()`
+- *new endpoint*: `PaymentTransactionsApi->getPaymentInstructionsForPaymentTransaction()`
+- *new endpoint*: `PaymentTransactionsApi->getPaymentInstructionsForSmartTransaction()`
+- *new endpoint*: `PaymentReportsApi->createReport()`
+- *new endpoint*: `PaymentSalesApi->confirm()`
+- *changed response object*: from `SecupayPayoutProductModel` to `SecupayPayoutWithoutCustomerResponse` in `PaymentSecupaypayoutApi`
+- *changed element*: from `Payout_list` to `payout_list` in `SecupayPayoutDTO`
+- *new element*: `trans_id` in `SecupayPayoutListItem`
+
+### Added
+- `Model.MerchantCategoryDataModel`
+- `Model.PaymentTransactionsInstructionsModel`
+- `Model.PrepaidReportsDTO`
+- `Model.SecupayPayoutWithoutCustomerResponse`
+
+### Changed
+- `Api.GeneralMerchantsApi`
+- `Api.PaymentSecupayPayoutApi`
+- `Api.PaymentTransactionsApi`
+- `Api.PrepaidReportsApi`
+- `Api.PrepaidSalesApi`
+- `Model.SecupayPayoutListItem`
+- `Model.SecupayPayoutWithoutCustomerDTO`
+
+
 ## [3.19.0] - 2023-07-27
 [3.19.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.18.0...3.19.0
 

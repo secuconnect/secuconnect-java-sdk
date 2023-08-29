@@ -117,6 +117,92 @@ public class PrepaidSalesApi {
     }
 
     /**
+     * Build call for confirm
+     * @param prepaidSaleId Prepaid Sale ID (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call confirmCall(String prepaidSaleId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Prepaid/Sales/{prepaidSaleId}/Confirm"
+            .replaceAll("\\{" + "prepaidSaleId" + "\\}", apiClient.escapeString(prepaidSaleId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call confirmValidateBeforeCall(String prepaidSaleId) throws ApiException {
+        // verify the required parameter 'prepaidSaleId' is set
+        if (prepaidSaleId == null) {
+            throw new ApiException("Missing the required parameter 'prepaidSaleId' when calling confirm(Async)");
+        }
+
+        return confirmCall(prepaidSaleId);
+    }
+
+    /**
+     * GET Prepaid/Sales/{prepaidSaleId}/Confirm
+     * Confirm one prepaid sale
+     * @param prepaidSaleId Prepaid Sale ID (required)
+     * @return PrepaidSalesProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PrepaidSalesProductModel confirm(String prepaidSaleId) throws ApiException {
+        ApiResponse<PrepaidSalesProductModel> resp = confirmWithHttpInfo(prepaidSaleId);
+        return resp.getData();
+    }
+
+    /**
+     * GET Prepaid/Sales/{prepaidSaleId}/Confirm
+     * Confirm one prepaid sale
+     * @param prepaidSaleId Prepaid Sale ID (required)
+     * @return ApiResponse&lt;PrepaidSalesProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PrepaidSalesProductModel> confirmWithHttpInfo(String prepaidSaleId) throws ApiException {
+        Call call = confirmValidateBeforeCall(prepaidSaleId);
+        Type localVarReturnType = new TypeToken<PrepaidSalesProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * GET Prepaid/Sales/{prepaidSaleId}/Confirm (asynchronously)
+     * Confirm one prepaid sale
+     * @param prepaidSaleId Prepaid Sale ID (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call confirmAsync(String prepaidSaleId, final ApiCallback<PrepaidSalesProductModel> callback) throws ApiException {
+        Call call = confirmValidateBeforeCall(prepaidSaleId);
+        Type localVarReturnType = new TypeToken<PrepaidSalesProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
      * Build call for getAll
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
