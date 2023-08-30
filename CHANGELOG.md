@@ -19,6 +19,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.21.0] - 2023-08-30
+[3.21.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.20.0...3.21.0
+
+- *new element*: `payment_config` in `IframeOptions`
+
+### Added
+- `Model.ApplepayPaymentConfig`
+- `Model.GooglepayPaymentConfig`
+- `Model.IframeOptionsPaymentConfig`
+
+### Changed
+- `Model.IframeOptions`
+
+
 ## [3.20.0] - 2023-08-29
 [3.20.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.19.0...3.20.0
 
