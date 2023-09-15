@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.IframeOptionsPaymentConfig;
 import java.util.Objects;
 
 /**
@@ -33,6 +34,9 @@ public class IframeOptions {
 
   @SerializedName("language_formality")
   protected String languageFormality = null;
+
+  @SerializedName("payment_config")
+  protected IframeOptionsPaymentConfig paymentConfig = null;
 
   public IframeOptions paymentHintTitle(String paymentHintTitle) {
     this.paymentHintTitle = paymentHintTitle;
@@ -187,6 +191,23 @@ public class IframeOptions {
     this.languageFormality = languageFormality;
   }
 
+  public IframeOptions paymentConfig(IframeOptionsPaymentConfig paymentConfig) {
+    this.paymentConfig = paymentConfig;
+    return this;
+  }
+
+   /**
+   * Get paymentConfig
+   * @return paymentConfig
+  **/
+  public IframeOptionsPaymentConfig getPaymentConfig() {
+    return paymentConfig;
+  }
+
+  public void setPaymentConfig(IframeOptionsPaymentConfig paymentConfig) {
+    this.paymentConfig = paymentConfig;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -204,12 +225,13 @@ public class IframeOptions {
         Objects.equals(this.language, iframeOptions.language) &&
         Objects.equals(this.basketTitle, iframeOptions.basketTitle) &&
         Objects.equals(this.isBasketShown, iframeOptions.isBasketShown) &&
-        Objects.equals(this.languageFormality, iframeOptions.languageFormality);
+        Objects.equals(this.languageFormality, iframeOptions.languageFormality) &&
+        Objects.equals(this.paymentConfig, iframeOptions.paymentConfig);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentHintTitle, projectTitle, projectLogo, submitButtonTitle, primaryColour, language, basketTitle, isBasketShown, languageFormality);
+    return Objects.hash(paymentHintTitle, projectTitle, projectLogo, submitButtonTitle, primaryColour, language, basketTitle, isBasketShown, languageFormality, paymentConfig);
   }
 
   @Override
@@ -225,6 +247,7 @@ public class IframeOptions {
     sb.append("    basketTitle: ").append(toIndentedString(basketTitle)).append("\n");
     sb.append("    isBasketShown: ").append(toIndentedString(isBasketShown)).append("\n");
     sb.append("    languageFormality: ").append(toIndentedString(languageFormality)).append("\n");
+    sb.append("    paymentConfig: ").append(toIndentedString(paymentConfig)).append("\n");
     sb.append("}");
     return sb.toString();
   }
