@@ -90,8 +90,8 @@ public class ServicesIdentresultsApi {
     }
 
     /**
-     * GET Services/Identresults
-     * Get a list of Identresults
+     * Find IdentResults
+     * Returns the IdentResults matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -106,8 +106,8 @@ public class ServicesIdentresultsApi {
     }
 
     /**
-     * GET Services/Identresults
-     * Get a list of Identresults
+     * Find IdentResults
+     * Returns the IdentResults matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -123,8 +123,8 @@ public class ServicesIdentresultsApi {
     }
 
     /**
-     * GET Services/Identresults (asynchronously)
-     * Get a list of Identresults
+     * Find IdentResults (asynchronously)
+     * Returns the IdentResults matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -188,8 +188,8 @@ public class ServicesIdentresultsApi {
     }
 
     /**
-     * GET Services/Identresults/{identresultId}
-     * Get one Identresult for a specific id
+     * Read IdentResult
+     * Returns the specified IdentResult.
      * @param identrequestId Identresult Id (required)
      * @return ServicesIdentresultsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -200,8 +200,8 @@ public class ServicesIdentresultsApi {
     }
 
     /**
-     * GET Services/Identresults/{identresultId}
-     * Get one Identresult for a specific id
+     * Read IdentResult
+     * Returns the specified IdentResult.
      * @param identrequestId Identresult Id (required)
      * @return ApiResponse&lt;ServicesIdentresultsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -213,8 +213,8 @@ public class ServicesIdentresultsApi {
     }
 
     /**
-     * GET Services/Identresults/{identresultId} (asynchronously)
-     * Get one Identresult for a specific id
+     * Read IdentResult (asynchronously)
+     * Returns the specified IdentResult.
      * @param identrequestId Identresult Id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

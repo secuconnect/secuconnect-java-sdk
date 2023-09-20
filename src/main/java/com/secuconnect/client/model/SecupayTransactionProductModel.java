@@ -88,7 +88,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * Transaction identifier
+   * Transaction ID (TA code)
    * @return transId
   **/
   public Integer getTransId() {
@@ -156,7 +156,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
+   * The purpose of the payment, for the account statement for example.
    * @return purpose
   **/
   public String getPurpose() {
@@ -173,7 +173,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
+   * Your order number. If set for the contract, there must be a unique number for each payment.
    * @return orderId
   **/
   public String getOrderId() {
@@ -215,7 +215,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * A list of items that are being purchased.
+   * Basket items, several sub-baskets or subscription details
    * @return basket
   **/
   public List<SecupayBasketItem> getBasket() {
@@ -232,7 +232,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * Transaction status (number)
+   * Transaction status code
    * @return transactionStatus
   **/
   public String getTransactionStatus() {
@@ -249,7 +249,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
+   * Whether the transaction is locked for payout.
    * @return accrual
   **/
   public Boolean getAccrual() {
@@ -266,7 +266,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * Specifies whether a pre-authorization (\&quot;authorization\&quot;) or instant payment ( \&quot;sale\&quot;) is to be performed. Standard value here is \&quot;sale\&quot;. The collection of the pre-authorized payment is made with the \&quot;capture\&quot; command.
+   * Specifies whether to authorize only (&#x60;\&quot;authorization\&quot;&#x60;), or to pay immediately (&#x60;\&quot;sale\&quot;&#x60;). The capture of the pre-authorized payment is made with a call to &#x60;/capture&#x60;.
    * @return paymentAction
   **/
   public String getPaymentAction() {
@@ -283,7 +283,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * The purpose the payer needs to use for his transfer
+   * The purpose the payer needs to use for his bank transfer.
    * @return transferPurpose
   **/
   public String getTransferPurpose() {
@@ -385,7 +385,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * The url of the payment checkout iframe
+   * URL of the secupay payment iframe
    * @return iframeUrl
   **/
   public String getIframeUrl() {
@@ -427,7 +427,7 @@ public class SecupayTransactionProductModel extends BaseProductModel {
   }
 
    /**
-   * A list of sub transactions (for mixed basket)
+   * Transactions generated for the sub-baskets of a mixed basket transaction
    * @return subTransactions
   **/
   public List<SecupaySubTransactionProductModel> getSubTransactions() {

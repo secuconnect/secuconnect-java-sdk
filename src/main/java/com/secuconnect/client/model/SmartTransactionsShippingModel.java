@@ -28,7 +28,7 @@ public class SmartTransactionsShippingModel implements OneOfSmartTransactionsDel
   }
 
    /**
-   * Type of delivery option
+   * Delivery type:  - &#x60;\&quot;shipping\&quot;&#x60; - &#x60;\&quot;collection\&quot;&#x60;
    * @return type
   **/
   public String getType() {
@@ -45,7 +45,7 @@ public class SmartTransactionsShippingModel implements OneOfSmartTransactionsDel
   }
 
    /**
-   * Shipment Date
+   * Shipping date (ISO 8601 date and time)
    * @return shippedAt
   **/
   public String getShippedAt() {
@@ -62,7 +62,7 @@ public class SmartTransactionsShippingModel implements OneOfSmartTransactionsDel
   }
 
    /**
-   * Parcel Provider
+   * Shipping service provider
    * @return shippedBy
   **/
   public String getShippedBy() {
@@ -79,7 +79,7 @@ public class SmartTransactionsShippingModel implements OneOfSmartTransactionsDel
   }
 
    /**
-   * Tracking Code
+   * Tracking code
    * @return trackingCode
   **/
   public String getTrackingCode() {
@@ -96,7 +96,7 @@ public class SmartTransactionsShippingModel implements OneOfSmartTransactionsDel
   }
 
    /**
-   * Invoice Number
+   * Invoice number of the merchant
    * @return invoiceNumber
   **/
   public String getInvoiceNumber() {

@@ -103,7 +103,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
+   * The purpose of the payment, for the account statement for example.
    * @return purpose
   **/
   public String getPurpose() {
@@ -128,7 +128,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * payment methods
+   * Payment methods.  - &#x60;\&quot;twint\&quot;&#x60;
    * @return paymentMethods
   **/
   public List<String> getPaymentMethods() {
@@ -145,7 +145,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
+   * Your order number. If set for the contract, there must be a unique number for each payment.
    * @return orderId
   **/
   public String getOrderId() {
@@ -170,7 +170,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * A list of items that are being purchased.
+   * Basket items, several sub-baskets or subscription details
    * @return basket
   **/
   public List<SecupayBasketItem> getBasket() {
@@ -187,7 +187,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * Indicates whether the payment is locked for pay-out (TRUE) or not (FALSE). Standard value here is FALSE.
+   * Locks for payout, if set on &#x60;true&#x60;. Needed f.e. for crowd funding or crowd investment.
    * @return accrual
   **/
   public Boolean getAccrual() {
@@ -204,7 +204,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * Specifies whether a pre-authorization (\&quot;authorization\&quot;) or instant payment (\&quot;sale\&quot;) is to be performed. Standard value here is \&quot;sale\&quot;. The collection of the pre-authorized payment is made with the \&quot;capture\&quot; command.
+   * Specifies whether to authorize only (&#x60;\&quot;authorization\&quot;&#x60;), or to pay immediately (&#x60;\&quot;sale\&quot;&#x60;). The capture of the pre-authorized payment is made with a call to &#x60;/capture&#x60;.
    * @return paymentAction
   **/
   public String getPaymentAction() {
@@ -255,7 +255,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * Contract id
+   * Contract ID
    * @return contract
   **/
   public String getContract() {
@@ -272,7 +272,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * Container id
+   * Container ID
    * @return container
   **/
   public String getContainer() {
@@ -323,7 +323,7 @@ public class SecupayTransactionProductDTO {
   }
 
    /**
-   * Demo
+   * Demo mode
    * @return demo
   **/
   public Boolean getDemo() {

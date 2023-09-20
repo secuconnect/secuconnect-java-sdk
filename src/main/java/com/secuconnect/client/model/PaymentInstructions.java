@@ -5,7 +5,7 @@ import com.secuconnect.client.model.BankAccountDescriptor;
 import java.util.Objects;
 
 /**
- * PaymentInstructions
+ * Payment instructions for prepayment, invoice payment or easyCredit
  */
 public class PaymentInstructions extends BankAccountDescriptor {
   @SerializedName("girocode_url")
@@ -32,7 +32,7 @@ public class PaymentInstructions extends BankAccountDescriptor {
   }
 
    /**
-   * Url to generated GiroCode
+   * URL to generated GiroCode
    * @return girocodeUrl
   **/
   public String getGirocodeUrl() {
@@ -66,7 +66,7 @@ public class PaymentInstructions extends BankAccountDescriptor {
   }
 
    /**
-   * Total amount of basket &amp; interest for easyCredit transaction
+   * Total amount of basket and interest for easyCredit transaction
    * @return totalValue
   **/
   public Integer getTotalValue() {

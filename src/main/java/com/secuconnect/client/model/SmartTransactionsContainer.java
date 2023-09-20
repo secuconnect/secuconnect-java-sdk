@@ -5,7 +5,7 @@ import com.secuconnect.client.model.ProductInstanceUID;
 import java.util.Objects;
 
 /**
- * SmartTransactionsContainer
+ * Payment instrument
  */
 public class SmartTransactionsContainer extends ProductInstanceUID {
   @SerializedName("type")

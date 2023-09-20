@@ -5,7 +5,7 @@ import com.secuconnect.client.model.SmartTransactionsReceiptValue;
 import java.util.Objects;
 
 /**
- * SmartTransactionsReceipt
+ * Receipt line
  */
 public class SmartTransactionsReceipt {
   @SerializedName("type")
@@ -20,7 +20,7 @@ public class SmartTransactionsReceipt {
   }
 
    /**
-   * Type
+   * Line type:  - &#x60;\&quot;separator\&quot;&#x60; - &#x60;\&quot;textline\&quot;&#x60; - &#x60;\&quot;name-value\&quot;&#x60; - &#x60;\&quot;space\&quot;&#x60;
    * @return type
   **/
   public String getType() {

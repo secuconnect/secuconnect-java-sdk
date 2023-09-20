@@ -65,21 +65,12 @@ public class GeoAddress {
     this.addressComponents = addressComponents;
   }
 
-  public GeoAddress addressFormatted(String addressFormatted) {
-    this.addressFormatted = addressFormatted;
-    return this;
-  }
-
    /**
    * Address formatted
    * @return addressFormatted
   **/
   public String getAddressFormatted() {
     return addressFormatted;
-  }
-
-  public void setAddressFormatted(String addressFormatted) {
-    this.addressFormatted = addressFormatted;
   }
 
   public GeoAddress geometry(GeoAddressGeometry geometry) {

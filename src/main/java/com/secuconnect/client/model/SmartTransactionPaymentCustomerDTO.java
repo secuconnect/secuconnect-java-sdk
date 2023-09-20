@@ -7,7 +7,7 @@ import com.secuconnect.client.model.ProductInstanceUID;
 import java.util.Objects;
 
 /**
- * SmartTransactionPaymentCustomerDTO
+ * Customer details
  */
 public class SmartTransactionPaymentCustomerDTO extends ProductInstanceUID {
   @SerializedName("contact")

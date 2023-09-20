@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * SmartTransactionsReceiptValue
+ * Line content and formatting
  */
 public class SmartTransactionsReceiptValue {
   @SerializedName("caption")
@@ -30,7 +30,7 @@ public class SmartTransactionsReceiptValue {
   }
 
    /**
-   * Caption
+   * Optional caption for line type &#x60;\&quot;separator\&quot;&#x60;. Shall be rendered like a centered headline.
    * @return caption
   **/
   public String getCaption() {
@@ -47,7 +47,7 @@ public class SmartTransactionsReceiptValue {
   }
 
    /**
-   * Text
+   * Literal text; for line type &#x60;\&quot;textline\&quot;&#x60;. Shall be aligned left, except decorations change it. Can have all decorations.
    * @return text
   **/
   public String getText() {
@@ -72,7 +72,7 @@ public class SmartTransactionsReceiptValue {
   }
 
    /**
-   * Decoration
+   * Decorations:  - &#x60;\&quot;important\&quot;&#x60; - &#x60;\&quot;align-left\&quot;&#x60; - &#x60;\&quot;align-center\&quot;&#x60; - &#x60;\&quot;align-right\&quot;&#x60;
    * @return decoration
   **/
   public List<String> getDecoration() {
@@ -89,7 +89,7 @@ public class SmartTransactionsReceiptValue {
   }
 
    /**
-   * Name
+   * Left part for line-type &#x60;\&quot;name-value\&quot;&#x60;. Shall be displayed at the left side, and be aligned to the left. Can have decoration &#x60;\&quot;important\&quot;&#x60;.
    * @return name
   **/
   public String getName() {
@@ -106,7 +106,7 @@ public class SmartTransactionsReceiptValue {
   }
 
    /**
-   * Value
+   * Right part for line-type &#x60;\&quot;name-value\&quot;&#x60;. Shall be displayed at the right side, and be aligned to the right. Can have decoration &#x60;\&quot;important\&quot;&#x60;.
    * @return value
   **/
   public String getValue() {

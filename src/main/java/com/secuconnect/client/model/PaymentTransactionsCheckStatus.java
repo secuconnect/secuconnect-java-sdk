@@ -31,7 +31,7 @@ public class PaymentTransactionsCheckStatus {
   }
 
    /**
-   * Transaction status ID
+   * Status ID
    * @return status
   **/
   public Integer getStatus() {
@@ -48,7 +48,7 @@ public class PaymentTransactionsCheckStatus {
   }
 
    /**
-   * Transaction status description
+   * Status text (translated)
    * @return statusText
   **/
   public String getStatusText() {
@@ -65,7 +65,7 @@ public class PaymentTransactionsCheckStatus {
   }
 
    /**
-   * Transaction simple-status ID
+   * Simple-status ID
    * @return statusSimple
   **/
   public Integer getStatusSimple() {
@@ -82,7 +82,7 @@ public class PaymentTransactionsCheckStatus {
   }
 
    /**
-   * Transaction simple-status description
+   * Simple-status text (English)
    * @return statusSimpleText
   **/
   public String getStatusSimpleText() {

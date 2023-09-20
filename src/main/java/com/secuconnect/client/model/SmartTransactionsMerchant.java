@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsMerchant
+ * Merchant
  */
 public class SmartTransactionsMerchant {
   @SerializedName("object")
@@ -22,7 +22,7 @@ public class SmartTransactionsMerchant {
   }
 
    /**
-   * Object type of instance
+   * Object type
    * @return object
   **/
   public String getObject() {
@@ -39,7 +39,7 @@ public class SmartTransactionsMerchant {
   }
 
    /**
-   * ID of instance
+   * General Merchant
    * @return id
   **/
   public String getId() {

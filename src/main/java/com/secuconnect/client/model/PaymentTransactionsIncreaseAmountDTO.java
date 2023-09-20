@@ -16,7 +16,7 @@ public class PaymentTransactionsIncreaseAmountDTO {
   }
 
    /**
-   * The raised amount of the transaction
+   * New amount of the transaction, in the smallest currency unit (e. g. Euro Cent)
    * @return amount
   **/
   public Integer getAmount() {

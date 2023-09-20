@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Item describing single position in basket in transaction
+ * Single position in the basket
  */
 public class SecupayBasketItem extends SecupayBaseBasketItem {
   @SerializedName("sub_basket")
@@ -28,7 +28,7 @@ public class SecupayBasketItem extends SecupayBaseBasketItem {
   }
 
    /**
-   * Mixed-Basket: All basket items for one merchant.
+   * Sub-basket for one merchant, if mixed basket; cannot be nested nor be mixed with other types
    * @return subBasket
   **/
   public List<SecupayBasketItem> getSubBasket() {

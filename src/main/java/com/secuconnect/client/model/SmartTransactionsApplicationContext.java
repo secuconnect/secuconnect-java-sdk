@@ -7,7 +7,7 @@ import com.secuconnect.client.model.SmartTransactionsApplicationContextReturnUrl
 import java.util.Objects;
 
 /**
- * SmartTransactionsApplicationContext
+ * Controls the integration between Smart Checkout and the shop.
  */
 public class SmartTransactionsApplicationContext {
   @SerializedName("locks")
@@ -82,7 +82,7 @@ public class SmartTransactionsApplicationContext {
   }
 
    /**
-   * Smart Checkout Template ID
+   * Smart Checkout Template ID  Default templates:  - &#x60;\&quot;COT_WD0DE66HN2XWJHW8JM88003YG0NEA2\&quot;&#x60; for checkout - &#x60;\&quot;COT_QV85D3F542XWFFJYCSWG00W400YWAT\&quot;&#x60; for subscriptions
    * @return checkoutTemplate
   **/
   public String getCheckoutTemplate() {
@@ -99,7 +99,7 @@ public class SmartTransactionsApplicationContext {
   }
 
    /**
-   * The language Smart Checkout is starting with
+   * Language Smart Checkout is starting with:  - &#x60;\&quot;de\&quot;&#x60; - &#x60;\&quot;en\&quot;&#x60;
    * @return language
   **/
   public String getLanguage() {

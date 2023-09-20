@@ -90,8 +90,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * POST Loyalty/Cards/{loyaltyCardId}/assignUser/{generalAccountId}
-     * Assign loyalty card to specific user account
+     * Assign card to user
+     * Assigns the specified Loyalty Card to the specified General Account.
      * @param loyaltyCardId Loyalty card id (required)
      * @param generalAccountId General account id (required)
      * @param body Loyalty card pin for the specific card
@@ -104,8 +104,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * POST Loyalty/Cards/{loyaltyCardId}/assignUser/{generalAccountId}
-     * Assign loyalty card to specific user account
+     * Assign card to user
+     * Assigns the specified Loyalty Card to the specified General Account.
      * @param loyaltyCardId Loyalty card id (required)
      * @param generalAccountId General account id (required)
      * @param body Loyalty card pin for the specific card
@@ -119,8 +119,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * POST Loyalty/Cards/{loyaltyCardId}/assignUser/{generalAccountId} (asynchronously)
-     * Assign loyalty card to specific user account
+     * Assign card to user (asynchronously)
+     * Assigns the specified Loyalty Card to the specified General Account.
      * @param loyaltyCardId Loyalty card id (required)
      * @param generalAccountId General account id (required)
      * @param body Loyalty card pin for the specific card
@@ -191,8 +191,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * GET Loyalty/Cards
-     * Get a list of loyalty cards
+     * Find Loyalty Cards
+     * Returns the Loyalty Cards matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -207,8 +207,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * GET Loyalty/Cards
-     * Get a list of loyalty cards
+     * Find Loyalty Cards
+     * Returns the Loyalty Cards matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -224,8 +224,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * GET Loyalty/Cards (asynchronously)
-     * Get a list of loyalty cards
+     * Find Loyalty Cards (asynchronously)
+     * Returns the Loyalty Cards matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -289,8 +289,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * GET Loyalty/Cards/{loyaltyCardId}
-     * Get loyalty card for a specific id
+     * Read Loyalty Card
+     * Returns the specified Loyalty Card.
      * @param loyaltyCardId Search one loyalty card by provided id (required)
      * @return LoyaltyCardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -301,8 +301,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * GET Loyalty/Cards/{loyaltyCardId}
-     * Get loyalty card for a specific id
+     * Read Loyalty Card
+     * Returns the specified Loyalty Card.
      * @param loyaltyCardId Search one loyalty card by provided id (required)
      * @return ApiResponse&lt;LoyaltyCardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -314,8 +314,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * GET Loyalty/Cards/{loyaltyCardId} (asynchronously)
-     * Get loyalty card for a specific id
+     * Read Loyalty Card (asynchronously)
+     * Returns the specified Loyalty Card.
      * @param loyaltyCardId Search one loyalty card by provided id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -381,8 +381,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * DELETE Loyalty/Cards/{loyaltyCardId}/assignUser/{generalAccountId}
-     * Remove assigned loyalty card from specific user account
+     * Unassign card from user
+     * Removes the assignment of the specified Loyalty Card to the specified General Account.
      * @param loyaltyCardId Loyalty card id (required)
      * @param generalAccountId General account id (required)
      * @return ResultBoolean
@@ -394,8 +394,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * DELETE Loyalty/Cards/{loyaltyCardId}/assignUser/{generalAccountId}
-     * Remove assigned loyalty card from specific user account
+     * Unassign card from user
+     * Removes the assignment of the specified Loyalty Card to the specified General Account.
      * @param loyaltyCardId Loyalty card id (required)
      * @param generalAccountId General account id (required)
      * @return ApiResponse&lt;ResultBoolean&gt;
@@ -408,8 +408,8 @@ public class LoyaltyCardsApi {
     }
 
     /**
-     * DELETE Loyalty/Cards/{loyaltyCardId}/assignUser/{generalAccountId} (asynchronously)
-     * Remove assigned loyalty card from specific user account
+     * Unassign card from user (asynchronously)
+     * Removes the assignment of the specified Loyalty Card to the specified General Account.
      * @param loyaltyCardId Loyalty card id (required)
      * @param generalAccountId General account id (required)
      * @param callback The callback to be executed when the API call finishes

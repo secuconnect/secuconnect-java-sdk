@@ -19,7 +19,7 @@ public class PaymentMethodBreakdown {
   }
 
    /**
-   * Count of the transactions
+   * Total number of transactions for this payment method
    * @return count
   **/
   public Integer getCount() {
@@ -36,7 +36,7 @@ public class PaymentMethodBreakdown {
   }
 
    /**
-   * Total transaction amount
+   * Total amount for this payment method; in the smallest currency unit (e. g. Euro Cent)
    * @return amount
   **/
   public Integer getAmount() {

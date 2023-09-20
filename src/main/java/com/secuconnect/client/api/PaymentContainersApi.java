@@ -41,8 +41,8 @@ public class PaymentContainersApi {
 
     /**
      * Build call for mandate
-     * @param paymentContainerId Payment container id (required)
-     * @param body Get an B2B mandate form properties
+     * @param paymentContainerId Payment Container ID (required)
+     * @param body B2B mandate form properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -87,10 +87,10 @@ public class PaymentContainersApi {
     }
 
     /**
-     * POST Payment/Containers/&lt;id&gt;/mandate
-     * Get an B2B mandate form
-     * @param paymentContainerId Payment container id (required)
-     * @param body Get an B2B mandate form properties
+     * Obtain SEPA Mandate Form
+     * Returns the URL of the B2B mandate form for this Payment Container. The form is a one-page PDF document. It must be signed by an authorised person and then uploaded again.
+     * @param paymentContainerId Payment Container ID (required)
+     * @param body B2B mandate form properties
      * @return MandateProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -100,10 +100,10 @@ public class PaymentContainersApi {
     }
 
     /**
-     * POST Payment/Containers/&lt;id&gt;/mandate
-     * Get an B2B mandate form
-     * @param paymentContainerId Payment container id (required)
-     * @param body Get an B2B mandate form properties
+     * Obtain SEPA Mandate Form
+     * Returns the URL of the B2B mandate form for this Payment Container. The form is a one-page PDF document. It must be signed by an authorised person and then uploaded again.
+     * @param paymentContainerId Payment Container ID (required)
+     * @param body B2B mandate form properties
      * @return ApiResponse&lt;MandateProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -114,10 +114,10 @@ public class PaymentContainersApi {
     }
 
     /**
-     * POST Payment/Containers/&lt;id&gt;/mandate (asynchronously)
-     * Get an B2B mandate form
-     * @param paymentContainerId Payment container id (required)
-     * @param body Get an B2B mandate form properties
+     * Obtain SEPA Mandate Form (asynchronously)
+     * Returns the URL of the B2B mandate form for this Payment Container. The form is a one-page PDF document. It must be signed by an authorised person and then uploaded again.
+     * @param paymentContainerId Payment Container ID (required)
+     * @param body B2B mandate form properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -185,8 +185,8 @@ public class PaymentContainersApi {
     }
 
     /**
-     * GET Payment/Containers
-     * Get a list of payment containers
+     * Find Payment Containers
+     * Returns the Payment Containers matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -201,8 +201,8 @@ public class PaymentContainersApi {
     }
 
     /**
-     * GET Payment/Containers
-     * Get a list of payment containers
+     * Find Payment Containers
+     * Returns the Payment Containers matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -218,8 +218,8 @@ public class PaymentContainersApi {
     }
 
     /**
-     * GET Payment/Containers (asynchronously)
-     * Get a list of payment containers
+     * Find Payment Containers (asynchronously)
+     * Returns the Payment Containers matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -238,7 +238,7 @@ public class PaymentContainersApi {
 
     /**
      * Build call for paymentContainersGetById
-     * @param paymentContainerId Search one by provided id (required)
+     * @param paymentContainerId Payment Container ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -283,9 +283,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * GET Payment/Containers/{paymentContainerId}
-     * Get all payment containers
-     * @param paymentContainerId Search one by provided id (required)
+     * Read Payment Containers
+     * Returns the specified Payment Container.
+     * @param paymentContainerId Payment Container ID (required)
      * @return PaymentContainersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -295,9 +295,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * GET Payment/Containers/{paymentContainerId}
-     * Get all payment containers
-     * @param paymentContainerId Search one by provided id (required)
+     * Read Payment Containers
+     * Returns the specified Payment Container.
+     * @param paymentContainerId Payment Container ID (required)
      * @return ApiResponse&lt;PaymentContainersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -308,9 +308,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * GET Payment/Containers/{paymentContainerId} (asynchronously)
-     * Get all payment containers
-     * @param paymentContainerId Search one by provided id (required)
+     * Read Payment Containers (asynchronously)
+     * Returns the specified Payment Container.
+     * @param paymentContainerId Payment Container ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -324,7 +324,7 @@ public class PaymentContainersApi {
 
     /**
      * Build call for paymentContainersIdDelete
-     * @param paymentContainerId Payment container id (required)
+     * @param paymentContainerId Payment Container ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -369,9 +369,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * DELETE Payment/Containers/{paymentContainerId}
-     * Delete payment container
-     * @param paymentContainerId Payment container id (required)
+     * Delete Payment Container
+     * Deletes a Payment Container.
+     * @param paymentContainerId Payment Container ID (required)
      * @return List&lt;PaymentContainersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -381,9 +381,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * DELETE Payment/Containers/{paymentContainerId}
-     * Delete payment container
-     * @param paymentContainerId Payment container id (required)
+     * Delete Payment Container
+     * Deletes a Payment Container.
+     * @param paymentContainerId Payment Container ID (required)
      * @return ApiResponse&lt;List&lt;PaymentContainersProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -394,9 +394,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * DELETE Payment/Containers/{paymentContainerId} (asynchronously)
-     * Delete payment container
-     * @param paymentContainerId Payment container id (required)
+     * Delete Payment Container (asynchronously)
+     * Deletes a Payment Container.
+     * @param paymentContainerId Payment Container ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -410,8 +410,8 @@ public class PaymentContainersApi {
 
     /**
      * Build call for paymentContainersIdPut
-     * @param paymentContainerId Payment container id (required)
-     * @param body Payment container properties
+     * @param paymentContainerId Payment Container ID (required)
+     * @param body Payment Container properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -456,10 +456,10 @@ public class PaymentContainersApi {
     }
 
     /**
-     * PUT Payment/Containers/{paymentContainerId}
-     * Update payment container
-     * @param paymentContainerId Payment container id (required)
-     * @param body Payment container properties
+     * Update Payment Container
+     * Updates the specified Payment Container with the given data.
+     * @param paymentContainerId Payment Container ID (required)
+     * @param body Payment Container properties
      * @return PaymentContainersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -469,10 +469,10 @@ public class PaymentContainersApi {
     }
 
     /**
-     * PUT Payment/Containers/{paymentContainerId}
-     * Update payment container
-     * @param paymentContainerId Payment container id (required)
-     * @param body Payment container properties
+     * Update Payment Container
+     * Updates the specified Payment Container with the given data.
+     * @param paymentContainerId Payment Container ID (required)
+     * @param body Payment Container properties
      * @return ApiResponse&lt;PaymentContainersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -483,10 +483,10 @@ public class PaymentContainersApi {
     }
 
     /**
-     * PUT Payment/Containers/{paymentContainerId} (asynchronously)
-     * Update payment container
-     * @param paymentContainerId Payment container id (required)
-     * @param body Payment container properties
+     * Update Payment Container (asynchronously)
+     * Updates the specified Payment Container with the given data.
+     * @param paymentContainerId Payment Container ID (required)
+     * @param body Payment Container properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -500,7 +500,7 @@ public class PaymentContainersApi {
 
     /**
      * Build call for paymentContainersPost
-     * @param body Payment container properties
+     * @param body Payment Container properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -540,9 +540,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * POST Payment/Containers
-     * Add new containers
-     * @param body Payment container properties
+     * Create Payment Container
+     * Creates a new Payment Container from the given data.
+     * @param body Payment Container properties
      * @return PaymentContainersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -552,9 +552,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * POST Payment/Containers
-     * Add new containers
-     * @param body Payment container properties
+     * Create Payment Container
+     * Creates a new Payment Container from the given data.
+     * @param body Payment Container properties
      * @return ApiResponse&lt;PaymentContainersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -565,9 +565,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * POST Payment/Containers (asynchronously)
-     * Add new containers
-     * @param body Payment container properties
+     * Create Payment Container (asynchronously)
+     * Creates a new Payment Container from the given data.
+     * @param body Payment Container properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -581,7 +581,7 @@ public class PaymentContainersApi {
 
     /**
      * Build call for uploadMandate
-     * @param paymentContainerId Payment container id (required)
+     * @param paymentContainerId Payment Container ID (required)
      * @param body Signed B2B mandate properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -627,9 +627,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * POST Payment/Containers/&lt;id&gt;/Uploadmandate
-     * Submit a signed B2B mandate
-     * @param paymentContainerId Payment container id (required)
+     * Process Signed SEPA Mandate
+     * Processes the signed B2B mandate for this Payment Container. The PDF must have been uploaded shortly before with POST /Document/Uploads. Now it is assigned to the Payment Container and a service case is created to carry out the activation.
+     * @param paymentContainerId Payment Container ID (required)
      * @param body Signed B2B mandate properties
      * @return UploadMandateProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -640,9 +640,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * POST Payment/Containers/&lt;id&gt;/Uploadmandate
-     * Submit a signed B2B mandate
-     * @param paymentContainerId Payment container id (required)
+     * Process Signed SEPA Mandate
+     * Processes the signed B2B mandate for this Payment Container. The PDF must have been uploaded shortly before with POST /Document/Uploads. Now it is assigned to the Payment Container and a service case is created to carry out the activation.
+     * @param paymentContainerId Payment Container ID (required)
      * @param body Signed B2B mandate properties
      * @return ApiResponse&lt;UploadMandateProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -654,9 +654,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * POST Payment/Containers/&lt;id&gt;/Uploadmandate (asynchronously)
-     * Submit a signed B2B mandate
-     * @param paymentContainerId Payment container id (required)
+     * Process Signed SEPA Mandate (asynchronously)
+     * Processes the signed B2B mandate for this Payment Container. The PDF must have been uploaded shortly before with POST /Document/Uploads. Now it is assigned to the Payment Container and a service case is created to carry out the activation.
+     * @param paymentContainerId Payment Container ID (required)
      * @param body Signed B2B mandate properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * SmartTransactionsApplicationContextIframeOpts
+ * Iframe options
  */
 public class SmartTransactionsApplicationContextIframeOpts {
   @SerializedName("payment_hint_title")
@@ -43,7 +43,7 @@ public class SmartTransactionsApplicationContextIframeOpts {
   }
 
    /**
-   * payment hint title
+   * Payment hint title
    * @return paymentHintTitle
   **/
   public String getPaymentHintTitle() {
@@ -68,7 +68,7 @@ public class SmartTransactionsApplicationContextIframeOpts {
   }
 
    /**
-   * payment hint
+   * Payment hint
    * @return paymentHint
   **/
   public List<SmartTransactionsReceipt> getPaymentHint() {
@@ -85,7 +85,7 @@ public class SmartTransactionsApplicationContextIframeOpts {
   }
 
    /**
-   * project name
+   * Project name
    * @return projectTitle
   **/
   public String getProjectTitle() {
@@ -102,7 +102,7 @@ public class SmartTransactionsApplicationContextIframeOpts {
   }
 
    /**
-   * title of the submit button
+   * Submit button text
    * @return submitButtonTitle
   **/
   public String getSubmitButtonTitle() {
@@ -119,7 +119,7 @@ public class SmartTransactionsApplicationContextIframeOpts {
   }
 
    /**
-   * title of the cancel button
+   * Cancel button text
    * @return cancelButtonTitle
   **/
   public String getCancelButtonTitle() {
@@ -136,7 +136,7 @@ public class SmartTransactionsApplicationContextIframeOpts {
   }
 
    /**
-   * language
+   * Language
    * @return language
   **/
   public String getLanguage() {
@@ -153,7 +153,7 @@ public class SmartTransactionsApplicationContextIframeOpts {
   }
 
    /**
-   * basket title
+   * Basket title
    * @return basketTitle
   **/
   public String getBasketTitle() {
@@ -170,7 +170,7 @@ public class SmartTransactionsApplicationContextIframeOpts {
   }
 
    /**
-   * hide disclaimer
+   * Whether to hide the disclaimer  _Note: Needs &#x60;has_accepted_disclaimer&#x60; to be &#x60;true&#x60; to be effective._
    * @return hideDisclaimer
   **/
   public Boolean getHideDisclaimer() {
@@ -187,7 +187,7 @@ public class SmartTransactionsApplicationContextIframeOpts {
   }
 
    /**
-   * has accepted disclaimer
+   * Whether the buyer has already accepted the disclaimer
    * @return hasAcceptedDisclaimer
   **/
   public Boolean getHasAcceptedDisclaimer() {

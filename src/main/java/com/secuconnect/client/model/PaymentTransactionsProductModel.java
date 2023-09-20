@@ -89,6 +89,12 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   @SerializedName("completion_date")
   protected String completionDate = null;
 
+  @SerializedName("description")
+  protected String description = null;
+
+  @SerializedName("description_raw")
+  protected String descriptionRaw = null;
+
   @SerializedName("status")
   protected Integer status = null;
 
@@ -550,6 +556,40 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     this.completionDate = completionDate;
   }
 
+  public PaymentTransactionsProductModel description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Transaction description
+   * @return description
+  **/
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public PaymentTransactionsProductModel descriptionRaw(String descriptionRaw) {
+    this.descriptionRaw = descriptionRaw;
+    return this;
+  }
+
+   /**
+   * Transaction description (plain text)
+   * @return descriptionRaw
+  **/
+  public String getDescriptionRaw() {
+    return descriptionRaw;
+  }
+
+  public void setDescriptionRaw(String descriptionRaw) {
+    this.descriptionRaw = descriptionRaw;
+  }
+
   public PaymentTransactionsProductModel status(Integer status) {
     this.status = status;
     return this;
@@ -888,6 +928,8 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.amount, paymentTransactionsProductModel.amount) &&
         Objects.equals(this.currency, paymentTransactionsProductModel.currency) &&
         Objects.equals(this.completionDate, paymentTransactionsProductModel.completionDate) &&
+        Objects.equals(this.description, paymentTransactionsProductModel.description) &&
+        Objects.equals(this.descriptionRaw, paymentTransactionsProductModel.descriptionRaw) &&
         Objects.equals(this.status, paymentTransactionsProductModel.status) &&
         Objects.equals(this.statusText, paymentTransactionsProductModel.statusText) &&
         Objects.equals(this.incomingPaymentDate, paymentTransactionsProductModel.incomingPaymentDate) &&
@@ -911,7 +953,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, updated, platform, merchant, store, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, platform, merchant, store, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, description, descriptionRaw, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, super.hashCode());
   }
 
   @Override
@@ -942,6 +984,8 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    completionDate: ").append(toIndentedString(completionDate)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    descriptionRaw: ").append(toIndentedString(descriptionRaw)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    statusText: ").append(toIndentedString(statusText)).append("\n");
     sb.append("    incomingPaymentDate: ").append(toIndentedString(incomingPaymentDate)).append("\n");

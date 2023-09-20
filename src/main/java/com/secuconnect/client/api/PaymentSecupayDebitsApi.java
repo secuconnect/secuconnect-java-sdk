@@ -100,8 +100,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/{paymentMethod}/{paymentId}/assignExternalInvoicePdf/{documentId}
-     * Assign external invoice pdf
+     * Assign external invoice PDF
+     * Assign external invoice PDF
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
@@ -115,8 +115,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/{paymentMethod}/{paymentId}/assignExternalInvoicePdf/{documentId}
-     * Assign external invoice pdf
+     * Assign external invoice PDF
+     * Assign external invoice PDF
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
@@ -131,8 +131,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/{paymentMethod}/{paymentId}/assignExternalInvoicePdf/{documentId} (asynchronously)
-     * Assign external invoice pdf
+     * Assign external invoice PDF (asynchronously)
+     * Assign external invoice PDF
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param documentId Document id (required)
@@ -202,7 +202,7 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/{paymentMethod}/{paymentId}/cancel
+     * Cancel or refund payment
      * Function to cancel the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
@@ -216,7 +216,7 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/{paymentMethod}/{paymentId}/cancel
+     * Cancel or refund payment
      * Function to cancel the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
@@ -231,7 +231,7 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/{paymentMethod}/{paymentId}/cancel (asynchronously)
+     * Cancel or refund payment (asynchronously)
      * Function to cancel the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
@@ -301,8 +301,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/{paymentMethod}/{paymentId}/capture
-     * Function to cancel the payment transaction
+     * Capture payment
+     * Function to capture the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param body Capture payment transaction input properties
@@ -315,8 +315,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/{paymentMethod}/{paymentId}/capture
-     * Function to cancel the payment transaction
+     * Capture payment
+     * Function to capture the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param body Capture payment transaction input properties
@@ -330,8 +330,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/{paymentMethod}/{paymentId}/capture (asynchronously)
-     * Function to cancel the payment transaction
+     * Capture payment (asynchronously)
+     * Function to capture the payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param body Capture payment transaction input properties
@@ -393,8 +393,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * GET Payment/Secupaydebits/{paymentDebitId}
-     * Get the details of a payment transaction
+     * Read Payment Secupaydebit
+     * Returns the specified Payment Secupaydebit.
      * @param paymentDebitId Payment debit id (required)
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -405,8 +405,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * GET Payment/Secupaydebits/{paymentDebitId}
-     * Get the details of a payment transaction
+     * Read Payment Secupaydebit
+     * Returns the specified Payment Secupaydebit.
      * @param paymentDebitId Payment debit id (required)
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -418,8 +418,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * GET Payment/Secupaydebits/{paymentDebitId} (asynchronously)
-     * Get the details of a payment transaction
+     * Read Payment Secupaydebit (asynchronously)
+     * Returns the specified Payment Secupaydebit.
      * @param paymentDebitId Payment debit id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -474,8 +474,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/Secupaydebits
-     * Start a debit payment transaction
+     * Create Payment Secupaydebits
+     * Creates a new Payment Secupaydebits from the given data. It can be used to start a debit payment transaction.
      * @param body Debit payment transaction input properties
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -486,8 +486,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/Secupaydebits
-     * Start a debit payment transaction
+     * Create Payment Secupaydebits
+     * Creates a new Payment Secupaydebits from the given data. It can be used to start a debit payment transaction.
      * @param body Debit payment transaction input properties
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -499,8 +499,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * POST Payment/Secupaydebits (asynchronously)
-     * Start a debit payment transaction
+     * Create Payment Secupaydebits (asynchronously)
+     * Creates a new Payment Secupaydebits from the given data. It can be used to start a debit payment transaction.
      * @param body Debit payment transaction input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -567,7 +567,7 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * PUT Payment/{paymentMethod}/{paymentId}/accrual
+     * Change accrual flag
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
@@ -581,7 +581,7 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * PUT Payment/{paymentMethod}/{paymentId}/accrual
+     * Change accrual flag
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
@@ -596,7 +596,7 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * PUT Payment/{paymentMethod}/{paymentId}/accrual (asynchronously)
+     * Change accrual flag (asynchronously)
      * Update the accrual flag of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
@@ -666,8 +666,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * PUT Payment/{paymentMethod}/{paymentId}/shippingInformation
-     * Update the accrual flag of an existing payment transaction
+     * Set shipping information
+     * Update the shipping information of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param body Shipping information properties
@@ -680,8 +680,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * PUT Payment/{paymentMethod}/{paymentId}/shippingInformation
-     * Update the accrual flag of an existing payment transaction
+     * Set shipping information
+     * Update the shipping information of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param body Shipping information properties
@@ -695,8 +695,8 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * PUT Payment/{paymentMethod}/{paymentId}/shippingInformation (asynchronously)
-     * Update the accrual flag of an existing payment transaction
+     * Set shipping information (asynchronously)
+     * Update the shipping information of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
      * @param body Shipping information properties
@@ -765,7 +765,7 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * PUT Payment/{paymentMethod}/{paymentId}/basket
+     * Update basket
      * Update a basket of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
@@ -779,7 +779,7 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * PUT Payment/{paymentMethod}/{paymentId}/basket
+     * Update basket
      * Update a basket of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)
@@ -794,7 +794,7 @@ public class PaymentSecupayDebitsApi {
     }
 
     /**
-     * PUT Payment/{paymentMethod}/{paymentId}/basket (asynchronously)
+     * Update basket (asynchronously)
      * Update a basket of an existing payment transaction
      * @param paymentMethod Payment method (secupaydebits, secupayprepays, secupayinvoices, ...) (required)
      * @param paymentId Payment id (required)

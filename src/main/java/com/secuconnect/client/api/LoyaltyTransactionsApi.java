@@ -90,8 +90,8 @@ public class LoyaltyTransactionsApi {
     }
 
     /**
-     * GET Loyalty/Transactions
-     * Get a list of loyalty transactions
+     * Find Loyalty Transactions
+     * Returns the Loyalty Transactions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -106,8 +106,8 @@ public class LoyaltyTransactionsApi {
     }
 
     /**
-     * GET Loyalty/Transactions
-     * Get a list of loyalty transactions
+     * Find Loyalty Transactions
+     * Returns the Loyalty Transactions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -123,8 +123,8 @@ public class LoyaltyTransactionsApi {
     }
 
     /**
-     * GET Loyalty/Transactions (asynchronously)
-     * Get a list of loyalty transactions
+     * Find Loyalty Transactions (asynchronously)
+     * Returns the Loyalty Transactions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -188,8 +188,8 @@ public class LoyaltyTransactionsApi {
     }
 
     /**
-     * GET Loyalty/Transactions/{loyaltyTransactionId}
-     * Get loyalty transaction for a specific id
+     * Read Loyalty Transaction
+     * Returns the specified Loyalty Transaction.
      * @param loyaltyTransactionId Search one by provided id (required)
      * @return LoyaltyTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -200,8 +200,8 @@ public class LoyaltyTransactionsApi {
     }
 
     /**
-     * GET Loyalty/Transactions/{loyaltyTransactionId}
-     * Get loyalty transaction for a specific id
+     * Read Loyalty Transaction
+     * Returns the specified Loyalty Transaction.
      * @param loyaltyTransactionId Search one by provided id (required)
      * @return ApiResponse&lt;LoyaltyTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -213,8 +213,8 @@ public class LoyaltyTransactionsApi {
     }
 
     /**
-     * GET Loyalty/Transactions/{loyaltyTransactionId} (asynchronously)
-     * Get loyalty transaction for a specific id
+     * Read Loyalty Transaction (asynchronously)
+     * Returns the specified Loyalty Transaction.
      * @param loyaltyTransactionId Search one by provided id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

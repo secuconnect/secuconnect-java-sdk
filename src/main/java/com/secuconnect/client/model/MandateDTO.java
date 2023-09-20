@@ -19,7 +19,7 @@ public class MandateDTO {
   }
 
    /**
-   * Customer id
+   * Payment Customer ID the SEPA mandate belongs to
    * @return customerId
   **/
   public String getCustomerId() {
@@ -36,7 +36,7 @@ public class MandateDTO {
   }
 
    /**
-   * Mandate type
+   * SEPA mandate type (must be \&quot;B2B\&quot;)
    * @return type
   **/
   public String getType() {

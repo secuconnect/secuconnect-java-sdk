@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsBasketInfo
+ * Basket information
  */
 public class SmartTransactionsBasketInfo {
   @SerializedName("sum")
@@ -22,7 +22,7 @@ public class SmartTransactionsBasketInfo {
   }
 
    /**
-   * Sum
+   * Amount in the smallest currency unit (e. g. Euro Cent)  If there is a basket, it must equal the basket total.
    * @return sum
   **/
   public Integer getSum() {
@@ -39,7 +39,7 @@ public class SmartTransactionsBasketInfo {
   }
 
    /**
-   * Gratuity
+   * Tips included in the smallest currency unit (e.g. Euro Cent)
    * @return gratuity
   **/
   public Integer getGratuity() {

@@ -19,7 +19,7 @@ public class SecupayTransactionProductDTOSubscription {
   }
 
    /**
-   * The purpose of the subscription
+   * Purpose of the recurring payment; needs to be present at the first time
    * @return purpose
   **/
   public String getPurpose() {
@@ -36,7 +36,7 @@ public class SecupayTransactionProductDTOSubscription {
   }
 
    /**
-   * Id of subscription, if exists
+   * Recurring payments ID; is generated at the first time, and needs to be passed with all subsequent payments
    * @return id
   **/
   public Integer getId() {

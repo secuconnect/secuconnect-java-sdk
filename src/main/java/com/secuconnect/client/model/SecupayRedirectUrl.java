@@ -25,7 +25,7 @@ public class SecupayRedirectUrl {
   }
 
    /**
-   * The url of the payment checkout iframe
+   * URL of the secupay payment iframe.
    * @return iframeUrl
   **/
   public String getIframeUrl() {
@@ -42,7 +42,7 @@ public class SecupayRedirectUrl {
   }
 
    /**
-   * After successfully entering the cash data of the payer is returned to this page.
+   * URL of the shop to receive the payer after successful payment.
    * @return urlSuccess
   **/
   public String getUrlSuccess() {
@@ -59,7 +59,7 @@ public class SecupayRedirectUrl {
   }
 
    /**
-   * After canceling or on errors the payer will be redirected to this page and can select there an another payment method.
+   * URL of the shop to receive the payer after failed or abandoned payment.
    * @return urlFailure
   **/
   public String getUrlFailure() {
@@ -76,7 +76,7 @@ public class SecupayRedirectUrl {
   }
 
    /**
-   * The secupay system will be send status change notifications to this URL.
+   * URL of the shop to receive the push notifications.
    * @return urlPush
   **/
   public String getUrlPush() {

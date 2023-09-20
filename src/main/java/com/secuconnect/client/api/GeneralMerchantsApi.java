@@ -93,8 +93,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * GET General/Merchants
-     * Get a list of General Merchants
+     * Find General Merchants
+     * Returns the General Merchants matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -109,8 +109,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * GET General/Merchants
-     * Get a list of General Merchants
+     * Find General Merchants
+     * Returns the General Merchants matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -126,8 +126,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * GET General/Merchants (asynchronously)
-     * Get a list of General Merchants
+     * Find General Merchants (asynchronously)
+     * Returns the General Merchants matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -153,7 +153,7 @@ public class GeneralMerchantsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/General/Merchants/me/getMerchantCategories";
+        String localVarPath = "/General/Merchants/me/MerchantCategories";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -185,8 +185,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * GET General/Merchants/me/getMerchantCategories/
-     * Get available Merchant Categories
+     * Get my merchant categories
+     * Returns the available merchant categories for the authenticated merchant.
      * @return List&lt;MerchantCategoryDataModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -196,8 +196,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * GET General/Merchants/me/getMerchantCategories/
-     * Get available Merchant Categories
+     * Get my merchant categories
+     * Returns the available merchant categories for the authenticated merchant.
      * @return ApiResponse&lt;List&lt;MerchantCategoryDataModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -208,8 +208,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * GET General/Merchants/me/getMerchantCategories/ (asynchronously)
-     * Get available Merchant Categories
+     * Get my merchant categories (asynchronously)
+     * Returns the available merchant categories for the authenticated merchant.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -268,8 +268,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * GET General/Merchants/{generalMerchantId}
-     * Get one General Merchant for a specific id
+     * Read General Merchant
+     * Returns the specified General Merchant.
      * @param generalMerchantId General Merchant id (required)
      * @return GeneralMerchantsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -280,8 +280,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * GET General/Merchants/{generalMerchantId}
-     * Get one General Merchant for a specific id
+     * Read General Merchant
+     * Returns the specified General Merchant.
      * @param generalMerchantId General Merchant id (required)
      * @return ApiResponse&lt;GeneralMerchantsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -293,8 +293,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * GET General/Merchants/{generalMerchantId} (asynchronously)
-     * Get one General Merchant for a specific id
+     * Read General Merchant (asynchronously)
+     * Returns the specified General Merchant.
      * @param generalMerchantId General Merchant id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -360,8 +360,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * POST General/Merchants/{generalMerchantId}/getPublicData/{generalContractId}
-     * Get Public Data of a Merchant
+     * Get public data
+     * Returns the public data of the specified General Merchant and General Contract.
      * @param generalMerchantId Merchant identifier (required)
      * @param generalContractId Contract identifier (required)
      * @return GeneralMerchantsPublicDataModel
@@ -373,8 +373,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * POST General/Merchants/{generalMerchantId}/getPublicData/{generalContractId}
-     * Get Public Data of a Merchant
+     * Get public data
+     * Returns the public data of the specified General Merchant and General Contract.
      * @param generalMerchantId Merchant identifier (required)
      * @param generalContractId Contract identifier (required)
      * @return ApiResponse&lt;GeneralMerchantsPublicDataModel&gt;
@@ -387,8 +387,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * POST General/Merchants/{generalMerchantId}/getPublicData/{generalContractId} (asynchronously)
-     * Get Public Data of a Merchant
+     * Get public data (asynchronously)
+     * Returns the public data of the specified General Merchant and General Contract.
      * @param generalMerchantId Merchant identifier (required)
      * @param generalContractId Contract identifier (required)
      * @param callback The callback to be executed when the API call finishes
@@ -450,8 +450,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * updatePublicData
-     * Updates an existing General Merchant
+     * Update public data
+     * Updates the specified General Merchant with the given data.
      * @param generalMerchantId Merchant identifier (required)
      * @param body 
      * @return GeneralMerchantsProductModel
@@ -463,8 +463,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * updatePublicData
-     * Updates an existing General Merchant
+     * Update public data
+     * Updates the specified General Merchant with the given data.
      * @param generalMerchantId Merchant identifier (required)
      * @param body 
      * @return ApiResponse&lt;GeneralMerchantsProductModel&gt;
@@ -477,8 +477,8 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * updatePublicData (asynchronously)
-     * Updates an existing General Merchant
+     * Update public data (asynchronously)
+     * Updates the specified General Merchant with the given data.
      * @param generalMerchantId Merchant identifier (required)
      * @param body 
      * @param callback The callback to be executed when the API call finishes

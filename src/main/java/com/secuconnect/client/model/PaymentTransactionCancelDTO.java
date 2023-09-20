@@ -45,7 +45,7 @@ public class PaymentTransactionCancelDTO {
   }
 
    /**
-   * Amount in minor currency unit (e. g. Euro Cent)
+   * Amount in smallest currency unit (e. g. Euro Cent)
    * @return amount
   **/
   public Integer getAmount() {
@@ -79,7 +79,7 @@ public class PaymentTransactionCancelDTO {
   }
 
    /**
-   * Mixed-Basket: (percentage) reduce the stakeholder amount too
+   * Only for the mixed basket. Reduces stakeholder shares proportionately.
    * @return reduceStakeholderPayment
   **/
   public Boolean getReduceStakeholderPayment() {

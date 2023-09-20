@@ -8,7 +8,7 @@ import com.secuconnect.client.model.ProductInstanceUID;
 import java.util.Objects;
 
 /**
- * SmartTransactionPaymentContainerDTO
+ * Payment instrument
  */
 public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
   @SerializedName("merchant_id")
@@ -83,7 +83,7 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
   }
 
    /**
-   * Type of Payment Containers
+   * Container type
    * @return type
   **/
   public String getType() {

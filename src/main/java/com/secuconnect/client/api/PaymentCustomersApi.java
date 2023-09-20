@@ -91,8 +91,8 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * GET Payment/Customers
-     * Get a list of payment customers
+     * Find Payment Customers
+     * Returns the Payment Customers matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -107,8 +107,8 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * GET Payment/Customers
-     * Get a list of payment customers
+     * Find Payment Customers
+     * Returns the Payment Customers matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -124,8 +124,8 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * GET Payment/Customers (asynchronously)
-     * Get a list of payment customers
+     * Find Payment Customers (asynchronously)
+     * Returns the Payment Customers matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -144,7 +144,7 @@ public class PaymentCustomersApi {
 
     /**
      * Build call for paymentCustomersGetById
-     * @param paymentCustomerId Payment customer id (required)
+     * @param paymentCustomerId Payment Customer ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -189,9 +189,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * GET Payment/Customers/{paymentCustomerId}
-     * Get all payment customers
-     * @param paymentCustomerId Payment customer id (required)
+     * Read Payment Customer
+     * Returns the specified Payment Customer.
+     * @param paymentCustomerId Payment Customer ID (required)
      * @return PaymentCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -201,9 +201,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * GET Payment/Customers/{paymentCustomerId}
-     * Get all payment customers
-     * @param paymentCustomerId Payment customer id (required)
+     * Read Payment Customer
+     * Returns the specified Payment Customer.
+     * @param paymentCustomerId Payment Customer ID (required)
      * @return ApiResponse&lt;PaymentCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -214,9 +214,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * GET Payment/Customers/{paymentCustomerId} (asynchronously)
-     * Get all payment customers
-     * @param paymentCustomerId Payment customer id (required)
+     * Read Payment Customer (asynchronously)
+     * Returns the specified Payment Customer.
+     * @param paymentCustomerId Payment Customer ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -230,7 +230,7 @@ public class PaymentCustomersApi {
 
     /**
      * Build call for paymentCustomersIdDelete
-     * @param paymentCustomerId Payment customer id (required)
+     * @param paymentCustomerId Payment Customer ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -275,9 +275,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * DELETE Payment/Customers/{paymentCustomerId}
-     * Delete payment customer
-     * @param paymentCustomerId Payment customer id (required)
+     * Delete Payment Customer
+     * Deletes the specified Payment Customer.
+     * @param paymentCustomerId Payment Customer ID (required)
      * @return List&lt;PaymentCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -287,9 +287,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * DELETE Payment/Customers/{paymentCustomerId}
-     * Delete payment customer
-     * @param paymentCustomerId Payment customer id (required)
+     * Delete Payment Customer
+     * Deletes the specified Payment Customer.
+     * @param paymentCustomerId Payment Customer ID (required)
      * @return ApiResponse&lt;List&lt;PaymentCustomersProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -300,9 +300,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * DELETE Payment/Customers/{paymentCustomerId} (asynchronously)
-     * Delete payment customer
-     * @param paymentCustomerId Payment customer id (required)
+     * Delete Payment Customer (asynchronously)
+     * Deletes the specified Payment Customer.
+     * @param paymentCustomerId Payment Customer ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -316,7 +316,7 @@ public class PaymentCustomersApi {
 
     /**
      * Build call for paymentCustomersIdPut
-     * @param paymentCustomerId Payment customer id (required)
+     * @param paymentCustomerId Payment Customer ID (required)
      * @param body Payment customer properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -362,9 +362,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * PUT Payment/Customers/{paymentCustomerId}
-     * Update payment customer
-     * @param paymentCustomerId Payment customer id (required)
+     * Update Payment Customer
+     * Updates the specified Payment Customer with the given data.
+     * @param paymentCustomerId Payment Customer ID (required)
      * @param body Payment customer properties
      * @return PaymentCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -375,9 +375,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * PUT Payment/Customers/{paymentCustomerId}
-     * Update payment customer
-     * @param paymentCustomerId Payment customer id (required)
+     * Update Payment Customer
+     * Updates the specified Payment Customer with the given data.
+     * @param paymentCustomerId Payment Customer ID (required)
      * @param body Payment customer properties
      * @return ApiResponse&lt;PaymentCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -389,9 +389,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * PUT Payment/Customers/{paymentCustomerId} (asynchronously)
-     * Update payment customer
-     * @param paymentCustomerId Payment customer id (required)
+     * Update Payment Customer (asynchronously)
+     * Updates the specified Payment Customer with the given data.
+     * @param paymentCustomerId Payment Customer ID (required)
      * @param body Payment customer properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -406,7 +406,7 @@ public class PaymentCustomersApi {
 
     /**
      * Build call for paymentCustomersPost
-     * @param body Payment customer properties
+     * @param body Details of the new Payment Customer
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -446,9 +446,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * POST Payment/Customers
-     * Add new customer
-     * @param body Payment customer properties
+     * Create Payment Customer
+     * Creates a new Payment Customer with the given data.
+     * @param body Details of the new Payment Customer
      * @return PaymentCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -458,9 +458,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * POST Payment/Customers
-     * Add new customer
-     * @param body Payment customer properties
+     * Create Payment Customer
+     * Creates a new Payment Customer with the given data.
+     * @param body Details of the new Payment Customer
      * @return ApiResponse&lt;PaymentCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -471,9 +471,9 @@ public class PaymentCustomersApi {
     }
 
     /**
-     * POST Payment/Customers (asynchronously)
-     * Add new customer
-     * @param body Payment customer properties
+     * Create Payment Customer (asynchronously)
+     * Creates a new Payment Customer with the given data.
+     * @param body Details of the new Payment Customer
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

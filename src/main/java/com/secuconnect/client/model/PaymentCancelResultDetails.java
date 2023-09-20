@@ -22,7 +22,7 @@ public class PaymentCancelResultDetails {
   }
 
    /**
-   * The transaction ID of the refund transaction
+   * Transaction ID of the Payment Transaction for the refund
    * @return newTransId
   **/
   public Integer getNewTransId() {
@@ -39,7 +39,7 @@ public class PaymentCancelResultDetails {
   }
 
    /**
-   * The remaining amount in case of a partial refund/cancel
+   * Remaining amount in case of a partial cancellation or refund
    * @return remainingAmount
   **/
   public Integer getRemainingAmount() {
@@ -56,7 +56,7 @@ public class PaymentCancelResultDetails {
   }
 
    /**
-   * If the merchant needs to transfer money back, this will be true
+   * Whether the merchant needs to transfer money back, before we will pay out the refund
    * @return refundWaitingForPayment
   **/
   public Boolean getRefundWaitingForPayment() {

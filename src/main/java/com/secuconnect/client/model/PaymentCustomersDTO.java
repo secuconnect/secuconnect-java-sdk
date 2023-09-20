@@ -5,7 +5,7 @@ import com.secuconnect.client.model.Contact;
 import java.util.Objects;
 
 /**
- * PaymentCustomersDTO
+ * Customer details
  */
 public class PaymentCustomersDTO {
   @SerializedName("contact")

@@ -77,8 +77,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * POST Payment/Mandates
-     * Add new Mandate
+     * Create Payment Mandate
+     * Creates a new Payment Mandate from the given data.
      * @param body Payment mandate properties
      * @return PaymentMandatesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -89,8 +89,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * POST Payment/Mandates
-     * Add new Mandate
+     * Create Payment Mandate
+     * Creates a new Payment Mandate from the given data.
      * @param body Payment mandate properties
      * @return ApiResponse&lt;PaymentMandatesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -102,8 +102,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * POST Payment/Mandates (asynchronously)
-     * Add new Mandate
+     * Create Payment Mandate (asynchronously)
+     * Creates a new Payment Mandate from the given data.
      * @param body Payment mandate properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -158,8 +158,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * POST Payment/Mandates/me/bulk
-     * Add new payment Mandates as bulk
+     * Create Payment Mandates as bulk
+     * Adds new payment Mandates as bulk.
      * @param body Array of payment mandates
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -168,8 +168,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * POST Payment/Mandates/me/bulk
-     * Add new payment Mandates as bulk
+     * Create Payment Mandates as bulk
+     * Adds new payment Mandates as bulk.
      * @param body Array of payment mandates
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -180,8 +180,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * POST Payment/Mandates/me/bulk (asynchronously)
-     * Add new payment Mandates as bulk
+     * Create Payment Mandates as bulk (asynchronously)
+     * Adds new payment Mandates as bulk.
      * @param body Array of payment mandates
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -249,8 +249,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * GET Payment/Mandates
-     * Get a list of payment mandates
+     * Find Payment Mandates
+     * Returns the Payment Mandates matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -265,8 +265,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * GET Payment/Mandates
-     * Get a list of payment mandates
+     * Find Payment Mandates
+     * Returns the Payment Mandates matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -282,8 +282,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * GET Payment/Mandates (asynchronously)
-     * Get a list of payment mandates
+     * Find Payment Mandates (asynchronously)
+     * Returns the Payment Mandates matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -347,8 +347,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * GET Payment/Mandates/{paymentMandatesId}
-     * Get payment mandate for a specific id
+     * Read Payment Mandate
+     * Returns the specified Payment Mandate.
      * @param paymentMandatesId Search one payment mandate by provided id (required)
      * @return PaymentMandatesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -359,8 +359,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * GET Payment/Mandates/{paymentMandatesId}
-     * Get payment mandate for a specific id
+     * Read Payment Mandate
+     * Returns the specified Payment Mandate.
      * @param paymentMandatesId Search one payment mandate by provided id (required)
      * @return ApiResponse&lt;PaymentMandatesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -372,8 +372,8 @@ public class PaymentMandatesApi {
     }
 
     /**
-     * GET Payment/Mandates/{paymentMandatesId} (asynchronously)
-     * Get payment mandate for a specific id
+     * Read Payment Mandate (asynchronously)
+     * Returns the specified Payment Mandate.
      * @param paymentMandatesId Search one payment mandate by provided id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

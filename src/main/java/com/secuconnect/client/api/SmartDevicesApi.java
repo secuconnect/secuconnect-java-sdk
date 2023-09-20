@@ -78,8 +78,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * POST Smart/Devices
-     * Create new smart device
+     * Create Smart Device
+     * Creates a new Smart Device from the given data.
      * @param body Smart device properties
      * @return SmartDevicesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -90,8 +90,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * POST Smart/Devices
-     * Create new smart device
+     * Create Smart Device
+     * Creates a new Smart Device from the given data.
      * @param body Smart device properties
      * @return ApiResponse&lt;SmartDevicesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -103,8 +103,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * POST Smart/Devices (asynchronously)
-     * Create new smart device
+     * Create Smart Device (asynchronously)
+     * Creates a new Smart Device from the given data.
      * @param body Smart device properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -173,8 +173,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices
-     * Get a list of smart devices
+     * Find Smart Devices
+     * Returns the Smart Devices matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -189,8 +189,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices
-     * Get a list of smart devices
+     * Find Smart Devices
+     * Returns the Smart Devices matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -206,8 +206,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices (asynchronously)
-     * Get a list of smart devices
+     * Find Smart Devices (asynchronously)
+     * Returns the Smart Devices matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -271,8 +271,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices/{smartDeviceId}
-     * Get one smart device for a specific id
+     * Read Smart Device
+     * Returns the specified Smart Device.
      * @param smartDeviceId Smart device id (required)
      * @return SmartDevicesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -283,8 +283,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices/{smartDeviceId}
-     * Get one smart device for a specific id
+     * Read Smart Device
+     * Returns the specified Smart Device.
      * @param smartDeviceId Smart device id (required)
      * @return ApiResponse&lt;SmartDevicesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -296,8 +296,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices/{smartDeviceId} (asynchronously)
-     * Get one smart device for a specific id
+     * Read Smart Device (asynchronously)
+     * Returns the specified Smart Device.
      * @param smartDeviceId Smart device id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -363,8 +363,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices/{smartDeviceId}/routing/{type}
-     * Get requested smart device if it is assigned to a single routing
+     * Get with routing
+     * Returns the specified Smart Device if it is assigned to a single routing.
      * @param smartDeviceId Smart device id (required)
      * @param type Smart Device Type (required)
      * @return SmartDevicesProductModel
@@ -376,8 +376,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices/{smartDeviceId}/routing/{type}
-     * Get requested smart device if it is assigned to a single routing
+     * Get with routing
+     * Returns the specified Smart Device if it is assigned to a single routing.
      * @param smartDeviceId Smart device id (required)
      * @param type Smart Device Type (required)
      * @return ApiResponse&lt;SmartDevicesProductModel&gt;
@@ -390,8 +390,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * GET Smart/Devices/{smartDeviceId}/routing/{type} (asynchronously)
-     * Get requested smart device if it is assigned to a single routing
+     * Get with routing (asynchronously)
+     * Returns the specified Smart Device if it is assigned to a single routing.
      * @param smartDeviceId Smart device id (required)
      * @param type Smart Device Type (required)
      * @param callback The callback to be executed when the API call finishes
@@ -453,8 +453,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * PUT Smart/Devices/{smartDeviceId}
-     * Update smart device
+     * Update Smart Device
+     * Updates the specified Smart Device with the given data.
      * @param smartDeviceId Smart device id (required)
      * @param body Smart device properties
      * @return SmartDevicesProductModel
@@ -466,8 +466,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * PUT Smart/Devices/{smartDeviceId}
-     * Update smart device
+     * Update Smart Device
+     * Updates the specified Smart Device with the given data.
      * @param smartDeviceId Smart device id (required)
      * @param body Smart device properties
      * @return ApiResponse&lt;SmartDevicesProductModel&gt;
@@ -480,8 +480,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * PUT Smart/Devices/{smartDeviceId} (asynchronously)
-     * Update smart device
+     * Update Smart Device (asynchronously)
+     * Updates the specified Smart Device with the given data.
      * @param smartDeviceId Smart device id (required)
      * @param body Smart device properties
      * @param callback The callback to be executed when the API call finishes
@@ -543,8 +543,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * PUT /Smart/Devices/{smartDeviceId}/pin
-     * Update Smart Device Pin to authenticate device
+     * Set device PIN
+     * Sets the PIN that needs to be passed to authenticate the Smart Device.
      * @param smartDeviceId Smart device id (required)
      * @param body Smart device properties
      * @return SmartDevicesProductModel
@@ -556,8 +556,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * PUT /Smart/Devices/{smartDeviceId}/pin
-     * Update Smart Device Pin to authenticate device
+     * Set device PIN
+     * Sets the PIN that needs to be passed to authenticate the Smart Device.
      * @param smartDeviceId Smart device id (required)
      * @param body Smart device properties
      * @return ApiResponse&lt;SmartDevicesProductModel&gt;
@@ -570,8 +570,8 @@ public class SmartDevicesApi {
     }
 
     /**
-     * PUT /Smart/Devices/{smartDeviceId}/pin (asynchronously)
-     * Update Smart Device Pin to authenticate device
+     * Set device PIN (asynchronously)
+     * Sets the PIN that needs to be passed to authenticate the Smart Device.
      * @param smartDeviceId Smart device id (required)
      * @param body Smart device properties
      * @param callback The callback to be executed when the API call finishes

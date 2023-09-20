@@ -37,7 +37,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * Card holder
+   * Card holder name
    * @return owner
   **/
   public String getOwner() {
@@ -71,7 +71,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * Date and time when the card will expire; the system must pass 2023-07-01T00:00:00 if the card is valid thru 06/23
+   * Card expiration date, ISO-8601 formatted; one must pass 2023-06 if the card is ”valid thru 06/23“
    * @return expirationDate
   **/
   public String getExpirationDate() {
@@ -88,7 +88,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * Card brand or scheme like VISA, or MasterCard
+   * Card brand, like VISA or MasterCard
    * @return issuer
   **/
   public String getIssuer() {

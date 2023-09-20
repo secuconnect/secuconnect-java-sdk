@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsCommunication
+ * Send an email with execution of the Smart Transaction; loyalty card only
  */
 public class SmartTransactionsCommunication {
   @SerializedName("action_type")
@@ -19,7 +19,7 @@ public class SmartTransactionsCommunication {
   }
 
    /**
-   * action type
+   * On which action the email shall be sent
    * @return actionType
   **/
   public String getActionType() {
@@ -36,7 +36,7 @@ public class SmartTransactionsCommunication {
   }
 
    /**
-   * template id
+   * Template ID
    * @return templateId
   **/
   public String getTemplateId() {

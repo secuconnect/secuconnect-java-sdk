@@ -29,7 +29,7 @@ public class PaymentContractsDTOClone {
   }
 
    /**
-   * Parent General Contract ID
+   * General Contract ID of the parent contract
    * @return contractId
   **/
   public String getContractId() {
@@ -46,7 +46,7 @@ public class PaymentContractsDTOClone {
   }
 
    /**
-   * Name of the project (must be unique)
+   * Project name (must be unique)
    * @return project
   **/
   public String getProject() {
@@ -80,7 +80,7 @@ public class PaymentContractsDTOClone {
   }
 
    /**
-   * Pay in account
+   * Pay-in account
    * @return payinAccount
   **/
   public Boolean getPayinAccount() {
@@ -97,7 +97,7 @@ public class PaymentContractsDTOClone {
   }
 
    /**
-   * The default URL where your service listen for push notifications of the secuconnect service
+   * Default URL for push notifications; this is where your service listens for callbacks of the secuconnect service
    * @return urlPush
   **/
   public String getUrlPush() {

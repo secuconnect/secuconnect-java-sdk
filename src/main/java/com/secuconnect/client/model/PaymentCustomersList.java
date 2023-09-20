@@ -40,7 +40,7 @@ public class PaymentCustomersList {
   }
 
    /**
-   * Number of existing payment customers
+   * Number of matching Payment Customers
    * @return count
   **/
   public Integer getCount() {

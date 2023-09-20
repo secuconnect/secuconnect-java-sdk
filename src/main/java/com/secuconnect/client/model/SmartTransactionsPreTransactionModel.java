@@ -22,7 +22,7 @@ public class SmartTransactionsPreTransactionModel {
   }
 
    /**
-   * missing sum
+   * Amount to pay after applying the secucard; in the smallest currency unit (e.g. Euro Cent)
    * @return missingSum
   **/
   public Integer getMissingSum() {

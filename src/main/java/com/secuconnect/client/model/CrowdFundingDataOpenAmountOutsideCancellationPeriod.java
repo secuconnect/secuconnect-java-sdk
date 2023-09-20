@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Open total of transaction which outside of the cancellation period
+ * Total amount outside the cancellation period, in the smallest currency unit (e. g. Euro Cent)
  */
 public class CrowdFundingDataOpenAmountOutsideCancellationPeriod {
   @SerializedName("total")

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsPaymentLinks
+ * Payment links
  */
 public class SmartTransactionsPaymentLinks {
   @SerializedName("prepaid")
@@ -34,7 +34,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * process with pay in advance
+   * URL for prepayment
    * @return prepaid
   **/
   public String getPrepaid() {
@@ -51,7 +51,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * process with SEPA direct debit
+   * URL for SEPA direct debit
    * @return debit
   **/
   public String getDebit() {
@@ -68,7 +68,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * process with credit card
+   * URL for credit card payment
    * @return creditcard
   **/
   public String getCreditcard() {
@@ -85,7 +85,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * process with pay on invoice
+   * URL for invoice payment
    * @return invoice
   **/
   public String getInvoice() {
@@ -102,7 +102,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * process with PayPal
+   * URL for PayPal payment
    * @return paypal
   **/
   public String getPaypal() {
@@ -119,7 +119,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * process with Sofort
+   * URL for klarna Sofort payment
    * @return sofort
   **/
   public String getSofort() {
@@ -136,7 +136,7 @@ public class SmartTransactionsPaymentLinks {
   }
 
    /**
-   * process with selecting a payment method
+   * URL for payment with any available payment method
    * @return general
   **/
   public String getGeneral() {

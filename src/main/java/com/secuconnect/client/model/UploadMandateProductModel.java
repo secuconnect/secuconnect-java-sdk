@@ -16,7 +16,7 @@ public class UploadMandateProductModel {
   }
 
    /**
-   * Newly created issue id
+   * Service Case number
    * @return serviceIssueId
   **/
   public Integer getServiceIssueId() {

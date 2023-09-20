@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Open total of transaction which inside of the cancellation period
+ * Total amount within the cancellation period, in the smallest currency unit (e. g. Euro Cent)
  */
 public class CrowdFundingDataOpenAmountInsideCancelPeriod {
   @SerializedName("total")
@@ -31,7 +31,7 @@ public class CrowdFundingDataOpenAmountInsideCancelPeriod {
   }
 
    /**
-   * Total of all open amounts
+   * Total amount in the smallest currency unit (e. g. Euro Cent)
    * @return total
   **/
   public Integer getTotal() {
@@ -48,7 +48,7 @@ public class CrowdFundingDataOpenAmountInsideCancelPeriod {
   }
 
    /**
-   * Total of debit open amounts
+   * Total amount for debit transactions, in the smallest currency unit (e. g. Euro Cent)
    * @return debit
   **/
   public Integer getDebit() {
@@ -65,7 +65,7 @@ public class CrowdFundingDataOpenAmountInsideCancelPeriod {
   }
 
    /**
-   * Total of credit card open amounts
+   * Total amount for credit card transactions, in the smallest currency unit (e. g. Euro Cent)
    * @return creditCard
   **/
   public Integer getCreditCard() {
@@ -82,7 +82,7 @@ public class CrowdFundingDataOpenAmountInsideCancelPeriod {
   }
 
    /**
-   * Total of prepay open amounts
+   * Total amount for prepayment transactions, in the smallest currency unit (e. g. Euro Cent)
    * @return prepay
   **/
   public Integer getPrepay() {
@@ -99,7 +99,7 @@ public class CrowdFundingDataOpenAmountInsideCancelPeriod {
   }
 
    /**
-   * Total of sofort open amounts
+   * Total amount for klarna Sofort transactions, in the smallest currency unit (e. g. Euro Cent)
    * @return sofort
   **/
   public Integer getSofort() {
@@ -116,7 +116,7 @@ public class CrowdFundingDataOpenAmountInsideCancelPeriod {
   }
 
    /**
-   * Total of twint open amounts
+   * Total amount for Twint transactions, in the smallest currency unit (e. g. Euro Cent)
    * @return twint
   **/
   public Integer getTwint() {

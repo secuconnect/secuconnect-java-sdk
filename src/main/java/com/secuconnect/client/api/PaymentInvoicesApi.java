@@ -90,8 +90,8 @@ public class PaymentInvoicesApi {
     }
 
     /**
-     * GET Payment/Invoices
-     * Get a list of payment invoices
+     * Find Payment Invoices
+     * Returns the Payment Invoices matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -106,8 +106,8 @@ public class PaymentInvoicesApi {
     }
 
     /**
-     * GET Payment/Invoices
-     * Get a list of payment invoices
+     * Find Payment Invoices
+     * Returns the Payment Invoices matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -123,8 +123,8 @@ public class PaymentInvoicesApi {
     }
 
     /**
-     * GET Payment/Invoices (asynchronously)
-     * Get a list of payment invoices
+     * Find Payment Invoices (asynchronously)
+     * Returns the Payment Invoices matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -188,8 +188,8 @@ public class PaymentInvoicesApi {
     }
 
     /**
-     * GET Payment/Invoices/{paymentInvoiceId}
-     * Get one specific payment invoice
+     * Read Payment Invoice
+     * Returns the specified Payment Invoice.
      * @param paymentInvoiceId Payment invoice id (required)
      * @return PaymentInvoicesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -200,8 +200,8 @@ public class PaymentInvoicesApi {
     }
 
     /**
-     * GET Payment/Invoices/{paymentInvoiceId}
-     * Get one specific payment invoice
+     * Read Payment Invoice
+     * Returns the specified Payment Invoice.
      * @param paymentInvoiceId Payment invoice id (required)
      * @return ApiResponse&lt;PaymentInvoicesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -213,8 +213,8 @@ public class PaymentInvoicesApi {
     }
 
     /**
-     * GET Payment/Invoices/{paymentInvoiceId} (asynchronously)
-     * Get one specific payment invoice
+     * Read Payment Invoice (asynchronously)
+     * Returns the specified Payment Invoice.
      * @param paymentInvoiceId Payment invoice id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

@@ -45,7 +45,7 @@ public class SecupayTransactionSetShippingInformationDTO {
   }
 
    /**
-   * Tracking-ID
+   * Tracking code
    * @return trackingId
   **/
   public String getTrackingId() {
@@ -62,7 +62,7 @@ public class SecupayTransactionSetShippingInformationDTO {
   }
 
    /**
-   * Merchants invoice number
+   * Merchant&#x27;s invoice number
    * @return invoiceNumber
   **/
   public String getInvoiceNumber() {
@@ -79,7 +79,7 @@ public class SecupayTransactionSetShippingInformationDTO {
   }
 
    /**
-   * Timestamp of the shipping date
+   * Shipping date and time, if not in the very moment; ISO 8601 date and time including timezone, like \&quot;2023-02-28T10:55:27+02:00\&quot;
    * @return shippedAt
   **/
   public String getShippedAt() {
@@ -96,7 +96,7 @@ public class SecupayTransactionSetShippingInformationDTO {
   }
 
    /**
-   * Order-ID
+   * Merchant&#x27;s order number
    * @return orderId
   **/
   public String getOrderId() {

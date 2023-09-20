@@ -9,13 +9,7 @@ import java.util.Objects;
  */
 public class CrowdFundingDataDetails {
   @SerializedName("currency")
-  protected String currency = "EUR";
-
-  @SerializedName("total_amount")
-  protected Integer totalAmount = null;
-
-  @SerializedName("total_count")
-  protected Integer totalCount = null;
+  protected String currency = null;
 
   @SerializedName("debit")
   protected PaymentMethodBreakdown debit = null;
@@ -38,7 +32,7 @@ public class CrowdFundingDataDetails {
   }
 
    /**
-   * ISO code of the currency for this merchant
+   * Get currency
    * @return currency
   **/
   public String getCurrency() {
@@ -47,40 +41,6 @@ public class CrowdFundingDataDetails {
 
   public void setCurrency(String currency) {
     this.currency = currency;
-  }
-
-  public CrowdFundingDataDetails totalAmount(Integer totalAmount) {
-    this.totalAmount = totalAmount;
-    return this;
-  }
-
-   /**
-   * Total transaction amount of all transactions for this merchant
-   * @return totalAmount
-  **/
-  public Integer getTotalAmount() {
-    return totalAmount;
-  }
-
-  public void setTotalAmount(Integer totalAmount) {
-    this.totalAmount = totalAmount;
-  }
-
-  public CrowdFundingDataDetails totalCount(Integer totalCount) {
-    this.totalCount = totalCount;
-    return this;
-  }
-
-   /**
-   * Count of the transactions
-   * @return totalCount
-  **/
-  public Integer getTotalCount() {
-    return totalCount;
-  }
-
-  public void setTotalCount(Integer totalCount) {
-    this.totalCount = totalCount;
   }
 
   public CrowdFundingDataDetails debit(PaymentMethodBreakdown debit) {
@@ -178,8 +138,6 @@ public class CrowdFundingDataDetails {
     }
     CrowdFundingDataDetails crowdFundingDataDetails = (CrowdFundingDataDetails) o;
     return Objects.equals(this.currency, crowdFundingDataDetails.currency) &&
-        Objects.equals(this.totalAmount, crowdFundingDataDetails.totalAmount) &&
-        Objects.equals(this.totalCount, crowdFundingDataDetails.totalCount) &&
         Objects.equals(this.debit, crowdFundingDataDetails.debit) &&
         Objects.equals(this.creditCard, crowdFundingDataDetails.creditCard) &&
         Objects.equals(this.prepay, crowdFundingDataDetails.prepay) &&
@@ -189,7 +147,7 @@ public class CrowdFundingDataDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(currency, totalAmount, totalCount, debit, creditCard, prepay, sofort, twint);
+    return Objects.hash(currency, debit, creditCard, prepay, sofort, twint);
   }
 
   @Override
@@ -197,8 +155,6 @@ public class CrowdFundingDataDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class CrowdFundingDataDetails {\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
-    sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
     sb.append("    debit: ").append(toIndentedString(debit)).append("\n");
     sb.append("    creditCard: ").append(toIndentedString(creditCard)).append("\n");
     sb.append("    prepay: ").append(toIndentedString(prepay)).append("\n");

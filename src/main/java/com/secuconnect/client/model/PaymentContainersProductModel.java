@@ -255,7 +255,7 @@ public class PaymentContainersProductModel extends BaseProductModel {
   }
 
    /**
-   * Type of payment container
+   * Container type
    * @return type
   **/
   public String getType() {

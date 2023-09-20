@@ -1,7 +1,7 @@
 package com.secuconnect.client.model;
 
 /**
-* SmartTransactionsBaseDeliveryOptionsModel
+* Delivery options, either for shipping or collection
 */
 public interface OneOfSmartTransactionsDeliveryOptionsModel {
 

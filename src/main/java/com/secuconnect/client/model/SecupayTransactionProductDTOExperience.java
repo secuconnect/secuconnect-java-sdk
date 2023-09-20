@@ -19,7 +19,7 @@ public class SecupayTransactionProductDTOExperience {
   }
 
    /**
-   * Score of positive experience (paid orders)
+   * Number of paid orders
    * @return positive
   **/
   public Integer getPositive() {
@@ -36,7 +36,7 @@ public class SecupayTransactionProductDTOExperience {
   }
 
    /**
-   * Score of negative experience (open/unpaid orders)
+   * Number of open or unpaid orders
    * @return negative
   **/
   public Integer getNegative() {

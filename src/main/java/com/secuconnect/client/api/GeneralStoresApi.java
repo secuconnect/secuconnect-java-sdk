@@ -80,8 +80,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * POST General/Stores
-     * Create general store
+     * Create General Store
+     * Creates a new General Store from the given data.
      * @param body General store properties
      * @return GeneralStoresProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -92,8 +92,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * POST General/Stores
-     * Create general store
+     * Create General Store
+     * Creates a new General Store from the given data.
      * @param body General store properties
      * @return ApiResponse&lt;GeneralStoresProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -105,8 +105,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * POST General/Stores (asynchronously)
-     * Create general store
+     * Create General Store (asynchronously)
+     * Creates a new General Store from the given data.
      * @param body General store properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -167,7 +167,7 @@ public class GeneralStoresApi {
     }
 
     /**
-     * POST General/Stores/{generalStoreId}/checkin
+     * Check in
      * Check in
      * @param generalStoreId General store id (required)
      * @param body General store properties
@@ -180,7 +180,7 @@ public class GeneralStoresApi {
     }
 
     /**
-     * POST General/Stores/{generalStoreId}/checkin
+     * Check in
      * Check in
      * @param generalStoreId General store id (required)
      * @param body General store properties
@@ -194,7 +194,7 @@ public class GeneralStoresApi {
     }
 
     /**
-     * POST General/Stores/{generalStoreId}/checkin (asynchronously)
+     * Check in (asynchronously)
      * Check in
      * @param generalStoreId General store id (required)
      * @param body General store properties
@@ -265,8 +265,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * GET General/Stores
-     * Get a list of general stores
+     * Find General Stores
+     * Returns the General Stores matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -281,8 +281,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * GET General/Stores
-     * Get a list of general stores
+     * Find General Stores
+     * Returns the General Stores matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -298,8 +298,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * GET General/Stores (asynchronously)
-     * Get a list of general stores
+     * Find General Stores (asynchronously)
+     * Returns the General Stores matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -363,8 +363,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * GET General/Stores/{generalStoreId}
-     * Get one general store for a specific id
+     * Read General Store
+     * Returns the specified General Store.
      * @param generalStoreId General store id (required)
      * @return GeneralStoresProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -375,8 +375,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * GET General/Stores/{generalStoreId}
-     * Get one general store for a specific id
+     * Read General Store
+     * Returns the specified General Store.
      * @param generalStoreId General store id (required)
      * @return ApiResponse&lt;GeneralStoresProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -388,8 +388,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * GET General/Stores/{generalStoreId} (asynchronously)
-     * Get one general store for a specific id
+     * Read General Store (asynchronously)
+     * Returns the specified General Store.
      * @param generalStoreId General store id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -450,8 +450,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * POST General/Stores/{generalStoreId}/setDefault
-     * Set default flag on general store
+     * Make default store
+     * Makes the specified General Store the default store of its General Merchant.
      * @param generalStoreId General store id (required)
      * @param body Reason
      * @return ResultBoolean
@@ -463,8 +463,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * POST General/Stores/{generalStoreId}/setDefault
-     * Set default flag on general store
+     * Make default store
+     * Makes the specified General Store the default store of its General Merchant.
      * @param generalStoreId General store id (required)
      * @param body Reason
      * @return ApiResponse&lt;ResultBoolean&gt;
@@ -477,8 +477,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * POST General/Stores/{generalStoreId}/setDefault (asynchronously)
-     * Set default flag on general store
+     * Make default store (asynchronously)
+     * Makes the specified General Store the default store of its General Merchant.
      * @param generalStoreId General store id (required)
      * @param body Reason
      * @param callback The callback to be executed when the API call finishes
@@ -540,8 +540,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * PUT General/Stores/{generalStoreId}
-     * Update general store
+     * Update General Store
+     * Updates the specified General Store with the given data.
      * @param generalStoreId General store id (required)
      * @param body General store properties
      * @return GeneralStoresProductModel
@@ -553,8 +553,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * PUT General/Stores/{generalStoreId}
-     * Update general store
+     * Update General Store
+     * Updates the specified General Store with the given data.
      * @param generalStoreId General store id (required)
      * @param body General store properties
      * @return ApiResponse&lt;GeneralStoresProductModel&gt;
@@ -567,8 +567,8 @@ public class GeneralStoresApi {
     }
 
     /**
-     * PUT General/Stores/{generalStoreId} (asynchronously)
-     * Update general store
+     * Update General Store (asynchronously)
+     * Updates the specified General Store with the given data.
      * @param generalStoreId General store id (required)
      * @param body General store properties
      * @param callback The callback to be executed when the API call finishes

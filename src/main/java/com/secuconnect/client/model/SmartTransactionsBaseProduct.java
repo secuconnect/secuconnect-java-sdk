@@ -34,7 +34,7 @@ public class SmartTransactionsBaseProduct {
   }
 
    /**
-   * Bonus Product ID
+   * Item ID
    * @return id
   **/
   public Integer getId() {
@@ -85,7 +85,7 @@ public class SmartTransactionsBaseProduct {
   }
 
    /**
-   * amount of bonus products
+   * Quantity (always &#x60;1&#x60;)
    * @return quantity
   **/
   public Integer getQuantity() {
@@ -102,7 +102,7 @@ public class SmartTransactionsBaseProduct {
   }
 
    /**
-   * description
+   * Description
    * @return desc
   **/
   public String getDesc() {
@@ -119,7 +119,7 @@ public class SmartTransactionsBaseProduct {
   }
 
    /**
-   * article Number
+   * Article number
    * @return articleNumber
   **/
   public String getArticleNumber() {
