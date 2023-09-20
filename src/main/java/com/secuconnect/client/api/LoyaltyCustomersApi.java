@@ -77,8 +77,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * POST Loyalty/Customers
-     * Add loyalty customer
+     * Create Loyalty Customer
+     * Creates a new Loyalty Customer from the given data.
      * @param body loyalty Customer container properties
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -89,8 +89,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * POST Loyalty/Customers
-     * Add loyalty customer
+     * Create Loyalty Customer
+     * Creates a new Loyalty Customer from the given data.
      * @param body loyalty Customer container properties
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -102,8 +102,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * POST Loyalty/Customers (asynchronously)
-     * Add loyalty customer
+     * Create Loyalty Customer (asynchronously)
+     * Creates a new Loyalty Customer from the given data.
      * @param body loyalty Customer container properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -169,8 +169,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
-     * Assigns LoyaltyPaymentContainer to customer
+     * Assign payment container to customer
+     * Assigns the specified Loyalty PaymentContainer to the specified Loyalty Customer.
      * @param loyaltyCustomerId Loyalty customer id (required)
      * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @return LoyaltyCustomersProductModel
@@ -182,8 +182,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
-     * Assigns LoyaltyPaymentContainer to customer
+     * Assign payment container to customer
+     * Assigns the specified Loyalty PaymentContainer to the specified Loyalty Customer.
      * @param loyaltyCustomerId Loyalty customer id (required)
      * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
@@ -196,8 +196,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * POST Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId} (asynchronously)
-     * Assigns LoyaltyPaymentContainer to customer
+     * Assign payment container to customer (asynchronously)
+     * Assigns the specified Loyalty PaymentContainer to the specified Loyalty Customer.
      * @param loyaltyCustomerId Loyalty customer id (required)
      * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @param callback The callback to be executed when the API call finishes
@@ -267,8 +267,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * GET Loyalty/Customers
-     * Get a list of loyalty customers
+     * Find Loyalty Customers
+     * Returns the Loyalty Customers matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -283,8 +283,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * GET Loyalty/Customers
-     * Get a list of loyalty customers
+     * Find Loyalty Customers
+     * Returns the Loyalty Customers matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -300,8 +300,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * GET Loyalty/Customers (asynchronously)
-     * Get a list of loyalty customers
+     * Find Loyalty Customers (asynchronously)
+     * Returns the Loyalty Customers matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -365,8 +365,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * GET Loyalty/Customers/{loyaltyCustomerId}
-     * Get loyalty customer for a specific id
+     * Read Loyalty Customer
+     * Returns the specified Loyalty Customer.
      * @param loyaltyCustomerId Search one loyalty customer by provided id (required)
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -377,8 +377,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * GET Loyalty/Customers/{loyaltyCustomerId}
-     * Get loyalty customer for a specific id
+     * Read Loyalty Customer
+     * Returns the specified Loyalty Customer.
      * @param loyaltyCustomerId Search one loyalty customer by provided id (required)
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -390,8 +390,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * GET Loyalty/Customers/{loyaltyCustomerId} (asynchronously)
-     * Get loyalty customer for a specific id
+     * Read Loyalty Customer (asynchronously)
+     * Returns the specified Loyalty Customer.
      * @param loyaltyCustomerId Search one loyalty customer by provided id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -457,8 +457,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
-     * Removes an assigned LoyaltyPaymentContainer from customer
+     * Unassign payment container from customer
+     * Removes the assignment of the specified Loyalty PaymentContainer to the specified Loyalty Customer.
      * @param loyaltyCustomerId Loyalty customer id (required)
      * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @return LoyaltyCustomersProductModel
@@ -470,8 +470,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId}
-     * Removes an assigned LoyaltyPaymentContainer from customer
+     * Unassign payment container from customer
+     * Removes the assignment of the specified Loyalty PaymentContainer to the specified Loyalty Customer.
      * @param loyaltyCustomerId Loyalty customer id (required)
      * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
@@ -484,8 +484,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * DELETE Loyalty/Customers/{loyaltyCustomerId}/assignPaymentContainer/{loyaltyPaymentContainerId} (asynchronously)
-     * Removes an assigned LoyaltyPaymentContainer from customer
+     * Unassign payment container from customer (asynchronously)
+     * Removes the assignment of the specified Loyalty PaymentContainer to the specified Loyalty Customer.
      * @param loyaltyCustomerId Loyalty customer id (required)
      * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
      * @param callback The callback to be executed when the API call finishes
@@ -547,8 +547,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * PUT Loyalty/Customers/{loyaltyCustomerId}
-     * Function to update customer&#x27;s data
+     * Update Loyalty Customer
+     * Updates the specified Loyalty Customer with the given data.
      * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
      * @param body loyalty Customer container properties
      * @return LoyaltyCustomersProductModel
@@ -560,8 +560,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * PUT Loyalty/Customers/{loyaltyCustomerId}
-     * Function to update customer&#x27;s data
+     * Update Loyalty Customer
+     * Updates the specified Loyalty Customer with the given data.
      * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
      * @param body loyalty Customer container properties
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
@@ -574,8 +574,8 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * PUT Loyalty/Customers/{loyaltyCustomerId} (asynchronously)
-     * Function to update customer&#x27;s data
+     * Update Loyalty Customer (asynchronously)
+     * Updates the specified Loyalty Customer with the given data.
      * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
      * @param body loyalty Customer container properties
      * @param callback The callback to be executed when the API call finishes

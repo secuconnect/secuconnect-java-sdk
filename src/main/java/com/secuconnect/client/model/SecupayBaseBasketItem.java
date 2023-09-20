@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Item describing single position in basket in transaction
+ * Single position in basket
  */
 public class SecupayBaseBasketItem {
   @SerializedName("item_type")
@@ -58,7 +58,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Line type {&#x27;article&#x27;, &#x27;sub_transaction&#x27;, &#x27;stakeholder_payment&#x27;, &#x27;shipping&#x27;, &#x27;subscription&#x27;}
+   * Item type:  - &#x60;\&quot;article\&quot;&#x60; - &#x60;\&quot;sub_transaction\&quot;&#x60; - &#x60;\&quot;stakeholder_payment\&quot;&#x60; - &#x60;\&quot;shipping\&quot;&#x60; - &#x60;\&quot;subscription\&quot;&#x60;
    * @return itemType
   **/
   public String getItemType() {
@@ -75,7 +75,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Your article number, storage key unit (SKU)
+   * Your article number (SKU)
    * @return articleNumber
   **/
   public String getArticleNumber() {
@@ -126,7 +126,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Model of item
+   * Product variation
    * @return model
   **/
   public String getModel() {
@@ -228,7 +228,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Subscription plan id
+   * Subscription plan ID
    * @return planId
   **/
   public String getPlanId() {
@@ -245,7 +245,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Subscription start at date
+   * Subscription start date
    * @return startAt
   **/
   public String getStartAt() {
@@ -296,7 +296,7 @@ public class SecupayBaseBasketItem {
   }
 
    /**
-   * Unique line identifier, used to maintain the basket before the transaction is executed
+   * Unique line identifier, used to manage the basket before the transaction is executed
    * @return referenceId
   **/
   public String getReferenceId() {

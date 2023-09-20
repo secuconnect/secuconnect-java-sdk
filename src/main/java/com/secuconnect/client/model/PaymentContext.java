@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * PaymentContext
+ * Controls some payment details
  */
 public class PaymentContext {
   @SerializedName("auto_capture")
@@ -30,7 +30,7 @@ public class PaymentContext {
   }
 
    /**
-   * auto capture the smart transaction
+   * Whether the Smart Transation is executed automatically after successful authorisation; this can save the extra call to &#x60;/start&#x60;
    * @return autoCapture
   **/
   public Boolean getAutoCapture() {
@@ -55,7 +55,7 @@ public class PaymentContext {
   }
 
    /**
-   * Get paymentMethods
+   * Wanted payment methods:  - &#x60;\&quot;creditcard\&quot;&#x60; - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60;
    * @return paymentMethods
   **/
   public List<String> getPaymentMethods() {
@@ -72,7 +72,7 @@ public class PaymentContext {
   }
 
    /**
-   * is this smart transaction created automatically by the merchant (process without customer interaction)
+   * Whether this is a merchant initiated transaction (MIT), created without customer interaction
    * @return merchantInitiated
   **/
   public Boolean getMerchantInitiated() {
@@ -83,29 +83,12 @@ public class PaymentContext {
     this.merchantInitiated = merchantInitiated;
   }
 
-  public PaymentContext creditcardSchemes(List<String> creditcardSchemes) {
-    this.creditcardSchemes = creditcardSchemes;
-    return this;
-  }
-
-  public PaymentContext addCreditcardSchemesItem(String creditcardSchemesItem) {
-    if (this.creditcardSchemes == null) {
-      this.creditcardSchemes = new ArrayList<String>();
-    }
-    this.creditcardSchemes.add(creditcardSchemesItem);
-    return this;
-  }
-
    /**
-   * The supported credit card schemes with given contract
+   * Supported credit card networks of the given contract
    * @return creditcardSchemes
   **/
   public List<String> getCreditcardSchemes() {
     return creditcardSchemes;
-  }
-
-  public void setCreditcardSchemes(List<String> creditcardSchemes) {
-    this.creditcardSchemes = creditcardSchemes;
   }
 
   public PaymentContext accrual(Boolean accrual) {
@@ -114,7 +97,7 @@ public class PaymentContext {
   }
 
    /**
-   * sets accrual flag to payment transaction when created
+   * Whether to set the accrual flag, when the Payment Transaction is created. The payment will not be executed until the accrual flag of the Payment Transaction is removed.
    * @return accrual
   **/
   public Boolean getAccrual() {

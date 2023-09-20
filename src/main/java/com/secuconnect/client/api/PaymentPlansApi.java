@@ -91,8 +91,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * GET Payment/Plans
-     * Get a list of payment plans
+     * Find Payment Plans
+     * Returns the Payment Plans matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -107,8 +107,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * GET Payment/Plans
-     * Get a list of payment plans
+     * Find Payment Plans
+     * Returns the Payment Plans matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -124,8 +124,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * GET Payment/Plans (asynchronously)
-     * Get a list of payment plans
+     * Find Payment Plans (asynchronously)
+     * Returns the Payment Plans matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -189,8 +189,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * GET Payment/Plans/{paymentPlanId}
-     * Get payment plan by id
+     * Read Payment Plan
+     * Returns the specified Payment Plan.
      * @param paymentPlanId Payment plan id (required)
      * @return PaymentPlansProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -201,8 +201,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * GET Payment/Plans/{paymentPlanId}
-     * Get payment plan by id
+     * Read Payment Plan
+     * Returns the specified Payment Plan.
      * @param paymentPlanId Payment plan id (required)
      * @return ApiResponse&lt;PaymentPlansProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -214,8 +214,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * GET Payment/Plans/{paymentPlanId} (asynchronously)
-     * Get payment plan by id
+     * Read Payment Plan (asynchronously)
+     * Returns the specified Payment Plan.
      * @param paymentPlanId Payment plan id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -276,7 +276,7 @@ public class PaymentPlansApi {
     }
 
     /**
-     * PATCH Payment/Plans/{paymentPlanId}
+     * Update Payment Plan partially
      * Updates an existing plan (partial)
      * @param paymentPlanId Payment plan id (required)
      * @param body Payment plans properties
@@ -289,7 +289,7 @@ public class PaymentPlansApi {
     }
 
     /**
-     * PATCH Payment/Plans/{paymentPlanId}
+     * Update Payment Plan partially
      * Updates an existing plan (partial)
      * @param paymentPlanId Payment plan id (required)
      * @param body Payment plans properties
@@ -303,7 +303,7 @@ public class PaymentPlansApi {
     }
 
     /**
-     * PATCH Payment/Plans/{paymentPlanId} (asynchronously)
+     * Update Payment Plan partially (asynchronously)
      * Updates an existing plan (partial)
      * @param paymentPlanId Payment plan id (required)
      * @param body Payment plans properties
@@ -360,8 +360,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * POST Payment/Plans
-     * Add new plan
+     * Create Payment Plan
+     * Creates a new Payment Plan from the given data.
      * @param body Payment plan properties
      * @return PaymentPlansProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -372,8 +372,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * POST Payment/Plans
-     * Add new plan
+     * Create Payment Plan
+     * Creates a new Payment Plan from the given data.
      * @param body Payment plan properties
      * @return ApiResponse&lt;PaymentPlansProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -385,8 +385,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * POST Payment/Plans (asynchronously)
-     * Add new plan
+     * Create Payment Plan (asynchronously)
+     * Creates a new Payment Plan from the given data.
      * @param body Payment plan properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -447,8 +447,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * PUT Payment/Plans/{paymentPlanId}
-     * Updates an existing plan
+     * Update Payment Plan
+     * Updates the specified Payment Plan with the given data.
      * @param paymentPlanId Payment plan id (required)
      * @param body Payment plans properties
      * @return PaymentPlansProductModel
@@ -460,8 +460,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * PUT Payment/Plans/{paymentPlanId}
-     * Updates an existing plan
+     * Update Payment Plan
+     * Updates the specified Payment Plan with the given data.
      * @param paymentPlanId Payment plan id (required)
      * @param body Payment plans properties
      * @return ApiResponse&lt;PaymentPlansProductModel&gt;
@@ -474,8 +474,8 @@ public class PaymentPlansApi {
     }
 
     /**
-     * PUT Payment/Plans/{paymentPlanId} (asynchronously)
-     * Updates an existing plan
+     * Update Payment Plan (asynchronously)
+     * Updates the specified Payment Plan with the given data.
      * @param paymentPlanId Payment plan id (required)
      * @param body Payment plans properties
      * @param callback The callback to be executed when the API call finishes

@@ -321,7 +321,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Status of smart transaction
+   * Status of the Smart Transaction
    * @return status
   **/
   public String getStatus() {
@@ -457,7 +457,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Merchant reference
+   * Merchant reference, e.g. merchant customer ID
    * @return merchantRef
   **/
   public String getMerchantRef() {
@@ -474,7 +474,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Transaction reference
+   * Merchant reference, e.g. merchant customer ID
    * @return transactionRef
   **/
   public String getTransactionRef() {
@@ -567,7 +567,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Receipt
+   * Receipt for both, the customer and the merchant
    * @return receipt
   **/
   public List<SmartTransactionsReceipt> getReceipt() {
@@ -592,7 +592,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Receipt merchant
+   * Receipt for the merchant
    * @return receiptMerchant
   **/
   public List<SmartTransactionsReceipt> getReceiptMerchant() {
@@ -609,7 +609,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Receipt merchant print
+   * Whether the receipt for the merchant was printed
    * @return receiptMerchantPrint
   **/
   public Boolean getReceiptMerchantPrint() {
@@ -668,7 +668,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Idents
+   * secucard customer card or voucher, or request to create it
    * @return idents
   **/
   public List<SmartTransactionsIdent> getIdents() {
@@ -787,7 +787,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Transaction id
+   * Transaction ID (TA code)
    * @return transId
   **/
   public Integer getTransId() {
@@ -804,7 +804,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Payment method
+   * Payment method, as passed with &#x60;/prepare/{method}&#x60; or &#x60;/start/{method}&#x60;
    * @return paymentMethod
   **/
   public String getPaymentMethod() {
@@ -897,7 +897,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * intent of transaction
+   * Intent:  - &#x60;\&quot;sale\&quot;&#x60; - &#x60;\&quot;order\&quot;&#x60;
    * @return intent
   **/
   public String getIntent() {
@@ -914,7 +914,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * IFrame URL
+   * URL for external authorization (credit with card 3-D Secure, PayPal, Sofort, etc.)
    * @return iframeUrl
   **/
   public String getIframeUrl() {

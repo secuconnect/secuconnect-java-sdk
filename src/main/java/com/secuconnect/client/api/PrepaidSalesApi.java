@@ -77,8 +77,8 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * POST Prepaid/Sales
-     * Create new prepaid transaction
+     * Create Prepaid Sale
+     * Creates a new Prepaid Sale from the given data.
      * @param body Prepaid transaction input properties
      * @return PrepaidSalesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -89,8 +89,8 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * POST Prepaid/Sales
-     * Create new prepaid transaction
+     * Create Prepaid Sale
+     * Creates a new Prepaid Sale from the given data.
      * @param body Prepaid transaction input properties
      * @return ApiResponse&lt;PrepaidSalesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -102,8 +102,8 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * POST Prepaid/Sales (asynchronously)
-     * Create new prepaid transaction
+     * Create Prepaid Sale (asynchronously)
+     * Creates a new Prepaid Sale from the given data.
      * @param body Prepaid transaction input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -163,7 +163,7 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * GET Prepaid/Sales/{prepaidSaleId}/Confirm
+     * Confirm sale
      * Confirm one prepaid sale
      * @param prepaidSaleId Prepaid Sale ID (required)
      * @return PrepaidSalesProductModel
@@ -175,7 +175,7 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * GET Prepaid/Sales/{prepaidSaleId}/Confirm
+     * Confirm sale
      * Confirm one prepaid sale
      * @param prepaidSaleId Prepaid Sale ID (required)
      * @return ApiResponse&lt;PrepaidSalesProductModel&gt;
@@ -188,7 +188,7 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * GET Prepaid/Sales/{prepaidSaleId}/Confirm (asynchronously)
+     * Confirm sale (asynchronously)
      * Confirm one prepaid sale
      * @param prepaidSaleId Prepaid Sale ID (required)
      * @param callback The callback to be executed when the API call finishes
@@ -258,8 +258,8 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * GET Prepaid/Sales/
-     * Get a list of prepaid sales
+     * Find Prepaid Sales
+     * Returns the Prepaid Sales matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -274,8 +274,8 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * GET Prepaid/Sales/
-     * Get a list of prepaid sales
+     * Find Prepaid Sales
+     * Returns the Prepaid Sales matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -291,8 +291,8 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * GET Prepaid/Sales/ (asynchronously)
-     * Get a list of prepaid sales
+     * Find Prepaid Sales (asynchronously)
+     * Returns the Prepaid Sales matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -356,8 +356,8 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * GET Prepaid/Sales/{prepaidSaleId}
-     * Get one prepaid sale
+     * Read Prepaid Sale
+     * Returns the specified Prepaid Sale.
      * @param prepaidSaleId Prepaid sale ID (required)
      * @return PrepaidSalesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -368,8 +368,8 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * GET Prepaid/Sales/{prepaidSaleId}
-     * Get one prepaid sale
+     * Read Prepaid Sale
+     * Returns the specified Prepaid Sale.
      * @param prepaidSaleId Prepaid sale ID (required)
      * @return ApiResponse&lt;PrepaidSalesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -381,8 +381,8 @@ public class PrepaidSalesApi {
     }
 
     /**
-     * GET Prepaid/Sales/{prepaidSaleId} (asynchronously)
-     * Get one prepaid sale
+     * Read Prepaid Sale (asynchronously)
+     * Returns the specified Prepaid Sale.
      * @param prepaidSaleId Prepaid sale ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

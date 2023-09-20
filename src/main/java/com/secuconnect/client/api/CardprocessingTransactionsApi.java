@@ -90,8 +90,8 @@ public class CardprocessingTransactionsApi {
     }
 
     /**
-     * GET Cardprocessing/Transactions
-     * Get a list of cardprocessing transactions
+     * Find Cardprocessing Transactions
+     * Returns the Cardprocessing Transactions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -106,8 +106,8 @@ public class CardprocessingTransactionsApi {
     }
 
     /**
-     * GET Cardprocessing/Transactions
-     * Get a list of cardprocessing transactions
+     * Find Cardprocessing Transactions
+     * Returns the Cardprocessing Transactions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -123,8 +123,8 @@ public class CardprocessingTransactionsApi {
     }
 
     /**
-     * GET Cardprocessing/Transactions (asynchronously)
-     * Get a list of cardprocessing transactions
+     * Find Cardprocessing Transactions (asynchronously)
+     * Returns the Cardprocessing Transactions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -188,8 +188,8 @@ public class CardprocessingTransactionsApi {
     }
 
     /**
-     * GET Cardprocessing/Transactions/{cardprocessingTransactionId}
-     * Get one specific cardprocessing transaction
+     * Read Cardprocessing Transaction
+     * Returns the specified Cardprocessing Transaction.
      * @param cardprocessingTransactionId Cardprocessing transaction id (required)
      * @return CardprocessingTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -200,8 +200,8 @@ public class CardprocessingTransactionsApi {
     }
 
     /**
-     * GET Cardprocessing/Transactions/{cardprocessingTransactionId}
-     * Get one specific cardprocessing transaction
+     * Read Cardprocessing Transaction
+     * Returns the specified Cardprocessing Transaction.
      * @param cardprocessingTransactionId Cardprocessing transaction id (required)
      * @return ApiResponse&lt;CardprocessingTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -213,8 +213,8 @@ public class CardprocessingTransactionsApi {
     }
 
     /**
-     * GET Cardprocessing/Transactions/{cardprocessingTransactionId} (asynchronously)
-     * Get one specific cardprocessing transaction
+     * Read Cardprocessing Transaction (asynchronously)
+     * Returns the specified Cardprocessing Transaction.
      * @param cardprocessingTransactionId Cardprocessing transaction id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

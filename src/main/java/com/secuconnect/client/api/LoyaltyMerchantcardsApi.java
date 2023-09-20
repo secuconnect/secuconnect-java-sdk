@@ -98,7 +98,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/getCardBalanceReceipt
+     * Get card balance receipt
      * Get card balance receipt and information about limit data and passcode protection
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card &amp; current terminal
@@ -111,7 +111,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/getCardBalanceReceipt
+     * Get card balance receipt
      * Get card balance receipt and information about limit data and passcode protection
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card &amp; current terminal
@@ -125,7 +125,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/getCardBalanceReceipt (asynchronously)
+     * Get card balance receipt (asynchronously)
      * Get card balance receipt and information about limit data and passcode protection
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card &amp; current terminal
@@ -188,7 +188,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkCsc
+     * Check CSC
      * Check CSC
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -201,7 +201,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkCsc
+     * Check CSC
      * Check CSC
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -215,7 +215,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkCsc (asynchronously)
+     * Check CSC (asynchronously)
      * Check CSC
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -278,7 +278,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkPasscode
+     * Check passcode
      * Function to check the Passcode card with cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -291,7 +291,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkPasscode
+     * Check passcode
      * Function to check the Passcode card with cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -305,7 +305,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/checkPasscode (asynchronously)
+     * Check passcode (asynchronously)
      * Function to check the Passcode card with cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -374,7 +374,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{generalMerchantId}/createMerchantcards/{loyaltyCardgroupId}
+     * Create multiple merchant cards
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
@@ -388,7 +388,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{generalMerchantId}/createMerchantcards/{loyaltyCardgroupId}
+     * Create multiple merchant cards
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
@@ -403,7 +403,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{generalMerchantId}/createMerchantcards/{loyaltyCardgroupId} (asynchronously)
+     * Create multiple merchant cards (asynchronously)
      * Function to create multiple merchantcards for given merchant with given cardgroup
      * @param generalMerchantId General merchant id (required)
      * @param loyaltyCardgroupId Loyalty card group id (required)
@@ -467,7 +467,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction
+     * Execute transaction from SDK
      * Execute transaction from SDK
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Transaction properties
@@ -480,7 +480,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction
+     * Execute transaction from SDK
      * Execute transaction from SDK
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Transaction properties
@@ -494,7 +494,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction (asynchronously)
+     * Execute transaction from SDK (asynchronously)
      * Execute transaction from SDK
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Transaction properties
@@ -565,8 +565,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards
-     * Get a list of loyalty merchant cards
+     * Find Loyalty MerchantCard
+     * Returns the Loyalty MerchantCard matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -581,8 +581,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards
-     * Get a list of loyalty merchant cards
+     * Find Loyalty MerchantCard
+     * Returns the Loyalty MerchantCard matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -598,8 +598,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards (asynchronously)
-     * Get a list of loyalty merchant cards
+     * Find Loyalty MerchantCard (asynchronously)
+     * Returns the Loyalty MerchantCard matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -663,8 +663,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
-     * Get loyalty merchant card lock information for a specific id
+     * Read lock details
+     * Returns the lock details of the specified Loyalty Merchantcard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @return LoyaltyMerchantcardsDTOLock
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -675,8 +675,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
-     * Get loyalty merchant card lock information for a specific id
+     * Read lock details
+     * Returns the lock details of the specified Loyalty Merchantcard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @return ApiResponse&lt;LoyaltyMerchantcardsDTOLock&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -688,8 +688,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock (asynchronously)
-     * Get loyalty merchant card lock information for a specific id
+     * Read lock details (asynchronously)
+     * Returns the lock details of the specified Loyalty Merchantcard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -749,8 +749,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards/{loyaltyMerchantCardId}
-     * Get loyalty merchant card for a specific id
+     * Read Loyalty MerchantCard
+     * Returns the specified Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Search one by provided id (required)
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -761,8 +761,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards/{loyaltyMerchantCardId}
-     * Get loyalty merchant card for a specific id
+     * Read Loyalty MerchantCard
+     * Returns the specified Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Search one by provided id (required)
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -774,8 +774,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards/{loyaltyMerchantCardId} (asynchronously)
-     * Get loyalty merchant card for a specific id
+     * Read Loyalty MerchantCard (asynchronously)
+     * Returns the specified Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Search one by provided id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -841,7 +841,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/virtualTerminalData/{loyaltyMerchantId}
+     * Get virtual terminal data
      * Get virtual terminal data for merchant
      * @param loyaltyMerchantCardId Merchant card id (required)
      * @param loyaltyMerchantId Merchant id (required)
@@ -854,7 +854,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/virtualTerminalData/{loyaltyMerchantId}
+     * Get virtual terminal data
      * Get virtual terminal data for merchant
      * @param loyaltyMerchantCardId Merchant card id (required)
      * @param loyaltyMerchantId Merchant id (required)
@@ -868,7 +868,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * GET Loyalty/MerchantCards/{loyaltyMerchantCardId}/virtualTerminalData/{loyaltyMerchantId} (asynchronously)
+     * Get virtual terminal data (asynchronously)
      * Get virtual terminal data for merchant
      * @param loyaltyMerchantCardId Merchant card id (required)
      * @param loyaltyMerchantId Merchant id (required)
@@ -931,8 +931,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
-     * Lock merchant card
+     * Lock card
+     * Locks the specified Loyalty Merchantcard, so that it cannot be used.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about lock
      * @return LoyaltyMerchantcardsProductModel
@@ -944,8 +944,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock
-     * Lock merchant card
+     * Lock card
+     * Locks the specified Loyalty Merchantcard, so that it cannot be used.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about lock
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
@@ -958,8 +958,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/lock (asynchronously)
-     * Lock merchant card
+     * Lock card (asynchronously)
+     * Locks the specified Loyalty Merchantcard, so that it cannot be used.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about lock
      * @param callback The callback to be executed when the API call finishes
@@ -1021,7 +1021,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode
+     * Set new passcode
      * Function to save new given passcode for given merchantcard identified by cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -1034,7 +1034,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode
+     * Set new passcode
      * Function to save new given passcode for given merchantcard identified by cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -1048,7 +1048,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/newPasscode (asynchronously)
+     * Set new passcode (asynchronously)
      * Function to save new given passcode for given merchantcard identified by cardnumber
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -1111,8 +1111,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/registerCustomer
-     * Register new customer for a card
+     * Register customer
+     * Creates a new Loyalty Customer, and assigns it to the specified Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Loyalty customer properties
      * @return LoyaltyMerchantcardsProductModel
@@ -1124,8 +1124,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/registerCustomer
-     * Register new customer for a card
+     * Register customer
+     * Creates a new Loyalty Customer, and assigns it to the specified Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Loyalty customer properties
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
@@ -1138,8 +1138,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/registerCustomer (asynchronously)
-     * Register new customer for a card
+     * Register customer (asynchronously)
+     * Creates a new Loyalty Customer, and assigns it to the specified Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Loyalty customer properties
      * @param callback The callback to be executed when the API call finishes
@@ -1201,7 +1201,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/resetPasscode
+     * Reset passcode
      * Function to reset a passcode for given merchantcard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -1214,7 +1214,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/resetPasscode
+     * Reset passcode
      * Function to reset a passcode for given merchantcard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -1228,7 +1228,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/resetPasscode (asynchronously)
+     * Reset passcode (asynchronously)
      * Function to reset a passcode for given merchantcard
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -1296,8 +1296,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/setCustomer/{loyaltyCustomerId}
-     * Set loyalty customer for a loyalty merchant card
+     * Set customer
+     * Assigns the specified Loyalty Customer to the specified Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param loyaltyCustomerId Loyalty customer id (required)
      * @return LoyaltyMerchantcardsProductModel
@@ -1309,8 +1309,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/setCustomer/{loyaltyCustomerId}
-     * Set loyalty customer for a loyalty merchant card
+     * Set customer
+     * Assigns the specified Loyalty Customer to the specified Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param loyaltyCustomerId Loyalty customer id (required)
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
@@ -1323,8 +1323,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/setCustomer/{loyaltyCustomerId} (asynchronously)
-     * Set loyalty customer for a loyalty merchant card
+     * Set customer (asynchronously)
+     * Assigns the specified Loyalty Customer to the specified Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param loyaltyCustomerId Loyalty customer id (required)
      * @param callback The callback to be executed when the API call finishes
@@ -1386,8 +1386,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock
-     * Unlock merchant card
+     * Unlock card
+     * Releases the lock of the specified Loyalty Merchantcards, so that it can be used again.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about unlock
      * @return LoyaltyMerchantcardsProductModel
@@ -1399,8 +1399,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock
-     * Unlock merchant card
+     * Unlock card
+     * Releases the lock of the specified Loyalty Merchantcards, so that it can be used again.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about unlock
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
@@ -1413,8 +1413,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock (asynchronously)
-     * Unlock merchant card
+     * Unlock card (asynchronously)
+     * Releases the lock of the specified Loyalty Merchantcards, so that it can be used again.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about unlock
      * @param callback The callback to be executed when the API call finishes
@@ -1481,8 +1481,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId}/cardgroup/{loyaltyCardGroupId}
      * Update loyalty card group
+     * Sets the Loyalty CardGroup, and returns the updated Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param loyaltyCardGroupId Loyalty card group id (required)
      * @return LoyaltyMerchantcardsProductModel
@@ -1494,8 +1494,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId}/cardgroup/{loyaltyCardGroupId}
      * Update loyalty card group
+     * Sets the Loyalty CardGroup, and returns the updated Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param loyaltyCardGroupId Loyalty card group id (required)
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
@@ -1508,8 +1508,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId}/cardgroup/{loyaltyCardGroupId} (asynchronously)
-     * Update loyalty card group
+     * Update loyalty card group (asynchronously)
+     * Sets the Loyalty CardGroup, and returns the updated Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param loyaltyCardGroupId Loyalty card group id (required)
      * @param callback The callback to be executed when the API call finishes
@@ -1571,8 +1571,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId}
-     * Update loyalty merchant card
+     * Update Loyalty MerchantCard
+     * Updates the specified Loyalty MerchantCard with the given data.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Loyalty merchant card properties
      * @return LoyaltyMerchantcardsProductModel
@@ -1584,8 +1584,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId}
-     * Update loyalty merchant card
+     * Update Loyalty MerchantCard
+     * Updates the specified Loyalty MerchantCard with the given data.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Loyalty merchant card properties
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
@@ -1598,8 +1598,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * PUT Loyalty/MerchantCards/{loyaltyMerchantCardId} (asynchronously)
-     * Update loyalty merchant card
+     * Update Loyalty MerchantCard (asynchronously)
+     * Updates the specified Loyalty MerchantCard with the given data.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Loyalty merchant card properties
      * @param callback The callback to be executed when the API call finishes
@@ -1661,7 +1661,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/validateMerchantcard
+     * Check the merchant card
      * Function to check the merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -1674,7 +1674,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/validateMerchantcard
+     * Check the merchant card
      * Function to check the merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card
@@ -1688,7 +1688,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * POST Loyalty/MerchantCards/{loyaltyMerchantCardId}/validateMerchantcard (asynchronously)
+     * Check the merchant card (asynchronously)
      * Function to check the merchant card
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param body Information about card

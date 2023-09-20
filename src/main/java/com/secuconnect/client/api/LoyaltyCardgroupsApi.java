@@ -79,8 +79,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * POST Loyalty/Cardgroups
-     * Add loyalty card group
+     * Create Loyalty Cardgroup
+     * Creates a new Loyalty Cardgroup from the given data.
      * @param body Loyalty card group properties
      * @return LoyaltyCardgroupsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -91,8 +91,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * POST Loyalty/Cardgroups
-     * Add loyalty card group
+     * Create Loyalty Cardgroup
+     * Creates a new Loyalty Cardgroup from the given data.
      * @param body Loyalty card group properties
      * @return ApiResponse&lt;LoyaltyCardgroupsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -104,8 +104,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * POST Loyalty/Cardgroups (asynchronously)
-     * Add loyalty card group
+     * Create Loyalty Cardgroup (asynchronously)
+     * Creates a new Loyalty Cardgroup from the given data.
      * @param body Loyalty card group properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -166,8 +166,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * POST Loyalty/Cardgroups/{loyaltyCardGroupId}/checkPasscodeEnabled
-     * Check whether passcode check is enabled
+     * Check for passcode check
+     * Checks whether the passcode check is enabled.
      * @param loyaltyCardGroupId Loyalty card group id (required)
      * @param body Check passcode details
      * @return ResultBoolean
@@ -179,8 +179,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * POST Loyalty/Cardgroups/{loyaltyCardGroupId}/checkPasscodeEnabled
-     * Check whether passcode check is enabled
+     * Check for passcode check
+     * Checks whether the passcode check is enabled.
      * @param loyaltyCardGroupId Loyalty card group id (required)
      * @param body Check passcode details
      * @return ApiResponse&lt;ResultBoolean&gt;
@@ -193,8 +193,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * POST Loyalty/Cardgroups/{loyaltyCardGroupId}/checkPasscodeEnabled (asynchronously)
-     * Check whether passcode check is enabled
+     * Check for passcode check (asynchronously)
+     * Checks whether the passcode check is enabled.
      * @param loyaltyCardGroupId Loyalty card group id (required)
      * @param body Check passcode details
      * @param callback The callback to be executed when the API call finishes
@@ -264,8 +264,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * GET Loyalty/Cardgroups
-     * Get a list of loyalty card groups
+     * Find Loyalty Cardgroups
+     * Returns the Loyalty Cardgroups matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -280,8 +280,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * GET Loyalty/Cardgroups
-     * Get a list of loyalty card groups
+     * Find Loyalty Cardgroups
+     * Returns the Loyalty Cardgroups matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -297,8 +297,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * GET Loyalty/Cardgroups (asynchronously)
-     * Get a list of loyalty card groups
+     * Find Loyalty Cardgroups (asynchronously)
+     * Returns the Loyalty Cardgroups matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -362,7 +362,7 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * GET Loyalty/Sales/{generalMerchantId}/CardGroupsByMerchantID
+     * Find Loyalty Sales by General Merchant ID
      * Get cardgroups by merchant id
      * @param generalMerchantId Search by provided id (required)
      * @return List&lt;LoyaltyCardgroupsProductModel&gt;
@@ -374,7 +374,7 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * GET Loyalty/Sales/{generalMerchantId}/CardGroupsByMerchantID
+     * Find Loyalty Sales by General Merchant ID
      * Get cardgroups by merchant id
      * @param generalMerchantId Search by provided id (required)
      * @return ApiResponse&lt;List&lt;LoyaltyCardgroupsProductModel&gt;&gt;
@@ -387,7 +387,7 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * GET Loyalty/Sales/{generalMerchantId}/CardGroupsByMerchantID (asynchronously)
+     * Find Loyalty Sales by General Merchant ID (asynchronously)
      * Get cardgroups by merchant id
      * @param generalMerchantId Search by provided id (required)
      * @param callback The callback to be executed when the API call finishes
@@ -448,8 +448,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * GET Loyalty/Cardgroups/{loyaltyCardGroupId}
-     * Get loyalty card group for a specific id
+     * Read Loyalty Cardgroup
+     * Returns the specified Loyalty Cardgroup.
      * @param loyaltyCardGroupId Search one by provided id (required)
      * @return LoyaltyCardgroupsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -460,8 +460,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * GET Loyalty/Cardgroups/{loyaltyCardGroupId}
-     * Get loyalty card group for a specific id
+     * Read Loyalty Cardgroup
+     * Returns the specified Loyalty Cardgroup.
      * @param loyaltyCardGroupId Search one by provided id (required)
      * @return ApiResponse&lt;LoyaltyCardgroupsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -473,8 +473,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * GET Loyalty/Cardgroups/{loyaltyCardGroupId} (asynchronously)
-     * Get loyalty card group for a specific id
+     * Read Loyalty Cardgroup (asynchronously)
+     * Returns the specified Loyalty Cardgroup.
      * @param loyaltyCardGroupId Search one by provided id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -535,8 +535,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * PUT Loyalty/Cardgroups/{loyaltyCardGroupId}
-     * Update loyalty card group
+     * Update Loyalty Cardgroup
+     * Updates the specified Loyalty Cardgroup with the given data.
      * @param loyaltyCardGroupId Loyalty card group id (required)
      * @param body Loyalty card group properties
      * @return LoyaltyCardgroupsProductModel
@@ -548,8 +548,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * PUT Loyalty/Cardgroups/{loyaltyCardGroupId}
-     * Update loyalty card group
+     * Update Loyalty Cardgroup
+     * Updates the specified Loyalty Cardgroup with the given data.
      * @param loyaltyCardGroupId Loyalty card group id (required)
      * @param body Loyalty card group properties
      * @return ApiResponse&lt;LoyaltyCardgroupsProductModel&gt;
@@ -562,8 +562,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * PUT Loyalty/Cardgroups/{loyaltyCardGroupId} (asynchronously)
-     * Update loyalty card group
+     * Update Loyalty Cardgroup (asynchronously)
+     * Updates the specified Loyalty Cardgroup with the given data.
      * @param loyaltyCardGroupId Loyalty card group id (required)
      * @param body Loyalty card group properties
      * @param callback The callback to be executed when the API call finishes

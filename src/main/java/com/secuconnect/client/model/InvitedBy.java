@@ -56,7 +56,7 @@ public class InvitedBy {
   }
 
    /**
-   * Invited E-Mail address
+   * Email address of the inviting person
    * @return invited
   **/
   public String getInvited() {

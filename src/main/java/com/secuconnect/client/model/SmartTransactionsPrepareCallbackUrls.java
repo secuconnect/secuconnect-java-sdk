@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsPrepareCallbackUrls
+ * Return URLs for external payment authorization.  _Note: Please don&#x27;t mix them up with the return URLs for Smart Checkout. These here are intended for custom checkout implementations to catch the user when he returns from 3-D Secure, PayPal, Sofort, and the like._
  */
 public class SmartTransactionsPrepareCallbackUrls {
   @SerializedName("success_url")
@@ -19,7 +19,7 @@ public class SmartTransactionsPrepareCallbackUrls {
   }
 
    /**
-   * Success URL
+   * Shop URL for successful external authorization or payment
    * @return successUrl
   **/
   public String getSuccessUrl() {
@@ -36,7 +36,7 @@ public class SmartTransactionsPrepareCallbackUrls {
   }
 
    /**
-   * Failure URL
+   * Shop URL for failed external authorization or payment
    * @return failureUrl
   **/
   public String getFailureUrl() {

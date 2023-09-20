@@ -80,8 +80,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * Upload File
-     * POST /Document/Uploads
+     * Upload File / multipart MIME
+     * Creates a new Docuemt Upload from the given data.
      * @param body Input data format
      * @param multipart 
      * @return DocumentUploadsProductModel
@@ -93,8 +93,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * Upload File
-     * POST /Document/Uploads
+     * Upload File / multipart MIME
+     * Creates a new Docuemt Upload from the given data.
      * @param body Input data format
      * @param multipart 
      * @return ApiResponse&lt;DocumentUploadsProductModel&gt;
@@ -107,8 +107,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * Upload File (asynchronously)
-     * POST /Document/Uploads
+     * Upload File / multipart MIME (asynchronously)
+     * Creates a new Docuemt Upload from the given data.
      * @param body Input data format
      * @param multipart 
      * @param callback The callback to be executed when the API call finishes
@@ -164,8 +164,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * Upload File content
-     * POST /Document/Uploads
+     * Upload File / JSON
+     * Creates a new Document Upload from the given data.
      * @param body Content
      * @return DocumentUploadsBaseProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -176,8 +176,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * Upload File content
-     * POST /Document/Uploads
+     * Upload File / JSON
+     * Creates a new Document Upload from the given data.
      * @param body Content
      * @return ApiResponse&lt;DocumentUploadsBaseProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -189,8 +189,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * Upload File content (asynchronously)
-     * POST /Document/Uploads
+     * Upload File / JSON (asynchronously)
+     * Creates a new Document Upload from the given data.
      * @param body Content
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -251,7 +251,7 @@ public class DocumentUploadsApi {
 
     /**
      * Download uploaded file
-     * GET /Document/Uploads/{documentUploadsId}/Download
+     * Downloads the contents of the specified Document Upload.
      * @param documentUploadsId Document Uploads ID (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -263,7 +263,7 @@ public class DocumentUploadsApi {
 
     /**
      * Download uploaded file
-     * GET /Document/Uploads/{documentUploadsId}/Download
+     * Downloads the contents of the specified Document Upload.
      * @param documentUploadsId Document Uploads ID (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -276,7 +276,7 @@ public class DocumentUploadsApi {
 
     /**
      * Download uploaded file (asynchronously)
-     * GET /Document/Uploads/{documentUploadsId}/Download
+     * Downloads the contents of the specified Document Upload.
      * @param documentUploadsId Document Uploads ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -336,8 +336,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * Get info about the uploaded file
-     * GET /Document/Uploads/{documentUploadsId}
+     * Read Document Upload
+     * Returns the specified Document Upload.
      * @param documentUploadsId Document Uploads ID (required)
      * @return DocumentUploadsProductModelWithContent
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -348,8 +348,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * Get info about the uploaded file
-     * GET /Document/Uploads/{documentUploadsId}
+     * Read Document Upload
+     * Returns the specified Document Upload.
      * @param documentUploadsId Document Uploads ID (required)
      * @return ApiResponse&lt;DocumentUploadsProductModelWithContent&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -361,8 +361,8 @@ public class DocumentUploadsApi {
     }
 
     /**
-     * Get info about the uploaded file (asynchronously)
-     * GET /Document/Uploads/{documentUploadsId}
+     * Read Document Upload (asynchronously)
+     * Returns the specified Document Upload.
      * @param documentUploadsId Document Uploads ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

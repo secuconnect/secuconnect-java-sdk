@@ -58,7 +58,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * Product id
+   * Item ID
    * @return id
   **/
   public Integer getId() {
@@ -75,7 +75,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * Parent
+   * Parent item ID
    * @return parent
   **/
   public Integer getParent() {
@@ -92,7 +92,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * Category of item
+   * Item type:  - &#x60;\&quot;article\&quot;&#x60; - &#x60;\&quot;coupon\&quot;&#x60; - &#x60;\&quot;stakeholder_payment\&quot;&#x60; - &#x60;\&quot;shipping\&quot;&#x60;
    * @return itemType
   **/
   public String getItemType() {
@@ -109,7 +109,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * Description of the sub-basket product
+   * Descriptive article name
    * @return desc
   **/
   public String getDesc() {
@@ -126,7 +126,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * Article number
+   * Article number (SKU)
    * @return articleNumber
   **/
   public String getArticleNumber() {
@@ -143,7 +143,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * The serialnumber of the scanned posa card
+   * Serial number of the POS activation card (POSA)
    * @return serialNumber
   **/
   public String getSerialNumber() {
@@ -211,7 +211,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * Get sum
+   * Total amount of all items in a sub-basket; in the smallest currency unit (e. g. Euro Cent)
    * @return sum
   **/
   public Integer getSum() {
@@ -245,7 +245,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * The reference_id must be unique, it&#x27;s Referring to the reference_id of SmartTransactionsBasketProduct [example: SmartTransactionsBasketProduct-&gt;reference_id is 1000 then all SmartTransactionsSubBasketProduct must have unique reference_id like 1000.1, 1000.2 etc.]
+   * Unique line identifier, used to maintain the basket before the transaction is executed
    * @return referenceId
   **/
   public String getReferenceId() {
@@ -262,7 +262,7 @@ public class SmartTransactionsSubBasketProduct {
   }
 
    /**
-   * contract id
+   * General Contract ID of the merchant (sub-basket) or payee (stakeholder share)
    * @return contractId
   **/
   public String getContractId() {

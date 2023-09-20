@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * The customer of this payment container
+ * The customer the Payment Container belongs to
  */
 public class PaymentContainersDTOCustomer {
   @SerializedName("id")
@@ -16,7 +16,7 @@ public class PaymentContainersDTOCustomer {
   }
 
    /**
-   * Customer identifier
+   * Payment Customer ID
    * @return id
   **/
   public String getId() {

@@ -81,8 +81,8 @@ public class PaymentSubscriptionsApi {
     }
 
     /**
-     * GET Payment/Subscriptions/{paymentSubscriptionId}
-     * Get payment subscription by id
+     * Read Payment Subscription
+     * Returns the specified Payment Subscription.
      * @param paymentSubscriptionId Payment subscription id (required)
      * @return PaymentSubscriptionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -93,8 +93,8 @@ public class PaymentSubscriptionsApi {
     }
 
     /**
-     * GET Payment/Subscriptions/{paymentSubscriptionId}
-     * Get payment subscription by id
+     * Read Payment Subscription
+     * Returns the specified Payment Subscription.
      * @param paymentSubscriptionId Payment subscription id (required)
      * @return ApiResponse&lt;PaymentSubscriptionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -106,8 +106,8 @@ public class PaymentSubscriptionsApi {
     }
 
     /**
-     * GET Payment/Subscriptions/{paymentSubscriptionId} (asynchronously)
-     * Get payment subscription by id
+     * Read Payment Subscription (asynchronously)
+     * Returns the specified Payment Subscription.
      * @param paymentSubscriptionId Payment subscription id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -176,8 +176,8 @@ public class PaymentSubscriptionsApi {
     }
 
     /**
-     * GET Payment/Subscriptions
-     * Get a list of payment subscriptions
+     * Find Payment Subscriptions
+     * Returns the Payment Subscriptions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -192,8 +192,8 @@ public class PaymentSubscriptionsApi {
     }
 
     /**
-     * GET Payment/Subscriptions
-     * Get a list of payment subscriptions
+     * Find Payment Subscriptions
+     * Returns the Payment Subscriptions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -209,8 +209,8 @@ public class PaymentSubscriptionsApi {
     }
 
     /**
-     * GET Payment/Subscriptions (asynchronously)
-     * Get a list of payment subscriptions
+     * Find Payment Subscriptions (asynchronously)
+     * Returns the Payment Subscriptions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.

@@ -5,7 +5,7 @@ import com.secuconnect.client.model.LoyaltyMerchantcardsProductModel;
 import java.util.Objects;
 
 /**
- * SmartTransactionsIdent
+ * secucard customer card or voucher, or request to create it
  */
 public class SmartTransactionsIdent {
   @SerializedName("object")
@@ -38,7 +38,7 @@ public class SmartTransactionsIdent {
   }
 
    /**
-   * Object of smart transaction ident
+   * Object type
    * @return object
   **/
   public String getObject() {
@@ -55,7 +55,7 @@ public class SmartTransactionsIdent {
   }
 
    /**
-   * Id of smart transaction ident
+   * Object ID
    * @return id
   **/
   public String getId() {
@@ -66,38 +66,20 @@ public class SmartTransactionsIdent {
     this.id = id;
   }
 
-  public SmartTransactionsIdent prefix(String prefix) {
-    this.prefix = prefix;
-    return this;
-  }
-
    /**
-   * Prefix
+   * Card number prefix
    * @return prefix
   **/
   public String getPrefix() {
     return prefix;
   }
 
-  public void setPrefix(String prefix) {
-    this.prefix = prefix;
-  }
-
-  public SmartTransactionsIdent name(String name) {
-    this.name = name;
-    return this;
-  }
-
    /**
-   * Name
+   * Card group name
    * @return name
   **/
   public String getName() {
     return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
   }
 
   public SmartTransactionsIdent type(String type) {
@@ -106,7 +88,7 @@ public class SmartTransactionsIdent {
   }
 
    /**
-   * Type
+   * Ident type:  - &#x60;\&quot;card\&quot;&#x60; to use a card - &#x60;\&quot;create_card\&quot;&#x60; to create a card on-the-fly
    * @return type
   **/
   public String getType() {
@@ -123,7 +105,7 @@ public class SmartTransactionsIdent {
   }
 
    /**
-   * Value
+   * Card number or Card Group ID  When you create a card on-the-fly, you must pass the Card Group ID (like &#x60;\&quot;CRG_TFRXSKL91C4UNYC4ND79P7ZBZBQ0MZ\&quot;&#x60;). When you use an existing card, you must pass its card number (like &#x60;\&quot;9276999999999999\&quot;&#x60;).
    * @return value
   **/
   public String getValue() {
@@ -134,21 +116,12 @@ public class SmartTransactionsIdent {
     this.value = value;
   }
 
-  public SmartTransactionsIdent valid(Boolean valid) {
-    this.valid = valid;
-    return this;
-  }
-
    /**
-   * Valid
+   * Whether the card is valid for the merchant or acceptance point
    * @return valid
   **/
   public Boolean getValid() {
     return valid;
-  }
-
-  public void setValid(Boolean valid) {
-    this.valid = valid;
   }
 
   public SmartTransactionsIdent merchantcard(LoyaltyMerchantcardsProductModel merchantcard) {

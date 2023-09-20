@@ -5,7 +5,7 @@ import com.secuconnect.client.model.Address;
 import java.util.Objects;
 
 /**
- * Contact
+ * Contact details
  */
 public class Contact {
   @SerializedName("name")
@@ -184,7 +184,7 @@ public class Contact {
   }
 
    /**
-   * E-mail address
+   * Email address
    * @return email
   **/
   public String getEmail() {
@@ -252,7 +252,7 @@ public class Contact {
   }
 
    /**
-   * Date of birth
+   * Date of birth, ISO 8601 formatted
    * @return dob
   **/
   public String getDob() {
@@ -269,7 +269,7 @@ public class Contact {
   }
 
    /**
-   * The document ID of an user picture; s. Document service
+   * The document ID (or URL) of an user picture; s. Document service
    * @return picture
   **/
   public String getPicture() {

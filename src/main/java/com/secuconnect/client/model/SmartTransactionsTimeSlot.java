@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsTimeSlot
+ * Time slot
  */
 public class SmartTransactionsTimeSlot {
   @SerializedName("start_date")
@@ -19,7 +19,7 @@ public class SmartTransactionsTimeSlot {
   }
 
    /**
-   * Start Date
+   * Start Date (ISO 8601 date and time)
    * @return startDate
   **/
   public String getStartDate() {
@@ -36,7 +36,7 @@ public class SmartTransactionsTimeSlot {
   }
 
    /**
-   * End Date
+   * End Date (ISO 8601 date and time)
    * @return endDate
   **/
   public String getEndDate() {

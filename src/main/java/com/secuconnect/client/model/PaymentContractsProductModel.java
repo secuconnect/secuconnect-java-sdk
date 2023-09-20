@@ -226,7 +226,7 @@ public class PaymentContractsProductModel extends BaseProductModel {
   }
 
    /**
-   * Is this a demo contract
+   * Whether this is a demo contract
    * @return demo
   **/
   public Boolean getDemo() {
@@ -243,7 +243,7 @@ public class PaymentContractsProductModel extends BaseProductModel {
   }
 
    /**
-   * Indicates if the payout lock was removed
+   * Whether the contract has been approved, and is eligible for payout now
    * @return approved
   **/
   public Boolean getApproved() {

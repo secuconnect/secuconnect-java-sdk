@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsApplicationContextReturnUrls
+ * Shop URLs to return from Smart Checkout
  */
 public class SmartTransactionsApplicationContextReturnUrls {
   @SerializedName("url_success")
@@ -25,7 +25,7 @@ public class SmartTransactionsApplicationContextReturnUrls {
   }
 
    /**
-   * Success URL
+   * Shop URL to be called after successful authorization or payment
    * @return urlSuccess
   **/
   public String getUrlSuccess() {
@@ -42,7 +42,7 @@ public class SmartTransactionsApplicationContextReturnUrls {
   }
 
    /**
-   * Abort URL
+   * Shop URL to be called when the customer abandoned the payment (when it is distinguished)
    * @return urlAbort
   **/
   public String getUrlAbort() {
@@ -59,7 +59,7 @@ public class SmartTransactionsApplicationContextReturnUrls {
   }
 
    /**
-   * Error URL
+   * Shop URL to be called after successful authorization or payment, or when the customer abandoned the payment
    * @return urlError
   **/
   public String getUrlError() {
@@ -76,7 +76,7 @@ public class SmartTransactionsApplicationContextReturnUrls {
   }
 
    /**
-   * Push URL
+   * Shop URL for status pushes (server-to-server callback)
    * @return urlPush
   **/
   public String getUrlPush() {

@@ -16,7 +16,7 @@ public class UploadMandateDTO {
   }
 
    /**
-   * Document id for assign
+   * Document ID to assign
    * @return documentId
   **/
   public String getDocumentId() {

@@ -46,7 +46,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for addTransaction
-     * @param body Create payment transaction input properties
+     * @param body Transaction details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -86,9 +86,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions
-     * Create a payment transaction
-     * @param body Create payment transaction input properties
+     * Create TWINT Payment
+     * Creates a new Payment Transaction from the given data for TWINT.
+     * @param body Transaction details
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -98,9 +98,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions
-     * Create a payment transaction
-     * @param body Create payment transaction input properties
+     * Create TWINT Payment
+     * Creates a new Payment Transaction from the given data for TWINT.
+     * @param body Transaction details
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -111,9 +111,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions (asynchronously)
-     * Create a payment transaction
-     * @param body Create payment transaction input properties
+     * Create TWINT Payment (asynchronously)
+     * Creates a new Payment Transaction from the given data for TWINT.
+     * @param body Transaction details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -127,7 +127,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for assignTransferBalance
-     * @param paymentTransactionId Payment transaction ID (required)
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -172,9 +172,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/assignTransferBalance
-     * Assign balance to a payment transaction
-     * @param paymentTransactionId Payment transaction ID (required)
+     * Assign transferred balance
+     * Assigns balance to a Payment Transaction for payout. The merchant must have sent the balance by bank transfer, before it can be assigned and paid out.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return PaymentTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -184,9 +184,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/assignTransferBalance
-     * Assign balance to a payment transaction
-     * @param paymentTransactionId Payment transaction ID (required)
+     * Assign transferred balance
+     * Assigns balance to a Payment Transaction for payout. The merchant must have sent the balance by bank transfer, before it can be assigned and paid out.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -197,9 +197,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/assignTransferBalance (asynchronously)
-     * Assign balance to a payment transaction
-     * @param paymentTransactionId Payment transaction ID (required)
+     * Assign transferred balance (asynchronously)
+     * Assigns balance to a Payment Transaction for payout. The merchant must have sent the balance by bank transfer, before it can be assigned and paid out.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -213,8 +213,8 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for cancel
-     * @param paymentTransactionId Payment transaction id (required)
-     * @param body Cancel payment transaction input properties
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param body Amount and reason
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -259,10 +259,10 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/cancel
-     * Cancel a payment transaction
-     * @param paymentTransactionId Payment transaction id (required)
-     * @param body Cancel payment transaction input properties
+     * Cancel or refund
+     * Cancels or refunds the payment in full or in part.  _Note: It is not possible to exceed the original amount._  If the payer has already made the payment, it creates a new Payment Transaction for the refund, and links it to the original one. The amount of the original Payment Transaction then remains unchanged.  If the payment was not made yet, the amount is reduced (partial cancellation) or the status is set to cancelled (full cancellation). There will be no additional Payment Transaction.  The amount still in effect can be read with &#x60;GET /Payment/Transactions/{id}/checkStatus&#x60;.
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param body Amount and reason
      * @return List&lt;PaymentTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -272,10 +272,10 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/cancel
-     * Cancel a payment transaction
-     * @param paymentTransactionId Payment transaction id (required)
-     * @param body Cancel payment transaction input properties
+     * Cancel or refund
+     * Cancels or refunds the payment in full or in part.  _Note: It is not possible to exceed the original amount._  If the payer has already made the payment, it creates a new Payment Transaction for the refund, and links it to the original one. The amount of the original Payment Transaction then remains unchanged.  If the payment was not made yet, the amount is reduced (partial cancellation) or the status is set to cancelled (full cancellation). There will be no additional Payment Transaction.  The amount still in effect can be read with &#x60;GET /Payment/Transactions/{id}/checkStatus&#x60;.
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param body Amount and reason
      * @return ApiResponse&lt;List&lt;PaymentTransactionsProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -286,10 +286,10 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/cancel (asynchronously)
-     * Cancel a payment transaction
-     * @param paymentTransactionId Payment transaction id (required)
-     * @param body Cancel payment transaction input properties
+     * Cancel or refund (asynchronously)
+     * Cancels or refunds the payment in full or in part.  _Note: It is not possible to exceed the original amount._  If the payer has already made the payment, it creates a new Payment Transaction for the refund, and links it to the original one. The amount of the original Payment Transaction then remains unchanged.  If the payment was not made yet, the amount is reduced (partial cancellation) or the status is set to cancelled (full cancellation). There will be no additional Payment Transaction.  The amount still in effect can be read with &#x60;GET /Payment/Transactions/{id}/checkStatus&#x60;.
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param body Amount and reason
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -303,7 +303,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for checkStatus
-     * @param paymentTransactionId Payment transaction id (required)
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -348,9 +348,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}/checkStatus
-     * Get the current status of a transaction
-     * @param paymentTransactionId Payment transaction id (required)
+     * Check payment status
+     * Returns the current status and amount still in effect. The amount considers open and completed refunds. The amount is zero if the transaction was fully cancelled.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return PaymentTransactionsCheckStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -360,9 +360,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}/checkStatus
-     * Get the current status of a transaction
-     * @param paymentTransactionId Payment transaction id (required)
+     * Check payment status
+     * Returns the current status and amount still in effect. The amount considers open and completed refunds. The amount is zero if the transaction was fully cancelled.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return ApiResponse&lt;PaymentTransactionsCheckStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -373,9 +373,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}/checkStatus (asynchronously)
-     * Get the current status of a transaction
-     * @param paymentTransactionId Payment transaction id (required)
+     * Check payment status (asynchronously)
+     * Returns the current status and amount still in effect. The amount considers open and completed refunds. The amount is zero if the transaction was fully cancelled.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -443,8 +443,8 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions
-     * Get a list of payment transactions
+     * Find Payment Transactions
+     * Returns the Payment Transactions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -459,8 +459,8 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions
-     * Get a list of payment transactions
+     * Find Payment Transactions
+     * Returns the Payment Transactions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -476,8 +476,8 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions (asynchronously)
-     * Get a list of payment transactions
+     * Find Payment Transactions (asynchronously)
+     * Returns the Payment Transactions matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -496,7 +496,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for getCrowdFundingData
-     * @param generalMerchantId Merchant ID (MRC_...) (required)
+     * @param generalMerchantId General Merchant ID (MRC_...) (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -541,9 +541,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/me/CrowdFundingData/{generalMerchantId}
-     * Get the transaction amounts, count and payout data per product
-     * @param generalMerchantId Merchant ID (MRC_...) (required)
+     * Crowd funding data
+     * Returns a crowd funding summary for the given merchant. It contains the transaction amounts, counts and payout data for each payment method (\&quot;product\&quot;).
+     * @param generalMerchantId General Merchant ID (MRC_...) (required)
      * @return PaymentCrowdFundingData
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -553,9 +553,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/me/CrowdFundingData/{generalMerchantId}
-     * Get the transaction amounts, count and payout data per product
-     * @param generalMerchantId Merchant ID (MRC_...) (required)
+     * Crowd funding data
+     * Returns a crowd funding summary for the given merchant. It contains the transaction amounts, counts and payout data for each payment method (\&quot;product\&quot;).
+     * @param generalMerchantId General Merchant ID (MRC_...) (required)
      * @return ApiResponse&lt;PaymentCrowdFundingData&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -566,9 +566,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/me/CrowdFundingData/{generalMerchantId} (asynchronously)
-     * Get the transaction amounts, count and payout data per product
-     * @param generalMerchantId Merchant ID (MRC_...) (required)
+     * Crowd funding data (asynchronously)
+     * Returns a crowd funding summary for the given merchant. It contains the transaction amounts, counts and payout data for each payment method (\&quot;product\&quot;).
+     * @param generalMerchantId General Merchant ID (MRC_...) (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -582,7 +582,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for getOne
-     * @param paymentTransactionId Payment transaction id (required)
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -627,9 +627,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}
-     * Get all payment transactions
-     * @param paymentTransactionId Payment transaction id (required)
+     * Read Payment Transaction
+     * Returns the specified Payment Transaction.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return PaymentTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -639,9 +639,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}
-     * Get all payment transactions
-     * @param paymentTransactionId Payment transaction id (required)
+     * Read Payment Transaction
+     * Returns the specified Payment Transaction.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -652,9 +652,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId} (asynchronously)
-     * Get all payment transactions
-     * @param paymentTransactionId Payment transaction id (required)
+     * Read Payment Transaction (asynchronously)
+     * Returns the specified Payment Transaction.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -840,7 +840,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for getPaymentTransactionsOldFormat
-     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -885,9 +885,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}/OldFormat
-     * Get old format for specific payment transactions
-     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * Read in old format
+     * Returns the specified Payment Transaction in old format.
+     * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
      * @return SecupayTransactionProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -897,9 +897,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}/OldFormat
-     * Get old format for specific payment transactions
-     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * Read in old format
+     * Returns the specified Payment Transaction in old format.
+     * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
      * @return ApiResponse&lt;SecupayTransactionProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -910,9 +910,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}/OldFormat (asynchronously)
-     * Get old format for specific payment transactions
-     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
+     * Read in old format (asynchronously)
+     * Returns the specified Payment Transaction in old format.
+     * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -926,7 +926,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for getShippingUrl
-     * @param paymentTransactionId Payment transaction id (required)
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -971,9 +971,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}/shippingUrl
-     * Get the url where you can fill the shipping information
-     * @param paymentTransactionId Payment transaction id (required)
+     * Shipping URL
+     * Returns the URL to file the shipping information. This works only with invoice payment, and requires the Payment Transaction has status 85, \&quot;Kauf auf Rechnung genehmigt\&quot;.  See also &#x60;PUT /Payment/Transactions/{id}/ShippingInformation&#x60;, _Add shipping information_, to add the data programmatically.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return PaymentTransactionsShippingUrl
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -983,9 +983,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}/shippingUrl
-     * Get the url where you can fill the shipping information
-     * @param paymentTransactionId Payment transaction id (required)
+     * Shipping URL
+     * Returns the URL to file the shipping information. This works only with invoice payment, and requires the Payment Transaction has status 85, \&quot;Kauf auf Rechnung genehmigt\&quot;.  See also &#x60;PUT /Payment/Transactions/{id}/ShippingInformation&#x60;, _Add shipping information_, to add the data programmatically.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return ApiResponse&lt;PaymentTransactionsShippingUrl&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -996,9 +996,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * GET Payment/Transactions/{paymentTransactionId}/shippingUrl (asynchronously)
-     * Get the url where you can fill the shipping information
-     * @param paymentTransactionId Payment transaction id (required)
+     * Shipping URL (asynchronously)
+     * Returns the URL to file the shipping information. This works only with invoice payment, and requires the Payment Transaction has status 85, \&quot;Kauf auf Rechnung genehmigt\&quot;.  See also &#x60;PUT /Payment/Transactions/{id}/ShippingInformation&#x60;, _Add shipping information_, to add the data programmatically.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1012,7 +1012,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for increaseAmount
-     * @param paymentTransactionId Payment ID (PCI_...) (required)
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @param body increase amount input params
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1058,9 +1058,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/IncreaseAmount
-     * Increase the amount of a prepaid transaction which is not yet completed
-     * @param paymentTransactionId Payment ID (PCI_...) (required)
+     * Increase amount
+     * Increases the amount of the given Payment Transaction. Currently, this only works for prepayment, and only before the payment has been received by secupay.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @param body increase amount input params
      * @return PaymentTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1071,9 +1071,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/IncreaseAmount
-     * Increase the amount of a prepaid transaction which is not yet completed
-     * @param paymentTransactionId Payment ID (PCI_...) (required)
+     * Increase amount
+     * Increases the amount of the given Payment Transaction. Currently, this only works for prepayment, and only before the payment has been received by secupay.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @param body increase amount input params
      * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1085,9 +1085,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/IncreaseAmount (asynchronously)
-     * Increase the amount of a prepaid transaction which is not yet completed
-     * @param paymentTransactionId Payment ID (PCI_...) (required)
+     * Increase amount (asynchronously)
+     * Increases the amount of the given Payment Transaction. Currently, this only works for prepayment, and only before the payment has been received by secupay.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @param body increase amount input params
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1102,7 +1102,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for revokeAccrual
-     * @param paymentTransactionId Payment transaction id (required)
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1147,9 +1147,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/revokeAccrual
-     * Revoke the accrual flag of a payment transaction
-     * @param paymentTransactionId Payment transaction id (required)
+     * Revoke accrual
+     * Revokes the accrual flag of a Payment Transaction. This flag withholds the actual execution of the payment. The payment will now be made if it has not already been made.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return PaymentTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1159,9 +1159,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/revokeAccrual
-     * Revoke the accrual flag of a payment transaction
-     * @param paymentTransactionId Payment transaction id (required)
+     * Revoke accrual
+     * Revokes the accrual flag of a Payment Transaction. This flag withholds the actual execution of the payment. The payment will now be made if it has not already been made.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1172,9 +1172,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * POST Payment/Transactions/{paymentTransactionId}/revokeAccrual (asynchronously)
-     * Revoke the accrual flag of a payment transaction
-     * @param paymentTransactionId Payment transaction id (required)
+     * Revoke accrual (asynchronously)
+     * Revokes the accrual flag of a Payment Transaction. This flag withholds the actual execution of the payment. The payment will now be made if it has not already been made.
+     * @param paymentTransactionId Payment Transaction ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1188,8 +1188,8 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for updateShippingInformation
-     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
-     * @param body Update shipping information input properties
+     * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
+     * @param body Shipping information
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1234,10 +1234,10 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * PUT Payment/Transactions/{paymentTransactionId}/ShippingInformation
-     * Update the shipping information for a transaction
-     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
-     * @param body Update shipping information input properties
+     * Add shipping information
+     * Adds shipping information, and marks the Payment Transaction as shipped when called the first time.  **Note: This is obligatory for purchase on account, because otherwise it is not known that and when the invoice is due.**
+     * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
+     * @param body Shipping information
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1247,10 +1247,10 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * PUT Payment/Transactions/{paymentTransactionId}/ShippingInformation
-     * Update the shipping information for a transaction
-     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
-     * @param body Update shipping information input properties
+     * Add shipping information
+     * Adds shipping information, and marks the Payment Transaction as shipped when called the first time.  **Note: This is obligatory for purchase on account, because otherwise it is not known that and when the invoice is due.**
+     * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
+     * @param body Shipping information
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1261,10 +1261,10 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * PUT Payment/Transactions/{paymentTransactionId}/ShippingInformation (asynchronously)
-     * Update the shipping information for a transaction
-     * @param paymentTransactionId Payment ID (PCI_...) or hash (required)
-     * @param body Update shipping information input properties
+     * Add shipping information (asynchronously)
+     * Adds shipping information, and marks the Payment Transaction as shipped when called the first time.  **Note: This is obligatory for purchase on account, because otherwise it is not known that and when the invoice is due.**
+     * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
+     * @param body Shipping information
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

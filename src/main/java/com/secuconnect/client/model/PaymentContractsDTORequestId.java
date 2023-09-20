@@ -74,7 +74,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Parent General Contract ID
+   * General Contract ID of the parent contract
    * @return contractId
   **/
   public String getContractId() {
@@ -108,7 +108,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Name of the project (must be unique)
+   * Project name (must be unique)
    * @return project
   **/
   public String getProject() {
@@ -176,7 +176,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Default push url
+   * Default URL for push notifications; this is where your service listens for callbacks of the secuconnect service
    * @return urlPush
   **/
   public String getUrlPush() {
@@ -193,7 +193,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Pay in account
+   * Pay-in account
    * @return payinAccount
   **/
   public Boolean getPayinAccount() {
@@ -210,7 +210,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Create first store
+   * Whether to create a first store at the same location
    * @return createFirstStore
   **/
   public Boolean getCreateFirstStore() {
@@ -227,7 +227,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Store name
+   * Store name of the first store
    * @return storeName
   **/
   public String getStoreName() {
@@ -244,7 +244,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Payout purpose
+   * Purpose for payouts that appears at the bank statement
    * @return payoutPurpose
   **/
   public String getPayoutPurpose() {
@@ -261,7 +261,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Object ID of Services Identrequest
+   * Object ID of Services Identrequest (&#x60;SIR_...&#x60;)
    * @return identrequest
   **/
   public String getIdentrequest() {
@@ -278,7 +278,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * The document ID of of uploaded signed contract; s. Document service
+   * The document ID of of uploaded signed contract; s. Document service (&#x60;DUP_...&#x60;)
    * @return signedContract
   **/
   public String getSignedContract() {
@@ -312,7 +312,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Adds a note.
+   * Additional notes
    * @return notes
   **/
   public String getNotes() {
@@ -346,7 +346,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Get tid
+   * Third party terminal ID
    * @return tid
   **/
   public String getTid() {
@@ -363,7 +363,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Get merchantCategory
+   * Merchant category  This is _not_ the ISO Merchant Category Code (MCC). The list can be obtained at &#x60;GET /pai/v2/General/Merchants/me/MerchantCategories.
    * @return merchantCategory
   **/
   public Integer getMerchantCategory() {
@@ -380,7 +380,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Get accountStatementText
+   * Descriptor that appears at the credit card statements
    * @return accountStatementText
   **/
   public String getAccountStatementText() {

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsBasketProductGroup
+ * Article group
  */
 public class SmartTransactionsBasketProductGroup {
   @SerializedName("id")
@@ -22,7 +22,7 @@ public class SmartTransactionsBasketProductGroup {
   }
 
    /**
-   * Group id
+   * Group ID
    * @return id
   **/
   public String getId() {
@@ -39,7 +39,7 @@ public class SmartTransactionsBasketProductGroup {
   }
 
    /**
-   * Desc
+   * Descriptive name
    * @return desc
   **/
   public String getDesc() {

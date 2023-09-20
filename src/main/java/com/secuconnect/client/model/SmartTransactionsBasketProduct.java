@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * SmartTransactionsBasketProduct
+ * Single item in basket
  */
 public class SmartTransactionsBasketProduct {
   @SerializedName("id")
@@ -68,7 +68,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * Product id
+   * Item ID
    * @return id
   **/
   public Integer getId() {
@@ -85,7 +85,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * Parent
+   * Parent item ID
    * @return parent
   **/
   public Integer getParent() {
@@ -102,7 +102,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * Category of item
+   * Item type:  - &#x60;\&quot;article\&quot;&#x60; - &#x60;\&quot;coupon\&quot;&#x60; - &#x60;\&quot;sub_transaction\&quot;&#x60; - &#x60;\&quot;stakeholder_payment\&quot;&#x60; - &#x60;\&quot;shipping\&quot;&#x60; - &#x60;\&quot;subscription\&quot;&#x60;
    * @return itemType
   **/
   public String getItemType() {
@@ -119,7 +119,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * Desc
+   * Descriptive article name
    * @return desc
   **/
   public String getDesc() {
@@ -136,7 +136,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * Article number
+   * Article number (SKU)
    * @return articleNumber
   **/
   public String getArticleNumber() {
@@ -153,7 +153,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * The serialnumber of the scanned posa card
+   * Serial number of the POS activation card (POSA)
    * @return serialNumber
   **/
   public String getSerialNumber() {
@@ -221,7 +221,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * it is the value of the sum of the product with all items in sub_basket
+   * Total amount of all items in a sub-basket; in the smallest currency unit (e. g. Euro Cent)
    * @return sum
   **/
   public Integer getSum() {
@@ -255,7 +255,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * The reference_id must be unique, it&#x27;s a Reference for to the reference_id of SmartTransactionsSubBasketProduct [example: SmartTransactionsBasketProduct-&gt;reference_id is 1000 then all SmartTransactionsSubBasketProduct must have unique reference_id like 1000.1, 1000.2 etc.]
+   * Unique line identifier, used to update the basket before the transaction is executed
    * @return referenceId
   **/
   public String getReferenceId() {
@@ -272,7 +272,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * contract id
+   * General Contract ID of the merchant (sub-basket) or payee (stakeholder share)
    * @return contractId
   **/
   public String getContractId() {
@@ -322,7 +322,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * sub basket Product
+   * Sub-baskets  Nest items für sub-baskets here. (Only one level.)
    * @return subBasket
   **/
   public List<SmartTransactionsSubBasketProduct> getSubBasket() {
@@ -339,7 +339,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * subscription item plan_id
+   * Subscription Plan ID
    * @return planId
   **/
   public String getPlanId() {
@@ -356,7 +356,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * timestamp when the subscription should start
+   * Subscription start date (ISO 8601 date and time)
    * @return startAt
   **/
   public String getStartAt() {

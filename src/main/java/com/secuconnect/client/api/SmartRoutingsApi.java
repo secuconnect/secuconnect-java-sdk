@@ -78,8 +78,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * POST Smart/Routings
-     * Create new smart routing
+     * Create Smart Routing
+     * Creates a new Smart Routing from the given data.
      * @param body Smart routing properties
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -90,8 +90,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * POST Smart/Routings
-     * Create new smart routing
+     * Create Smart Routing
+     * Creates a new Smart Routing from the given data.
      * @param body Smart routing properties
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -103,8 +103,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * POST Smart/Routings (asynchronously)
-     * Create new smart routing
+     * Create Smart Routing (asynchronously)
+     * Creates a new Smart Routing from the given data.
      * @param body Smart routing properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -171,8 +171,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * POST Smart/Routings/{smartRoutingId}/assign/{smartDeviceId}
-     * Assign the specific smart device to the specific smart routing
+     * Assign Smart Device
+     * Assigns the specified Smart Device to the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
      * @param body Smart routing assignment properties
@@ -185,8 +185,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * POST Smart/Routings/{smartRoutingId}/assign/{smartDeviceId}
-     * Assign the specific smart device to the specific smart routing
+     * Assign Smart Device
+     * Assigns the specified Smart Device to the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
      * @param body Smart routing assignment properties
@@ -200,8 +200,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * POST Smart/Routings/{smartRoutingId}/assign/{smartDeviceId} (asynchronously)
-     * Assign the specific smart device to the specific smart routing
+     * Assign Smart Device (asynchronously)
+     * Assigns the specified Smart Device to the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
      * @param body Smart routing assignment properties
@@ -272,8 +272,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * GET Smart/Routings
-     * Get a list of smart routings
+     * Find Smart Routings
+     * Returns the Smart Routings matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -288,8 +288,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * GET Smart/Routings
-     * Get a list of smart routings
+     * Find Smart Routings
+     * Returns the Smart Routings matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -305,8 +305,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * GET Smart/Routings (asynchronously)
-     * Get a list of smart routings
+     * Find Smart Routings (asynchronously)
+     * Returns the Smart Routings matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -370,8 +370,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * GET Smart/Routings/{smartRoutingId}
-     * Get one smart routing for a specific id
+     * Read Smart Routing
+     * Returns the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -382,8 +382,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * GET Smart/Routings/{smartRoutingId}
-     * Get one smart routing for a specific id
+     * Read Smart Routing
+     * Returns the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -395,8 +395,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * GET Smart/Routings/{smartRoutingId} (asynchronously)
-     * Get one smart routing for a specific id
+     * Read Smart Routing (asynchronously)
+     * Returns the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -456,8 +456,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * DELETE Smart/Routings/{smartRoutingId}
-     * Remove specific smart roting
+     * Delete Smart Routing
+     * Deletes the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -468,8 +468,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * DELETE Smart/Routings/{smartRoutingId}
-     * Remove specific smart roting
+     * Delete Smart Routing
+     * Deletes the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -481,8 +481,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * DELETE Smart/Routings/{smartRoutingId} (asynchronously)
-     * Remove specific smart roting
+     * Delete Smart Routing (asynchronously)
+     * Deletes the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -548,8 +548,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * DELETE Smart/Routings/{smartRoutingId}/assign/{smartDeviceId}
-     * Remove smart routing assignment
+     * Unassign Smart Device
+     * Unassigns the specified Smart Device from the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
      * @return SmartRoutingsProductModel
@@ -561,8 +561,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * DELETE Smart/Routings/{smartRoutingId}/assign/{smartDeviceId}
-     * Remove smart routing assignment
+     * Unassign Smart Device
+     * Unassigns the specified Smart Device from the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
@@ -575,8 +575,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * DELETE Smart/Routings/{smartRoutingId}/assign/{smartDeviceId} (asynchronously)
-     * Remove smart routing assignment
+     * Unassign Smart Device (asynchronously)
+     * Unassigns the specified Smart Device from the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
      * @param callback The callback to be executed when the API call finishes
@@ -638,8 +638,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * PUT Smart/Routings/{smartRoutingId}
-     * Update specific smart routing
+     * Update Smart Routing
+     * Updates the specified Smart Routing with the given data.
      * @param smartRoutingId Smart routing id (required)
      * @param body Smart routing properties
      * @return SmartRoutingsProductModel
@@ -651,8 +651,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * PUT Smart/Routings/{smartRoutingId}
-     * Update specific smart routing
+     * Update Smart Routing
+     * Updates the specified Smart Routing with the given data.
      * @param smartRoutingId Smart routing id (required)
      * @param body Smart routing properties
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
@@ -665,8 +665,8 @@ public class SmartRoutingsApi {
     }
 
     /**
-     * PUT Smart/Routings/{smartRoutingId} (asynchronously)
-     * Update specific smart routing
+     * Update Smart Routing (asynchronously)
+     * Updates the specified Smart Routing with the given data.
      * @param smartRoutingId Smart routing id (required)
      * @param body Smart routing properties
      * @param callback The callback to be executed when the API call finishes

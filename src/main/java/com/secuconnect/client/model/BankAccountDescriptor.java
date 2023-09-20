@@ -45,7 +45,7 @@ public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPriv
   }
 
    /**
-   * Bank Identifier Code (BIC), or formerly SWIFT code
+   * Bank Identifier Code (BIC)
    * @return bic
   **/
   public String getBic() {
@@ -62,7 +62,7 @@ public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPriv
   }
 
    /**
-   * Account owner name
+   * Account owner name (personal name or company name)
    * @return owner
   **/
   public String getOwner() {
@@ -91,7 +91,7 @@ public class BankAccountDescriptor implements OneOfPaymentContainersDTOModelPriv
   }
 
    /**
-   * Purpose to use
+   * Purpose for bank transfer
    * @return purpose
   **/
   public String getPurpose() {

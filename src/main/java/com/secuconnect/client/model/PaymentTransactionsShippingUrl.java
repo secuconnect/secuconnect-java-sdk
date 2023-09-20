@@ -16,7 +16,7 @@ public class PaymentTransactionsShippingUrl {
   }
 
    /**
-   * The url of the shipping information form
+   * URL of the shipping information form
    * @return url
   **/
   public String getUrl() {

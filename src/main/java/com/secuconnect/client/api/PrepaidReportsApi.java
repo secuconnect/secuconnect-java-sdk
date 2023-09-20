@@ -79,7 +79,7 @@ public class PrepaidReportsApi {
 
     /**
      * Create Prepaid Report
-     * &#x60;POST Prepaid/Reports&#x60;
+     * Creates a new Prepaid Report from the given data.
      * @param body 
      * @return PrepaidReportsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -91,7 +91,7 @@ public class PrepaidReportsApi {
 
     /**
      * Create Prepaid Report
-     * &#x60;POST Prepaid/Reports&#x60;
+     * Creates a new Prepaid Report from the given data.
      * @param body 
      * @return ApiResponse&lt;PrepaidReportsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -104,7 +104,7 @@ public class PrepaidReportsApi {
 
     /**
      * Create Prepaid Report (asynchronously)
-     * &#x60;POST Prepaid/Reports&#x60;
+     * Creates a new Prepaid Report from the given data.
      * @param body 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -173,8 +173,8 @@ public class PrepaidReportsApi {
     }
 
     /**
-     * GET Prepaid/Reports/
-     * Get a list of prepaid Reports
+     * Find Prepaid Reports
+     * Returns the Prepaid Reports matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -189,8 +189,8 @@ public class PrepaidReportsApi {
     }
 
     /**
-     * GET Prepaid/Reports/
-     * Get a list of prepaid Reports
+     * Find Prepaid Reports
+     * Returns the Prepaid Reports matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -206,8 +206,8 @@ public class PrepaidReportsApi {
     }
 
     /**
-     * GET Prepaid/Reports/ (asynchronously)
-     * Get a list of prepaid Reports
+     * Find Prepaid Reports (asynchronously)
+     * Returns the Prepaid Reports matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -271,8 +271,8 @@ public class PrepaidReportsApi {
     }
 
     /**
-     * GET Prepaid/Reports/{prepaidReportsId}
-     * Get one prepaid Reports for a specific id
+     * Read Prepaid Report
+     * Returns the specified Prepaid Report.
      * @param prepaidReportsId Prepaid Reports id (required)
      * @return PrepaidReportsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -283,8 +283,8 @@ public class PrepaidReportsApi {
     }
 
     /**
-     * GET Prepaid/Reports/{prepaidReportsId}
-     * Get one prepaid Reports for a specific id
+     * Read Prepaid Report
+     * Returns the specified Prepaid Report.
      * @param prepaidReportsId Prepaid Reports id (required)
      * @return ApiResponse&lt;PrepaidReportsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -296,8 +296,8 @@ public class PrepaidReportsApi {
     }
 
     /**
-     * GET Prepaid/Reports/{prepaidReportsId} (asynchronously)
-     * Get one prepaid Reports for a specific id
+     * Read Prepaid Report (asynchronously)
+     * Returns the specified Prepaid Report.
      * @param prepaidReportsId Prepaid Reports id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

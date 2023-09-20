@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsCheckoutLinks
+ * Checkout URLs
  */
 public class SmartTransactionsCheckoutLinks {
   @SerializedName("url_checkout")
@@ -16,7 +16,7 @@ public class SmartTransactionsCheckoutLinks {
   }
 
    /**
-   * Smart Checkout URL
+   * Checkout URL
    * @return urlCheckout
   **/
   public String getUrlCheckout() {

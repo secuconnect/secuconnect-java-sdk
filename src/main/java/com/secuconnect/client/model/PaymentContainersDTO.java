@@ -6,7 +6,7 @@ import com.secuconnect.client.model.PaymentContainersDTOCustomer;
 import java.util.Objects;
 
 /**
- * PaymentContainersDTO
+ * Payment instrument
  */
 public class PaymentContainersDTO {
   @SerializedName("merchant_id")
@@ -81,7 +81,7 @@ public class PaymentContainersDTO {
   }
 
    /**
-   * Type of Payment Containers
+   * Container type
    * @return type
   **/
   public String getType() {

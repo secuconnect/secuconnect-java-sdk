@@ -12,7 +12,7 @@ import com.secuconnect.client.model.ProductInstanceUID;
 import java.util.Objects;
 
 /**
- * Loyalty merchant card
+ * A secucard customer card or voucher in relation to a merchant.  The credit balances are always managed separately for each merchant. Thus one secucard Loyalty Card can have several Merchant Cards. This means that the same card can be used for different merchants at the same time.  In the case of acceptance points, the credit balance is managed for the very merchant the card was issued for. An example for this is a voucher purchased for a shopping center and accepted by its merchants. The balances are accounted in relation to the shopping center.
  */
 public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   @SerializedName("l")
@@ -311,7 +311,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty merchant card balance
+   * Total money balance; in the smallest currency unit (e. g. Euro Cent)
    * @return balance
   **/
   public Integer getBalance() {
@@ -345,7 +345,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty merchant card bonus balance
+   * Money balance collected as bonus for former transactions; in the smallest currency unit (e. g. Euro Cent)
    * @return bonusBalance
   **/
   public Integer getBonusBalance() {
@@ -362,7 +362,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty merchant card cash balance
+   * Money balance loaded with money; in the smallest currency unit (e. g. Euro Cent)
    * @return cashBalance
   **/
   public Integer getCashBalance() {
@@ -379,7 +379,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty merchant card stock status
+   * Stock status
    * @return stockStatus
   **/
   public String getStockStatus() {
@@ -396,7 +396,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty merchant card lock status
+   * Lock status
    * @return lockStatus
   **/
   public String getLockStatus() {
@@ -413,7 +413,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty merchant card last usage
+   * Last used at (ISO 8601 date and time)
    * @return lastUsage
   **/
   public String getLastUsage() {
@@ -430,7 +430,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty merchant card last charge
+   * Last loaded at (ISO 8601 date and time)
    * @return lastCharge
   **/
   public String getLastCharge() {
@@ -447,7 +447,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Information whether loyalty merchant card is base card
+   * Whether the card is base card
    * @return isBaseCard
   **/
   public Boolean getIsBaseCard() {
@@ -464,7 +464,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty merchant card passcode
+   * Whether the card has a passcode set (1) or not (0)
    * @return passcode
   **/
   public Integer getPasscode() {

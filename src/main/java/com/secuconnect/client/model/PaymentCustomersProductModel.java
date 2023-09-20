@@ -11,7 +11,7 @@ import com.secuconnect.client.model.UpdatedField;
 import java.util.Objects;
 
 /**
- * PaymentCustomersProductModel
+ * Customer details
  */
 public class PaymentCustomersProductModel extends BaseProductModel {
   @SerializedName("l")

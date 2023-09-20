@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * SmartTransactionsBasket
+ * Basket items, several sub-baskets or subscription details
  */
 public class SmartTransactionsBasket {
   @SerializedName("products")
@@ -47,7 +47,7 @@ public class SmartTransactionsBasket {
   }
 
    /**
-   * Basket Type
+   * Basket type
    * @return type
   **/
   public String getType() {

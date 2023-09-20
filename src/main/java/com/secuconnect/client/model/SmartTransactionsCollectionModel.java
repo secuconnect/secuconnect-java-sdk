@@ -29,7 +29,7 @@ public class SmartTransactionsCollectionModel implements OneOfSmartTransactionsD
   }
 
    /**
-   * Type of delivery option
+   * Delivery type:  - &#x60;\&quot;shipping\&quot;&#x60; - &#x60;\&quot;collection\&quot;&#x60;
    * @return type
   **/
   public String getType() {
@@ -80,7 +80,7 @@ public class SmartTransactionsCollectionModel implements OneOfSmartTransactionsD
   }
 
    /**
-   * Delivered at
+   * Delivered at (ISO 8601 date and time)
    * @return deliveredAt
   **/
   public String getDeliveredAt() {
@@ -91,21 +91,12 @@ public class SmartTransactionsCollectionModel implements OneOfSmartTransactionsD
     this.deliveredAt = deliveredAt;
   }
 
-  public SmartTransactionsCollectionModel code(String code) {
-    this.code = code;
-    return this;
-  }
-
    /**
-   * confirmation code to pickup the collection
+   * Confirmation code for pickup
    * @return code
   **/
   public String getCode() {
     return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
   }
 
   @Override

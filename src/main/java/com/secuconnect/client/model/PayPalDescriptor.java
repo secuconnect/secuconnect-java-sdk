@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * PayPal details
+ * PayPal account details
  */
 public class PayPalDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   @SerializedName("email")
@@ -19,7 +19,7 @@ public class PayPalDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   }
 
    /**
-   * Account owner mail
+   * Account owner email
    * @return email
   **/
   public String getEmail() {
@@ -36,7 +36,7 @@ public class PayPalDescriptor implements OneOfPaymentContainersDTOModelPrivate {
   }
 
    /**
-   * Account owner ID
+   * Account ID
    * @return payerId
   **/
   public String getPayerId() {

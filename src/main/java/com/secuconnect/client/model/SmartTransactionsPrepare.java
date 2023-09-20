@@ -79,7 +79,7 @@ public class SmartTransactionsPrepare {
   }
 
    /**
-   * Email
+   * Email address
    * @return email
   **/
   public String getEmail() {

@@ -146,7 +146,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Transaction reference
+   * Transaction reference, e.g. merchant order ID
    * @return transactionRef
   **/
   public String getTransactionRef() {
@@ -163,7 +163,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Merchant reference
+   * Merchant reference, e.g. merchant customer ID
    * @return merchantRef
   **/
   public String getMerchantRef() {
@@ -222,7 +222,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Idents
+   * secucard customer card or voucher, or request to create it
    * @return idents
   **/
   public List<SmartTransactionsIdent> getIdents() {
@@ -341,7 +341,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Transaction id
+   * Transaction ID (TA code)
    * @return transId
   **/
   public Integer getTransId() {
@@ -454,21 +454,12 @@ public class SmartTransactionsDTO {
     this.checkin = checkin;
   }
 
-  public SmartTransactionsDTO paymentMethod(String paymentMethod) {
-    this.paymentMethod = paymentMethod;
-    return this;
-  }
-
    /**
-   * Payment method
+   * Payment method, as passed with &#x60;/prepare/{method}&#x60; or &#x60;/start/{method}&#x60;
    * @return paymentMethod
   **/
   public String getPaymentMethod() {
     return paymentMethod;
-  }
-
-  public void setPaymentMethod(String paymentMethod) {
-    this.paymentMethod = paymentMethod;
   }
 
   public SmartTransactionsDTO isDemo(Boolean isDemo) {
@@ -477,7 +468,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Demo payment
+   * Whether the transaction is in demo mode (payment not executed)
    * @return isDemo
   **/
   public Boolean getIsDemo() {
@@ -494,7 +485,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * intent of transaction
+   * Intent:  - &#x60;\&quot;sale\&quot;&#x60; - &#x60;\&quot;order\&quot;&#x60;
    * @return intent
   **/
   public String getIntent() {

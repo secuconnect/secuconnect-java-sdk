@@ -34,7 +34,7 @@ public class PaymentContainerMandate {
   }
 
    /**
-   * Sepa mandate id
+   * Internal mandate ID
    * @return sepaMandateId
   **/
   public String getSepaMandateId() {
@@ -85,7 +85,7 @@ public class PaymentContainerMandate {
   }
 
    /**
-   * Type
+   * SEPA mandate type (CORE or B2B)
    * @return type
   **/
   public String getType() {
@@ -102,7 +102,7 @@ public class PaymentContainerMandate {
   }
 
    /**
-   * Status
+   * SEPA mandate status
    * @return status
   **/
   public String getStatus() {
@@ -119,7 +119,7 @@ public class PaymentContainerMandate {
   }
 
    /**
-   * Identification
+   * SEPA mandate reference
    * @return identification
   **/
   public String getIdentification() {
@@ -136,7 +136,7 @@ public class PaymentContainerMandate {
   }
 
    /**
-   * Creditor ID
+   * SEPA creditor ID
    * @return creditorId
   **/
   public String getCreditorId() {

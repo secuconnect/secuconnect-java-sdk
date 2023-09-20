@@ -16,7 +16,7 @@ public class MandateProductModel {
   }
 
    /**
-   * Link to sepamandate B2B doc
+   * Link to document with B2B mandate
    * @return mandateUrl
   **/
   public String getMandateUrl() {

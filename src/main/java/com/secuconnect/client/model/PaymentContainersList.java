@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * PaymentContainersList
+ * List of Payment Containers
  */
 public class PaymentContainersList {
   @SerializedName("count")
@@ -40,7 +40,7 @@ public class PaymentContainersList {
   }
 
    /**
-   * Number of existing payment containers
+   * Total number of matching Payment Containers, regardless of the number of objects actually returned
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class PaymentContainersList {
   }
 
    /**
-   * List of PaymentContainers
+   * Payment Container objects
    * @return data
   **/
   public List<PaymentContainersProductModel> getData() {

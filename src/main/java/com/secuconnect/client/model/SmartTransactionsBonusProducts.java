@@ -5,7 +5,7 @@ import com.secuconnect.client.model.SmartTransactionsBaseProduct;
 import java.util.Objects;
 
 /**
- * SmartTransactionsBonusProducts
+ * Basket item for bonus
  */
 public class SmartTransactionsBonusProducts extends SmartTransactionsBaseProduct {
   @SerializedName("serialNumber")
@@ -17,7 +17,7 @@ public class SmartTransactionsBonusProducts extends SmartTransactionsBaseProduct
   }
 
    /**
-   * The serialnumber of the scanned posa card
+   * Serial number of the POS activation card (POSA)
    * @return serialNumber
   **/
   public String getSerialNumber() {

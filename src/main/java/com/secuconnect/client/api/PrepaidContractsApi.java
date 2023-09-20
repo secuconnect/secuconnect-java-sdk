@@ -80,7 +80,7 @@ public class PrepaidContractsApi {
     }
 
     /**
-     * POST Prepaid/Contracts/me/mappingZvt
+     * Get Prepaid Item ID
      * Gets prepaid item id from product id which is configured in prepaid contracts
      * @param prepaidContractId Prepaid contract id (required)
      * @param body Prepaid transaction input properties
@@ -93,7 +93,7 @@ public class PrepaidContractsApi {
     }
 
     /**
-     * POST Prepaid/Contracts/me/mappingZvt
+     * Get Prepaid Item ID
      * Gets prepaid item id from product id which is configured in prepaid contracts
      * @param prepaidContractId Prepaid contract id (required)
      * @param body Prepaid transaction input properties
@@ -107,7 +107,7 @@ public class PrepaidContractsApi {
     }
 
     /**
-     * POST Prepaid/Contracts/me/mappingZvt (asynchronously)
+     * Get Prepaid Item ID (asynchronously)
      * Gets prepaid item id from product id which is configured in prepaid contracts
      * @param prepaidContractId Prepaid contract id (required)
      * @param body Prepaid transaction input properties

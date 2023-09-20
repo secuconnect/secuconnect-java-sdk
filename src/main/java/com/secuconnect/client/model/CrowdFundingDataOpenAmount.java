@@ -6,7 +6,7 @@ import com.secuconnect.client.model.CrowdFundingDataOpenAmountOutsideCancellatio
 import java.util.Objects;
 
 /**
- * Information about the open amount which is not yet paid out
+ * Open amount which is not yet paid out
  */
 public class CrowdFundingDataOpenAmount {
   @SerializedName("total")
@@ -24,7 +24,7 @@ public class CrowdFundingDataOpenAmount {
   }
 
    /**
-   * Total of all open transactions amounts
+   * Total amount in the smallest currency unit (e. g. Euro Cent)
    * @return total
   **/
   public Integer getTotal() {

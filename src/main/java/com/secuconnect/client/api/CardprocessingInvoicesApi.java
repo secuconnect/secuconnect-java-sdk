@@ -90,8 +90,8 @@ public class CardprocessingInvoicesApi {
     }
 
     /**
-     * GET Cardprocessing/Invoices
-     * Get a list of cardprocessing invoices
+     * Find Cardprocessing Invoices
+     * Returns the Cardprocessing Invoices matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -106,8 +106,8 @@ public class CardprocessingInvoicesApi {
     }
 
     /**
-     * GET Cardprocessing/Invoices
-     * Get a list of cardprocessing invoices
+     * Find Cardprocessing Invoices
+     * Returns the Cardprocessing Invoices matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -123,8 +123,8 @@ public class CardprocessingInvoicesApi {
     }
 
     /**
-     * GET Cardprocessing/Invoices (asynchronously)
-     * Get a list of cardprocessing invoices
+     * Find Cardprocessing Invoices (asynchronously)
+     * Returns the Cardprocessing Invoices matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -188,8 +188,8 @@ public class CardprocessingInvoicesApi {
     }
 
     /**
-     * GET Cardprocessing/Invoices/{cardprocessingInvoiceId}
-     * Get one specific cardprocessing invoice
+     * Read Cardprocessing Invoice
+     * Returns the specified Cardprocessing Invoice.
      * @param cardprocessingInvoiceId Cardprocessing invoice id (required)
      * @return CardprocessingInvoicesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -200,8 +200,8 @@ public class CardprocessingInvoicesApi {
     }
 
     /**
-     * GET Cardprocessing/Invoices/{cardprocessingInvoiceId}
-     * Get one specific cardprocessing invoice
+     * Read Cardprocessing Invoice
+     * Returns the specified Cardprocessing Invoice.
      * @param cardprocessingInvoiceId Cardprocessing invoice id (required)
      * @return ApiResponse&lt;CardprocessingInvoicesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -213,8 +213,8 @@ public class CardprocessingInvoicesApi {
     }
 
     /**
-     * GET Cardprocessing/Invoices/{cardprocessingInvoiceId} (asynchronously)
-     * Get one specific cardprocessing invoice
+     * Read Cardprocessing Invoice (asynchronously)
+     * Returns the specified Cardprocessing Invoice.
      * @param cardprocessingInvoiceId Cardprocessing invoice id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

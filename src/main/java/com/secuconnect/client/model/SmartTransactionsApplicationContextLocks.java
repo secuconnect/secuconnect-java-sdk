@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsApplicationContextLocks
+ * Data restrictions for Smart Checkout
  */
 public class SmartTransactionsApplicationContextLocks {
   @SerializedName("customer")
-  protected Boolean customer = null;
+  protected Boolean customer = false;
 
   @SerializedName("shipping_address")
   protected Boolean shippingAddress = null;
@@ -19,7 +19,7 @@ public class SmartTransactionsApplicationContextLocks {
   }
 
    /**
-   * look customer data
+   * Whether the customer data are locked; locked data must not be changed
    * @return customer
   **/
   public Boolean getCustomer() {
@@ -36,7 +36,7 @@ public class SmartTransactionsApplicationContextLocks {
   }
 
    /**
-   * look shipping address data
+   * Whether the shipping address is locked; locked data must not be changed
    * @return shippingAddress
   **/
   public Boolean getShippingAddress() {

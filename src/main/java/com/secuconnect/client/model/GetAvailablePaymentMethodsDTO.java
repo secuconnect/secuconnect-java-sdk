@@ -13,6 +13,9 @@ public class GetAvailablePaymentMethodsDTO {
   @SerializedName("is_demo")
   protected Boolean isDemo = null;
 
+  @SerializedName("apiv2_products")
+  protected Boolean apiv2Products = null;
+
   public GetAvailablePaymentMethodsDTO currency(String currency) {
     this.currency = currency;
     return this;
@@ -47,6 +50,23 @@ public class GetAvailablePaymentMethodsDTO {
     this.isDemo = isDemo;
   }
 
+  public GetAvailablePaymentMethodsDTO apiv2Products(Boolean apiv2Products) {
+    this.apiv2Products = apiv2Products;
+    return this;
+  }
+
+   /**
+   * If TRUE, the response will use the flex.API/APIv2 product names, and the other parameters will be ignored.
+   * @return apiv2Products
+  **/
+  public Boolean getApiv2Products() {
+    return apiv2Products;
+  }
+
+  public void setApiv2Products(Boolean apiv2Products) {
+    this.apiv2Products = apiv2Products;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -57,12 +77,13 @@ public class GetAvailablePaymentMethodsDTO {
     }
     GetAvailablePaymentMethodsDTO getAvailablePaymentMethodsDTO = (GetAvailablePaymentMethodsDTO) o;
     return Objects.equals(this.currency, getAvailablePaymentMethodsDTO.currency) &&
-        Objects.equals(this.isDemo, getAvailablePaymentMethodsDTO.isDemo);
+        Objects.equals(this.isDemo, getAvailablePaymentMethodsDTO.isDemo) &&
+        Objects.equals(this.apiv2Products, getAvailablePaymentMethodsDTO.apiv2Products);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currency, isDemo);
+    return Objects.hash(currency, isDemo, apiv2Products);
   }
 
   @Override
@@ -71,6 +92,7 @@ public class GetAvailablePaymentMethodsDTO {
     sb.append("class GetAvailablePaymentMethodsDTO {\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    isDemo: ").append(toIndentedString(isDemo)).append("\n");
+    sb.append("    apiv2Products: ").append(toIndentedString(apiv2Products)).append("\n");
     sb.append("}");
     return sb.toString();
   }

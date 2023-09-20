@@ -90,8 +90,8 @@ public class SmartTemplatesApi {
     }
 
     /**
-     * GET Smart/Templates
-     * Get a list of smart templates
+     * Find Smart Templates
+     * Returns all Smart Templates matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -106,8 +106,8 @@ public class SmartTemplatesApi {
     }
 
     /**
-     * GET Smart/Templates
-     * Get a list of smart templates
+     * Find Smart Templates
+     * Returns all Smart Templates matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -123,8 +123,8 @@ public class SmartTemplatesApi {
     }
 
     /**
-     * GET Smart/Templates (asynchronously)
-     * Get a list of smart templates
+     * Find Smart Templates (asynchronously)
+     * Returns all Smart Templates matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -188,8 +188,8 @@ public class SmartTemplatesApi {
     }
 
     /**
-     * GET Smart/Templates/{smartTemplateId}
-     * Get one smart template for a specific id
+     * Read Smart Template
+     * Returns the specified Smart Template.
      * @param smartTemplateId Smart template id (required)
      * @return SmartTemplatesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -200,8 +200,8 @@ public class SmartTemplatesApi {
     }
 
     /**
-     * GET Smart/Templates/{smartTemplateId}
-     * Get one smart template for a specific id
+     * Read Smart Template
+     * Returns the specified Smart Template.
      * @param smartTemplateId Smart template id (required)
      * @return ApiResponse&lt;SmartTemplatesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -213,8 +213,8 @@ public class SmartTemplatesApi {
     }
 
     /**
-     * GET Smart/Templates/{smartTemplateId} (asynchronously)
-     * Get one smart template for a specific id
+     * Read Smart Template (asynchronously)
+     * Returns the specified Smart Template.
      * @param smartTemplateId Smart template id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

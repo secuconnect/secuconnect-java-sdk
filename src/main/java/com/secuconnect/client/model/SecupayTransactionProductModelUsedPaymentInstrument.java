@@ -5,7 +5,7 @@ import com.secuconnect.client.model.OneOfPaymentContainersDTOModelPrivate;
 import java.util.Objects;
 
 /**
- * The payment data which has the payer used (like bank account, credit card, ...). This data is always masked.
+ * Payment data the payer has used (bank account, credit card, etc.). The data are always masked.
  */
 public class SecupayTransactionProductModelUsedPaymentInstrument {
   @SerializedName("type")
@@ -20,7 +20,7 @@ public class SecupayTransactionProductModelUsedPaymentInstrument {
   }
 
    /**
-   * The type of the payment instrument data, like: &#x27;bank_account&#x27; or &#x27;credit_card&#x27;
+   * Type of payment instrument, like: &#x60;\&quot;bank_account\&quot;&#x60; or &#x60;\&quot;credit_card\&quot;&#x60;
    * @return type
   **/
   public String getType() {

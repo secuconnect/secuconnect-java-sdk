@@ -12,7 +12,6 @@ import com.secuconnect.client.model.PaymentContractsProductModel;
 import com.secuconnect.client.model.PaymentContractsRequestIdResult;
 import com.secuconnect.client.model.ProductExceptionPayload;
 import com.secuconnect.client.model.ResultBoolean;
-import com.secuconnect.client.model.StringList;
 import okhttp3.Call;
 
 import java.lang.reflect.Type;
@@ -42,8 +41,8 @@ public class PaymentContractsApi {
 
     /**
      * Build call for clone
-     * @param paymentContractId Contract identifier (required)
-     * @param body Payment contract clone properties
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
+     * @param body New Payment Contract
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -88,10 +87,10 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/clone
-     * Clone an existing payment contract
-     * @param paymentContractId Contract identifier (required)
-     * @param body Payment contract clone properties
+     * Clone contract
+     * Clones a contract without identification process. This is used to onboard new projects for known merchants of your platform or marketplace.
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
+     * @param body New Payment Contract
      * @return PaymentContractsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -101,10 +100,10 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/clone
-     * Clone an existing payment contract
-     * @param paymentContractId Contract identifier (required)
-     * @param body Payment contract clone properties
+     * Clone contract
+     * Clones a contract without identification process. This is used to onboard new projects for known merchants of your platform or marketplace.
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
+     * @param body New Payment Contract
      * @return ApiResponse&lt;PaymentContractsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -115,10 +114,10 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/clone (asynchronously)
-     * Clone an existing payment contract
-     * @param paymentContractId Contract identifier (required)
-     * @param body Payment contract clone properties
+     * Clone contract (asynchronously)
+     * Clones a contract without identification process. This is used to onboard new projects for known merchants of your platform or marketplace.
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
+     * @param body New Payment Contract
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -139,6 +138,7 @@ public class PaymentContractsApi {
      * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;desc&#x60; descending.
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @deprecated
      */
     public Call paymentContractsGetCall(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
         Object localVarPostBody = null;
@@ -186,8 +186,8 @@ public class PaymentContractsApi {
     }
 
     /**
-     * GET Payment/Contracts
-     * Get a list of payment contracts
+     * Find Payment Contracts
+     * Returns the Payment Contracts matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -202,8 +202,8 @@ public class PaymentContractsApi {
     }
 
     /**
-     * GET Payment/Contracts
-     * Get a list of payment contracts
+     * Find Payment Contracts
+     * Returns the Payment Contracts matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -219,8 +219,8 @@ public class PaymentContractsApi {
     }
 
     /**
-     * GET Payment/Contracts (asynchronously)
-     * Get a list of payment contracts
+     * Find Payment Contracts (asynchronously)
+     * Returns the Payment Contracts matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -239,9 +239,10 @@ public class PaymentContractsApi {
 
     /**
      * Build call for paymentContractsGetById
-     * @param paymentContractId Search one by provided id (required)
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @deprecated
      */
     public Call paymentContractsGetByIdCall(String paymentContractId) throws ApiException {
         Object localVarPostBody = null;
@@ -284,9 +285,9 @@ public class PaymentContractsApi {
     }
 
     /**
-     * GET Payment/Contracts/{paymentContractId}
-     * Get all payment contracts
-     * @param paymentContractId Search one by provided id (required)
+     * Read Payment Contract
+     * Returns the specified Payment Contract.
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) (required)
      * @return PaymentContractsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -296,9 +297,9 @@ public class PaymentContractsApi {
     }
 
     /**
-     * GET Payment/Contracts/{paymentContractId}
-     * Get all payment contracts
-     * @param paymentContractId Search one by provided id (required)
+     * Read Payment Contract
+     * Returns the specified Payment Contract.
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) (required)
      * @return ApiResponse&lt;PaymentContractsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -309,9 +310,9 @@ public class PaymentContractsApi {
     }
 
     /**
-     * GET Payment/Contracts/{paymentContractId} (asynchronously)
-     * Get all payment contracts
-     * @param paymentContractId Search one by provided id (required)
+     * Read Payment Contract (asynchronously)
+     * Returns the specified Payment Contract.
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -328,6 +329,7 @@ public class PaymentContractsApi {
      * @param paymentContractId Contract identifier (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @deprecated
      */
     public Call paymentContractsIdPaymentMethodsGetCall(String paymentContractId) throws ApiException {
         Object localVarPostBody = null;
@@ -370,48 +372,48 @@ public class PaymentContractsApi {
     }
 
     /**
-     * GET Payment/Contracts/{paymentContractId}/paymentMethods
-     * Get available payment methods for given contract
+     * Get available payment methods
+     * Get available payment methods for the Payment Contract for the given ID.
      * @param paymentContractId Contract identifier (required)
-     * @return StringList
+     * @return List&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public StringList paymentContractsIdPaymentMethodsGet(String paymentContractId) throws ApiException {
-        ApiResponse<StringList> resp = paymentContractsIdPaymentMethodsGetWithHttpInfo(paymentContractId);
+    public List<String> paymentContractsIdPaymentMethodsGet(String paymentContractId) throws ApiException {
+        ApiResponse<List<String>> resp = paymentContractsIdPaymentMethodsGetWithHttpInfo(paymentContractId);
         return resp.getData();
     }
 
     /**
-     * GET Payment/Contracts/{paymentContractId}/paymentMethods
-     * Get available payment methods for given contract
+     * Get available payment methods
+     * Get available payment methods for the Payment Contract for the given ID.
      * @param paymentContractId Contract identifier (required)
-     * @return ApiResponse&lt;StringList&gt;
+     * @return ApiResponse&lt;List&lt;String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<StringList> paymentContractsIdPaymentMethodsGetWithHttpInfo(String paymentContractId) throws ApiException {
+    public ApiResponse<List<String>> paymentContractsIdPaymentMethodsGetWithHttpInfo(String paymentContractId) throws ApiException {
         Call call = paymentContractsIdPaymentMethodsGetValidateBeforeCall(paymentContractId);
-        Type localVarReturnType = new TypeToken<StringList>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * GET Payment/Contracts/{paymentContractId}/paymentMethods (asynchronously)
-     * Get available payment methods for given contract
+     * Get available payment methods (asynchronously)
+     * Get available payment methods for the Payment Contract for the given ID.
      * @param paymentContractId Contract identifier (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call paymentContractsIdPaymentMethodsGetAsync(String paymentContractId, final ApiCallback<StringList> callback) throws ApiException {
+    public Call paymentContractsIdPaymentMethodsGetAsync(String paymentContractId, final ApiCallback<List<String>> callback) throws ApiException {
         Call call = paymentContractsIdPaymentMethodsGetValidateBeforeCall(paymentContractId);
-        Type localVarReturnType = new TypeToken<StringList>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 
     /**
      * Build call for requestId
-     * @param paymentContractId Contract identifier of the parent (required)
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
      * @param body Payment contract request id properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -457,9 +459,9 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/requestId
-     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
-     * @param paymentContractId Contract identifier of the parent (required)
+     * Clone contract and request identification
+     * Clones a contract and starts the identification process. This is used to onboard entirely new merchants to your platform or marketplace.
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
      * @param body Payment contract request id properties
      * @return PaymentContractsRequestIdResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -470,9 +472,9 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/requestId
-     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
-     * @param paymentContractId Contract identifier of the parent (required)
+     * Clone contract and request identification
+     * Clones a contract and starts the identification process. This is used to onboard entirely new merchants to your platform or marketplace.
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
      * @param body Payment contract request id properties
      * @return ApiResponse&lt;PaymentContractsRequestIdResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -484,9 +486,9 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/requestId (asynchronously)
-     * This method clones your payment contract, so that you can use this to separate the merchants of your marketplace. (Needs to be activated))
-     * @param paymentContractId Contract identifier of the parent (required)
+     * Clone contract and request identification (asynchronously)
+     * Clones a contract and starts the identification process. This is used to onboard entirely new merchants to your platform or marketplace.
+     * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
      * @param body Payment contract request id properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -504,6 +506,7 @@ public class PaymentContractsApi {
      * @param paymentContractId Contract identifier (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @deprecated
      */
     public Call revokeAccrualCall(String paymentContractId) throws ApiException {
         Object localVarPostBody = null;
@@ -546,8 +549,8 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/revokeAccrual
-     * Revoke accrual flag for all transactions of given contract
+     * Revoke all accruals
+     * Revoke accrual flag for all transactions of the specified Payment Contract.
      * @param paymentContractId Contract identifier (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -556,8 +559,8 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/revokeAccrual
-     * Revoke accrual flag for all transactions of given contract
+     * Revoke all accruals
+     * Revoke accrual flag for all transactions of the specified Payment Contract.
      * @param paymentContractId Contract identifier (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -568,8 +571,8 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/revokeAccrual (asynchronously)
-     * Revoke accrual flag for all transactions of given contract
+     * Revoke all accruals (asynchronously)
+     * Revoke accrual flag for all transactions of the specified Payment Contract.
      * @param paymentContractId Contract identifier (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -587,6 +590,7 @@ public class PaymentContractsApi {
      * @param body 
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
+     * @deprecated
      */
     public Call updateBankAccountCall(String paymentContractId, BankAccountDescriptor body) throws ApiException {
         Object localVarPostBody = body;
@@ -629,8 +633,8 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/updateBankAccount
-     * Change the payout bank account of a contract
+     * Change bank account
+     * Changes the payout bank account of a contract.
      * @param paymentContractId Contract identifier (required)
      * @param body 
      * @return ResultBoolean
@@ -642,8 +646,8 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/updateBankAccount
-     * Change the payout bank account of a contract
+     * Change bank account
+     * Changes the payout bank account of a contract.
      * @param paymentContractId Contract identifier (required)
      * @param body 
      * @return ApiResponse&lt;ResultBoolean&gt;
@@ -656,8 +660,8 @@ public class PaymentContractsApi {
     }
 
     /**
-     * POST Payment/Contracts/{paymentContractId}/updateBankAccount (asynchronously)
-     * Change the payout bank account of a contract
+     * Change bank account (asynchronously)
+     * Changes the payout bank account of a contract.
      * @param paymentContractId Contract identifier (required)
      * @param body 
      * @param callback The callback to be executed when the API call finishes

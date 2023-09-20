@@ -74,8 +74,8 @@ public class ServicesUploadidentsApi {
     }
 
     /**
-     * POST Services/Uploadidents
-     * Create new upload ident
+     * Create UploadIdent
+     * Creates a new UploadIdent from the given data.
      * @param body Upload idents input properties
      * @return UploadidentsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -86,8 +86,8 @@ public class ServicesUploadidentsApi {
     }
 
     /**
-     * POST Services/Uploadidents
-     * Create new upload ident
+     * Create UploadIdent
+     * Creates a new UploadIdent from the given data.
      * @param body Upload idents input properties
      * @return ApiResponse&lt;UploadidentsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -99,8 +99,8 @@ public class ServicesUploadidentsApi {
     }
 
     /**
-     * POST Services/Uploadidents (asynchronously)
-     * Create new upload ident
+     * Create UploadIdent (asynchronously)
+     * Creates a new UploadIdent from the given data.
      * @param body Upload idents input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartTransactionsPrepaidSalesDetails
+ * Prepaid sales details
  */
 public class SmartTransactionsPrepaidSalesDetails {
   @SerializedName("id")
@@ -56,7 +56,7 @@ public class SmartTransactionsPrepaidSalesDetails {
   }
 
    /**
-   * Error Details
+   * Error details
    * @return errorDetails
   **/
   public String getErrorDetails() {

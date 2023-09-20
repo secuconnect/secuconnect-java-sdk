@@ -72,8 +72,8 @@ public class PublicWebsiteApi {
     }
 
     /**
-     * GET Public/Website/me/availableCountries
-     * Get a list of available Countries
+     * Get available countries
+     * Returns the available countries.
      * @return List&lt;AvailableCountry&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -83,8 +83,8 @@ public class PublicWebsiteApi {
     }
 
     /**
-     * GET Public/Website/me/availableCountries
-     * Get a list of available Countries
+     * Get available countries
+     * Returns the available countries.
      * @return ApiResponse&lt;List&lt;AvailableCountry&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -95,8 +95,8 @@ public class PublicWebsiteApi {
     }
 
     /**
-     * GET Public/Website/me/availableCountries (asynchronously)
-     * Get a list of available Countries
+     * Get available countries (asynchronously)
+     * Returns the available countries.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

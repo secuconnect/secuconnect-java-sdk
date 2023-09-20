@@ -77,8 +77,8 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * POST Services/Identrequests
-     * Create new ident request
+     * Create Identrequest
+     * Creates a new Identrequest from the given data.
      * @param body Create ident request input properties
      * @return ServicesIdentrequestsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -89,8 +89,8 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * POST Services/Identrequests
-     * Create new ident request
+     * Create Identrequest
+     * Creates a new Identrequest from the given data.
      * @param body Create ident request input properties
      * @return ApiResponse&lt;ServicesIdentrequestsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -102,8 +102,8 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * POST Services/Identrequests (asynchronously)
-     * Create new ident request
+     * Create Identrequest (asynchronously)
+     * Creates a new Identrequest from the given data.
      * @param body Create ident request input properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -172,8 +172,8 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * GET Services/Identrequests
-     * Get a list of Identrequests
+     * Find IdentRequests
+     * Returns the IdentRequests matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -188,8 +188,8 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * GET Services/Identrequests
-     * Get a list of Identrequests
+     * Find IdentRequests
+     * Returns the IdentRequests matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -205,8 +205,8 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * GET Services/Identrequests (asynchronously)
-     * Get a list of Identrequests
+     * Find IdentRequests (asynchronously)
+     * Returns the IdentRequests matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -270,8 +270,8 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * GET Services/Identrequests/{identrequestId}
-     * Get one Identrequest for a specific id
+     * Read IdentRequest
+     * Returns the specified IdentRequest.
      * @param identrequestId Identrequest Id (required)
      * @return ServicesIdentrequestsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -282,8 +282,8 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * GET Services/Identrequests/{identrequestId}
-     * Get one Identrequest for a specific id
+     * Read IdentRequest
+     * Returns the specified IdentRequest.
      * @param identrequestId Identrequest Id (required)
      * @return ApiResponse&lt;ServicesIdentrequestsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -295,8 +295,8 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * GET Services/Identrequests/{identrequestId} (asynchronously)
-     * Get one Identrequest for a specific id
+     * Read IdentRequest (asynchronously)
+     * Returns the specified IdentRequest.
      * @param identrequestId Identrequest Id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
