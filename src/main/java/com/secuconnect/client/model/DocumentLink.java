@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Document link object
+ * Document link
  */
 public class DocumentLink {
   @SerializedName("url")
@@ -19,7 +19,7 @@ public class DocumentLink {
   }
 
    /**
-   * URL to the document
+   * Download URL
    * @return url
   **/
   public String getUrl() {
@@ -36,7 +36,7 @@ public class DocumentLink {
   }
 
    /**
-   * Document type
+   * Document type:  * &#x60;\&quot;csv\&quot;&#x60; * &#x60;\&quot;pdf\&quot;&#x60;
    * @return type
   **/
   public String getType() {

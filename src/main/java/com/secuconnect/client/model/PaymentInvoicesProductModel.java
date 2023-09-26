@@ -44,6 +44,9 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
   @SerializedName("amount")
   protected Integer amount = null;
 
+  @SerializedName("currency")
+  protected String currency = null;
+
   @SerializedName("tax_amount")
   protected Integer taxAmount = null;
 
@@ -195,7 +198,7 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
   }
 
    /**
-   * Invoice Number
+   * Invoice number
    * @return invoiceId
   **/
   public String getInvoiceId() {
@@ -240,6 +243,23 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
     this.amount = amount;
   }
 
+  public PaymentInvoicesProductModel currency(String currency) {
+    this.currency = currency;
+    return this;
+  }
+
+   /**
+   * Get currency
+   * @return currency
+  **/
+  public String getCurrency() {
+    return currency;
+  }
+
+  public void setCurrency(String currency) {
+    this.currency = currency;
+  }
+
   public PaymentInvoicesProductModel taxAmount(Integer taxAmount) {
     this.taxAmount = taxAmount;
     return this;
@@ -280,7 +300,7 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
   }
 
    /**
-   * The url of the invoice document (PDF)
+   * Download URL for PDF document
    * @return documentUrl
   **/
   public String getDocumentUrl() {
@@ -311,6 +331,7 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
         Objects.equals(this.invoiceId, paymentInvoicesProductModel.invoiceId) &&
         Objects.equals(this.date, paymentInvoicesProductModel.date) &&
         Objects.equals(this.amount, paymentInvoicesProductModel.amount) &&
+        Objects.equals(this.currency, paymentInvoicesProductModel.currency) &&
         Objects.equals(this.taxAmount, paymentInvoicesProductModel.taxAmount) &&
         Objects.equals(this.totalAmount, paymentInvoicesProductModel.totalAmount) &&
         Objects.equals(this.documentUrl, paymentInvoicesProductModel.documentUrl) &&
@@ -319,7 +340,7 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, storeName, merchant, invoiceId, date, amount, taxAmount, totalAmount, documentUrl, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, storeName, merchant, invoiceId, date, amount, currency, taxAmount, totalAmount, documentUrl, super.hashCode());
   }
 
   @Override
@@ -338,6 +359,7 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
     sb.append("    invoiceId: ").append(toIndentedString(invoiceId)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
     sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("    documentUrl: ").append(toIndentedString(documentUrl)).append("\n");
