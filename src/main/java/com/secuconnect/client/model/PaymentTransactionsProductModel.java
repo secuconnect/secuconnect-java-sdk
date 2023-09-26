@@ -5,6 +5,7 @@ import com.secuconnect.client.model.AggregationResult;
 import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
+import com.secuconnect.client.model.GeneralContractsProductModel;
 import com.secuconnect.client.model.GeneralMerchantsProductModel;
 import com.secuconnect.client.model.GeneralStoresProductModel;
 import com.secuconnect.client.model.ParentObj;
@@ -52,6 +53,9 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("store")
   protected GeneralStoresProductModel store = null;
+
+  @SerializedName("contract")
+  protected GeneralContractsProductModel contract = null;
 
   @SerializedName("trans_id")
   protected Integer transId = null;
@@ -334,6 +338,23 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   public void setStore(GeneralStoresProductModel store) {
     this.store = store;
+  }
+
+  public PaymentTransactionsProductModel contract(GeneralContractsProductModel contract) {
+    this.contract = contract;
+    return this;
+  }
+
+   /**
+   * Get contract
+   * @return contract
+  **/
+  public GeneralContractsProductModel getContract() {
+    return contract;
+  }
+
+  public void setContract(GeneralContractsProductModel contract) {
+    this.contract = contract;
   }
 
   public PaymentTransactionsProductModel transId(Integer transId) {
@@ -916,6 +937,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.platform, paymentTransactionsProductModel.platform) &&
         Objects.equals(this.merchant, paymentTransactionsProductModel.merchant) &&
         Objects.equals(this.store, paymentTransactionsProductModel.store) &&
+        Objects.equals(this.contract, paymentTransactionsProductModel.contract) &&
         Objects.equals(this.transId, paymentTransactionsProductModel.transId) &&
         Objects.equals(this.parents, paymentTransactionsProductModel.parents) &&
         Objects.equals(this.relatedTransactions, paymentTransactionsProductModel.relatedTransactions) &&
@@ -953,7 +975,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, updated, platform, merchant, store, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, description, descriptionRaw, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, platform, merchant, store, contract, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, description, descriptionRaw, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, super.hashCode());
   }
 
   @Override
@@ -972,6 +994,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
+    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    parents: ").append(toIndentedString(parents)).append("\n");
     sb.append("    relatedTransactions: ").append(toIndentedString(relatedTransactions)).append("\n");

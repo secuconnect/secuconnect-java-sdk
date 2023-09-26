@@ -63,7 +63,7 @@ public class SecupayPayoutDTO {
   }
 
    /**
-   * The contract ID
+   * General Contract ID
    * @return contract
   **/
   public String getContract() {
@@ -148,7 +148,7 @@ public class SecupayPayoutDTO {
   }
 
    /**
-   * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
+   * The purpose of the payment. It appears at the bank statement of the payee.
    * @return purpose
   **/
   public String getPurpose() {
@@ -165,7 +165,7 @@ public class SecupayPayoutDTO {
   }
 
    /**
-   * Specifying an order number. Depending on the contract setting, this must be unique for each payment.
+   * Order number. Depending on the contract setting, it must be unique for each payment.
    * @return orderId
   **/
   public String getOrderId() {
@@ -190,7 +190,7 @@ public class SecupayPayoutDTO {
   }
 
    /**
-   * A list of transaction items
+   * Payout items
    * @return transactionList
   **/
   public List<SecupayTransactionListItem> getTransactionList() {

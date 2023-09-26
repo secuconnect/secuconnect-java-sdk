@@ -40,7 +40,7 @@ public class PaymentInvoicesList {
   }
 
    /**
-   * Number of existing payment invoices
+   * Number of matching Payment Invoices
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class PaymentInvoicesList {
   }
 
    /**
-   * List of PaymentInvoices
+   * Payment Invoices
    * @return data
   **/
   public List<PaymentInvoicesProductModel> getData() {

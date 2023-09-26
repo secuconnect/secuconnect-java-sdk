@@ -52,7 +52,7 @@ public class SecupayPayoutListItem {
   }
 
    /**
-   * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
+   * The purpose of the payment. It appears at the bank statement of the payee.
    * @return purpose
   **/
   public String getPurpose() {
@@ -69,7 +69,7 @@ public class SecupayPayoutListItem {
   }
 
    /**
-   * Reference ID - must be unique for the entire basket
+   * Unique reference ID
    * @return reference
   **/
   public String getReference() {
@@ -86,7 +86,7 @@ public class SecupayPayoutListItem {
   }
 
    /**
-   * Merchant, store or user ID
+   * General Merchant ID (&#x60;MRC_...&#x60;), General Store ID (&#x60;STO_...&#x60;) or user ID
    * @return recipient
   **/
   public String getRecipient() {

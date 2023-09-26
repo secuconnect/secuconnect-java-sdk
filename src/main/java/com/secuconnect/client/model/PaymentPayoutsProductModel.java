@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * PaymentPayoutsProductModel
+ * Payment Payout
  */
 public class PaymentPayoutsProductModel extends BaseProductModel {
   @SerializedName("l")
@@ -302,7 +302,7 @@ public class PaymentPayoutsProductModel extends BaseProductModel {
   }
 
    /**
-   * Transaction simple-status ID
+   * Simple transaction status ID
    * @return simpleStatusId
   **/
   public Integer getSimpleStatusId() {
@@ -319,7 +319,7 @@ public class PaymentPayoutsProductModel extends BaseProductModel {
   }
 
    /**
-   * Transaction simple-status description
+   * Simple transaction status text
    * @return simpleStatusDescription
   **/
   public String getSimpleStatusDescription() {
@@ -336,7 +336,7 @@ public class PaymentPayoutsProductModel extends BaseProductModel {
   }
 
    /**
-   * Store name
+   * Recipient name
    * @return receiver
   **/
   public String getReceiver() {
@@ -353,7 +353,7 @@ public class PaymentPayoutsProductModel extends BaseProductModel {
   }
 
    /**
-   * Store name
+   * Purpose as it appears on the bank statement
    * @return purpose
   **/
   public String getPurpose() {

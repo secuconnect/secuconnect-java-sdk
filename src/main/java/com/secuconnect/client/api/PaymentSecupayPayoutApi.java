@@ -36,7 +36,7 @@ public class PaymentSecupayPayoutApi {
 
     /**
      * Build call for getSecupaypayout
-     * @param paymentPayoutId Payment payout id (required)
+     * @param paymentPayoutId Payment Transaction ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -81,9 +81,9 @@ public class PaymentSecupayPayoutApi {
     }
 
     /**
-     * Read Payment Secupaypayout
+     * Read payout transaction
      * Returns the specified Payment Secupaypayout.
-     * @param paymentPayoutId Payment payout id (required)
+     * @param paymentPayoutId Payment Transaction ID (required)
      * @return SecupayPayoutProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -93,9 +93,9 @@ public class PaymentSecupayPayoutApi {
     }
 
     /**
-     * Read Payment Secupaypayout
+     * Read payout transaction
      * Returns the specified Payment Secupaypayout.
-     * @param paymentPayoutId Payment payout id (required)
+     * @param paymentPayoutId Payment Transaction ID (required)
      * @return ApiResponse&lt;SecupayPayoutProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -106,9 +106,9 @@ public class PaymentSecupayPayoutApi {
     }
 
     /**
-     * Read Payment Secupaypayout (asynchronously)
+     * Read payout transaction (asynchronously)
      * Returns the specified Payment Secupaypayout.
-     * @param paymentPayoutId Payment payout id (required)
+     * @param paymentPayoutId Payment Transaction ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -122,7 +122,7 @@ public class PaymentSecupayPayoutApi {
 
     /**
      * Build call for paymentSecupaypayoutPost
-     * @param body Payout payment transaction input properties
+     * @param body Payout transaction details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -162,9 +162,9 @@ public class PaymentSecupayPayoutApi {
     }
 
     /**
-     * Create Payment Secupaypayout
-     * Creates a new Payment Secupaypayout from the given data. It can be used to start a payout transaction.
-     * @param body Payout payment transaction input properties
+     * Create payout transaction with Payment Customer
+     * Creates a new Payment Secupaypayout from the given data. It can be used to start a payout transaction.  This needs an additional Payment Customer. You should prefer &#x60;POST /Payment/Secupaypayout/me/PayoutWithoutCustomer&#x60;.
+     * @param body Payout transaction details
      * @return SecupayPayoutProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -174,9 +174,9 @@ public class PaymentSecupayPayoutApi {
     }
 
     /**
-     * Create Payment Secupaypayout
-     * Creates a new Payment Secupaypayout from the given data. It can be used to start a payout transaction.
-     * @param body Payout payment transaction input properties
+     * Create payout transaction with Payment Customer
+     * Creates a new Payment Secupaypayout from the given data. It can be used to start a payout transaction.  This needs an additional Payment Customer. You should prefer &#x60;POST /Payment/Secupaypayout/me/PayoutWithoutCustomer&#x60;.
+     * @param body Payout transaction details
      * @return ApiResponse&lt;SecupayPayoutProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -187,9 +187,9 @@ public class PaymentSecupayPayoutApi {
     }
 
     /**
-     * Create Payment Secupaypayout (asynchronously)
-     * Creates a new Payment Secupaypayout from the given data. It can be used to start a payout transaction.
-     * @param body Payout payment transaction input properties
+     * Create payout transaction with Payment Customer (asynchronously)
+     * Creates a new Payment Secupaypayout from the given data. It can be used to start a payout transaction.  This needs an additional Payment Customer. You should prefer &#x60;POST /Payment/Secupaypayout/me/PayoutWithoutCustomer&#x60;.
+     * @param body Payout transaction details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -203,7 +203,7 @@ public class PaymentSecupayPayoutApi {
 
     /**
      * Build call for paymentSecupaypayoutWithoutCustomerPost
-     * @param body Payout payment transaction input properties
+     * @param body Payout transaction details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -243,9 +243,9 @@ public class PaymentSecupayPayoutApi {
     }
 
     /**
-     * Start a payout transaction
-     * Start a payout transaction
-     * @param body Payout payment transaction input properties
+     * Create payout transaction without Payment Customer
+     * Creates a new Payment Secupaypayout from the given data. It can be used to start a payout transaction.
+     * @param body Payout transaction details
      * @return SecupayPayoutWithoutCustomerResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -255,9 +255,9 @@ public class PaymentSecupayPayoutApi {
     }
 
     /**
-     * Start a payout transaction
-     * Start a payout transaction
-     * @param body Payout payment transaction input properties
+     * Create payout transaction without Payment Customer
+     * Creates a new Payment Secupaypayout from the given data. It can be used to start a payout transaction.
+     * @param body Payout transaction details
      * @return ApiResponse&lt;SecupayPayoutWithoutCustomerResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -268,9 +268,9 @@ public class PaymentSecupayPayoutApi {
     }
 
     /**
-     * Start a payout transaction (asynchronously)
-     * Start a payout transaction
-     * @param body Payout payment transaction input properties
+     * Create payout transaction without Payment Customer (asynchronously)
+     * Creates a new Payment Secupaypayout from the given data. It can be used to start a payout transaction.
+     * @param body Payout transaction details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

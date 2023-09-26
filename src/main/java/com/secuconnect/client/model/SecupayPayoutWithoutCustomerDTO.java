@@ -68,7 +68,7 @@ public class SecupayPayoutWithoutCustomerDTO {
   }
 
    /**
-   * The contract ID
+   * General Contract ID
    * @return contractId
   **/
   public String getContractId() {
@@ -93,7 +93,7 @@ public class SecupayPayoutWithoutCustomerDTO {
   }
 
    /**
-   * A list of payout items
+   * Payout items
    * @return payoutList
   **/
   public List<SecupayPayoutListItem> getPayoutList() {
@@ -110,7 +110,7 @@ public class SecupayPayoutWithoutCustomerDTO {
   }
 
    /**
-   * The purpose of the payment. This is the later assignment of the payment is for example on the account statement of the buyer.
+   * The purpose of the payment. It appears at the bank statement of the payee.
    * @return purpose
   **/
   public String getPurpose() {
@@ -127,7 +127,7 @@ public class SecupayPayoutWithoutCustomerDTO {
   }
 
    /**
-   * Date when the payout should be started
+   * Date when the payout should be started (ISO 8601 date, or date and time)
    * @return executionDate
   **/
   public String getExecutionDate() {

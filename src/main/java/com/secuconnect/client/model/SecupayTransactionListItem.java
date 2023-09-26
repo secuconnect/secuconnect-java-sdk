@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class SecupayTransactionListItem {
   @SerializedName("item_type")
-  protected String itemType = "transaction_payout";
+  protected String itemType = null;
 
   @SerializedName("reference_id")
   protected String referenceId = null;
@@ -34,7 +34,7 @@ public class SecupayTransactionListItem {
   }
 
    /**
-   * Category of item
+   * Item type; always &#x60;\&quot;transaction_payout\&quot;&#x60;
    * @return itemType
   **/
   public String getItemType() {
@@ -51,7 +51,7 @@ public class SecupayTransactionListItem {
   }
 
    /**
-   * Reference id - must be unique for the entire basket
+   * Unique reference ID
    * @return referenceId
   **/
   public String getReferenceId() {
@@ -85,7 +85,7 @@ public class SecupayTransactionListItem {
   }
 
    /**
-   * Id of transaction
+   * Transaction hash
    * @return transactionHash
   **/
   public String getTransactionHash() {
@@ -102,7 +102,7 @@ public class SecupayTransactionListItem {
   }
 
    /**
-   * Id of transaction
+   * Transaction ID
    * @return transactionId
   **/
   public String getTransactionId() {

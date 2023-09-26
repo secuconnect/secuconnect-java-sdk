@@ -19,6 +19,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.23.0] - 2023-09-26
+[3.23.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.22.0...3.23.0
+
+- *new element*: `currency` in `PaymentInvoicesProductModel`
+- *new element*: `contract` in `PaymentTransactionsProductModel`
+- *changed element*: `result` allows now boolean values too in `PaymentCrowdFundingData`
+
+### Changed
+- `Api.PaymentPayoutsApi`
+- `Api.PaymentSecupayPayoutApi`
+- `Model.DocumentLink`
+- `Model.PaymentInvoicesList`
+- `Model.PaymentInvoicesProductModel`
+- `Model.PaymentPayoutsProductModel`
+- `Model.PaymentTransactionsProductModel`
+- `Model.SecupayPayoutDTO`
+- `Model.SecupayPayoutListItem`
+- `Model.SecupayPayoutProductModel`
+- `Model.SecupayPayoutWithoutCustomerDTO`
+- `Model.SecupayTransactionListItem`
+
+
 ## [3.22.0] - 2023-09-20
 [3.22.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.21.0...3.22.0
 
