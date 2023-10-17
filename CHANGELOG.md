@@ -27,6 +27,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - *changed element type*: `cycle_executions` changed from `BillingCyclesItem` to `CycleExecutions` in `PaymentSubscriptionsProductModelBillingCycles`
 - *changed default value*: `status` changed from `"active"` to `null` in `PaymentPlansProductModel` and `PaymentPlansDTO`
 
+### Security
+- dependency updates
+
 ### Added
 - `Model.CycleExecutions`
 - `Model.GeneralMerchantsLegalDetailsDTO`
