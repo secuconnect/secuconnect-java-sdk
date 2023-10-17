@@ -38,7 +38,7 @@ public class GeneralMerchantsUser {
   }
 
    /**
-   * Name
+   * Full name
    * @return name
   **/
   public String getName() {
@@ -55,7 +55,7 @@ public class GeneralMerchantsUser {
   }
 
    /**
-   * forename
+   * First name
    * @return forename
   **/
   public String getForename() {
@@ -72,7 +72,7 @@ public class GeneralMerchantsUser {
   }
 
    /**
-   * surname
+   * Last name
    * @return surname
   **/
   public String getSurname() {
@@ -156,7 +156,7 @@ public class GeneralMerchantsUser {
   }
 
    /**
-   * E-Mail addresses
+   * Email addresses
    * @return email
   **/
   public List<GeneralMerchantsUserEmail> getEmail() {

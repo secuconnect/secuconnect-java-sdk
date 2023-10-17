@@ -19,7 +19,7 @@ public class MerchantCategoryDataModel {
   }
 
    /**
-   * The ID of Merchant Category
+   * Category ID
    * @return id
   **/
   public Integer getId() {
@@ -36,7 +36,7 @@ public class MerchantCategoryDataModel {
   }
 
    /**
-   * Description of Merchant Category
+   * Category description
    * @return description
   **/
   public String getDescription() {

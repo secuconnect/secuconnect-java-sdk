@@ -185,7 +185,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * User type ID - unverified shop (1); internet shop (11); kaufmännischer Netzbetrieb (KNB, 45); secucard merchant (46); App Center user (63), checkout provider (64)
+   * User type ID:  - unverified shop (1) - internet shop (11) - kaufmännischer Netzbetrieb (KNB, 45) - secucard merchant (46) - App Center user (63) - checkout provider (64)
    * @return type
   **/
   public String getType() {
@@ -361,7 +361,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * Acceptance Points (partners)
+   * Acceptance Points (partner stores)
    * @return acceptancePoints
   **/
   public List<BaseProductModel> getAcceptancePoints() {
@@ -378,7 +378,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   }
 
    /**
-   * two-factor authentication type
+   * Two-factor authentication type
    * @return twoFa
   **/
   public String getTwoFa() {

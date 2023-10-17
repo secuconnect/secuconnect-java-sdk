@@ -20,7 +20,7 @@ public class GeneralMerchantsPublicDataCompany {
   }
 
    /**
-   * Company name of General Merchant user
+   * Company name
    * @return companyname
   **/
   public String getCompanyname() {

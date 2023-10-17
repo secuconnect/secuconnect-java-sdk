@@ -185,7 +185,7 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * Get my merchant categories
+     * Get merchant categories
      * Returns the available merchant categories for the authenticated merchant.
      * @return List&lt;MerchantCategoryDataModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -196,7 +196,7 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * Get my merchant categories
+     * Get merchant categories
      * Returns the available merchant categories for the authenticated merchant.
      * @return ApiResponse&lt;List&lt;MerchantCategoryDataModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -208,7 +208,7 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * Get my merchant categories (asynchronously)
+     * Get merchant categories (asynchronously)
      * Returns the available merchant categories for the authenticated merchant.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -223,7 +223,7 @@ public class GeneralMerchantsApi {
 
     /**
      * Build call for getOne
-     * @param generalMerchantId General Merchant id (required)
+     * @param generalMerchantId General Merchant ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -270,7 +270,7 @@ public class GeneralMerchantsApi {
     /**
      * Read General Merchant
      * Returns the specified General Merchant.
-     * @param generalMerchantId General Merchant id (required)
+     * @param generalMerchantId General Merchant ID (required)
      * @return GeneralMerchantsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -282,7 +282,7 @@ public class GeneralMerchantsApi {
     /**
      * Read General Merchant
      * Returns the specified General Merchant.
-     * @param generalMerchantId General Merchant id (required)
+     * @param generalMerchantId General Merchant ID (required)
      * @return ApiResponse&lt;GeneralMerchantsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -295,7 +295,7 @@ public class GeneralMerchantsApi {
     /**
      * Read General Merchant (asynchronously)
      * Returns the specified General Merchant.
-     * @param generalMerchantId General Merchant id (required)
+     * @param generalMerchantId General Merchant ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -309,8 +309,8 @@ public class GeneralMerchantsApi {
 
     /**
      * Build call for getPublicData
-     * @param generalMerchantId Merchant identifier (required)
-     * @param generalContractId Contract identifier (required)
+     * @param generalMerchantId General Merchant ID (required)
+     * @param generalContractId General Contract ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -362,8 +362,8 @@ public class GeneralMerchantsApi {
     /**
      * Get public data
      * Returns the public data of the specified General Merchant and General Contract.
-     * @param generalMerchantId Merchant identifier (required)
-     * @param generalContractId Contract identifier (required)
+     * @param generalMerchantId General Merchant ID (required)
+     * @param generalContractId General Contract ID (required)
      * @return GeneralMerchantsPublicDataModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -375,8 +375,8 @@ public class GeneralMerchantsApi {
     /**
      * Get public data
      * Returns the public data of the specified General Merchant and General Contract.
-     * @param generalMerchantId Merchant identifier (required)
-     * @param generalContractId Contract identifier (required)
+     * @param generalMerchantId General Merchant ID (required)
+     * @param generalContractId General Contract ID (required)
      * @return ApiResponse&lt;GeneralMerchantsPublicDataModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -389,8 +389,8 @@ public class GeneralMerchantsApi {
     /**
      * Get public data (asynchronously)
      * Returns the public data of the specified General Merchant and General Contract.
-     * @param generalMerchantId Merchant identifier (required)
-     * @param generalContractId Contract identifier (required)
+     * @param generalMerchantId General Merchant ID (required)
+     * @param generalContractId General Contract ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -404,8 +404,8 @@ public class GeneralMerchantsApi {
 
     /**
      * Build call for updatePublicData
-     * @param generalMerchantId Merchant identifier (required)
-     * @param body 
+     * @param generalMerchantId General Merchant ID (required)
+     * @param body Merchant details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -450,10 +450,10 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * Update public data
+     * Update General Merchant
      * Updates the specified General Merchant with the given data.
-     * @param generalMerchantId Merchant identifier (required)
-     * @param body 
+     * @param generalMerchantId General Merchant ID (required)
+     * @param body Merchant details
      * @return GeneralMerchantsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -463,10 +463,10 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * Update public data
+     * Update General Merchant
      * Updates the specified General Merchant with the given data.
-     * @param generalMerchantId Merchant identifier (required)
-     * @param body 
+     * @param generalMerchantId General Merchant ID (required)
+     * @param body Merchant details
      * @return ApiResponse&lt;GeneralMerchantsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -477,10 +477,10 @@ public class GeneralMerchantsApi {
     }
 
     /**
-     * Update public data (asynchronously)
+     * Update General Merchant (asynchronously)
      * Updates the specified General Merchant with the given data.
-     * @param generalMerchantId Merchant identifier (required)
-     * @param body 
+     * @param generalMerchantId General Merchant ID (required)
+     * @param body Merchant details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -42,7 +42,7 @@ public class GeneralMerchantsLegalDetails {
   }
 
    /**
-   * Document type: &#x27;imprint&#x27;, &#x27;revocation&#x27; (cancellation policy), &#x27;terms&#x27; (terms of use), &#x27;policy&#x27; (privacy policy), or &#x27;logo&#x27;
+   * Document type:  - &#x27;imprint&#x27; - &#x27;revocation&#x27; (cancellation policy) - &#x27;terms&#x27; (terms of use) - &#x27;policy&#x27; (privacy policy) - &#x27;logo&#x27;
    * @return type
   **/
   public String getType() {
@@ -76,7 +76,7 @@ public class GeneralMerchantsLegalDetails {
   }
 
    /**
-   * Language code {&#x27;de&#x27;, &#x27;en&#x27;, ...}
+   * Language code:  - &#x27;de&#x27; - &#x27;en&#x27;
    * @return language
   **/
   public String getLanguage() {

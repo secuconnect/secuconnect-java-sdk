@@ -1,18 +1,14 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.secuconnect.client.model.PaymentPlanInterval;
 import java.util.Objects;
 
 /**
- * BillingCyclesItem
+ * CycleExecutions
  */
-public class BillingCyclesItem {
+public class CycleExecutions {
   @SerializedName("sequence")
   protected Integer sequence = null;
-
-  @SerializedName("interval")
-  protected PaymentPlanInterval interval = null;
 
   @SerializedName("tenure_type")
   protected String tenureType = null;
@@ -20,16 +16,19 @@ public class BillingCyclesItem {
   @SerializedName("total_cycles")
   protected Integer totalCycles = null;
 
-  @SerializedName("price")
-  protected Integer price = null;
+  @SerializedName("cycles_completed")
+  protected Integer cyclesCompleted = null;
 
-  public BillingCyclesItem sequence(Integer sequence) {
+  @SerializedName("cycles_remaining")
+  protected Integer cyclesRemaining = null;
+
+  public CycleExecutions sequence(Integer sequence) {
     this.sequence = sequence;
     return this;
   }
 
    /**
-   * Sequence number.  A setup fee always has the sequence number 0. Everything else is numbered starting from 1.
+   * sequence
    * @return sequence
   **/
   public Integer getSequence() {
@@ -40,30 +39,13 @@ public class BillingCyclesItem {
     this.sequence = sequence;
   }
 
-  public BillingCyclesItem interval(PaymentPlanInterval interval) {
-    this.interval = interval;
-    return this;
-  }
-
-   /**
-   * Get interval
-   * @return interval
-  **/
-  public PaymentPlanInterval getInterval() {
-    return interval;
-  }
-
-  public void setInterval(PaymentPlanInterval interval) {
-    this.interval = interval;
-  }
-
-  public BillingCyclesItem tenureType(String tenureType) {
+  public CycleExecutions tenureType(String tenureType) {
     this.tenureType = tenureType;
     return this;
   }
 
    /**
-   * Tenure type:  * &#x60;\&quot;setup\&quot;&#x60; * &#x60;\&quot;trial\&quot;&#x60;* &#x60;\&quot;regular\&quot;&#x60;
+   * Tenure type
    * @return tenureType
   **/
   public String getTenureType() {
@@ -74,13 +56,13 @@ public class BillingCyclesItem {
     this.tenureType = tenureType;
   }
 
-  public BillingCyclesItem totalCycles(Integer totalCycles) {
+  public CycleExecutions totalCycles(Integer totalCycles) {
     this.totalCycles = totalCycles;
     return this;
   }
 
    /**
-   * Total cycles in this sequence
+   * Total cycles
    * @return totalCycles
   **/
   public Integer getTotalCycles() {
@@ -91,21 +73,38 @@ public class BillingCyclesItem {
     this.totalCycles = totalCycles;
   }
 
-  public BillingCyclesItem price(Integer price) {
-    this.price = price;
+  public CycleExecutions cyclesCompleted(Integer cyclesCompleted) {
+    this.cyclesCompleted = cyclesCompleted;
     return this;
   }
 
    /**
-   * Get price
-   * @return price
+   * Completed cycles
+   * @return cyclesCompleted
   **/
-  public Integer getPrice() {
-    return price;
+  public Integer getCyclesCompleted() {
+    return cyclesCompleted;
   }
 
-  public void setPrice(Integer price) {
-    this.price = price;
+  public void setCyclesCompleted(Integer cyclesCompleted) {
+    this.cyclesCompleted = cyclesCompleted;
+  }
+
+  public CycleExecutions cyclesRemaining(Integer cyclesRemaining) {
+    this.cyclesRemaining = cyclesRemaining;
+    return this;
+  }
+
+   /**
+   * Remaining cycles
+   * @return cyclesRemaining
+  **/
+  public Integer getCyclesRemaining() {
+    return cyclesRemaining;
+  }
+
+  public void setCyclesRemaining(Integer cyclesRemaining) {
+    this.cyclesRemaining = cyclesRemaining;
   }
 
   @Override
@@ -116,28 +115,28 @@ public class BillingCyclesItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BillingCyclesItem billingCyclesItem = (BillingCyclesItem) o;
-    return Objects.equals(this.sequence, billingCyclesItem.sequence) &&
-        Objects.equals(this.interval, billingCyclesItem.interval) &&
-        Objects.equals(this.tenureType, billingCyclesItem.tenureType) &&
-        Objects.equals(this.totalCycles, billingCyclesItem.totalCycles) &&
-        Objects.equals(this.price, billingCyclesItem.price);
+    CycleExecutions cycleExecutions = (CycleExecutions) o;
+    return Objects.equals(this.sequence, cycleExecutions.sequence) &&
+        Objects.equals(this.tenureType, cycleExecutions.tenureType) &&
+        Objects.equals(this.totalCycles, cycleExecutions.totalCycles) &&
+        Objects.equals(this.cyclesCompleted, cycleExecutions.cyclesCompleted) &&
+        Objects.equals(this.cyclesRemaining, cycleExecutions.cyclesRemaining);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sequence, interval, tenureType, totalCycles, price);
+    return Objects.hash(sequence, tenureType, totalCycles, cyclesCompleted, cyclesRemaining);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BillingCyclesItem {\n");
+    sb.append("class CycleExecutions {\n");
     sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
-    sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    tenureType: ").append(toIndentedString(tenureType)).append("\n");
     sb.append("    totalCycles: ").append(toIndentedString(totalCycles)).append("\n");
-    sb.append("    price: ").append(toIndentedString(price)).append("\n");
+    sb.append("    cyclesCompleted: ").append(toIndentedString(cyclesCompleted)).append("\n");
+    sb.append("    cyclesRemaining: ").append(toIndentedString(cyclesRemaining)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -50,7 +50,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
   protected String paypalPlanId = null;
 
   @SerializedName("status")
-  protected String status = "active";
+  protected String status = null;
 
   @SerializedName("payment_methods")
   protected List<String> paymentMethods = null;
@@ -206,7 +206,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
   }
 
    /**
-   * Description of payment plan
+   * Short description of the subscription plan
    * @return description
   **/
   public String getDescription() {
@@ -240,7 +240,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
   }
 
    /**
-   * Payment plan id
+   * PayPal Subscription Plan ID; needed for PayPal payment
    * @return paypalPlanId
   **/
   public String getPaypalPlanId() {
@@ -257,7 +257,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
   }
 
    /**
-   * Payment plan status
+   * Status:  * &#x60;\&quot;created\&quot;&#x60; * &#x60;\&quot;active\&quot;&#x60; * &#x60;\&quot;inactive\&quot;&#x60;
    * @return status
   **/
   public String getStatus() {
@@ -282,7 +282,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
   }
 
    /**
-   * Payment methods
+   * Payment methods:  * &#x60;\&quot;creditcard\&quot;&#x60; * &#x60;\&quot;debit\&quot;&#x60; * &#x60;\&quot;paypal\&quot;&#x60;
    * @return paymentMethods
   **/
   public List<String> getPaymentMethods() {
@@ -341,7 +341,7 @@ public class PaymentPlansProductModel extends BaseProductModel {
   }
 
    /**
-   * Product type
+   * Product type:  * &#x60;\&quot;physical\&quot;&#x60; * &#x60;\&quot;digital\&quot;&#x60; * &#x60;\&quot;service\&quot;&#x60;
    * @return productType
   **/
   public String getProductType() {
