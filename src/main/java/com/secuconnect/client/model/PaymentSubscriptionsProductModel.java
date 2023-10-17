@@ -314,7 +314,7 @@ public class PaymentSubscriptionsProductModel extends BaseProductModel {
   }
 
    /**
-   * start at
+   * Start date (ISO 8601 date and time)
    * @return startAt
   **/
   public String getStartAt() {
@@ -331,7 +331,7 @@ public class PaymentSubscriptionsProductModel extends BaseProductModel {
   }
 
    /**
-   * status
+   * Status:  * &#x60;\&quot;active\&quot;&#x60; * &#x60;\&quot;suspended\&quot;&#x60; * &#x60;\&quot;cancelled\&quot;&#x60; * &#x60;\&quot;completed\&quot;&#x60;
    * @return status
   **/
   public String getStatus() {
@@ -348,7 +348,7 @@ public class PaymentSubscriptionsProductModel extends BaseProductModel {
   }
 
    /**
-   * paypal_subscription_id
+   * PayPal Subscription ID, if paid with PayPal
    * @return paypalSubscriptionId
   **/
   public String getPaypalSubscriptionId() {

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Address component like street, postal code, or country
+ * Address component
  */
 public class AddressComponents {
   @SerializedName("long_name")
@@ -66,7 +66,7 @@ public class AddressComponents {
   }
 
    /**
-   * Types
+   * Address component type:  - &#x60;route&#x60; (street long / short) - &#x60;street_number&#x60; - &#x60;locality&#x60; (city) - &#x60;country&#x60; (full / ISO two-letter code) - &#x60;postal_code&#x60; - &#x60;political&#x60; (accompanies &#x60;locality&#x60; and &#x60;company&#x60;)
    * @return types
   **/
   public List<String> getTypes() {

@@ -65,7 +65,7 @@ public class GeneralMerchantsList {
   }
 
    /**
-   * List of GeneralMerchants
+   * General Merchants
    * @return data
   **/
   public List<GeneralMerchantsProductModel> getData() {

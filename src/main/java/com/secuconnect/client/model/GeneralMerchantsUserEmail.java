@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * E-Mail object
+ * Typed email address
  */
 public class GeneralMerchantsUserEmail {
   @SerializedName("type")
@@ -19,7 +19,7 @@ public class GeneralMerchantsUserEmail {
   }
 
    /**
-   * Kind of E-Mail address
+   * Address type:
    * @return type
   **/
   public String getType() {

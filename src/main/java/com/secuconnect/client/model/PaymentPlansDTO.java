@@ -21,7 +21,7 @@ public class PaymentPlansDTO {
   protected String paypalPlanId = null;
 
   @SerializedName("status")
-  protected String status = "active";
+  protected String status = null;
 
   @SerializedName("payment_methods")
   protected List<String> paymentMethods = null;
@@ -41,7 +41,7 @@ public class PaymentPlansDTO {
   }
 
    /**
-   * Description of payment plan
+   * Short description of the subscription plan
    * @return description
   **/
   public String getDescription() {
@@ -75,7 +75,7 @@ public class PaymentPlansDTO {
   }
 
    /**
-   * Payment plan id
+   * PayPal Subscription Plan ID; needed for PayPal payment
    * @return paypalPlanId
   **/
   public String getPaypalPlanId() {
@@ -92,7 +92,7 @@ public class PaymentPlansDTO {
   }
 
    /**
-   * Payment plan status
+   * Status:  * &#x60;\&quot;created\&quot;&#x60; * &#x60;\&quot;active\&quot;&#x60; * &#x60;\&quot;inactive\&quot;&#x60;
    * @return status
   **/
   public String getStatus() {
@@ -117,7 +117,7 @@ public class PaymentPlansDTO {
   }
 
    /**
-   * Payment methods
+   * Payment methods:  * &#x60;\&quot;creditcard\&quot;&#x60; * &#x60;\&quot;debit\&quot;&#x60; * &#x60;\&quot;paypal\&quot;&#x60;
    * @return paymentMethods
   **/
   public List<String> getPaymentMethods() {

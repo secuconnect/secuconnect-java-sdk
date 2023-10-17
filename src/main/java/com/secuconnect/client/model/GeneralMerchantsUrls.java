@@ -19,7 +19,7 @@ public class GeneralMerchantsUrls {
   }
 
    /**
-   * Type of URL - {&#x27;url_success&#x27;, &#x27;url_failure&#x27;, &#x27;url_abort&#x27;, &#x27;url_error&#x27;, &#x27;url_checkout&#x27;}
+   * Type of URL  - &#x27;url_success&#x27; - &#x27;url_failure&#x27; - &#x27;url_abort&#x27; - &#x27;url_error&#x27; - &#x27;url_checkout&#x27;
    * @return type
   **/
   public String getType() {

@@ -1,7 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.secuconnect.client.model.GeneralMerchantsLegalDetails;
+import com.secuconnect.client.model.GeneralMerchantsLegalDetailsDTO;
 import com.secuconnect.client.model.GeneralMerchantsUrls;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,19 +12,19 @@ import java.util.Objects;
  */
 public class GeneralMerchantsPublicDataDTO {
   @SerializedName("legal_details")
-  protected List<GeneralMerchantsLegalDetails> legalDetails = null;
+  protected List<GeneralMerchantsLegalDetailsDTO> legalDetails = null;
 
-  @SerializedName("merchant_urls")
-  protected List<GeneralMerchantsUrls> merchantUrls = null;
+  @SerializedName("urls")
+  protected List<GeneralMerchantsUrls> urls = null;
 
-  public GeneralMerchantsPublicDataDTO legalDetails(List<GeneralMerchantsLegalDetails> legalDetails) {
+  public GeneralMerchantsPublicDataDTO legalDetails(List<GeneralMerchantsLegalDetailsDTO> legalDetails) {
     this.legalDetails = legalDetails;
     return this;
   }
 
-  public GeneralMerchantsPublicDataDTO addLegalDetailsItem(GeneralMerchantsLegalDetails legalDetailsItem) {
+  public GeneralMerchantsPublicDataDTO addLegalDetailsItem(GeneralMerchantsLegalDetailsDTO legalDetailsItem) {
     if (this.legalDetails == null) {
-      this.legalDetails = new ArrayList<GeneralMerchantsLegalDetails>();
+      this.legalDetails = new ArrayList<GeneralMerchantsLegalDetailsDTO>();
     }
     this.legalDetails.add(legalDetailsItem);
     return this;
@@ -34,37 +34,37 @@ public class GeneralMerchantsPublicDataDTO {
    * Legal details like terms of use, privacy policy, or imprint
    * @return legalDetails
   **/
-  public List<GeneralMerchantsLegalDetails> getLegalDetails() {
+  public List<GeneralMerchantsLegalDetailsDTO> getLegalDetails() {
     return legalDetails;
   }
 
-  public void setLegalDetails(List<GeneralMerchantsLegalDetails> legalDetails) {
+  public void setLegalDetails(List<GeneralMerchantsLegalDetailsDTO> legalDetails) {
     this.legalDetails = legalDetails;
   }
 
-  public GeneralMerchantsPublicDataDTO merchantUrls(List<GeneralMerchantsUrls> merchantUrls) {
-    this.merchantUrls = merchantUrls;
+  public GeneralMerchantsPublicDataDTO urls(List<GeneralMerchantsUrls> urls) {
+    this.urls = urls;
     return this;
   }
 
-  public GeneralMerchantsPublicDataDTO addMerchantUrlsItem(GeneralMerchantsUrls merchantUrlsItem) {
-    if (this.merchantUrls == null) {
-      this.merchantUrls = new ArrayList<GeneralMerchantsUrls>();
+  public GeneralMerchantsPublicDataDTO addUrlsItem(GeneralMerchantsUrls urlsItem) {
+    if (this.urls == null) {
+      this.urls = new ArrayList<GeneralMerchantsUrls>();
     }
-    this.merchantUrls.add(merchantUrlsItem);
+    this.urls.add(urlsItem);
     return this;
   }
 
    /**
-   * URLs
-   * @return merchantUrls
+   * Return URLs
+   * @return urls
   **/
-  public List<GeneralMerchantsUrls> getMerchantUrls() {
-    return merchantUrls;
+  public List<GeneralMerchantsUrls> getUrls() {
+    return urls;
   }
 
-  public void setMerchantUrls(List<GeneralMerchantsUrls> merchantUrls) {
-    this.merchantUrls = merchantUrls;
+  public void setUrls(List<GeneralMerchantsUrls> urls) {
+    this.urls = urls;
   }
 
   @Override
@@ -77,12 +77,12 @@ public class GeneralMerchantsPublicDataDTO {
     }
     GeneralMerchantsPublicDataDTO generalMerchantsPublicDataDTO = (GeneralMerchantsPublicDataDTO) o;
     return Objects.equals(this.legalDetails, generalMerchantsPublicDataDTO.legalDetails) &&
-        Objects.equals(this.merchantUrls, generalMerchantsPublicDataDTO.merchantUrls);
+        Objects.equals(this.urls, generalMerchantsPublicDataDTO.urls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(legalDetails, merchantUrls);
+    return Objects.hash(legalDetails, urls);
   }
 
   @Override
@@ -90,7 +90,7 @@ public class GeneralMerchantsPublicDataDTO {
     StringBuilder sb = new StringBuilder();
     sb.append("class GeneralMerchantsPublicDataDTO {\n");
     sb.append("    legalDetails: ").append(toIndentedString(legalDetails)).append("\n");
-    sb.append("    merchantUrls: ").append(toIndentedString(merchantUrls)).append("\n");
+    sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("}");
     return sb.toString();
   }

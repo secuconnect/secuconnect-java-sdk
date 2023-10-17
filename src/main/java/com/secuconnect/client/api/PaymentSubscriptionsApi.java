@@ -36,7 +36,7 @@ public class PaymentSubscriptionsApi {
 
     /**
      * Build call for paymentSubscriptionGetById
-     * @param paymentSubscriptionId Payment subscription id (required)
+     * @param paymentSubscriptionId Payment Subscription ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -83,7 +83,7 @@ public class PaymentSubscriptionsApi {
     /**
      * Read Payment Subscription
      * Returns the specified Payment Subscription.
-     * @param paymentSubscriptionId Payment subscription id (required)
+     * @param paymentSubscriptionId Payment Subscription ID (required)
      * @return PaymentSubscriptionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -95,7 +95,7 @@ public class PaymentSubscriptionsApi {
     /**
      * Read Payment Subscription
      * Returns the specified Payment Subscription.
-     * @param paymentSubscriptionId Payment subscription id (required)
+     * @param paymentSubscriptionId Payment Subscription ID (required)
      * @return ApiResponse&lt;PaymentSubscriptionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -108,7 +108,7 @@ public class PaymentSubscriptionsApi {
     /**
      * Read Payment Subscription (asynchronously)
      * Returns the specified Payment Subscription.
-     * @param paymentSubscriptionId Payment subscription id (required)
+     * @param paymentSubscriptionId Payment Subscription ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

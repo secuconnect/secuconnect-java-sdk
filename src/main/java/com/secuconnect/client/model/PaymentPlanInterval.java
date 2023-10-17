@@ -19,7 +19,7 @@ public class PaymentPlanInterval {
   }
 
    /**
-   * Unit
+   * Unit:  * &#x60;\&quot;day\&quot;&#x60; * &#x60;\&quot;week\&quot;&#x60; * &#x60;\&quot;month\&quot;&#x60; * &#x60;\&quot;year\&quot;&#x60;
    * @return unit
   **/
   public String getUnit() {
@@ -36,7 +36,7 @@ public class PaymentPlanInterval {
   }
 
    /**
-   * Count
+   * Count of days, weeks, months or years
    * @return count
   **/
   public Integer getCount() {

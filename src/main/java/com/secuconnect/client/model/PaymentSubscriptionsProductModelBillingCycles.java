@@ -1,7 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.secuconnect.client.model.BillingCyclesItem;
+import com.secuconnect.client.model.CycleExecutions;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,19 +11,19 @@ import java.util.Objects;
  */
 public class PaymentSubscriptionsProductModelBillingCycles {
   @SerializedName("cycle_executions")
-  protected List<BillingCyclesItem> cycleExecutions = null;
+  protected List<CycleExecutions> cycleExecutions = null;
 
   @SerializedName("next_billing_time")
   protected String nextBillingTime = null;
 
-  public PaymentSubscriptionsProductModelBillingCycles cycleExecutions(List<BillingCyclesItem> cycleExecutions) {
+  public PaymentSubscriptionsProductModelBillingCycles cycleExecutions(List<CycleExecutions> cycleExecutions) {
     this.cycleExecutions = cycleExecutions;
     return this;
   }
 
-  public PaymentSubscriptionsProductModelBillingCycles addCycleExecutionsItem(BillingCyclesItem cycleExecutionsItem) {
+  public PaymentSubscriptionsProductModelBillingCycles addCycleExecutionsItem(CycleExecutions cycleExecutionsItem) {
     if (this.cycleExecutions == null) {
-      this.cycleExecutions = new ArrayList<BillingCyclesItem>();
+      this.cycleExecutions = new ArrayList<CycleExecutions>();
     }
     this.cycleExecutions.add(cycleExecutionsItem);
     return this;
@@ -33,11 +33,11 @@ public class PaymentSubscriptionsProductModelBillingCycles {
    * cycle executions
    * @return cycleExecutions
   **/
-  public List<BillingCyclesItem> getCycleExecutions() {
+  public List<CycleExecutions> getCycleExecutions() {
     return cycleExecutions;
   }
 
-  public void setCycleExecutions(List<BillingCyclesItem> cycleExecutions) {
+  public void setCycleExecutions(List<CycleExecutions> cycleExecutions) {
     this.cycleExecutions = cycleExecutions;
   }
 
@@ -47,7 +47,7 @@ public class PaymentSubscriptionsProductModelBillingCycles {
   }
 
    /**
-   * next billing time
+   * Next billing time (ISO 8601 date and time)
    * @return nextBillingTime
   **/
   public String getNextBillingTime() {

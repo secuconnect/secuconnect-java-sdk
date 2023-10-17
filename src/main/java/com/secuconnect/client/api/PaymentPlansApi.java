@@ -144,7 +144,7 @@ public class PaymentPlansApi {
 
     /**
      * Build call for paymentPlansGetById
-     * @param paymentPlanId Payment plan id (required)
+     * @param paymentPlanId Payment Plan ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -191,7 +191,7 @@ public class PaymentPlansApi {
     /**
      * Read Payment Plan
      * Returns the specified Payment Plan.
-     * @param paymentPlanId Payment plan id (required)
+     * @param paymentPlanId Payment Plan ID (required)
      * @return PaymentPlansProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -203,7 +203,7 @@ public class PaymentPlansApi {
     /**
      * Read Payment Plan
      * Returns the specified Payment Plan.
-     * @param paymentPlanId Payment plan id (required)
+     * @param paymentPlanId Payment Plan ID (required)
      * @return ApiResponse&lt;PaymentPlansProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -216,7 +216,7 @@ public class PaymentPlansApi {
     /**
      * Read Payment Plan (asynchronously)
      * Returns the specified Payment Plan.
-     * @param paymentPlanId Payment plan id (required)
+     * @param paymentPlanId Payment Plan ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -230,8 +230,8 @@ public class PaymentPlansApi {
 
     /**
      * Build call for paymentPlansPatch
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
+     * @param paymentPlanId Payment Plan ID (required)
+     * @param body Plans details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -277,9 +277,9 @@ public class PaymentPlansApi {
 
     /**
      * Update Payment Plan partially
-     * Updates an existing plan (partial)
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
+     * Updates an existing Payment Plan with the given partial data.  _Note: Please keep the PayPal Subscription Plan in sync!_
+     * @param paymentPlanId Payment Plan ID (required)
+     * @param body Plans details
      * @return PaymentPlansProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -290,9 +290,9 @@ public class PaymentPlansApi {
 
     /**
      * Update Payment Plan partially
-     * Updates an existing plan (partial)
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
+     * Updates an existing Payment Plan with the given partial data.  _Note: Please keep the PayPal Subscription Plan in sync!_
+     * @param paymentPlanId Payment Plan ID (required)
+     * @param body Plans details
      * @return ApiResponse&lt;PaymentPlansProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -304,9 +304,9 @@ public class PaymentPlansApi {
 
     /**
      * Update Payment Plan partially (asynchronously)
-     * Updates an existing plan (partial)
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
+     * Updates an existing Payment Plan with the given partial data.  _Note: Please keep the PayPal Subscription Plan in sync!_
+     * @param paymentPlanId Payment Plan ID (required)
+     * @param body Plans details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -320,7 +320,7 @@ public class PaymentPlansApi {
 
     /**
      * Build call for paymentPlansPost
-     * @param body Payment plan properties
+     * @param body Plan details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -361,8 +361,8 @@ public class PaymentPlansApi {
 
     /**
      * Create Payment Plan
-     * Creates a new Payment Plan from the given data.
-     * @param body Payment plan properties
+     * Creates a new Payment Plan from the given data.  _Note: Please care to have the PayPal Subscription Plan in sync!_
+     * @param body Plan details
      * @return PaymentPlansProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -373,8 +373,8 @@ public class PaymentPlansApi {
 
     /**
      * Create Payment Plan
-     * Creates a new Payment Plan from the given data.
-     * @param body Payment plan properties
+     * Creates a new Payment Plan from the given data.  _Note: Please care to have the PayPal Subscription Plan in sync!_
+     * @param body Plan details
      * @return ApiResponse&lt;PaymentPlansProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -386,8 +386,8 @@ public class PaymentPlansApi {
 
     /**
      * Create Payment Plan (asynchronously)
-     * Creates a new Payment Plan from the given data.
-     * @param body Payment plan properties
+     * Creates a new Payment Plan from the given data.  _Note: Please care to have the PayPal Subscription Plan in sync!_
+     * @param body Plan details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -401,8 +401,8 @@ public class PaymentPlansApi {
 
     /**
      * Build call for paymentPlansPut
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
+     * @param paymentPlanId Payment Plan ID (required)
+     * @param body Plans details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -448,9 +448,9 @@ public class PaymentPlansApi {
 
     /**
      * Update Payment Plan
-     * Updates the specified Payment Plan with the given data.
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
+     * Updates the specified Payment Plan with the given data.  _Note: Please keep the PayPal Subscription Plan in sync!_
+     * @param paymentPlanId Payment Plan ID (required)
+     * @param body Plans details
      * @return PaymentPlansProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -461,9 +461,9 @@ public class PaymentPlansApi {
 
     /**
      * Update Payment Plan
-     * Updates the specified Payment Plan with the given data.
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
+     * Updates the specified Payment Plan with the given data.  _Note: Please keep the PayPal Subscription Plan in sync!_
+     * @param paymentPlanId Payment Plan ID (required)
+     * @param body Plans details
      * @return ApiResponse&lt;PaymentPlansProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -475,9 +475,9 @@ public class PaymentPlansApi {
 
     /**
      * Update Payment Plan (asynchronously)
-     * Updates the specified Payment Plan with the given data.
-     * @param paymentPlanId Payment plan id (required)
-     * @param body Payment plans properties
+     * Updates the specified Payment Plan with the given data.  _Note: Please keep the PayPal Subscription Plan in sync!_
+     * @param paymentPlanId Payment Plan ID (required)
+     * @param body Plans details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
