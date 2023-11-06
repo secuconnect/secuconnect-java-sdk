@@ -301,7 +301,7 @@
       <!-- https://mvnrepository.com/artifact/io.gsonfire/gson-fire -->
       <groupId>io.gsonfire</groupId>
       <artifactId>gson-fire</artifactId>
-      <version>1.8.5</version>
+      <version>1.9.0</version>
     </dependency>
     <dependency>
       <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
