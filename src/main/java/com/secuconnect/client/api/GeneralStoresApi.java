@@ -6,7 +6,6 @@ import com.secuconnect.client.model.Aggregate;
 import java.math.BigDecimal;
 import com.secuconnect.client.model.GeneralStoresDTO;
 import com.secuconnect.client.model.GeneralStoresDTOReason;
-import com.secuconnect.client.model.GeneralStoresDTOType;
 import com.secuconnect.client.model.GeneralStoresList;
 import com.secuconnect.client.model.GeneralStoresProductModel;
 import com.secuconnect.client.model.ProductExceptionPayload;
@@ -40,7 +39,7 @@ public class GeneralStoresApi {
 
     /**
      * Build call for addStore
-     * @param body General store properties
+     * @param body Store details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -82,7 +81,7 @@ public class GeneralStoresApi {
     /**
      * Create General Store
      * Creates a new General Store from the given data.
-     * @param body General store properties
+     * @param body Store details
      * @return GeneralStoresProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -94,7 +93,7 @@ public class GeneralStoresApi {
     /**
      * Create General Store
      * Creates a new General Store from the given data.
-     * @param body General store properties
+     * @param body Store details
      * @return ApiResponse&lt;GeneralStoresProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -107,7 +106,7 @@ public class GeneralStoresApi {
     /**
      * Create General Store (asynchronously)
      * Creates a new General Store from the given data.
-     * @param body General store properties
+     * @param body Store details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -115,96 +114,6 @@ public class GeneralStoresApi {
     public Call addStoreAsync(GeneralStoresDTO body, final ApiCallback<GeneralStoresProductModel> callback) throws ApiException {
         Call call = addStoreValidateBeforeCall(body);
         Type localVarReturnType = new TypeToken<GeneralStoresProductModel>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-
-    /**
-     * Build call for checkIn
-     * @param generalStoreId General store id (required)
-     * @param body General store properties
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public Call checkInCall(String generalStoreId, GeneralStoresDTOType body) throws ApiException {
-        Object localVarPostBody = body;
-
-        // create path and map variables
-        String localVarPath = "/General/Stores/{generalStoreId}/checkin"
-            .replaceAll("\\{" + "generalStoreId" + "\\}", apiClient.escapeString(generalStoreId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private Call checkInValidateBeforeCall(String generalStoreId, GeneralStoresDTOType body) throws ApiException {
-        // verify the required parameter 'generalStoreId' is set
-        if (generalStoreId == null) {
-            throw new ApiException("Missing the required parameter 'generalStoreId' when calling checkIn(Async)");
-        }
-
-        return checkInCall(generalStoreId, body);
-    }
-
-    /**
-     * Check in
-     * Check in
-     * @param generalStoreId General store id (required)
-     * @param body General store properties
-     * @return ResultBoolean
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ResultBoolean checkIn(String generalStoreId, GeneralStoresDTOType body) throws ApiException {
-        ApiResponse<ResultBoolean> resp = checkInWithHttpInfo(generalStoreId, body);
-        return resp.getData();
-    }
-
-    /**
-     * Check in
-     * Check in
-     * @param generalStoreId General store id (required)
-     * @param body General store properties
-     * @return ApiResponse&lt;ResultBoolean&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<ResultBoolean> checkInWithHttpInfo(String generalStoreId, GeneralStoresDTOType body) throws ApiException {
-        Call call = checkInValidateBeforeCall(generalStoreId, body);
-        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Check in (asynchronously)
-     * Check in
-     * @param generalStoreId General store id (required)
-     * @param body General store properties
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public Call checkInAsync(String generalStoreId, GeneralStoresDTOType body, final ApiCallback<ResultBoolean> callback) throws ApiException {
-        Call call = checkInValidateBeforeCall(generalStoreId, body);
-        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -318,7 +227,7 @@ public class GeneralStoresApi {
 
     /**
      * Build call for getOne
-     * @param generalStoreId General store id (required)
+     * @param generalStoreId General Store ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -365,7 +274,7 @@ public class GeneralStoresApi {
     /**
      * Read General Store
      * Returns the specified General Store.
-     * @param generalStoreId General store id (required)
+     * @param generalStoreId General Store ID (required)
      * @return GeneralStoresProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -377,7 +286,7 @@ public class GeneralStoresApi {
     /**
      * Read General Store
      * Returns the specified General Store.
-     * @param generalStoreId General store id (required)
+     * @param generalStoreId General Store ID (required)
      * @return ApiResponse&lt;GeneralStoresProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -390,7 +299,7 @@ public class GeneralStoresApi {
     /**
      * Read General Store (asynchronously)
      * Returns the specified General Store.
-     * @param generalStoreId General store id (required)
+     * @param generalStoreId General Store ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -405,7 +314,7 @@ public class GeneralStoresApi {
     /**
      * Build call for setDefault
      * @param generalStoreId General store id (required)
-     * @param body Reason
+     * @param body Short reason note
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -453,7 +362,7 @@ public class GeneralStoresApi {
      * Make default store
      * Makes the specified General Store the default store of its General Merchant.
      * @param generalStoreId General store id (required)
-     * @param body Reason
+     * @param body Short reason note
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -466,7 +375,7 @@ public class GeneralStoresApi {
      * Make default store
      * Makes the specified General Store the default store of its General Merchant.
      * @param generalStoreId General store id (required)
-     * @param body Reason
+     * @param body Short reason note
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -480,7 +389,7 @@ public class GeneralStoresApi {
      * Make default store (asynchronously)
      * Makes the specified General Store the default store of its General Merchant.
      * @param generalStoreId General store id (required)
-     * @param body Reason
+     * @param body Short reason note
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -494,8 +403,8 @@ public class GeneralStoresApi {
 
     /**
      * Build call for updateStore
-     * @param generalStoreId General store id (required)
-     * @param body General store properties
+     * @param generalStoreId General Store ID (required)
+     * @param body Store details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -542,8 +451,8 @@ public class GeneralStoresApi {
     /**
      * Update General Store
      * Updates the specified General Store with the given data.
-     * @param generalStoreId General store id (required)
-     * @param body General store properties
+     * @param generalStoreId General Store ID (required)
+     * @param body Store details
      * @return GeneralStoresProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -555,8 +464,8 @@ public class GeneralStoresApi {
     /**
      * Update General Store
      * Updates the specified General Store with the given data.
-     * @param generalStoreId General store id (required)
-     * @param body General store properties
+     * @param generalStoreId General Store ID (required)
+     * @param body Store details
      * @return ApiResponse&lt;GeneralStoresProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -569,8 +478,8 @@ public class GeneralStoresApi {
     /**
      * Update General Store (asynchronously)
      * Updates the specified General Store with the given data.
-     * @param generalStoreId General store id (required)
-     * @param body General store properties
+     * @param generalStoreId General Store ID (required)
+     * @param body Store details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -61,7 +61,7 @@ public class GeneralStoresDTO {
   }
 
    /**
-   * Merchant
+   * General Merchant ID
    * @return merchant
   **/
   public String getMerchant() {
