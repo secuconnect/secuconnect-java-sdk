@@ -46,8 +46,8 @@ public class GeneralContractsApi {
 
     /**
      * Build call for addPaymentLinkConfiguration
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Payment Link configuration
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -94,8 +94,8 @@ public class GeneralContractsApi {
     /**
      * Set Payment Link configuration
      * Saves the configuration for Payment Link, the payment page, for the specified General Contract.
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Payment Link configuration
      * @return GeneralContractsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -107,8 +107,8 @@ public class GeneralContractsApi {
     /**
      * Set Payment Link configuration
      * Saves the configuration for Payment Link, the payment page, for the specified General Contract.
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Payment Link configuration
      * @return ApiResponse&lt;GeneralContractsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -121,8 +121,8 @@ public class GeneralContractsApi {
     /**
      * Set Payment Link configuration (asynchronously)
      * Saves the configuration for Payment Link, the payment page, for the specified General Contract.
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Payment Link configuration
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -136,8 +136,8 @@ public class GeneralContractsApi {
 
     /**
      * Build call for addThirdPartyConfiguration
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -184,8 +184,8 @@ public class GeneralContractsApi {
     /**
      * Set third party configuration
      * Sets the configuration for third parties, e. g. PayPal.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @return ThirdPartyConfigurationProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -197,8 +197,8 @@ public class GeneralContractsApi {
     /**
      * Set third party configuration
      * Sets the configuration for third parties, e. g. PayPal.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @return ApiResponse&lt;ThirdPartyConfigurationProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -211,8 +211,8 @@ public class GeneralContractsApi {
     /**
      * Set third party configuration (asynchronously)
      * Sets the configuration for third parties, e. g. PayPal.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -333,7 +333,7 @@ public class GeneralContractsApi {
 
     /**
      * Build call for getAvailableCurrencies
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -380,7 +380,7 @@ public class GeneralContractsApi {
     /**
      * Get currencies
      * Returns the payment methods, available for the given contract.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return List&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -392,7 +392,7 @@ public class GeneralContractsApi {
     /**
      * Get currencies
      * Returns the payment methods, available for the given contract.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return ApiResponse&lt;List&lt;String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -405,7 +405,7 @@ public class GeneralContractsApi {
     /**
      * Get currencies (asynchronously)
      * Returns the payment methods, available for the given contract.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -419,8 +419,8 @@ public class GeneralContractsApi {
 
     /**
      * Build call for getAvailablePaymentMethods
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Request details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -467,8 +467,8 @@ public class GeneralContractsApi {
     /**
      * Get payment methods
      * Returns the payment methods, available for the specified General Contract.
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Request details
      * @return List&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -480,8 +480,8 @@ public class GeneralContractsApi {
     /**
      * Get payment methods
      * Returns the payment methods, available for the specified General Contract.
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Request details
      * @return ApiResponse&lt;List&lt;String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -494,8 +494,8 @@ public class GeneralContractsApi {
     /**
      * Get payment methods (asynchronously)
      * Returns the payment methods, available for the specified General Contract.
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Request details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -509,9 +509,9 @@ public class GeneralContractsApi {
 
     /**
      * Build call for getAvailablePaymentMethodsForTransaction
-     * @param generalContractId Contract identifier (required)
-     * @param smartTransactionId Smart Transaction identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param smartTransactionId Smart Transaction ID (required)
+     * @param body Request details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -562,10 +562,10 @@ public class GeneralContractsApi {
 
     /**
      * Get available payment methods for Smart Transaction
-     * Returns the payment methods, available for the specified General Contract and Smart Transactions.
-     * @param generalContractId Contract identifier (required)
-     * @param smartTransactionId Smart Transaction identifier (required)
-     * @param body 
+     * Returns the payment methods, available for the specified General Contract and Smart Transactions. It considers currency and demo mode from the response header, and other data from the Smart Transaction.
+     * @param generalContractId General Contract ID (required)
+     * @param smartTransactionId Smart Transaction ID (required)
+     * @param body Request details
      * @return List&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -576,10 +576,10 @@ public class GeneralContractsApi {
 
     /**
      * Get available payment methods for Smart Transaction
-     * Returns the payment methods, available for the specified General Contract and Smart Transactions.
-     * @param generalContractId Contract identifier (required)
-     * @param smartTransactionId Smart Transaction identifier (required)
-     * @param body 
+     * Returns the payment methods, available for the specified General Contract and Smart Transactions. It considers currency and demo mode from the response header, and other data from the Smart Transaction.
+     * @param generalContractId General Contract ID (required)
+     * @param smartTransactionId Smart Transaction ID (required)
+     * @param body Request details
      * @return ApiResponse&lt;List&lt;String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -591,10 +591,10 @@ public class GeneralContractsApi {
 
     /**
      * Get available payment methods for Smart Transaction (asynchronously)
-     * Returns the payment methods, available for the specified General Contract and Smart Transactions.
-     * @param generalContractId Contract identifier (required)
-     * @param smartTransactionId Smart Transaction identifier (required)
-     * @param body 
+     * Returns the payment methods, available for the specified General Contract and Smart Transactions. It considers currency and demo mode from the response header, and other data from the Smart Transaction.
+     * @param generalContractId General Contract ID (required)
+     * @param smartTransactionId Smart Transaction ID (required)
+     * @param body Request details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -608,7 +608,7 @@ public class GeneralContractsApi {
 
     /**
      * Build call for getIframeOptions
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -655,7 +655,7 @@ public class GeneralContractsApi {
     /**
      * Get iframe options
      * Returns the options for the payment iframe for the given contract. The payment iframe was based on the obsolete Flex.API.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return IframeOptions
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -667,7 +667,7 @@ public class GeneralContractsApi {
     /**
      * Get iframe options
      * Returns the options for the payment iframe for the given contract. The payment iframe was based on the obsolete Flex.API.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return ApiResponse&lt;IframeOptions&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -680,7 +680,7 @@ public class GeneralContractsApi {
     /**
      * Get iframe options (asynchronously)
      * Returns the options for the payment iframe for the given contract. The payment iframe was based on the obsolete Flex.API.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -694,7 +694,7 @@ public class GeneralContractsApi {
 
     /**
      * Build call for getOne
-     * @param generalContractId General contract id (required)
+     * @param generalContractId General Contract ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -741,7 +741,7 @@ public class GeneralContractsApi {
     /**
      * Read General Contract
      * Returns the specified General Contract.
-     * @param generalContractId General contract id (required)
+     * @param generalContractId General Contract ID (required)
      * @return GeneralContractsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -753,7 +753,7 @@ public class GeneralContractsApi {
     /**
      * Read General Contract
      * Returns the specified General Contract.
-     * @param generalContractId General contract id (required)
+     * @param generalContractId General Contract ID (required)
      * @return ApiResponse&lt;GeneralContractsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -766,7 +766,7 @@ public class GeneralContractsApi {
     /**
      * Read General Contract (asynchronously)
      * Returns the specified General Contract.
-     * @param generalContractId General contract id (required)
+     * @param generalContractId General Contract ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -780,7 +780,7 @@ public class GeneralContractsApi {
 
     /**
      * Build call for getThirdPartyConfiguration
-     * @param generalContractId General contract id (required)
+     * @param generalContractId General Contract ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -827,7 +827,7 @@ public class GeneralContractsApi {
     /**
      * Get third party configuration
      * Returns the configuration for third parties, e. g. PayPal.
-     * @param generalContractId General contract id (required)
+     * @param generalContractId General Contract ID (required)
      * @return ThirdPartyConfigurationProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -839,7 +839,7 @@ public class GeneralContractsApi {
     /**
      * Get third party configuration
      * Returns the configuration for third parties, e. g. PayPal.
-     * @param generalContractId General contract id (required)
+     * @param generalContractId General Contract ID (required)
      * @return ApiResponse&lt;ThirdPartyConfigurationProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -852,7 +852,7 @@ public class GeneralContractsApi {
     /**
      * Get third party configuration (asynchronously)
      * Returns the configuration for third parties, e. g. PayPal.
-     * @param generalContractId General contract id (required)
+     * @param generalContractId General Contract ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -866,7 +866,7 @@ public class GeneralContractsApi {
 
     /**
      * Build call for getTransferBalance
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -913,7 +913,7 @@ public class GeneralContractsApi {
     /**
      * Get balance from bank transfer
      * Returns the balance eligible for payouts resulting from bank transfers for each currency of the specified General Contract.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return GeneralContractsTransferBalanceModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -925,7 +925,7 @@ public class GeneralContractsApi {
     /**
      * Get balance from bank transfer
      * Returns the balance eligible for payouts resulting from bank transfers for each currency of the specified General Contract.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return ApiResponse&lt;GeneralContractsTransferBalanceModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -938,7 +938,7 @@ public class GeneralContractsApi {
     /**
      * Get balance from bank transfer (asynchronously)
      * Returns the balance eligible for payouts resulting from bank transfers for each currency of the specified General Contract.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -952,8 +952,8 @@ public class GeneralContractsApi {
 
     /**
      * Build call for patchContract
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Contract details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1000,8 +1000,8 @@ public class GeneralContractsApi {
     /**
      * Update General Contract partially
      * Updates the specified General Contract with the given data.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Contract details
      * @return GeneralContractsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1013,8 +1013,8 @@ public class GeneralContractsApi {
     /**
      * Update General Contract partially
      * Updates the specified General Contract with the given data.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Contract details
      * @return ApiResponse&lt;GeneralContractsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1027,8 +1027,8 @@ public class GeneralContractsApi {
     /**
      * Update General Contract partially (asynchronously)
      * Updates the specified General Contract with the given data.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Contract details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1042,8 +1042,8 @@ public class GeneralContractsApi {
 
     /**
      * Build call for patchThirdPartyConfiguration
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1090,8 +1090,8 @@ public class GeneralContractsApi {
     /**
      * Update third party configuration partially
      * Updates the configuration for third parties, e. g. PayPal, partially.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @return ThirdPartyConfigurationProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1103,8 +1103,8 @@ public class GeneralContractsApi {
     /**
      * Update third party configuration partially
      * Updates the configuration for third parties, e. g. PayPal, partially.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @return ApiResponse&lt;ThirdPartyConfigurationProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1117,8 +1117,8 @@ public class GeneralContractsApi {
     /**
      * Update third party configuration partially (asynchronously)
      * Updates the configuration for third parties, e. g. PayPal, partially.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1132,8 +1132,8 @@ public class GeneralContractsApi {
 
     /**
      * Build call for removeThirdPartyConfiguration
-     * @param generalContractId General contract id (required)
-     * @param thirdPartyName Third party name (required)
+     * @param generalContractId General Contract ID (required)
+     * @param thirdPartyName Third party name:  - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;saferpay\&quot;&#x60; (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1185,8 +1185,8 @@ public class GeneralContractsApi {
     /**
      * Delete third party configuration
      * Deletes one or all third party configurations for the specified General Contract.
-     * @param generalContractId General contract id (required)
-     * @param thirdPartyName Third party name (required)
+     * @param generalContractId General Contract ID (required)
+     * @param thirdPartyName Third party name:  - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;saferpay\&quot;&#x60; (required)
      * @return ThirdPartyConfigurationProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1198,8 +1198,8 @@ public class GeneralContractsApi {
     /**
      * Delete third party configuration
      * Deletes one or all third party configurations for the specified General Contract.
-     * @param generalContractId General contract id (required)
-     * @param thirdPartyName Third party name (required)
+     * @param generalContractId General Contract ID (required)
+     * @param thirdPartyName Third party name:  - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;saferpay\&quot;&#x60; (required)
      * @return ApiResponse&lt;ThirdPartyConfigurationProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1212,8 +1212,8 @@ public class GeneralContractsApi {
     /**
      * Delete third party configuration (asynchronously)
      * Deletes one or all third party configurations for the specified General Contract.
-     * @param generalContractId General contract id (required)
-     * @param thirdPartyName Third party name (required)
+     * @param generalContractId General Contract ID (required)
+     * @param thirdPartyName Third party name:  - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;saferpay\&quot;&#x60; (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1227,7 +1227,7 @@ public class GeneralContractsApi {
 
     /**
      * Build call for revokeAccrual
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1274,7 +1274,7 @@ public class GeneralContractsApi {
     /**
      * Revoke all accruals
      * Revokes the accrual flags for all transactions of the specified General Contract. Thus all these transactions are executed then.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void revokeAccrual(String generalContractId) throws ApiException {
@@ -1284,7 +1284,7 @@ public class GeneralContractsApi {
     /**
      * Revoke all accruals
      * Revokes the accrual flags for all transactions of the specified General Contract. Thus all these transactions are executed then.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1296,7 +1296,7 @@ public class GeneralContractsApi {
     /**
      * Revoke all accruals (asynchronously)
      * Revokes the accrual flags for all transactions of the specified General Contract. Thus all these transactions are executed then.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1309,7 +1309,7 @@ public class GeneralContractsApi {
 
     /**
      * Build call for terminate
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1356,7 +1356,7 @@ public class GeneralContractsApi {
     /**
      * Terminate contract
      * Terminates the specified General Contract.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1368,7 +1368,7 @@ public class GeneralContractsApi {
     /**
      * Terminate contract
      * Terminates the specified General Contract.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1381,7 +1381,7 @@ public class GeneralContractsApi {
     /**
      * Terminate contract (asynchronously)
      * Terminates the specified General Contract.
-     * @param generalContractId Contract identifier (required)
+     * @param generalContractId General Contract ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1395,8 +1395,8 @@ public class GeneralContractsApi {
 
     /**
      * Build call for updateBankAccount
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Bank details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1443,8 +1443,8 @@ public class GeneralContractsApi {
     /**
      * Update bank account
      * Changes the bank account, that is used for payouts.
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Bank details
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1456,8 +1456,8 @@ public class GeneralContractsApi {
     /**
      * Update bank account
      * Changes the bank account, that is used for payouts.
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Bank details
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1470,8 +1470,8 @@ public class GeneralContractsApi {
     /**
      * Update bank account (asynchronously)
      * Changes the bank account, that is used for payouts.
-     * @param generalContractId Contract identifier (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Bank details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1485,8 +1485,8 @@ public class GeneralContractsApi {
 
     /**
      * Build call for updateContract
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Contract details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1533,8 +1533,8 @@ public class GeneralContractsApi {
     /**
      * Update General Contract
      * Updates the specified General Contract with the given data.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Contract details
      * @return GeneralContractsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1546,8 +1546,8 @@ public class GeneralContractsApi {
     /**
      * Update General Contract
      * Updates the specified General Contract with the given data.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Contract details
      * @return ApiResponse&lt;GeneralContractsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1560,8 +1560,8 @@ public class GeneralContractsApi {
     /**
      * Update General Contract (asynchronously)
      * Updates the specified General Contract with the given data.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Contract details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1575,8 +1575,8 @@ public class GeneralContractsApi {
 
     /**
      * Build call for updateThirdPartyConfiguration
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1623,8 +1623,8 @@ public class GeneralContractsApi {
     /**
      * Update third party configuration
      * Updates the configuration for third parties, e. g. PayPal.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @return ThirdPartyConfigurationProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1636,8 +1636,8 @@ public class GeneralContractsApi {
     /**
      * Update third party configuration
      * Updates the configuration for third parties, e. g. PayPal.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @return ApiResponse&lt;ThirdPartyConfigurationProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1650,8 +1650,8 @@ public class GeneralContractsApi {
     /**
      * Update third party configuration (asynchronously)
      * Updates the configuration for third parties, e. g. PayPal.
-     * @param generalContractId General contract id (required)
-     * @param body 
+     * @param generalContractId General Contract ID (required)
+     * @param body Third party configuration
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

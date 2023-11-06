@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.SmartTransactionsApplicationContextIframeOpts;
 import com.secuconnect.client.model.SmartTransactionsApplicationContextLocks;
 import com.secuconnect.client.model.SmartTransactionsApplicationContextReturnUrls;
+import com.secuconnect.client.model.SmartTransactionsApplicationContextShopDetails;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,9 @@ public class SmartTransactionsApplicationContext {
 
   @SerializedName("iframe_opts")
   protected SmartTransactionsApplicationContextIframeOpts iframeOpts = null;
+
+  @SerializedName("shop_details")
+  protected SmartTransactionsApplicationContextShopDetails shopDetails = null;
 
   @SerializedName("checkout_template")
   protected String checkoutTemplate = null;
@@ -76,6 +80,23 @@ public class SmartTransactionsApplicationContext {
     this.iframeOpts = iframeOpts;
   }
 
+  public SmartTransactionsApplicationContext shopDetails(SmartTransactionsApplicationContextShopDetails shopDetails) {
+    this.shopDetails = shopDetails;
+    return this;
+  }
+
+   /**
+   * Get shopDetails
+   * @return shopDetails
+  **/
+  public SmartTransactionsApplicationContextShopDetails getShopDetails() {
+    return shopDetails;
+  }
+
+  public void setShopDetails(SmartTransactionsApplicationContextShopDetails shopDetails) {
+    this.shopDetails = shopDetails;
+  }
+
   public SmartTransactionsApplicationContext checkoutTemplate(String checkoutTemplate) {
     this.checkoutTemplate = checkoutTemplate;
     return this;
@@ -122,13 +143,14 @@ public class SmartTransactionsApplicationContext {
     return Objects.equals(this.locks, smartTransactionsApplicationContext.locks) &&
         Objects.equals(this.returnUrls, smartTransactionsApplicationContext.returnUrls) &&
         Objects.equals(this.iframeOpts, smartTransactionsApplicationContext.iframeOpts) &&
+        Objects.equals(this.shopDetails, smartTransactionsApplicationContext.shopDetails) &&
         Objects.equals(this.checkoutTemplate, smartTransactionsApplicationContext.checkoutTemplate) &&
         Objects.equals(this.language, smartTransactionsApplicationContext.language);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locks, returnUrls, iframeOpts, checkoutTemplate, language);
+    return Objects.hash(locks, returnUrls, iframeOpts, shopDetails, checkoutTemplate, language);
   }
 
   @Override
@@ -138,6 +160,7 @@ public class SmartTransactionsApplicationContext {
     sb.append("    locks: ").append(toIndentedString(locks)).append("\n");
     sb.append("    returnUrls: ").append(toIndentedString(returnUrls)).append("\n");
     sb.append("    iframeOpts: ").append(toIndentedString(iframeOpts)).append("\n");
+    sb.append("    shopDetails: ").append(toIndentedString(shopDetails)).append("\n");
     sb.append("    checkoutTemplate: ").append(toIndentedString(checkoutTemplate)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("}");

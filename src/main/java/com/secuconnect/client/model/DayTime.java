@@ -19,7 +19,7 @@ public class DayTime {
   }
 
    /**
-   * Day
+   * Day; &#x60;0&#x60; .. &#x60;6&#x60; for Sunday .. Saturday
    * @return day
   **/
   public Integer getDay() {
@@ -36,7 +36,7 @@ public class DayTime {
   }
 
    /**
-   * Time
+   * Time; format HHMM, e. g. &#x60;\&quot;0930\&quot;&#x60; for 9:30
    * @return time
   **/
   public String getTime() {

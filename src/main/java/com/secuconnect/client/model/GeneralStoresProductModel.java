@@ -555,7 +555,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Store website URL (e. g. a webpage of yours with the details of this store)
+   * URL of a website with your store details
    * @return urlWebsite
   **/
   public String getUrlWebsite() {
@@ -597,7 +597,7 @@ public class GeneralStoresProductModel extends BaseProductModel {
   }
 
    /**
-   * Whether the store is just open
+   * Whether the store is currently open
    * @return openNow
   **/
   public Boolean getOpenNow() {

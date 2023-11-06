@@ -153,6 +153,9 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   @SerializedName("order_id")
   protected String orderId = null;
 
+  @SerializedName("transmitted_to_bank")
+  protected Boolean transmittedToBank = null;
+
   public PaymentTransactionsProductModel l(Integer l) {
     this.l = l;
     return this;
@@ -917,6 +920,23 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     this.orderId = orderId;
   }
 
+  public PaymentTransactionsProductModel transmittedToBank(Boolean transmittedToBank) {
+    this.transmittedToBank = transmittedToBank;
+    return this;
+  }
+
+   /**
+   * Shows if the payment transaction is transmitted to the bank.
+   * @return transmittedToBank
+  **/
+  public Boolean getTransmittedToBank() {
+    return transmittedToBank;
+  }
+
+  public void setTransmittedToBank(Boolean transmittedToBank) {
+    this.transmittedToBank = transmittedToBank;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -970,12 +990,13 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.accountOwner, paymentTransactionsProductModel.accountOwner) &&
         Objects.equals(this.accrual, paymentTransactionsProductModel.accrual) &&
         Objects.equals(this.orderId, paymentTransactionsProductModel.orderId) &&
+        Objects.equals(this.transmittedToBank, paymentTransactionsProductModel.transmittedToBank) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, updated, platform, merchant, store, contract, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, description, descriptionRaw, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, platform, merchant, store, contract, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, description, descriptionRaw, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, transmittedToBank, super.hashCode());
   }
 
   @Override
@@ -1027,6 +1048,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     sb.append("    accountOwner: ").append(toIndentedString(accountOwner)).append("\n");
     sb.append("    accrual: ").append(toIndentedString(accrual)).append("\n");
     sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+    sb.append("    transmittedToBank: ").append(toIndentedString(transmittedToBank)).append("\n");
     sb.append("}");
     return sb.toString();
   }
