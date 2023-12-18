@@ -25,6 +25,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - *new endpoint*: `capture` in `PaymentTransactionsApi`
 - *new element*: `documents` in `PaymentTransactionsProductModel`
 
+### Security
+- Dependency updates
+
 ### Added
 - `Model.PaymentTransactionsCaptureDTO`
 - `Model.PaymentTransactionsProductModelDocuments`
