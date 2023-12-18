@@ -19,6 +19,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.26.0] - 2023-12-18
+[3.26.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.25.0...3.26.0
+
+- *new endpoint*: `capture` in `PaymentTransactionsApi`
+- *new element*: `documents` in `PaymentTransactionsProductModel`
+
+### Added
+- `Model.PaymentTransactionsCaptureDTO`
+- `Model.PaymentTransactionsProductModelDocuments`
+
+### Changed
+- `Api.PaymentTransactionsApi`
+- `Model.PaymentTransactionsProductModel`
+- `Model.SmartTransactionsBasketProduct`
+
+
 ## [3.25.0] - 2023-11-06
 [3.25.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.24.0...3.25.0
 

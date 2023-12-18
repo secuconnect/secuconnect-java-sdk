@@ -11,6 +11,7 @@ import com.secuconnect.client.model.GeneralStoresProductModel;
 import com.secuconnect.client.model.ParentObj;
 import com.secuconnect.client.model.PaymentTransactionsProductModelCustomer;
 import com.secuconnect.client.model.PaymentTransactionsProductModelDetails;
+import com.secuconnect.client.model.PaymentTransactionsProductModelDocuments;
 import com.secuconnect.client.model.ProductInstanceUID;
 import com.secuconnect.client.model.UpdatedField;
 import java.util.ArrayList;
@@ -155,6 +156,9 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("transmitted_to_bank")
   protected Boolean transmittedToBank = null;
+
+  @SerializedName("documents")
+  protected List<PaymentTransactionsProductModelDocuments> documents = null;
 
   public PaymentTransactionsProductModel l(Integer l) {
     this.l = l;
@@ -807,7 +811,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Reference ID
+   * Reference ID of the sub-basket, if a sub-transaction (marketplace)
    * @return referenceId
   **/
   public String getReferenceId() {
@@ -937,6 +941,31 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     this.transmittedToBank = transmittedToBank;
   }
 
+  public PaymentTransactionsProductModel documents(List<PaymentTransactionsProductModelDocuments> documents) {
+    this.documents = documents;
+    return this;
+  }
+
+  public PaymentTransactionsProductModel addDocumentsItem(PaymentTransactionsProductModelDocuments documentsItem) {
+    if (this.documents == null) {
+      this.documents = new ArrayList<PaymentTransactionsProductModelDocuments>();
+    }
+    this.documents.add(documentsItem);
+    return this;
+  }
+
+   /**
+   * Related documents
+   * @return documents
+  **/
+  public List<PaymentTransactionsProductModelDocuments> getDocuments() {
+    return documents;
+  }
+
+  public void setDocuments(List<PaymentTransactionsProductModelDocuments> documents) {
+    this.documents = documents;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -991,12 +1020,13 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.accrual, paymentTransactionsProductModel.accrual) &&
         Objects.equals(this.orderId, paymentTransactionsProductModel.orderId) &&
         Objects.equals(this.transmittedToBank, paymentTransactionsProductModel.transmittedToBank) &&
+        Objects.equals(this.documents, paymentTransactionsProductModel.documents) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, updated, platform, merchant, store, contract, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, description, descriptionRaw, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, transmittedToBank, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, platform, merchant, store, contract, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, description, descriptionRaw, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, transmittedToBank, documents, super.hashCode());
   }
 
   @Override
@@ -1049,6 +1079,7 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     sb.append("    accrual: ").append(toIndentedString(accrual)).append("\n");
     sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     sb.append("    transmittedToBank: ").append(toIndentedString(transmittedToBank)).append("\n");
+    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("}");
     return sb.toString();
   }
