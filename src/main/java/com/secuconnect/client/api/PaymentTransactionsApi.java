@@ -6,6 +6,7 @@ import com.secuconnect.client.model.Aggregate;
 import java.math.BigDecimal;
 import com.secuconnect.client.model.PaymentCrowdFundingData;
 import com.secuconnect.client.model.PaymentTransactionCancelDTO;
+import com.secuconnect.client.model.PaymentTransactionsCaptureDTO;
 import com.secuconnect.client.model.PaymentTransactionsCheckStatus;
 import com.secuconnect.client.model.PaymentTransactionsIncreaseAmountDTO;
 import com.secuconnect.client.model.PaymentTransactionsInstructionsModel;
@@ -296,6 +297,96 @@ public class PaymentTransactionsApi {
      */
     public Call cancelAsync(String paymentTransactionId, PaymentTransactionCancelDTO body, final ApiCallback<List<PaymentTransactionsProductModel>> callback) throws ApiException {
         Call call = cancelValidateBeforeCall(paymentTransactionId, body);
+        Type localVarReturnType = new TypeToken<List<PaymentTransactionsProductModel>>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for capture
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param body 
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call captureCall(String paymentTransactionId, PaymentTransactionsCaptureDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/capture"
+            .replaceAll("\\{" + "paymentTransactionId" + "\\}", apiClient.escapeString(paymentTransactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call captureValidateBeforeCall(String paymentTransactionId, PaymentTransactionsCaptureDTO body) throws ApiException {
+        // verify the required parameter 'paymentTransactionId' is set
+        if (paymentTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling capture(Async)");
+        }
+
+        return captureCall(paymentTransactionId, body);
+    }
+
+    /**
+     * Capture
+     * Capture an open Payment Transaction
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param body 
+     * @return List&lt;PaymentTransactionsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<PaymentTransactionsProductModel> capture(String paymentTransactionId, PaymentTransactionsCaptureDTO body) throws ApiException {
+        ApiResponse<List<PaymentTransactionsProductModel>> resp = captureWithHttpInfo(paymentTransactionId, body);
+        return resp.getData();
+    }
+
+    /**
+     * Capture
+     * Capture an open Payment Transaction
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param body 
+     * @return ApiResponse&lt;List&lt;PaymentTransactionsProductModel&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<PaymentTransactionsProductModel>> captureWithHttpInfo(String paymentTransactionId, PaymentTransactionsCaptureDTO body) throws ApiException {
+        Call call = captureValidateBeforeCall(paymentTransactionId, body);
+        Type localVarReturnType = new TypeToken<List<PaymentTransactionsProductModel>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Capture (asynchronously)
+     * Capture an open Payment Transaction
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param body 
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call captureAsync(String paymentTransactionId, PaymentTransactionsCaptureDTO body, final ApiCallback<List<PaymentTransactionsProductModel>> callback) throws ApiException {
+        Call call = captureValidateBeforeCall(paymentTransactionId, body);
         Type localVarReturnType = new TypeToken<List<PaymentTransactionsProductModel>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

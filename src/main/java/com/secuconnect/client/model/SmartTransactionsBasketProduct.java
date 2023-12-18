@@ -102,7 +102,7 @@ public class SmartTransactionsBasketProduct {
   }
 
    /**
-   * Item type:  - &#x60;\&quot;article\&quot;&#x60; - &#x60;\&quot;coupon\&quot;&#x60; - &#x60;\&quot;sub_transaction\&quot;&#x60; - &#x60;\&quot;stakeholder_payment\&quot;&#x60; - &#x60;\&quot;shipping\&quot;&#x60; - &#x60;\&quot;subscription\&quot;&#x60;
+   * Item type:  - &#x60;\&quot;article\&quot;&#x60; - &#x60;\&quot;coupon\&quot;&#x60; - &#x60;\&quot;sub_transaction\&quot;&#x60; - &#x60;\&quot;stakeholder_payment\&quot;&#x60; - &#x60;\&quot;shipping\&quot;&#x60; - &#x60;\&quot;subscription\&quot;&#x60;  _Note: \&quot;coupon\&quot; items have the effect of reducing the amount. They are for coupons managed by the merchant, but not for secucard._
    * @return itemType
   **/
   public String getItemType() {
