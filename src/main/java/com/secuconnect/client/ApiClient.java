@@ -27,8 +27,9 @@ import java.util.regex.Pattern;
 
 import static java.util.Arrays.asList;
 
+@SuppressWarnings({"unused", "UnusedReturnValue"})
 public class ApiClient {
-    private static final String USER_AGENT = "secuconnect-java-sdk/3.8.0";
+    private static final String USER_AGENT = "secuconnect-java-sdk/3.27.0";
 
     private final Map<String, String> defaultHeaderMap = new HashMap<>();
     private Environment env = Environment.getGlobalEnv();
@@ -131,6 +132,25 @@ public class ApiClient {
     }
 
     /**
+     * @param connectTimeout Defines a time period in which our client should establish a connection with a target host.
+     * @param readTimeout Defines a maximum time of inactivity between two data packets when waiting for the server’s response.
+     * @param writeTimeout Defines a maximum time of inactivity between two data packets when sending the request to the server.
+     * @param callTimeout Defines a time limit for a complete HTTP call. This includes resolving DNS, connecting, writing the request body, server processing, as well as reading the response body.
+     */
+    public ApiClient setTimeouts(Integer connectTimeout, Integer writeTimeout, Integer readTimeout, Integer callTimeout) {
+        OkHttpClient.Builder builder = httpClient.newBuilder();
+
+        builder.connectTimeout(connectTimeout, TimeUnit.SECONDS);
+        builder.writeTimeout(writeTimeout, TimeUnit.SECONDS);
+        builder.readTimeout(readTimeout, TimeUnit.SECONDS);
+        builder.callTimeout(callTimeout, TimeUnit.SECONDS);
+
+        httpClient = builder.build();
+
+        return this;
+    }
+
+    /**
      * Enable/disable debugging for this API client.
      *
      * @param debugging To enable (true) or disable (false) debugging
@@ -138,14 +158,16 @@ public class ApiClient {
      */
     public ApiClient setDebugging(boolean debugging) {
         if (debugging != this.debugging) {
+            OkHttpClient.Builder builder = httpClient.newBuilder();
             if (debugging) {
                 loggingInterceptor = new HttpLoggingInterceptor();
                 loggingInterceptor.setLevel(Level.BODY);
-                httpClient.interceptors().add(loggingInterceptor);
-            } else {
-                httpClient.interceptors().remove(loggingInterceptor);
+                builder.interceptors().add(loggingInterceptor);
+            } else if (loggingInterceptor != null) {
+                builder.interceptors().remove(loggingInterceptor);
                 loggingInterceptor = null;
             }
+            httpClient = builder.build();
         }
         this.debugging = debugging;
         return this;

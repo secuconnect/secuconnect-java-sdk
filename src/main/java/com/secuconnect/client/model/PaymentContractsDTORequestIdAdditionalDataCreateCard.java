@@ -17,7 +17,9 @@ public class PaymentContractsDTORequestIdAdditionalDataCreateCard {
    */
   @JsonAdapter(CardSchemeEnum.Adapter.class)
   public enum CardSchemeEnum {
+    @SerializedName("VI")
     VI("VI"),
+    @SerializedName("MC")
     MC("MC");
 
     private String value;

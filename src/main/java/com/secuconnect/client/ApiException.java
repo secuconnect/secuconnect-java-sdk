@@ -1,4 +1,3 @@
-
 package com.secuconnect.client;
 
 import com.google.gson.Gson;

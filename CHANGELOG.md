@@ -19,6 +19,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.27.0] - 2024-01-31
+[3.27.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.26.0...3.27.0
+
+- *changed response type*: `PaymentTransactionsApi.capture()` changed from `PaymentTransactionsProductModel[] ` to `PaymentTransactionsProductModel`
+- *new method*: `ApiClient.setTimeouts()` to set individual timeouts per request 
+- *bug fix*: `ApiClient.setDebugging(true)` does not throw an `UnsupportedOperationException` anymore
+
+### Security
+- Dependency updates
+
+### Changed
+- `/ApiCallback`
+- `/ApiClient`
+- `/ApiException`
+- `/ApiResponse`
+- `/Environment`
+- `/ExceptionBody`
+- `/JSON`
+- `/Pair`
+- `Api.PaymentTransactionsApi`
+- `Model.PaymentContractsDTORequestIdAdditionalDataCreateCard`
+
+
 ## [3.26.0] - 2023-12-18
 [3.26.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.25.0...3.26.0
 
