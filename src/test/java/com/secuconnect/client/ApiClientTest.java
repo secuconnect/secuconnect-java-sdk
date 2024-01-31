@@ -1,6 +1,7 @@
 package com.secuconnect.client;
 
 import com.secuconnect.client.api.GeneralContractsApi;
+import com.secuconnect.client.api.PaymentTransactionsApi;
 import com.secuconnect.client.auth.Authenticator;
 import com.secuconnect.client.cache.CacheItemInterface;
 import com.secuconnect.client.cache.CacheItemPoolInterface;
@@ -138,5 +139,46 @@ public class ApiClientTest {
         }
 
         cache.clear();
+    }
+
+    @Test
+    public void TimeoutTest() throws InterruptedException {
+        try {
+            // init env and api call
+            Environment env = new Environment().setCredentials(Globals.O_AUTH_CLIENT_CREDENTIALS);
+
+            final boolean[] executed = {false};
+
+            String accessToken1 = env.authenticate();
+            assertFalse(accessToken1.isEmpty());
+            assertEquals(accessToken1, env.authenticate());
+
+            // set custom timeouts for the request
+            ApiClient apiClient = env.getApiClient()
+                    .setTimeouts(1, 1, 1, 1);
+
+            PaymentTransactionsApi api = new PaymentTransactionsApi(apiClient);
+
+            // run api call
+            api.getAll(1000, null, null, null, null);
+
+            fail("no timeout");
+        } catch (ApiException ex) {
+            assertEquals("java.io.InterruptedIOException: timeout", ex.getMessage());
+        }
+    }
+
+    @Test
+    public void SetDebugTest() throws InterruptedException {
+        try {
+            // init env and api call
+            ApiClient apiClient = Environment.getGlobalEnv().getApiClient();
+
+            apiClient.setDebugging(false);
+            apiClient.setDebugging(true);
+            apiClient.setDebugging(false);
+        } catch (RuntimeException ex) {
+            fail("Could not active the logging of API requests.");
+        }
     }
 }

@@ -1,4 +1,3 @@
-
 package com.secuconnect.client;
 
 import com.google.gson.Gson;
@@ -39,44 +38,43 @@ public class JSON {
 
     public static GsonBuilder createGson() {
         GsonFireBuilder fireBuilder = new GsonFireBuilder()
-        .registerTypeSelector(OneOfPaymentContainersDTOModelPrivate.class, new TypeSelector<OneOfPaymentContainersDTOModelPrivate>() {
-            @Override
-            public Class<? extends OneOfPaymentContainersDTOModelPrivate> getClassForElement(JsonElement readElement) {
-                if (readElement.getAsJsonObject().has("girocode_url")) {
-                    return PaymentInstructions.class;
-                } else if (readElement.getAsJsonObject().has("pan")) {
-                    return CreditCardDescriptor.class;
-                } else if (readElement.getAsJsonObject().has("header")) {
-                    return ApplePayDescriptor.class;
-                } else if (readElement.getAsJsonObject().has("signedMessage")) {
-                    return GooglePayDescriptor.class;
-                } else if (readElement.getAsJsonObject().has("payer_id")) {
-                    return PayPalDescriptor.class;
-                }
-                return BankAccountDescriptor.class;
-            }
-        })
-        .registerTypeSelector(OneOfSmartTransactionsDeliveryOptionsModel.class, new TypeSelector<OneOfSmartTransactionsDeliveryOptionsModel>() {
-            @Override
-            public Class<? extends OneOfSmartTransactionsDeliveryOptionsModel> getClassForElement(JsonElement readElement) {
-                if (readElement.getAsJsonObject().has("type")) {
-                    if ("shipping".equals(readElement.getAsJsonObject().get("type").toString())) {
-                        return SmartTransactionsShippingModel.class;
-                    } else if ("collection".equals(readElement.getAsJsonObject().get("type").toString())) {
-                        return SmartTransactionsCollectionModel.class;
+                .registerTypeSelector(OneOfPaymentContainersDTOModelPrivate.class, new TypeSelector<OneOfPaymentContainersDTOModelPrivate>() {
+                    @Override
+                    public Class<? extends OneOfPaymentContainersDTOModelPrivate> getClassForElement(JsonElement readElement) {
+                        if (readElement.getAsJsonObject().has("girocode_url")) {
+                            return PaymentInstructions.class;
+                        } else if (readElement.getAsJsonObject().has("pan")) {
+                            return CreditCardDescriptor.class;
+                        } else if (readElement.getAsJsonObject().has("header")) {
+                            return ApplePayDescriptor.class;
+                        } else if (readElement.getAsJsonObject().has("signedMessage")) {
+                            return GooglePayDescriptor.class;
+                        } else if (readElement.getAsJsonObject().has("payer_id")) {
+                            return PayPalDescriptor.class;
+                        }
+                        return BankAccountDescriptor.class;
                     }
-                }
+                })
+                .registerTypeSelector(OneOfSmartTransactionsDeliveryOptionsModel.class, new TypeSelector<OneOfSmartTransactionsDeliveryOptionsModel>() {
+                    @Override
+                    public Class<? extends OneOfSmartTransactionsDeliveryOptionsModel> getClassForElement(JsonElement readElement) {
+                        if (readElement.getAsJsonObject().has("type")) {
+                            if ("shipping".equals(readElement.getAsJsonObject().get("type").toString())) {
+                                return SmartTransactionsShippingModel.class;
+                            } else if ("collection".equals(readElement.getAsJsonObject().get("type").toString())) {
+                                return SmartTransactionsCollectionModel.class;
+                            }
+                        }
 
-                return SmartTransactionsShippingModel.class;
-            }
-        })
-        ;
+                        return SmartTransactionsShippingModel.class;
+                    }
+                });
         return fireBuilder.createGsonBuilder();
     }
 
     private static String getDiscriminatorValue(JsonElement readElement, String discriminatorField) {
         JsonElement element = readElement.getAsJsonObject().get(discriminatorField);
-        if(null == element) {
+        if (null == element) {
             throw new IllegalArgumentException("missing discriminator field: <" + discriminatorField + ">");
         }
         return element.getAsString();
@@ -84,7 +82,7 @@ public class JSON {
 
     private static <T> Class<? extends T> getClassByDiscriminator(Map<String, Class<? extends T>> classByDiscriminatorValue, String discriminatorValue) {
         Class<? extends T> clazz = classByDiscriminatorValue.get(discriminatorValue.toUpperCase());
-        if(null == clazz) {
+        if (null == clazz) {
             throw new IllegalArgumentException("cannot determine model class of name: <" + discriminatorValue + ">");
         }
         return clazz;
@@ -92,11 +90,11 @@ public class JSON {
 
     public JSON() {
         gson = createGson()
-            .registerTypeAdapter(Date.class, dateTypeAdapter)
-            .registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter)
-            .registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter)
-            .registerTypeAdapter(LocalDate.class, localDateTypeAdapter)
-            .create();
+                .registerTypeAdapter(Date.class, dateTypeAdapter)
+                .registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter)
+                .registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter)
+                .registerTypeAdapter(LocalDate.class, localDateTypeAdapter)
+                .create();
     }
 
     /**
@@ -199,7 +197,7 @@ public class JSON {
                 default:
                     String date = in.nextString();
                     if (date.endsWith("+0000")) {
-                        date = date.substring(0, date.length()-5) + "Z";
+                        date = date.substring(0, date.length() - 5) + "Z";
                     }
                     return OffsetDateTime.parse(date, formatter);
             }

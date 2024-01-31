@@ -4,6 +4,7 @@ import com.secuconnect.client.auth.credentials.OAuthCredentials;
 import com.secuconnect.client.cache.CacheItemPoolInterface;
 import com.secuconnect.client.cache.FileCache;
 
+@SuppressWarnings({"unused", "UnusedReturnValue"})
 public class Environment {
 
     public static final String ENV_ID_LIVE = "LIVE";
@@ -58,7 +59,7 @@ public class Environment {
             envId = envId.substring(0, 7);
         }
 
-        basePath = basePath.replaceFirst("/$","");
+        basePath = basePath.replaceFirst("/$", "");
 
         this.id = envId;
         this.basePath = basePath;
@@ -112,5 +113,4 @@ public class Environment {
     public String reauthenticate() throws ApiException {
         return apiClient.reauthenticate();
     }
-
 }

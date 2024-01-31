@@ -354,11 +354,11 @@ public class PaymentTransactionsApi {
      * Capture an open Payment Transaction
      * @param paymentTransactionId Payment Transaction ID (required)
      * @param body 
-     * @return List&lt;PaymentTransactionsProductModel&gt;
+     * @return PaymentTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<PaymentTransactionsProductModel> capture(String paymentTransactionId, PaymentTransactionsCaptureDTO body) throws ApiException {
-        ApiResponse<List<PaymentTransactionsProductModel>> resp = captureWithHttpInfo(paymentTransactionId, body);
+    public PaymentTransactionsProductModel capture(String paymentTransactionId, PaymentTransactionsCaptureDTO body) throws ApiException {
+        ApiResponse<PaymentTransactionsProductModel> resp = captureWithHttpInfo(paymentTransactionId, body);
         return resp.getData();
     }
 
@@ -367,12 +367,12 @@ public class PaymentTransactionsApi {
      * Capture an open Payment Transaction
      * @param paymentTransactionId Payment Transaction ID (required)
      * @param body 
-     * @return ApiResponse&lt;List&lt;PaymentTransactionsProductModel&gt;&gt;
+     * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<PaymentTransactionsProductModel>> captureWithHttpInfo(String paymentTransactionId, PaymentTransactionsCaptureDTO body) throws ApiException {
+    public ApiResponse<PaymentTransactionsProductModel> captureWithHttpInfo(String paymentTransactionId, PaymentTransactionsCaptureDTO body) throws ApiException {
         Call call = captureValidateBeforeCall(paymentTransactionId, body);
-        Type localVarReturnType = new TypeToken<List<PaymentTransactionsProductModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -385,9 +385,9 @@ public class PaymentTransactionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call captureAsync(String paymentTransactionId, PaymentTransactionsCaptureDTO body, final ApiCallback<List<PaymentTransactionsProductModel>> callback) throws ApiException {
+    public Call captureAsync(String paymentTransactionId, PaymentTransactionsCaptureDTO body, final ApiCallback<PaymentTransactionsProductModel> callback) throws ApiException {
         Call call = captureValidateBeforeCall(paymentTransactionId, body);
-        Type localVarReturnType = new TypeToken<List<PaymentTransactionsProductModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

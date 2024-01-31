@@ -1,4 +1,3 @@
-
 package com.secuconnect.client;
 
 public class Pair {
