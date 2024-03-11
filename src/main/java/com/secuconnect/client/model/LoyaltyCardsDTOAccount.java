@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * LoyaltyCardsDTOAccount
+ * General Account
  */
 public class LoyaltyCardsDTOAccount {
   @SerializedName("object")
@@ -36,7 +36,7 @@ public class LoyaltyCardsDTOAccount {
   }
 
    /**
-   * Get id
+   * General Account ID
    * @return id
   **/
   public String getId() {

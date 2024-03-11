@@ -311,7 +311,7 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
   }
 
    /**
-   * The status of the identrequest
+   * Ident Request status:  * &#x60;\&quot;requested\&quot;&#x60; * &#x60;\&quot;error\&quot;&#x60; * &#x60;\&quot;ok_preliminary\&quot;&#x60; * &#x60;\&quot;failed_preliminary\&quot;&#x60; * &#x60;\&quot;ok\&quot;&#x60; * &#x60;\&quot;failed\&quot;&#x60;
    * @return status
   **/
   public String getStatus() {
@@ -353,7 +353,7 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
   }
 
    /**
-   * The person which should be identified by third party provider
+   * Details of the person to be identified
    * @return person
   **/
   public List<IdentrequestPerson> getPerson() {
@@ -370,7 +370,7 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
   }
 
    /**
-   * Arbitrary ID to identify identrequest on merchant
+   * Arbitrary ID to identify the Ident Request on the merchant&#x27;s site
    * @return ownerTransactionId
   **/
   public String getOwnerTransactionId() {
@@ -416,7 +416,7 @@ public class ServicesIdentrequestsProductModel extends BaseProductModel {
   }
 
    /**
-   * Flag to identify if identrequest was internally processed by secupay
+   * Flag to see if the Ident Request was processed by secupay
    * @return treated
   **/
   public Boolean getTreated() {

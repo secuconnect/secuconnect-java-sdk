@@ -5,7 +5,7 @@ import com.secuconnect.client.model.Contact;
 import java.util.Objects;
 
 /**
- * LoyaltyCustomersDTO
+ * Loyalty Customer
  */
 public class LoyaltyCustomersDTO {
   @SerializedName("merchant")
@@ -38,7 +38,7 @@ public class LoyaltyCustomersDTO {
   }
 
    /**
-   * merchant
+   * Merchant ID
    * @return merchant
   **/
   public String getMerchant() {
@@ -72,7 +72,7 @@ public class LoyaltyCustomersDTO {
   }
 
    /**
-   * Age
+   * Age in full years
    * @return age
   **/
   public Integer getAge() {
@@ -89,7 +89,7 @@ public class LoyaltyCustomersDTO {
   }
 
    /**
-   * Number of days until birthday
+   * Days until the next birthday
    * @return daysUntilBirthday
   **/
   public Integer getDaysUntilBirthday() {
@@ -106,7 +106,7 @@ public class LoyaltyCustomersDTO {
   }
 
    /**
-   * Customer number
+   * Customer number in the merchant&#x27;s system
    * @return customernumber
   **/
   public String getCustomernumber() {
@@ -123,7 +123,7 @@ public class LoyaltyCustomersDTO {
   }
 
    /**
-   * note
+   * Note from the merchant
    * @return note
   **/
   public String getNote() {
@@ -140,7 +140,7 @@ public class LoyaltyCustomersDTO {
   }
 
    /**
-   * Consent for communication setting
+   * Whether the customer has given consent for communication or not:  * &#x60;\&quot;accepted\&quot;&#x60; * &#x60;\&quot;declined\&quot;&#x60; * &#x60;\&quot;not_set\&quot;&#x60;
    * @return consentForCommunication
   **/
   public String getConsentForCommunication() {
@@ -157,7 +157,7 @@ public class LoyaltyCustomersDTO {
   }
 
    /**
-   * additional data properties
+   * Additional data properties
    * @return additionalData
   **/
   public Object getAdditionalData() {

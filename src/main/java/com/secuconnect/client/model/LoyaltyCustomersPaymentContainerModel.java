@@ -5,7 +5,7 @@ import com.secuconnect.client.model.BankAccountDescriptor;
 import java.util.Objects;
 
 /**
- * LoyaltyCustomersPaymentContainerModel
+ * Payment Container
  */
 public class LoyaltyCustomersPaymentContainerModel {
   @SerializedName("object")
@@ -97,7 +97,7 @@ public class LoyaltyCustomersPaymentContainerModel {
   }
 
    /**
-   * Last Usage date
+   * Last Usage date (ISO 8601 date and time including timezone, like  \&quot;2023-02-28 T10:55:27+02:00\&quot;)
    * @return lastUsage
   **/
   public String getLastUsage() {

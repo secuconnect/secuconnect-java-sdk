@@ -210,7 +210,7 @@ public class ServicesIdentresultsProductModel extends BaseProductModel {
   }
 
    /**
-   * The status of the identrequest
+   * Ident Request status
    * @return status
   **/
   public String getStatus() {
@@ -227,7 +227,7 @@ public class ServicesIdentresultsProductModel extends BaseProductModel {
   }
 
    /**
-   * Demo Flag
+   * Ident Request demo flag
    * @return demo
   **/
   public Boolean getDemo() {
@@ -252,7 +252,7 @@ public class ServicesIdentresultsProductModel extends BaseProductModel {
   }
 
    /**
-   * The details from identification process about identified person
+   * The identified person&#x27;s details
    * @return person
   **/
   public List<IdentresultPerson> getPerson() {

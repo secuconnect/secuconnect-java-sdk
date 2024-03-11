@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * IdentDocument
+ * Identification document
  */
 public class IdentDocument {
   @SerializedName("type")
@@ -19,7 +19,7 @@ public class IdentDocument {
   }
 
    /**
-   * The type of the identification document
+   * Type of the ID document
    * @return type
   **/
   public String getType() {
@@ -36,7 +36,7 @@ public class IdentDocument {
   }
 
    /**
-   * The url to identification document
+   * URL to ID document
    * @return url
   **/
   public String getUrl() {

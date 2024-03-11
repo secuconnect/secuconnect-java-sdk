@@ -4,11 +4,14 @@ import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
 import com.secuconnect.client.model.Aggregate;
 import java.math.BigDecimal;
+import com.secuconnect.client.model.GetSmartDevicePin;
 import com.secuconnect.client.model.ProductExceptionPayload;
+import com.secuconnect.client.model.ResultBoolean;
 import com.secuconnect.client.model.SmartDeviceUserPin;
 import com.secuconnect.client.model.SmartDevicesDTO;
 import com.secuconnect.client.model.SmartDevicesList;
 import com.secuconnect.client.model.SmartDevicesProductModel;
+import com.secuconnect.client.model.UpdateSmartDevicePin;
 import okhttp3.Call;
 
 import java.lang.reflect.Type;
@@ -220,6 +223,92 @@ public class SmartDevicesApi {
     public Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<SmartDevicesList> callback) throws ApiException {
         Call call = getAllValidateBeforeCall(count, offset, fields, q, sort);
         Type localVarReturnType = new TypeToken<SmartDevicesList>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getDevicePin
+     * @param smartDeviceId Smart device id (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getDevicePinCall(String smartDeviceId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Smart/Devices/{smartDeviceId}/devicePin"
+            .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getDevicePinValidateBeforeCall(String smartDeviceId) throws ApiException {
+        // verify the required parameter 'smartDeviceId' is set
+        if (smartDeviceId == null) {
+            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling getDevicePin(Async)");
+        }
+
+        return getDevicePinCall(smartDeviceId);
+    }
+
+    /**
+     * Get device PIN
+     * Get the device PIN on merchant, store or device level which needs to be passed to authenticate the Smart Device.
+     * @param smartDeviceId Smart device id (required)
+     * @return GetSmartDevicePin
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public GetSmartDevicePin getDevicePin(String smartDeviceId) throws ApiException {
+        ApiResponse<GetSmartDevicePin> resp = getDevicePinWithHttpInfo(smartDeviceId);
+        return resp.getData();
+    }
+
+    /**
+     * Get device PIN
+     * Get the device PIN on merchant, store or device level which needs to be passed to authenticate the Smart Device.
+     * @param smartDeviceId Smart device id (required)
+     * @return ApiResponse&lt;GetSmartDevicePin&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<GetSmartDevicePin> getDevicePinWithHttpInfo(String smartDeviceId) throws ApiException {
+        Call call = getDevicePinValidateBeforeCall(smartDeviceId);
+        Type localVarReturnType = new TypeToken<GetSmartDevicePin>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get device PIN (asynchronously)
+     * Get the device PIN on merchant, store or device level which needs to be passed to authenticate the Smart Device.
+     * @param smartDeviceId Smart device id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getDevicePinAsync(String smartDeviceId, final ApiCallback<GetSmartDevicePin> callback) throws ApiException {
+        Call call = getDevicePinValidateBeforeCall(smartDeviceId);
+        Type localVarReturnType = new TypeToken<GetSmartDevicePin>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -491,6 +580,96 @@ public class SmartDevicesApi {
     public Call updateDeviceAsync(String smartDeviceId, SmartDevicesDTO body, final ApiCallback<SmartDevicesProductModel> callback) throws ApiException {
         Call call = updateDeviceValidateBeforeCall(smartDeviceId, body);
         Type localVarReturnType = new TypeToken<SmartDevicesProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for updateDevicePin
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device Pin properties
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call updateDevicePinCall(String smartDeviceId, UpdateSmartDevicePin body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Smart/Devices/{smartDeviceId}/devicePin"
+            .replaceAll("\\{" + "smartDeviceId" + "\\}", apiClient.escapeString(smartDeviceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call updateDevicePinValidateBeforeCall(String smartDeviceId, UpdateSmartDevicePin body) throws ApiException {
+        // verify the required parameter 'smartDeviceId' is set
+        if (smartDeviceId == null) {
+            throw new ApiException("Missing the required parameter 'smartDeviceId' when calling updateDevicePin(Async)");
+        }
+
+        return updateDevicePinCall(smartDeviceId, body);
+    }
+
+    /**
+     * Update device PIN
+     * Sets the device PIN on merchant, store or device level which needs to be passed to authenticate the Smart Device.
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device Pin properties
+     * @return ResultBoolean
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ResultBoolean updateDevicePin(String smartDeviceId, UpdateSmartDevicePin body) throws ApiException {
+        ApiResponse<ResultBoolean> resp = updateDevicePinWithHttpInfo(smartDeviceId, body);
+        return resp.getData();
+    }
+
+    /**
+     * Update device PIN
+     * Sets the device PIN on merchant, store or device level which needs to be passed to authenticate the Smart Device.
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device Pin properties
+     * @return ApiResponse&lt;ResultBoolean&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ResultBoolean> updateDevicePinWithHttpInfo(String smartDeviceId, UpdateSmartDevicePin body) throws ApiException {
+        Call call = updateDevicePinValidateBeforeCall(smartDeviceId, body);
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update device PIN (asynchronously)
+     * Sets the device PIN on merchant, store or device level which needs to be passed to authenticate the Smart Device.
+     * @param smartDeviceId Smart device id (required)
+     * @param body Smart device Pin properties
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call updateDevicePinAsync(String smartDeviceId, UpdateSmartDevicePin body, final ApiCallback<ResultBoolean> callback) throws ApiException {
+        Call call = updateDevicePinValidateBeforeCall(smartDeviceId, body);
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

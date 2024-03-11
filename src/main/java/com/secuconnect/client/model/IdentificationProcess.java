@@ -22,7 +22,7 @@ public class IdentificationProcess {
   }
 
    /**
-   * The status from identification provider
+   * Status as transmitted from the identification provider
    * @return status
   **/
   public String getStatus() {
@@ -56,7 +56,7 @@ public class IdentificationProcess {
   }
 
    /**
-   * The person transaction_id from identrequest
+   * Ident Request transaction_id
    * @return transactionnumber
   **/
   public String getTransactionnumber() {
