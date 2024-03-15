@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * IdentrequestRedirectUrls
+ * Ident Request redirect URLs
  */
 public class IdentrequestRedirectUrls {
   @SerializedName("url_success")
@@ -19,7 +19,7 @@ public class IdentrequestRedirectUrls {
   }
 
    /**
-   * After successfully identification of the person is returned to this page.
+   * URL to forward the person to on success identification
    * @return urlSuccess
   **/
   public String getUrlSuccess() {
@@ -36,7 +36,7 @@ public class IdentrequestRedirectUrls {
   }
 
    /**
-   * After canceling or on errors the person to be identified will be redirected to this page.
+   * URL to forward the person to on abandoned or failed identification
    * @return urlFailure
   **/
   public String getUrlFailure() {

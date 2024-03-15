@@ -9,7 +9,7 @@ import com.secuconnect.client.model.LoyaltyCardsDTOAccount;
 import java.util.Objects;
 
 /**
- * LoyaltyCardsProductModel
+ * Loyalty Card
  */
 public class LoyaltyCardsProductModel extends BaseProductModel {
   @SerializedName("l")
@@ -181,7 +181,7 @@ public class LoyaltyCardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty card number
+   * Card number
    * @return cardnumber
   **/
   public String getCardnumber() {
