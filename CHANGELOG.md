@@ -36,6 +36,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - *changed element type*: `stock_warn_limit` changed from `string` to `int` in `LoyaltyCardgroupsProductModel`
 - *new element*: `balance_limit`, `balance_expiry`, `cancel_selected` and `description` in `LoyaltyCardgroupsProductModel`
 
+### Security
+- Dependency updates
+
 ### Added
 - `Model.GetSmartDevicePinConfig`
 - `Model.GetSmartDevicePinConfigMerchant`
