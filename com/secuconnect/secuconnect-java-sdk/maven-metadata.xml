@@ -3,7 +3,7 @@
   <groupId>com.secuconnect</groupId>
   <artifactId>secuconnect-java-sdk</artifactId>
   <versioning>
-    <release>3.27.0</release>
+    <release>3.28.0</release>
     <versions>
       <version>3.0.0</version>
       <version>3.1.0</version>
@@ -39,7 +39,8 @@
       <version>3.25.0</version>
       <version>3.26.0</version>
       <version>3.27.0</version>
+      <version>3.28.0</version>
     </versions>
-    <lastUpdated>20240131075639</lastUpdated>
+    <lastUpdated>20240315120004</lastUpdated>
   </versioning>
 </metadata>
