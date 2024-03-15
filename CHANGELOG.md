@@ -19,6 +19,68 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.28.0] - 2024-03-15
+[3.28.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.27.0...3.28.0
+
+- *removed endpoint*: `LoyaltyCardgroupsApi.getCardgroupsByMerchantId()`
+- *changed param type*: The param `body` changed from `LoyaltyCardgroupsDTO` to `LoyaltyCardgroupsUpdateDTO` in `LoyaltyCardgroupsApi.updateCardGroup()`
+- *changed name*: renamed`ServicesIdentrequestsApi` to `ServicesIdentRequestsApi`
+- *changed name*: renamed`ServicesIdentresultsApi` to `ServicesIdentResultsApi`
+- *changed name*: renamed`ServicesUploadidentsApi` to `ServicesUploadIdentsApi`
+- *new endpoint*: `SmartDevicesApi.getDevicePinConfig()`
+- *new endpoint*: `SmartDevicesApi.updateDevicePin()`
+- *changed element type*: `pin` changed from `int` to `string` in `CardPin`
+- *removed element*: `display_name_raw` and `stock_warn_limit` in `LoyaltyCardgroupsDTO`
+- *changed element type*: `merchant` changed from `LoyaltyCardgroupsDTOMerchant` to `string` in `LoyaltyCardgroupsDTO`
+- *changed element type*: `merchant` changed from `LoyaltyCardgroupsDTOMerchant` to `GeneralMerchantsProductModel` in `LoyaltyCardgroupsProductModel`
+- *changed element type*: `stock_warn_limit` changed from `string` to `int` in `LoyaltyCardgroupsProductModel`
+- *new element*: `balance_limit`, `balance_expiry`, `cancel_selected` and `description` in `LoyaltyCardgroupsProductModel`
+
+### Added
+- `Model.GetSmartDevicePinConfig`
+- `Model.GetSmartDevicePinConfigMerchant`
+- `Model.GetSmartDevicePinConfigSmartDevice`
+- `Model.GetSmartDevicePinConfigStore`
+- `Model.LoyaltyCardgroupsUpdateDTO`
+- `Model.UpdateSmartDevicePin`
+
+### Changed
+- `ApiClient`
+- `Environment`
+- `ExceptionBody`
+- `Api.LoyaltyCardgroupsApi`
+- `Api.LoyaltyCardsApi`
+- `Api.LoyaltyCustomersApi`
+- `Api.LoyaltyMerchantcardsApi`
+- `Api.ServicesIdentrequestsApi`
+- `Api.ServicesIdentresultsApi`
+- `Api.ServicesUploadidentsApi`
+- `Api.SmartDevicesApi`
+- `Model.CardPin`
+- `Model.IdentDocument`
+- `Model.IdentificationProcess`
+- `Model.IdentrequestPerson`
+- `Model.IdentrequestRedirectUrls`
+- `Model.IdentresultPerson`
+- `Model.LoyaltyCardgroupsDTO`
+- `Model.LoyaltyCardgroupsDTOCheckPasscodeEnabled`
+- `Model.LoyaltyCardgroupsProductModel`
+- `Model.LoyaltyCardsDTOAccount`
+- `Model.LoyaltyCardsList`
+- `Model.LoyaltyCardsProductModel`
+- `Model.LoyaltyCustomersDTO`
+- `Model.LoyaltyCustomersList`
+- `Model.LoyaltyCustomersPaymentContainerModel`
+- `Model.LoyaltyCustomersProductModel`
+- `Model.ProductExceptionPayload`
+- `Model.ResultBoolean`
+- `Model.ServicesIdentrequestsProductModel`
+- `Model.ServicesIdentresultsProductModel`
+
+### Removed
+- `Model.LoyaltyCardgroupsDTOMerchant`
+
+
 ## [3.27.0] - 2024-01-31
 [3.27.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.26.0...3.27.0
 

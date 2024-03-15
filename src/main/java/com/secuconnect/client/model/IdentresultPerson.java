@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * IdentresultPerson
+ * The identified person&#x27;s details
  */
 public class IdentresultPerson {
   @SerializedName("identificationprocess")
@@ -118,7 +118,7 @@ public class IdentresultPerson {
   }
 
    /**
-   * User Data submitted by provider
+   * Identification details attached by the provider
    * @return attachments
   **/
   public List<IdentDocument> getAttachments() {
@@ -152,7 +152,7 @@ public class IdentresultPerson {
   }
 
    /**
-   * The url to download the identification video
+   * URL to download the video evidence of the identification
    * @return video
   **/
   public String getVideo() {

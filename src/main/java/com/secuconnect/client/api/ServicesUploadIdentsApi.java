@@ -13,14 +13,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ServicesUploadidentsApi {
+public class ServicesUploadIdentsApi {
     private ApiClient apiClient;
 
-    public ServicesUploadidentsApi() {
+    public ServicesUploadIdentsApi() {
         this(Environment.getGlobalEnv().getApiClient());
     }
 
-    public ServicesUploadidentsApi(ApiClient apiClient) {
+    public ServicesUploadIdentsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -34,7 +34,7 @@ public class ServicesUploadidentsApi {
 
     /**
      * Build call for addUploadidents
-     * @param body Upload idents input properties
+     * @param body Upload Ident details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -74,9 +74,9 @@ public class ServicesUploadidentsApi {
     }
 
     /**
-     * Create UploadIdent
-     * Creates a new UploadIdent from the given data.
-     * @param body Upload idents input properties
+     * Create Upload Ident
+     * Creates a new Upload Ident from the given data.
+     * @param body Upload Ident details
      * @return UploadidentsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -86,9 +86,9 @@ public class ServicesUploadidentsApi {
     }
 
     /**
-     * Create UploadIdent
-     * Creates a new UploadIdent from the given data.
-     * @param body Upload idents input properties
+     * Create Upload Ident
+     * Creates a new Upload Ident from the given data.
+     * @param body Upload Ident details
      * @return ApiResponse&lt;UploadidentsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -99,9 +99,9 @@ public class ServicesUploadidentsApi {
     }
 
     /**
-     * Create UploadIdent (asynchronously)
-     * Creates a new UploadIdent from the given data.
-     * @param body Upload idents input properties
+     * Create Upload Ident (asynchronously)
+     * Creates a new Upload Ident from the given data.
+     * @param body Upload Ident details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -8,22 +8,22 @@ import java.util.Objects;
  */
 public class CardPin {
   @SerializedName("pin")
-  protected Integer pin = null;
+  protected String pin = null;
 
-  public CardPin pin(Integer pin) {
+  public CardPin pin(String pin) {
     this.pin = pin;
     return this;
   }
 
    /**
-   * Loyalty card pin consisting of four numbers
+   * Card PIN (four decimal digits)  The card PIN must not be mixed with the Card Security Code (CSC) on the card.
    * @return pin
   **/
-  public Integer getPin() {
+  public String getPin() {
     return pin;
   }
 
-  public void setPin(Integer pin) {
+  public void setPin(String pin) {
     this.pin = pin;
   }
 

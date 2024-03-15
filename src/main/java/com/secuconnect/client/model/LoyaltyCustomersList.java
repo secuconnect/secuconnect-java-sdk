@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * LoyaltyCustomersList
+ * Loyalty Customers
  */
 public class LoyaltyCustomersList {
   @SerializedName("count")
@@ -40,7 +40,7 @@ public class LoyaltyCustomersList {
   }
 
    /**
-   * Number of existing loyalty customers
+   * Number of matching Loyalty Customers (total number)
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class LoyaltyCustomersList {
   }
 
    /**
-   * List of LoyaltyCustomers
+   * Loyalty Customers (limited number)
    * @return data
   **/
   public List<LoyaltyCustomersProductModel> getData() {

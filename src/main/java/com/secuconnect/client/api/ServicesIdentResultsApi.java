@@ -5,9 +5,8 @@ import com.secuconnect.client.*;
 import com.secuconnect.client.model.Aggregate;
 import java.math.BigDecimal;
 import com.secuconnect.client.model.ProductExceptionPayload;
-import com.secuconnect.client.model.ServicesIdentrequestsList;
-import com.secuconnect.client.model.ServicesIdentrequestsProductDTO;
-import com.secuconnect.client.model.ServicesIdentrequestsProductModel;
+import com.secuconnect.client.model.ServicesIdentresultsList;
+import com.secuconnect.client.model.ServicesIdentresultsProductModel;
 import okhttp3.Call;
 
 import java.lang.reflect.Type;
@@ -16,14 +15,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ServicesIdentrequestsApi {
+public class ServicesIdentResultsApi {
     private ApiClient apiClient;
 
-    public ServicesIdentrequestsApi() {
+    public ServicesIdentResultsApi() {
         this(Environment.getGlobalEnv().getApiClient());
     }
 
-    public ServicesIdentrequestsApi(ApiClient apiClient) {
+    public ServicesIdentResultsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -33,87 +32,6 @@ public class ServicesIdentrequestsApi {
 
     public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
-    }
-
-    /**
-     * Build call for addIdentrequests
-     * @param body Create ident request input properties
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public Call addIdentrequestsCall(ServicesIdentrequestsProductDTO body) throws ApiException {
-        Object localVarPostBody = body;
-
-        // create path and map variables
-        String localVarPath = "/Services/Identrequests";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private Call addIdentrequestsValidateBeforeCall(ServicesIdentrequestsProductDTO body) throws ApiException {
-
-        return addIdentrequestsCall(body);
-    }
-
-    /**
-     * Create Identrequest
-     * Creates a new Identrequest from the given data.
-     * @param body Create ident request input properties
-     * @return ServicesIdentrequestsProductModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ServicesIdentrequestsProductModel addIdentrequests(ServicesIdentrequestsProductDTO body) throws ApiException {
-        ApiResponse<ServicesIdentrequestsProductModel> resp = addIdentrequestsWithHttpInfo(body);
-        return resp.getData();
-    }
-
-    /**
-     * Create Identrequest
-     * Creates a new Identrequest from the given data.
-     * @param body Create ident request input properties
-     * @return ApiResponse&lt;ServicesIdentrequestsProductModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<ServicesIdentrequestsProductModel> addIdentrequestsWithHttpInfo(ServicesIdentrequestsProductDTO body) throws ApiException {
-        Call call = addIdentrequestsValidateBeforeCall(body);
-        Type localVarReturnType = new TypeToken<ServicesIdentrequestsProductModel>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Create Identrequest (asynchronously)
-     * Creates a new Identrequest from the given data.
-     * @param body Create ident request input properties
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public Call addIdentrequestsAsync(ServicesIdentrequestsProductDTO body, final ApiCallback<ServicesIdentrequestsProductModel> callback) throws ApiException {
-        Call call = addIdentrequestsValidateBeforeCall(body);
-        Type localVarReturnType = new TypeToken<ServicesIdentrequestsProductModel>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
     }
 
     /**
@@ -130,7 +48,7 @@ public class ServicesIdentrequestsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/Services/Identrequests";
+        String localVarPath = "/Services/Identresults";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -172,41 +90,41 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * Find IdentRequests
-     * Returns the IdentRequests matching the given criteria.
+     * Find Ident Results
+     * Returns the Ident Results matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
      * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
      * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;desc&#x60; descending.
-     * @return ServicesIdentrequestsList
+     * @return ServicesIdentresultsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ServicesIdentrequestsList getAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
-        ApiResponse<ServicesIdentrequestsList> resp = getAllWithHttpInfo(count, offset, fields, q, sort);
+    public ServicesIdentresultsList getAll(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+        ApiResponse<ServicesIdentresultsList> resp = getAllWithHttpInfo(count, offset, fields, q, sort);
         return resp.getData();
     }
 
     /**
-     * Find IdentRequests
-     * Returns the IdentRequests matching the given criteria.
+     * Find Ident Results
+     * Returns the Ident Results matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
      * @param q A query string to restrict the returned items to given conditions. The query string must consist of any combination of single expressions in the form &#x60;property:condition&#x60;. Property names can be nested like &#x60;property.property&#x60;.  Example: &#x60;customer.name:Meier&#x60;  A condition may contain:  * &#x60;?&#x60; as wildcard for one character;  * &#x60;*&#x60; as wildcard for any number of characters.  You can also use value ranges in the form &#x60;[min TO max]&#x60;.  Example: &#x60;customer.age:[30 TO 40]&#x60;  You can combine expressions logically by &#x60;expr AND expr&#x60; and &#x60;{expr} OR {expr}&#x60;. You can also negate an expression using &#x60;NOT {expr}&#x60;. Parenthesis &#x60;(...)&#x60; can be used to control precedence.  Example: &#x60;(NOT customer.name:meier*) AND (customer.age:[30 TO 40] OR customer.age:[50 TO 60])&#x60;
      * @param sort String with comma separated pairs of &#x60;field:order&#x60;.  Options for order:  * &#x60;asc&#x60; ascending;  * &#x60;desc&#x60; descending.
-     * @return ApiResponse&lt;ServicesIdentrequestsList&gt;
+     * @return ApiResponse&lt;ServicesIdentresultsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ServicesIdentrequestsList> getAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
+    public ApiResponse<ServicesIdentresultsList> getAllWithHttpInfo(Integer count, Integer offset, String fields, String q, String sort) throws ApiException {
         Call call = getAllValidateBeforeCall(count, offset, fields, q, sort);
-        Type localVarReturnType = new TypeToken<ServicesIdentrequestsList>(){}.getType();
+        Type localVarReturnType = new TypeToken<ServicesIdentresultsList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Find IdentRequests (asynchronously)
-     * Returns the IdentRequests matching the given criteria.
+     * Find Ident Results (asynchronously)
+     * Returns the Ident Results matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -216,16 +134,16 @@ public class ServicesIdentrequestsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<ServicesIdentrequestsList> callback) throws ApiException {
+    public Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<ServicesIdentresultsList> callback) throws ApiException {
         Call call = getAllValidateBeforeCall(count, offset, fields, q, sort);
-        Type localVarReturnType = new TypeToken<ServicesIdentrequestsList>(){}.getType();
+        Type localVarReturnType = new TypeToken<ServicesIdentresultsList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 
     /**
      * Build call for getOne
-     * @param identrequestId Identrequest Id (required)
+     * @param identrequestId Identresult Id (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -233,7 +151,7 @@ public class ServicesIdentrequestsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/Services/Identrequests/{identrequestId}"
+        String localVarPath = "/Services/Identresults/{identrequestId}"
             .replaceAll("\\{" + "identrequestId" + "\\}", apiClient.escapeString(identrequestId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -270,41 +188,41 @@ public class ServicesIdentrequestsApi {
     }
 
     /**
-     * Read IdentRequest
-     * Returns the specified IdentRequest.
-     * @param identrequestId Identrequest Id (required)
-     * @return ServicesIdentrequestsProductModel
+     * Read Ident Result
+     * Returns the specified Ident Result.
+     * @param identrequestId Identresult Id (required)
+     * @return ServicesIdentresultsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ServicesIdentrequestsProductModel getOne(String identrequestId) throws ApiException {
-        ApiResponse<ServicesIdentrequestsProductModel> resp = getOneWithHttpInfo(identrequestId);
+    public ServicesIdentresultsProductModel getOne(String identrequestId) throws ApiException {
+        ApiResponse<ServicesIdentresultsProductModel> resp = getOneWithHttpInfo(identrequestId);
         return resp.getData();
     }
 
     /**
-     * Read IdentRequest
-     * Returns the specified IdentRequest.
-     * @param identrequestId Identrequest Id (required)
-     * @return ApiResponse&lt;ServicesIdentrequestsProductModel&gt;
+     * Read Ident Result
+     * Returns the specified Ident Result.
+     * @param identrequestId Identresult Id (required)
+     * @return ApiResponse&lt;ServicesIdentresultsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ServicesIdentrequestsProductModel> getOneWithHttpInfo(String identrequestId) throws ApiException {
+    public ApiResponse<ServicesIdentresultsProductModel> getOneWithHttpInfo(String identrequestId) throws ApiException {
         Call call = getOneValidateBeforeCall(identrequestId);
-        Type localVarReturnType = new TypeToken<ServicesIdentrequestsProductModel>(){}.getType();
+        Type localVarReturnType = new TypeToken<ServicesIdentresultsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Read IdentRequest (asynchronously)
-     * Returns the specified IdentRequest.
-     * @param identrequestId Identrequest Id (required)
+     * Read Ident Result (asynchronously)
+     * Returns the specified Ident Result.
+     * @param identrequestId Identresult Id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call getOneAsync(String identrequestId, final ApiCallback<ServicesIdentrequestsProductModel> callback) throws ApiException {
+    public Call getOneAsync(String identrequestId, final ApiCallback<ServicesIdentresultsProductModel> callback) throws ApiException {
         Call call = getOneValidateBeforeCall(identrequestId);
-        Type localVarReturnType = new TypeToken<ServicesIdentrequestsProductModel>(){}.getType();
+        Type localVarReturnType = new TypeToken<ServicesIdentresultsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

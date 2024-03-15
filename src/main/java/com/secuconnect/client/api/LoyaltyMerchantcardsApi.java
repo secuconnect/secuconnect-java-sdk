@@ -1481,7 +1481,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Update loyalty card group
+     * Set card group
      * Sets the Loyalty CardGroup, and returns the updated Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param loyaltyCardGroupId Loyalty card group id (required)
@@ -1494,7 +1494,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Update loyalty card group
+     * Set card group
      * Sets the Loyalty CardGroup, and returns the updated Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param loyaltyCardGroupId Loyalty card group id (required)
@@ -1508,7 +1508,7 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Update loyalty card group (asynchronously)
+     * Set card group (asynchronously)
      * Sets the Loyalty CardGroup, and returns the updated Loyalty MerchantCard.
      * @param loyaltyMerchantCardId Loyalty merchant card id (required)
      * @param loyaltyCardGroupId Loyalty card group id (required)

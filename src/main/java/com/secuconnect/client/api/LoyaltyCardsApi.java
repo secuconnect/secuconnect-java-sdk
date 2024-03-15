@@ -38,9 +38,9 @@ public class LoyaltyCardsApi {
 
     /**
      * Build call for assignUser
-     * @param loyaltyCardId Loyalty card id (required)
-     * @param generalAccountId General account id (required)
-     * @param body Loyalty card pin for the specific card
+     * @param loyaltyCardId Loyalty Card ID (required)
+     * @param generalAccountId General Account ID (required)
+     * @param body Card PIN of the specific Loyalty Card
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -92,9 +92,9 @@ public class LoyaltyCardsApi {
     /**
      * Assign card to user
      * Assigns the specified Loyalty Card to the specified General Account.
-     * @param loyaltyCardId Loyalty card id (required)
-     * @param generalAccountId General account id (required)
-     * @param body Loyalty card pin for the specific card
+     * @param loyaltyCardId Loyalty Card ID (required)
+     * @param generalAccountId General Account ID (required)
+     * @param body Card PIN of the specific Loyalty Card
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -106,9 +106,9 @@ public class LoyaltyCardsApi {
     /**
      * Assign card to user
      * Assigns the specified Loyalty Card to the specified General Account.
-     * @param loyaltyCardId Loyalty card id (required)
-     * @param generalAccountId General account id (required)
-     * @param body Loyalty card pin for the specific card
+     * @param loyaltyCardId Loyalty Card ID (required)
+     * @param generalAccountId General Account ID (required)
+     * @param body Card PIN of the specific Loyalty Card
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -121,9 +121,9 @@ public class LoyaltyCardsApi {
     /**
      * Assign card to user (asynchronously)
      * Assigns the specified Loyalty Card to the specified General Account.
-     * @param loyaltyCardId Loyalty card id (required)
-     * @param generalAccountId General account id (required)
-     * @param body Loyalty card pin for the specific card
+     * @param loyaltyCardId Loyalty Card ID (required)
+     * @param generalAccountId General Account ID (required)
+     * @param body Card PIN of the specific Loyalty Card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -330,8 +330,8 @@ public class LoyaltyCardsApi {
 
     /**
      * Build call for removeAssignedUser
-     * @param loyaltyCardId Loyalty card id (required)
-     * @param generalAccountId General account id (required)
+     * @param loyaltyCardId Loyalty Card ID (required)
+     * @param generalAccountId General Account ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -382,9 +382,9 @@ public class LoyaltyCardsApi {
 
     /**
      * Unassign card from user
-     * Removes the assignment of the specified Loyalty Card to the specified General Account.
-     * @param loyaltyCardId Loyalty card id (required)
-     * @param generalAccountId General account id (required)
+     * Detaches the specified Loyalty Card from the specified General Account.
+     * @param loyaltyCardId Loyalty Card ID (required)
+     * @param generalAccountId General Account ID (required)
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -395,9 +395,9 @@ public class LoyaltyCardsApi {
 
     /**
      * Unassign card from user
-     * Removes the assignment of the specified Loyalty Card to the specified General Account.
-     * @param loyaltyCardId Loyalty card id (required)
-     * @param generalAccountId General account id (required)
+     * Detaches the specified Loyalty Card from the specified General Account.
+     * @param loyaltyCardId Loyalty Card ID (required)
+     * @param generalAccountId General Account ID (required)
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -409,9 +409,9 @@ public class LoyaltyCardsApi {
 
     /**
      * Unassign card from user (asynchronously)
-     * Removes the assignment of the specified Loyalty Card to the specified General Account.
-     * @param loyaltyCardId Loyalty card id (required)
-     * @param generalAccountId General account id (required)
+     * Detaches the specified Loyalty Card from the specified General Account.
+     * @param loyaltyCardId Loyalty Card ID (required)
+     * @param generalAccountId General Account ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

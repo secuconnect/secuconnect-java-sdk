@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.AggregationResult;
 import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
-import com.secuconnect.client.model.LoyaltyCardgroupsDTOMerchant;
+import com.secuconnect.client.model.GeneralMerchantsProductModel;
 import java.util.Objects;
 
 /**
@@ -30,7 +30,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   protected AggregationTimeResult t = null;
 
   @SerializedName("merchant")
-  protected LoyaltyCardgroupsDTOMerchant merchant = null;
+  protected GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("display_name")
   protected String displayName = null;
@@ -39,10 +39,22 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   protected String displayNameRaw = null;
 
   @SerializedName("stock_warn_limit")
-  protected String stockWarnLimit = null;
+  protected Integer stockWarnLimit = null;
 
   @SerializedName("picture")
   protected String picture = null;
+
+  @SerializedName("balance_limit")
+  protected Integer balanceLimit = null;
+
+  @SerializedName("balance_expiry")
+  protected Boolean balanceExpiry = null;
+
+  @SerializedName("cancel_selected")
+  protected Boolean cancelSelected = null;
+
+  @SerializedName("description")
+  protected String description = null;
 
   public LoyaltyCardgroupsProductModel l(Integer l) {
     this.l = l;
@@ -146,7 +158,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
     this.t = t;
   }
 
-  public LoyaltyCardgroupsProductModel merchant(LoyaltyCardgroupsDTOMerchant merchant) {
+  public LoyaltyCardgroupsProductModel merchant(GeneralMerchantsProductModel merchant) {
     this.merchant = merchant;
     return this;
   }
@@ -155,11 +167,11 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
    * Get merchant
    * @return merchant
   **/
-  public LoyaltyCardgroupsDTOMerchant getMerchant() {
+  public GeneralMerchantsProductModel getMerchant() {
     return merchant;
   }
 
-  public void setMerchant(LoyaltyCardgroupsDTOMerchant merchant) {
+  public void setMerchant(GeneralMerchantsProductModel merchant) {
     this.merchant = merchant;
   }
 
@@ -197,7 +209,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
     this.displayNameRaw = displayNameRaw;
   }
 
-  public LoyaltyCardgroupsProductModel stockWarnLimit(String stockWarnLimit) {
+  public LoyaltyCardgroupsProductModel stockWarnLimit(Integer stockWarnLimit) {
     this.stockWarnLimit = stockWarnLimit;
     return this;
   }
@@ -206,11 +218,11 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
    * Loyalty card group stock warn limit
    * @return stockWarnLimit
   **/
-  public String getStockWarnLimit() {
+  public Integer getStockWarnLimit() {
     return stockWarnLimit;
   }
 
-  public void setStockWarnLimit(String stockWarnLimit) {
+  public void setStockWarnLimit(Integer stockWarnLimit) {
     this.stockWarnLimit = stockWarnLimit;
   }
 
@@ -229,6 +241,74 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
 
   public void setPicture(String picture) {
     this.picture = picture;
+  }
+
+  public LoyaltyCardgroupsProductModel balanceLimit(Integer balanceLimit) {
+    this.balanceLimit = balanceLimit;
+    return this;
+  }
+
+   /**
+   * Loyalty card group balance limit
+   * @return balanceLimit
+  **/
+  public Integer getBalanceLimit() {
+    return balanceLimit;
+  }
+
+  public void setBalanceLimit(Integer balanceLimit) {
+    this.balanceLimit = balanceLimit;
+  }
+
+  public LoyaltyCardgroupsProductModel balanceExpiry(Boolean balanceExpiry) {
+    this.balanceExpiry = balanceExpiry;
+    return this;
+  }
+
+   /**
+   * The card group allows to set an expiry date for a card.
+   * @return balanceExpiry
+  **/
+  public Boolean getBalanceExpiry() {
+    return balanceExpiry;
+  }
+
+  public void setBalanceExpiry(Boolean balanceExpiry) {
+    this.balanceExpiry = balanceExpiry;
+  }
+
+  public LoyaltyCardgroupsProductModel cancelSelected(Boolean cancelSelected) {
+    this.cancelSelected = cancelSelected;
+    return this;
+  }
+
+   /**
+   * The card group allows to cancel specific transactions.
+   * @return cancelSelected
+  **/
+  public Boolean getCancelSelected() {
+    return cancelSelected;
+  }
+
+  public void setCancelSelected(Boolean cancelSelected) {
+    this.cancelSelected = cancelSelected;
+  }
+
+  public LoyaltyCardgroupsProductModel description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Loyalty card group description
+   * @return description
+  **/
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   @Override
@@ -251,12 +331,16 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
         Objects.equals(this.displayNameRaw, loyaltyCardgroupsProductModel.displayNameRaw) &&
         Objects.equals(this.stockWarnLimit, loyaltyCardgroupsProductModel.stockWarnLimit) &&
         Objects.equals(this.picture, loyaltyCardgroupsProductModel.picture) &&
+        Objects.equals(this.balanceLimit, loyaltyCardgroupsProductModel.balanceLimit) &&
+        Objects.equals(this.balanceExpiry, loyaltyCardgroupsProductModel.balanceExpiry) &&
+        Objects.equals(this.cancelSelected, loyaltyCardgroupsProductModel.cancelSelected) &&
+        Objects.equals(this.description, loyaltyCardgroupsProductModel.description) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, merchant, displayName, displayNameRaw, stockWarnLimit, picture, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, merchant, displayName, displayNameRaw, stockWarnLimit, picture, balanceLimit, balanceExpiry, cancelSelected, description, super.hashCode());
   }
 
   @Override
@@ -275,6 +359,10 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
     sb.append("    displayNameRaw: ").append(toIndentedString(displayNameRaw)).append("\n");
     sb.append("    stockWarnLimit: ").append(toIndentedString(stockWarnLimit)).append("\n");
     sb.append("    picture: ").append(toIndentedString(picture)).append("\n");
+    sb.append("    balanceLimit: ").append(toIndentedString(balanceLimit)).append("\n");
+    sb.append("    balanceExpiry: ").append(toIndentedString(balanceExpiry)).append("\n");
+    sb.append("    cancelSelected: ").append(toIndentedString(cancelSelected)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();
   }

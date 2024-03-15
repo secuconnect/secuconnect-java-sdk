@@ -16,7 +16,7 @@ public class ResultBoolean {
   }
 
    /**
-   * Result has true or false value
+   * &#x60;true&#x60; if successful, &#x60;false&#x60; if not
    * @return result
   **/
   public Boolean getResult() {

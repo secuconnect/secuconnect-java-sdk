@@ -37,7 +37,7 @@ public class LoyaltyCustomersApi {
 
     /**
      * Build call for addCustomer
-     * @param body loyalty Customer container properties
+     * @param body Loyalty Customer details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -78,8 +78,8 @@ public class LoyaltyCustomersApi {
 
     /**
      * Create Loyalty Customer
-     * Creates a new Loyalty Customer from the given data.
-     * @param body loyalty Customer container properties
+     * Creates a new Loyalty Customer using the given data.
+     * @param body Loyalty Customer details
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -90,8 +90,8 @@ public class LoyaltyCustomersApi {
 
     /**
      * Create Loyalty Customer
-     * Creates a new Loyalty Customer from the given data.
-     * @param body loyalty Customer container properties
+     * Creates a new Loyalty Customer using the given data.
+     * @param body Loyalty Customer details
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -103,8 +103,8 @@ public class LoyaltyCustomersApi {
 
     /**
      * Create Loyalty Customer (asynchronously)
-     * Creates a new Loyalty Customer from the given data.
-     * @param body loyalty Customer container properties
+     * Creates a new Loyalty Customer using the given data.
+     * @param body Loyalty Customer details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -118,8 +118,8 @@ public class LoyaltyCustomersApi {
 
     /**
      * Build call for assignPaymentContainer
-     * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param loyaltyPaymentContainerId Loyalty Payment Container ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -170,9 +170,9 @@ public class LoyaltyCustomersApi {
 
     /**
      * Assign payment container to customer
-     * Assigns the specified Loyalty PaymentContainer to the specified Loyalty Customer.
-     * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
+     * Assigns the specified Loyalty Payment Container to the specified Loyalty Customer.
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param loyaltyPaymentContainerId Loyalty Payment Container ID (required)
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -183,9 +183,9 @@ public class LoyaltyCustomersApi {
 
     /**
      * Assign payment container to customer
-     * Assigns the specified Loyalty PaymentContainer to the specified Loyalty Customer.
-     * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
+     * Assigns the specified Loyalty Payment Container to the specified Loyalty Customer.
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param loyaltyPaymentContainerId Loyalty Payment Container ID (required)
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -197,9 +197,9 @@ public class LoyaltyCustomersApi {
 
     /**
      * Assign payment container to customer (asynchronously)
-     * Assigns the specified Loyalty PaymentContainer to the specified Loyalty Customer.
-     * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
+     * Assigns the specified Loyalty Payment Container to the specified Loyalty Customer.
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param loyaltyPaymentContainerId Loyalty Payment Container ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -320,7 +320,7 @@ public class LoyaltyCustomersApi {
 
     /**
      * Build call for getOne
-     * @param loyaltyCustomerId Search one loyalty customer by provided id (required)
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -367,7 +367,7 @@ public class LoyaltyCustomersApi {
     /**
      * Read Loyalty Customer
      * Returns the specified Loyalty Customer.
-     * @param loyaltyCustomerId Search one loyalty customer by provided id (required)
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -379,7 +379,7 @@ public class LoyaltyCustomersApi {
     /**
      * Read Loyalty Customer
      * Returns the specified Loyalty Customer.
-     * @param loyaltyCustomerId Search one loyalty customer by provided id (required)
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -392,7 +392,7 @@ public class LoyaltyCustomersApi {
     /**
      * Read Loyalty Customer (asynchronously)
      * Returns the specified Loyalty Customer.
-     * @param loyaltyCustomerId Search one loyalty customer by provided id (required)
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -406,8 +406,8 @@ public class LoyaltyCustomersApi {
 
     /**
      * Build call for removeAssignedPaymentContainer
-     * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param loyaltyPaymentContainerId Loyalty Payment Container ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -457,10 +457,10 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * Unassign payment container from customer
-     * Removes the assignment of the specified Loyalty PaymentContainer to the specified Loyalty Customer.
-     * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
+     * Detach payment container from customer
+     * Detaches the specified Loyalty Payment Container from the specified Loyalty Customer.
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param loyaltyPaymentContainerId Loyalty Payment Container ID (required)
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -470,10 +470,10 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * Unassign payment container from customer
-     * Removes the assignment of the specified Loyalty PaymentContainer to the specified Loyalty Customer.
-     * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
+     * Detach payment container from customer
+     * Detaches the specified Loyalty Payment Container from the specified Loyalty Customer.
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param loyaltyPaymentContainerId Loyalty Payment Container ID (required)
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -484,10 +484,10 @@ public class LoyaltyCustomersApi {
     }
 
     /**
-     * Unassign payment container from customer (asynchronously)
-     * Removes the assignment of the specified Loyalty PaymentContainer to the specified Loyalty Customer.
-     * @param loyaltyCustomerId Loyalty customer id (required)
-     * @param loyaltyPaymentContainerId LoyaltyPaymentContainer id (required)
+     * Detach payment container from customer (asynchronously)
+     * Detaches the specified Loyalty Payment Container from the specified Loyalty Customer.
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param loyaltyPaymentContainerId Loyalty Payment Container ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -501,8 +501,8 @@ public class LoyaltyCustomersApi {
 
     /**
      * Build call for updateCustomer
-     * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
-     * @param body loyalty Customer container properties
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param body Loyalty Customer details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -548,9 +548,9 @@ public class LoyaltyCustomersApi {
 
     /**
      * Update Loyalty Customer
-     * Updates the specified Loyalty Customer with the given data.
-     * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
-     * @param body loyalty Customer container properties
+     * Updates the specified Loyalty Customer using the given data.
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param body Loyalty Customer details
      * @return LoyaltyCustomersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -561,9 +561,9 @@ public class LoyaltyCustomersApi {
 
     /**
      * Update Loyalty Customer
-     * Updates the specified Loyalty Customer with the given data.
-     * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
-     * @param body loyalty Customer container properties
+     * Updates the specified Loyalty Customer using the given data.
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param body Loyalty Customer details
      * @return ApiResponse&lt;LoyaltyCustomersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -575,9 +575,9 @@ public class LoyaltyCustomersApi {
 
     /**
      * Update Loyalty Customer (asynchronously)
-     * Updates the specified Loyalty Customer with the given data.
-     * @param loyaltyCustomerId loyalty Customer Id CUS_XXX (required)
-     * @param body loyalty Customer container properties
+     * Updates the specified Loyalty Customer using the given data.
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
+     * @param body Loyalty Customer details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -36,7 +36,7 @@ public class LoyaltyCardgroupsDTOCheckPasscodeEnabled {
   }
 
    /**
-   * Secucard number
+   * Loyalty card number
    * @return cardnumber
   **/
   public String getCardnumber() {

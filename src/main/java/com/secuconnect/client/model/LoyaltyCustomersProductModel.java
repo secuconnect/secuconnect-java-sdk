@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * LoyaltyCustomersProductModel
+ * Loyalty Customer
  */
 public class LoyaltyCustomersProductModel extends BaseProductModel {
   @SerializedName("l")
@@ -259,7 +259,7 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
   }
 
    /**
-   * payment container
+   * Loyalty Payment Container
    * @return paymentContainer
   **/
   public List<LoyaltyCustomersPaymentContainerModel> getPaymentContainer() {
@@ -276,7 +276,7 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
   }
 
    /**
-   * Customer number
+   * Customer number in the merchant&#x27;s system
    * @return customernumber
   **/
   public String getCustomernumber() {
@@ -293,7 +293,7 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
   }
 
    /**
-   * Customer number
+   * Note from the merchant
    * @return note
   **/
   public String getNote() {

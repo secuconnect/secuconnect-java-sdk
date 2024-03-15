@@ -8,6 +8,7 @@ import com.secuconnect.client.model.LoyaltyCardgroupsDTO;
 import com.secuconnect.client.model.LoyaltyCardgroupsDTOCheckPasscodeEnabled;
 import com.secuconnect.client.model.LoyaltyCardgroupsList;
 import com.secuconnect.client.model.LoyaltyCardgroupsProductModel;
+import com.secuconnect.client.model.LoyaltyCardgroupsUpdateDTO;
 import com.secuconnect.client.model.ProductExceptionPayload;
 import com.secuconnect.client.model.ResultBoolean;
 import okhttp3.Call;
@@ -264,8 +265,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Find Loyalty Cardgroups
-     * Returns the Loyalty Cardgroups matching the given criteria.
+     * Find Loyalty Card Groups
+     * Returns the Loyalty Card Groups matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -280,8 +281,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Find Loyalty Cardgroups
-     * Returns the Loyalty Cardgroups matching the given criteria.
+     * Find Loyalty Card Groups
+     * Returns the Loyalty Card Groups matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -297,8 +298,8 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Find Loyalty Cardgroups (asynchronously)
-     * Returns the Loyalty Cardgroups matching the given criteria.
+     * Find Loyalty Card Groups (asynchronously)
+     * Returns the Loyalty Card Groups matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -311,92 +312,6 @@ public class LoyaltyCardgroupsApi {
     public Call getAllAsync(Integer count, Integer offset, String fields, String q, String sort, final ApiCallback<LoyaltyCardgroupsList> callback) throws ApiException {
         Call call = getAllValidateBeforeCall(count, offset, fields, q, sort);
         Type localVarReturnType = new TypeToken<LoyaltyCardgroupsList>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-
-    /**
-     * Build call for getCardgroupsByMerchantId
-     * @param generalMerchantId Search by provided id (required)
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public Call getCardgroupsByMerchantIdCall(String generalMerchantId) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/Loyalty/Sales/{generalMerchantId}/CardGroupsByMerchantID"
-            .replaceAll("\\{" + "generalMerchantId" + "\\}", apiClient.escapeString(generalMerchantId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "oauth_token" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private Call getCardgroupsByMerchantIdValidateBeforeCall(String generalMerchantId) throws ApiException {
-        // verify the required parameter 'generalMerchantId' is set
-        if (generalMerchantId == null) {
-            throw new ApiException("Missing the required parameter 'generalMerchantId' when calling getCardgroupsByMerchantId(Async)");
-        }
-
-        return getCardgroupsByMerchantIdCall(generalMerchantId);
-    }
-
-    /**
-     * Find Loyalty Sales by General Merchant ID
-     * Get cardgroups by merchant id
-     * @param generalMerchantId Search by provided id (required)
-     * @return List&lt;LoyaltyCardgroupsProductModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public List<LoyaltyCardgroupsProductModel> getCardgroupsByMerchantId(String generalMerchantId) throws ApiException {
-        ApiResponse<List<LoyaltyCardgroupsProductModel>> resp = getCardgroupsByMerchantIdWithHttpInfo(generalMerchantId);
-        return resp.getData();
-    }
-
-    /**
-     * Find Loyalty Sales by General Merchant ID
-     * Get cardgroups by merchant id
-     * @param generalMerchantId Search by provided id (required)
-     * @return ApiResponse&lt;List&lt;LoyaltyCardgroupsProductModel&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<List<LoyaltyCardgroupsProductModel>> getCardgroupsByMerchantIdWithHttpInfo(String generalMerchantId) throws ApiException {
-        Call call = getCardgroupsByMerchantIdValidateBeforeCall(generalMerchantId);
-        Type localVarReturnType = new TypeToken<List<LoyaltyCardgroupsProductModel>>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Find Loyalty Sales by General Merchant ID (asynchronously)
-     * Get cardgroups by merchant id
-     * @param generalMerchantId Search by provided id (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public Call getCardgroupsByMerchantIdAsync(String generalMerchantId, final ApiCallback<List<LoyaltyCardgroupsProductModel>> callback) throws ApiException {
-        Call call = getCardgroupsByMerchantIdValidateBeforeCall(generalMerchantId);
-        Type localVarReturnType = new TypeToken<List<LoyaltyCardgroupsProductModel>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -494,7 +409,7 @@ public class LoyaltyCardgroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call updateCardGroupCall(String loyaltyCardGroupId, LoyaltyCardgroupsDTO body) throws ApiException {
+    public Call updateCardGroupCall(String loyaltyCardGroupId, LoyaltyCardgroupsUpdateDTO body) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -525,7 +440,7 @@ public class LoyaltyCardgroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call updateCardGroupValidateBeforeCall(String loyaltyCardGroupId, LoyaltyCardgroupsDTO body) throws ApiException {
+    private Call updateCardGroupValidateBeforeCall(String loyaltyCardGroupId, LoyaltyCardgroupsUpdateDTO body) throws ApiException {
         // verify the required parameter 'loyaltyCardGroupId' is set
         if (loyaltyCardGroupId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyCardGroupId' when calling updateCardGroup(Async)");
@@ -542,7 +457,7 @@ public class LoyaltyCardgroupsApi {
      * @return LoyaltyCardgroupsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LoyaltyCardgroupsProductModel updateCardGroup(String loyaltyCardGroupId, LoyaltyCardgroupsDTO body) throws ApiException {
+    public LoyaltyCardgroupsProductModel updateCardGroup(String loyaltyCardGroupId, LoyaltyCardgroupsUpdateDTO body) throws ApiException {
         ApiResponse<LoyaltyCardgroupsProductModel> resp = updateCardGroupWithHttpInfo(loyaltyCardGroupId, body);
         return resp.getData();
     }
@@ -555,7 +470,7 @@ public class LoyaltyCardgroupsApi {
      * @return ApiResponse&lt;LoyaltyCardgroupsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LoyaltyCardgroupsProductModel> updateCardGroupWithHttpInfo(String loyaltyCardGroupId, LoyaltyCardgroupsDTO body) throws ApiException {
+    public ApiResponse<LoyaltyCardgroupsProductModel> updateCardGroupWithHttpInfo(String loyaltyCardGroupId, LoyaltyCardgroupsUpdateDTO body) throws ApiException {
         Call call = updateCardGroupValidateBeforeCall(loyaltyCardGroupId, body);
         Type localVarReturnType = new TypeToken<LoyaltyCardgroupsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -570,7 +485,7 @@ public class LoyaltyCardgroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call updateCardGroupAsync(String loyaltyCardGroupId, LoyaltyCardgroupsDTO body, final ApiCallback<LoyaltyCardgroupsProductModel> callback) throws ApiException {
+    public Call updateCardGroupAsync(String loyaltyCardGroupId, LoyaltyCardgroupsUpdateDTO body, final ApiCallback<LoyaltyCardgroupsProductModel> callback) throws ApiException {
         Call call = updateCardGroupValidateBeforeCall(loyaltyCardGroupId, body);
         Type localVarReturnType = new TypeToken<LoyaltyCardgroupsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);

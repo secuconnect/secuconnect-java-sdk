@@ -60,7 +60,7 @@ public class IdentrequestPerson extends IdentrequestPersonDTO {
   }
 
    /**
-   * The status of the person identification request
+   * Ident Request status:  * &#x60;\&quot;requested\&quot;&#x60; * &#x60;\&quot;error\&quot;&#x60; * &#x60;\&quot;ok_preliminary\&quot;&#x60; * &#x60;\&quot;failed_preliminary\&quot;&#x60; * &#x60;\&quot;ok\&quot;&#x60; * &#x60;\&quot;failed\&quot;&#x60;
    * @return status
   **/
   public String getStatus() {
