@@ -22,7 +22,7 @@ public class LoyaltyTransactionsDTORelatedTransactions {
   }
 
    /**
-   * Loyalty Transaction id
+   * Loyalty Transaction ID
    * @return id
   **/
   public String getId() {
@@ -56,7 +56,7 @@ public class LoyaltyTransactionsDTORelatedTransactions {
   }
 
    /**
-   * Indicator for relation type of Loyalty Transactions
+   * Relation type
    * @return refTypeId
   **/
   public Integer getRefTypeId() {

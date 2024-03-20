@@ -29,7 +29,7 @@ import static java.util.Arrays.asList;
 
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 public class ApiClient {
-    private static final String USER_AGENT = "secuconnect-java-sdk/3.28.0";
+    private static final String USER_AGENT = "secuconnect-java-sdk/3.29.0";
 
     private final Map<String, String> defaultHeaderMap = new HashMap<>();
     private Environment env = Environment.getGlobalEnv();

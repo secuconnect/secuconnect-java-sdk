@@ -16,7 +16,7 @@ public class LoyaltyTransactionsDTOMerchantcard {
   }
 
    /**
-   * Merchantcard id
+   * Loyalty Merchant Card ID
    * @return id
   **/
   public String getId() {

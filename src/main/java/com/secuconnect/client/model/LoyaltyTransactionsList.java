@@ -40,7 +40,7 @@ public class LoyaltyTransactionsList {
   }
 
    /**
-   * Number of existing loyalty transactions
+   * Number of existing Loyalty Transactions matching the search criteria
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class LoyaltyTransactionsList {
   }
 
    /**
-   * List of LoyaltyTransactions
+   * Loyalty Transactions
    * @return data
   **/
   public List<LoyaltyTransactionsProductModel> getData() {

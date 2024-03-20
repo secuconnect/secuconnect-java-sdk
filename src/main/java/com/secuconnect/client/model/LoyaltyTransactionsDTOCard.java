@@ -19,7 +19,7 @@ public class LoyaltyTransactionsDTOCard {
   }
 
    /**
-   * Loyalty Card id
+   * Loyalty Card ID
    * @return id
   **/
   public String getId() {
@@ -36,7 +36,7 @@ public class LoyaltyTransactionsDTOCard {
   }
 
    /**
-   * Loyalty Card Cardnumber
+   * Card number
    * @return cardnumber
   **/
   public String getCardnumber() {

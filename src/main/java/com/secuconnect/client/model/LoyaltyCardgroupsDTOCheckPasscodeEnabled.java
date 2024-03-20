@@ -19,7 +19,7 @@ public class LoyaltyCardgroupsDTOCheckPasscodeEnabled {
   }
 
    /**
-   * Action type
+   * Action type:  - &#x60;\&quot;charge\&quot;&#x60; - &#x60;\&quot;discharge\&quot;&#x60; - &#x60;\&quot;sale_revenue\&quot;&#x60; - &#x60;\&quot;charge_points\&quot;&#x60; - &#x60;\&quot;discharge_points\&quot;&#x60; - &#x60;\&quot;cashreport\&quot;&#x60;
    * @return action
   **/
   public String getAction() {

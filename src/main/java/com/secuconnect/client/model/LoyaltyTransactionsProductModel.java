@@ -349,7 +349,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * The TID of the processed Smart Device
+   * Terminal ID of the Smart Device that processed this transaction
    * @return tid
   **/
   public String getTid() {
@@ -366,7 +366,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * The status text of the Loyalty Transaction
+   * Status of the Loyalty Transaction
    * @return status
   **/
   public String getStatus() {
@@ -417,7 +417,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * The balance of the merchantcard after this Loyalty Transaction
+   * New card balance of the Merchant Card after this transaction
    * @return balance
   **/
   public Integer getBalance() {
@@ -434,7 +434,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty Transaction type
+   * Loyalty Transaction type, e. g. &#x60;\&quot;Aufladung\&quot;&#x60;
    * @return description
   **/
   public String getDescription() {
@@ -451,7 +451,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Last change oif this transaction, most like a status change
+   * Last change of this transaction (most likely a status change)
    * @return lastChange
   **/
   public String getLastChange() {
@@ -493,7 +493,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Indicator for a cancelling transaction (1 &#x3D; full-cancel, 3 &#x3D; partial-cancel)
+   * Indicates when the transaction is just about to be cancelled:  - &#x60;0&#x60; &#x3D; no - &#x60;1&#x60; &#x3D; full cancellation - &#x60;3&#x60; &#x3D; partial cancellation
    * @return isCancelling
   **/
   public Integer getIsCancelling() {

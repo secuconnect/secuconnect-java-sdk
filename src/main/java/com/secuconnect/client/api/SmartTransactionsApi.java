@@ -11,6 +11,7 @@ import com.secuconnect.client.model.SmartTransactionsPreTransactionModel;
 import com.secuconnect.client.model.SmartTransactionsPrepare;
 import com.secuconnect.client.model.SmartTransactionsProductModel;
 import com.secuconnect.client.model.SmartTransactionsSetDeliveryModel;
+import com.secuconnect.client.model.SmartTransactionsStart;
 import okhttp3.Call;
 
 import java.lang.reflect.Type;
@@ -85,7 +86,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Abort Order
+     * Abort order
      * Abandons a Smart Transaction that has not yet been started.
      * @param smartTransactionId Smart Transaction ID (required)
      * @return SmartTransactionsProductModel
@@ -97,7 +98,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Abort Order
+     * Abort order
      * Abandons a Smart Transaction that has not yet been started.
      * @param smartTransactionId Smart Transaction ID (required)
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
@@ -110,7 +111,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Abort Order (asynchronously)
+     * Abort order (asynchronously)
      * Abandons a Smart Transaction that has not yet been started.
      * @param smartTransactionId Smart Transaction ID (required)
      * @param callback The callback to be executed when the API call finishes
@@ -252,7 +253,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Cancel Payment
+     * Cancel payment
      * Cancels the Smart Transaction.
      * @param smartTransactionId Smart Transaction ID (required)
      * @return SmartTransactionsProductModel
@@ -264,7 +265,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Cancel Payment
+     * Cancel payment
      * Cancels the Smart Transaction.
      * @param smartTransactionId Smart Transaction ID (required)
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
@@ -277,7 +278,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Cancel Payment (asynchronously)
+     * Cancel payment (asynchronously)
      * Cancels the Smart Transaction.
      * @param smartTransactionId Smart Transaction ID (required)
      * @param callback The callback to be executed when the API call finishes
@@ -338,7 +339,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Cancel Cash Transaction
+     * Cancel cash transaction
      * Cancels the terminal-induced &#x60;\&quot;cash\&quot;&#x60; transaction with the given receipt number.
      * @param smartTransactionId Receipt number (required)
      * @return SmartTransactionsProductModel
@@ -350,7 +351,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Cancel Cash Transaction
+     * Cancel cash transaction
      * Cancels the terminal-induced &#x60;\&quot;cash\&quot;&#x60; transaction with the given receipt number.
      * @param smartTransactionId Receipt number (required)
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
@@ -363,7 +364,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Cancel Cash Transaction (asynchronously)
+     * Cancel cash transaction (asynchronously)
      * Cancels the terminal-induced &#x60;\&quot;cash\&quot;&#x60; transaction with the given receipt number.
      * @param smartTransactionId Receipt number (required)
      * @param callback The callback to be executed when the API call finishes
@@ -424,8 +425,8 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Payment Terminal Diagnosis
-     * Runs the diagnosis process on the POS payment terminal. This operation is usually called by SDKs from the electronic cash register (ECR).  This request is blocking. Secuconnect API only answers after the payment terminal has finished the end-of-day report.
+     * Terminal diagnosis
+     * Runs the diagnosis process on the POS payment terminal (PT). This operation is usually called by SDKs from the electronic cash register (ECR).  This request is blocking. Secuconnect API only answers after the payment terminal has finished the end-of-day report.
      * @param smartDeviceId Smart Device ID (required)
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -436,8 +437,8 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Payment Terminal Diagnosis
-     * Runs the diagnosis process on the POS payment terminal. This operation is usually called by SDKs from the electronic cash register (ECR).  This request is blocking. Secuconnect API only answers after the payment terminal has finished the end-of-day report.
+     * Terminal diagnosis
+     * Runs the diagnosis process on the POS payment terminal (PT). This operation is usually called by SDKs from the electronic cash register (ECR).  This request is blocking. Secuconnect API only answers after the payment terminal has finished the end-of-day report.
      * @param smartDeviceId Smart Device ID (required)
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -449,8 +450,8 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Payment Terminal Diagnosis (asynchronously)
-     * Runs the diagnosis process on the POS payment terminal. This operation is usually called by SDKs from the electronic cash register (ECR).  This request is blocking. Secuconnect API only answers after the payment terminal has finished the end-of-day report.
+     * Terminal diagnosis (asynchronously)
+     * Runs the diagnosis process on the POS payment terminal (PT). This operation is usually called by SDKs from the electronic cash register (ECR).  This request is blocking. Secuconnect API only answers after the payment terminal has finished the end-of-day report.
      * @param smartDeviceId Smart Device ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -703,7 +704,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Apply secucard (Voucher or Loyalty Card)
+     * Apply secucard (“pre-transaction”)
      * Checks the balance of the secucard Merchant Card in &#x60;ident&#x60;. If there is cash or bonus balance that can be applied, it adds bonus items to the basket and sets &#x60;missing_sum&#x60; inside &#x60;basket_info&#x60;.  _Note: In contrast to other operations it doesn&#x27;t return the full object._  In order to pay, you need to call one of the endpoints:  - &#x60;/start/loyalty&#x60; if there is no missing sum; - &#x60;/start/cash&#x60; if the remainder is paid at the cash register (ECR) without our terminals; - &#x60;/start/cashless&#x60; if the remainder is paid at the ECR with one of our terminals; - &#x60;/prepare/debit&#x60; and &#x60;/start&#x60; if the remainder is paid with SEPA direct debit; - &#x60;/prepare/creditcard&#x60; and &#x60;/start&#x60; if the remainder is paid with credit card.
      * @param smartTransactionId Smart Transaction ID (required)
      * @return SmartTransactionsPreTransactionModel
@@ -715,7 +716,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Apply secucard (Voucher or Loyalty Card)
+     * Apply secucard (“pre-transaction”)
      * Checks the balance of the secucard Merchant Card in &#x60;ident&#x60;. If there is cash or bonus balance that can be applied, it adds bonus items to the basket and sets &#x60;missing_sum&#x60; inside &#x60;basket_info&#x60;.  _Note: In contrast to other operations it doesn&#x27;t return the full object._  In order to pay, you need to call one of the endpoints:  - &#x60;/start/loyalty&#x60; if there is no missing sum; - &#x60;/start/cash&#x60; if the remainder is paid at the cash register (ECR) without our terminals; - &#x60;/start/cashless&#x60; if the remainder is paid at the ECR with one of our terminals; - &#x60;/prepare/debit&#x60; and &#x60;/start&#x60; if the remainder is paid with SEPA direct debit; - &#x60;/prepare/creditcard&#x60; and &#x60;/start&#x60; if the remainder is paid with credit card.
      * @param smartTransactionId Smart Transaction ID (required)
      * @return ApiResponse&lt;SmartTransactionsPreTransactionModel&gt;
@@ -728,7 +729,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Apply secucard (Voucher or Loyalty Card) (asynchronously)
+     * Apply secucard (“pre-transaction”) (asynchronously)
      * Checks the balance of the secucard Merchant Card in &#x60;ident&#x60;. If there is cash or bonus balance that can be applied, it adds bonus items to the basket and sets &#x60;missing_sum&#x60; inside &#x60;basket_info&#x60;.  _Note: In contrast to other operations it doesn&#x27;t return the full object._  In order to pay, you need to call one of the endpoints:  - &#x60;/start/loyalty&#x60; if there is no missing sum; - &#x60;/start/cash&#x60; if the remainder is paid at the cash register (ECR) without our terminals; - &#x60;/start/cashless&#x60; if the remainder is paid at the ECR with one of our terminals; - &#x60;/prepare/debit&#x60; and &#x60;/start&#x60; if the remainder is paid with SEPA direct debit; - &#x60;/prepare/creditcard&#x60; and &#x60;/start&#x60; if the remainder is paid with credit card.
      * @param smartTransactionId Smart Transaction ID (required)
      * @param callback The callback to be executed when the API call finishes
@@ -745,7 +746,7 @@ public class SmartTransactionsApi {
     /**
      * Build call for prepare
      * @param smartTransactionId Smart Transaction ID (required)
-     * @param paymentMethod Payment method:  - &#x60;\&quot;creditcard&#x60;\&quot; (also Google Pay, Apple Pay) - &#x60;\&quot;debit&#x60;\&quot; - &#x60;\&quot;eps&#x60;\&quot; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay&#x60;\&quot; - &#x60;\&quot;invoice&#x60;\&quot; - &#x60;\&quot;paypal&#x60;\&quot; - &#x60;\&quot;prepaid&#x60;\&quot; - &#x60;\&quot;sofort&#x60;\&quot; (required)
+     * @param paymentMethod Payment method:  - &#x60;\&quot;creditcard\&quot;&#x60; (also for Google Pay and Apple Pay) - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;eps\&quot;&#x60; (deprecated) - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; (deprecated) - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60; (deprecated) (required)
      * @param body Optional customer and/or payment details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -796,10 +797,10 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Prepare Smart Transaction (Authorize Payment)
+     * Authorize payment (”prepare”)
      * Create the Payment Transaction and links it to the Smart Transaction. If required, a scoring is performed. When &#x60;auto_capture&#x60; is set on &#x60;true&#x60; it will also start the Smart Transaction and execute the payment.  You can pass the payment data or the ID of an existing Payment Container. Likewise, you can also pass the customer details or the ID of an existing Payment Customer. If not passed, it is expected these details have been set before.
      * @param smartTransactionId Smart Transaction ID (required)
-     * @param paymentMethod Payment method:  - &#x60;\&quot;creditcard&#x60;\&quot; (also Google Pay, Apple Pay) - &#x60;\&quot;debit&#x60;\&quot; - &#x60;\&quot;eps&#x60;\&quot; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay&#x60;\&quot; - &#x60;\&quot;invoice&#x60;\&quot; - &#x60;\&quot;paypal&#x60;\&quot; - &#x60;\&quot;prepaid&#x60;\&quot; - &#x60;\&quot;sofort&#x60;\&quot; (required)
+     * @param paymentMethod Payment method:  - &#x60;\&quot;creditcard\&quot;&#x60; (also for Google Pay and Apple Pay) - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;eps\&quot;&#x60; (deprecated) - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; (deprecated) - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60; (deprecated) (required)
      * @param body Optional customer and/or payment details
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -810,10 +811,10 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Prepare Smart Transaction (Authorize Payment)
+     * Authorize payment (”prepare”)
      * Create the Payment Transaction and links it to the Smart Transaction. If required, a scoring is performed. When &#x60;auto_capture&#x60; is set on &#x60;true&#x60; it will also start the Smart Transaction and execute the payment.  You can pass the payment data or the ID of an existing Payment Container. Likewise, you can also pass the customer details or the ID of an existing Payment Customer. If not passed, it is expected these details have been set before.
      * @param smartTransactionId Smart Transaction ID (required)
-     * @param paymentMethod Payment method:  - &#x60;\&quot;creditcard&#x60;\&quot; (also Google Pay, Apple Pay) - &#x60;\&quot;debit&#x60;\&quot; - &#x60;\&quot;eps&#x60;\&quot; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay&#x60;\&quot; - &#x60;\&quot;invoice&#x60;\&quot; - &#x60;\&quot;paypal&#x60;\&quot; - &#x60;\&quot;prepaid&#x60;\&quot; - &#x60;\&quot;sofort&#x60;\&quot; (required)
+     * @param paymentMethod Payment method:  - &#x60;\&quot;creditcard\&quot;&#x60; (also for Google Pay and Apple Pay) - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;eps\&quot;&#x60; (deprecated) - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; (deprecated) - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60; (deprecated) (required)
      * @param body Optional customer and/or payment details
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -825,10 +826,10 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Prepare Smart Transaction (Authorize Payment) (asynchronously)
+     * Authorize payment (”prepare”) (asynchronously)
      * Create the Payment Transaction and links it to the Smart Transaction. If required, a scoring is performed. When &#x60;auto_capture&#x60; is set on &#x60;true&#x60; it will also start the Smart Transaction and execute the payment.  You can pass the payment data or the ID of an existing Payment Container. Likewise, you can also pass the customer details or the ID of an existing Payment Customer. If not passed, it is expected these details have been set before.
      * @param smartTransactionId Smart Transaction ID (required)
-     * @param paymentMethod Payment method:  - &#x60;\&quot;creditcard&#x60;\&quot; (also Google Pay, Apple Pay) - &#x60;\&quot;debit&#x60;\&quot; - &#x60;\&quot;eps&#x60;\&quot; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay&#x60;\&quot; - &#x60;\&quot;invoice&#x60;\&quot; - &#x60;\&quot;paypal&#x60;\&quot; - &#x60;\&quot;prepaid&#x60;\&quot; - &#x60;\&quot;sofort&#x60;\&quot; (required)
+     * @param paymentMethod Payment method:  - &#x60;\&quot;creditcard\&quot;&#x60; (also for Google Pay and Apple Pay) - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;eps\&quot;&#x60; (deprecated) - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; (deprecated) - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60; (deprecated) (required)
      * @param body Optional customer and/or payment details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -889,7 +890,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Add Shipping Information
+     * Set delivery
      * Adds shipping information, and marks the Payment Transaction as shipped when called the first time.  **Note: This is obligatory for purchase on account, because otherwise it is not known that and when the invoice is due.**
      * @param smartTransactionId Smart Transaction ID (required)
      * @param body Shipping information
@@ -902,7 +903,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Add Shipping Information
+     * Set delivery
      * Adds shipping information, and marks the Payment Transaction as shipped when called the first time.  **Note: This is obligatory for purchase on account, because otherwise it is not known that and when the invoice is due.**
      * @param smartTransactionId Smart Transaction ID (required)
      * @param body Shipping information
@@ -916,7 +917,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Add Shipping Information (asynchronously)
+     * Set delivery (asynchronously)
      * Adds shipping information, and marks the Payment Transaction as shipped when called the first time.  **Note: This is obligatory for purchase on account, because otherwise it is not known that and when the invoice is due.**
      * @param smartTransactionId Smart Transaction ID (required)
      * @param body Shipping information
@@ -978,7 +979,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Payment Terminal End-Of-Day Report
+     * Terminal end-of-day report
      * Runs the end of day report on the POS payment terminal. This operation is usually called by SDKs from the electronic cash register (ECR).  This request is blocking. Secuconnect API only answers after the payment terminal has finished the end-of-day report.
      * @param smartDeviceId Smart Device ID (required)
      * @return SmartTransactionsProductModel
@@ -990,7 +991,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Payment Terminal End-Of-Day Report
+     * Terminal end-of-day report
      * Runs the end of day report on the POS payment terminal. This operation is usually called by SDKs from the electronic cash register (ECR).  This request is blocking. Secuconnect API only answers after the payment terminal has finished the end-of-day report.
      * @param smartDeviceId Smart Device ID (required)
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
@@ -1003,7 +1004,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Payment Terminal End-Of-Day Report (asynchronously)
+     * Terminal end-of-day report (asynchronously)
      * Runs the end of day report on the POS payment terminal. This operation is usually called by SDKs from the electronic cash register (ECR).  This request is blocking. Secuconnect API only answers after the payment terminal has finished the end-of-day report.
      * @param smartDeviceId Smart Device ID (required)
      * @param callback The callback to be executed when the API call finishes
@@ -1020,12 +1021,12 @@ public class SmartTransactionsApi {
     /**
      * Build call for startTransaction
      * @param smartTransactionId Smart Transaction ID (required)
-     * @param paymentMethod Payment method:  - &#x60;\&quot;cash\&quot;&#x60; - &#x60;\&quot;cashless\&quot;&#x60; - &#x60;\&quot;creditcard\&quot;&#x60; (also Google Pay, Apple Pay) - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;eps\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;loyalty\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60; (required)
+     * @param paymentMethod Payment method, if not in succession to &#x60;/prepare&#x60;:  - &#x60;\&quot;cash\&quot;&#x60; - &#x60;\&quot;cashless\&quot;&#x60; - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;loyalty\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;cashless_direct\&quot;&#x60; - &#x60;\&quot;ccload\&quot;&#x60; (required)
      * @param body Optional customer and/or payment details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call startTransactionCall(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body) throws ApiException {
+    public Call startTransactionCall(String smartTransactionId, String paymentMethod, SmartTransactionsStart body) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1057,7 +1058,7 @@ public class SmartTransactionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call startTransactionValidateBeforeCall(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body) throws ApiException {
+    private Call startTransactionValidateBeforeCall(String smartTransactionId, String paymentMethod, SmartTransactionsStart body) throws ApiException {
         // verify the required parameter 'smartTransactionId' is set
         if (smartTransactionId == null) {
             throw new ApiException("Missing the required parameter 'smartTransactionId' when calling startTransaction(Async)");
@@ -1071,45 +1072,45 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Start Smart Transaction (Execute Order)
-     * Starts the Smart Transaction and executes the payment.  You can either pass the payment method and start it directly, or you can authorize it before with a call to &#x60;POST /Smart/Transactions/{id}/prepare/{method}&#x60;. You must call &#x60;/prepare&#x60;, if an external authorization might be needed (credit card 3-D Secure, PayPal, Sofort, etc.).  You can save the call to &#x60;/start&#x60; when you use &#x60;/prepare&#x60; in combination with &#x60;auto_capture&#x60;. This will automatically start the Smart Transaction after the payment has been authorised.  You can pass the payment data or the ID of an existing Payment Container. Likewise, you can also pass the customer details or the ID of an existing Payment Customer. If not passed, it expects these details to be set before.  If started with method &#x60;\&quot;cash\&quot;&#x60;, it only tracks the ECR payment so that loyalty operations can be applied.  Type &#x60;\&quot;cashless\&quot;&#x60; is blocking, and starts a card payment at the payment terminal attached with SmartZVT.
+     * Capture payment (“start”)
+     * Starts the Smart Transaction and captures the payment.  You can either pass the payment method and start it directly, or you can authorize it before with a call to &#x60;POST /Smart/Transactions/{id}/prepare/{method}&#x60;. You _must_ call &#x60;/prepare&#x60;, if an external authorization might be needed (credit card 3-D Secure, PayPal, Sofort, etc.).  You can save the call to &#x60;/start&#x60; when you use &#x60;/prepare&#x60; in combination with &#x60;auto_capture&#x60;. This will automatically start the Smart Transaction after the payment has been authorised.  In case of direct debit, you can either pass the payment data or the ID of an existing Payment Container.  Likewise you can pass the customer details or the ID of an existing Payment Customer. If not passed, it expects these details to be set before.  If started with method &#x60;\&quot;cash\&quot;&#x60;, it only tracks the ECR payment so that loyalty operations can be applied.  Type &#x60;\&quot;cashless\&quot;&#x60; is blocking, and starts a card payment at the payment terminal attached with SmartZVT.
      * @param smartTransactionId Smart Transaction ID (required)
-     * @param paymentMethod Payment method:  - &#x60;\&quot;cash\&quot;&#x60; - &#x60;\&quot;cashless\&quot;&#x60; - &#x60;\&quot;creditcard\&quot;&#x60; (also Google Pay, Apple Pay) - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;eps\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;loyalty\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60; (required)
+     * @param paymentMethod Payment method, if not in succession to &#x60;/prepare&#x60;:  - &#x60;\&quot;cash\&quot;&#x60; - &#x60;\&quot;cashless\&quot;&#x60; - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;loyalty\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;cashless_direct\&quot;&#x60; - &#x60;\&quot;ccload\&quot;&#x60; (required)
      * @param body Optional customer and/or payment details
      * @return SmartTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartTransactionsProductModel startTransaction(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body) throws ApiException {
+    public SmartTransactionsProductModel startTransaction(String smartTransactionId, String paymentMethod, SmartTransactionsStart body) throws ApiException {
         ApiResponse<SmartTransactionsProductModel> resp = startTransactionWithHttpInfo(smartTransactionId, paymentMethod, body);
         return resp.getData();
     }
 
     /**
-     * Start Smart Transaction (Execute Order)
-     * Starts the Smart Transaction and executes the payment.  You can either pass the payment method and start it directly, or you can authorize it before with a call to &#x60;POST /Smart/Transactions/{id}/prepare/{method}&#x60;. You must call &#x60;/prepare&#x60;, if an external authorization might be needed (credit card 3-D Secure, PayPal, Sofort, etc.).  You can save the call to &#x60;/start&#x60; when you use &#x60;/prepare&#x60; in combination with &#x60;auto_capture&#x60;. This will automatically start the Smart Transaction after the payment has been authorised.  You can pass the payment data or the ID of an existing Payment Container. Likewise, you can also pass the customer details or the ID of an existing Payment Customer. If not passed, it expects these details to be set before.  If started with method &#x60;\&quot;cash\&quot;&#x60;, it only tracks the ECR payment so that loyalty operations can be applied.  Type &#x60;\&quot;cashless\&quot;&#x60; is blocking, and starts a card payment at the payment terminal attached with SmartZVT.
+     * Capture payment (“start”)
+     * Starts the Smart Transaction and captures the payment.  You can either pass the payment method and start it directly, or you can authorize it before with a call to &#x60;POST /Smart/Transactions/{id}/prepare/{method}&#x60;. You _must_ call &#x60;/prepare&#x60;, if an external authorization might be needed (credit card 3-D Secure, PayPal, Sofort, etc.).  You can save the call to &#x60;/start&#x60; when you use &#x60;/prepare&#x60; in combination with &#x60;auto_capture&#x60;. This will automatically start the Smart Transaction after the payment has been authorised.  In case of direct debit, you can either pass the payment data or the ID of an existing Payment Container.  Likewise you can pass the customer details or the ID of an existing Payment Customer. If not passed, it expects these details to be set before.  If started with method &#x60;\&quot;cash\&quot;&#x60;, it only tracks the ECR payment so that loyalty operations can be applied.  Type &#x60;\&quot;cashless\&quot;&#x60; is blocking, and starts a card payment at the payment terminal attached with SmartZVT.
      * @param smartTransactionId Smart Transaction ID (required)
-     * @param paymentMethod Payment method:  - &#x60;\&quot;cash\&quot;&#x60; - &#x60;\&quot;cashless\&quot;&#x60; - &#x60;\&quot;creditcard\&quot;&#x60; (also Google Pay, Apple Pay) - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;eps\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;loyalty\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60; (required)
+     * @param paymentMethod Payment method, if not in succession to &#x60;/prepare&#x60;:  - &#x60;\&quot;cash\&quot;&#x60; - &#x60;\&quot;cashless\&quot;&#x60; - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;loyalty\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;cashless_direct\&quot;&#x60; - &#x60;\&quot;ccload\&quot;&#x60; (required)
      * @param body Optional customer and/or payment details
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartTransactionsProductModel> startTransactionWithHttpInfo(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body) throws ApiException {
+    public ApiResponse<SmartTransactionsProductModel> startTransactionWithHttpInfo(String smartTransactionId, String paymentMethod, SmartTransactionsStart body) throws ApiException {
         Call call = startTransactionValidateBeforeCall(smartTransactionId, paymentMethod, body);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Start Smart Transaction (Execute Order) (asynchronously)
-     * Starts the Smart Transaction and executes the payment.  You can either pass the payment method and start it directly, or you can authorize it before with a call to &#x60;POST /Smart/Transactions/{id}/prepare/{method}&#x60;. You must call &#x60;/prepare&#x60;, if an external authorization might be needed (credit card 3-D Secure, PayPal, Sofort, etc.).  You can save the call to &#x60;/start&#x60; when you use &#x60;/prepare&#x60; in combination with &#x60;auto_capture&#x60;. This will automatically start the Smart Transaction after the payment has been authorised.  You can pass the payment data or the ID of an existing Payment Container. Likewise, you can also pass the customer details or the ID of an existing Payment Customer. If not passed, it expects these details to be set before.  If started with method &#x60;\&quot;cash\&quot;&#x60;, it only tracks the ECR payment so that loyalty operations can be applied.  Type &#x60;\&quot;cashless\&quot;&#x60; is blocking, and starts a card payment at the payment terminal attached with SmartZVT.
+     * Capture payment (“start”) (asynchronously)
+     * Starts the Smart Transaction and captures the payment.  You can either pass the payment method and start it directly, or you can authorize it before with a call to &#x60;POST /Smart/Transactions/{id}/prepare/{method}&#x60;. You _must_ call &#x60;/prepare&#x60;, if an external authorization might be needed (credit card 3-D Secure, PayPal, Sofort, etc.).  You can save the call to &#x60;/start&#x60; when you use &#x60;/prepare&#x60; in combination with &#x60;auto_capture&#x60;. This will automatically start the Smart Transaction after the payment has been authorised.  In case of direct debit, you can either pass the payment data or the ID of an existing Payment Container.  Likewise you can pass the customer details or the ID of an existing Payment Customer. If not passed, it expects these details to be set before.  If started with method &#x60;\&quot;cash\&quot;&#x60;, it only tracks the ECR payment so that loyalty operations can be applied.  Type &#x60;\&quot;cashless\&quot;&#x60; is blocking, and starts a card payment at the payment terminal attached with SmartZVT.
      * @param smartTransactionId Smart Transaction ID (required)
-     * @param paymentMethod Payment method:  - &#x60;\&quot;cash\&quot;&#x60; - &#x60;\&quot;cashless\&quot;&#x60; - &#x60;\&quot;creditcard\&quot;&#x60; (also Google Pay, Apple Pay) - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;eps\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;loyalty\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60; (required)
+     * @param paymentMethod Payment method, if not in succession to &#x60;/prepare&#x60;:  - &#x60;\&quot;cash\&quot;&#x60; - &#x60;\&quot;cashless\&quot;&#x60; - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;loyalty\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;cashless_direct\&quot;&#x60; - &#x60;\&quot;ccload\&quot;&#x60; (required)
      * @param body Optional customer and/or payment details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call startTransactionAsync(String smartTransactionId, String paymentMethod, SmartTransactionsPrepare body, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
+    public Call startTransactionAsync(String smartTransactionId, String paymentMethod, SmartTransactionsStart body, final ApiCallback<SmartTransactionsProductModel> callback) throws ApiException {
         Call call = startTransactionValidateBeforeCall(smartTransactionId, paymentMethod, body);
         Type localVarReturnType = new TypeToken<SmartTransactionsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
@@ -1163,7 +1164,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Renew Authorization For Subscription
+     * Update payment container for subscription
      * Requests new authorization for a subscription.  The Payment Container for a subscription may have become unusable. For instance may the customer have returned their card or changed their bank account.  The returned Smart Transaction is to be used like after a call to &#x60;/prepare&#x60;. There are URLs inside &#x60;payment_links&#x60; to authorize for credit card, SEPA direct debit or with PayPal.
      * @param subscriptionId Subscription ID (required)
      * @return SmartTransactionsProductModel
@@ -1175,7 +1176,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Renew Authorization For Subscription
+     * Update payment container for subscription
      * Requests new authorization for a subscription.  The Payment Container for a subscription may have become unusable. For instance may the customer have returned their card or changed their bank account.  The returned Smart Transaction is to be used like after a call to &#x60;/prepare&#x60;. There are URLs inside &#x60;payment_links&#x60; to authorize for credit card, SEPA direct debit or with PayPal.
      * @param subscriptionId Subscription ID (required)
      * @return ApiResponse&lt;SmartTransactionsProductModel&gt;
@@ -1188,7 +1189,7 @@ public class SmartTransactionsApi {
     }
 
     /**
-     * Renew Authorization For Subscription (asynchronously)
+     * Update payment container for subscription (asynchronously)
      * Requests new authorization for a subscription.  The Payment Container for a subscription may have become unusable. For instance may the customer have returned their card or changed their bank account.  The returned Smart Transaction is to be used like after a call to &#x60;/prepare&#x60;. There are URLs inside &#x60;payment_links&#x60; to authorize for credit card, SEPA direct debit or with PayPal.
      * @param subscriptionId Subscription ID (required)
      * @param callback The callback to be executed when the API call finishes

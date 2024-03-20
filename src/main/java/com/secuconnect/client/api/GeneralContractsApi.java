@@ -13,7 +13,6 @@ import com.secuconnect.client.model.GetAvailablePaymentMethodsDTO;
 import com.secuconnect.client.model.IframeOptions;
 import com.secuconnect.client.model.PaymentLinkOptions;
 import com.secuconnect.client.model.ProductExceptionPayload;
-import com.secuconnect.client.model.ProductInstanceID;
 import com.secuconnect.client.model.ResultBoolean;
 import com.secuconnect.client.model.ThirdPartyConfigurationDTO;
 import com.secuconnect.client.model.ThirdPartyConfigurationProductModel;
@@ -870,7 +869,7 @@ public class GeneralContractsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call getTransferBalanceCall(ProductInstanceID generalContractId) throws ApiException {
+    public Call getTransferBalanceCall(String generalContractId) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -901,7 +900,7 @@ public class GeneralContractsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call getTransferBalanceValidateBeforeCall(ProductInstanceID generalContractId) throws ApiException {
+    private Call getTransferBalanceValidateBeforeCall(String generalContractId) throws ApiException {
         // verify the required parameter 'generalContractId' is set
         if (generalContractId == null) {
             throw new ApiException("Missing the required parameter 'generalContractId' when calling getTransferBalance(Async)");
@@ -917,7 +916,7 @@ public class GeneralContractsApi {
      * @return GeneralContractsTransferBalanceModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GeneralContractsTransferBalanceModel getTransferBalance(ProductInstanceID generalContractId) throws ApiException {
+    public GeneralContractsTransferBalanceModel getTransferBalance(String generalContractId) throws ApiException {
         ApiResponse<GeneralContractsTransferBalanceModel> resp = getTransferBalanceWithHttpInfo(generalContractId);
         return resp.getData();
     }
@@ -929,7 +928,7 @@ public class GeneralContractsApi {
      * @return ApiResponse&lt;GeneralContractsTransferBalanceModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GeneralContractsTransferBalanceModel> getTransferBalanceWithHttpInfo(ProductInstanceID generalContractId) throws ApiException {
+    public ApiResponse<GeneralContractsTransferBalanceModel> getTransferBalanceWithHttpInfo(String generalContractId) throws ApiException {
         Call call = getTransferBalanceValidateBeforeCall(generalContractId);
         Type localVarReturnType = new TypeToken<GeneralContractsTransferBalanceModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -943,7 +942,7 @@ public class GeneralContractsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call getTransferBalanceAsync(ProductInstanceID generalContractId, final ApiCallback<GeneralContractsTransferBalanceModel> callback) throws ApiException {
+    public Call getTransferBalanceAsync(String generalContractId, final ApiCallback<GeneralContractsTransferBalanceModel> callback) throws ApiException {
         Call call = getTransferBalanceValidateBeforeCall(generalContractId);
         Type localVarReturnType = new TypeToken<GeneralContractsTransferBalanceModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
