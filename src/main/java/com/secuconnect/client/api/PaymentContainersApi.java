@@ -541,7 +541,7 @@ public class PaymentContainersApi {
 
     /**
      * Create Payment Container
-     * Creates a new Payment Container from the given data.
+     * Creates a new Payment Container from the given data.  **Important note:** As of end of April 2024 you cannot create Payment Containers with type &#x60;credit_card&#x60; anymore. Your application needs to create these Payment Containers implicitly with &#x60;POST /Smart/Transactions/{id}/prepare/{method}&#x60;.  If your application uses the deprecated way, you are demanded to revise your integration.  With the sole exception of bank account details for payouts (outgoing bank transfers), we recommend to use the implicit creation as described above everywhere in your application.
      * @param body Payment Container properties
      * @return PaymentContainersProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -553,7 +553,7 @@ public class PaymentContainersApi {
 
     /**
      * Create Payment Container
-     * Creates a new Payment Container from the given data.
+     * Creates a new Payment Container from the given data.  **Important note:** As of end of April 2024 you cannot create Payment Containers with type &#x60;credit_card&#x60; anymore. Your application needs to create these Payment Containers implicitly with &#x60;POST /Smart/Transactions/{id}/prepare/{method}&#x60;.  If your application uses the deprecated way, you are demanded to revise your integration.  With the sole exception of bank account details for payouts (outgoing bank transfers), we recommend to use the implicit creation as described above everywhere in your application.
      * @param body Payment Container properties
      * @return ApiResponse&lt;PaymentContainersProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -566,7 +566,7 @@ public class PaymentContainersApi {
 
     /**
      * Create Payment Container (asynchronously)
-     * Creates a new Payment Container from the given data.
+     * Creates a new Payment Container from the given data.  **Important note:** As of end of April 2024 you cannot create Payment Containers with type &#x60;credit_card&#x60; anymore. Your application needs to create these Payment Containers implicitly with &#x60;POST /Smart/Transactions/{id}/prepare/{method}&#x60;.  If your application uses the deprecated way, you are demanded to revise your integration.  With the sole exception of bank account details for payouts (outgoing bank transfers), we recommend to use the implicit creation as described above everywhere in your application.
      * @param body Payment Container properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

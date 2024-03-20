@@ -83,7 +83,7 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
   }
 
    /**
-   * Container type
+   * Container type:  - &#x60;\&quot;bank_account\&quot;&#x60; - &#x60;\&quot;credit_card\&quot;&#x60; (read-only) - &#x60;\&quot;googlepay\&quot;&#x60; - &#x60;\&quot;applepay\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; (read-only)
    * @return type
   **/
   public String getType() {

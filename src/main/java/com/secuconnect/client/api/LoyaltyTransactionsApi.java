@@ -143,7 +143,7 @@ public class LoyaltyTransactionsApi {
 
     /**
      * Build call for getOne
-     * @param loyaltyTransactionId Search one by provided id (required)
+     * @param loyaltyTransactionId Loyalty Transaction ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -190,7 +190,7 @@ public class LoyaltyTransactionsApi {
     /**
      * Read Loyalty Transaction
      * Returns the specified Loyalty Transaction.
-     * @param loyaltyTransactionId Search one by provided id (required)
+     * @param loyaltyTransactionId Loyalty Transaction ID (required)
      * @return LoyaltyTransactionsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -202,7 +202,7 @@ public class LoyaltyTransactionsApi {
     /**
      * Read Loyalty Transaction
      * Returns the specified Loyalty Transaction.
-     * @param loyaltyTransactionId Search one by provided id (required)
+     * @param loyaltyTransactionId Loyalty Transaction ID (required)
      * @return ApiResponse&lt;LoyaltyTransactionsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -215,7 +215,7 @@ public class LoyaltyTransactionsApi {
     /**
      * Read Loyalty Transaction (asynchronously)
      * Returns the specified Loyalty Transaction.
-     * @param loyaltyTransactionId Search one by provided id (required)
+     * @param loyaltyTransactionId Loyalty Transaction ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

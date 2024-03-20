@@ -22,7 +22,7 @@ public class LoyaltyTransactionsDTOCardgroup {
   }
 
    /**
-   * Cardgroup id
+   * Card Group ID
    * @return id
   **/
   public String getId() {
@@ -39,7 +39,7 @@ public class LoyaltyTransactionsDTOCardgroup {
   }
 
    /**
-   * Cardgroup Name
+   * Card Group name
    * @return displayName
   **/
   public String getDisplayName() {
@@ -56,7 +56,7 @@ public class LoyaltyTransactionsDTOCardgroup {
   }
 
    /**
-   * Warn limit for Cardgroup stock
+   * Reorder point
    * @return stockWarnLimit
   **/
   public Integer getStockWarnLimit() {

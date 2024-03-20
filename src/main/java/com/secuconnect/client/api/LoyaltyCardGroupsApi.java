@@ -19,14 +19,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LoyaltyCardgroupsApi {
+public class LoyaltyCardGroupsApi {
     private ApiClient apiClient;
 
-    public LoyaltyCardgroupsApi() {
+    public LoyaltyCardGroupsApi() {
         this(Environment.getGlobalEnv().getApiClient());
     }
 
-    public LoyaltyCardgroupsApi(ApiClient apiClient) {
+    public LoyaltyCardGroupsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -40,7 +40,7 @@ public class LoyaltyCardgroupsApi {
 
     /**
      * Build call for addCardGroup
-     * @param body Loyalty card group properties
+     * @param body Loyalty Card Group details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -80,9 +80,9 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Create Loyalty Cardgroup
-     * Creates a new Loyalty Cardgroup from the given data.
-     * @param body Loyalty card group properties
+     * Create Loyalty Card Group
+     * Creates a new Loyalty Cardgroup using the given data.
+     * @param body Loyalty Card Group details
      * @return LoyaltyCardgroupsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -92,9 +92,9 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Create Loyalty Cardgroup
-     * Creates a new Loyalty Cardgroup from the given data.
-     * @param body Loyalty card group properties
+     * Create Loyalty Card Group
+     * Creates a new Loyalty Cardgroup using the given data.
+     * @param body Loyalty Card Group details
      * @return ApiResponse&lt;LoyaltyCardgroupsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -105,9 +105,9 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Create Loyalty Cardgroup (asynchronously)
-     * Creates a new Loyalty Cardgroup from the given data.
-     * @param body Loyalty card group properties
+     * Create Loyalty Card Group (asynchronously)
+     * Creates a new Loyalty Cardgroup using the given data.
+     * @param body Loyalty Card Group details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -121,7 +121,7 @@ public class LoyaltyCardgroupsApi {
 
     /**
      * Build call for checkPassCodeEnabled
-     * @param loyaltyCardGroupId Loyalty card group id (required)
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @param body Check passcode details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -167,9 +167,9 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Check for passcode check
-     * Checks whether the passcode check is enabled.
-     * @param loyaltyCardGroupId Loyalty card group id (required)
+     * Check need for passcode check
+     * Checks whether the passcode check is enabled, and therefore required, for a specific action.
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @param body Check passcode details
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -180,9 +180,9 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Check for passcode check
-     * Checks whether the passcode check is enabled.
-     * @param loyaltyCardGroupId Loyalty card group id (required)
+     * Check need for passcode check
+     * Checks whether the passcode check is enabled, and therefore required, for a specific action.
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @param body Check passcode details
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -194,9 +194,9 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Check for passcode check (asynchronously)
-     * Checks whether the passcode check is enabled.
-     * @param loyaltyCardGroupId Loyalty card group id (required)
+     * Check need for passcode check (asynchronously)
+     * Checks whether the passcode check is enabled, and therefore required, for a specific action.
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @param body Check passcode details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -318,7 +318,7 @@ public class LoyaltyCardgroupsApi {
 
     /**
      * Build call for getOne
-     * @param loyaltyCardGroupId Search one by provided id (required)
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -363,9 +363,9 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Read Loyalty Cardgroup
-     * Returns the specified Loyalty Cardgroup.
-     * @param loyaltyCardGroupId Search one by provided id (required)
+     * Read Loyalty Card Group
+     * Returns the specified Loyalty Card Group.
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @return LoyaltyCardgroupsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -375,9 +375,9 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Read Loyalty Cardgroup
-     * Returns the specified Loyalty Cardgroup.
-     * @param loyaltyCardGroupId Search one by provided id (required)
+     * Read Loyalty Card Group
+     * Returns the specified Loyalty Card Group.
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @return ApiResponse&lt;LoyaltyCardgroupsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -388,9 +388,9 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Read Loyalty Cardgroup (asynchronously)
-     * Returns the specified Loyalty Cardgroup.
-     * @param loyaltyCardGroupId Search one by provided id (required)
+     * Read Loyalty Card Group (asynchronously)
+     * Returns the specified Loyalty Card Group.
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -404,8 +404,8 @@ public class LoyaltyCardgroupsApi {
 
     /**
      * Build call for updateCardGroup
-     * @param loyaltyCardGroupId Loyalty card group id (required)
-     * @param body Loyalty card group properties
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
+     * @param body Loyalty Card Group details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -450,10 +450,10 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Update Loyalty Cardgroup
-     * Updates the specified Loyalty Cardgroup with the given data.
-     * @param loyaltyCardGroupId Loyalty card group id (required)
-     * @param body Loyalty card group properties
+     * Update Loyalty Card Group
+     * Updates the specified Loyalty Card Group using the given data.
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
+     * @param body Loyalty Card Group details
      * @return LoyaltyCardgroupsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -463,10 +463,10 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Update Loyalty Cardgroup
-     * Updates the specified Loyalty Cardgroup with the given data.
-     * @param loyaltyCardGroupId Loyalty card group id (required)
-     * @param body Loyalty card group properties
+     * Update Loyalty Card Group
+     * Updates the specified Loyalty Card Group using the given data.
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
+     * @param body Loyalty Card Group details
      * @return ApiResponse&lt;LoyaltyCardgroupsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -477,10 +477,10 @@ public class LoyaltyCardgroupsApi {
     }
 
     /**
-     * Update Loyalty Cardgroup (asynchronously)
-     * Updates the specified Loyalty Cardgroup with the given data.
-     * @param loyaltyCardGroupId Loyalty card group id (required)
-     * @param body Loyalty card group properties
+     * Update Loyalty Card Group (asynchronously)
+     * Updates the specified Loyalty Card Group using the given data.
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
+     * @param body Loyalty Card Group details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
