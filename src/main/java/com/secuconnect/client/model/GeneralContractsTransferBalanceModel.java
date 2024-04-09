@@ -1,10 +1,10 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.secuconnect.client.model.GeneralContractsTransferBalanceModelBalances;
 import com.secuconnect.client.model.ProductInstanceID;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -12,18 +12,18 @@ import java.util.Objects;
  */
 public class GeneralContractsTransferBalanceModel extends ProductInstanceID {
   @SerializedName("balances")
-  protected List<GeneralContractsTransferBalanceModelBalances> balances = null;
+  protected Map<String, Integer> balances = null;
 
-  public GeneralContractsTransferBalanceModel balances(List<GeneralContractsTransferBalanceModelBalances> balances) {
+  public GeneralContractsTransferBalanceModel balances(Map<String, Integer> balances) {
     this.balances = balances;
     return this;
   }
 
-  public GeneralContractsTransferBalanceModel addBalancesItem(GeneralContractsTransferBalanceModelBalances balancesItem) {
+  public GeneralContractsTransferBalanceModel putBalancesItem(String key, Integer balancesItem) {
     if (this.balances == null) {
-      this.balances = new ArrayList<GeneralContractsTransferBalanceModelBalances>();
+      this.balances = new HashMap<String, Integer>();
     }
-    this.balances.add(balancesItem);
+    this.balances.put(key, balancesItem);
     return this;
   }
 
@@ -31,11 +31,11 @@ public class GeneralContractsTransferBalanceModel extends ProductInstanceID {
    * Get balances
    * @return balances
   **/
-  public List<GeneralContractsTransferBalanceModelBalances> getBalances() {
+  public Map<String, Integer> getBalances() {
     return balances;
   }
 
-  public void setBalances(List<GeneralContractsTransferBalanceModelBalances> balances) {
+  public void setBalances(Map<String, Integer> balances) {
     this.balances = balances;
   }
 

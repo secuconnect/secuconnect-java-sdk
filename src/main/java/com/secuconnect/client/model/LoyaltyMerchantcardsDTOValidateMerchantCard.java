@@ -19,7 +19,7 @@ public class LoyaltyMerchantcardsDTOValidateMerchantCard {
   }
 
    /**
-   * General Merchant id
+   * General Merchant ID
    * @return merchant
   **/
   public String getMerchant() {
@@ -36,7 +36,7 @@ public class LoyaltyMerchantcardsDTOValidateMerchantCard {
   }
 
    /**
-   * Loyalty Card number
+   * Number on card
    * @return cardnumber
   **/
   public Integer getCardnumber() {

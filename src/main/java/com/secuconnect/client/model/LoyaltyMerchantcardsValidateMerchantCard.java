@@ -22,7 +22,7 @@ public class LoyaltyMerchantcardsValidateMerchantCard {
   }
 
    /**
-   * Result has true or false value
+   * Whether the card is valid
    * @return isValid
   **/
   public Boolean getIsValid() {
@@ -39,7 +39,7 @@ public class LoyaltyMerchantcardsValidateMerchantCard {
   }
 
    /**
-   * Result has true or false value
+   * Whether the card has a passcode, that should be checked
    * @return hasPasscode
   **/
   public Boolean getHasPasscode() {
@@ -56,7 +56,7 @@ public class LoyaltyMerchantcardsValidateMerchantCard {
   }
 
    /**
-   * Result has true or false value
+   * Whether the card is currently locked
    * @return isLocked
   **/
   public Boolean getIsLocked() {

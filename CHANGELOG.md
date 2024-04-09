@@ -19,6 +19,41 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.29.0] - 2024-04-09
+[3.29.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.28.0...3.29.0
+
+- *removed element*: `age` and `days_until_birthday` were removed from `LoyaltyCustomersDTO` as they are ignored by the API.
+
+### Changed
+- `ApiClient`
+- `Environment`
+- `ExceptionBody`
+- `Api.LoyaltyMerchantcardsApi`
+- `Model.GeneralContractsTransferBalanceModel`
+- `Model.LoyaltyCustomersDTO`
+- `Model.LoyaltyMerchantcardsCardBalanceReceipt`
+- `Model.LoyaltyMerchantcardsDTO`
+- `Model.LoyaltyMerchantcardsDTOCardBalanceReceipt`
+- `Model.LoyaltyMerchantcardsDTOCheckPasscode`
+- `Model.LoyaltyMerchantcardsDTOCreateMerchantcards`
+- `Model.LoyaltyMerchantcardsDTOCsc`
+- `Model.LoyaltyMerchantcardsDTOCustomer`
+- `Model.LoyaltyMerchantcardsDTOLock`
+- `Model.LoyaltyMerchantcardsDTONewPasscode`
+- `Model.LoyaltyMerchantcardsDTOPaymentContainer`
+- `Model.LoyaltyMerchantcardsDTOResetPasscode`
+- `Model.LoyaltyMerchantcardsDTOTransaction`
+- `Model.LoyaltyMerchantcardsDTOValidateMerchantCard`
+- `Model.LoyaltyMerchantcardsList`
+- `Model.LoyaltyMerchantcardsProductModel`
+- `Model.LoyaltyMerchantcardsProductWithReceiptModel`
+- `Model.LoyaltyMerchantcardsValidateMerchantCard`
+- `Model.VirtualTerminalDataModel`
+
+### Removed
+- `Model.GeneralContractsTransferBalanceModelBalances`
+
+
 ## [3.29.0] - 2024-03-20
 [3.29.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.28.0...3.29.0
 

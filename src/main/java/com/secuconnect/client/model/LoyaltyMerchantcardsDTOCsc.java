@@ -19,7 +19,7 @@ public class LoyaltyMerchantcardsDTOCsc {
   }
 
    /**
-   * Card number
+   * Number on card
    * @return cardnumber
   **/
   public Integer getCardnumber() {
@@ -36,7 +36,7 @@ public class LoyaltyMerchantcardsDTOCsc {
   }
 
    /**
-   * Card security code
+   * Entered Card Security Code
    * @return csc
   **/
   public Integer getCsc() {

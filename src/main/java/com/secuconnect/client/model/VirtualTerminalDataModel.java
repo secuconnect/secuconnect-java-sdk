@@ -33,7 +33,7 @@ public class VirtualTerminalDataModel {
   }
 
    /**
-   * Store
+   * Store to which the terminal belongs
    * @return store
   **/
   public Object getStore() {
@@ -50,7 +50,7 @@ public class VirtualTerminalDataModel {
   }
 
    /**
-   * Terminal id
+   * Terminal ID
    * @return tid
   **/
   public String getTid() {
@@ -75,7 +75,7 @@ public class VirtualTerminalDataModel {
   }
 
    /**
-   * Actions
+   * Allowed actions:  - &#x60;\&quot;charge\&quot;&#x60; - &#x60;\&quot;discharge\&quot;&#x60; - &#x60;\&quot;sale_revenue\&quot;&#x60; - &#x60;\&quot;charge_points\&quot;&#x60; - &#x60;\&quot;discharge_points\&quot;&#x60; - &#x60;\&quot;cancel_last\&quot;&#x60; - &#x60;\&quot;immediate_bonus\&quot;&#x60;
    * @return actions
   **/
   public List<String> getActions() {
@@ -92,7 +92,7 @@ public class VirtualTerminalDataModel {
   }
 
    /**
-   * Gift terminal
+   * Whether the loyalty terminal is a gift terminal (bonus program active)
    * @return giftTerminal
   **/
   public Integer getGiftTerminal() {
@@ -109,7 +109,7 @@ public class VirtualTerminalDataModel {
   }
 
    /**
-   * Amount split enabled
+   * Whether amount split is enabled
    * @return amountSplitEnabled
   **/
   public Integer getAmountSplitEnabled() {
@@ -126,7 +126,7 @@ public class VirtualTerminalDataModel {
   }
 
    /**
-   * Disabled
+   * Whether the terminal is disabled (&#x60;1&#x60;) or not (&#x60;0&#x60;)
    * @return disabled
   **/
   public Integer getDisabled() {

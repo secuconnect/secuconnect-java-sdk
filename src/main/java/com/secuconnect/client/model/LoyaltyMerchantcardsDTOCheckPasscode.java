@@ -19,7 +19,7 @@ public class LoyaltyMerchantcardsDTOCheckPasscode {
   }
 
    /**
-   * Loyalty Card number
+   * Number on card
    * @return cardnumber
   **/
   public Integer getCardnumber() {
@@ -36,7 +36,7 @@ public class LoyaltyMerchantcardsDTOCheckPasscode {
   }
 
    /**
-   * Loyalty Card pin
+   * Entered passcode
    * @return pin
   **/
   public Integer getPin() {

@@ -40,7 +40,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
   }
 
    /**
-   * Action
+   * Action:  - &#x60;\&quot;charge\&quot;&#x60; - &#x60;\&quot;discharge\&quot;&#x60; - &#x60;\&quot;sale_revenue\&quot;&#x60; - &#x60;\&quot;charge_points\&quot;&#x60; - &#x60;\&quot;discharge_points\&quot;&#x60; - &#x60;\&quot;cancel_last\&quot;&#x60; - &#x60;\&quot;immediate_bonus\&quot;&#x60;
    * @return action
   **/
   public String getAction() {
@@ -57,7 +57,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
   }
 
    /**
-   * Terminal id
+   * Terminal ID
    * @return terminalId
   **/
   public String getTerminalId() {
@@ -91,7 +91,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
   }
 
    /**
-   * Tid
+   * Terminal TID
    * @return tid
   **/
   public String getTid() {
@@ -108,7 +108,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
   }
 
    /**
-   * Store id
+   * General Store ID
    * @return store
   **/
   public String getStore() {
@@ -125,7 +125,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
   }
 
    /**
-   * Card number
+   * Number on card
    * @return cardnumber
   **/
   public Integer getCardnumber() {
@@ -159,7 +159,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
   }
 
    /**
-   * Amount split allowed
+   * Whether amount split is allowed
    * @return amountSplitAllowed
   **/
   public String getAmountSplitAllowed() {
@@ -176,7 +176,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
   }
 
    /**
-   * Merchant id
+   * General Merchant ID
    * @return merchantId
   **/
   public String getMerchantId() {

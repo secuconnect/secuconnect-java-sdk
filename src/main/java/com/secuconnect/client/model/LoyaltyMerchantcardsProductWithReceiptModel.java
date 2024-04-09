@@ -86,7 +86,7 @@ public class LoyaltyMerchantcardsProductWithReceiptModel extends LoyaltyMerchant
   }
 
    /**
-   * Created TransactionId
+   * Transaction ID (TA code)
    * @return transId
   **/
   public Integer getTransId() {
