@@ -181,7 +181,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty card group display name
+   * Display name (programme name)
    * @return displayName
   **/
   public String getDisplayName() {
@@ -198,7 +198,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty card group display name raw
+   * Display name raw
    * @return displayNameRaw
   **/
   public String getDisplayNameRaw() {
@@ -215,7 +215,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty card group stock warn limit
+   * Stock warn limit
    * @return stockWarnLimit
   **/
   public Integer getStockWarnLimit() {
@@ -232,7 +232,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty card group picture
+   * Symbol image URL
    * @return picture
   **/
   public String getPicture() {
@@ -249,7 +249,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty card group balance limit
+   * Balance limit
    * @return balanceLimit
   **/
   public Integer getBalanceLimit() {
@@ -266,7 +266,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   }
 
    /**
-   * The card group allows to set an expiry date for a card.
+   * Whether the balance expiry date must be set for the cards
    * @return balanceExpiry
   **/
   public Boolean getBalanceExpiry() {
@@ -283,7 +283,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   }
 
    /**
-   * The card group allows to cancel specific transactions.
+   * Whether the it is allowed to cancel arbitrary transactions (in contrast to only the last ones)
    * @return cancelSelected
   **/
   public Boolean getCancelSelected() {
@@ -300,7 +300,7 @@ public class LoyaltyCardgroupsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty card group description
+   * Detailed programme description
    * @return description
   **/
   public String getDescription() {

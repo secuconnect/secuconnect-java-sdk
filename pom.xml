@@ -5,7 +5,7 @@
   <artifactId>secuconnect-java-sdk</artifactId>
   <packaging>jar</packaging>
   <name>secuconnect-java-sdk</name>
-  <version>3.28.0</version>
+  <version>3.29.0</version>
   <url>https://github.com/secuconnect/secuconnect-java-sdk</url>
   <description>Secuconnect Java</description>
   <scm>
