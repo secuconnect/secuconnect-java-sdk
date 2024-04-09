@@ -7,6 +7,7 @@ import com.secuconnect.client.model.SmartDeviceProductsEnabled;
 import com.secuconnect.client.model.SmartDeviceProductsEnabledWithTid;
 import com.secuconnect.client.model.SmartDeviceProductsLoyalty;
 import com.secuconnect.client.model.SmartDeviceProductsPrepaid;
+import com.secuconnect.client.model.SmartDeviceProductsVlh;
 import com.secuconnect.client.model.SmartDeviceProductsVtm;
 import java.util.Objects;
 
@@ -43,6 +44,9 @@ public class SmartDevicesProducts {
 
   @SerializedName("easycredit")
   protected SmartDeviceProductsEasycredit easycredit = null;
+
+  @SerializedName("vlh")
+  protected SmartDeviceProductsVlh vlh = null;
 
   public SmartDevicesProducts loyalty(SmartDeviceProductsLoyalty loyalty) {
     this.loyalty = loyalty;
@@ -214,6 +218,23 @@ public class SmartDevicesProducts {
     this.easycredit = easycredit;
   }
 
+  public SmartDevicesProducts vlh(SmartDeviceProductsVlh vlh) {
+    this.vlh = vlh;
+    return this;
+  }
+
+   /**
+   * Get vlh
+   * @return vlh
+  **/
+  public SmartDeviceProductsVlh getVlh() {
+    return vlh;
+  }
+
+  public void setVlh(SmartDeviceProductsVlh vlh) {
+    this.vlh = vlh;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -232,12 +253,13 @@ public class SmartDevicesProducts {
         Objects.equals(this.support, smartDevicesProducts.support) &&
         Objects.equals(this.bonroll, smartDevicesProducts.bonroll) &&
         Objects.equals(this.bvb, smartDevicesProducts.bvb) &&
-        Objects.equals(this.easycredit, smartDevicesProducts.easycredit);
+        Objects.equals(this.easycredit, smartDevicesProducts.easycredit) &&
+        Objects.equals(this.vlh, smartDevicesProducts.vlh);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(loyalty, smart, cashreg, collect, vtm, prepaid, support, bonroll, bvb, easycredit);
+    return Objects.hash(loyalty, smart, cashreg, collect, vtm, prepaid, support, bonroll, bvb, easycredit, vlh);
   }
 
   @Override
@@ -254,6 +276,7 @@ public class SmartDevicesProducts {
     sb.append("    bonroll: ").append(toIndentedString(bonroll)).append("\n");
     sb.append("    bvb: ").append(toIndentedString(bvb)).append("\n");
     sb.append("    easycredit: ").append(toIndentedString(easycredit)).append("\n");
+    sb.append("    vlh: ").append(toIndentedString(vlh)).append("\n");
     sb.append("}");
     return sb.toString();
   }

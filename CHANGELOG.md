@@ -19,6 +19,54 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.29.0] - 2024-04-09
+[3.29.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.28.0...3.29.0
+
+- **Important note:** As of end of April 2024 you cannot create Payment Containers with type `credit_card` anymore.
+  Your application needs to create these Payment Containers implicitly with `POST /Smart/Transactions/{id}/prepare/{method}`.
+  If your application uses the deprecated way, you are demanded to revise your integration.
+  With the sole exception of bank account details for payouts (outgoing bank transfers), we recommend to use the implicit creation as described above everywhere in your application.
+- *fixed endpoint*: changed request parameter `general_contract_id` from `ProductInstanceID` to `string` in `GeneralContractsApi.getTransferBalance()`
+- *fixed endpoint*: changed response model of `GeneralContractsApi.getTransferBalance()`
+- *renamed endpoint*: from `LoyaltyCardgroupsApi` to `LoyaltyCardGroupsApi`
+- *changed param type*: from `SmartTransactionsPrepare` to `SmartTransactionsStart` (which extends the `SmartTransactionsPrepare`) in `SmartTransactionsApi.startTransaction()`
+- *new element* `vlh` added to  `SmartDevicesProducts`
+
+### Added
+- `Model.SmartDeviceProductsVlh`
+- `Model.SmartTransactionsStart`
+
+### Changed
+- `ApiClient`
+- `Environment`
+- `ExceptionBody`
+- `Api.GeneralContractsApi`
+- `Api.LoyaltyCardgroupsApi`
+- `Api.LoyaltyTransactionsApi`
+- `Api.PaymentContainersApi`
+- `Api.SmartTransactionsApi`
+- `Model.GeneralContractsTransferBalanceModel`
+- `Model.LoyaltyCardgroupsDTO`
+- `Model.LoyaltyCardgroupsDTOCheckPasscodeEnabled`
+- `Model.LoyaltyCardgroupsList`
+- `Model.LoyaltyCardgroupsProductModel`
+- `Model.LoyaltyCardgroupsUpdateDTO`
+- `Model.LoyaltyTransactionsDTOCard`
+- `Model.LoyaltyTransactionsDTOCardgroup`
+- `Model.LoyaltyTransactionsDTOMerchant`
+- `Model.LoyaltyTransactionsDTOMerchantcard`
+- `Model.LoyaltyTransactionsDTORelatedTransactions`
+- `Model.LoyaltyTransactionsDTOStore`
+- `Model.LoyaltyTransactionsList`
+- `Model.LoyaltyTransactionsProductModel`
+- `Model.PaymentContainersDTO`
+- `Model.SmartDevicesProducts`
+- `Model.SmartTransactionPaymentContainerDTO`
+
+### Removed
+- `Model.GeneralContractsTransferBalanceModelBalances`
+
+
 ## [3.28.0] - 2024-03-15
 [3.28.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.27.0...3.28.0
 

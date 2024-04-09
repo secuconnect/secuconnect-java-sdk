@@ -19,7 +19,7 @@ public class LoyaltyTransactionsDTOStore {
   }
 
    /**
-   * General Store id
+   * General Store ID
    * @return id
   **/
   public String getId() {
@@ -36,7 +36,7 @@ public class LoyaltyTransactionsDTOStore {
   }
 
    /**
-   * General Store Name
+   * General Store name
    * @return name
   **/
   public String getName() {

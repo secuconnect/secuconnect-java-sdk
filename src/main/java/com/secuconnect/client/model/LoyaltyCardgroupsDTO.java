@@ -22,7 +22,7 @@ public class LoyaltyCardgroupsDTO {
   }
 
    /**
-   * Display name
+   * Display name (programme name)
    * @return displayName
   **/
   public String getDisplayName() {
@@ -39,7 +39,7 @@ public class LoyaltyCardgroupsDTO {
   }
 
    /**
-   * The document ID of an card group picture
+   * Document Upload ID of symbol image
    * @return picture
   **/
   public String getPicture() {
@@ -56,7 +56,7 @@ public class LoyaltyCardgroupsDTO {
   }
 
    /**
-   * Merchant id
+   * General Merchant ID
    * @return merchant
   **/
   public String getMerchant() {
