@@ -40,7 +40,7 @@ public class LoyaltyMerchantcardsList {
   }
 
    /**
-   * Number of existing loyalty merchant cards
+   * Number of matching Loyalty Merchant Cards
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class LoyaltyMerchantcardsList {
   }
 
    /**
-   * List of LoyaltyMerchantcards
+   * Loyalty Merchant Cards (limited number)
    * @return data
   **/
   public List<LoyaltyMerchantcardsProductModel> getData() {

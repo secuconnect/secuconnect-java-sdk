@@ -26,7 +26,7 @@ public class LoyaltyMerchantcardsDTOPaymentContainer {
   }
 
    /**
-   * Object of payment container
+   * Object type, always &#x60;loyalty.paymentcontainers&#x60;
    * @return object
   **/
   public String getObject() {
@@ -43,7 +43,7 @@ public class LoyaltyMerchantcardsDTOPaymentContainer {
   }
 
    /**
-   * Id of payment container
+   * Loyalty Payment Container ID
    * @return id
   **/
   public String getId() {
@@ -60,7 +60,7 @@ public class LoyaltyMerchantcardsDTOPaymentContainer {
   }
 
    /**
-   * Type of payment container
+   * Payment container type
    * @return type
   **/
   public String getType() {

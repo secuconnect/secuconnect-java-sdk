@@ -47,7 +47,7 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
   }
 
    /**
-   * Result has true or false value
+   * Whether the card is valid
    * @return valid
   **/
   public Boolean getValid() {
@@ -64,7 +64,7 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
   }
 
    /**
-   * The total cash balance of the card
+   * Total money balance; in the smallest currency unit (e. g. Euro Cent)
    * @return balance
   **/
   public Integer getBalance() {
@@ -81,7 +81,7 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
   }
 
    /**
-   * The total points balance of the card
+   * Points balance
    * @return points
   **/
   public Integer getPoints() {
@@ -98,7 +98,7 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
   }
 
    /**
-   * Result has true or false value
+   * Whether a new passcode has been set
    * @return newPasscode
   **/
   public Boolean getNewPasscode() {
@@ -182,7 +182,7 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
   }
 
    /**
-   * Result has true or false value
+   * Whether the card can be overdrawn (&#x60;true&#x60;) or not (&#x60;false&#x60;)
    * @return limitAllowed
   **/
   public Boolean getLimitAllowed() {
@@ -199,7 +199,7 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
   }
 
    /**
-   * A formatted string of the limit in euro with currency code
+   * Formatted overdraft limit (amount and currency unit)
    * @return limitStr
   **/
   public String getLimitStr() {
@@ -216,7 +216,7 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
   }
 
    /**
-   * How much the card balance can be negative, zero means unlimited in case limit_allowed is true
+   * Overdraft limit in the smallest currency unit (e. g. Euro Cent)
    * @return limit
   **/
   public Integer getLimit() {

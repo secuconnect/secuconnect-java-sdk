@@ -14,12 +14,6 @@ public class LoyaltyCustomersDTO {
   @SerializedName("merchant_contact")
   protected Contact merchantContact = null;
 
-  @SerializedName("age")
-  protected Integer age = null;
-
-  @SerializedName("days_until_birthday")
-  protected Integer daysUntilBirthday = null;
-
   @SerializedName("customernumber")
   protected String customernumber = null;
 
@@ -64,40 +58,6 @@ public class LoyaltyCustomersDTO {
 
   public void setMerchantContact(Contact merchantContact) {
     this.merchantContact = merchantContact;
-  }
-
-  public LoyaltyCustomersDTO age(Integer age) {
-    this.age = age;
-    return this;
-  }
-
-   /**
-   * Age in full years
-   * @return age
-  **/
-  public Integer getAge() {
-    return age;
-  }
-
-  public void setAge(Integer age) {
-    this.age = age;
-  }
-
-  public LoyaltyCustomersDTO daysUntilBirthday(Integer daysUntilBirthday) {
-    this.daysUntilBirthday = daysUntilBirthday;
-    return this;
-  }
-
-   /**
-   * Days until the next birthday
-   * @return daysUntilBirthday
-  **/
-  public Integer getDaysUntilBirthday() {
-    return daysUntilBirthday;
-  }
-
-  public void setDaysUntilBirthday(Integer daysUntilBirthday) {
-    this.daysUntilBirthday = daysUntilBirthday;
   }
 
   public LoyaltyCustomersDTO customernumber(String customernumber) {
@@ -179,8 +139,6 @@ public class LoyaltyCustomersDTO {
     LoyaltyCustomersDTO loyaltyCustomersDTO = (LoyaltyCustomersDTO) o;
     return Objects.equals(this.merchant, loyaltyCustomersDTO.merchant) &&
         Objects.equals(this.merchantContact, loyaltyCustomersDTO.merchantContact) &&
-        Objects.equals(this.age, loyaltyCustomersDTO.age) &&
-        Objects.equals(this.daysUntilBirthday, loyaltyCustomersDTO.daysUntilBirthday) &&
         Objects.equals(this.customernumber, loyaltyCustomersDTO.customernumber) &&
         Objects.equals(this.note, loyaltyCustomersDTO.note) &&
         Objects.equals(this.consentForCommunication, loyaltyCustomersDTO.consentForCommunication) &&
@@ -189,7 +147,7 @@ public class LoyaltyCustomersDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, merchantContact, age, daysUntilBirthday, customernumber, note, consentForCommunication, additionalData);
+    return Objects.hash(merchant, merchantContact, customernumber, note, consentForCommunication, additionalData);
   }
 
   @Override
@@ -198,8 +156,6 @@ public class LoyaltyCustomersDTO {
     sb.append("class LoyaltyCustomersDTO {\n");
     sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
     sb.append("    merchantContact: ").append(toIndentedString(merchantContact)).append("\n");
-    sb.append("    age: ").append(toIndentedString(age)).append("\n");
-    sb.append("    daysUntilBirthday: ").append(toIndentedString(daysUntilBirthday)).append("\n");
     sb.append("    customernumber: ").append(toIndentedString(customernumber)).append("\n");
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("    consentForCommunication: ").append(toIndentedString(consentForCommunication)).append("\n");

@@ -46,7 +46,7 @@ public class LoyaltyMerchantcardsDTOCustomer {
   }
 
    /**
-   * Customer number
+   * Customer number at the merchant&#x27;s site
    * @return customernumber
   **/
   public String getCustomernumber() {
@@ -80,7 +80,7 @@ public class LoyaltyMerchantcardsDTOCustomer {
   }
 
    /**
-   * Consent for communication setting
+   * Whether the customer has given consent for communication or not:  - &#x60;\&quot;accepted\&quot;&#x60; - &#x60;\&quot;declined\&quot;&#x60; - &#x60;\&quot;not_set\&quot;&#x60;
    * @return consentForCommunication
   **/
   public String getConsentForCommunication() {
@@ -97,7 +97,7 @@ public class LoyaltyMerchantcardsDTOCustomer {
   }
 
    /**
-   * additional data properties
+   * Custom additional data
    * @return additionalData
   **/
   public Object getAdditionalData() {
