@@ -11,7 +11,7 @@ public class LoyaltyMerchantcardsDTOLock {
   protected String lockStatus = null;
 
   @SerializedName("reason")
-  protected String reason = null;
+  protected Integer reason = null;
 
   @SerializedName("note")
   protected String note = null;
@@ -22,7 +22,7 @@ public class LoyaltyMerchantcardsDTOLock {
   }
 
    /**
-   * Lock status
+   * Lock status:  - &#x60;\&quot;locked\&quot;&#x60; - &#x60;\&quot;unlocked\&quot;&#x60;
    * @return lockStatus
   **/
   public String getLockStatus() {
@@ -33,20 +33,20 @@ public class LoyaltyMerchantcardsDTOLock {
     this.lockStatus = lockStatus;
   }
 
-  public LoyaltyMerchantcardsDTOLock reason(String reason) {
+  public LoyaltyMerchantcardsDTOLock reason(Integer reason) {
     this.reason = reason;
     return this;
   }
 
    /**
-   * Lock reason
+   * Lock reason:  - &#x60;1&#x60; &#x3D; Lost - &#x60;2&#x60; &#x3D; Defect - &#x60;3&#x60; &#x3D; Claims, - &#x60;6&#x60; &#x3D; Expired - &#x60;8&#x60; &#x3D; Not activated
    * @return reason
   **/
-  public String getReason() {
+  public Integer getReason() {
     return reason;
   }
 
-  public void setReason(String reason) {
+  public void setReason(Integer reason) {
     this.reason = reason;
   }
 
@@ -56,7 +56,7 @@ public class LoyaltyMerchantcardsDTOLock {
   }
 
    /**
-   * Lock note
+   * Human readable note
    * @return note
   **/
   public String getNote() {

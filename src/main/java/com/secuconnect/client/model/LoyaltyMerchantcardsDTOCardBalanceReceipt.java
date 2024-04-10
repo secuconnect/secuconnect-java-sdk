@@ -19,7 +19,7 @@ public class LoyaltyMerchantcardsDTOCardBalanceReceipt {
   }
 
    /**
-   * Loyalty Card number
+   * Number on card
    * @return cardnumber
   **/
   public Integer getCardnumber() {
@@ -36,7 +36,7 @@ public class LoyaltyMerchantcardsDTOCardBalanceReceipt {
   }
 
    /**
-   * Terminal id
+   * Terminal ID
    * @return terminalId
   **/
   public String getTerminalId() {

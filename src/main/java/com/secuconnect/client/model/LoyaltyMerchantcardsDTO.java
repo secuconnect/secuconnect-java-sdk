@@ -45,7 +45,7 @@ public class LoyaltyMerchantcardsDTO {
   }
 
    /**
-   * Loyalty card id
+   * Loyalty Card ID
    * @return card
   **/
   public String getCard() {
@@ -62,7 +62,7 @@ public class LoyaltyMerchantcardsDTO {
   }
 
    /**
-   * Loyalty payment container id
+   * Loyalty Payment Container ID
    * @return paymentContainer
   **/
   public String getPaymentContainer() {
@@ -79,7 +79,7 @@ public class LoyaltyMerchantcardsDTO {
   }
 
    /**
-   * Created by general merchant or not
+   * Whether the card was created by the merchant
    * @return createdByMerchant
   **/
   public Boolean getCreatedByMerchant() {
@@ -96,7 +96,7 @@ public class LoyaltyMerchantcardsDTO {
   }
 
    /**
-   * Used by general merchant or not
+   * Whether the card was used by the merchant
    * @return usedByMerchant
   **/
   public Boolean getUsedByMerchant() {

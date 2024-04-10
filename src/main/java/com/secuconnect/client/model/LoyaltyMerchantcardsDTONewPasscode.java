@@ -17,7 +17,7 @@ public class LoyaltyMerchantcardsDTONewPasscode extends LoyaltyMerchantcardsDTOV
   }
 
    /**
-   * Loyalty Card passcode
+   * Passcode
    * @return passcode
   **/
   public Integer getPasscode() {

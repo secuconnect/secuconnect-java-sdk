@@ -31,14 +31,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LoyaltyMerchantcardsApi {
+public class LoyaltyMerchantCardsApi {
     private ApiClient apiClient;
 
-    public LoyaltyMerchantcardsApi() {
+    public LoyaltyMerchantCardsApi() {
         this(Environment.getGlobalEnv().getApiClient());
     }
 
-    public LoyaltyMerchantcardsApi(ApiClient apiClient) {
+    public LoyaltyMerchantCardsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -52,8 +52,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for cardBalanceReceipt
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card &amp; current terminal
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and terminal ID
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -98,10 +98,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Get card balance receipt
-     * Get card balance receipt and information about limit data and passcode protection
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card &amp; current terminal
+     * Get balance receipt
+     * Returns a receipt about the card balance. Returns also some more card details in additional fields.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and terminal ID
      * @return LoyaltyMerchantcardsCardBalanceReceipt
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -111,10 +111,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Get card balance receipt
-     * Get card balance receipt and information about limit data and passcode protection
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card &amp; current terminal
+     * Get balance receipt
+     * Returns a receipt about the card balance. Returns also some more card details in additional fields.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and terminal ID
      * @return ApiResponse&lt;LoyaltyMerchantcardsCardBalanceReceipt&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -125,10 +125,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Get card balance receipt (asynchronously)
-     * Get card balance receipt and information about limit data and passcode protection
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card &amp; current terminal
+     * Get balance receipt (asynchronously)
+     * Returns a receipt about the card balance. Returns also some more card details in additional fields.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and terminal ID
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -142,8 +142,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for checkCsc
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and security code
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -188,10 +188,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Check CSC
-     * Check CSC
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Check security code
+     * Checks the Card Security Code (CSC).
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and security code
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -201,10 +201,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Check CSC
-     * Check CSC
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Check security code
+     * Checks the Card Security Code (CSC).
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and security code
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -215,10 +215,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Check CSC (asynchronously)
-     * Check CSC
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Check security code (asynchronously)
+     * Checks the Card Security Code (CSC).
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and security code
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -232,7 +232,7 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for checkPassCode
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @param body Information about card
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -279,8 +279,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Check passcode
-     * Function to check the Passcode card with cardnumber
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
+     * Checks the passcode for the given Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @param body Information about card
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -292,8 +292,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Check passcode
-     * Function to check the Passcode card with cardnumber
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
+     * Checks the passcode for the given Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @param body Information about card
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -306,8 +306,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Check passcode (asynchronously)
-     * Function to check the Passcode card with cardnumber
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
+     * Checks the passcode for the given Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @param body Information about card
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -322,9 +322,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for createMerchantcards
-     * @param generalMerchantId General merchant id (required)
-     * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount and customer properties
+     * @param generalMerchantId General Merchant ID (required)
+     * @param loyaltyCardgroupId Loyalty Card Group ID (required)
+     * @param body Number of cards and customer details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -374,11 +374,11 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Create multiple merchant cards
-     * Function to create multiple merchantcards for given merchant with given cardgroup
-     * @param generalMerchantId General merchant id (required)
-     * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount and customer properties
+     * Create multiple cards
+     * Creates multiple Merchant Cards for the given merchant having the given card group.  You can either create one card with customer details, or multiple cards without it.
+     * @param generalMerchantId General Merchant ID (required)
+     * @param loyaltyCardgroupId Loyalty Card Group ID (required)
+     * @param body Number of cards and customer details
      * @return List&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -388,11 +388,11 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Create multiple merchant cards
-     * Function to create multiple merchantcards for given merchant with given cardgroup
-     * @param generalMerchantId General merchant id (required)
-     * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount and customer properties
+     * Create multiple cards
+     * Creates multiple Merchant Cards for the given merchant having the given card group.  You can either create one card with customer details, or multiple cards without it.
+     * @param generalMerchantId General Merchant ID (required)
+     * @param loyaltyCardgroupId Loyalty Card Group ID (required)
+     * @param body Number of cards and customer details
      * @return ApiResponse&lt;List&lt;LoyaltyMerchantcardsProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -403,11 +403,11 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Create multiple merchant cards (asynchronously)
-     * Function to create multiple merchantcards for given merchant with given cardgroup
-     * @param generalMerchantId General merchant id (required)
-     * @param loyaltyCardgroupId Loyalty card group id (required)
-     * @param body Cards amount and customer properties
+     * Create multiple cards (asynchronously)
+     * Creates multiple Merchant Cards for the given merchant having the given card group.  You can either create one card with customer details, or multiple cards without it.
+     * @param generalMerchantId General Merchant ID (required)
+     * @param loyaltyCardgroupId Loyalty Card Group ID (required)
+     * @param body Number of cards and customer details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -421,8 +421,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for executeTransaction
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Transaction details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -467,10 +467,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Execute transaction from SDK
-     * Execute transaction from SDK
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties
+     * Execute transaction
+     * Executes a loyalty transaction. Intended to by used from SDK.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Transaction details
      * @return LoyaltyMerchantcardsProductWithReceiptModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -480,10 +480,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Execute transaction from SDK
-     * Execute transaction from SDK
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties
+     * Execute transaction
+     * Executes a loyalty transaction. Intended to by used from SDK.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Transaction details
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductWithReceiptModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -494,10 +494,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Execute transaction from SDK (asynchronously)
-     * Execute transaction from SDK
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Transaction properties
+     * Execute transaction (asynchronously)
+     * Executes a loyalty transaction. Intended to by used from SDK.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Transaction details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -565,8 +565,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Find Loyalty MerchantCard
-     * Returns the Loyalty MerchantCard matching the given criteria.
+     * Find Loyalty Merchant Cards
+     * Returns the Loyalty Merchant Cards matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -581,8 +581,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Find Loyalty MerchantCard
-     * Returns the Loyalty MerchantCard matching the given criteria.
+     * Find Loyalty Merchant Cards
+     * Returns the Loyalty Merchant Cards matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -598,8 +598,8 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Find Loyalty MerchantCard (asynchronously)
-     * Returns the Loyalty MerchantCard matching the given criteria.
+     * Find Loyalty Merchant Cards (asynchronously)
+     * Returns the Loyalty Merchant Cards matching the given criteria.
      * @param count The maximum number of items to return
      * @param offset The position within the whole result set to start returning items (zero-based)
      * @param fields List of fields to include in the result, all others will be filtered out. Nested properties can be accessed with this notation: &#x60;prop1.prop2&#x60;.
@@ -618,7 +618,7 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for getLock
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -664,8 +664,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Read lock details
-     * Returns the lock details of the specified Loyalty Merchantcard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
+     * Returns the lock details of the specified Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @return LoyaltyMerchantcardsDTOLock
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -676,8 +676,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Read lock details
-     * Returns the lock details of the specified Loyalty Merchantcard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
+     * Returns the lock details of the specified Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @return ApiResponse&lt;LoyaltyMerchantcardsDTOLock&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -689,8 +689,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Read lock details (asynchronously)
-     * Returns the lock details of the specified Loyalty Merchantcard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
+     * Returns the lock details of the specified Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -704,7 +704,7 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for getOne
-     * @param loyaltyMerchantCardId Search one by provided id (required)
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -749,9 +749,9 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Read Loyalty MerchantCard
-     * Returns the specified Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Search one by provided id (required)
+     * Read Loyalty Merchant Card
+     * Returns the specified Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -761,9 +761,9 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Read Loyalty MerchantCard
-     * Returns the specified Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Search one by provided id (required)
+     * Read Loyalty Merchant Card
+     * Returns the specified Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -774,9 +774,9 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Read Loyalty MerchantCard (asynchronously)
-     * Returns the specified Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Search one by provided id (required)
+     * Read Loyalty Merchant Card (asynchronously)
+     * Returns the specified Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -790,8 +790,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for getVirtualTerminalData
-     * @param loyaltyMerchantCardId Merchant card id (required)
-     * @param loyaltyMerchantId Merchant id (required)
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyMerchantId Loyalty Merchant ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -842,9 +842,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Get virtual terminal data
-     * Get virtual terminal data for merchant
-     * @param loyaltyMerchantCardId Merchant card id (required)
-     * @param loyaltyMerchantId Merchant id (required)
+     * Returns the virtual terminal data for the merchant.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyMerchantId Loyalty Merchant ID (required)
      * @return VirtualTerminalDataModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -855,9 +855,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Get virtual terminal data
-     * Get virtual terminal data for merchant
-     * @param loyaltyMerchantCardId Merchant card id (required)
-     * @param loyaltyMerchantId Merchant id (required)
+     * Returns the virtual terminal data for the merchant.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyMerchantId Loyalty Merchant ID (required)
      * @return ApiResponse&lt;VirtualTerminalDataModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -869,9 +869,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Get virtual terminal data (asynchronously)
-     * Get virtual terminal data for merchant
-     * @param loyaltyMerchantCardId Merchant card id (required)
-     * @param loyaltyMerchantId Merchant id (required)
+     * Returns the virtual terminal data for the merchant.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyMerchantId Loyalty Merchant ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -885,8 +885,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for lock
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Lock details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -932,9 +932,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Lock card
-     * Locks the specified Loyalty Merchantcard, so that it cannot be used.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock
+     * Locks the specified Loyalty Merchant Card, so that it cannot be used.  Works only for Merchant Cards not being locked.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Lock details
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -945,9 +945,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Lock card
-     * Locks the specified Loyalty Merchantcard, so that it cannot be used.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock
+     * Locks the specified Loyalty Merchant Card, so that it cannot be used.  Works only for Merchant Cards not being locked.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Lock details
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -959,9 +959,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Lock card (asynchronously)
-     * Locks the specified Loyalty Merchantcard, so that it cannot be used.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about lock
+     * Locks the specified Loyalty Merchant Card, so that it cannot be used.  Works only for Merchant Cards not being locked.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Lock details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -975,8 +975,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for newPassCode
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and new passcode
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1022,9 +1022,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Set new passcode
-     * Function to save new given passcode for given merchantcard identified by cardnumber
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Sets a passcode for the given Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and new passcode
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1035,9 +1035,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Set new passcode
-     * Function to save new given passcode for given merchantcard identified by cardnumber
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Sets a passcode for the given Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and new passcode
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1049,9 +1049,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Set new passcode (asynchronously)
-     * Function to save new given passcode for given merchantcard identified by cardnumber
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Sets a passcode for the given Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and new passcode
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1065,8 +1065,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for registerCustomer
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Loyalty Customer details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1112,9 +1112,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Register customer
-     * Creates a new Loyalty Customer, and assigns it to the specified Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties
+     * Creates a new Loyalty Customer, and assigns it to the specified Loyalty Merchant Card.  This can only be done once per Merchant Card. But you can update it using the Loyalty Customer operations.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Loyalty Customer details
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1125,9 +1125,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Register customer
-     * Creates a new Loyalty Customer, and assigns it to the specified Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties
+     * Creates a new Loyalty Customer, and assigns it to the specified Loyalty Merchant Card.  This can only be done once per Merchant Card. But you can update it using the Loyalty Customer operations.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Loyalty Customer details
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1139,9 +1139,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Register customer (asynchronously)
-     * Creates a new Loyalty Customer, and assigns it to the specified Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty customer properties
+     * Creates a new Loyalty Customer, and assigns it to the specified Loyalty Merchant Card.  This can only be done once per Merchant Card. But you can update it using the Loyalty Customer operations.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Loyalty Customer details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1155,8 +1155,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for resetPassCode
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and current passcode
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1202,9 +1202,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Reset passcode
-     * Function to reset a passcode for given merchantcard
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Requests to set a new passcode for the given Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and current passcode
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1215,9 +1215,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Reset passcode
-     * Function to reset a passcode for given merchantcard
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Requests to set a new passcode for the given Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and current passcode
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1229,9 +1229,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Reset passcode (asynchronously)
-     * Function to reset a passcode for given merchantcard
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Requests to set a new passcode for the given Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Card number and current passcode
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1245,8 +1245,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for setCustomer
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param loyaltyCustomerId Loyalty customer id (required)
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1297,9 +1297,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Set customer
-     * Assigns the specified Loyalty Customer to the specified Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param loyaltyCustomerId Loyalty customer id (required)
+     * Assigns an existing Loyalty Customer to the specified Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1310,9 +1310,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Set customer
-     * Assigns the specified Loyalty Customer to the specified Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param loyaltyCustomerId Loyalty customer id (required)
+     * Assigns an existing Loyalty Customer to the specified Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1324,9 +1324,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Set customer (asynchronously)
-     * Assigns the specified Loyalty Customer to the specified Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param loyaltyCustomerId Loyalty customer id (required)
+     * Assigns an existing Loyalty Customer to the specified Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyCustomerId Loyalty Customer ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1340,13 +1340,12 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for unlock
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call unlockCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body) throws ApiException {
-        Object localVarPostBody = body;
+    public Call unlockCall(String loyaltyMerchantCardId) throws ApiException {
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock"
@@ -1366,7 +1365,7 @@ public class LoyaltyMerchantcardsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1376,53 +1375,50 @@ public class LoyaltyMerchantcardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call unlockValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body) throws ApiException {
+    private Call unlockValidateBeforeCall(String loyaltyMerchantCardId) throws ApiException {
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling unlock(Async)");
         }
 
-        return unlockCall(loyaltyMerchantCardId, body);
+        return unlockCall(loyaltyMerchantCardId);
     }
 
     /**
      * Unlock card
-     * Releases the lock of the specified Loyalty Merchantcards, so that it can be used again.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock
+     * Unlocks the specified Loyalty Merchant Card, so that it can be used again.  Works only for Merchant Cards being locked.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LoyaltyMerchantcardsProductModel unlock(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body) throws ApiException {
-        ApiResponse<LoyaltyMerchantcardsProductModel> resp = unlockWithHttpInfo(loyaltyMerchantCardId, body);
+    public LoyaltyMerchantcardsProductModel unlock(String loyaltyMerchantCardId) throws ApiException {
+        ApiResponse<LoyaltyMerchantcardsProductModel> resp = unlockWithHttpInfo(loyaltyMerchantCardId);
         return resp.getData();
     }
 
     /**
      * Unlock card
-     * Releases the lock of the specified Loyalty Merchantcards, so that it can be used again.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock
+     * Unlocks the specified Loyalty Merchant Card, so that it can be used again.  Works only for Merchant Cards being locked.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LoyaltyMerchantcardsProductModel> unlockWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body) throws ApiException {
-        Call call = unlockValidateBeforeCall(loyaltyMerchantCardId, body);
+    public ApiResponse<LoyaltyMerchantcardsProductModel> unlockWithHttpInfo(String loyaltyMerchantCardId) throws ApiException {
+        Call call = unlockValidateBeforeCall(loyaltyMerchantCardId);
         Type localVarReturnType = new TypeToken<LoyaltyMerchantcardsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Unlock card (asynchronously)
-     * Releases the lock of the specified Loyalty Merchantcards, so that it can be used again.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about unlock
+     * Unlocks the specified Loyalty Merchant Card, so that it can be used again.  Works only for Merchant Cards being locked.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call unlockAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body, final ApiCallback<LoyaltyMerchantcardsProductModel> callback) throws ApiException {
-        Call call = unlockValidateBeforeCall(loyaltyMerchantCardId, body);
+    public Call unlockAsync(String loyaltyMerchantCardId, final ApiCallback<LoyaltyMerchantcardsProductModel> callback) throws ApiException {
+        Call call = unlockValidateBeforeCall(loyaltyMerchantCardId);
         Type localVarReturnType = new TypeToken<LoyaltyMerchantcardsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1430,8 +1426,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for updateCardGroupOfMerchantCard
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param loyaltyCardGroupId Loyalty card group id (required)
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1482,9 +1478,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Set card group
-     * Sets the Loyalty CardGroup, and returns the updated Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param loyaltyCardGroupId Loyalty card group id (required)
+     * Sets the Loyalty Card Group, and returns the updated Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1495,9 +1491,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Set card group
-     * Sets the Loyalty CardGroup, and returns the updated Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param loyaltyCardGroupId Loyalty card group id (required)
+     * Sets the Loyalty Card Group, and returns the updated Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1509,9 +1505,9 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Set card group (asynchronously)
-     * Sets the Loyalty CardGroup, and returns the updated Loyalty MerchantCard.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param loyaltyCardGroupId Loyalty card group id (required)
+     * Sets the Loyalty Card Group, and returns the updated Loyalty Merchant Card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param loyaltyCardGroupId Loyalty Card Group ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1525,8 +1521,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for updateMerchantCard
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Merchant Card details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1571,10 +1567,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Update Loyalty MerchantCard
-     * Updates the specified Loyalty MerchantCard with the given data.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties
+     * Update Loyalty Merchant Card
+     * Updates the specified Loyalty Merchant Card with the given data.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Merchant Card details
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1584,10 +1580,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Update Loyalty MerchantCard
-     * Updates the specified Loyalty MerchantCard with the given data.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties
+     * Update Loyalty Merchant Card
+     * Updates the specified Loyalty Merchant Card with the given data.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Merchant Card details
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1598,10 +1594,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Update Loyalty MerchantCard (asynchronously)
-     * Updates the specified Loyalty MerchantCard with the given data.
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Loyalty merchant card properties
+     * Update Loyalty Merchant Card (asynchronously)
+     * Updates the specified Loyalty Merchant Card with the given data.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Merchant Card details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1615,8 +1611,8 @@ public class LoyaltyMerchantcardsApi {
 
     /**
      * Build call for validateMerchantCard
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Merchant ID and card number
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1661,10 +1657,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Check the merchant card
-     * Function to check the merchant card
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Validate merchant card
+     * Returns whether it is a Merchant Card for the given Merchant and number on card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Merchant ID and card number
      * @return LoyaltyMerchantcardsValidateMerchantCard
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1674,10 +1670,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Check the merchant card
-     * Function to check the merchant card
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Validate merchant card
+     * Returns whether it is a Merchant Card for the given Merchant and number on card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Merchant ID and card number
      * @return ApiResponse&lt;LoyaltyMerchantcardsValidateMerchantCard&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1688,10 +1684,10 @@ public class LoyaltyMerchantcardsApi {
     }
 
     /**
-     * Check the merchant card (asynchronously)
-     * Function to check the merchant card
-     * @param loyaltyMerchantCardId Loyalty merchant card id (required)
-     * @param body Information about card
+     * Validate merchant card (asynchronously)
+     * Returns whether it is a Merchant Card for the given Merchant and number on card.
+     * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Merchant ID and card number
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

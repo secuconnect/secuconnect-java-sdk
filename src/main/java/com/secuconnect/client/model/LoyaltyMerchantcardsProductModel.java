@@ -12,7 +12,7 @@ import com.secuconnect.client.model.ProductInstanceUID;
 import java.util.Objects;
 
 /**
- * A secucard customer card or voucher in relation to a merchant.  The credit balances are always managed separately for each merchant. Thus one secucard Loyalty Card can have several Merchant Cards. This means that the same card can be used for different merchants at the same time.  In the case of acceptance points, the credit balance is managed for the very merchant the card was issued for. An example for this is a voucher purchased for a shopping center and accepted by its merchants. The balances are accounted in relation to the shopping center.
+ * Merchant Card
  */
 public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   @SerializedName("l")
@@ -328,7 +328,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Loyalty merchant card points
+   * Points balance
    * @return points
   **/
   public Integer getPoints() {
@@ -379,7 +379,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Stock status
+   * Stock status:  - &#x60;\&quot;active\&quot;&#x60; - &#x60;\&quot;inactive\&quot;&#x60; - &#x60;\&quot;stored\&quot;&#x60;
    * @return stockStatus
   **/
   public String getStockStatus() {
@@ -396,7 +396,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Lock status
+   * Lock status:  - &#x60;\&quot;locked\&quot;&#x60; - &#x60;\&quot;unlocked\&quot;&#x60;
    * @return lockStatus
   **/
   public String getLockStatus() {
@@ -447,7 +447,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Whether the card is base card
+   * Whether the card is a base card (&#x60;true&#x60;) or not (&#x60;false&#x60;)
    * @return isBaseCard
   **/
   public Boolean getIsBaseCard() {
@@ -464,7 +464,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Whether the card has a passcode set (1) or not (0)
+   * Whether the card has a passcode set (&#x60;1&#x60;) or not (&#x60;0&#x60;)
    * @return passcode
   **/
   public Integer getPasscode() {

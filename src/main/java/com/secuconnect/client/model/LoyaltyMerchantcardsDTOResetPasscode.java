@@ -19,7 +19,7 @@ public class LoyaltyMerchantcardsDTOResetPasscode {
   }
 
    /**
-   * Loyalty Card number
+   * Number on card
    * @return cardnumber
   **/
   public Integer getCardnumber() {
@@ -36,7 +36,7 @@ public class LoyaltyMerchantcardsDTOResetPasscode {
   }
 
    /**
-   * Loyalty Card passcode
+   * Old passcode
    * @return passcode
   **/
   public Integer getPasscode() {

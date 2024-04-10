@@ -20,7 +20,9 @@ public class LoyaltyMerchantcardsDTOCreateMerchantcards {
   }
 
    /**
-   * Cards amount
+   * Number of cards to create
+   * minimum: 1
+   * maximum: 1000
    * @return cardsAmount
   **/
   public Integer getCardsAmount() {
