@@ -16,7 +16,7 @@ public class PrepaidMappingZvtItem {
   }
 
    /**
-   * prepaid item id
+   * Prepaid Item ID
    * @return id
   **/
   public Integer getId() {

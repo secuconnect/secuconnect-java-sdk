@@ -11,7 +11,7 @@ public class PrepaidZvtDTO {
   protected Integer amount = null;
 
   @SerializedName("product_id")
-  protected Integer productId = null;
+  protected String productId = null;
 
   public PrepaidZvtDTO amount(Integer amount) {
     this.amount = amount;
@@ -30,20 +30,20 @@ public class PrepaidZvtDTO {
     this.amount = amount;
   }
 
-  public PrepaidZvtDTO productId(Integer productId) {
+  public PrepaidZvtDTO productId(String productId) {
     this.productId = productId;
     return this;
   }
 
    /**
-   * Product identifier
+   * Product ID of the cash register (ECR); can be padded with leading zeros
    * @return productId
   **/
-  public Integer getProductId() {
+  public String getProductId() {
     return productId;
   }
 
-  public void setProductId(Integer productId) {
+  public void setProductId(String productId) {
     this.productId = productId;
   }
 

@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * PrepaidMappingZvt
  */
-public class PrepaidMappingZvt {
+public class PrepaidMappingZvt implements PrepaidMappingZvtResponse {
   @SerializedName("item")
   protected PrepaidMappingZvtItem item = null;
 
@@ -37,7 +37,7 @@ public class PrepaidMappingZvt {
   }
 
    /**
-   * Vtc id
+   * VTC ID
    * @return vtcId
   **/
   public String getVtcId() {

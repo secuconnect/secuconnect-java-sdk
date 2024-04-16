@@ -2,7 +2,7 @@ package com.secuconnect.client.api;
 
 import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
-import com.secuconnect.client.model.PrepaidMappingZvt;
+import com.secuconnect.client.model.PrepaidMappingZvtResponse;
 import com.secuconnect.client.model.PrepaidZvtDTO;
 import com.secuconnect.client.model.ProductExceptionPayload;
 import okhttp3.Call;
@@ -35,7 +35,7 @@ public class PrepaidContractsApi {
     /**
      * Build call for mappingZvt
      * @param prepaidContractId Prepaid contract id (required)
-     * @param body Prepaid transaction input properties
+     * @param body Product ID and amount
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -81,43 +81,43 @@ public class PrepaidContractsApi {
 
     /**
      * Get Prepaid Item ID
-     * Gets prepaid item id from product id which is configured in prepaid contracts
+     * Returns the Prepaid Item with the given product ID and amount that is configured for this contract.
      * @param prepaidContractId Prepaid contract id (required)
-     * @param body Prepaid transaction input properties
-     * @return PrepaidMappingZvt
+     * @param body Product ID and amount
+     * @return PrepaidMappingZvtResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PrepaidMappingZvt mappingZvt(String prepaidContractId, PrepaidZvtDTO body) throws ApiException {
-        ApiResponse<PrepaidMappingZvt> resp = mappingZvtWithHttpInfo(prepaidContractId, body);
+    public PrepaidMappingZvtResponse mappingZvt(String prepaidContractId, PrepaidZvtDTO body) throws ApiException {
+        ApiResponse<PrepaidMappingZvtResponse> resp = mappingZvtWithHttpInfo(prepaidContractId, body);
         return resp.getData();
     }
 
     /**
      * Get Prepaid Item ID
-     * Gets prepaid item id from product id which is configured in prepaid contracts
+     * Returns the Prepaid Item with the given product ID and amount that is configured for this contract.
      * @param prepaidContractId Prepaid contract id (required)
-     * @param body Prepaid transaction input properties
-     * @return ApiResponse&lt;PrepaidMappingZvt&gt;
+     * @param body Product ID and amount
+     * @return ApiResponse&lt;PrepaidMappingZvtResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PrepaidMappingZvt> mappingZvtWithHttpInfo(String prepaidContractId, PrepaidZvtDTO body) throws ApiException {
+    public ApiResponse<PrepaidMappingZvtResponse> mappingZvtWithHttpInfo(String prepaidContractId, PrepaidZvtDTO body) throws ApiException {
         Call call = mappingZvtValidateBeforeCall(prepaidContractId, body);
-        Type localVarReturnType = new TypeToken<PrepaidMappingZvt>(){}.getType();
+        Type localVarReturnType = new TypeToken<PrepaidMappingZvtResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Get Prepaid Item ID (asynchronously)
-     * Gets prepaid item id from product id which is configured in prepaid contracts
+     * Returns the Prepaid Item with the given product ID and amount that is configured for this contract.
      * @param prepaidContractId Prepaid contract id (required)
-     * @param body Prepaid transaction input properties
+     * @param body Product ID and amount
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call mappingZvtAsync(String prepaidContractId, PrepaidZvtDTO body, final ApiCallback<PrepaidMappingZvt> callback) throws ApiException {
+    public Call mappingZvtAsync(String prepaidContractId, PrepaidZvtDTO body, final ApiCallback<PrepaidMappingZvtResponse> callback) throws ApiException {
         Call call = mappingZvtValidateBeforeCall(prepaidContractId, body);
-        Type localVarReturnType = new TypeToken<PrepaidMappingZvt>(){}.getType();
+        Type localVarReturnType = new TypeToken<PrepaidMappingZvtResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
