@@ -6,10 +6,10 @@ import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.AssignedBy;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.GeneralMerchantsLegalDetails;
+import com.secuconnect.client.model.GeneralMerchantsProductModel;
 import com.secuconnect.client.model.GeneralMerchantsUrls;
 import com.secuconnect.client.model.GeneralMerchantsUser;
 import com.secuconnect.client.model.InvitedBy;
-import com.secuconnect.client.model.ParentModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -46,7 +46,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   protected GeneralMerchantsUser user = null;
 
   @SerializedName("parent")
-  protected ParentModel parent = null;
+  protected GeneralMerchantsProductModel parent = null;
 
   @SerializedName("assigned_by")
   protected List<AssignedBy> assignedBy = null;
@@ -64,7 +64,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
   protected String storeName = null;
 
   @SerializedName("acceptance_points")
-  protected List<BaseProductModel> acceptancePoints = null;
+  protected List<GeneralMerchantsProductModel> acceptancePoints = null;
 
   @SerializedName("two_fa")
   protected String twoFa = null;
@@ -213,7 +213,7 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
     this.user = user;
   }
 
-  public GeneralMerchantsProductModel parent(ParentModel parent) {
+  public GeneralMerchantsProductModel parent(GeneralMerchantsProductModel parent) {
     this.parent = parent;
     return this;
   }
@@ -222,11 +222,11 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
    * Get parent
    * @return parent
   **/
-  public ParentModel getParent() {
+  public GeneralMerchantsProductModel getParent() {
     return parent;
   }
 
-  public void setParent(ParentModel parent) {
+  public void setParent(GeneralMerchantsProductModel parent) {
     this.parent = parent;
   }
 
@@ -347,14 +347,14 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
     this.storeName = storeName;
   }
 
-  public GeneralMerchantsProductModel acceptancePoints(List<BaseProductModel> acceptancePoints) {
+  public GeneralMerchantsProductModel acceptancePoints(List<GeneralMerchantsProductModel> acceptancePoints) {
     this.acceptancePoints = acceptancePoints;
     return this;
   }
 
-  public GeneralMerchantsProductModel addAcceptancePointsItem(BaseProductModel acceptancePointsItem) {
+  public GeneralMerchantsProductModel addAcceptancePointsItem(GeneralMerchantsProductModel acceptancePointsItem) {
     if (this.acceptancePoints == null) {
-      this.acceptancePoints = new ArrayList<BaseProductModel>();
+      this.acceptancePoints = new ArrayList<GeneralMerchantsProductModel>();
     }
     this.acceptancePoints.add(acceptancePointsItem);
     return this;
@@ -364,11 +364,11 @@ public class GeneralMerchantsProductModel extends BaseProductModel {
    * Acceptance Points (partner stores)
    * @return acceptancePoints
   **/
-  public List<BaseProductModel> getAcceptancePoints() {
+  public List<GeneralMerchantsProductModel> getAcceptancePoints() {
     return acceptancePoints;
   }
 
-  public void setAcceptancePoints(List<BaseProductModel> acceptancePoints) {
+  public void setAcceptancePoints(List<GeneralMerchantsProductModel> acceptancePoints) {
     this.acceptancePoints = acceptancePoints;
   }
 

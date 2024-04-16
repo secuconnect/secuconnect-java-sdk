@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * ResultBoolean
  */
-public class ResultBoolean {
+public class ResultBoolean implements PrepaidMappingZvtResponse {
   @SerializedName("result")
   protected Boolean result = null;
 

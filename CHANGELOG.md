@@ -19,6 +19,58 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.31.0] - 2024-04-16
+[3.31.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.30.0...3.31.0
+
+- *changed response type*: `PrepaidContractsApi.mappingZvt()` changed from `PrepaidMappingZvt` to `PrepaidMappingZvtResponse`, which inherit from the `PrepaidMappingZvt` (like before) or returns the `ResultBoolean` object
+- *changed element type*: `product_id` changed from `int` to `string` in `PrepaidZvtDTO`
+- *new request element*: `expand` was added to all `getAll()` endpoints
+- *change element type*: `parent` was changed from `ParentModel` to `GeneralMerchantsProductModel` in `GeneralMerchantsProductModel`
+- *change element type*: `acceptance_points` was changed from `BaseProductModel[]` to `GeneralMerchantsProductModel[]` in `GeneralMerchantsProductModel`
+
+### Added
+- `Model.PrepaidMappingZvtResponse`
+
+### Changed
+- `ApiClient`
+- `Environment`
+- `ExceptionBody`
+- `Api.CardprocessingInvoicesApi`
+- `Api.CardprocessingTransactionsApi`
+- `Api.GeneralContractsApi`
+- `Api.GeneralMerchantsApi`
+- `Api.GeneralStoresApi`
+- `Api.LoyaltyCardGroupsApi`
+- `Api.LoyaltyCardsApi`
+- `Api.LoyaltyCustomersApi`
+- `Api.LoyaltyMerchantCardsApi`
+- `Api.LoyaltyTransactionsApi`
+- `Api.PaymentContainersApi`
+- `Api.PaymentContractsApi`
+- `Api.PaymentCustomersApi`
+- `Api.PaymentInvoicesApi`
+- `Api.PaymentMandatesApi`
+- `Api.PaymentPayoutsApi`
+- `Api.PaymentPlansApi`
+- `Api.PaymentSubscriptionsApi`
+- `Api.PaymentTransactionsApi`
+- `Api.PrepaidContractsApi`
+- `Api.PrepaidItemsApi`
+- `Api.PrepaidReportsApi`
+- `Api.PrepaidSalesApi`
+- `Api.ServicesIdentRequestsApi`
+- `Api.ServicesIdentResultsApi`
+- `Api.SmartDevicesApi`
+- `Api.SmartRoutingsApi`
+- `Api.SmartTemplatesApi`
+- `Api.SmartTransactionsApi`
+- `Model.GeneralMerchantsProductModel`
+- `Model.PrepaidMappingZvt`
+- `Model.PrepaidMappingZvtItem`
+- `Model.PrepaidZvtDTO`
+- `Model.ResultBoolean`
+
+
 ## [3.30.0] - 2024-04-10
 [3.30.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.29.0...3.30.0
 
