@@ -22,6 +22,43 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [3.31.0] - 2024-04-16
 [3.31.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.30.0...3.31.0
 
+### Changed
+- `ApiClient`
+- `Environment`
+- `ExceptionBody`
+- `Api.CardprocessingInvoicesApi`
+- `Api.CardprocessingTransactionsApi`
+- `Api.GeneralContractsApi`
+- `Api.GeneralMerchantsApi`
+- `Api.GeneralStoresApi`
+- `Api.LoyaltyCardGroupsApi`
+- `Api.LoyaltyCardsApi`
+- `Api.LoyaltyCustomersApi`
+- `Api.LoyaltyMerchantCardsApi`
+- `Api.LoyaltyTransactionsApi`
+- `Api.PaymentContainersApi`
+- `Api.PaymentContractsApi`
+- `Api.PaymentCustomersApi`
+- `Api.PaymentInvoicesApi`
+- `Api.PaymentMandatesApi`
+- `Api.PaymentPayoutsApi`
+- `Api.PaymentPlansApi`
+- `Api.PaymentSubscriptionsApi`
+- `Api.PaymentTransactionsApi`
+- `Api.PrepaidItemsApi`
+- `Api.PrepaidReportsApi`
+- `Api.PrepaidSalesApi`
+- `Api.ServicesIdentRequestsApi`
+- `Api.ServicesIdentResultsApi`
+- `Api.SmartDevicesApi`
+- `Api.SmartRoutingsApi`
+- `Api.SmartTemplatesApi`
+- `Api.SmartTransactionsApi`
+
+
+## [3.31.0] - 2024-04-16
+[3.31.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.30.0...3.31.0
+
 - *changed response type*: `PrepaidContractsApi.mappingZvt()` changed from `PrepaidMappingZvt` to `PrepaidMappingZvtResponse`, which inherit from the `PrepaidMappingZvt` (like before) or returns the `ResultBoolean` object
 - *changed element type*: `product_id` changed from `int` to `string` in `PrepaidZvtDTO`
 - *new request element*: `expand` was added to all `getAll()` endpoints
