@@ -22,7 +22,7 @@ public class AvailableCountry {
   }
 
    /**
-   * English Translation for Country
+   * Country name in English
    * @return en
   **/
   public String getEn() {
@@ -39,7 +39,7 @@ public class AvailableCountry {
   }
 
    /**
-   * The Iso Code for Country
+   * ISO region code
    * @return isoCode
   **/
   public String getIsoCode() {
@@ -56,7 +56,7 @@ public class AvailableCountry {
   }
 
    /**
-   * German Translation for Country
+   * Country name in German
    * @return de
   **/
   public String getDe() {

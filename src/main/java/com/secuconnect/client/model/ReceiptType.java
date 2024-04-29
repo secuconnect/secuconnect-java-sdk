@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * ReceiptType
+ * Line type
  */
 public class ReceiptType {
   @SerializedName("type")

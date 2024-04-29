@@ -156,7 +156,7 @@ public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
   }
 
    /**
-   * Commission
+   * Get commission
    * @return commission
   **/
   public Integer getCommission() {
@@ -190,7 +190,7 @@ public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
   }
 
    /**
-   * Stock limit max
+   * Get stockLimitMax
    * @return stockLimitMax
   **/
   public Integer getStockLimitMax() {
@@ -207,7 +207,7 @@ public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
   }
 
    /**
-   * Stock limit min
+   * Get stockLimitMin
    * @return stockLimitMin
   **/
   public Integer getStockLimitMin() {
@@ -224,7 +224,7 @@ public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
   }
 
    /**
-   * Taxable
+   * Get taxable
    * @return taxable
   **/
   public Boolean getTaxable() {
@@ -241,7 +241,7 @@ public class PrepaidItemsProductModel extends PrepaidItemsBaseProductModel {
   }
 
    /**
-   * enabled
+   * Get enabled
    * @return enabled
   **/
   public Boolean getEnabled() {

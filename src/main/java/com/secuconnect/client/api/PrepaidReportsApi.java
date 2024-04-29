@@ -38,7 +38,7 @@ public class PrepaidReportsApi {
 
     /**
      * Build call for createReport
-     * @param body 
+     * @param body Reporting details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -79,8 +79,8 @@ public class PrepaidReportsApi {
 
     /**
      * Create Prepaid Report
-     * Creates a new Prepaid Report from the given data.
-     * @param body 
+     * Generates and returns a new Prepaid Report.
+     * @param body Reporting details
      * @return PrepaidReportsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -91,8 +91,8 @@ public class PrepaidReportsApi {
 
     /**
      * Create Prepaid Report
-     * Creates a new Prepaid Report from the given data.
-     * @param body 
+     * Generates and returns a new Prepaid Report.
+     * @param body Reporting details
      * @return ApiResponse&lt;PrepaidReportsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -104,8 +104,8 @@ public class PrepaidReportsApi {
 
     /**
      * Create Prepaid Report (asynchronously)
-     * Creates a new Prepaid Report from the given data.
-     * @param body 
+     * Generates and returns a new Prepaid Report.
+     * @param body Reporting details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -226,7 +226,7 @@ public class PrepaidReportsApi {
 
     /**
      * Build call for getOne
-     * @param prepaidReportsId Prepaid Reports id (required)
+     * @param prepaidReportsId Prepaid Reports ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -273,7 +273,7 @@ public class PrepaidReportsApi {
     /**
      * Read Prepaid Report
      * Returns the specified Prepaid Report.
-     * @param prepaidReportsId Prepaid Reports id (required)
+     * @param prepaidReportsId Prepaid Reports ID (required)
      * @return PrepaidReportsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -285,7 +285,7 @@ public class PrepaidReportsApi {
     /**
      * Read Prepaid Report
      * Returns the specified Prepaid Report.
-     * @param prepaidReportsId Prepaid Reports id (required)
+     * @param prepaidReportsId Prepaid Reports ID (required)
      * @return ApiResponse&lt;PrepaidReportsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -298,7 +298,7 @@ public class PrepaidReportsApi {
     /**
      * Read Prepaid Report (asynchronously)
      * Returns the specified Prepaid Report.
-     * @param prepaidReportsId Prepaid Reports id (required)
+     * @param prepaidReportsId Prepaid Reports ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

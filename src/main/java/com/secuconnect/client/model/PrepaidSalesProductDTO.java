@@ -16,7 +16,7 @@ public class PrepaidSalesProductDTO {
   }
 
    /**
-   * prepaid sales transaction id
+   * Prepaid Sales Transaction ID
    * @return item
   **/
   public String getItem() {

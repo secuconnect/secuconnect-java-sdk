@@ -276,7 +276,7 @@ public class PrepaidReportsProductModel extends ProductInstanceUID {
   }
 
    /**
-   * Get vtcTid
+   * Terminal ID for VTC Virtual Terminal Client (received during onboarding)
    * @return vtcTid
   **/
   public Integer getVtcTid() {
@@ -293,7 +293,7 @@ public class PrepaidReportsProductModel extends ProductInstanceUID {
   }
 
    /**
-   * Report start date
+   * Report start date as ISO 8601 date and time including timezone
    * @return reportFrom
   **/
   public String getReportFrom() {
@@ -310,7 +310,7 @@ public class PrepaidReportsProductModel extends ProductInstanceUID {
   }
 
    /**
-   * Report end date
+   * Report end date as ISO 8601 date and time including timezone
    * @return reportTo
   **/
   public String getReportTo() {
@@ -335,7 +335,7 @@ public class PrepaidReportsProductModel extends ProductInstanceUID {
   }
 
    /**
-   * Receipt header
+   * Receipt body lines
    * @return receipt
   **/
   public List<ReceiptTypeValue> getReceipt() {
@@ -360,7 +360,7 @@ public class PrepaidReportsProductModel extends ProductInstanceUID {
   }
 
    /**
-   * Receipt
+   * Receipt header lines (may be omitted)
    * @return receiptHeader
   **/
   public List<ReceiptTypeValue> getReceiptHeader() {

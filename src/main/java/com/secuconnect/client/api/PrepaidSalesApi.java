@@ -37,7 +37,7 @@ public class PrepaidSalesApi {
 
     /**
      * Build call for addSale
-     * @param body Prepaid transaction input properties
+     * @param body Sale details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -79,7 +79,7 @@ public class PrepaidSalesApi {
     /**
      * Create Prepaid Sale
      * Creates a new Prepaid Sale from the given data.
-     * @param body Prepaid transaction input properties
+     * @param body Sale details
      * @return PrepaidSalesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -91,7 +91,7 @@ public class PrepaidSalesApi {
     /**
      * Create Prepaid Sale
      * Creates a new Prepaid Sale from the given data.
-     * @param body Prepaid transaction input properties
+     * @param body Sale details
      * @return ApiResponse&lt;PrepaidSalesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -104,7 +104,7 @@ public class PrepaidSalesApi {
     /**
      * Create Prepaid Sale (asynchronously)
      * Creates a new Prepaid Sale from the given data.
-     * @param body Prepaid transaction input properties
+     * @param body Sale details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -164,7 +164,7 @@ public class PrepaidSalesApi {
 
     /**
      * Confirm sale
-     * Confirm one prepaid sale
+     * Confirms and executes the specified Prepaid Sale.
      * @param prepaidSaleId Prepaid Sale ID (required)
      * @return PrepaidSalesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -176,7 +176,7 @@ public class PrepaidSalesApi {
 
     /**
      * Confirm sale
-     * Confirm one prepaid sale
+     * Confirms and executes the specified Prepaid Sale.
      * @param prepaidSaleId Prepaid Sale ID (required)
      * @return ApiResponse&lt;PrepaidSalesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -189,7 +189,7 @@ public class PrepaidSalesApi {
 
     /**
      * Confirm sale (asynchronously)
-     * Confirm one prepaid sale
+     * Confirms and executes the specified Prepaid Sale.
      * @param prepaidSaleId Prepaid Sale ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -311,7 +311,7 @@ public class PrepaidSalesApi {
 
     /**
      * Build call for getOne
-     * @param prepaidSaleId Prepaid sale ID (required)
+     * @param prepaidSaleId Prepaid Sale ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -358,7 +358,7 @@ public class PrepaidSalesApi {
     /**
      * Read Prepaid Sale
      * Returns the specified Prepaid Sale.
-     * @param prepaidSaleId Prepaid sale ID (required)
+     * @param prepaidSaleId Prepaid Sale ID (required)
      * @return PrepaidSalesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -370,7 +370,7 @@ public class PrepaidSalesApi {
     /**
      * Read Prepaid Sale
      * Returns the specified Prepaid Sale.
-     * @param prepaidSaleId Prepaid sale ID (required)
+     * @param prepaidSaleId Prepaid Sale ID (required)
      * @return ApiResponse&lt;PrepaidSalesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -383,7 +383,7 @@ public class PrepaidSalesApi {
     /**
      * Read Prepaid Sale (asynchronously)
      * Returns the specified Prepaid Sale.
-     * @param prepaidSaleId Prepaid sale ID (required)
+     * @param prepaidSaleId Prepaid Sale ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

@@ -25,7 +25,7 @@ public class PrepaidSalesSmartDevice {
   }
 
    /**
-   * Object of smart device
+   * Object type
    * @return object
   **/
   public String getObject() {
@@ -42,7 +42,7 @@ public class PrepaidSalesSmartDevice {
   }
 
    /**
-   * Id of smart device
+   * Smart Device ID
    * @return id
   **/
   public String getId() {
@@ -59,7 +59,7 @@ public class PrepaidSalesSmartDevice {
   }
 
    /**
-   * Smart device description
+   * Short description
    * @return description
   **/
   public String getDescription() {
@@ -76,7 +76,7 @@ public class PrepaidSalesSmartDevice {
   }
 
    /**
-   * Smart device vendor uid
+   * Smart Device vendor UID
    * @return vendorUid
   **/
   public String getVendorUid() {

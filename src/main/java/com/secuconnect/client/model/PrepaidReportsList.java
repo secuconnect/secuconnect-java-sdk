@@ -40,7 +40,7 @@ public class PrepaidReportsList {
   }
 
    /**
-   * Number of existing prepaid Reports
+   * Total number of matching Prepaid Reports
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class PrepaidReportsList {
   }
 
    /**
-   * List of Prepaid Reports
+   * Prepaid Reports (limited number)
    * @return data
   **/
   public List<PrepaidReportsProductModel> getData() {
