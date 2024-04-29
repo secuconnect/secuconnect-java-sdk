@@ -19,6 +19,35 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.32.0] - 2024-04-29
+[3.32.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.31.0...3.32.0
+
+- *renamed endpoint* `CardprocessingTransactionsApi` was renamed to `CardProcessingTransactionsApi`
+
+### Changed
+- `ApiClient`
+- `Api.CardprocessingTransactionsApi`
+- `Api.PrepaidItemsApi`
+- `Api.PrepaidReportsApi`
+- `Api.PrepaidSalesApi`
+- `Model.AvailableCountry`
+- `Model.CardprocessingTransactionsList`
+- `Model.CardprocessingTransactionsProductModel`
+- `Model.ItemGroup`
+- `Model.PrepaidItemsBaseProductModel`
+- `Model.PrepaidItemsList`
+- `Model.PrepaidItemsProductModel`
+- `Model.PrepaidReportsDTO`
+- `Model.PrepaidReportsList`
+- `Model.PrepaidReportsProductModel`
+- `Model.PrepaidSalesItem`
+- `Model.PrepaidSalesList`
+- `Model.PrepaidSalesProductDTO`
+- `Model.PrepaidSalesProductModel`
+- `Model.PrepaidSalesSmartDevice`
+- `Model.ReceiptType`
+
+
 ## [3.31.0] - 2024-04-16
 [3.31.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.30.0...3.31.0
 

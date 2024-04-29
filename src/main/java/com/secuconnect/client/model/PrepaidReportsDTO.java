@@ -31,7 +31,7 @@ public class PrepaidReportsDTO {
   }
 
    /**
-   * General Merchants ID
+   * General Merchant ID
    * @return merchant
   **/
   public String getMerchant() {
@@ -48,7 +48,7 @@ public class PrepaidReportsDTO {
   }
 
    /**
-   * General Stores ID
+   * General Store ID
    * @return store
   **/
   public String getStore() {
@@ -65,7 +65,7 @@ public class PrepaidReportsDTO {
   }
 
    /**
-   * Smart Devices ID
+   * Smart Device ID
    * @return smartDevice
   **/
   public String getSmartDevice() {
@@ -82,7 +82,7 @@ public class PrepaidReportsDTO {
   }
 
    /**
-   * VTC TID
+   * Terminal ID for VTC Virtual Terminal Client (received during onboarding)
    * @return vtcTid
   **/
   public Integer getVtcTid() {

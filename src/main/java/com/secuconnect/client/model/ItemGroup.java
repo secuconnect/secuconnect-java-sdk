@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * E-goods product category, e. g. all cards for a vendor
+ * E-goods product category, usually all cards of a trade mark
  */
 public class ItemGroup {
   @SerializedName("object")
@@ -45,7 +45,7 @@ public class ItemGroup {
   }
 
    /**
-   * Object ID
+   * Prepaid Item ID
    * @return id
   **/
   public String getId() {
@@ -62,7 +62,7 @@ public class ItemGroup {
   }
 
    /**
-   * Short name, e. g. the vendor name
+   * Short name, usually a trade mark
    * @return description
   **/
   public String getDescription() {
@@ -79,7 +79,7 @@ public class ItemGroup {
   }
 
    /**
-   * Document upload ID of vendor
+   * Document upload ID to set logo image
    * @return logo
   **/
   public String getLogo() {

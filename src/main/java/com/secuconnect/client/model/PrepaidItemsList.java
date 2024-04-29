@@ -40,7 +40,7 @@ public class PrepaidItemsList {
   }
 
    /**
-   * Number of existing prepaid items
+   * Number of matching Prepaid Items
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class PrepaidItemsList {
   }
 
    /**
-   * List of PrepaidItems
+   * Prepaid Items (limited number)
    * @return data
   **/
   public List<PrepaidItemsProductModel> getData() {

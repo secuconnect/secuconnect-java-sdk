@@ -40,7 +40,7 @@ public class PrepaidSalesList {
   }
 
    /**
-   * Number of existing prepaid contracts
+   * Total number of matching Prepaid Sales
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class PrepaidSalesList {
   }
 
    /**
-   * List of Prepaid Sales
+   * Prepaid Sales (limited number)
    * @return data
   **/
   public List<PrepaidSalesProductModel> getData() {

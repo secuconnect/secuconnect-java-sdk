@@ -40,7 +40,7 @@ public class CardprocessingTransactionsList {
   }
 
    /**
-   * Number of existing cardprocessing transactions
+   * Total number of matching Card Processing Transactions
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class CardprocessingTransactionsList {
   }
 
    /**
-   * List of CardprocessingTransactions
+   * Card Processing Transactions (limited number)
    * @return data
   **/
   public List<CardprocessingTransactionsProductModel> getData() {

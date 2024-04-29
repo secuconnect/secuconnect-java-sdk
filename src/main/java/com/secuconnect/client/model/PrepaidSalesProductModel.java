@@ -121,7 +121,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Status
+   * Status:  - &#x60;request&#x60; - &#x60;denied&#x60; - &#x60;failed&#x60; - &#x60;delivered&#x60; - &#x60;confirmed&#x60;
    * @return status
   **/
   public String getStatus() {
@@ -138,7 +138,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Type
+   * Type:  - &#x60;sale_item&#x60; - &#x60;sale_report&#x60;
    * @return type
   **/
   public String getType() {
@@ -274,7 +274,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Demo
+   * Whether this is a demo transaction or a productive one
    * @return demo
   **/
   public Boolean getDemo() {
@@ -291,7 +291,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Description
+   * Short descriptive text
    * @return description
   **/
   public String getDescription() {
@@ -342,7 +342,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Commission
+   * Commission in the smallest currency unit (e. g. Euro Cent)
    * @return commission
   **/
   public Integer getCommission() {
@@ -359,7 +359,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Commission currency
+   * Commission currency as ISO 4217 currency code like \&quot;EUR\&quot;
    * @return commissionCurrency
   **/
   public String getCommissionCurrency() {
@@ -495,7 +495,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Receipt zvt
+   * Receipt ZVT
    * @return receiptZvt
   **/
   public String getReceiptZvt() {
@@ -529,7 +529,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Vtc tid
+   * Terminal ID for VTC Virtual Terminal Client
    * @return vtcTid
   **/
   public String getVtcTid() {
@@ -546,7 +546,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Vtc id
+   * Product ID for VTC Virtual Terminal Client
    * @return vtcId
   **/
   public String getVtcId() {
@@ -563,7 +563,7 @@ public class PrepaidSalesProductModel extends BaseProductModel {
   }
 
    /**
-   * Password
+   * Get password
    * @return password
   **/
   public String getPassword() {

@@ -40,7 +40,7 @@ public class PrepaidItemsBaseProductModel extends BaseProductModel {
   }
 
    /**
-   * Retail price
+   * Retail price in the smallest currency unit (e. g. Euro Cent)
    * @return retailPrice
   **/
   public Integer getRetailPrice() {
@@ -74,7 +74,7 @@ public class PrepaidItemsBaseProductModel extends BaseProductModel {
   }
 
    /**
-   * Description
+   * Short item name, usually trade mark with amount
    * @return description
   **/
   public String getDescription() {
@@ -91,7 +91,7 @@ public class PrepaidItemsBaseProductModel extends BaseProductModel {
   }
 
    /**
-   * Short text
+   * Display text to within the Item Group, usually the amount. At the POS terminal you will firstly select the group by its name, then the exact item by this very text.
    * @return displaytext
   **/
   public String getDisplaytext() {
@@ -108,7 +108,7 @@ public class PrepaidItemsBaseProductModel extends BaseProductModel {
   }
 
    /**
-   * Logo
+   * Logo URL
    * @return logo
   **/
   public String getLogo() {
@@ -133,7 +133,7 @@ public class PrepaidItemsBaseProductModel extends BaseProductModel {
   }
 
    /**
-   * List of article numbers for adding it to a smart transaction
+   * Article numbers for adding this item to a Smart Transaction; needed to recognise the item as e-goods article.
    * @return vtcConfig
   **/
   public List<String> getVtcConfig() {
@@ -150,7 +150,7 @@ public class PrepaidItemsBaseProductModel extends BaseProductModel {
   }
 
    /**
-   * Vtc id
+   * VTC ID
    * @return vtcId
   **/
   public String getVtcId() {
@@ -167,7 +167,7 @@ public class PrepaidItemsBaseProductModel extends BaseProductModel {
   }
 
    /**
-   * Type
+   * Type:  - &#x60;POSA&#x60; for point of sale activation cars - &#x60;PP&#x60; for pin-printing
    * @return type
   **/
   public String getType() {

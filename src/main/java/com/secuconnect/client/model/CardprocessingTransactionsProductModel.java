@@ -181,7 +181,7 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Store name
+   * Get storeName
    * @return storeName
   **/
   public String getStoreName() {
@@ -198,7 +198,7 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Transaction Number
+   * Transaction (TA code / trans_id)
    * @return transId
   **/
   public Integer getTransId() {
@@ -215,7 +215,7 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * TID
+   * Terminal TID
    * @return tid
   **/
   public String getTid() {
@@ -249,7 +249,7 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * End of day ID
+   * Get endOfDayId
    * @return endOfDayId
   **/
   public String getEndOfDayId() {
@@ -283,7 +283,7 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Trace
+   * Trace number
    * @return trace
   **/
   public Integer getTrace() {
@@ -351,7 +351,7 @@ public class CardprocessingTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Report Type
+   * Report type
    * @return refReportType
   **/
   public Integer getRefReportType() {

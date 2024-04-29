@@ -28,7 +28,7 @@ public class PrepaidSalesItem {
   }
 
    /**
-   * Object of item
+   * Object type
    * @return object
   **/
   public String getObject() {
@@ -45,7 +45,7 @@ public class PrepaidSalesItem {
   }
 
    /**
-   * Id of item
+   * Item ID
    * @return id
   **/
   public String getId() {
@@ -62,7 +62,7 @@ public class PrepaidSalesItem {
   }
 
    /**
-   * Item description
+   * Short description
    * @return description
   **/
   public String getDescription() {
@@ -79,7 +79,7 @@ public class PrepaidSalesItem {
   }
 
    /**
-   * Item logo
+   * Logo URL
    * @return logo
   **/
   public String getLogo() {
@@ -96,7 +96,7 @@ public class PrepaidSalesItem {
   }
 
    /**
-   * Item type
+   * Item type:  - &#x60;POS&#x60; - &#x60;PP&#x60;
    * @return type
   **/
   public String getType() {
