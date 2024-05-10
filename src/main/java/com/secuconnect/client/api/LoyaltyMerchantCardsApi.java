@@ -17,6 +17,8 @@ import com.secuconnect.client.model.LoyaltyMerchantcardsDTOResetPasscode;
 import com.secuconnect.client.model.LoyaltyMerchantcardsDTOTransaction;
 import com.secuconnect.client.model.LoyaltyMerchantcardsDTOValidateMerchantCard;
 import com.secuconnect.client.model.LoyaltyMerchantcardsList;
+import com.secuconnect.client.model.LoyaltyMerchantcardsLockReasons;
+import com.secuconnect.client.model.LoyaltyMerchantcardsLockStatus;
 import com.secuconnect.client.model.LoyaltyMerchantcardsProductModel;
 import com.secuconnect.client.model.LoyaltyMerchantcardsProductWithReceiptModel;
 import com.secuconnect.client.model.LoyaltyMerchantcardsValidateMerchantCard;
@@ -666,11 +668,11 @@ public class LoyaltyMerchantCardsApi {
      * Read lock details
      * Returns the lock details of the specified Loyalty Merchant Card.
      * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
-     * @return LoyaltyMerchantcardsDTOLock
+     * @return LoyaltyMerchantcardsLockStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LoyaltyMerchantcardsDTOLock getLock(String loyaltyMerchantCardId) throws ApiException {
-        ApiResponse<LoyaltyMerchantcardsDTOLock> resp = getLockWithHttpInfo(loyaltyMerchantCardId);
+    public LoyaltyMerchantcardsLockStatus getLock(String loyaltyMerchantCardId) throws ApiException {
+        ApiResponse<LoyaltyMerchantcardsLockStatus> resp = getLockWithHttpInfo(loyaltyMerchantCardId);
         return resp.getData();
     }
 
@@ -678,12 +680,12 @@ public class LoyaltyMerchantCardsApi {
      * Read lock details
      * Returns the lock details of the specified Loyalty Merchant Card.
      * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
-     * @return ApiResponse&lt;LoyaltyMerchantcardsDTOLock&gt;
+     * @return ApiResponse&lt;LoyaltyMerchantcardsLockStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LoyaltyMerchantcardsDTOLock> getLockWithHttpInfo(String loyaltyMerchantCardId) throws ApiException {
+    public ApiResponse<LoyaltyMerchantcardsLockStatus> getLockWithHttpInfo(String loyaltyMerchantCardId) throws ApiException {
         Call call = getLockValidateBeforeCall(loyaltyMerchantCardId);
-        Type localVarReturnType = new TypeToken<LoyaltyMerchantcardsDTOLock>(){}.getType();
+        Type localVarReturnType = new TypeToken<LoyaltyMerchantcardsLockStatus>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -695,9 +697,86 @@ public class LoyaltyMerchantCardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call getLockAsync(String loyaltyMerchantCardId, final ApiCallback<LoyaltyMerchantcardsDTOLock> callback) throws ApiException {
+    public Call getLockAsync(String loyaltyMerchantCardId, final ApiCallback<LoyaltyMerchantcardsLockStatus> callback) throws ApiException {
         Call call = getLockValidateBeforeCall(loyaltyMerchantCardId);
-        Type localVarReturnType = new TypeToken<LoyaltyMerchantcardsDTOLock>(){}.getType();
+        Type localVarReturnType = new TypeToken<LoyaltyMerchantcardsLockStatus>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getLockReasons
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getLockReasonsCall() throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Loyalty/MerchantCards/me/lockReasons";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getLockReasonsValidateBeforeCall() throws ApiException {
+
+        return getLockReasonsCall();
+    }
+
+    /**
+     * Read lock reasons
+     * Returns the lock reasons.
+     * @return List&lt;LoyaltyMerchantcardsLockReasons&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<LoyaltyMerchantcardsLockReasons> getLockReasons() throws ApiException {
+        ApiResponse<List<LoyaltyMerchantcardsLockReasons>> resp = getLockReasonsWithHttpInfo();
+        return resp.getData();
+    }
+
+    /**
+     * Read lock reasons
+     * Returns the lock reasons.
+     * @return ApiResponse&lt;List&lt;LoyaltyMerchantcardsLockReasons&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<LoyaltyMerchantcardsLockReasons>> getLockReasonsWithHttpInfo() throws ApiException {
+        Call call = getLockReasonsValidateBeforeCall();
+        Type localVarReturnType = new TypeToken<List<LoyaltyMerchantcardsLockReasons>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Read lock reasons (asynchronously)
+     * Returns the lock reasons.
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getLockReasonsAsync(final ApiCallback<List<LoyaltyMerchantcardsLockReasons>> callback) throws ApiException {
+        Call call = getLockReasonsValidateBeforeCall();
+        Type localVarReturnType = new TypeToken<List<LoyaltyMerchantcardsLockReasons>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1341,11 +1420,12 @@ public class LoyaltyMerchantCardsApi {
     /**
      * Build call for unlock
      * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Unlock details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call unlockCall(String loyaltyMerchantCardId) throws ApiException {
-        Object localVarPostBody = null;
+    public Call unlockCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body) throws ApiException {
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/Loyalty/MerchantCards/{loyaltyMerchantCardId}/unlock"
@@ -1365,7 +1445,7 @@ public class LoyaltyMerchantCardsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1375,24 +1455,25 @@ public class LoyaltyMerchantCardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call unlockValidateBeforeCall(String loyaltyMerchantCardId) throws ApiException {
+    private Call unlockValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body) throws ApiException {
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling unlock(Async)");
         }
 
-        return unlockCall(loyaltyMerchantCardId);
+        return unlockCall(loyaltyMerchantCardId, body);
     }
 
     /**
      * Unlock card
      * Unlocks the specified Loyalty Merchant Card, so that it can be used again.  Works only for Merchant Cards being locked.
      * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Unlock details
      * @return LoyaltyMerchantcardsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LoyaltyMerchantcardsProductModel unlock(String loyaltyMerchantCardId) throws ApiException {
-        ApiResponse<LoyaltyMerchantcardsProductModel> resp = unlockWithHttpInfo(loyaltyMerchantCardId);
+    public LoyaltyMerchantcardsProductModel unlock(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body) throws ApiException {
+        ApiResponse<LoyaltyMerchantcardsProductModel> resp = unlockWithHttpInfo(loyaltyMerchantCardId, body);
         return resp.getData();
     }
 
@@ -1400,11 +1481,12 @@ public class LoyaltyMerchantCardsApi {
      * Unlock card
      * Unlocks the specified Loyalty Merchant Card, so that it can be used again.  Works only for Merchant Cards being locked.
      * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Unlock details
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LoyaltyMerchantcardsProductModel> unlockWithHttpInfo(String loyaltyMerchantCardId) throws ApiException {
-        Call call = unlockValidateBeforeCall(loyaltyMerchantCardId);
+    public ApiResponse<LoyaltyMerchantcardsProductModel> unlockWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body) throws ApiException {
+        Call call = unlockValidateBeforeCall(loyaltyMerchantCardId, body);
         Type localVarReturnType = new TypeToken<LoyaltyMerchantcardsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1413,12 +1495,13 @@ public class LoyaltyMerchantCardsApi {
      * Unlock card (asynchronously)
      * Unlocks the specified Loyalty Merchant Card, so that it can be used again.  Works only for Merchant Cards being locked.
      * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param body Unlock details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call unlockAsync(String loyaltyMerchantCardId, final ApiCallback<LoyaltyMerchantcardsProductModel> callback) throws ApiException {
-        Call call = unlockValidateBeforeCall(loyaltyMerchantCardId);
+    public Call unlockAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOLock body, final ApiCallback<LoyaltyMerchantcardsProductModel> callback) throws ApiException {
+        Call call = unlockValidateBeforeCall(loyaltyMerchantCardId, body);
         Type localVarReturnType = new TypeToken<LoyaltyMerchantcardsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

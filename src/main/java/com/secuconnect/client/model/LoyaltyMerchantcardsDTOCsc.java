@@ -11,7 +11,7 @@ public class LoyaltyMerchantcardsDTOCsc {
   protected Integer cardnumber = null;
 
   @SerializedName("csc")
-  protected Integer csc = null;
+  protected String csc = null;
 
   public LoyaltyMerchantcardsDTOCsc cardnumber(Integer cardnumber) {
     this.cardnumber = cardnumber;
@@ -30,7 +30,7 @@ public class LoyaltyMerchantcardsDTOCsc {
     this.cardnumber = cardnumber;
   }
 
-  public LoyaltyMerchantcardsDTOCsc csc(Integer csc) {
+  public LoyaltyMerchantcardsDTOCsc csc(String csc) {
     this.csc = csc;
     return this;
   }
@@ -39,11 +39,11 @@ public class LoyaltyMerchantcardsDTOCsc {
    * Entered Card Security Code
    * @return csc
   **/
-  public Integer getCsc() {
+  public String getCsc() {
     return csc;
   }
 
-  public void setCsc(Integer csc) {
+  public void setCsc(String csc) {
     this.csc = csc;
   }
 
