@@ -19,6 +19,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.32.0] - 2024-05-10
+[3.32.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.31.0...3.32.0
+
+### Added
+- `Model.LoyaltyMerchantcardsLockReasons`
+- `Model.LoyaltyMerchantcardsLockStatus`
+
+### Changed
+- `Api.LoyaltyMerchantCardsApi`
+- `Model.LoyaltyMerchantcardsDTOCsc`
+- `Model.LoyaltyMerchantcardsDTOLock`
+
+
 ## [3.32.0] - 2024-04-29
 [3.32.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.31.0...3.32.0
 
