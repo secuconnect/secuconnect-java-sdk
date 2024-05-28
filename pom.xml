@@ -281,7 +281,7 @@
       <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
-      <version>2.10.1</version>
+      <version>2.11.0</version>
     </dependency>
     <dependency>
       <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
