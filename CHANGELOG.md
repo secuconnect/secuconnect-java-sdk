@@ -29,6 +29,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - *changed element type*: `ref_type_id` changed from `integer` to `string` in `LoyaltyTransactionsDTORelatedTransactions`
 - *changed element type*: `card_scheme` from enum to `string` in `PaymentContractsDTORequestIdAdditionalDataCreateCard`
 
+### Security
+- Dependency updates
+
 ### Changed
 - `ApiClient`
 - `Api.CardprocessingInvoicesApi`
