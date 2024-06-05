@@ -19,6 +19,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.33.0] - 2024-06-05
+[3.33.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.32.0...3.33.0
+
+- *removed endpoint*: `PaymentTransactions.getShippingUrl()`
+- *renamed endpoint*: `CardprocessingInvoicesApi` was renamed to `CardProcessingInvoicesApi`
+- *new element*: `additional_data` in `LoyaltyMerchantcardsDTOTransaction`
+- *changed element type*: `cardnumber` changed from `integer` to `string` in `LoyaltyMerchantcardsDTOTransaction`
+- *changed element type*: `ref_type_id` changed from `integer` to `string` in `LoyaltyTransactionsDTORelatedTransactions`
+- *changed element type*: `card_scheme` from enum to `string` in `PaymentContractsDTORequestIdAdditionalDataCreateCard`
+
+### Changed
+- `ApiClient`
+- `Api.CardprocessingInvoicesApi`
+- `Api.PaymentTransactionsApi`
+- `Model.CardprocessingInvoicesList`
+- `Model.CardprocessingInvoicesProductModel`
+- `Model.LoyaltyMerchantcardsDTOTransaction`
+- `Model.LoyaltyTransactionsDTORelatedTransactions`
+- `Model.PaymentContractsDTORequestIdAdditionalDataCreateCard`
+
+### Removed
+- `Model.PaymentTransactionsShippingUrl`
+
+
 ## [3.32.0] - 2024-05-10
 [3.32.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.31.0...3.32.0
 

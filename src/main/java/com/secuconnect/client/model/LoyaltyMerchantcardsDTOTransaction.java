@@ -23,7 +23,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
   protected String store = null;
 
   @SerializedName("cardnumber")
-  protected Integer cardnumber = null;
+  protected String cardnumber = null;
 
   @SerializedName("bonus_amount")
   protected Integer bonusAmount = null;
@@ -33,6 +33,9 @@ public class LoyaltyMerchantcardsDTOTransaction {
 
   @SerializedName("merchant_id")
   protected String merchantId = null;
+
+  @SerializedName("additional_data")
+  protected Object additionalData = null;
 
   public LoyaltyMerchantcardsDTOTransaction action(String action) {
     this.action = action;
@@ -119,7 +122,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
     this.store = store;
   }
 
-  public LoyaltyMerchantcardsDTOTransaction cardnumber(Integer cardnumber) {
+  public LoyaltyMerchantcardsDTOTransaction cardnumber(String cardnumber) {
     this.cardnumber = cardnumber;
     return this;
   }
@@ -128,11 +131,11 @@ public class LoyaltyMerchantcardsDTOTransaction {
    * Number on card
    * @return cardnumber
   **/
-  public Integer getCardnumber() {
+  public String getCardnumber() {
     return cardnumber;
   }
 
-  public void setCardnumber(Integer cardnumber) {
+  public void setCardnumber(String cardnumber) {
     this.cardnumber = cardnumber;
   }
 
@@ -187,6 +190,23 @@ public class LoyaltyMerchantcardsDTOTransaction {
     this.merchantId = merchantId;
   }
 
+  public LoyaltyMerchantcardsDTOTransaction additionalData(Object additionalData) {
+    this.additionalData = additionalData;
+    return this;
+  }
+
+   /**
+   * Get additionalData
+   * @return additionalData
+  **/
+  public Object getAdditionalData() {
+    return additionalData;
+  }
+
+  public void setAdditionalData(Object additionalData) {
+    this.additionalData = additionalData;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -204,12 +224,13 @@ public class LoyaltyMerchantcardsDTOTransaction {
         Objects.equals(this.cardnumber, loyaltyMerchantcardsDTOTransaction.cardnumber) &&
         Objects.equals(this.bonusAmount, loyaltyMerchantcardsDTOTransaction.bonusAmount) &&
         Objects.equals(this.amountSplitAllowed, loyaltyMerchantcardsDTOTransaction.amountSplitAllowed) &&
-        Objects.equals(this.merchantId, loyaltyMerchantcardsDTOTransaction.merchantId);
+        Objects.equals(this.merchantId, loyaltyMerchantcardsDTOTransaction.merchantId) &&
+        Objects.equals(this.additionalData, loyaltyMerchantcardsDTOTransaction.additionalData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, terminalId, amount, tid, store, cardnumber, bonusAmount, amountSplitAllowed, merchantId);
+    return Objects.hash(action, terminalId, amount, tid, store, cardnumber, bonusAmount, amountSplitAllowed, merchantId, additionalData);
   }
 
   @Override
@@ -225,6 +246,7 @@ public class LoyaltyMerchantcardsDTOTransaction {
     sb.append("    bonusAmount: ").append(toIndentedString(bonusAmount)).append("\n");
     sb.append("    amountSplitAllowed: ").append(toIndentedString(amountSplitAllowed)).append("\n");
     sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    sb.append("    additionalData: ").append(toIndentedString(additionalData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

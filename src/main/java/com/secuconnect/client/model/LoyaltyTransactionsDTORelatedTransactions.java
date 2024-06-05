@@ -14,7 +14,7 @@ public class LoyaltyTransactionsDTORelatedTransactions {
   protected Integer transId = null;
 
   @SerializedName("ref_type_id")
-  protected Integer refTypeId = null;
+  protected String refTypeId = null;
 
   public LoyaltyTransactionsDTORelatedTransactions id(String id) {
     this.id = id;
@@ -50,7 +50,7 @@ public class LoyaltyTransactionsDTORelatedTransactions {
     this.transId = transId;
   }
 
-  public LoyaltyTransactionsDTORelatedTransactions refTypeId(Integer refTypeId) {
+  public LoyaltyTransactionsDTORelatedTransactions refTypeId(String refTypeId) {
     this.refTypeId = refTypeId;
     return this;
   }
@@ -59,11 +59,11 @@ public class LoyaltyTransactionsDTORelatedTransactions {
    * Relation type
    * @return refTypeId
   **/
-  public Integer getRefTypeId() {
+  public String getRefTypeId() {
     return refTypeId;
   }
 
-  public void setRefTypeId(Integer refTypeId) {
+  public void setRefTypeId(String refTypeId) {
     this.refTypeId = refTypeId;
   }
 
