@@ -40,7 +40,7 @@ public class CardprocessingInvoicesList {
   }
 
    /**
-   * Number of existing cardprocessing invoices
+   * Total number of matching Card Processing Invoices
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class CardprocessingInvoicesList {
   }
 
    /**
-   * List of CardprocessingInvoices
+   * Card Processing Invoices (limited number)
    * @return data
   **/
   public List<CardprocessingInvoicesProductModel> getData() {

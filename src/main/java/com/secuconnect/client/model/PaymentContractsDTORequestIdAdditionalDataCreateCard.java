@@ -2,61 +2,13 @@ package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
-import java.io.IOException;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 
 /**
  * Create card input
  */
 public class PaymentContractsDTORequestIdAdditionalDataCreateCard {
-  /**
-   * Credit card schema
-   */
-  @JsonAdapter(CardSchemeEnum.Adapter.class)
-  public enum CardSchemeEnum {
-    @SerializedName("VI")
-    VI("VI"),
-    @SerializedName("MC")
-    MC("MC");
-
-    private String value;
-
-    CardSchemeEnum(String value) {
-      this.value = value;
-    }
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static CardSchemeEnum fromValue(String input) {
-      for (CardSchemeEnum b : CardSchemeEnum.values()) {
-        if (b.value.equals(input)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<CardSchemeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final CardSchemeEnum enumeration) throws IOException {
-        jsonWriter.value(String.valueOf(enumeration.getValue()));
-      }
-
-      @Override
-      public CardSchemeEnum read(final JsonReader jsonReader) throws IOException {
-        Object value = jsonReader.nextString();
-        return CardSchemeEnum.fromValue((String)(value));
-      }
-    }
-  }  @SerializedName("card_scheme")
-  protected CardSchemeEnum cardScheme = null;
+  @SerializedName("card_scheme")
+  protected String cardScheme = null;
 
   @SerializedName("app_language")
   protected String appLanguage = null;
@@ -64,7 +16,7 @@ public class PaymentContractsDTORequestIdAdditionalDataCreateCard {
   @SerializedName("passport_id")
   protected String passportId = null;
 
-  public PaymentContractsDTORequestIdAdditionalDataCreateCard cardScheme(CardSchemeEnum cardScheme) {
+  public PaymentContractsDTORequestIdAdditionalDataCreateCard cardScheme(String cardScheme) {
     this.cardScheme = cardScheme;
     return this;
   }
@@ -73,11 +25,11 @@ public class PaymentContractsDTORequestIdAdditionalDataCreateCard {
    * Credit card schema
    * @return cardScheme
   **/
-  public CardSchemeEnum getCardScheme() {
+  public String getCardScheme() {
     return cardScheme;
   }
 
-  public void setCardScheme(CardSchemeEnum cardScheme) {
+  public void setCardScheme(String cardScheme) {
     this.cardScheme = cardScheme;
   }
 

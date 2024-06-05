@@ -247,7 +247,7 @@ public class CardprocessingInvoicesProductModel extends BaseProductModel {
   }
 
    /**
-   * Store name
+   * Get storeName
    * @return storeName
   **/
   public String getStoreName() {
@@ -281,7 +281,7 @@ public class CardprocessingInvoicesProductModel extends BaseProductModel {
   }
 
    /**
-   * TID
+   * Terminal TID
    * @return tid
   **/
   public String getTid() {
@@ -298,7 +298,7 @@ public class CardprocessingInvoicesProductModel extends BaseProductModel {
   }
 
    /**
-   * Invoice Number
+   * Get invoiceNumber
    * @return invoiceNumber
   **/
   public String getInvoiceNumber() {
@@ -366,7 +366,7 @@ public class CardprocessingInvoicesProductModel extends BaseProductModel {
   }
 
    /**
-   * The url of the invoice document (PDF)
+   * URL to download the invoice PDF
    * @return documentUrl
   **/
   public String getDocumentUrl() {
@@ -383,7 +383,7 @@ public class CardprocessingInvoicesProductModel extends BaseProductModel {
   }
 
    /**
-   * Type
+   * Type:  - &#x60;avis&#x60; (payment advice note)&#x60; - &#x60;invoice&#x60; - &#x60;refund&#x60; (credit note)
    * @return type
   **/
   public String getType() {
