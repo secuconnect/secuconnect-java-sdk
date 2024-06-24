@@ -17,6 +17,15 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
   @SerializedName("balance")
   protected Integer balance = null;
 
+  @SerializedName("cash_balance")
+  protected Integer cashBalance = null;
+
+  @SerializedName("bonus_balance")
+  protected Integer bonusBalance = null;
+
+  @SerializedName("zvt_cardgroup")
+  protected String zvtCardgroup = null;
+
   @SerializedName("points")
   protected Integer points = null;
 
@@ -73,6 +82,57 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
 
   public void setBalance(Integer balance) {
     this.balance = balance;
+  }
+
+  public LoyaltyMerchantcardsCardBalanceReceipt cashBalance(Integer cashBalance) {
+    this.cashBalance = cashBalance;
+    return this;
+  }
+
+   /**
+   * Money balance loaded with money; in the smallest currency unit (e. g. Euro Cent)
+   * @return cashBalance
+  **/
+  public Integer getCashBalance() {
+    return cashBalance;
+  }
+
+  public void setCashBalance(Integer cashBalance) {
+    this.cashBalance = cashBalance;
+  }
+
+  public LoyaltyMerchantcardsCardBalanceReceipt bonusBalance(Integer bonusBalance) {
+    this.bonusBalance = bonusBalance;
+    return this;
+  }
+
+   /**
+   * Money balance collected as bonus for former transactions; in the smallest currency unit (e. g. Euro Cent)
+   * @return bonusBalance
+  **/
+  public Integer getBonusBalance() {
+    return bonusBalance;
+  }
+
+  public void setBonusBalance(Integer bonusBalance) {
+    this.bonusBalance = bonusBalance;
+  }
+
+  public LoyaltyMerchantcardsCardBalanceReceipt zvtCardgroup(String zvtCardgroup) {
+    this.zvtCardgroup = zvtCardgroup;
+    return this;
+  }
+
+   /**
+   * ZVT Cardgroup
+   * @return zvtCardgroup
+  **/
+  public String getZvtCardgroup() {
+    return zvtCardgroup;
+  }
+
+  public void setZvtCardgroup(String zvtCardgroup) {
+    this.zvtCardgroup = zvtCardgroup;
   }
 
   public LoyaltyMerchantcardsCardBalanceReceipt points(Integer points) {
@@ -238,6 +298,9 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
     LoyaltyMerchantcardsCardBalanceReceipt loyaltyMerchantcardsCardBalanceReceipt = (LoyaltyMerchantcardsCardBalanceReceipt) o;
     return Objects.equals(this.valid, loyaltyMerchantcardsCardBalanceReceipt.valid) &&
         Objects.equals(this.balance, loyaltyMerchantcardsCardBalanceReceipt.balance) &&
+        Objects.equals(this.cashBalance, loyaltyMerchantcardsCardBalanceReceipt.cashBalance) &&
+        Objects.equals(this.bonusBalance, loyaltyMerchantcardsCardBalanceReceipt.bonusBalance) &&
+        Objects.equals(this.zvtCardgroup, loyaltyMerchantcardsCardBalanceReceipt.zvtCardgroup) &&
         Objects.equals(this.points, loyaltyMerchantcardsCardBalanceReceipt.points) &&
         Objects.equals(this.newPasscode, loyaltyMerchantcardsCardBalanceReceipt.newPasscode) &&
         Objects.equals(this.receiptHeader, loyaltyMerchantcardsCardBalanceReceipt.receiptHeader) &&
@@ -250,7 +313,7 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
 
   @Override
   public int hashCode() {
-    return Objects.hash(valid, balance, points, newPasscode, receiptHeader, receipt, amountSplitEnabled, limitAllowed, limitStr, limit);
+    return Objects.hash(valid, balance, cashBalance, bonusBalance, zvtCardgroup, points, newPasscode, receiptHeader, receipt, amountSplitEnabled, limitAllowed, limitStr, limit);
   }
 
   @Override
@@ -259,6 +322,9 @@ public class LoyaltyMerchantcardsCardBalanceReceipt {
     sb.append("class LoyaltyMerchantcardsCardBalanceReceipt {\n");
     sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
+    sb.append("    cashBalance: ").append(toIndentedString(cashBalance)).append("\n");
+    sb.append("    bonusBalance: ").append(toIndentedString(bonusBalance)).append("\n");
+    sb.append("    zvtCardgroup: ").append(toIndentedString(zvtCardgroup)).append("\n");
     sb.append("    points: ").append(toIndentedString(points)).append("\n");
     sb.append("    newPasscode: ").append(toIndentedString(newPasscode)).append("\n");
     sb.append("    receiptHeader: ").append(toIndentedString(receiptHeader)).append("\n");
