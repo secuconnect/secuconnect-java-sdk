@@ -26,6 +26,9 @@ public class LoyaltyCustomersDTO {
   @SerializedName("additional_data")
   protected Object additionalData = null;
 
+  @SerializedName("anonymize")
+  protected Boolean anonymize = null;
+
   public LoyaltyCustomersDTO merchant(String merchant) {
     this.merchant = merchant;
     return this;
@@ -128,6 +131,23 @@ public class LoyaltyCustomersDTO {
     this.additionalData = additionalData;
   }
 
+  public LoyaltyCustomersDTO anonymize(Boolean anonymize) {
+    this.anonymize = anonymize;
+    return this;
+  }
+
+   /**
+   * Anonymize customer data (only valid on update requests)
+   * @return anonymize
+  **/
+  public Boolean getAnonymize() {
+    return anonymize;
+  }
+
+  public void setAnonymize(Boolean anonymize) {
+    this.anonymize = anonymize;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -142,12 +162,13 @@ public class LoyaltyCustomersDTO {
         Objects.equals(this.customernumber, loyaltyCustomersDTO.customernumber) &&
         Objects.equals(this.note, loyaltyCustomersDTO.note) &&
         Objects.equals(this.consentForCommunication, loyaltyCustomersDTO.consentForCommunication) &&
-        Objects.equals(this.additionalData, loyaltyCustomersDTO.additionalData);
+        Objects.equals(this.additionalData, loyaltyCustomersDTO.additionalData) &&
+        Objects.equals(this.anonymize, loyaltyCustomersDTO.anonymize);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, merchantContact, customernumber, note, consentForCommunication, additionalData);
+    return Objects.hash(merchant, merchantContact, customernumber, note, consentForCommunication, additionalData, anonymize);
   }
 
   @Override
@@ -160,6 +181,7 @@ public class LoyaltyCustomersDTO {
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("    consentForCommunication: ").append(toIndentedString(consentForCommunication)).append("\n");
     sb.append("    additionalData: ").append(toIndentedString(additionalData)).append("\n");
+    sb.append("    anonymize: ").append(toIndentedString(anonymize)).append("\n");
     sb.append("}");
     return sb.toString();
   }

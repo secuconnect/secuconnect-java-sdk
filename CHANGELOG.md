@@ -19,6 +19,40 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.34.0] - 2024-06-24
+[3.34.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.33.0...3.34.0
+
+- *new element*: `cash_balance`, `bonus_balance` and `zvt_cardgroup` in `LoyaltyMerchantcardsCardBalanceReceipt`
+- *new element*: `cleared`, `clearing_information`, `trans_id`, `purpose` and `additional_data` in `LoyaltyTransactionsProductModel`
+- *new element*: `anoymize` in `LoyaltyCustomersDTO`
+- *new element*: `expiry_date` and  `additional_data` in `LoyaltyMerchantcardsDTO`
+- *changed element type*: `merchant` changed from `LoyaltyTransactionsDTOMerchant` to `GeneralMerchantsProductModel` in `LoyaltyTransactionsProductModel`
+- *changed element type*: `cardgroup` changed from `LoyaltyTransactionsDTOCardgroup` to `LoyaltyCardgroupsProductModel` in `LoyaltyTransactionsProductModel`
+- *changed element type*: `store` changed from `LoyaltyTransactionsDTOStore` to `GeneralStoresProductModel` in `LoyaltyTransactionsProductModel`
+- *changed element type*: `merchantcard` changed from `LoyaltyTransactionsDTOMerchantcard` to `LoyaltyMerchantcardsProductModel` in `LoyaltyTransactionsProductModel`
+- *changed element type*: `card` changed from `LoyaltyTransactionsDTOCard` to `LoyaltyCardsProductModel` in `LoyaltyTransactionsProductModel`
+- *changed element type*: `parents` and `children` changed from `LoyaltyTransactionsDTORelatedTransactions` to `LoyaltyTransactionsRelatedTransactions` in `LoyaltyTransactionsProductModel`
+- *removed param*: `merchant`, `card`, `created_by_merchant` and `used_by_merchant` in `LoyaltyMerchantcardsDTO`
+
+### Added
+- `Model.LoyaltyTransactionsRelatedTransactions`
+
+### Changed
+- `ApiClient`
+- `Model.LoyaltyCustomersDTO`
+- `Model.LoyaltyMerchantcardsCardBalanceReceipt`
+- `Model.LoyaltyMerchantcardsDTO`
+- `Model.LoyaltyTransactionsProductModel`
+
+### Removed
+- `Model.LoyaltyTransactionsDTOCard`
+- `Model.LoyaltyTransactionsDTOCardgroup`
+- `Model.LoyaltyTransactionsDTOMerchant`
+- `Model.LoyaltyTransactionsDTOMerchantcard`
+- `Model.LoyaltyTransactionsDTORelatedTransactions`
+- `Model.LoyaltyTransactionsDTOStore`
+
+
 ## [3.33.0] - 2024-06-05
 [3.33.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.32.0...3.33.0
 

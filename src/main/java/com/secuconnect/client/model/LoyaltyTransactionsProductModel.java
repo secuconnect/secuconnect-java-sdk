@@ -5,12 +5,12 @@ import com.secuconnect.client.model.AggregationResult;
 import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
-import com.secuconnect.client.model.LoyaltyTransactionsDTOCard;
-import com.secuconnect.client.model.LoyaltyTransactionsDTOCardgroup;
-import com.secuconnect.client.model.LoyaltyTransactionsDTOMerchant;
-import com.secuconnect.client.model.LoyaltyTransactionsDTOMerchantcard;
-import com.secuconnect.client.model.LoyaltyTransactionsDTORelatedTransactions;
-import com.secuconnect.client.model.LoyaltyTransactionsDTOStore;
+import com.secuconnect.client.model.GeneralMerchantsProductModel;
+import com.secuconnect.client.model.GeneralStoresProductModel;
+import com.secuconnect.client.model.LoyaltyCardgroupsProductModel;
+import com.secuconnect.client.model.LoyaltyCardsProductModel;
+import com.secuconnect.client.model.LoyaltyMerchantcardsProductModel;
+import com.secuconnect.client.model.LoyaltyTransactionsRelatedTransactions;
 import com.secuconnect.client.model.ReceiptTypeValue;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,25 +42,34 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   protected String created = null;
 
   @SerializedName("merchant")
-  protected LoyaltyTransactionsDTOMerchant merchant = null;
+  protected GeneralMerchantsProductModel merchant = null;
 
   @SerializedName("cardgroup")
-  protected LoyaltyTransactionsDTOCardgroup cardgroup = null;
+  protected LoyaltyCardgroupsProductModel cardgroup = null;
 
   @SerializedName("store")
-  protected LoyaltyTransactionsDTOStore store = null;
+  protected GeneralStoresProductModel store = null;
 
   @SerializedName("merchantcard")
-  protected LoyaltyTransactionsDTOMerchantcard merchantcard = null;
+  protected LoyaltyMerchantcardsProductModel merchantcard = null;
 
   @SerializedName("card")
-  protected LoyaltyTransactionsDTOCard card = null;
+  protected LoyaltyCardsProductModel card = null;
 
   @SerializedName("parents")
-  protected List<LoyaltyTransactionsDTORelatedTransactions> parents = null;
+  protected List<LoyaltyTransactionsRelatedTransactions> parents = null;
 
   @SerializedName("children")
-  protected List<LoyaltyTransactionsDTORelatedTransactions> children = null;
+  protected List<LoyaltyTransactionsRelatedTransactions> children = null;
+
+  @SerializedName("cleared")
+  protected Boolean cleared = null;
+
+  @SerializedName("clearing_information")
+  protected List<Object> clearingInformation = null;
+
+  @SerializedName("trans_id")
+  protected Integer transId = null;
 
   @SerializedName("tid")
   protected String tid = null;
@@ -79,6 +88,12 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("description")
   protected String description = null;
+
+  @SerializedName("purpose")
+  protected String purpose = null;
+
+  @SerializedName("additional_data")
+  protected Object additionalData = null;
 
   @SerializedName("last_change")
   protected String lastChange = null;
@@ -208,7 +223,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
     this.created = created;
   }
 
-  public LoyaltyTransactionsProductModel merchant(LoyaltyTransactionsDTOMerchant merchant) {
+  public LoyaltyTransactionsProductModel merchant(GeneralMerchantsProductModel merchant) {
     this.merchant = merchant;
     return this;
   }
@@ -217,15 +232,15 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
    * Get merchant
    * @return merchant
   **/
-  public LoyaltyTransactionsDTOMerchant getMerchant() {
+  public GeneralMerchantsProductModel getMerchant() {
     return merchant;
   }
 
-  public void setMerchant(LoyaltyTransactionsDTOMerchant merchant) {
+  public void setMerchant(GeneralMerchantsProductModel merchant) {
     this.merchant = merchant;
   }
 
-  public LoyaltyTransactionsProductModel cardgroup(LoyaltyTransactionsDTOCardgroup cardgroup) {
+  public LoyaltyTransactionsProductModel cardgroup(LoyaltyCardgroupsProductModel cardgroup) {
     this.cardgroup = cardgroup;
     return this;
   }
@@ -234,15 +249,15 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
    * Get cardgroup
    * @return cardgroup
   **/
-  public LoyaltyTransactionsDTOCardgroup getCardgroup() {
+  public LoyaltyCardgroupsProductModel getCardgroup() {
     return cardgroup;
   }
 
-  public void setCardgroup(LoyaltyTransactionsDTOCardgroup cardgroup) {
+  public void setCardgroup(LoyaltyCardgroupsProductModel cardgroup) {
     this.cardgroup = cardgroup;
   }
 
-  public LoyaltyTransactionsProductModel store(LoyaltyTransactionsDTOStore store) {
+  public LoyaltyTransactionsProductModel store(GeneralStoresProductModel store) {
     this.store = store;
     return this;
   }
@@ -251,15 +266,15 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
    * Get store
    * @return store
   **/
-  public LoyaltyTransactionsDTOStore getStore() {
+  public GeneralStoresProductModel getStore() {
     return store;
   }
 
-  public void setStore(LoyaltyTransactionsDTOStore store) {
+  public void setStore(GeneralStoresProductModel store) {
     this.store = store;
   }
 
-  public LoyaltyTransactionsProductModel merchantcard(LoyaltyTransactionsDTOMerchantcard merchantcard) {
+  public LoyaltyTransactionsProductModel merchantcard(LoyaltyMerchantcardsProductModel merchantcard) {
     this.merchantcard = merchantcard;
     return this;
   }
@@ -268,15 +283,15 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
    * Get merchantcard
    * @return merchantcard
   **/
-  public LoyaltyTransactionsDTOMerchantcard getMerchantcard() {
+  public LoyaltyMerchantcardsProductModel getMerchantcard() {
     return merchantcard;
   }
 
-  public void setMerchantcard(LoyaltyTransactionsDTOMerchantcard merchantcard) {
+  public void setMerchantcard(LoyaltyMerchantcardsProductModel merchantcard) {
     this.merchantcard = merchantcard;
   }
 
-  public LoyaltyTransactionsProductModel card(LoyaltyTransactionsDTOCard card) {
+  public LoyaltyTransactionsProductModel card(LoyaltyCardsProductModel card) {
     this.card = card;
     return this;
   }
@@ -285,22 +300,22 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
    * Get card
    * @return card
   **/
-  public LoyaltyTransactionsDTOCard getCard() {
+  public LoyaltyCardsProductModel getCard() {
     return card;
   }
 
-  public void setCard(LoyaltyTransactionsDTOCard card) {
+  public void setCard(LoyaltyCardsProductModel card) {
     this.card = card;
   }
 
-  public LoyaltyTransactionsProductModel parents(List<LoyaltyTransactionsDTORelatedTransactions> parents) {
+  public LoyaltyTransactionsProductModel parents(List<LoyaltyTransactionsRelatedTransactions> parents) {
     this.parents = parents;
     return this;
   }
 
-  public LoyaltyTransactionsProductModel addParentsItem(LoyaltyTransactionsDTORelatedTransactions parentsItem) {
+  public LoyaltyTransactionsProductModel addParentsItem(LoyaltyTransactionsRelatedTransactions parentsItem) {
     if (this.parents == null) {
-      this.parents = new ArrayList<LoyaltyTransactionsDTORelatedTransactions>();
+      this.parents = new ArrayList<LoyaltyTransactionsRelatedTransactions>();
     }
     this.parents.add(parentsItem);
     return this;
@@ -310,22 +325,22 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
    * Get parents
    * @return parents
   **/
-  public List<LoyaltyTransactionsDTORelatedTransactions> getParents() {
+  public List<LoyaltyTransactionsRelatedTransactions> getParents() {
     return parents;
   }
 
-  public void setParents(List<LoyaltyTransactionsDTORelatedTransactions> parents) {
+  public void setParents(List<LoyaltyTransactionsRelatedTransactions> parents) {
     this.parents = parents;
   }
 
-  public LoyaltyTransactionsProductModel children(List<LoyaltyTransactionsDTORelatedTransactions> children) {
+  public LoyaltyTransactionsProductModel children(List<LoyaltyTransactionsRelatedTransactions> children) {
     this.children = children;
     return this;
   }
 
-  public LoyaltyTransactionsProductModel addChildrenItem(LoyaltyTransactionsDTORelatedTransactions childrenItem) {
+  public LoyaltyTransactionsProductModel addChildrenItem(LoyaltyTransactionsRelatedTransactions childrenItem) {
     if (this.children == null) {
-      this.children = new ArrayList<LoyaltyTransactionsDTORelatedTransactions>();
+      this.children = new ArrayList<LoyaltyTransactionsRelatedTransactions>();
     }
     this.children.add(childrenItem);
     return this;
@@ -335,12 +350,71 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
    * Get children
    * @return children
   **/
-  public List<LoyaltyTransactionsDTORelatedTransactions> getChildren() {
+  public List<LoyaltyTransactionsRelatedTransactions> getChildren() {
     return children;
   }
 
-  public void setChildren(List<LoyaltyTransactionsDTORelatedTransactions> children) {
+  public void setChildren(List<LoyaltyTransactionsRelatedTransactions> children) {
     this.children = children;
+  }
+
+  public LoyaltyTransactionsProductModel cleared(Boolean cleared) {
+    this.cleared = cleared;
+    return this;
+  }
+
+   /**
+   * Boolean if Transaction is cleared or not
+   * @return cleared
+  **/
+  public Boolean getCleared() {
+    return cleared;
+  }
+
+  public void setCleared(Boolean cleared) {
+    this.cleared = cleared;
+  }
+
+  public LoyaltyTransactionsProductModel clearingInformation(List<Object> clearingInformation) {
+    this.clearingInformation = clearingInformation;
+    return this;
+  }
+
+  public LoyaltyTransactionsProductModel addClearingInformationItem(Object clearingInformationItem) {
+    if (this.clearingInformation == null) {
+      this.clearingInformation = new ArrayList<Object>();
+    }
+    this.clearingInformation.add(clearingInformationItem);
+    return this;
+  }
+
+   /**
+   * Clearing Information
+   * @return clearingInformation
+  **/
+  public List<Object> getClearingInformation() {
+    return clearingInformation;
+  }
+
+  public void setClearingInformation(List<Object> clearingInformation) {
+    this.clearingInformation = clearingInformation;
+  }
+
+  public LoyaltyTransactionsProductModel transId(Integer transId) {
+    this.transId = transId;
+    return this;
+  }
+
+   /**
+   * Transaction ID
+   * @return transId
+  **/
+  public Integer getTransId() {
+    return transId;
+  }
+
+  public void setTransId(Integer transId) {
+    this.transId = transId;
   }
 
   public LoyaltyTransactionsProductModel tid(String tid) {
@@ -445,6 +519,40 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
     this.description = description;
   }
 
+  public LoyaltyTransactionsProductModel purpose(String purpose) {
+    this.purpose = purpose;
+    return this;
+  }
+
+   /**
+   * The purpose of the transaction.
+   * @return purpose
+  **/
+  public String getPurpose() {
+    return purpose;
+  }
+
+  public void setPurpose(String purpose) {
+    this.purpose = purpose;
+  }
+
+  public LoyaltyTransactionsProductModel additionalData(Object additionalData) {
+    this.additionalData = additionalData;
+    return this;
+  }
+
+   /**
+   * Custom additional data
+   * @return additionalData
+  **/
+  public Object getAdditionalData() {
+    return additionalData;
+  }
+
+  public void setAdditionalData(Object additionalData) {
+    this.additionalData = additionalData;
+  }
+
   public LoyaltyTransactionsProductModel lastChange(String lastChange) {
     this.lastChange = lastChange;
     return this;
@@ -527,12 +635,17 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.card, loyaltyTransactionsProductModel.card) &&
         Objects.equals(this.parents, loyaltyTransactionsProductModel.parents) &&
         Objects.equals(this.children, loyaltyTransactionsProductModel.children) &&
+        Objects.equals(this.cleared, loyaltyTransactionsProductModel.cleared) &&
+        Objects.equals(this.clearingInformation, loyaltyTransactionsProductModel.clearingInformation) &&
+        Objects.equals(this.transId, loyaltyTransactionsProductModel.transId) &&
         Objects.equals(this.tid, loyaltyTransactionsProductModel.tid) &&
         Objects.equals(this.status, loyaltyTransactionsProductModel.status) &&
         Objects.equals(this.amount, loyaltyTransactionsProductModel.amount) &&
         Objects.equals(this.currency, loyaltyTransactionsProductModel.currency) &&
         Objects.equals(this.balance, loyaltyTransactionsProductModel.balance) &&
         Objects.equals(this.description, loyaltyTransactionsProductModel.description) &&
+        Objects.equals(this.purpose, loyaltyTransactionsProductModel.purpose) &&
+        Objects.equals(this.additionalData, loyaltyTransactionsProductModel.additionalData) &&
         Objects.equals(this.lastChange, loyaltyTransactionsProductModel.lastChange) &&
         Objects.equals(this.receipt, loyaltyTransactionsProductModel.receipt) &&
         Objects.equals(this.isCancelling, loyaltyTransactionsProductModel.isCancelling) &&
@@ -541,7 +654,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, merchant, cardgroup, store, merchantcard, card, parents, children, tid, status, amount, currency, balance, description, lastChange, receipt, isCancelling, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, merchant, cardgroup, store, merchantcard, card, parents, children, cleared, clearingInformation, transId, tid, status, amount, currency, balance, description, purpose, additionalData, lastChange, receipt, isCancelling, super.hashCode());
   }
 
   @Override
@@ -563,12 +676,17 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
     sb.append("    card: ").append(toIndentedString(card)).append("\n");
     sb.append("    parents: ").append(toIndentedString(parents)).append("\n");
     sb.append("    children: ").append(toIndentedString(children)).append("\n");
+    sb.append("    cleared: ").append(toIndentedString(cleared)).append("\n");
+    sb.append("    clearingInformation: ").append(toIndentedString(clearingInformation)).append("\n");
+    sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
     sb.append("    tid: ").append(toIndentedString(tid)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
+    sb.append("    additionalData: ").append(toIndentedString(additionalData)).append("\n");
     sb.append("    lastChange: ").append(toIndentedString(lastChange)).append("\n");
     sb.append("    receipt: ").append(toIndentedString(receipt)).append("\n");
     sb.append("    isCancelling: ").append(toIndentedString(isCancelling)).append("\n");

@@ -7,53 +7,30 @@ import java.util.Objects;
  * LoyaltyMerchantcardsDTO
  */
 public class LoyaltyMerchantcardsDTO {
-  @SerializedName("merchant")
-  protected String merchant = null;
-
-  @SerializedName("card")
-  protected String card = null;
+  @SerializedName("expiry_date")
+  protected String expiryDate = null;
 
   @SerializedName("payment_container")
   protected String paymentContainer = null;
 
-  @SerializedName("created_by_merchant")
-  protected Boolean createdByMerchant = null;
+  @SerializedName("additional_data")
+  protected Object additionalData = null;
 
-  @SerializedName("used_by_merchant")
-  protected Boolean usedByMerchant = null;
-
-  public LoyaltyMerchantcardsDTO merchant(String merchant) {
-    this.merchant = merchant;
+  public LoyaltyMerchantcardsDTO expiryDate(String expiryDate) {
+    this.expiryDate = expiryDate;
     return this;
   }
 
    /**
-   * General merchant id
-   * @return merchant
+   * Expiry date in RFC3339 format
+   * @return expiryDate
   **/
-  public String getMerchant() {
-    return merchant;
+  public String getExpiryDate() {
+    return expiryDate;
   }
 
-  public void setMerchant(String merchant) {
-    this.merchant = merchant;
-  }
-
-  public LoyaltyMerchantcardsDTO card(String card) {
-    this.card = card;
-    return this;
-  }
-
-   /**
-   * Loyalty Card ID
-   * @return card
-  **/
-  public String getCard() {
-    return card;
-  }
-
-  public void setCard(String card) {
-    this.card = card;
+  public void setExpiryDate(String expiryDate) {
+    this.expiryDate = expiryDate;
   }
 
   public LoyaltyMerchantcardsDTO paymentContainer(String paymentContainer) {
@@ -73,38 +50,21 @@ public class LoyaltyMerchantcardsDTO {
     this.paymentContainer = paymentContainer;
   }
 
-  public LoyaltyMerchantcardsDTO createdByMerchant(Boolean createdByMerchant) {
-    this.createdByMerchant = createdByMerchant;
+  public LoyaltyMerchantcardsDTO additionalData(Object additionalData) {
+    this.additionalData = additionalData;
     return this;
   }
 
    /**
-   * Whether the card was created by the merchant
-   * @return createdByMerchant
+   * Custom additional data
+   * @return additionalData
   **/
-  public Boolean getCreatedByMerchant() {
-    return createdByMerchant;
+  public Object getAdditionalData() {
+    return additionalData;
   }
 
-  public void setCreatedByMerchant(Boolean createdByMerchant) {
-    this.createdByMerchant = createdByMerchant;
-  }
-
-  public LoyaltyMerchantcardsDTO usedByMerchant(Boolean usedByMerchant) {
-    this.usedByMerchant = usedByMerchant;
-    return this;
-  }
-
-   /**
-   * Whether the card was used by the merchant
-   * @return usedByMerchant
-  **/
-  public Boolean getUsedByMerchant() {
-    return usedByMerchant;
-  }
-
-  public void setUsedByMerchant(Boolean usedByMerchant) {
-    this.usedByMerchant = usedByMerchant;
+  public void setAdditionalData(Object additionalData) {
+    this.additionalData = additionalData;
   }
 
   @Override
@@ -116,27 +76,23 @@ public class LoyaltyMerchantcardsDTO {
       return false;
     }
     LoyaltyMerchantcardsDTO loyaltyMerchantcardsDTO = (LoyaltyMerchantcardsDTO) o;
-    return Objects.equals(this.merchant, loyaltyMerchantcardsDTO.merchant) &&
-        Objects.equals(this.card, loyaltyMerchantcardsDTO.card) &&
+    return Objects.equals(this.expiryDate, loyaltyMerchantcardsDTO.expiryDate) &&
         Objects.equals(this.paymentContainer, loyaltyMerchantcardsDTO.paymentContainer) &&
-        Objects.equals(this.createdByMerchant, loyaltyMerchantcardsDTO.createdByMerchant) &&
-        Objects.equals(this.usedByMerchant, loyaltyMerchantcardsDTO.usedByMerchant);
+        Objects.equals(this.additionalData, loyaltyMerchantcardsDTO.additionalData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, card, paymentContainer, createdByMerchant, usedByMerchant);
+    return Objects.hash(expiryDate, paymentContainer, additionalData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LoyaltyMerchantcardsDTO {\n");
-    sb.append("    merchant: ").append(toIndentedString(merchant)).append("\n");
-    sb.append("    card: ").append(toIndentedString(card)).append("\n");
+    sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
     sb.append("    paymentContainer: ").append(toIndentedString(paymentContainer)).append("\n");
-    sb.append("    createdByMerchant: ").append(toIndentedString(createdByMerchant)).append("\n");
-    sb.append("    usedByMerchant: ").append(toIndentedString(usedByMerchant)).append("\n");
+    sb.append("    additionalData: ").append(toIndentedString(additionalData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
