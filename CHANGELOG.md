@@ -19,6 +19,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.35.0] - 2024-07-15
+[3.35.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.34.0...3.35.0
+
+- *new element*: `expiry_date` and `customer_assignment_date` in `LoyaltyMerchantcardsProductModel`
+
+### Added
+- `Model.PaymentTransactionStatus`
+
+### Changed
+- `ApiClient`
+- `Model.LoyaltyMerchantcardsProductModel`
+
+
 ## [3.34.0] - 2024-06-24
 [3.34.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.33.0...3.34.0
 
