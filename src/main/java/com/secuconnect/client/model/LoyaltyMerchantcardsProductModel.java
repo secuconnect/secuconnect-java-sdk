@@ -84,6 +84,12 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   @SerializedName("passcode")
   protected Integer passcode = null;
 
+  @SerializedName("expiry_date")
+  protected String expiryDate = null;
+
+  @SerializedName("customer_assignment_date")
+  protected String customerAssignmentDate = null;
+
   public LoyaltyMerchantcardsProductModel l(Integer l) {
     this.l = l;
     return this;
@@ -475,6 +481,40 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
     this.passcode = passcode;
   }
 
+  public LoyaltyMerchantcardsProductModel expiryDate(String expiryDate) {
+    this.expiryDate = expiryDate;
+    return this;
+  }
+
+   /**
+   * Get expiryDate
+   * @return expiryDate
+  **/
+  public String getExpiryDate() {
+    return expiryDate;
+  }
+
+  public void setExpiryDate(String expiryDate) {
+    this.expiryDate = expiryDate;
+  }
+
+  public LoyaltyMerchantcardsProductModel customerAssignmentDate(String customerAssignmentDate) {
+    this.customerAssignmentDate = customerAssignmentDate;
+    return this;
+  }
+
+   /**
+   * Get customerAssignmentDate
+   * @return customerAssignmentDate
+  **/
+  public String getCustomerAssignmentDate() {
+    return customerAssignmentDate;
+  }
+
+  public void setCustomerAssignmentDate(String customerAssignmentDate) {
+    this.customerAssignmentDate = customerAssignmentDate;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -507,12 +547,14 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
         Objects.equals(this.lastCharge, loyaltyMerchantcardsProductModel.lastCharge) &&
         Objects.equals(this.isBaseCard, loyaltyMerchantcardsProductModel.isBaseCard) &&
         Objects.equals(this.passcode, loyaltyMerchantcardsProductModel.passcode) &&
+        Objects.equals(this.expiryDate, loyaltyMerchantcardsProductModel.expiryDate) &&
+        Objects.equals(this.customerAssignmentDate, loyaltyMerchantcardsProductModel.customerAssignmentDate) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, card, merchant, createdForMerchant, createdForStore, customer, cardgroup, paymentContainer, balance, points, bonusBalance, cashBalance, stockStatus, lockStatus, lastUsage, lastCharge, isBaseCard, passcode, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, card, merchant, createdForMerchant, createdForStore, customer, cardgroup, paymentContainer, balance, points, bonusBalance, cashBalance, stockStatus, lockStatus, lastUsage, lastCharge, isBaseCard, passcode, expiryDate, customerAssignmentDate, super.hashCode());
   }
 
   @Override
@@ -543,6 +585,8 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
     sb.append("    lastCharge: ").append(toIndentedString(lastCharge)).append("\n");
     sb.append("    isBaseCard: ").append(toIndentedString(isBaseCard)).append("\n");
     sb.append("    passcode: ").append(toIndentedString(passcode)).append("\n");
+    sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
+    sb.append("    customerAssignmentDate: ").append(toIndentedString(customerAssignmentDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
