@@ -19,6 +19,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.36.0] - 2024-07-30
+[3.36.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.35.0...3.36.0
+
+- *new element*: `aiia` in `CrowdFundingDataOpenAmountInsideCancelPeriod` and `CrowdFundingDataDetails`
+
+### Changed
+- `ApiClient`
+- `Model.CrowdFundingDataDetails`
+- `Model.CrowdFundingDataOpenAmountInsideCancelPeriod`
+
+
 ## [3.35.0] - 2024-07-15
 [3.35.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.34.0...3.35.0
 
