@@ -5,6 +5,7 @@ import com.secuconnect.client.model.AggregationResult;
 import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CreatedField;
+import com.secuconnect.client.model.DeviceStatus;
 import com.secuconnect.client.model.ProductInstanceUID;
 import com.secuconnect.client.model.SmartDevicesDevice;
 import com.secuconnect.client.model.SmartDevicesProducts;
@@ -96,6 +97,9 @@ public class SmartDevicesProductModel extends BaseProductModel {
 
   @SerializedName("base_version")
   protected String baseVersion = null;
+
+  @SerializedName("status")
+  protected DeviceStatus status = null;
 
   public SmartDevicesProductModel l(Integer l) {
     this.l = l;
@@ -556,6 +560,23 @@ public class SmartDevicesProductModel extends BaseProductModel {
     this.baseVersion = baseVersion;
   }
 
+  public SmartDevicesProductModel status(DeviceStatus status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Get status
+   * @return status
+  **/
+  public DeviceStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(DeviceStatus status) {
+    this.status = status;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -592,12 +613,13 @@ public class SmartDevicesProductModel extends BaseProductModel {
         Objects.equals(this.connectionType, smartDevicesProductModel.connectionType) &&
         Objects.equals(this.terminalType, smartDevicesProductModel.terminalType) &&
         Objects.equals(this.baseVersion, smartDevicesProductModel.baseVersion) &&
+        Objects.equals(this.status, smartDevicesProductModel.status) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, updated, merchant, store, contract, vendor, vendorUid, type, device, routing, userPin, products, description, tid, idleScreenRegister, idleScreenTerminal, online, refresh, connectionType, terminalType, baseVersion, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, merchant, store, contract, vendor, vendorUid, type, device, routing, userPin, products, description, tid, idleScreenRegister, idleScreenTerminal, online, refresh, connectionType, terminalType, baseVersion, status, super.hashCode());
   }
 
   @Override
@@ -632,6 +654,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
     sb.append("    connectionType: ").append(toIndentedString(connectionType)).append("\n");
     sb.append("    terminalType: ").append(toIndentedString(terminalType)).append("\n");
     sb.append("    baseVersion: ").append(toIndentedString(baseVersion)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

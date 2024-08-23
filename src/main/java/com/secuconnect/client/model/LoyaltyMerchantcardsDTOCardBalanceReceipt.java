@@ -8,12 +8,12 @@ import java.util.Objects;
  */
 public class LoyaltyMerchantcardsDTOCardBalanceReceipt {
   @SerializedName("cardnumber")
-  protected Integer cardnumber = null;
+  protected String cardnumber = null;
 
   @SerializedName("terminal_id")
   protected String terminalId = null;
 
-  public LoyaltyMerchantcardsDTOCardBalanceReceipt cardnumber(Integer cardnumber) {
+  public LoyaltyMerchantcardsDTOCardBalanceReceipt cardnumber(String cardnumber) {
     this.cardnumber = cardnumber;
     return this;
   }
@@ -22,11 +22,11 @@ public class LoyaltyMerchantcardsDTOCardBalanceReceipt {
    * Number on card
    * @return cardnumber
   **/
-  public Integer getCardnumber() {
+  public String getCardnumber() {
     return cardnumber;
   }
 
-  public void setCardnumber(Integer cardnumber) {
+  public void setCardnumber(String cardnumber) {
     this.cardnumber = cardnumber;
   }
 
