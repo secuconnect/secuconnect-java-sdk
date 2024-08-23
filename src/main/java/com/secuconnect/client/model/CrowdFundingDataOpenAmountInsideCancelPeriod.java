@@ -25,6 +25,9 @@ public class CrowdFundingDataOpenAmountInsideCancelPeriod {
   @SerializedName("twint")
   protected Integer twint = null;
 
+  @SerializedName("aiia")
+  protected Integer aiia = null;
+
   public CrowdFundingDataOpenAmountInsideCancelPeriod total(Integer total) {
     this.total = total;
     return this;
@@ -127,6 +130,23 @@ public class CrowdFundingDataOpenAmountInsideCancelPeriod {
     this.twint = twint;
   }
 
+  public CrowdFundingDataOpenAmountInsideCancelPeriod aiia(Integer aiia) {
+    this.aiia = aiia;
+    return this;
+  }
+
+   /**
+   * Total amount for Aiia transactions, in the smallest currency unit (e. g. Euro Cent)
+   * @return aiia
+  **/
+  public Integer getAiia() {
+    return aiia;
+  }
+
+  public void setAiia(Integer aiia) {
+    this.aiia = aiia;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -141,12 +161,13 @@ public class CrowdFundingDataOpenAmountInsideCancelPeriod {
         Objects.equals(this.creditCard, crowdFundingDataOpenAmountInsideCancelPeriod.creditCard) &&
         Objects.equals(this.prepay, crowdFundingDataOpenAmountInsideCancelPeriod.prepay) &&
         Objects.equals(this.sofort, crowdFundingDataOpenAmountInsideCancelPeriod.sofort) &&
-        Objects.equals(this.twint, crowdFundingDataOpenAmountInsideCancelPeriod.twint);
+        Objects.equals(this.twint, crowdFundingDataOpenAmountInsideCancelPeriod.twint) &&
+        Objects.equals(this.aiia, crowdFundingDataOpenAmountInsideCancelPeriod.aiia);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(total, debit, creditCard, prepay, sofort, twint);
+    return Objects.hash(total, debit, creditCard, prepay, sofort, twint, aiia);
   }
 
   @Override
@@ -159,6 +180,7 @@ public class CrowdFundingDataOpenAmountInsideCancelPeriod {
     sb.append("    prepay: ").append(toIndentedString(prepay)).append("\n");
     sb.append("    sofort: ").append(toIndentedString(sofort)).append("\n");
     sb.append("    twint: ").append(toIndentedString(twint)).append("\n");
+    sb.append("    aiia: ").append(toIndentedString(aiia)).append("\n");
     sb.append("}");
     return sb.toString();
   }

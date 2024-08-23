@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.DeviceStatus;
 import com.secuconnect.client.model.SmartDevicesProducts;
 import java.util.Objects;
 
@@ -43,6 +44,9 @@ public class SmartDevicesDTO {
 
   @SerializedName("base_version")
   protected String baseVersion = null;
+
+  @SerializedName("status")
+  protected DeviceStatus status = null;
 
   public SmartDevicesDTO merchant(String merchant) {
     this.merchant = merchant;
@@ -248,6 +252,23 @@ public class SmartDevicesDTO {
     this.baseVersion = baseVersion;
   }
 
+  public SmartDevicesDTO status(DeviceStatus status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Get status
+   * @return status
+  **/
+  public DeviceStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(DeviceStatus status) {
+    this.status = status;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -268,12 +289,13 @@ public class SmartDevicesDTO {
         Objects.equals(this.tid, smartDevicesDTO.tid) &&
         Objects.equals(this.products, smartDevicesDTO.products) &&
         Objects.equals(this.terminalType, smartDevicesDTO.terminalType) &&
-        Objects.equals(this.baseVersion, smartDevicesDTO.baseVersion);
+        Objects.equals(this.baseVersion, smartDevicesDTO.baseVersion) &&
+        Objects.equals(this.status, smartDevicesDTO.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchant, store, device, contract, vendor, vendorUid, type, description, tid, products, terminalType, baseVersion);
+    return Objects.hash(merchant, store, device, contract, vendor, vendorUid, type, description, tid, products, terminalType, baseVersion, status);
   }
 
   @Override
@@ -292,6 +314,7 @@ public class SmartDevicesDTO {
     sb.append("    products: ").append(toIndentedString(products)).append("\n");
     sb.append("    terminalType: ").append(toIndentedString(terminalType)).append("\n");
     sb.append("    baseVersion: ").append(toIndentedString(baseVersion)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

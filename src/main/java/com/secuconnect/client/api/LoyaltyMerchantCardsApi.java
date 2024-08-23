@@ -424,16 +424,18 @@ public class LoyaltyMerchantCardsApi {
     /**
      * Build call for executeTransaction
      * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param targetMerchantCardId Loyalty Merchant Card ID (required)
      * @param body Transaction details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call executeTransactionCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOTransaction body) throws ApiException {
+    public Call executeTransactionCall(String loyaltyMerchantCardId, String targetMerchantCardId, LoyaltyMerchantcardsDTOTransaction body) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction"
-            .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()));
+        String localVarPath = "/Loyalty/MerchantCards/{loyaltyMerchantCardId}/transaction/{targetMerchantCardId}"
+            .replaceAll("\\{" + "loyaltyMerchantCardId" + "\\}", apiClient.escapeString(loyaltyMerchantCardId.toString()))
+            .replaceAll("\\{" + "targetMerchantCardId" + "\\}", apiClient.escapeString(targetMerchantCardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -459,53 +461,60 @@ public class LoyaltyMerchantCardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call executeTransactionValidateBeforeCall(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOTransaction body) throws ApiException {
+    private Call executeTransactionValidateBeforeCall(String loyaltyMerchantCardId, String targetMerchantCardId, LoyaltyMerchantcardsDTOTransaction body) throws ApiException {
         // verify the required parameter 'loyaltyMerchantCardId' is set
         if (loyaltyMerchantCardId == null) {
             throw new ApiException("Missing the required parameter 'loyaltyMerchantCardId' when calling executeTransaction(Async)");
         }
+        // verify the required parameter 'targetMerchantCardId' is set
+        if (targetMerchantCardId == null) {
+            throw new ApiException("Missing the required parameter 'targetMerchantCardId' when calling executeTransaction(Async)");
+        }
 
-        return executeTransactionCall(loyaltyMerchantCardId, body);
+        return executeTransactionCall(loyaltyMerchantCardId, targetMerchantCardId, body);
     }
 
     /**
-     * Execute transaction
-     * Executes a loyalty transaction. Intended to by used from SDK.
+     * Execute Transaction
+     * Carries out a Loyalty Transaction. Intended to be used by SDK
      * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param targetMerchantCardId Loyalty Merchant Card ID (required)
      * @param body Transaction details
      * @return LoyaltyMerchantcardsProductWithReceiptModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LoyaltyMerchantcardsProductWithReceiptModel executeTransaction(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOTransaction body) throws ApiException {
-        ApiResponse<LoyaltyMerchantcardsProductWithReceiptModel> resp = executeTransactionWithHttpInfo(loyaltyMerchantCardId, body);
+    public LoyaltyMerchantcardsProductWithReceiptModel executeTransaction(String loyaltyMerchantCardId, String targetMerchantCardId, LoyaltyMerchantcardsDTOTransaction body) throws ApiException {
+        ApiResponse<LoyaltyMerchantcardsProductWithReceiptModel> resp = executeTransactionWithHttpInfo(loyaltyMerchantCardId, targetMerchantCardId, body);
         return resp.getData();
     }
 
     /**
-     * Execute transaction
-     * Executes a loyalty transaction. Intended to by used from SDK.
+     * Execute Transaction
+     * Carries out a Loyalty Transaction. Intended to be used by SDK
      * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param targetMerchantCardId Loyalty Merchant Card ID (required)
      * @param body Transaction details
      * @return ApiResponse&lt;LoyaltyMerchantcardsProductWithReceiptModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LoyaltyMerchantcardsProductWithReceiptModel> executeTransactionWithHttpInfo(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOTransaction body) throws ApiException {
-        Call call = executeTransactionValidateBeforeCall(loyaltyMerchantCardId, body);
+    public ApiResponse<LoyaltyMerchantcardsProductWithReceiptModel> executeTransactionWithHttpInfo(String loyaltyMerchantCardId, String targetMerchantCardId, LoyaltyMerchantcardsDTOTransaction body) throws ApiException {
+        Call call = executeTransactionValidateBeforeCall(loyaltyMerchantCardId, targetMerchantCardId, body);
         Type localVarReturnType = new TypeToken<LoyaltyMerchantcardsProductWithReceiptModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Execute transaction (asynchronously)
-     * Executes a loyalty transaction. Intended to by used from SDK.
+     * Execute Transaction (asynchronously)
+     * Carries out a Loyalty Transaction. Intended to be used by SDK
      * @param loyaltyMerchantCardId Loyalty Merchant Card ID (required)
+     * @param targetMerchantCardId Loyalty Merchant Card ID (required)
      * @param body Transaction details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call executeTransactionAsync(String loyaltyMerchantCardId, LoyaltyMerchantcardsDTOTransaction body, final ApiCallback<LoyaltyMerchantcardsProductWithReceiptModel> callback) throws ApiException {
-        Call call = executeTransactionValidateBeforeCall(loyaltyMerchantCardId, body);
+    public Call executeTransactionAsync(String loyaltyMerchantCardId, String targetMerchantCardId, LoyaltyMerchantcardsDTOTransaction body, final ApiCallback<LoyaltyMerchantcardsProductWithReceiptModel> callback) throws ApiException {
+        Call call = executeTransactionValidateBeforeCall(loyaltyMerchantCardId, targetMerchantCardId, body);
         Type localVarReturnType = new TypeToken<LoyaltyMerchantcardsProductWithReceiptModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

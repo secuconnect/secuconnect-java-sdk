@@ -11,7 +11,7 @@ public class LoyaltyMerchantcardsDTOValidateMerchantCard {
   protected String merchant = null;
 
   @SerializedName("cardnumber")
-  protected Integer cardnumber = null;
+  protected String cardnumber = null;
 
   public LoyaltyMerchantcardsDTOValidateMerchantCard merchant(String merchant) {
     this.merchant = merchant;
@@ -30,7 +30,7 @@ public class LoyaltyMerchantcardsDTOValidateMerchantCard {
     this.merchant = merchant;
   }
 
-  public LoyaltyMerchantcardsDTOValidateMerchantCard cardnumber(Integer cardnumber) {
+  public LoyaltyMerchantcardsDTOValidateMerchantCard cardnumber(String cardnumber) {
     this.cardnumber = cardnumber;
     return this;
   }
@@ -39,11 +39,11 @@ public class LoyaltyMerchantcardsDTOValidateMerchantCard {
    * Number on card
    * @return cardnumber
   **/
-  public Integer getCardnumber() {
+  public String getCardnumber() {
     return cardnumber;
   }
 
-  public void setCardnumber(Integer cardnumber) {
+  public void setCardnumber(String cardnumber) {
     this.cardnumber = cardnumber;
   }
 

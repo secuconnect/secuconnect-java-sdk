@@ -26,6 +26,9 @@ public class CrowdFundingDataDetails {
   @SerializedName("twint")
   protected PaymentMethodBreakdown twint = null;
 
+  @SerializedName("aiia")
+  protected PaymentMethodBreakdown aiia = null;
+
   public CrowdFundingDataDetails currency(String currency) {
     this.currency = currency;
     return this;
@@ -128,6 +131,23 @@ public class CrowdFundingDataDetails {
     this.twint = twint;
   }
 
+  public CrowdFundingDataDetails aiia(PaymentMethodBreakdown aiia) {
+    this.aiia = aiia;
+    return this;
+  }
+
+   /**
+   * Get aiia
+   * @return aiia
+  **/
+  public PaymentMethodBreakdown getAiia() {
+    return aiia;
+  }
+
+  public void setAiia(PaymentMethodBreakdown aiia) {
+    this.aiia = aiia;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -142,12 +162,13 @@ public class CrowdFundingDataDetails {
         Objects.equals(this.creditCard, crowdFundingDataDetails.creditCard) &&
         Objects.equals(this.prepay, crowdFundingDataDetails.prepay) &&
         Objects.equals(this.sofort, crowdFundingDataDetails.sofort) &&
-        Objects.equals(this.twint, crowdFundingDataDetails.twint);
+        Objects.equals(this.twint, crowdFundingDataDetails.twint) &&
+        Objects.equals(this.aiia, crowdFundingDataDetails.aiia);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currency, debit, creditCard, prepay, sofort, twint);
+    return Objects.hash(currency, debit, creditCard, prepay, sofort, twint, aiia);
   }
 
   @Override
@@ -160,6 +181,7 @@ public class CrowdFundingDataDetails {
     sb.append("    prepay: ").append(toIndentedString(prepay)).append("\n");
     sb.append("    sofort: ").append(toIndentedString(sofort)).append("\n");
     sb.append("    twint: ").append(toIndentedString(twint)).append("\n");
+    sb.append("    aiia: ").append(toIndentedString(aiia)).append("\n");
     sb.append("}");
     return sb.toString();
   }
