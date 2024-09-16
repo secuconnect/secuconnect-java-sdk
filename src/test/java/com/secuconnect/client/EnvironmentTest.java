@@ -19,7 +19,7 @@ public class EnvironmentTest {
 
         try {
 
-            // Init tow environments
+            // Init two environments
             Environment env1 = new Environment()
                 .setAuthCache(cache)
                 .useCustomPaths("X1", Environment.BASE_PATH_TESTING, Environment.AUTH_PATH_TESTING)
