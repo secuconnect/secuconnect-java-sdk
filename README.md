@@ -26,7 +26,7 @@ To use this projects artifacts with Maven add the following dependency and repos
     <dependency>
         <groupId>com.secuconnect</groupId>
         <artifactId>secuconnect-java-sdk</artifactId>
-        <version>3.36.0</version>
+        <version>3.37.0</version>
     </dependency>
     .
     .

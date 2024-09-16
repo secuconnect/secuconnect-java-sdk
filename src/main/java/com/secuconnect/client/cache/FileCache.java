@@ -13,7 +13,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class FileCache implements CacheItemPoolInterface {
 
-    private static final ConcurrentHashMap<String, CacheItemInterface> cacheItems = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<String, ConcurrentHashMap<String, CacheItemInterface>> memCache = new ConcurrentHashMap<>();
+
+    private final ConcurrentHashMap<String, CacheItemInterface> cacheItems;
 
     private final String dir;
 
@@ -23,6 +25,12 @@ public class FileCache implements CacheItemPoolInterface {
         }
 
         this.dir = dir;
+
+        if (!memCache.containsKey(dir)) {
+            memCache.put(dir, new ConcurrentHashMap<>());
+        }
+
+        this.cacheItems = memCache.get(dir);
     }
 
     /**
@@ -109,7 +117,7 @@ public class FileCache implements CacheItemPoolInterface {
 
             createDirectory();
             Arrays.stream(Objects.requireNonNull(new File(dir).listFiles())).forEach(
-                    file -> success.set(file.delete() && success.get())
+                file -> success.set(file.delete() && success.get())
             );
         } catch (Exception ex) {
             success.set(false);

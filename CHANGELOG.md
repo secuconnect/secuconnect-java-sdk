@@ -19,6 +19,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.37.0] - 2024-04-16
+[3.37.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.36.0...3.37.0
+
+### Fixed
+- **Breaking:** calculation of `getUniqueKey` in `OAuthRefreshCredentials` was not unique for multiple refresh tokens (of different device uuids)
+- items of `FileCache` where disarranged (in the internal memory cache) when multiple folders where used
+
+
 ## [3.36.0] - 2024-08-23
 [3.36.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.35.0...3.36.0
 
@@ -44,15 +52,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `Model.LoyaltyMerchantcardsDTOValidateMerchantCard`
 - `Model.SmartDevicesDTO`
 - `Model.SmartDevicesProductModel`
-
-
-## [3.36.0] - 2024-07-30
-[3.36.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.35.0...3.36.0
-
-- *new element*: `aiia` in `CrowdFundingDataOpenAmountInsideCancelPeriod` and `CrowdFundingDataDetails`
-
-### Changed
-- `ApiClient`
 - `Model.CrowdFundingDataDetails`
 - `Model.CrowdFundingDataOpenAmountInsideCancelPeriod`
 

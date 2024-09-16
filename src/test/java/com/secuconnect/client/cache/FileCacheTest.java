@@ -3,6 +3,7 @@ package com.secuconnect.client.cache;
 import com.secuconnect.client.ApiException;
 import com.secuconnect.client.Environment;
 import com.secuconnect.client.Globals;
+import com.secuconnect.client.auth.credentials.OAuthRefreshCredentials;
 import org.junit.Test;
 
 import java.io.File;
@@ -22,8 +23,6 @@ public class FileCacheTest {
             .setCredentials(Globals.O_AUTH_CLIENT_CREDENTIALS);
 
         try {
-
-
             String accessToken1 = env.authenticate();
             String accessToken2 = env.authenticate();
 
@@ -74,6 +73,56 @@ public class FileCacheTest {
         }
 
         cache.clear();
+    }
+
+    @Test
+    public void oAuthTestWithSwitchingDirectories() {
+        String dir1 = getRandomCacheDirName();
+        String dir2 = getRandomCacheDirName();
+        assertNotEquals(dir1, dir2);
+
+        // Init environment
+        Environment env = Environment
+            .getGlobalEnv()
+            .setCredentials(Globals.O_AUTH_CLIENT_CREDENTIALS);
+
+        // Init cache folders
+        FileCache cache1 = new FileCache(dir1);
+        cache1.clear();
+        FileCache cache2 = new FileCache(dir2);
+        cache2.clear();
+        FileCache cache3 = new FileCache(dir1);
+        cache3.clear();
+
+        try {
+            // get token #1
+            env.setAuthCache(cache1);
+            String accessToken1 = env.authenticate();
+            assertFalse(accessToken1.isEmpty());
+
+            // get token #2
+            env.setAuthCache(cache2);
+            String accessToken2 = env.authenticate();
+            assertFalse(accessToken2.isEmpty());
+            assertNotEquals(accessToken1, accessToken2);
+
+            // get token #3
+            env.setAuthCache(cache3);
+            String accessToken3 = env.authenticate();
+            assertFalse(accessToken3.isEmpty());
+            assertNotEquals(accessToken2, accessToken3);
+
+            // same folder -> same token
+            assertEquals(accessToken3, accessToken1);
+        } catch (ApiException ex) {
+            ex.printStackTrace();
+            fail(ex.getResponseBody());
+        }
+
+        // cleanup
+        cache1.clear();
+        cache2.clear();
+        cache3.clear();
     }
 
     private String getRandomCacheDirName() {
