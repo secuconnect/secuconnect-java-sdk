@@ -58,6 +58,12 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
   @SerializedName("note")
   protected String note = null;
 
+  @SerializedName("consent_for_communication")
+  protected String consentForCommunication = null;
+
+  @SerializedName("additional_data")
+  protected Object additionalData = null;
+
   public LoyaltyCustomersProductModel l(Integer l) {
     this.l = l;
     return this;
@@ -304,6 +310,40 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
     this.note = note;
   }
 
+  public LoyaltyCustomersProductModel consentForCommunication(String consentForCommunication) {
+    this.consentForCommunication = consentForCommunication;
+    return this;
+  }
+
+   /**
+   * Whether the customer has given consent for communication or not:  * &#x60;\&quot;accepted\&quot;&#x60; * &#x60;\&quot;declined\&quot;&#x60; * &#x60;\&quot;not_set\&quot;&#x60;
+   * @return consentForCommunication
+  **/
+  public String getConsentForCommunication() {
+    return consentForCommunication;
+  }
+
+  public void setConsentForCommunication(String consentForCommunication) {
+    this.consentForCommunication = consentForCommunication;
+  }
+
+  public LoyaltyCustomersProductModel additionalData(Object additionalData) {
+    this.additionalData = additionalData;
+    return this;
+  }
+
+   /**
+   * Additional data properties
+   * @return additionalData
+  **/
+  public Object getAdditionalData() {
+    return additionalData;
+  }
+
+  public void setAdditionalData(Object additionalData) {
+    this.additionalData = additionalData;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -327,12 +367,14 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
         Objects.equals(this.paymentContainer, loyaltyCustomersProductModel.paymentContainer) &&
         Objects.equals(this.customernumber, loyaltyCustomersProductModel.customernumber) &&
         Objects.equals(this.note, loyaltyCustomersProductModel.note) &&
+        Objects.equals(this.consentForCommunication, loyaltyCustomersProductModel.consentForCommunication) &&
+        Objects.equals(this.additionalData, loyaltyCustomersProductModel.additionalData) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, merchant, contact, merchantContact, accountContact, paymentContainer, customernumber, note, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, merchant, contact, merchantContact, accountContact, paymentContainer, customernumber, note, consentForCommunication, additionalData, super.hashCode());
   }
 
   @Override
@@ -354,6 +396,8 @@ public class LoyaltyCustomersProductModel extends BaseProductModel {
     sb.append("    paymentContainer: ").append(toIndentedString(paymentContainer)).append("\n");
     sb.append("    customernumber: ").append(toIndentedString(customernumber)).append("\n");
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
+    sb.append("    consentForCommunication: ").append(toIndentedString(consentForCommunication)).append("\n");
+    sb.append("    additionalData: ").append(toIndentedString(additionalData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
