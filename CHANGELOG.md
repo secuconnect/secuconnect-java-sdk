@@ -19,6 +19,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.38.0] - 2024-09-26
+[3.38.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.37.0...3.38.0
+
+- *new element*: `consent_for_communication` and `additional_data` in `LoyaltyCustomersProductModel`
+
+### Added
+- `Model.LoyaltyTransactionsProductModelClearingInformation`
+
+### Changed
+- `ApiClient`
+- `Model.LoyaltyCustomersProductModel`
+- `Model.LoyaltyTransactionsProductModel`
+
+
 ## [3.37.0] - 2024-04-16
 [3.37.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.36.0...3.37.0
 

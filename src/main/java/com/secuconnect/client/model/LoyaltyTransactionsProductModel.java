@@ -10,6 +10,7 @@ import com.secuconnect.client.model.GeneralStoresProductModel;
 import com.secuconnect.client.model.LoyaltyCardgroupsProductModel;
 import com.secuconnect.client.model.LoyaltyCardsProductModel;
 import com.secuconnect.client.model.LoyaltyMerchantcardsProductModel;
+import com.secuconnect.client.model.LoyaltyTransactionsProductModelClearingInformation;
 import com.secuconnect.client.model.LoyaltyTransactionsRelatedTransactions;
 import com.secuconnect.client.model.ReceiptTypeValue;
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
   protected Boolean cleared = null;
 
   @SerializedName("clearing_information")
-  protected List<Object> clearingInformation = null;
+  protected List<LoyaltyTransactionsProductModelClearingInformation> clearingInformation = null;
 
   @SerializedName("trans_id")
   protected Integer transId = null;
@@ -375,14 +376,14 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
     this.cleared = cleared;
   }
 
-  public LoyaltyTransactionsProductModel clearingInformation(List<Object> clearingInformation) {
+  public LoyaltyTransactionsProductModel clearingInformation(List<LoyaltyTransactionsProductModelClearingInformation> clearingInformation) {
     this.clearingInformation = clearingInformation;
     return this;
   }
 
-  public LoyaltyTransactionsProductModel addClearingInformationItem(Object clearingInformationItem) {
+  public LoyaltyTransactionsProductModel addClearingInformationItem(LoyaltyTransactionsProductModelClearingInformation clearingInformationItem) {
     if (this.clearingInformation == null) {
-      this.clearingInformation = new ArrayList<Object>();
+      this.clearingInformation = new ArrayList<LoyaltyTransactionsProductModelClearingInformation>();
     }
     this.clearingInformation.add(clearingInformationItem);
     return this;
@@ -392,11 +393,11 @@ public class LoyaltyTransactionsProductModel extends BaseProductModel {
    * Clearing Information
    * @return clearingInformation
   **/
-  public List<Object> getClearingInformation() {
+  public List<LoyaltyTransactionsProductModelClearingInformation> getClearingInformation() {
     return clearingInformation;
   }
 
-  public void setClearingInformation(List<Object> clearingInformation) {
+  public void setClearingInformation(List<LoyaltyTransactionsProductModelClearingInformation> clearingInformation) {
     this.clearingInformation = clearingInformation;
   }
 
