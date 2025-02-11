@@ -13,9 +13,6 @@ public class SmartRoutingsAssign {
   @SerializedName("id")
   protected String id = null;
 
-  @SerializedName("priority")
-  protected Integer priority = null;
-
   @SerializedName("type")
   protected String type = null;
 
@@ -54,23 +51,6 @@ public class SmartRoutingsAssign {
 
   public void setId(String id) {
     this.id = id;
-  }
-
-  public SmartRoutingsAssign priority(Integer priority) {
-    this.priority = priority;
-    return this;
-  }
-
-   /**
-   * Priority
-   * @return priority
-  **/
-  public Integer getPriority() {
-    return priority;
-  }
-
-  public void setPriority(Integer priority) {
-    this.priority = priority;
   }
 
   public SmartRoutingsAssign type(String type) {
@@ -118,14 +98,13 @@ public class SmartRoutingsAssign {
     SmartRoutingsAssign smartRoutingsAssign = (SmartRoutingsAssign) o;
     return Objects.equals(this.object, smartRoutingsAssign.object) &&
         Objects.equals(this.id, smartRoutingsAssign.id) &&
-        Objects.equals(this.priority, smartRoutingsAssign.priority) &&
         Objects.equals(this.type, smartRoutingsAssign.type) &&
         Objects.equals(this.description, smartRoutingsAssign.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(object, id, priority, type, description);
+    return Objects.hash(object, id, type, description);
   }
 
   @Override
@@ -134,7 +113,6 @@ public class SmartRoutingsAssign {
     sb.append("class SmartRoutingsAssign {\n");
     sb.append("    object: ").append(toIndentedString(object)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");

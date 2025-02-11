@@ -350,7 +350,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Capture
-     * Capture an open Payment Transaction
+     * Captures an authorised invoice Payment Transaction.  **Note:** For invoice payment, this must be invoked. Otherwise it is not known that and when the invoice becomes due.  **Note:** This works only for authorised invoice payment transactions. The transaction must have status 85 as a pre-condition.
      * @param paymentTransactionId Payment Transaction ID (required)
      * @param body 
      * @return PaymentTransactionsProductModel
@@ -363,7 +363,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Capture
-     * Capture an open Payment Transaction
+     * Captures an authorised invoice Payment Transaction.  **Note:** For invoice payment, this must be invoked. Otherwise it is not known that and when the invoice becomes due.  **Note:** This works only for authorised invoice payment transactions. The transaction must have status 85 as a pre-condition.
      * @param paymentTransactionId Payment Transaction ID (required)
      * @param body 
      * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
@@ -377,7 +377,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Capture (asynchronously)
-     * Capture an open Payment Transaction
+     * Captures an authorised invoice Payment Transaction.  **Note:** For invoice payment, this must be invoked. Otherwise it is not known that and when the invoice becomes due.  **Note:** This works only for authorised invoice payment transactions. The transaction must have status 85 as a pre-condition.
      * @param paymentTransactionId Payment Transaction ID (required)
      * @param body 
      * @param callback The callback to be executed when the API call finishes
@@ -1239,7 +1239,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Add shipping information
-     * Adds shipping information, and marks the Payment Transaction as shipped when called the first time.  **Note: This is obligatory for purchase on account, because otherwise it is not known that and when the invoice is due.**
+     * Adds shipping information.
      * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
      * @param body Shipping information
      * @return ResultBoolean
@@ -1252,7 +1252,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Add shipping information
-     * Adds shipping information, and marks the Payment Transaction as shipped when called the first time.  **Note: This is obligatory for purchase on account, because otherwise it is not known that and when the invoice is due.**
+     * Adds shipping information.
      * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
      * @param body Shipping information
      * @return ApiResponse&lt;ResultBoolean&gt;
@@ -1266,7 +1266,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Add shipping information (asynchronously)
-     * Adds shipping information, and marks the Payment Transaction as shipped when called the first time.  **Note: This is obligatory for purchase on account, because otherwise it is not known that and when the invoice is due.**
+     * Adds shipping information.
      * @param paymentTransactionId Payment Transaction ID (PCI_...) or Flex.API transaction hash (required)
      * @param body Shipping information
      * @param callback The callback to be executed when the API call finishes
