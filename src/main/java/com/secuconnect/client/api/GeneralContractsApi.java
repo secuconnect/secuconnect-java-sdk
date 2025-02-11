@@ -3,12 +3,12 @@ package com.secuconnect.client.api;
 import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
 import com.secuconnect.client.model.Aggregate;
-import com.secuconnect.client.model.BankAccountDescriptor;
 import java.math.BigDecimal;
 import com.secuconnect.client.model.GeneralContractsDTO;
 import com.secuconnect.client.model.GeneralContractsList;
 import com.secuconnect.client.model.GeneralContractsProductModel;
 import com.secuconnect.client.model.GeneralContractsTransferBalanceModel;
+import com.secuconnect.client.model.GeneralContractsUpdateBankAccountRequest;
 import com.secuconnect.client.model.GetAvailablePaymentMethodsDTO;
 import com.secuconnect.client.model.IframeOptions;
 import com.secuconnect.client.model.PaymentLinkOptions;
@@ -1399,7 +1399,7 @@ public class GeneralContractsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call updateBankAccountCall(String generalContractId, BankAccountDescriptor body) throws ApiException {
+    public Call updateBankAccountCall(String generalContractId, GeneralContractsUpdateBankAccountRequest body) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1430,7 +1430,7 @@ public class GeneralContractsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call updateBankAccountValidateBeforeCall(String generalContractId, BankAccountDescriptor body) throws ApiException {
+    private Call updateBankAccountValidateBeforeCall(String generalContractId, GeneralContractsUpdateBankAccountRequest body) throws ApiException {
         // verify the required parameter 'generalContractId' is set
         if (generalContractId == null) {
             throw new ApiException("Missing the required parameter 'generalContractId' when calling updateBankAccount(Async)");
@@ -1447,7 +1447,7 @@ public class GeneralContractsApi {
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResultBoolean updateBankAccount(String generalContractId, BankAccountDescriptor body) throws ApiException {
+    public ResultBoolean updateBankAccount(String generalContractId, GeneralContractsUpdateBankAccountRequest body) throws ApiException {
         ApiResponse<ResultBoolean> resp = updateBankAccountWithHttpInfo(generalContractId, body);
         return resp.getData();
     }
@@ -1460,7 +1460,7 @@ public class GeneralContractsApi {
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResultBoolean> updateBankAccountWithHttpInfo(String generalContractId, BankAccountDescriptor body) throws ApiException {
+    public ApiResponse<ResultBoolean> updateBankAccountWithHttpInfo(String generalContractId, GeneralContractsUpdateBankAccountRequest body) throws ApiException {
         Call call = updateBankAccountValidateBeforeCall(generalContractId, body);
         Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1475,7 +1475,7 @@ public class GeneralContractsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call updateBankAccountAsync(String generalContractId, BankAccountDescriptor body, final ApiCallback<ResultBoolean> callback) throws ApiException {
+    public Call updateBankAccountAsync(String generalContractId, GeneralContractsUpdateBankAccountRequest body, final ApiCallback<ResultBoolean> callback) throws ApiException {
         Call call = updateBankAccountValidateBeforeCall(generalContractId, body);
         Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);

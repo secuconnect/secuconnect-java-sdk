@@ -19,6 +19,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.39.0] - 2025-02-11
+[3.39.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.38.0...3.39.0
+
+- *removed param*: `purpose` in `GeneralContractsUpdateBankAccountRequest`
+- *new element*: `verification_document` in `GeneralContractsUpdateBankAccountRequest`
+- *removed param*: `priority` in `SmartRoutingsProductModel.assign`
+
+### Added
+- `Model.GeneralContractsUpdateBankAccountRequest`
+
+### Changed
+- `ApiClient`
+- `Api.GeneralContractsApi`
+- `Api.PaymentTransactionsApi`
+- `Api.SmartRoutingsApi`
+- `Model.SecupayTransactionSetShippingInformationDTO`
+- `Model.SmartRoutingsAssign`
+
+### Removed
+- `Model.SmartRoutingPriority`
+
+
 ## [3.38.0] - 2024-09-26
 [3.38.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.37.0...3.38.0
 

@@ -5,7 +5,6 @@ import com.secuconnect.client.*;
 import com.secuconnect.client.model.Aggregate;
 import java.math.BigDecimal;
 import com.secuconnect.client.model.ProductExceptionPayload;
-import com.secuconnect.client.model.SmartRoutingPriority;
 import com.secuconnect.client.model.SmartRoutingsDTO;
 import com.secuconnect.client.model.SmartRoutingsList;
 import com.secuconnect.client.model.SmartRoutingsProductModel;
@@ -121,12 +120,11 @@ public class SmartRoutingsApi {
      * Build call for assignDeviceToRouting
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
-     * @param body Smart routing assignment properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public Call assignDeviceToRoutingCall(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body) throws ApiException {
-        Object localVarPostBody = body;
+    public Call assignDeviceToRoutingCall(String smartRoutingId, String smartDeviceId) throws ApiException {
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/Smart/Routings/{smartRoutingId}/assign/{smartDeviceId}"
@@ -147,7 +145,7 @@ public class SmartRoutingsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -157,7 +155,7 @@ public class SmartRoutingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private Call assignDeviceToRoutingValidateBeforeCall(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body) throws ApiException {
+    private Call assignDeviceToRoutingValidateBeforeCall(String smartRoutingId, String smartDeviceId) throws ApiException {
         // verify the required parameter 'smartRoutingId' is set
         if (smartRoutingId == null) {
             throw new ApiException("Missing the required parameter 'smartRoutingId' when calling assignDeviceToRouting(Async)");
@@ -167,7 +165,7 @@ public class SmartRoutingsApi {
             throw new ApiException("Missing the required parameter 'smartDeviceId' when calling assignDeviceToRouting(Async)");
         }
 
-        return assignDeviceToRoutingCall(smartRoutingId, smartDeviceId, body);
+        return assignDeviceToRoutingCall(smartRoutingId, smartDeviceId);
     }
 
     /**
@@ -175,12 +173,11 @@ public class SmartRoutingsApi {
      * Assigns the specified Smart Device to the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
-     * @param body Smart routing assignment properties
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartRoutingsProductModel assignDeviceToRouting(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body) throws ApiException {
-        ApiResponse<SmartRoutingsProductModel> resp = assignDeviceToRoutingWithHttpInfo(smartRoutingId, smartDeviceId, body);
+    public SmartRoutingsProductModel assignDeviceToRouting(String smartRoutingId, String smartDeviceId) throws ApiException {
+        ApiResponse<SmartRoutingsProductModel> resp = assignDeviceToRoutingWithHttpInfo(smartRoutingId, smartDeviceId);
         return resp.getData();
     }
 
@@ -189,12 +186,11 @@ public class SmartRoutingsApi {
      * Assigns the specified Smart Device to the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
-     * @param body Smart routing assignment properties
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartRoutingsProductModel> assignDeviceToRoutingWithHttpInfo(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body) throws ApiException {
-        Call call = assignDeviceToRoutingValidateBeforeCall(smartRoutingId, smartDeviceId, body);
+    public ApiResponse<SmartRoutingsProductModel> assignDeviceToRoutingWithHttpInfo(String smartRoutingId, String smartDeviceId) throws ApiException {
+        Call call = assignDeviceToRoutingValidateBeforeCall(smartRoutingId, smartDeviceId);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -204,13 +200,12 @@ public class SmartRoutingsApi {
      * Assigns the specified Smart Device to the specified Smart Routing.
      * @param smartRoutingId Smart routing id (required)
      * @param smartDeviceId Smart device id (required)
-     * @param body Smart routing assignment properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call assignDeviceToRoutingAsync(String smartRoutingId, String smartDeviceId, SmartRoutingPriority body, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
-        Call call = assignDeviceToRoutingValidateBeforeCall(smartRoutingId, smartDeviceId, body);
+    public Call assignDeviceToRoutingAsync(String smartRoutingId, String smartDeviceId, final ApiCallback<SmartRoutingsProductModel> callback) throws ApiException {
+        Call call = assignDeviceToRoutingValidateBeforeCall(smartRoutingId, smartDeviceId);
         Type localVarReturnType = new TypeToken<SmartRoutingsProductModel>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

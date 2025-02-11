@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SecupayTransactionSetShippingInformationDTO
+ * Shipping information (incl. invoice number and order ID)
  */
 public class SecupayTransactionSetShippingInformationDTO {
   @SerializedName("carrier")
