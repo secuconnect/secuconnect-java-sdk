@@ -122,7 +122,7 @@ public class SmartDevicesDTO {
   }
 
    /**
-   * Vendor
+   * Vendor, examples:  - &#x60;ingenico&#x60; - &#x60;nodis&#x60; - &#x60;ccv&#x60; - &#x60;3pos&#x60; - &#x60;flour&#x60; - &#x60;pios&#x60; - &#x60;shopware&#x60; - &#x60;loyalty_webterminal&#x60; - &#x60;android&#x60;
    * @return vendor
   **/
   public String getVendor() {
@@ -156,7 +156,7 @@ public class SmartDevicesDTO {
   }
 
    /**
-   * Type
+   * Type:  - &#x60;cashier&#x60; - &#x60;zvt&#x60; - &#x60;shopmodule&#x60; - &#x60;webterminal&#x60;
    * @return type
   **/
   public String getType() {
@@ -173,7 +173,7 @@ public class SmartDevicesDTO {
   }
 
    /**
-   * Description
+   * Device description
    * @return description
   **/
   public String getDescription() {

@@ -16,7 +16,7 @@ public class SmartDeviceUserPin {
   }
 
    /**
-   * user code from authentication response
+   * PIN / user code from authentication response
    * @return userPin
   **/
   public String getUserPin() {

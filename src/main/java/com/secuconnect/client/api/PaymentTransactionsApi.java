@@ -8,6 +8,8 @@ import com.secuconnect.client.model.PaymentCrowdFundingData;
 import com.secuconnect.client.model.PaymentTransactionCancelDTO;
 import com.secuconnect.client.model.PaymentTransactionsCaptureDTO;
 import com.secuconnect.client.model.PaymentTransactionsCheckStatus;
+import com.secuconnect.client.model.PaymentTransactionsGetRefundBankAccount;
+import com.secuconnect.client.model.PaymentTransactionsGetRefundBankAccountDTO;
 import com.secuconnect.client.model.PaymentTransactionsIncreaseAmountDTO;
 import com.secuconnect.client.model.PaymentTransactionsInstructionsModel;
 import com.secuconnect.client.model.PaymentTransactionsList;
@@ -1010,6 +1012,87 @@ public class PaymentTransactionsApi {
     public Call getPaymentTransactionsOldFormatAsync(String paymentTransactionId, final ApiCallback<SecupayTransactionProductModel> callback) throws ApiException {
         Call call = getPaymentTransactionsOldFormatValidateBeforeCall(paymentTransactionId);
         Type localVarReturnType = new TypeToken<SecupayTransactionProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for getRefundBankAccount
+     * @param body Get Refund Bank Account
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call getRefundBankAccountCall(PaymentTransactionsGetRefundBankAccountDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/me/getRefundBankAccount";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call getRefundBankAccountValidateBeforeCall(PaymentTransactionsGetRefundBankAccountDTO body) throws ApiException {
+
+        return getRefundBankAccountCall(body);
+    }
+
+    /**
+     * Get Refund Bank Account
+     * 
+     * @param body Get Refund Bank Account
+     * @return PaymentTransactionsGetRefundBankAccount
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentTransactionsGetRefundBankAccount getRefundBankAccount(PaymentTransactionsGetRefundBankAccountDTO body) throws ApiException {
+        ApiResponse<PaymentTransactionsGetRefundBankAccount> resp = getRefundBankAccountWithHttpInfo(body);
+        return resp.getData();
+    }
+
+    /**
+     * Get Refund Bank Account
+     * 
+     * @param body Get Refund Bank Account
+     * @return ApiResponse&lt;PaymentTransactionsGetRefundBankAccount&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentTransactionsGetRefundBankAccount> getRefundBankAccountWithHttpInfo(PaymentTransactionsGetRefundBankAccountDTO body) throws ApiException {
+        Call call = getRefundBankAccountValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsGetRefundBankAccount>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get Refund Bank Account (asynchronously)
+     * 
+     * @param body Get Refund Bank Account
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call getRefundBankAccountAsync(PaymentTransactionsGetRefundBankAccountDTO body, final ApiCallback<PaymentTransactionsGetRefundBankAccount> callback) throws ApiException {
+        Call call = getRefundBankAccountValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsGetRefundBankAccount>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

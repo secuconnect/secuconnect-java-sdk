@@ -80,11 +80,11 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   @SerializedName("checkin")
   protected SmartTransactionsCheckin checkin = null;
 
-  @SerializedName("merchantRef")
-  protected String merchantRef = null;
-
   @SerializedName("transactionRef")
   protected String transactionRef = null;
+
+  @SerializedName("merchantRef")
+  protected String merchantRef = null;
 
   @SerializedName("store")
   protected ProductInstanceUID store = null;
@@ -451,30 +451,13 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     this.checkin = checkin;
   }
 
-  public SmartTransactionsProductModel merchantRef(String merchantRef) {
-    this.merchantRef = merchantRef;
-    return this;
-  }
-
-   /**
-   * Merchant reference, e.g. merchant customer ID
-   * @return merchantRef
-  **/
-  public String getMerchantRef() {
-    return merchantRef;
-  }
-
-  public void setMerchantRef(String merchantRef) {
-    this.merchantRef = merchantRef;
-  }
-
   public SmartTransactionsProductModel transactionRef(String transactionRef) {
     this.transactionRef = transactionRef;
     return this;
   }
 
    /**
-   * Merchant reference, e.g. merchant customer ID
+   * Purpose for bank statement; would usually contain shop name and order number or date
    * @return transactionRef
   **/
   public String getTransactionRef() {
@@ -483,6 +466,23 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   public void setTransactionRef(String transactionRef) {
     this.transactionRef = transactionRef;
+  }
+
+  public SmartTransactionsProductModel merchantRef(String merchantRef) {
+    this.merchantRef = merchantRef;
+    return this;
+  }
+
+   /**
+   * Merchant reference for secuOffice; usually shop order number or ID
+   * @return merchantRef
+  **/
+  public String getMerchantRef() {
+    return merchantRef;
+  }
+
+  public void setMerchantRef(String merchantRef) {
+    this.merchantRef = merchantRef;
   }
 
   public SmartTransactionsProductModel store(ProductInstanceUID store) {
@@ -1069,8 +1069,8 @@ public class SmartTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.shippingAddress, smartTransactionsProductModel.shippingAddress) &&
         Objects.equals(this.container, smartTransactionsProductModel.container) &&
         Objects.equals(this.checkin, smartTransactionsProductModel.checkin) &&
-        Objects.equals(this.merchantRef, smartTransactionsProductModel.merchantRef) &&
         Objects.equals(this.transactionRef, smartTransactionsProductModel.transactionRef) &&
+        Objects.equals(this.merchantRef, smartTransactionsProductModel.merchantRef) &&
         Objects.equals(this.store, smartTransactionsProductModel.store) &&
         Objects.equals(this.deviceSource, smartTransactionsProductModel.deviceSource) &&
         Objects.equals(this.deviceDestination, smartTransactionsProductModel.deviceDestination) &&
@@ -1107,7 +1107,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, updated, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, merchantRef, transactionRef, store, deviceSource, deviceDestination, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, prepaidSales, communications, paymentLinks, applicationContext, paymentInstructions, paymentContext, subscription, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, status, merchant, contract, providerContract, customer, shippingAddress, container, checkin, transactionRef, merchantRef, store, deviceSource, deviceDestination, receiptNumber, receipt, receiptMerchant, receiptMerchantPrint, basketInfo, basket, idents, taxRate, taxAmount, cashier, market, deliveryOptions, product, transId, paymentMethod, transactions, lastVisitedPage, isDemo, checkoutLinks, intent, iframeUrl, prepaidSales, communications, paymentLinks, applicationContext, paymentInstructions, paymentContext, subscription, super.hashCode());
   }
 
   @Override
@@ -1131,8 +1131,8 @@ public class SmartTransactionsProductModel extends BaseProductModel {
     sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
     sb.append("    container: ").append(toIndentedString(container)).append("\n");
     sb.append("    checkin: ").append(toIndentedString(checkin)).append("\n");
-    sb.append("    merchantRef: ").append(toIndentedString(merchantRef)).append("\n");
     sb.append("    transactionRef: ").append(toIndentedString(transactionRef)).append("\n");
+    sb.append("    merchantRef: ").append(toIndentedString(merchantRef)).append("\n");
     sb.append("    store: ").append(toIndentedString(store)).append("\n");
     sb.append("    deviceSource: ").append(toIndentedString(deviceSource)).append("\n");
     sb.append("    deviceDestination: ").append(toIndentedString(deviceDestination)).append("\n");

@@ -14,7 +14,7 @@ import com.secuconnect.client.model.UpdatedField;
 import java.util.Objects;
 
 /**
- * SmartDevicesProductModel
+ * Smart Device
  */
 public class SmartDevicesProductModel extends BaseProductModel {
   @SerializedName("l")
@@ -294,7 +294,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
   }
 
    /**
-   * Vendor
+   * Vendor, examples:  - &#x60;ingenico&#x60; - &#x60;nodis&#x60; - &#x60;ccv&#x60; - &#x60;3pos&#x60; - &#x60;flour&#x60; - &#x60;pios&#x60; - &#x60;shopware&#x60; - &#x60;loyalty_webterminal&#x60; - &#x60;android&#x60;
    * @return vendor
   **/
   public String getVendor() {
@@ -311,7 +311,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
   }
 
    /**
-   * Vendor uid
+   * Vendor UID
    * @return vendorUid
   **/
   public String getVendorUid() {
@@ -328,7 +328,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
   }
 
    /**
-   * Type
+   * Type:  - &#x60;cashier&#x60; - &#x60;zvt&#x60; - &#x60;shopmodule&#x60; - &#x60;webterminal&#x60;
    * @return type
   **/
   public String getType() {
@@ -379,7 +379,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
   }
 
    /**
-   * User pin
+   * PIN / user code
    * @return userPin
   **/
   public String getUserPin() {
@@ -413,7 +413,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
   }
 
    /**
-   * Description
+   * Device description
    * @return description
   **/
   public String getDescription() {
@@ -481,7 +481,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
   }
 
    /**
-   * Online
+   * Whether the device is online
    * @return online
   **/
   public Boolean getOnline() {
@@ -515,7 +515,7 @@ public class SmartDevicesProductModel extends BaseProductModel {
   }
 
    /**
-   * Connection type
+   * Connection type:  - &#x60;https&#x60; - &#x60;stomp&#x60;
    * @return connectionType
   **/
   public String getConnectionType() {

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * SmartRoutingsProductModel
+ * Smart Routing
  */
 public class SmartRoutingsProductModel extends BaseProductModel {
   @SerializedName("l")
@@ -229,7 +229,7 @@ public class SmartRoutingsProductModel extends BaseProductModel {
   }
 
    /**
-   * Description
+   * Route description
    * @return description
   **/
   public String getDescription() {
@@ -254,7 +254,7 @@ public class SmartRoutingsProductModel extends BaseProductModel {
   }
 
    /**
-   * Assign
+   * Assigned devices
    * @return assign
   **/
   public List<SmartRoutingsAssign> getAssign() {

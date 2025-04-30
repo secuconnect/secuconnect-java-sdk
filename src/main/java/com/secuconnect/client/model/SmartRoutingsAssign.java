@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartRoutingsAssign
+ * Smart Routing Assignment
  */
 public class SmartRoutingsAssign {
   @SerializedName("object")
@@ -25,7 +25,7 @@ public class SmartRoutingsAssign {
   }
 
    /**
-   * Object of smart routing assign
+   * Object type
    * @return object
   **/
   public String getObject() {
@@ -42,7 +42,7 @@ public class SmartRoutingsAssign {
   }
 
    /**
-   * Id of smart routing assign
+   * Smart Device ID
    * @return id
   **/
   public String getId() {
@@ -59,7 +59,7 @@ public class SmartRoutingsAssign {
   }
 
    /**
-   * Type
+   * Smart Device type
    * @return type
   **/
   public String getType() {
@@ -76,7 +76,7 @@ public class SmartRoutingsAssign {
   }
 
    /**
-   * Description
+   * Smart Device description
    * @return description
   **/
   public String getDescription() {

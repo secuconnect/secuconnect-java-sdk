@@ -11,10 +11,10 @@ public class Environment {
     public static final String ENV_ID_TESTING = "TESTING";
 
     public static final String BASE_PATH_LIVE = "https://connect.secucard.com/api/v2";
-    public static final String BASE_PATH_TESTING = "https://connect-testing.secupay-ag.de/api/v2";
+    public static final String BASE_PATH_TESTING = "https://connect-testing.secuconnect.com/api/v2";
 
     public static final String AUTH_PATH_LIVE = "https://connect.secucard.com/oauth/token";
-    public static final String AUTH_PATH_TESTING = "https://connect-testing.secupay-ag.de/oauth/token";
+    public static final String AUTH_PATH_TESTING = "https://connect-testing.secuconnect.com/oauth/token";
 
     public static final String DEFAULT_AUTH_CACHE_FOLDER = ".auth";
 

@@ -43,7 +43,7 @@ public class SmartDevicesApi {
 
     /**
      * Build call for addDevice
-     * @param body Smart device properties
+     * @param body Smart Device details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -85,7 +85,7 @@ public class SmartDevicesApi {
     /**
      * Create Smart Device
      * Creates a new Smart Device from the given data.
-     * @param body Smart device properties
+     * @param body Smart Device details
      * @return SmartDevicesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -97,7 +97,7 @@ public class SmartDevicesApi {
     /**
      * Create Smart Device
      * Creates a new Smart Device from the given data.
-     * @param body Smart device properties
+     * @param body Smart Device details
      * @return ApiResponse&lt;SmartDevicesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -110,7 +110,7 @@ public class SmartDevicesApi {
     /**
      * Create Smart Device (asynchronously)
      * Creates a new Smart Device from the given data.
-     * @param body Smart device properties
+     * @param body Smart Device details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -231,7 +231,7 @@ public class SmartDevicesApi {
 
     /**
      * Build call for getDevicePinConfig
-     * @param smartDeviceId Smart device id (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -277,8 +277,8 @@ public class SmartDevicesApi {
 
     /**
      * Get device PIN settings
-     * Get the settings for the device PIN (which needs to be passed to authenticate the Smart Device) to know if a PIN is set on merchant, store or device level.
-     * @param smartDeviceId Smart device id (required)
+     * Returns the device PIN settings. This is not the actual PIN, but whether it must be passed on merchant, store or device level.
+     * @param smartDeviceId Smart Device ID (required)
      * @return GetSmartDevicePinConfig
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -289,8 +289,8 @@ public class SmartDevicesApi {
 
     /**
      * Get device PIN settings
-     * Get the settings for the device PIN (which needs to be passed to authenticate the Smart Device) to know if a PIN is set on merchant, store or device level.
-     * @param smartDeviceId Smart device id (required)
+     * Returns the device PIN settings. This is not the actual PIN, but whether it must be passed on merchant, store or device level.
+     * @param smartDeviceId Smart Device ID (required)
      * @return ApiResponse&lt;GetSmartDevicePinConfig&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -302,8 +302,8 @@ public class SmartDevicesApi {
 
     /**
      * Get device PIN settings (asynchronously)
-     * Get the settings for the device PIN (which needs to be passed to authenticate the Smart Device) to know if a PIN is set on merchant, store or device level.
-     * @param smartDeviceId Smart device id (required)
+     * Returns the device PIN settings. This is not the actual PIN, but whether it must be passed on merchant, store or device level.
+     * @param smartDeviceId Smart Device ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -403,8 +403,8 @@ public class SmartDevicesApi {
 
     /**
      * Build call for getRouting
-     * @param smartDeviceId Smart device id (required)
-     * @param type Smart Device Type (required)
+     * @param smartDeviceId Smart Device ID (required)
+     * @param type Smart Device type:  - &#x60;cashier&#x60; - &#x60;zvt&#x60; - &#x60;shopmodule&#x60; - &#x60;webterminal&#x60; (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -455,9 +455,9 @@ public class SmartDevicesApi {
 
     /**
      * Get with routing
-     * Returns the specified Smart Device if it is assigned to a single routing.
-     * @param smartDeviceId Smart device id (required)
-     * @param type Smart Device Type (required)
+     * Returns the specified Smart Device if it is assigned to a routing.
+     * @param smartDeviceId Smart Device ID (required)
+     * @param type Smart Device type:  - &#x60;cashier&#x60; - &#x60;zvt&#x60; - &#x60;shopmodule&#x60; - &#x60;webterminal&#x60; (required)
      * @return SmartDevicesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -468,9 +468,9 @@ public class SmartDevicesApi {
 
     /**
      * Get with routing
-     * Returns the specified Smart Device if it is assigned to a single routing.
-     * @param smartDeviceId Smart device id (required)
-     * @param type Smart Device Type (required)
+     * Returns the specified Smart Device if it is assigned to a routing.
+     * @param smartDeviceId Smart Device ID (required)
+     * @param type Smart Device type:  - &#x60;cashier&#x60; - &#x60;zvt&#x60; - &#x60;shopmodule&#x60; - &#x60;webterminal&#x60; (required)
      * @return ApiResponse&lt;SmartDevicesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -482,9 +482,9 @@ public class SmartDevicesApi {
 
     /**
      * Get with routing (asynchronously)
-     * Returns the specified Smart Device if it is assigned to a single routing.
-     * @param smartDeviceId Smart device id (required)
-     * @param type Smart Device Type (required)
+     * Returns the specified Smart Device if it is assigned to a routing.
+     * @param smartDeviceId Smart Device ID (required)
+     * @param type Smart Device type:  - &#x60;cashier&#x60; - &#x60;zvt&#x60; - &#x60;shopmodule&#x60; - &#x60;webterminal&#x60; (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -498,8 +498,8 @@ public class SmartDevicesApi {
 
     /**
      * Build call for getSecubaseConfig
-     * @param smartDeviceId Smart device id (required)
-     * @param body Smart device properties
+     * @param smartDeviceId Smart Device ID (required)
+     * @param body Smart Device properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -545,9 +545,9 @@ public class SmartDevicesApi {
 
     /**
      * Get Smart Device Secubase Config
-     * Returns the Secubase config for the Smart Device
-     * @param smartDeviceId Smart device id (required)
-     * @param body Smart device properties
+     * Returns the Secubase config of the Smart Device.
+     * @param smartDeviceId Smart Device ID (required)
+     * @param body Smart Device properties
      * @return SmartDevicesSecubaseConfig
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -558,9 +558,9 @@ public class SmartDevicesApi {
 
     /**
      * Get Smart Device Secubase Config
-     * Returns the Secubase config for the Smart Device
-     * @param smartDeviceId Smart device id (required)
-     * @param body Smart device properties
+     * Returns the Secubase config of the Smart Device.
+     * @param smartDeviceId Smart Device ID (required)
+     * @param body Smart Device properties
      * @return ApiResponse&lt;SmartDevicesSecubaseConfig&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -572,9 +572,9 @@ public class SmartDevicesApi {
 
     /**
      * Get Smart Device Secubase Config (asynchronously)
-     * Returns the Secubase config for the Smart Device
-     * @param smartDeviceId Smart device id (required)
-     * @param body Smart device properties
+     * Returns the Secubase config of the Smart Device.
+     * @param smartDeviceId Smart Device ID (required)
+     * @param body Smart Device properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -588,7 +588,7 @@ public class SmartDevicesApi {
 
     /**
      * Build call for updateDevice
-     * @param smartDeviceId Smart device id (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @param body Smart device properties
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -636,7 +636,7 @@ public class SmartDevicesApi {
     /**
      * Update Smart Device
      * Updates the specified Smart Device with the given data.
-     * @param smartDeviceId Smart device id (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @param body Smart device properties
      * @return SmartDevicesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -649,7 +649,7 @@ public class SmartDevicesApi {
     /**
      * Update Smart Device
      * Updates the specified Smart Device with the given data.
-     * @param smartDeviceId Smart device id (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @param body Smart device properties
      * @return ApiResponse&lt;SmartDevicesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -663,7 +663,7 @@ public class SmartDevicesApi {
     /**
      * Update Smart Device (asynchronously)
      * Updates the specified Smart Device with the given data.
-     * @param smartDeviceId Smart device id (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @param body Smart device properties
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -678,8 +678,8 @@ public class SmartDevicesApi {
 
     /**
      * Build call for updateDevicePin
-     * @param smartDeviceId Smart device id (or any other value if the PIN should be set on store or merchant level) (required)
-     * @param body Smart device Pin properties
+     * @param smartDeviceId Smart Device ID, or any other value when the PIN is set at store or merchant level (required)
+     * @param body 
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -725,9 +725,9 @@ public class SmartDevicesApi {
 
     /**
      * Update device PIN
-     * Sets the device PIN on merchant, store or device level which needs to be passed to authenticate the Smart Device.
-     * @param smartDeviceId Smart device id (or any other value if the PIN should be set on store or merchant level) (required)
-     * @param body Smart device Pin properties
+     * Sets the device PIN at merchant, store or device level. The device PIN must be passed to authenticate the Smart Device.
+     * @param smartDeviceId Smart Device ID, or any other value when the PIN is set at store or merchant level (required)
+     * @param body 
      * @return ResultBoolean
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -738,9 +738,9 @@ public class SmartDevicesApi {
 
     /**
      * Update device PIN
-     * Sets the device PIN on merchant, store or device level which needs to be passed to authenticate the Smart Device.
-     * @param smartDeviceId Smart device id (or any other value if the PIN should be set on store or merchant level) (required)
-     * @param body Smart device Pin properties
+     * Sets the device PIN at merchant, store or device level. The device PIN must be passed to authenticate the Smart Device.
+     * @param smartDeviceId Smart Device ID, or any other value when the PIN is set at store or merchant level (required)
+     * @param body 
      * @return ApiResponse&lt;ResultBoolean&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -752,9 +752,9 @@ public class SmartDevicesApi {
 
     /**
      * Update device PIN (asynchronously)
-     * Sets the device PIN on merchant, store or device level which needs to be passed to authenticate the Smart Device.
-     * @param smartDeviceId Smart device id (or any other value if the PIN should be set on store or merchant level) (required)
-     * @param body Smart device Pin properties
+     * Sets the device PIN at merchant, store or device level. The device PIN must be passed to authenticate the Smart Device.
+     * @param smartDeviceId Smart Device ID, or any other value when the PIN is set at store or merchant level (required)
+     * @param body 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -768,8 +768,8 @@ public class SmartDevicesApi {
 
     /**
      * Build call for updatePin
-     * @param smartDeviceId Smart device id (required)
-     * @param body Smart device properties
+     * @param smartDeviceId Smart Device ID (required)
+     * @param body 
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -816,8 +816,8 @@ public class SmartDevicesApi {
     /**
      * Set device PIN
      * Sets the PIN that needs to be passed to authenticate the Smart Device.
-     * @param smartDeviceId Smart device id (required)
-     * @param body Smart device properties
+     * @param smartDeviceId Smart Device ID (required)
+     * @param body 
      * @return SmartDevicesProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -829,8 +829,8 @@ public class SmartDevicesApi {
     /**
      * Set device PIN
      * Sets the PIN that needs to be passed to authenticate the Smart Device.
-     * @param smartDeviceId Smart device id (required)
-     * @param body Smart device properties
+     * @param smartDeviceId Smart Device ID (required)
+     * @param body 
      * @return ApiResponse&lt;SmartDevicesProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -843,8 +843,8 @@ public class SmartDevicesApi {
     /**
      * Set device PIN (asynchronously)
      * Sets the PIN that needs to be passed to authenticate the Smart Device.
-     * @param smartDeviceId Smart device id (required)
-     * @param body Smart device properties
+     * @param smartDeviceId Smart Device ID (required)
+     * @param body 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

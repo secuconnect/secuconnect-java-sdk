@@ -37,7 +37,7 @@ public class SmartRoutingsApi {
 
     /**
      * Build call for addRouting
-     * @param body Smart routing properties
+     * @param body Smart Routing details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -79,7 +79,7 @@ public class SmartRoutingsApi {
     /**
      * Create Smart Routing
      * Creates a new Smart Routing from the given data.
-     * @param body Smart routing properties
+     * @param body Smart Routing details
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -91,7 +91,7 @@ public class SmartRoutingsApi {
     /**
      * Create Smart Routing
      * Creates a new Smart Routing from the given data.
-     * @param body Smart routing properties
+     * @param body Smart Routing details
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -104,7 +104,7 @@ public class SmartRoutingsApi {
     /**
      * Create Smart Routing (asynchronously)
      * Creates a new Smart Routing from the given data.
-     * @param body Smart routing properties
+     * @param body Smart Routing details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -118,8 +118,8 @@ public class SmartRoutingsApi {
 
     /**
      * Build call for assignDeviceToRouting
-     * @param smartRoutingId Smart routing id (required)
-     * @param smartDeviceId Smart device id (required)
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -171,8 +171,8 @@ public class SmartRoutingsApi {
     /**
      * Assign Smart Device
      * Assigns the specified Smart Device to the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
-     * @param smartDeviceId Smart device id (required)
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -184,8 +184,8 @@ public class SmartRoutingsApi {
     /**
      * Assign Smart Device
      * Assigns the specified Smart Device to the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
-     * @param smartDeviceId Smart device id (required)
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -198,8 +198,8 @@ public class SmartRoutingsApi {
     /**
      * Assign Smart Device (asynchronously)
      * Assigns the specified Smart Device to the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
-     * @param smartDeviceId Smart device id (required)
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -320,7 +320,7 @@ public class SmartRoutingsApi {
 
     /**
      * Build call for getOne
-     * @param smartRoutingId Smart routing id (required)
+     * @param smartRoutingId Smart Routing ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -367,7 +367,7 @@ public class SmartRoutingsApi {
     /**
      * Read Smart Routing
      * Returns the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
+     * @param smartRoutingId Smart Routing ID (required)
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -379,7 +379,7 @@ public class SmartRoutingsApi {
     /**
      * Read Smart Routing
      * Returns the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
+     * @param smartRoutingId Smart Routing ID (required)
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -392,7 +392,7 @@ public class SmartRoutingsApi {
     /**
      * Read Smart Routing (asynchronously)
      * Returns the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
+     * @param smartRoutingId Smart Routing ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -406,7 +406,7 @@ public class SmartRoutingsApi {
 
     /**
      * Build call for removeRouting
-     * @param smartRoutingId Smart routing id (required)
+     * @param smartRoutingId Smart Routing ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -453,7 +453,7 @@ public class SmartRoutingsApi {
     /**
      * Delete Smart Routing
      * Deletes the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
+     * @param smartRoutingId Smart Routing ID (required)
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -465,7 +465,7 @@ public class SmartRoutingsApi {
     /**
      * Delete Smart Routing
      * Deletes the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
+     * @param smartRoutingId Smart Routing ID (required)
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -478,7 +478,7 @@ public class SmartRoutingsApi {
     /**
      * Delete Smart Routing (asynchronously)
      * Deletes the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
+     * @param smartRoutingId Smart Routing ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -492,8 +492,8 @@ public class SmartRoutingsApi {
 
     /**
      * Build call for removeSmartRoutingAssignment
-     * @param smartRoutingId Smart routing id (required)
-     * @param smartDeviceId Smart device id (required)
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -545,8 +545,8 @@ public class SmartRoutingsApi {
     /**
      * Unassign Smart Device
      * Unassigns the specified Smart Device from the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
-     * @param smartDeviceId Smart device id (required)
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -558,8 +558,8 @@ public class SmartRoutingsApi {
     /**
      * Unassign Smart Device
      * Unassigns the specified Smart Device from the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
-     * @param smartDeviceId Smart device id (required)
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -572,8 +572,8 @@ public class SmartRoutingsApi {
     /**
      * Unassign Smart Device (asynchronously)
      * Unassigns the specified Smart Device from the specified Smart Routing.
-     * @param smartRoutingId Smart routing id (required)
-     * @param smartDeviceId Smart device id (required)
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param smartDeviceId Smart Device ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -587,8 +587,8 @@ public class SmartRoutingsApi {
 
     /**
      * Build call for updateRouting
-     * @param smartRoutingId Smart routing id (required)
-     * @param body Smart routing properties
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param body Smart Routing details
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -635,8 +635,8 @@ public class SmartRoutingsApi {
     /**
      * Update Smart Routing
      * Updates the specified Smart Routing with the given data.
-     * @param smartRoutingId Smart routing id (required)
-     * @param body Smart routing properties
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param body Smart Routing details
      * @return SmartRoutingsProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -648,8 +648,8 @@ public class SmartRoutingsApi {
     /**
      * Update Smart Routing
      * Updates the specified Smart Routing with the given data.
-     * @param smartRoutingId Smart routing id (required)
-     * @param body Smart routing properties
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param body Smart Routing details
      * @return ApiResponse&lt;SmartRoutingsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -662,8 +662,8 @@ public class SmartRoutingsApi {
     /**
      * Update Smart Routing (asynchronously)
      * Updates the specified Smart Routing with the given data.
-     * @param smartRoutingId Smart routing id (required)
-     * @param body Smart routing properties
+     * @param smartRoutingId Smart Routing ID (required)
+     * @param body Smart Routing details
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

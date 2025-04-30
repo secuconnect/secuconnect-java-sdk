@@ -19,6 +19,48 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.40.0] - 2025-04-30
+[3.40.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.39.0...3.40.0
+
+- *new endpoint*: `PaymentTransactionsApi->GetRefundBankaccount()`
+- *changed*: new URL for testing environment
+
+### Added
+- `Model.PaymentContractsDTORequestIdPricing`
+- `Model.PaymentTransactionsGetRefundBankAccount`
+- `Model.PaymentTransactionsGetRefundBankAccountDTO`
+
+### Changed
+- `ApiClient`
+- `Environment`
+- `Api.PaymentTransactionsApi`
+- `Api.SmartDevicesApi`
+- `Api.SmartRoutingsApi`
+- `Model.PaymentContractsDTORequestId`
+- `Model.PaymentContractsDTORequestIdAdditionalDataCreateCard`
+- `Model.PaymentInvoicesProductModel`
+- `Model.SmartDeviceUserPin`
+- `Model.SmartDevicesDTO`
+- `Model.SmartDevicesDevice`
+- `Model.SmartDevicesGetSecubaseConfigDTO`
+- `Model.SmartDevicesList`
+- `Model.SmartDevicesProductModel`
+- `Model.SmartDevicesSecubaseConfigApp`
+- `Model.SmartRoutingsAssign`
+- `Model.SmartRoutingsDTO`
+- `Model.SmartRoutingsList`
+- `Model.SmartRoutingsProductModel`
+- `Model.SmartTransactionsDTO`
+- `Model.SmartTransactionsProductModel`
+
+### Removed
+- `Api.SmartTemplatesApi`
+- `Model.SmartTemplatesComponentModel`
+- `Model.SmartTemplatesElementModel`
+- `Model.SmartTemplatesList`
+- `Model.SmartTemplatesProductModel`
+
+
 ## [3.39.0] - 2025-02-11
 [3.39.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.38.0...3.39.0
 

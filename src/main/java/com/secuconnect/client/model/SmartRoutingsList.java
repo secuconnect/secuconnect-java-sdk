@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * SmartRoutingsList
+ * List of Smart Routings
  */
 public class SmartRoutingsList {
   @SerializedName("count")
@@ -40,7 +40,7 @@ public class SmartRoutingsList {
   }
 
    /**
-   * Number of existing smart routings
+   * Total number of matching Smart Routings
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class SmartRoutingsList {
   }
 
    /**
-   * List of SmartRoutings
+   * Smart Routings (limited number)
    * @return data
   **/
   public List<SmartRoutingsProductModel> getData() {
