@@ -32,7 +32,7 @@ public class SmartDevicesGetSecubaseConfigDTO {
   }
 
    /**
-   * secubase version for ingenico (c part)
+   * Secubase version of the Ingenico terminal (C part)
    * @return secubaseVersion
   **/
   public String getSecubaseVersion() {
@@ -49,7 +49,7 @@ public class SmartDevicesGetSecubaseConfigDTO {
   }
 
    /**
-   * version of the android app (java part)
+   * Version of the Android app (Java part)
    * @return secudroidVersion
   **/
   public String getSecudroidVersion() {
@@ -66,7 +66,7 @@ public class SmartDevicesGetSecubaseConfigDTO {
   }
 
    /**
-   * lua base-app version
+   * Lua base app version
    * @return baseVersion
   **/
   public String getBaseVersion() {
@@ -83,7 +83,7 @@ public class SmartDevicesGetSecubaseConfigDTO {
   }
 
    /**
-   * type of the terminal
+   * Terminal model
    * @return terminalType
   **/
   public String getTerminalType() {
@@ -100,7 +100,7 @@ public class SmartDevicesGetSecubaseConfigDTO {
   }
 
    /**
-   * terminal id to represent the local device configuration
+   * Terminal ID
    * @return terminalId
   **/
   public String getTerminalId() {

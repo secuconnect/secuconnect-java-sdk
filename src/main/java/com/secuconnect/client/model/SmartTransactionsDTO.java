@@ -146,7 +146,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Transaction reference, e.g. merchant order ID
+   * Purpose for bank statement; would usually contain shop name and order number or date
    * @return transactionRef
   **/
   public String getTransactionRef() {
@@ -163,7 +163,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Merchant reference, e.g. merchant customer ID
+   * Merchant reference for secuOffice; usually shop order number or ID
    * @return merchantRef
   **/
   public String getMerchantRef() {

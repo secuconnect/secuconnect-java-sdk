@@ -56,6 +56,9 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
   @SerializedName("document_url")
   protected String documentUrl = null;
 
+  @SerializedName("document_url_xml")
+  protected String documentUrlXml = null;
+
   public PaymentInvoicesProductModel l(Integer l) {
     this.l = l;
     return this;
@@ -311,6 +314,23 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
     this.documentUrl = documentUrl;
   }
 
+  public PaymentInvoicesProductModel documentUrlXml(String documentUrlXml) {
+    this.documentUrlXml = documentUrlXml;
+    return this;
+  }
+
+   /**
+   * Download URL for XML document
+   * @return documentUrlXml
+  **/
+  public String getDocumentUrlXml() {
+    return documentUrlXml;
+  }
+
+  public void setDocumentUrlXml(String documentUrlXml) {
+    this.documentUrlXml = documentUrlXml;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -335,12 +355,13 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
         Objects.equals(this.taxAmount, paymentInvoicesProductModel.taxAmount) &&
         Objects.equals(this.totalAmount, paymentInvoicesProductModel.totalAmount) &&
         Objects.equals(this.documentUrl, paymentInvoicesProductModel.documentUrl) &&
+        Objects.equals(this.documentUrlXml, paymentInvoicesProductModel.documentUrlXml) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, storeName, merchant, invoiceId, date, amount, currency, taxAmount, totalAmount, documentUrl, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, storeName, merchant, invoiceId, date, amount, currency, taxAmount, totalAmount, documentUrl, documentUrlXml, super.hashCode());
   }
 
   @Override
@@ -363,6 +384,7 @@ public class PaymentInvoicesProductModel extends BaseProductModel {
     sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
     sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("    documentUrl: ").append(toIndentedString(documentUrl)).append("\n");
+    sb.append("    documentUrlXml: ").append(toIndentedString(documentUrlXml)).append("\n");
     sb.append("}");
     return sb.toString();
   }

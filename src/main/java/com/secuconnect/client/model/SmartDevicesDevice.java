@@ -22,7 +22,7 @@ public class SmartDevicesDevice {
   }
 
    /**
-   * Object of device
+   * Object type
    * @return object
   **/
   public String getObject() {
@@ -39,7 +39,7 @@ public class SmartDevicesDevice {
   }
 
    /**
-   * Id of device
+   * Smart Device ID
    * @return id
   **/
   public String getId() {

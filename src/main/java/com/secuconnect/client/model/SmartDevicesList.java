@@ -40,7 +40,7 @@ public class SmartDevicesList {
   }
 
    /**
-   * Number of existing smart devices
+   * Number of matching Smart Devices
    * @return count
   **/
   public Integer getCount() {
@@ -65,7 +65,7 @@ public class SmartDevicesList {
   }
 
    /**
-   * List of SmartDevices
+   * Smart Devices (limited number)
    * @return data
   **/
   public List<SmartDevicesProductModel> getData() {

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartRoutingsDTO
+ * Smart Routing details
  */
 public class SmartRoutingsDTO {
   @SerializedName("store")
@@ -19,7 +19,7 @@ public class SmartRoutingsDTO {
   }
 
    /**
-   * General store ID
+   * General Store ID
    * @return store
   **/
   public String getStore() {
@@ -36,7 +36,7 @@ public class SmartRoutingsDTO {
   }
 
    /**
-   * Description
+   * Route description
    * @return description
   **/
   public String getDescription() {

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * SmartDevicesSecubaseConfigApp
+ * Terminal app
  */
 public class SmartDevicesSecubaseConfigApp {
   @SerializedName("app_id")
@@ -65,7 +65,7 @@ public class SmartDevicesSecubaseConfigApp {
   }
 
    /**
-   * the app version code as &#x27;major.minor.patch&#x27;
+   * App version (\&quot;major.minor.patch\&quot;)
    * @return version
   **/
   public String getVersion() {
@@ -82,7 +82,7 @@ public class SmartDevicesSecubaseConfigApp {
   }
 
    /**
-   * url
+   * App download URL
    * @return url
   **/
   public String getUrl() {
@@ -99,7 +99,7 @@ public class SmartDevicesSecubaseConfigApp {
   }
 
    /**
-   * etag of the app package
+   * App download ETag for caching
    * @return etag
   **/
   public String getEtag() {
@@ -116,7 +116,7 @@ public class SmartDevicesSecubaseConfigApp {
   }
 
    /**
-   * the app priority
+   * App priority
    * @return prio
   **/
   public Integer getPrio() {
