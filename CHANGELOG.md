@@ -19,6 +19,36 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.41.0] - 2025-06-02
+[3.41.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.40.0...3.41.0
+
+- *new endpoint*: `PaymentContainersApi->Archive()`
+- *new endpoint*: `PaymentContainersApi->ValidateSingleIban()`
+- *new endpoint*: `PaymentTransactionsApi->AssignPayment()`
+- *new element*: `token_status` in `SmartTransactionsContainer`
+- *new element*: `token_status` in `PaymentContainersProductModel`
+- *new element*: `request_token` and `notification_url` in `PaymentContainersDTO`
+- *changed element type*: `bank_account` changed from `array` to `object` in `PaymentTransactionsGetRefundBankAccount`
+
+### Added
+- `Model.PaymentContainerTokenStatus`
+- `Model.PaymentContainersValidateSingleIban`
+- `Model.PaymentContainersValidateSingleIbanDTO`
+- `Model.SmartTransactionsPrepareDynamicDescriptor`
+
+### Changed
+- `ApiClient`
+- `Api.PaymentContainersApi`
+- `Api.PaymentTransactionsApi`
+- `Model.PaymentContainersDTO`
+- `Model.PaymentContainersProductModel`
+- `Model.PaymentTransactionsGetRefundBankAccount`
+- `Model.SmartTransactionPaymentContainerDTO`
+- `Model.SmartTransactionsContainer`
+- `Model.SmartTransactionsPrepare`
+- `Model.SmartTransactionsStart`
+
+
 ## [3.40.0] - 2025-04-30
 [3.40.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.39.0...3.40.0
 

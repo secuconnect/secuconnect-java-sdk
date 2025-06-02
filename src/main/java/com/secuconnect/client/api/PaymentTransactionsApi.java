@@ -128,6 +128,101 @@ public class PaymentTransactionsApi {
     }
 
     /**
+     * Build call for assignPayment
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param accountingId Accounting ID (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call assignPaymentCall(String paymentTransactionId, Integer accountingId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Transactions/{paymentTransactionId}/assignPayment/{accountingId}"
+            .replaceAll("\\{" + "paymentTransactionId" + "\\}", apiClient.escapeString(paymentTransactionId.toString()))
+            .replaceAll("\\{" + "accountingId" + "\\}", apiClient.escapeString(accountingId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call assignPaymentValidateBeforeCall(String paymentTransactionId, Integer accountingId) throws ApiException {
+        // verify the required parameter 'paymentTransactionId' is set
+        if (paymentTransactionId == null) {
+            throw new ApiException("Missing the required parameter 'paymentTransactionId' when calling assignPayment(Async)");
+        }
+        // verify the required parameter 'accountingId' is set
+        if (accountingId == null) {
+            throw new ApiException("Missing the required parameter 'accountingId' when calling assignPayment(Async)");
+        }
+
+        return assignPaymentCall(paymentTransactionId, accountingId);
+    }
+
+    /**
+     * Assign Payment
+     * Assign Incoming Payment to Payment Transaction
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param accountingId Accounting ID (required)
+     * @return PaymentTransactionsProductModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentTransactionsProductModel assignPayment(String paymentTransactionId, Integer accountingId) throws ApiException {
+        ApiResponse<PaymentTransactionsProductModel> resp = assignPaymentWithHttpInfo(paymentTransactionId, accountingId);
+        return resp.getData();
+    }
+
+    /**
+     * Assign Payment
+     * Assign Incoming Payment to Payment Transaction
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param accountingId Accounting ID (required)
+     * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentTransactionsProductModel> assignPaymentWithHttpInfo(String paymentTransactionId, Integer accountingId) throws ApiException {
+        Call call = assignPaymentValidateBeforeCall(paymentTransactionId, accountingId);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Assign Payment (asynchronously)
+     * Assign Incoming Payment to Payment Transaction
+     * @param paymentTransactionId Payment Transaction ID (required)
+     * @param accountingId Accounting ID (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call assignPaymentAsync(String paymentTransactionId, Integer accountingId, final ApiCallback<PaymentTransactionsProductModel> callback) throws ApiException {
+        Call call = assignPaymentValidateBeforeCall(paymentTransactionId, accountingId);
+        Type localVarReturnType = new TypeToken<PaymentTransactionsProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
      * Build call for assignTransferBalance
      * @param paymentTransactionId Payment Transaction ID (required)
      * @return Call to execute

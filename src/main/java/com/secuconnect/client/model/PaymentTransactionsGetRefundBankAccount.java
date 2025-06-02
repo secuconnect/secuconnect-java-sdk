@@ -2,8 +2,6 @@ package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.PaymentInformation;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -14,7 +12,7 @@ public class PaymentTransactionsGetRefundBankAccount {
   protected Integer transId = null;
 
   @SerializedName("bank_account")
-  protected List<PaymentInformation> bankAccount = null;
+  protected PaymentInformation bankAccount = null;
 
   public PaymentTransactionsGetRefundBankAccount transId(Integer transId) {
     this.transId = transId;
@@ -33,28 +31,20 @@ public class PaymentTransactionsGetRefundBankAccount {
     this.transId = transId;
   }
 
-  public PaymentTransactionsGetRefundBankAccount bankAccount(List<PaymentInformation> bankAccount) {
+  public PaymentTransactionsGetRefundBankAccount bankAccount(PaymentInformation bankAccount) {
     this.bankAccount = bankAccount;
     return this;
   }
 
-  public PaymentTransactionsGetRefundBankAccount addBankAccountItem(PaymentInformation bankAccountItem) {
-    if (this.bankAccount == null) {
-      this.bankAccount = new ArrayList<PaymentInformation>();
-    }
-    this.bankAccount.add(bankAccountItem);
-    return this;
-  }
-
    /**
-   * Payment Information
+   * Get bankAccount
    * @return bankAccount
   **/
-  public List<PaymentInformation> getBankAccount() {
+  public PaymentInformation getBankAccount() {
     return bankAccount;
   }
 
-  public void setBankAccount(List<PaymentInformation> bankAccount) {
+  public void setBankAccount(PaymentInformation bankAccount) {
     this.bankAccount = bankAccount;
   }
 

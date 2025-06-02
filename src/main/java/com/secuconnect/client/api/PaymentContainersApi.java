@@ -9,7 +9,10 @@ import com.secuconnect.client.model.MandateProductModel;
 import com.secuconnect.client.model.PaymentContainersDTO;
 import com.secuconnect.client.model.PaymentContainersList;
 import com.secuconnect.client.model.PaymentContainersProductModel;
+import com.secuconnect.client.model.PaymentContainersValidateSingleIban;
+import com.secuconnect.client.model.PaymentContainersValidateSingleIbanDTO;
 import com.secuconnect.client.model.ProductExceptionPayload;
+import com.secuconnect.client.model.ResultBoolean;
 import com.secuconnect.client.model.UploadMandateDTO;
 import com.secuconnect.client.model.UploadMandateProductModel;
 import okhttp3.Call;
@@ -37,6 +40,92 @@ public class PaymentContainersApi {
 
     public void setApiClient(ApiClient apiClient) {
         this.apiClient = apiClient;
+    }
+
+    /**
+     * Build call for archiveContainer
+     * @param paymentContainerId Payment Container ID (required)
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call archiveContainerCall(String paymentContainerId) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Containers/{paymentContainerId}/archive"
+            .replaceAll("\\{" + "paymentContainerId" + "\\}", apiClient.escapeString(paymentContainerId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call archiveContainerValidateBeforeCall(String paymentContainerId) throws ApiException {
+        // verify the required parameter 'paymentContainerId' is set
+        if (paymentContainerId == null) {
+            throw new ApiException("Missing the required parameter 'paymentContainerId' when calling archiveContainer(Async)");
+        }
+
+        return archiveContainerCall(paymentContainerId);
+    }
+
+    /**
+     * Archive Payment Container
+     * Archive a Payment Container
+     * @param paymentContainerId Payment Container ID (required)
+     * @return ResultBoolean
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ResultBoolean archiveContainer(String paymentContainerId) throws ApiException {
+        ApiResponse<ResultBoolean> resp = archiveContainerWithHttpInfo(paymentContainerId);
+        return resp.getData();
+    }
+
+    /**
+     * Archive Payment Container
+     * Archive a Payment Container
+     * @param paymentContainerId Payment Container ID (required)
+     * @return ApiResponse&lt;ResultBoolean&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ResultBoolean> archiveContainerWithHttpInfo(String paymentContainerId) throws ApiException {
+        Call call = archiveContainerValidateBeforeCall(paymentContainerId);
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Archive Payment Container (asynchronously)
+     * Archive a Payment Container
+     * @param paymentContainerId Payment Container ID (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call archiveContainerAsync(String paymentContainerId, final ApiCallback<ResultBoolean> callback) throws ApiException {
+        Call call = archiveContainerValidateBeforeCall(paymentContainerId);
+        Type localVarReturnType = new TypeToken<ResultBoolean>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
     }
 
     /**
@@ -665,6 +754,87 @@ public class PaymentContainersApi {
     public Call uploadMandateAsync(String paymentContainerId, UploadMandateDTO body, final ApiCallback<UploadMandateProductModel> callback) throws ApiException {
         Call call = uploadMandateValidateBeforeCall(paymentContainerId, body);
         Type localVarReturnType = new TypeToken<UploadMandateProductModel>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+
+    /**
+     * Build call for validateSingleIban
+     * @param body Id and IBAN to validate the input
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public Call validateSingleIbanCall(PaymentContainersValidateSingleIbanDTO body) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/Payment/Containers/me/validateSingleIban";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "oauth_token" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private Call validateSingleIbanValidateBeforeCall(PaymentContainersValidateSingleIbanDTO body) throws ApiException {
+
+        return validateSingleIbanCall(body);
+    }
+
+    /**
+     * Process Single IBAN Validation
+     * Processes the Single IBAN Validation
+     * @param body Id and IBAN to validate the input
+     * @return PaymentContainersValidateSingleIban
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaymentContainersValidateSingleIban validateSingleIban(PaymentContainersValidateSingleIbanDTO body) throws ApiException {
+        ApiResponse<PaymentContainersValidateSingleIban> resp = validateSingleIbanWithHttpInfo(body);
+        return resp.getData();
+    }
+
+    /**
+     * Process Single IBAN Validation
+     * Processes the Single IBAN Validation
+     * @param body Id and IBAN to validate the input
+     * @return ApiResponse&lt;PaymentContainersValidateSingleIban&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaymentContainersValidateSingleIban> validateSingleIbanWithHttpInfo(PaymentContainersValidateSingleIbanDTO body) throws ApiException {
+        Call call = validateSingleIbanValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<PaymentContainersValidateSingleIban>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Process Single IBAN Validation (asynchronously)
+     * Processes the Single IBAN Validation
+     * @param body Id and IBAN to validate the input
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public Call validateSingleIbanAsync(PaymentContainersValidateSingleIbanDTO body, final ApiCallback<PaymentContainersValidateSingleIban> callback) throws ApiException {
+        Call call = validateSingleIbanValidateBeforeCall(body);
+        Type localVarReturnType = new TypeToken<PaymentContainersValidateSingleIban>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -1,6 +1,7 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.PaymentContainerTokenStatus;
 import com.secuconnect.client.model.ProductInstanceUID;
 import java.util.Objects;
 
@@ -10,6 +11,9 @@ import java.util.Objects;
 public class SmartTransactionsContainer extends ProductInstanceUID {
   @SerializedName("type")
   protected String type = null;
+
+  @SerializedName("token_status")
+  protected PaymentContainerTokenStatus tokenStatus = null;
 
   public SmartTransactionsContainer type(String type) {
     this.type = type;
@@ -28,6 +32,23 @@ public class SmartTransactionsContainer extends ProductInstanceUID {
     this.type = type;
   }
 
+  public SmartTransactionsContainer tokenStatus(PaymentContainerTokenStatus tokenStatus) {
+    this.tokenStatus = tokenStatus;
+    return this;
+  }
+
+   /**
+   * Get tokenStatus
+   * @return tokenStatus
+  **/
+  public PaymentContainerTokenStatus getTokenStatus() {
+    return tokenStatus;
+  }
+
+  public void setTokenStatus(PaymentContainerTokenStatus tokenStatus) {
+    this.tokenStatus = tokenStatus;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -38,12 +59,13 @@ public class SmartTransactionsContainer extends ProductInstanceUID {
     }
     SmartTransactionsContainer smartTransactionsContainer = (SmartTransactionsContainer) o;
     return Objects.equals(this.type, smartTransactionsContainer.type) &&
+        Objects.equals(this.tokenStatus, smartTransactionsContainer.tokenStatus) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, super.hashCode());
+    return Objects.hash(type, tokenStatus, super.hashCode());
   }
 
   @Override
@@ -52,6 +74,7 @@ public class SmartTransactionsContainer extends ProductInstanceUID {
     sb.append("class SmartTransactionsContainer {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    tokenStatus: ").append(toIndentedString(tokenStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
