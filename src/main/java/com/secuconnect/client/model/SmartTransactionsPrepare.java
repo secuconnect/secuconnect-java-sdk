@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.SmartTransactionPaymentContainerDTO;
 import com.secuconnect.client.model.SmartTransactionPaymentCustomerDTO;
 import com.secuconnect.client.model.SmartTransactionsPrepareCallbackUrls;
+import com.secuconnect.client.model.SmartTransactionsPrepareDynamicDescriptor;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,9 @@ public class SmartTransactionsPrepare {
 
   @SerializedName("callback_urls")
   protected SmartTransactionsPrepareCallbackUrls callbackUrls = null;
+
+  @SerializedName("dynamic_descriptor")
+  protected SmartTransactionsPrepareDynamicDescriptor dynamicDescriptor = null;
 
   @SerializedName("email")
   protected String email = null;
@@ -73,6 +77,23 @@ public class SmartTransactionsPrepare {
     this.callbackUrls = callbackUrls;
   }
 
+  public SmartTransactionsPrepare dynamicDescriptor(SmartTransactionsPrepareDynamicDescriptor dynamicDescriptor) {
+    this.dynamicDescriptor = dynamicDescriptor;
+    return this;
+  }
+
+   /**
+   * Get dynamicDescriptor
+   * @return dynamicDescriptor
+  **/
+  public SmartTransactionsPrepareDynamicDescriptor getDynamicDescriptor() {
+    return dynamicDescriptor;
+  }
+
+  public void setDynamicDescriptor(SmartTransactionsPrepareDynamicDescriptor dynamicDescriptor) {
+    this.dynamicDescriptor = dynamicDescriptor;
+  }
+
   public SmartTransactionsPrepare email(String email) {
     this.email = email;
     return this;
@@ -102,12 +123,13 @@ public class SmartTransactionsPrepare {
     return Objects.equals(this.customer, smartTransactionsPrepare.customer) &&
         Objects.equals(this.container, smartTransactionsPrepare.container) &&
         Objects.equals(this.callbackUrls, smartTransactionsPrepare.callbackUrls) &&
+        Objects.equals(this.dynamicDescriptor, smartTransactionsPrepare.dynamicDescriptor) &&
         Objects.equals(this.email, smartTransactionsPrepare.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer, container, callbackUrls, email);
+    return Objects.hash(customer, container, callbackUrls, dynamicDescriptor, email);
   }
 
   @Override
@@ -117,6 +139,7 @@ public class SmartTransactionsPrepare {
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    container: ").append(toIndentedString(container)).append("\n");
     sb.append("    callbackUrls: ").append(toIndentedString(callbackUrls)).append("\n");
+    sb.append("    dynamicDescriptor: ").append(toIndentedString(dynamicDescriptor)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -8,6 +8,7 @@ import com.secuconnect.client.model.CreatedField;
 import com.secuconnect.client.model.GeneralMerchantsProductModel;
 import com.secuconnect.client.model.OneOfPaymentContainersDTOModelPrivate;
 import com.secuconnect.client.model.PaymentContainerMandate;
+import com.secuconnect.client.model.PaymentContainerTokenStatus;
 import com.secuconnect.client.model.PaymentContractsProductModel;
 import com.secuconnect.client.model.PaymentCustomersProductModel;
 import com.secuconnect.client.model.UpdatedField;
@@ -61,6 +62,9 @@ public class PaymentContainersProductModel extends BaseProductModel {
 
   @SerializedName("mandate")
   protected PaymentContainerMandate mandate = null;
+
+  @SerializedName("token_status")
+  protected PaymentContainerTokenStatus tokenStatus = null;
 
   public PaymentContainersProductModel l(Integer l) {
     this.l = l;
@@ -317,6 +321,23 @@ public class PaymentContainersProductModel extends BaseProductModel {
     this.mandate = mandate;
   }
 
+  public PaymentContainersProductModel tokenStatus(PaymentContainerTokenStatus tokenStatus) {
+    this.tokenStatus = tokenStatus;
+    return this;
+  }
+
+   /**
+   * Get tokenStatus
+   * @return tokenStatus
+  **/
+  public PaymentContainerTokenStatus getTokenStatus() {
+    return tokenStatus;
+  }
+
+  public void setTokenStatus(PaymentContainerTokenStatus tokenStatus) {
+    this.tokenStatus = tokenStatus;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -341,12 +362,13 @@ public class PaymentContainersProductModel extends BaseProductModel {
         Objects.equals(this._public, paymentContainersProductModel._public) &&
         Objects.equals(this._private, paymentContainersProductModel._private) &&
         Objects.equals(this.mandate, paymentContainersProductModel.mandate) &&
+        Objects.equals(this.tokenStatus, paymentContainersProductModel.tokenStatus) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, updated, merchant, contract, customer, type, _public, _private, mandate, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, merchant, contract, customer, type, _public, _private, mandate, tokenStatus, super.hashCode());
   }
 
   @Override
@@ -369,6 +391,7 @@ public class PaymentContainersProductModel extends BaseProductModel {
     sb.append("    _public: ").append(toIndentedString(_public)).append("\n");
     sb.append("    _private: ").append(toIndentedString(_private)).append("\n");
     sb.append("    mandate: ").append(toIndentedString(mandate)).append("\n");
+    sb.append("    tokenStatus: ").append(toIndentedString(tokenStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }

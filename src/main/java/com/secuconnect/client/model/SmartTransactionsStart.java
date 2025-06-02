@@ -5,6 +5,7 @@ import com.secuconnect.client.model.SmartTransactionPaymentContainerDTO;
 import com.secuconnect.client.model.SmartTransactionPaymentCustomerDTO;
 import com.secuconnect.client.model.SmartTransactionsPrepare;
 import com.secuconnect.client.model.SmartTransactionsPrepareCallbackUrls;
+import com.secuconnect.client.model.SmartTransactionsPrepareDynamicDescriptor;
 import java.util.Objects;
 
 /**

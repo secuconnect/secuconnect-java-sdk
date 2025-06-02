@@ -23,6 +23,12 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
   @SerializedName("type")
   protected String type = null;
 
+  @SerializedName("request_token")
+  protected Boolean requestToken = false;
+
+  @SerializedName("notification_url")
+  protected String notificationUrl = null;
+
   @SerializedName("private")
   protected OneOfPaymentContainersDTOModelPrivate _private = null;
 
@@ -94,6 +100,40 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
     this.type = type;
   }
 
+  public SmartTransactionPaymentContainerDTO requestToken(Boolean requestToken) {
+    this.requestToken = requestToken;
+    return this;
+  }
+
+   /**
+   * Request Token
+   * @return requestToken
+  **/
+  public Boolean getRequestToken() {
+    return requestToken;
+  }
+
+  public void setRequestToken(Boolean requestToken) {
+    this.requestToken = requestToken;
+  }
+
+  public SmartTransactionPaymentContainerDTO notificationUrl(String notificationUrl) {
+    this.notificationUrl = notificationUrl;
+    return this;
+  }
+
+   /**
+   * Shop URL for failed external authorization or payment
+   * @return notificationUrl
+  **/
+  public String getNotificationUrl() {
+    return notificationUrl;
+  }
+
+  public void setNotificationUrl(String notificationUrl) {
+    this.notificationUrl = notificationUrl;
+  }
+
   public SmartTransactionPaymentContainerDTO _private(OneOfPaymentContainersDTOModelPrivate _private) {
     this._private = _private;
     return this;
@@ -124,13 +164,15 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
         Objects.equals(this.customer, smartTransactionPaymentContainerDTO.customer) &&
         Objects.equals(this.customerId, smartTransactionPaymentContainerDTO.customerId) &&
         Objects.equals(this.type, smartTransactionPaymentContainerDTO.type) &&
+        Objects.equals(this.requestToken, smartTransactionPaymentContainerDTO.requestToken) &&
+        Objects.equals(this.notificationUrl, smartTransactionPaymentContainerDTO.notificationUrl) &&
         Objects.equals(this._private, smartTransactionPaymentContainerDTO._private) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantId, customer, customerId, type, _private, super.hashCode());
+    return Objects.hash(merchantId, customer, customerId, type, requestToken, notificationUrl, _private, super.hashCode());
   }
 
   @Override
@@ -142,6 +184,8 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    requestToken: ").append(toIndentedString(requestToken)).append("\n");
+    sb.append("    notificationUrl: ").append(toIndentedString(notificationUrl)).append("\n");
     sb.append("    _private: ").append(toIndentedString(_private)).append("\n");
     sb.append("}");
     return sb.toString();

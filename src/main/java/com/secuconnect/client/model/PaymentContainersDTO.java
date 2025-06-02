@@ -21,6 +21,12 @@ public class PaymentContainersDTO {
   @SerializedName("type")
   protected String type = null;
 
+  @SerializedName("request_token")
+  protected Boolean requestToken = false;
+
+  @SerializedName("notification_url")
+  protected String notificationUrl = null;
+
   @SerializedName("private")
   protected OneOfPaymentContainersDTOModelPrivate _private = null;
 
@@ -92,6 +98,40 @@ public class PaymentContainersDTO {
     this.type = type;
   }
 
+  public PaymentContainersDTO requestToken(Boolean requestToken) {
+    this.requestToken = requestToken;
+    return this;
+  }
+
+   /**
+   * Request Token
+   * @return requestToken
+  **/
+  public Boolean getRequestToken() {
+    return requestToken;
+  }
+
+  public void setRequestToken(Boolean requestToken) {
+    this.requestToken = requestToken;
+  }
+
+  public PaymentContainersDTO notificationUrl(String notificationUrl) {
+    this.notificationUrl = notificationUrl;
+    return this;
+  }
+
+   /**
+   * Shop URL for failed external authorization or payment
+   * @return notificationUrl
+  **/
+  public String getNotificationUrl() {
+    return notificationUrl;
+  }
+
+  public void setNotificationUrl(String notificationUrl) {
+    this.notificationUrl = notificationUrl;
+  }
+
   public PaymentContainersDTO _private(OneOfPaymentContainersDTOModelPrivate _private) {
     this._private = _private;
     return this;
@@ -122,12 +162,14 @@ public class PaymentContainersDTO {
         Objects.equals(this.customer, paymentContainersDTO.customer) &&
         Objects.equals(this.customerId, paymentContainersDTO.customerId) &&
         Objects.equals(this.type, paymentContainersDTO.type) &&
+        Objects.equals(this.requestToken, paymentContainersDTO.requestToken) &&
+        Objects.equals(this.notificationUrl, paymentContainersDTO.notificationUrl) &&
         Objects.equals(this._private, paymentContainersDTO._private);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantId, customer, customerId, type, _private);
+    return Objects.hash(merchantId, customer, customerId, type, requestToken, notificationUrl, _private);
   }
 
   @Override
@@ -138,6 +180,8 @@ public class PaymentContainersDTO {
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    requestToken: ").append(toIndentedString(requestToken)).append("\n");
+    sb.append("    notificationUrl: ").append(toIndentedString(notificationUrl)).append("\n");
     sb.append("    _private: ").append(toIndentedString(_private)).append("\n");
     sb.append("}");
     return sb.toString();
