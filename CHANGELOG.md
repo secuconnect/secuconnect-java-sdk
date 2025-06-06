@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - *new element*: `request_token` and `notification_url` in `PaymentContainersDTO`
 - *changed element type*: `bank_account` changed from `array` to `object` in `PaymentTransactionsGetRefundBankAccount`
 
+
 ### Added
 - `Model.PaymentContainerTokenStatus`
 - `Model.PaymentContainersValidateSingleIban`
