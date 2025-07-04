@@ -275,7 +275,7 @@
       <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor -->
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>logging-interceptor</artifactId>
-      <version>4.12.0</version>
+      <version>5.0.0</version>
     </dependency>
     <dependency>
       <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
