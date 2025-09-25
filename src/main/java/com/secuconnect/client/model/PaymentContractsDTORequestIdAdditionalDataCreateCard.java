@@ -39,7 +39,7 @@ public class PaymentContractsDTORequestIdAdditionalDataCreateCard {
   }
 
    /**
-   * Card Type
+   * Card type
    * @return cardType
   **/
   public String getCardType() {
@@ -56,7 +56,7 @@ public class PaymentContractsDTORequestIdAdditionalDataCreateCard {
   }
 
    /**
-   * Identifier - required if card_type is &#x27;plastic&#x27;
+   * Identifier; required if &#x60;card_type&#x60; is \&quot;plastic\&quot;
    * @return identifier
   **/
   public String getIdentifier() {

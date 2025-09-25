@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Status for the device
+ * Device status
  */
 public class DeviceStatus {
   @Override

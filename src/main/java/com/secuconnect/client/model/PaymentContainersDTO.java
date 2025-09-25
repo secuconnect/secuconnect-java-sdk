@@ -104,7 +104,7 @@ public class PaymentContainersDTO {
   }
 
    /**
-   * Request Token
+   * Request token
    * @return requestToken
   **/
   public Boolean getRequestToken() {

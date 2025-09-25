@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Pricing Input
+ * Pricing
  */
 public class PaymentContractsDTORequestIdPricing {
   @SerializedName("product_id")
@@ -25,7 +25,7 @@ public class PaymentContractsDTORequestIdPricing {
   }
 
    /**
-   * Product Id
+   * Product ID
    * @return productId
   **/
   public Integer getProductId() {
@@ -42,7 +42,7 @@ public class PaymentContractsDTORequestIdPricing {
   }
 
    /**
-   * Disagio - Format 1.25
+   * Disagio in percent; \&quot;1.45\&quot; means 1.45%
    * @return disagio
   **/
   public String getDisagio() {
@@ -59,7 +59,7 @@ public class PaymentContractsDTORequestIdPricing {
   }
 
    /**
-   * Disagio Min - Format 0.25
+   * Minimum disagio for small amounts in Euro; \&quot;0.05\&quot; means €0.05
    * @return disagioMin
   **/
   public String getDisagioMin() {
@@ -76,7 +76,7 @@ public class PaymentContractsDTORequestIdPricing {
   }
 
    /**
-   * Fix - Format 0.05
+   * Fixed fee in Euro; \&quot;0.25\&quot; means €0.25
    * @return fix
   **/
   public String getFix() {

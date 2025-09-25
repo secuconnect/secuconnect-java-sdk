@@ -359,7 +359,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Reference-Text from Inputfield
+   * Reference text from user input
    * @return invoiceReference
   **/
   public String getInvoiceReference() {
@@ -452,7 +452,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Funding Threshold
+   * Funding threshold
    * @return fundingThreshold
   **/
   public Integer getFundingThreshold() {
@@ -469,7 +469,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Funding End
+   * Funding end as ISO 8601 date
    * @return fundingEnd
   **/
   public String getFundingEnd() {
@@ -503,7 +503,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Project Brochure
+   * Ephemeral Document Upload ID (DUP_xyz) of project brochure
    * @return projectBrochure
   **/
   public String getProjectBrochure() {
@@ -520,7 +520,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Project Factsheet
+   * Ephemeral Document Upload ID (DUP_xyz) of project factsheet
    * @return projectFactsheet
   **/
   public String getProjectFactsheet() {
@@ -537,7 +537,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Project Duration
+   * Project duration
    * @return projectDuration
   **/
   public Integer getProjectDuration() {
@@ -554,7 +554,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Account Verification
+   * Ephemeral Document Upload ID (DUP_xyz) of account verification document
    * @return accountVerification
   **/
   public String getAccountVerification() {
@@ -571,7 +571,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Interest Payment Interval
+   * Interest payment interval
    * @return interestPaymentInterval
   **/
   public String getInterestPaymentInterval() {

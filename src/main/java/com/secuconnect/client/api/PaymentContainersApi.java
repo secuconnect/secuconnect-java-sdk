@@ -760,7 +760,7 @@ public class PaymentContainersApi {
 
     /**
      * Build call for validateSingleIban
-     * @param body Id and IBAN to validate the input
+     * @param body IBAN(s) to validate
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -800,9 +800,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * Process Single IBAN Validation
-     * Processes the Single IBAN Validation
-     * @param body Id and IBAN to validate the input
+     * Validate IBAN
+     * Validate one or several IBANs.  **Note:** For large numbers of records please use the batch mechanism described in the API integration guide.
+     * @param body IBAN(s) to validate
      * @return PaymentContainersValidateSingleIban
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -812,9 +812,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * Process Single IBAN Validation
-     * Processes the Single IBAN Validation
-     * @param body Id and IBAN to validate the input
+     * Validate IBAN
+     * Validate one or several IBANs.  **Note:** For large numbers of records please use the batch mechanism described in the API integration guide.
+     * @param body IBAN(s) to validate
      * @return ApiResponse&lt;PaymentContainersValidateSingleIban&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -825,9 +825,9 @@ public class PaymentContainersApi {
     }
 
     /**
-     * Process Single IBAN Validation (asynchronously)
-     * Processes the Single IBAN Validation
-     * @param body Id and IBAN to validate the input
+     * Validate IBAN (asynchronously)
+     * Validate one or several IBANs.  **Note:** For large numbers of records please use the batch mechanism described in the API integration guide.
+     * @param body IBAN(s) to validate
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
