@@ -263,7 +263,7 @@
       <!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations -->
       <groupId>io.swagger.core.v3</groupId>
       <artifactId>swagger-annotations</artifactId>
-      <version>2.2.25</version>
+      <version>2.2.37</version>
     </dependency>
     <dependency>
       <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
