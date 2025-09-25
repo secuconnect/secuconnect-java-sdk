@@ -28,7 +28,7 @@ public class PaymentContainersValidateSingleIban {
   }
 
    /**
-   * Batch reference ID from request
+   * Reference ID, as specified in the request
    * @return id
   **/
   public Integer getId() {

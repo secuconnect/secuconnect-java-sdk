@@ -180,8 +180,8 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * Assign Payment
-     * Assign Incoming Payment to Payment Transaction
+     * Assign payment
+     * Assign incoming payment to Payment Transaction
      * @param paymentTransactionId Payment Transaction ID (required)
      * @param accountingId Accounting ID (required)
      * @return PaymentTransactionsProductModel
@@ -193,8 +193,8 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * Assign Payment
-     * Assign Incoming Payment to Payment Transaction
+     * Assign payment
+     * Assign incoming payment to Payment Transaction
      * @param paymentTransactionId Payment Transaction ID (required)
      * @param accountingId Accounting ID (required)
      * @return ApiResponse&lt;PaymentTransactionsProductModel&gt;
@@ -207,8 +207,8 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * Assign Payment (asynchronously)
-     * Assign Incoming Payment to Payment Transaction
+     * Assign payment (asynchronously)
+     * Assign incoming payment to Payment Transaction
      * @param paymentTransactionId Payment Transaction ID (required)
      * @param accountingId Accounting ID (required)
      * @param callback The callback to be executed when the API call finishes
@@ -1113,7 +1113,7 @@ public class PaymentTransactionsApi {
 
     /**
      * Build call for getRefundBankAccount
-     * @param body Get Refund Bank Account
+     * @param body Transaction ID
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
@@ -1153,9 +1153,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * Get Refund Bank Account
-     * 
-     * @param body Get Refund Bank Account
+     * Refund bank account
+     * Returns the bank account details for refund payments
+     * @param body Transaction ID
      * @return PaymentTransactionsGetRefundBankAccount
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1165,9 +1165,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * Get Refund Bank Account
-     * 
-     * @param body Get Refund Bank Account
+     * Refund bank account
+     * Returns the bank account details for refund payments
+     * @param body Transaction ID
      * @return ApiResponse&lt;PaymentTransactionsGetRefundBankAccount&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1178,9 +1178,9 @@ public class PaymentTransactionsApi {
     }
 
     /**
-     * Get Refund Bank Account (asynchronously)
-     * 
-     * @param body Get Refund Bank Account
+     * Refund bank account (asynchronously)
+     * Returns the bank account details for refund payments
+     * @param body Transaction ID
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

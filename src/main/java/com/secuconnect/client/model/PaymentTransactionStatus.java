@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * status value
+ * Payment Transaction status
  */
 public class PaymentTransactionStatus {
   @Override

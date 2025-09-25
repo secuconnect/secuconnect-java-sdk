@@ -22,7 +22,7 @@ public class LoyaltyMerchantcardsDTO {
   }
 
    /**
-   * Expiry date in RFC3339 format
+   * Card expiry date in ISO 8601 format
    * @return expiryDate
   **/
   public String getExpiryDate() {

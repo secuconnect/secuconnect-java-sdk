@@ -470,7 +470,7 @@ public class LoyaltyMerchantcardsProductModel extends BaseProductModel {
   }
 
    /**
-   * Whether the card has a passcode set (&#x60;1&#x60;) or not (&#x60;0&#x60;)
+   * Whether the passcode must be checked before an operation:  - &#x60;0&#x60; — no check needed - &#x60;1&#x60; — check before any operation - &#x60;2&#x60; — check before currency discharge - &#x60;3&#x60; — check before currency charge - &#x60;4&#x60; — check before sale revenue recording - &#x60;5&#x60; — check before point discharge - &#x60;6&#x60; — check before point charge
    * @return passcode
   **/
   public Integer getPasscode() {

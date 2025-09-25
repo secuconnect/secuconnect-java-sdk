@@ -106,7 +106,7 @@ public class SmartTransactionPaymentContainerDTO extends ProductInstanceUID {
   }
 
    /**
-   * Request Token
+   * Request token
    * @return requestToken
   **/
   public Boolean getRequestToken() {

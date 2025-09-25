@@ -19,7 +19,7 @@ public class PaymentContainersValidateSingleIbanDTO {
   }
 
    /**
-   * Batch reference ID
+   * Reference ID to match the response values
    * @return id
   **/
   public Integer getId() {

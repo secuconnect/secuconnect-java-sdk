@@ -19,6 +19,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.42.0] - 2025-09-25
+[3.42.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.41.0...3.42.0
+
+### Changed
+- `ApiClient`
+- `Api.PaymentContainersApi`
+- `Api.PaymentTransactionsApi`
+- `Model.DeviceStatus`
+- `Model.LoyaltyMerchantcardsDTO`
+- `Model.LoyaltyMerchantcardsProductModel`
+- `Model.PaymentContainersDTO`
+- `Model.PaymentContainersValidateSingleIban`
+- `Model.PaymentContainersValidateSingleIbanDTO`
+- `Model.PaymentContractsDTORequestId`
+- `Model.PaymentContractsDTORequestIdAdditionalDataCreateCard`
+- `Model.PaymentContractsDTORequestIdPricing`
+- `Model.PaymentTransactionStatus`
+- `Model.SmartTransactionPaymentContainerDTO`
+
+
 ## [3.41.0] - 2025-06-02
 [3.41.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.40.0...3.41.0
 
