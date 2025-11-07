@@ -19,6 +19,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [3.44.0] - 2025-11-07
+[3.44.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.43.0...3.44.0
+
+- *changed element pattern*: `purpose` changed from `*` to `regex` in `SecupayPayoutDTO`
+- *changed element pattern*: `purpose` changed from `*` to `regex` in `SecupayPayoutWithoutCustomerDTO`
+- *changed element*: Response changed from `LoyaltyMerchantcardsProductModel` to `CreateLoyaltyMerchantcardsProductModel` in `LoyaltyMerchantcardsApi->createMerchantcards()`
+- *new element*: `csc` in `CreateLoyaltyMerchantcardsProductModel`
+- *new element*: `dynamic_descriptor`, in `PaymentContext`
+- *new element*: `container_instructions`, in `PaymentContext`
+- *new element*: `mit_instructions`, in `PaymentContext`
+
+### Added
+- `Model.ContainerInstructions`
+- `Model.CreateLoyaltyMerchantcardsProductModel`
+- `Model.DynamicDescriptor`
+- `Model.MITInstructions`
+
+### Changed
+- `ApiClient`
+- `Api.LoyaltyMerchantCardsApi`
+- `Model.PaymentContext`
+
+
 ## [3.43.0] - 2025-11-05
 [3.43.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.42.0...3.43.0
 
