@@ -4,6 +4,7 @@ import com.google.gson.reflect.TypeToken;
 import com.secuconnect.client.*;
 import com.secuconnect.client.model.Aggregate;
 import java.math.BigDecimal;
+import com.secuconnect.client.model.CreateLoyaltyMerchantcardsProductModel;
 import com.secuconnect.client.model.LoyaltyCustomersDTO;
 import com.secuconnect.client.model.LoyaltyMerchantcardsCardBalanceReceipt;
 import com.secuconnect.client.model.LoyaltyMerchantcardsDTO;
@@ -381,11 +382,11 @@ public class LoyaltyMerchantCardsApi {
      * @param generalMerchantId General Merchant ID (required)
      * @param loyaltyCardgroupId Loyalty Card Group ID (required)
      * @param body Number of cards and customer details
-     * @return List&lt;LoyaltyMerchantcardsProductModel&gt;
+     * @return List&lt;CreateLoyaltyMerchantcardsProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<LoyaltyMerchantcardsProductModel> createMerchantcards(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body) throws ApiException {
-        ApiResponse<List<LoyaltyMerchantcardsProductModel>> resp = createMerchantcardsWithHttpInfo(generalMerchantId, loyaltyCardgroupId, body);
+    public List<CreateLoyaltyMerchantcardsProductModel> createMerchantcards(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body) throws ApiException {
+        ApiResponse<List<CreateLoyaltyMerchantcardsProductModel>> resp = createMerchantcardsWithHttpInfo(generalMerchantId, loyaltyCardgroupId, body);
         return resp.getData();
     }
 
@@ -395,12 +396,12 @@ public class LoyaltyMerchantCardsApi {
      * @param generalMerchantId General Merchant ID (required)
      * @param loyaltyCardgroupId Loyalty Card Group ID (required)
      * @param body Number of cards and customer details
-     * @return ApiResponse&lt;List&lt;LoyaltyMerchantcardsProductModel&gt;&gt;
+     * @return ApiResponse&lt;List&lt;CreateLoyaltyMerchantcardsProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<LoyaltyMerchantcardsProductModel>> createMerchantcardsWithHttpInfo(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body) throws ApiException {
+    public ApiResponse<List<CreateLoyaltyMerchantcardsProductModel>> createMerchantcardsWithHttpInfo(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body) throws ApiException {
         Call call = createMerchantcardsValidateBeforeCall(generalMerchantId, loyaltyCardgroupId, body);
-        Type localVarReturnType = new TypeToken<List<LoyaltyMerchantcardsProductModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<CreateLoyaltyMerchantcardsProductModel>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -414,9 +415,9 @@ public class LoyaltyMerchantCardsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call createMerchantcardsAsync(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body, final ApiCallback<List<LoyaltyMerchantcardsProductModel>> callback) throws ApiException {
+    public Call createMerchantcardsAsync(String generalMerchantId, String loyaltyCardgroupId, LoyaltyMerchantcardsDTOCreateMerchantcards body, final ApiCallback<List<CreateLoyaltyMerchantcardsProductModel>> callback) throws ApiException {
         Call call = createMerchantcardsValidateBeforeCall(generalMerchantId, loyaltyCardgroupId, body);
-        Type localVarReturnType = new TypeToken<List<LoyaltyMerchantcardsProductModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<CreateLoyaltyMerchantcardsProductModel>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

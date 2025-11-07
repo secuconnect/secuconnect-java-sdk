@@ -1,6 +1,9 @@
 package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.secuconnect.client.model.ContainerInstructions;
+import com.secuconnect.client.model.DynamicDescriptor;
+import com.secuconnect.client.model.MITInstructions;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -23,6 +26,15 @@ public class PaymentContext {
 
   @SerializedName("accrual")
   protected Boolean accrual = false;
+
+  @SerializedName("dynamic_descriptor")
+  protected DynamicDescriptor dynamicDescriptor = null;
+
+  @SerializedName("container_instructions")
+  protected ContainerInstructions containerInstructions = null;
+
+  @SerializedName("mit_instructions")
+  protected MITInstructions mitInstructions = null;
 
   public PaymentContext autoCapture(Boolean autoCapture) {
     this.autoCapture = autoCapture;
@@ -108,6 +120,57 @@ public class PaymentContext {
     this.accrual = accrual;
   }
 
+  public PaymentContext dynamicDescriptor(DynamicDescriptor dynamicDescriptor) {
+    this.dynamicDescriptor = dynamicDescriptor;
+    return this;
+  }
+
+   /**
+   * Get dynamicDescriptor
+   * @return dynamicDescriptor
+  **/
+  public DynamicDescriptor getDynamicDescriptor() {
+    return dynamicDescriptor;
+  }
+
+  public void setDynamicDescriptor(DynamicDescriptor dynamicDescriptor) {
+    this.dynamicDescriptor = dynamicDescriptor;
+  }
+
+  public PaymentContext containerInstructions(ContainerInstructions containerInstructions) {
+    this.containerInstructions = containerInstructions;
+    return this;
+  }
+
+   /**
+   * Get containerInstructions
+   * @return containerInstructions
+  **/
+  public ContainerInstructions getContainerInstructions() {
+    return containerInstructions;
+  }
+
+  public void setContainerInstructions(ContainerInstructions containerInstructions) {
+    this.containerInstructions = containerInstructions;
+  }
+
+  public PaymentContext mitInstructions(MITInstructions mitInstructions) {
+    this.mitInstructions = mitInstructions;
+    return this;
+  }
+
+   /**
+   * Get mitInstructions
+   * @return mitInstructions
+  **/
+  public MITInstructions getMitInstructions() {
+    return mitInstructions;
+  }
+
+  public void setMitInstructions(MITInstructions mitInstructions) {
+    this.mitInstructions = mitInstructions;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -121,12 +184,15 @@ public class PaymentContext {
         Objects.equals(this.paymentMethods, paymentContext.paymentMethods) &&
         Objects.equals(this.merchantInitiated, paymentContext.merchantInitiated) &&
         Objects.equals(this.creditcardSchemes, paymentContext.creditcardSchemes) &&
-        Objects.equals(this.accrual, paymentContext.accrual);
+        Objects.equals(this.accrual, paymentContext.accrual) &&
+        Objects.equals(this.dynamicDescriptor, paymentContext.dynamicDescriptor) &&
+        Objects.equals(this.containerInstructions, paymentContext.containerInstructions) &&
+        Objects.equals(this.mitInstructions, paymentContext.mitInstructions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(autoCapture, paymentMethods, merchantInitiated, creditcardSchemes, accrual);
+    return Objects.hash(autoCapture, paymentMethods, merchantInitiated, creditcardSchemes, accrual, dynamicDescriptor, containerInstructions, mitInstructions);
   }
 
   @Override
@@ -138,6 +204,9 @@ public class PaymentContext {
     sb.append("    merchantInitiated: ").append(toIndentedString(merchantInitiated)).append("\n");
     sb.append("    creditcardSchemes: ").append(toIndentedString(creditcardSchemes)).append("\n");
     sb.append("    accrual: ").append(toIndentedString(accrual)).append("\n");
+    sb.append("    dynamicDescriptor: ").append(toIndentedString(dynamicDescriptor)).append("\n");
+    sb.append("    containerInstructions: ").append(toIndentedString(containerInstructions)).append("\n");
+    sb.append("    mitInstructions: ").append(toIndentedString(mitInstructions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
