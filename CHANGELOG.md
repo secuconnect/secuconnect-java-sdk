@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Dependency updates (upgrading major version of **OkHttp, to 5.3.0**)
 
 ### Changed
-- Changed minimum **JAVA version to 17.**
+- Changed minimum **JAVA version to 11.**
 
 ### Removed
 - Stomp integration was removed and will be provided as separate package.
