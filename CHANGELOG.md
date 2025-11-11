@@ -19,6 +19,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [4.0.0] - 2025-11-11
+[4.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.44.0...4.0.0
+
+### Security
+- Dependency updates (upgrading major version of **OkHttp, to 5.3.0**)
+
+### Changed
+- Changed minimum **JAVA version to 17.**
+
+### Removed
+- Stomp integration was removed and will be provided as separate package.
+
+
 ## [3.44.0] - 2025-11-07
 [3.44.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.43.0...3.44.0
 
