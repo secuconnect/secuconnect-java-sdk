@@ -19,6 +19,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [4.1.0] - 2025-11-13
+[4.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/4.0.0...4.1.0
+
+- *rename element*: from `standing_instructions` to `standing_instruction` in `MITInstructions`
+
+### Changed
+- `ApiClient`
+- `Model.MITInstructions`
+
+
 ## [4.0.0] - 2025-11-11
 [4.0.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/3.44.0...4.0.0
 
