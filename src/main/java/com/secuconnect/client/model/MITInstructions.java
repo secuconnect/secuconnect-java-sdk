@@ -10,8 +10,8 @@ public class MITInstructions {
   @SerializedName("type")
   protected String type = null;
 
-  @SerializedName("standing_instructions")
-  protected String standingInstructions = null;
+  @SerializedName("standing_instruction")
+  protected String standingInstruction = null;
 
   @SerializedName("recurring_expiry")
   protected String recurringExpiry = null;
@@ -39,21 +39,21 @@ public class MITInstructions {
     this.type = type;
   }
 
-  public MITInstructions standingInstructions(String standingInstructions) {
-    this.standingInstructions = standingInstructions;
+  public MITInstructions standingInstruction(String standingInstruction) {
+    this.standingInstruction = standingInstruction;
     return this;
   }
 
    /**
-   * Standing Instructions:  - &#x60;\&quot;ucof\&quot;&#x60; - &#x60;\&quot;recurring\&quot;&#x60;
-   * @return standingInstructions
+   * Standing Instruction:  - &#x60;\&quot;ucof\&quot;&#x60; - &#x60;\&quot;recurring\&quot;&#x60;
+   * @return standingInstruction
   **/
-  public String getStandingInstructions() {
-    return standingInstructions;
+  public String getStandingInstruction() {
+    return standingInstruction;
   }
 
-  public void setStandingInstructions(String standingInstructions) {
-    this.standingInstructions = standingInstructions;
+  public void setStandingInstruction(String standingInstruction) {
+    this.standingInstruction = standingInstruction;
   }
 
   public MITInstructions recurringExpiry(String recurringExpiry) {
@@ -117,7 +117,7 @@ public class MITInstructions {
     }
     MITInstructions miTInstructions = (MITInstructions) o;
     return Objects.equals(this.type, miTInstructions.type) &&
-        Objects.equals(this.standingInstructions, miTInstructions.standingInstructions) &&
+        Objects.equals(this.standingInstruction, miTInstructions.standingInstruction) &&
         Objects.equals(this.recurringExpiry, miTInstructions.recurringExpiry) &&
         Objects.equals(this.recurringFrequency, miTInstructions.recurringFrequency) &&
         Objects.equals(this.citReference, miTInstructions.citReference);
@@ -125,7 +125,7 @@ public class MITInstructions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, standingInstructions, recurringExpiry, recurringFrequency, citReference);
+    return Objects.hash(type, standingInstruction, recurringExpiry, recurringFrequency, citReference);
   }
 
   @Override
@@ -133,7 +133,7 @@ public class MITInstructions {
     StringBuilder sb = new StringBuilder();
     sb.append("class MITInstructions {\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    standingInstructions: ").append(toIndentedString(standingInstructions)).append("\n");
+    sb.append("    standingInstruction: ").append(toIndentedString(standingInstruction)).append("\n");
     sb.append("    recurringExpiry: ").append(toIndentedString(recurringExpiry)).append("\n");
     sb.append("    recurringFrequency: ").append(toIndentedString(recurringFrequency)).append("\n");
     sb.append("    citReference: ").append(toIndentedString(citReference)).append("\n");

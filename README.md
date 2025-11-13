@@ -7,7 +7,7 @@
 ## Requirements
 
 Building the API client library requires:
-1. Java 11+
+1. Java 1.8+
 2. Maven/Gradle
 
 ## Installation
@@ -26,7 +26,7 @@ To use this projects artifacts with Maven add the following dependency and repos
     <dependency>
         <groupId>com.secuconnect</groupId>
         <artifactId>secuconnect-java-sdk</artifactId>
-        <version>4.0.0</version>
+        <version>4.1.0</version>
     </dependency>
     .
     .
