@@ -459,7 +459,7 @@ public class PaymentContractsApi {
     }
 
     /**
-     * Clone contract and request identification
+     * Request identification
      * Clones a contract and starts the identification process. This is used to onboard entirely new merchants to your platform or marketplace.
      * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
      * @param body Payment contract request id properties
@@ -472,7 +472,7 @@ public class PaymentContractsApi {
     }
 
     /**
-     * Clone contract and request identification
+     * Request identification
      * Clones a contract and starts the identification process. This is used to onboard entirely new merchants to your platform or marketplace.
      * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
      * @param body Payment contract request id properties
@@ -486,7 +486,7 @@ public class PaymentContractsApi {
     }
 
     /**
-     * Clone contract and request identification (asynchronously)
+     * Request identification (asynchronously)
      * Clones a contract and starts the identification process. This is used to onboard entirely new merchants to your platform or marketplace.
      * @param paymentContractId Payment Contract ID (&#x60;PCR_...&#x60;) or General Contract ID (&#x60;GCR_...&#x60;) of master contract (required)
      * @param body Payment contract request id properties

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Instructions for additional actions of creditcard payment container
+ * Additional instructions for credit card payment containers
  */
 public class ContainerInstructions {
   @SerializedName("request_token")
@@ -19,7 +19,7 @@ public class ContainerInstructions {
   }
 
    /**
-   * Whether to create a network token for container or not
+   * Whether to create a network token for container or not  Network tokens can be used for merchant-initiated transactions (MIT) in context of recurring payments, or for one-click payments.
    * @return requestToken
   **/
   public Boolean getRequestToken() {
@@ -36,7 +36,7 @@ public class ContainerInstructions {
   }
 
    /**
-   * Shop URL for status pushes of updated payment container with network token (server-to-server callback)
+   * Shop URL to receice status pushes (server-to-server callback) for updates of the network token status
    * @return notificationUrl
   **/
   public String getNotificationUrl() {

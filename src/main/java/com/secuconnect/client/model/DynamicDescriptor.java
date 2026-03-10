@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Supports the merchant customizing the DBA name and city on a per-transaction basis, to allow the cardholder to recognize the business name and city on their card or bank statement
+ * DBA (“doing business as”) name and local address instead of the legal name and registration address  A DBA can be a trademark or store name that is better understandable by the card holders when checking their card or bank statements, and can lead to fewer chargebacks. This works only with credit card payment together with the new acquiring by secupay.  _Please note that you must only use DBA names and addresses to which you have a legitimate claim._
  */
 public class DynamicDescriptor {
   @SerializedName("merchant_name")
@@ -19,7 +19,7 @@ public class DynamicDescriptor {
   }
 
    /**
-   * Get merchantName
+   * DBA (“doing business as”)
    * @return merchantName
   **/
   public String getMerchantName() {

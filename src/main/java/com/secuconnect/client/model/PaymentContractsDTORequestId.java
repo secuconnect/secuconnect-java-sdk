@@ -2,6 +2,7 @@ package com.secuconnect.client.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.secuconnect.client.model.Contact;
+import com.secuconnect.client.model.GeneralContractsEventDetails;
 import com.secuconnect.client.model.PaymentContractsDTOIFrameOpts;
 import com.secuconnect.client.model.PaymentContractsDTORequestIdAdditionalData;
 import com.secuconnect.client.model.PaymentContractsDTORequestIdPricing;
@@ -83,6 +84,9 @@ public class PaymentContractsDTORequestId {
   @SerializedName("project_url")
   protected String projectUrl = null;
 
+  @SerializedName("url_website")
+  protected String urlWebsite = null;
+
   @SerializedName("project_brochure")
   protected String projectBrochure = null;
 
@@ -97,6 +101,12 @@ public class PaymentContractsDTORequestId {
 
   @SerializedName("interest_payment_interval")
   protected String interestPaymentInterval = null;
+
+  @SerializedName("merchant_id")
+  protected String merchantId = null;
+
+  @SerializedName("event_details")
+  protected GeneralContractsEventDetails eventDetails = null;
 
   public PaymentContractsDTORequestId contractId(String contractId) {
     this.contractId = contractId;
@@ -138,7 +148,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Project name (must be unique)
+   * Project name (must be unique per platform or marketplace)
    * @return project
   **/
   public String getProject() {
@@ -223,7 +233,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Pay-in account
+   * Whether to assign an account for incoming payments; please pass &#x60;true&#x60; if you intent to use invoice payment or prepayment
    * @return payinAccount
   **/
   public Boolean getPayinAccount() {
@@ -393,7 +403,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Merchant category  This is _not_ the ISO Merchant Category Code (MCC). The list can be obtained at &#x60;GET /pai/v2/General/Merchants/me/MerchantCategories.
+   * Merchant category  This is _not_ the ISO Merchant Category Code (MCC). The list can be obtained at &#x60;GET /api/v2/General/Merchants/me/MerchantCategories.
    * @return merchantCategory
   **/
   public Integer getMerchantCategory() {
@@ -452,7 +462,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Funding threshold
+   * Funding threshold in the minor currency unit, e. g. Euro Cents
    * @return fundingThreshold
   **/
   public Integer getFundingThreshold() {
@@ -486,7 +496,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Project URL
+   * Project URL at the platform or marketplace
    * @return projectUrl
   **/
   public String getProjectUrl() {
@@ -495,6 +505,23 @@ public class PaymentContractsDTORequestId {
 
   public void setProjectUrl(String projectUrl) {
     this.projectUrl = projectUrl;
+  }
+
+  public PaymentContractsDTORequestId urlWebsite(String urlWebsite) {
+    this.urlWebsite = urlWebsite;
+    return this;
+  }
+
+   /**
+   * Optional website URL of the project or merchant
+   * @return urlWebsite
+  **/
+  public String getUrlWebsite() {
+    return urlWebsite;
+  }
+
+  public void setUrlWebsite(String urlWebsite) {
+    this.urlWebsite = urlWebsite;
   }
 
   public PaymentContractsDTORequestId projectBrochure(String projectBrochure) {
@@ -537,7 +564,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Project duration
+   * Project duration in months
    * @return projectDuration
   **/
   public Integer getProjectDuration() {
@@ -554,7 +581,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Ephemeral Document Upload ID (DUP_xyz) of account verification document
+   * Ephemeral Document Upload ID (DUP_xyz) of account verification document by the bank institute of the merchant or project
    * @return accountVerification
   **/
   public String getAccountVerification() {
@@ -571,7 +598,7 @@ public class PaymentContractsDTORequestId {
   }
 
    /**
-   * Interest payment interval
+   * Interest payment interval:  - &#x60;\&quot;monthly\&quot;&#x60; - &#x60;\&quot;quarterly\&quot;&#x60; - &#x60;\&quot;half-yearly\&quot;&#x60; - &#x60;\&quot;yearly\&quot;&#x60; - &#x60;\&quot;different\&quot;&#x60;
    * @return interestPaymentInterval
   **/
   public String getInterestPaymentInterval() {
@@ -580,6 +607,40 @@ public class PaymentContractsDTORequestId {
 
   public void setInterestPaymentInterval(String interestPaymentInterval) {
     this.interestPaymentInterval = interestPaymentInterval;
+  }
+
+  public PaymentContractsDTORequestId merchantId(String merchantId) {
+    this.merchantId = merchantId;
+    return this;
+  }
+
+   /**
+   * General Merchant ID where the contract should be created (can be only used with &#x27;event_details&#x27;).
+   * @return merchantId
+  **/
+  public String getMerchantId() {
+    return merchantId;
+  }
+
+  public void setMerchantId(String merchantId) {
+    this.merchantId = merchantId;
+  }
+
+  public PaymentContractsDTORequestId eventDetails(GeneralContractsEventDetails eventDetails) {
+    this.eventDetails = eventDetails;
+    return this;
+  }
+
+   /**
+   * Get eventDetails
+   * @return eventDetails
+  **/
+  public GeneralContractsEventDetails getEventDetails() {
+    return eventDetails;
+  }
+
+  public void setEventDetails(GeneralContractsEventDetails eventDetails) {
+    this.eventDetails = eventDetails;
   }
 
   @Override
@@ -614,16 +675,19 @@ public class PaymentContractsDTORequestId {
         Objects.equals(this.fundingThreshold, paymentContractsDTORequestId.fundingThreshold) &&
         Objects.equals(this.fundingEnd, paymentContractsDTORequestId.fundingEnd) &&
         Objects.equals(this.projectUrl, paymentContractsDTORequestId.projectUrl) &&
+        Objects.equals(this.urlWebsite, paymentContractsDTORequestId.urlWebsite) &&
         Objects.equals(this.projectBrochure, paymentContractsDTORequestId.projectBrochure) &&
         Objects.equals(this.projectFactsheet, paymentContractsDTORequestId.projectFactsheet) &&
         Objects.equals(this.projectDuration, paymentContractsDTORequestId.projectDuration) &&
         Objects.equals(this.accountVerification, paymentContractsDTORequestId.accountVerification) &&
-        Objects.equals(this.interestPaymentInterval, paymentContractsDTORequestId.interestPaymentInterval);
+        Objects.equals(this.interestPaymentInterval, paymentContractsDTORequestId.interestPaymentInterval) &&
+        Objects.equals(this.merchantId, paymentContractsDTORequestId.merchantId) &&
+        Objects.equals(this.eventDetails, paymentContractsDTORequestId.eventDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contractId, contact, project, payoutAccount, paymentData, iframeOpts, urlPush, payinAccount, createFirstStore, storeName, payoutPurpose, identrequest, signedContract, additionalData, notes, invoiceReference, tid, merchantCategory, accountStatementText, pricing, fundingThreshold, fundingEnd, projectUrl, projectBrochure, projectFactsheet, projectDuration, accountVerification, interestPaymentInterval);
+    return Objects.hash(contractId, contact, project, payoutAccount, paymentData, iframeOpts, urlPush, payinAccount, createFirstStore, storeName, payoutPurpose, identrequest, signedContract, additionalData, notes, invoiceReference, tid, merchantCategory, accountStatementText, pricing, fundingThreshold, fundingEnd, projectUrl, urlWebsite, projectBrochure, projectFactsheet, projectDuration, accountVerification, interestPaymentInterval, merchantId, eventDetails);
   }
 
   @Override
@@ -653,11 +717,14 @@ public class PaymentContractsDTORequestId {
     sb.append("    fundingThreshold: ").append(toIndentedString(fundingThreshold)).append("\n");
     sb.append("    fundingEnd: ").append(toIndentedString(fundingEnd)).append("\n");
     sb.append("    projectUrl: ").append(toIndentedString(projectUrl)).append("\n");
+    sb.append("    urlWebsite: ").append(toIndentedString(urlWebsite)).append("\n");
     sb.append("    projectBrochure: ").append(toIndentedString(projectBrochure)).append("\n");
     sb.append("    projectFactsheet: ").append(toIndentedString(projectFactsheet)).append("\n");
     sb.append("    projectDuration: ").append(toIndentedString(projectDuration)).append("\n");
     sb.append("    accountVerification: ").append(toIndentedString(accountVerification)).append("\n");
     sb.append("    interestPaymentInterval: ").append(toIndentedString(interestPaymentInterval)).append("\n");
+    sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
+    sb.append("    eventDetails: ").append(toIndentedString(eventDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

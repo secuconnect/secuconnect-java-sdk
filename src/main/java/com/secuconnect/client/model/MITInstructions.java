@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Settings for merchant initiated transaction (MIT)
+ * Settings for recurring payments / merchant-initiated transactions (MIT)
  */
 public class MITInstructions {
   @SerializedName("type")
@@ -28,7 +28,7 @@ public class MITInstructions {
   }
 
    /**
-   * Instructions type:  - &#x60;\&quot;cit\&quot;&#x60; - &#x60;\&quot;mit\&quot;&#x60;
+   * Instructions type:  - &#x60;\&quot;cit\&quot;&#x60; (customer-initiated transaction/CIT for initial payment) - &#x60;\&quot;mit\&quot;&#x60; (merchant-initiated transaction/MIT for subsequent payment; requires &#x60;cit_reference&#x60;)
    * @return type
   **/
   public String getType() {
@@ -45,7 +45,7 @@ public class MITInstructions {
   }
 
    /**
-   * Standing Instruction:  - &#x60;\&quot;ucof\&quot;&#x60; - &#x60;\&quot;recurring\&quot;&#x60;
+   * Standing instruction type:  - &#x60;\&quot;ucof\&quot;&#x60; (unscheduled card-on-file) - &#x60;\&quot;recurring\&quot;&#x60; (fix amount and frequency; requires &#x60;recurring_frequency&#x60;)
    * @return standingInstruction
   **/
   public String getStandingInstruction() {
@@ -62,7 +62,7 @@ public class MITInstructions {
   }
 
    /**
-   * The date until a recurring payment should be possible
+   * Last date the network token shall be usable for merchant-initiated transactions (MIT)
    * @return recurringExpiry
   **/
   public String getRecurringExpiry() {
@@ -79,7 +79,7 @@ public class MITInstructions {
   }
 
    /**
-   * How often a recurring payment should be possible in given period
+   * Frequency of recurring payments in days  Required for standing instruction type &#x60;\&quot;recurring\&quot;&#x60;
    * @return recurringFrequency
   **/
   public Integer getRecurringFrequency() {
@@ -96,7 +96,7 @@ public class MITInstructions {
   }
 
    /**
-   * The Payment Transactions ID from initial transaction to process a recurring payment
+   * Payment Transactions ID from the initial customer-initiated transaction (CIT)  Required for all merchant-initiated transactions (MIT)
    * @return citReference
   **/
   public String getCitReference() {

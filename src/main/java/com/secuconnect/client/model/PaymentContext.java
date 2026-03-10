@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Controls some payment details
+ * Controls payment details
  */
 public class PaymentContext {
   @SerializedName("auto_capture")
