@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Dynamic Descriptor to allow the cardholder to recognize the business name and city on their card or bank statement.
+ * The dynamic descriptor appears on the bank statement of the card holder. This shall either be:  - Legal name and registered Address - DBA (trading name) and business location  The country is taken from the merchant&#x27;s master data. The dynamic descriptor is only useful when used together with credit card payment with secupay acquiring.
  */
 public class SmartTransactionsPrepareDynamicDescriptor {
   @SerializedName("merchant_name")
@@ -19,7 +19,7 @@ public class SmartTransactionsPrepareDynamicDescriptor {
   }
 
    /**
-   * Merchant Name to recognition on card or bank statement.  _Note: [1 - 22] characters_
+   * Company name (legal) or DBA (trading name)  _Note: Restricted to 1 .. 22 characters A-Z, a-z, 0-9, - . ! * &#x3D; _ or space._
    * @return merchantName
   **/
   public String getMerchantName() {
@@ -36,7 +36,7 @@ public class SmartTransactionsPrepareDynamicDescriptor {
   }
 
    /**
-   * Merchant City to recognition on card or bank statement.  _Note: [1 - 13] characters_
+   * City of registered address or business address  _Note: Restricted to 1 .. 13 characters A-Z, a-z, 0-9, - . ! * &#x3D; _ or space._
    * @return merchantCity
   **/
   public String getMerchantCity() {

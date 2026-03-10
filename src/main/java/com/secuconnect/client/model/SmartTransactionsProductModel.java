@@ -863,7 +863,7 @@ public class SmartTransactionsProductModel extends BaseProductModel {
   }
 
    /**
-   * Demo payment
+   * Demo payment  Please use the sandbox environment for testing.
    * @return isDemo
   **/
   public Boolean getIsDemo() {

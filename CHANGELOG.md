@@ -19,6 +19,32 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [4.2.0] - 2026-03-10
+[4.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/4.1.0...4.2.0
+
+- *new element*: `GeneralContractsProductModel->event_details`
+- *new element*: `PaymentContractsDTORequestId->url_website`
+- *new element*: `PaymentContractsDTORequestId->merchant_id`
+- *new element*: `PaymentContractsDTORequestId->event_details`
+
+### Added
+- `Model.GeneralContractsEventDetails`
+
+### Changed
+- `ApiClient`
+- `Api.PaymentContractsApi`
+- `Model.ContainerInstructions`
+- `Model.DynamicDescriptor`
+- `Model.GeneralContractsProductModel`
+- `Model.MITInstructions`
+- `Model.PaymentContainerTokenStatus`
+- `Model.PaymentContext`
+- `Model.PaymentContractsDTORequestId`
+- `Model.SmartTransactionsDTO`
+- `Model.SmartTransactionsPrepareDynamicDescriptor`
+- `Model.SmartTransactionsProductModel`
+
+
 ## [4.1.0] - 2025-11-13
 [4.1.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/4.0.0...4.1.0
 

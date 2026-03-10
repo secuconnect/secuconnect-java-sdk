@@ -6,6 +6,7 @@ import com.secuconnect.client.model.AggregationTimeResult;
 import com.secuconnect.client.model.BankAccountDescriptor;
 import com.secuconnect.client.model.BaseProductModel;
 import com.secuconnect.client.model.CheckoutConfiguration;
+import com.secuconnect.client.model.GeneralContractsEventDetails;
 import com.secuconnect.client.model.GeneralMerchantsProductModel;
 import com.secuconnect.client.model.ParentModel;
 import com.secuconnect.client.model.PaymentLinkOptions;
@@ -63,6 +64,9 @@ public class GeneralContractsProductModel extends BaseProductModel {
 
   @SerializedName("approved")
   protected Boolean approved = null;
+
+  @SerializedName("event_details")
+  protected GeneralContractsEventDetails eventDetails = null;
 
   public GeneralContractsProductModel l(Integer l) {
     this.l = l;
@@ -327,6 +331,23 @@ public class GeneralContractsProductModel extends BaseProductModel {
     this.approved = approved;
   }
 
+  public GeneralContractsProductModel eventDetails(GeneralContractsEventDetails eventDetails) {
+    this.eventDetails = eventDetails;
+    return this;
+  }
+
+   /**
+   * Get eventDetails
+   * @return eventDetails
+  **/
+  public GeneralContractsEventDetails getEventDetails() {
+    return eventDetails;
+  }
+
+  public void setEventDetails(GeneralContractsEventDetails eventDetails) {
+    this.eventDetails = eventDetails;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -352,12 +373,13 @@ public class GeneralContractsProductModel extends BaseProductModel {
         Objects.equals(this.checkoutConfiguration, generalContractsProductModel.checkoutConfiguration) &&
         Objects.equals(this.paymentLinkOptions, generalContractsProductModel.paymentLinkOptions) &&
         Objects.equals(this.approved, generalContractsProductModel.approved) &&
+        Objects.equals(this.eventDetails, generalContractsProductModel.eventDetails) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, description, idOld, parent, merchant, payInAdvanceAccount, paypalConfiguration, easycreditConfiguration, checkoutConfiguration, paymentLinkOptions, approved, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, description, idOld, parent, merchant, payInAdvanceAccount, paypalConfiguration, easycreditConfiguration, checkoutConfiguration, paymentLinkOptions, approved, eventDetails, super.hashCode());
   }
 
   @Override
@@ -381,6 +403,7 @@ public class GeneralContractsProductModel extends BaseProductModel {
     sb.append("    checkoutConfiguration: ").append(toIndentedString(checkoutConfiguration)).append("\n");
     sb.append("    paymentLinkOptions: ").append(toIndentedString(paymentLinkOptions)).append("\n");
     sb.append("    approved: ").append(toIndentedString(approved)).append("\n");
+    sb.append("    eventDetails: ").append(toIndentedString(eventDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,7 +25,7 @@ public class PaymentContainerTokenStatus {
   }
 
    /**
-   * Status of the Token
+   * Network token status:  - &#x60;\&quot;not requested\&quot;&#x60; - &#x60;\&quot;requested\&quot;&#x60; - &#x60;\&quot;inquiry\&quot;&#x60; - &#x60;\&quot;active\&quot;&#x60; - &#x60;\&quot;failed\&quot;&#x60; - &#x60;\&quot;archivePending\&quot;&#x60; - &#x60;\&quot;archived\&quot;&#x60;
    * @return status
   **/
   public String getStatus() {

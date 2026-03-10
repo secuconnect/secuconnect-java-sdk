@@ -468,7 +468,7 @@ public class SmartTransactionsDTO {
   }
 
    /**
-   * Whether the transaction is in demo mode (payment not executed)
+   * Whether the transaction is in demo mode (payment not executed)  Please use the sandbox environment for testing.
    * @return isDemo
   **/
   public Boolean getIsDemo() {
