@@ -27,6 +27,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - *new element*: `PaymentContractsDTORequestId->merchant_id`
 - *new element*: `PaymentContractsDTORequestId->event_details`
 
+### Security
+- Dependency updates
+
 ### Added
 - `Model.GeneralContractsEventDetails`
 
