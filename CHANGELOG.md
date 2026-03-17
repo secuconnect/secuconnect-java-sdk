@@ -19,6 +19,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [4.2.1] - 2026-03-17
+[4.2.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/4.2.0...4.2.1
+
+*fix empty objects*: in response definition of Smart/Devices/GetSecubaseConfig
+
+### Security
+- Dependency updates
+
+### Changed
+- `ApiClient`
+- `Api.SmartDevicesApi`
+
+### Removed
+- `Model.SmartDevicesSecubaseConfig`
+
+
 ## [4.2.0] - 2026-03-10
 [4.2.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/4.1.0...4.2.0
 
