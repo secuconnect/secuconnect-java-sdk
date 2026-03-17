@@ -12,7 +12,7 @@ import com.secuconnect.client.model.SmartDevicesDTO;
 import com.secuconnect.client.model.SmartDevicesGetSecubaseConfigDTO;
 import com.secuconnect.client.model.SmartDevicesList;
 import com.secuconnect.client.model.SmartDevicesProductModel;
-import com.secuconnect.client.model.SmartDevicesSecubaseConfig;
+import com.secuconnect.client.model.SmartDevicesSecubaseConfigApp;
 import com.secuconnect.client.model.UpdateSmartDevicePin;
 import okhttp3.Call;
 
@@ -548,11 +548,11 @@ public class SmartDevicesApi {
      * Returns the Secubase config of the Smart Device.
      * @param smartDeviceId Smart Device ID (required)
      * @param body Smart Device properties
-     * @return SmartDevicesSecubaseConfig
+     * @return List&lt;SmartDevicesSecubaseConfigApp&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SmartDevicesSecubaseConfig getSecubaseConfig(String smartDeviceId, SmartDevicesGetSecubaseConfigDTO body) throws ApiException {
-        ApiResponse<SmartDevicesSecubaseConfig> resp = getSecubaseConfigWithHttpInfo(smartDeviceId, body);
+    public List<SmartDevicesSecubaseConfigApp> getSecubaseConfig(String smartDeviceId, SmartDevicesGetSecubaseConfigDTO body) throws ApiException {
+        ApiResponse<List<SmartDevicesSecubaseConfigApp>> resp = getSecubaseConfigWithHttpInfo(smartDeviceId, body);
         return resp.getData();
     }
 
@@ -561,12 +561,12 @@ public class SmartDevicesApi {
      * Returns the Secubase config of the Smart Device.
      * @param smartDeviceId Smart Device ID (required)
      * @param body Smart Device properties
-     * @return ApiResponse&lt;SmartDevicesSecubaseConfig&gt;
+     * @return ApiResponse&lt;List&lt;SmartDevicesSecubaseConfigApp&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SmartDevicesSecubaseConfig> getSecubaseConfigWithHttpInfo(String smartDeviceId, SmartDevicesGetSecubaseConfigDTO body) throws ApiException {
+    public ApiResponse<List<SmartDevicesSecubaseConfigApp>> getSecubaseConfigWithHttpInfo(String smartDeviceId, SmartDevicesGetSecubaseConfigDTO body) throws ApiException {
         Call call = getSecubaseConfigValidateBeforeCall(smartDeviceId, body);
-        Type localVarReturnType = new TypeToken<SmartDevicesSecubaseConfig>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<SmartDevicesSecubaseConfigApp>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -579,9 +579,9 @@ public class SmartDevicesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public Call getSecubaseConfigAsync(String smartDeviceId, SmartDevicesGetSecubaseConfigDTO body, final ApiCallback<SmartDevicesSecubaseConfig> callback) throws ApiException {
+    public Call getSecubaseConfigAsync(String smartDeviceId, SmartDevicesGetSecubaseConfigDTO body, final ApiCallback<List<SmartDevicesSecubaseConfigApp>> callback) throws ApiException {
         Call call = getSecubaseConfigValidateBeforeCall(smartDeviceId, body);
-        Type localVarReturnType = new TypeToken<SmartDevicesSecubaseConfig>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<SmartDevicesSecubaseConfigApp>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
