@@ -24,6 +24,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 *fix empty objects*: in response definition of Smart/Devices/GetSecubaseConfig
 
+### Security
+- Dependency updates
+
 ### Changed
 - `ApiClient`
 - `Api.SmartDevicesApi`
