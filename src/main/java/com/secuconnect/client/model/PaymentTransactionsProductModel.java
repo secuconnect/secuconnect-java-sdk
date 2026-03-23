@@ -9,6 +9,7 @@ import com.secuconnect.client.model.GeneralContractsProductModel;
 import com.secuconnect.client.model.GeneralMerchantsProductModel;
 import com.secuconnect.client.model.GeneralStoresProductModel;
 import com.secuconnect.client.model.ParentObj;
+import com.secuconnect.client.model.PaymentTransactionsProductModelBasket;
 import com.secuconnect.client.model.PaymentTransactionsProductModelCustomer;
 import com.secuconnect.client.model.PaymentTransactionsProductModelDetails;
 import com.secuconnect.client.model.PaymentTransactionsProductModelDocuments;
@@ -159,6 +160,12 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
 
   @SerializedName("documents")
   protected List<PaymentTransactionsProductModelDocuments> documents = null;
+
+  @SerializedName("load_date")
+  protected String loadDate = null;
+
+  @SerializedName("basket")
+  protected List<PaymentTransactionsProductModelBasket> basket = null;
 
   public PaymentTransactionsProductModel l(Integer l) {
     this.l = l;
@@ -966,6 +973,48 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     this.documents = documents;
   }
 
+  public PaymentTransactionsProductModel loadDate(String loadDate) {
+    this.loadDate = loadDate;
+    return this;
+  }
+
+   /**
+   * Get loadDate
+   * @return loadDate
+  **/
+  public String getLoadDate() {
+    return loadDate;
+  }
+
+  public void setLoadDate(String loadDate) {
+    this.loadDate = loadDate;
+  }
+
+  public PaymentTransactionsProductModel basket(List<PaymentTransactionsProductModelBasket> basket) {
+    this.basket = basket;
+    return this;
+  }
+
+  public PaymentTransactionsProductModel addBasketItem(PaymentTransactionsProductModelBasket basketItem) {
+    if (this.basket == null) {
+      this.basket = new ArrayList<PaymentTransactionsProductModelBasket>();
+    }
+    this.basket.add(basketItem);
+    return this;
+  }
+
+   /**
+   * Products
+   * @return basket
+  **/
+  public List<PaymentTransactionsProductModelBasket> getBasket() {
+    return basket;
+  }
+
+  public void setBasket(List<PaymentTransactionsProductModelBasket> basket) {
+    this.basket = basket;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1021,12 +1070,14 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
         Objects.equals(this.orderId, paymentTransactionsProductModel.orderId) &&
         Objects.equals(this.transmittedToBank, paymentTransactionsProductModel.transmittedToBank) &&
         Objects.equals(this.documents, paymentTransactionsProductModel.documents) &&
+        Objects.equals(this.loadDate, paymentTransactionsProductModel.loadDate) &&
+        Objects.equals(this.basket, paymentTransactionsProductModel.basket) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(l, k, ks, c, s, t, created, updated, platform, merchant, store, contract, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, description, descriptionRaw, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, transmittedToBank, documents, super.hashCode());
+    return Objects.hash(l, k, ks, c, s, t, created, updated, platform, merchant, store, contract, transId, parents, relatedTransactions, subscription, productId, product, productRaw, zahlungsmittelId, contractId, amount, currency, completionDate, description, descriptionRaw, status, statusText, incomingPaymentDate, details, customer, tid, paymentData, storeName, payoutDate, invoiceNumber, transactionHash, referenceId, incomingPaymentPurpose, incomingPaymentIban, incomingPaymentBic, accountOwner, accrual, orderId, transmittedToBank, documents, loadDate, basket, super.hashCode());
   }
 
   @Override
@@ -1080,6 +1131,8 @@ public class PaymentTransactionsProductModel extends BaseProductModel {
     sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     sb.append("    transmittedToBank: ").append(toIndentedString(transmittedToBank)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
+    sb.append("    loadDate: ").append(toIndentedString(loadDate)).append("\n");
+    sb.append("    basket: ").append(toIndentedString(basket)).append("\n");
     sb.append("}");
     return sb.toString();
   }

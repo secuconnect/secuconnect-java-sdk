@@ -19,6 +19,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [4.3.0] - 2026-03-23
+[4.3.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/4.2.1...4.3.0
+
+- *new element*: `load_date` and `basket` in `PaymentTransactionsProductModel`
+
+### Added
+- `Model.PaymentTransactionsProductModelBasket`
+- `Model.PaymentTransactionsProductModelSubBasket`
+
+### Changed
+- `ApiClient`
+- `Model.PaymentTransactionsProductModel`
+
+
 ## [4.2.1] - 2026-03-17
 [4.2.1]:https://github.com/secuconnect/secuconnect-java-sdk/compare/4.2.0...4.2.1
 
