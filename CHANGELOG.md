@@ -19,6 +19,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 
+## [4.4.0] - 2026-05-04
+[4.4.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/4.3.0...4.4.0
+
+### Changed
+- `ApiClient`
+- `Api.PaymentContainersApi`
+- `Model.CreditCardDescriptor`
+- `Model.PaymentContext`
+
+
 ## [4.3.0] - 2026-03-23
 [4.3.0]:https://github.com/secuconnect/secuconnect-java-sdk/compare/4.2.1...4.3.0
 

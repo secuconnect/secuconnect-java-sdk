@@ -67,7 +67,7 @@ public class PaymentContext {
   }
 
    /**
-   * Wanted payment methods:  - &#x60;\&quot;creditcard\&quot;&#x60; - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60;
+   * Restricts the payment methods available in Smart Checkout to the specified methods:  - &#x60;\&quot;creditcard\&quot;&#x60; - &#x60;\&quot;debit\&quot;&#x60; - &#x60;\&quot;easycredit\&quot;&#x60; - &#x60;\&quot;giropay\&quot;&#x60; - &#x60;\&quot;invoice\&quot;&#x60; - &#x60;\&quot;paypal\&quot;&#x60; - &#x60;\&quot;prepaid\&quot;&#x60; - &#x60;\&quot;sofort\&quot;&#x60;  If no value is provided, the available payment methods are restricted only by those contractually agreed for the given currency.
    * @return paymentMethods
   **/
   public List<String> getPaymentMethods() {
