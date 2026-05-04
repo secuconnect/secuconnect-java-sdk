@@ -37,7 +37,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * Card holder name
+   * Card holder name  &#x60;/encryptedData/masked/card_owner&#x60; as returnd by credit card iframe
    * @return owner
   **/
   public String getOwner() {
@@ -54,7 +54,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * Truncated Primary Account Number (PAN)
+   * Masked card number (PAN)  &#x60;/encryptedData/masked/card_number&#x60; as returnd by credit card iframe
    * @return pan
   **/
   public String getPan() {
@@ -71,7 +71,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * Card expiration date, ISO-8601 formatted; one must pass 2023-06 if the card is ”valid thru 06/23“
+   * Card expiration date, ISO-8601 formatted; one must pass \&quot;2023-06\&quot; if the card is ”valid thru 06/23“  &#x60;/yearExp/value&#x60; and &#x60;/monthExp/value&#x60; as returnd by credit card iframe
    * @return expirationDate
   **/
   public String getExpirationDate() {
@@ -88,7 +88,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * Card brand, like VISA or MasterCard
+   * Card brand, like VISA or MasterCard  &#x60;/cardNumber/company&#x60; as returnd by credit card iframe
    * @return issuer
   **/
   public String getIssuer() {
@@ -105,7 +105,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * transact container
+   * &#x60;/encryptedData/crypted_container&#x60; as returnd by credit card iframe
    * @return transactContainer
   **/
   public String getTransactContainer() {
@@ -122,7 +122,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * transact public key
+   * &#x60;/encryptedData/crypted_skey&#x60; as returnd by credit card iframe
    * @return transactSkeyPubkey
   **/
   public String getTransactSkeyPubkey() {
@@ -139,7 +139,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * transact key name
+   * &#x60;/encryptedData/key_filename&#x60; as returnd by credit card iframe
    * @return transactSkeyKeyname
   **/
   public String getTransactSkeyKeyname() {
@@ -156,7 +156,7 @@ public class CreditCardDescriptor implements OneOfPaymentContainersDTOModelPriva
   }
 
    /**
-   * transact hash
+   * &#x60;/encryptedData/container_hash&#x60; as returnd by credit card iframe
    * @return transactHash
   **/
   public String getTransactHash() {

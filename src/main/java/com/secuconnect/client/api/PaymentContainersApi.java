@@ -801,7 +801,7 @@ public class PaymentContainersApi {
 
     /**
      * Validate IBAN
-     * Validate one or several IBANs.  **Note:** For large numbers of records please use the batch mechanism described in the API integration guide.
+     * Validate one or several IBANs.  **Note:** For large numbers of records please use the batch mechanism described in the API integration guide.  S. [Validate the IBANs](https://developer.secuconnect.com/integration/Validate_the_IBANs.html)
      * @param body IBAN(s) to validate
      * @return PaymentContainersValidateSingleIban
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -813,7 +813,7 @@ public class PaymentContainersApi {
 
     /**
      * Validate IBAN
-     * Validate one or several IBANs.  **Note:** For large numbers of records please use the batch mechanism described in the API integration guide.
+     * Validate one or several IBANs.  **Note:** For large numbers of records please use the batch mechanism described in the API integration guide.  S. [Validate the IBANs](https://developer.secuconnect.com/integration/Validate_the_IBANs.html)
      * @param body IBAN(s) to validate
      * @return ApiResponse&lt;PaymentContainersValidateSingleIban&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -826,7 +826,7 @@ public class PaymentContainersApi {
 
     /**
      * Validate IBAN (asynchronously)
-     * Validate one or several IBANs.  **Note:** For large numbers of records please use the batch mechanism described in the API integration guide.
+     * Validate one or several IBANs.  **Note:** For large numbers of records please use the batch mechanism described in the API integration guide.  S. [Validate the IBANs](https://developer.secuconnect.com/integration/Validate_the_IBANs.html)
      * @param body IBAN(s) to validate
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
