@@ -43,6 +43,7 @@ public class ApiClient {
     private HttpLoggingInterceptor loggingInterceptor;
 
     private Printer printer = new ImitationDevicePrinter();
+    private HttpLoggingInterceptor.Logger logger;
 
     private static final ConnectionSpec TLS_13 = new ConnectionSpec
         .Builder(true)
@@ -96,6 +97,18 @@ public class ApiClient {
 
     public ApiClient setEnv(Environment env) {
         this.env = env;
+        return this;
+    }
+
+    /**
+     * Set the required Logger for debugging. This is used in {@link #setDebugging(boolean)}
+     *
+     * @param logger A logger
+     * @return the ApiClient
+     */
+    public ApiClient setLogger(HttpLoggingInterceptor.Logger logger)
+    {
+        this.logger = logger;
         return this;
     }
 
@@ -160,7 +173,9 @@ public class ApiClient {
         if (debugging != this.debugging) {
             OkHttpClient.Builder builder = httpClient.newBuilder();
             if (debugging) {
-                loggingInterceptor = new HttpLoggingInterceptor();
+                loggingInterceptor = logger != null
+                        ? new HttpLoggingInterceptor(logger)
+                        : new HttpLoggingInterceptor();
                 loggingInterceptor.setLevel(Level.BODY);
                 builder.interceptors().add(loggingInterceptor);
             } else if (loggingInterceptor != null) {

@@ -181,4 +181,17 @@ public class ApiClientTest {
             fail("Could not active the logging of API requests.");
         }
     }
+
+    @Test
+    public void SetDebugWithLoggerTest() throws InterruptedException {
+        try {
+            // init env and api call
+            ApiClient apiClient = Environment.getGlobalEnv().getApiClient().setLogger(message -> {});
+            apiClient.setDebugging(false);
+            apiClient.setDebugging(true);
+            apiClient.setDebugging(false);
+        } catch (RuntimeException ex) {
+            fail("Could not activate the logging of API requests.");
+        }
+    }
 }
